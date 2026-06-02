@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigo Nepal | Empowering Nepal's Next Generation of Leaders</title>
+  <meta name="description" content="Youth-led educational empowerment organization in Nepal transforming students through STEM education, Olympiad awareness, leadership pipelines, mentorship, and community impact.">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Ambient Background Glowing Orbs -->
+  <div class="glow-wrapper">
+    <div class="glow-orb orb-blue"></div>
+    <div class="glow-orb orb-green"></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="logo">
+        <div class="logo-symbol">N</div>
+        <span>Navigo<span>Nepal</span></span>
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#story" class="nav-link">Our Story</a></li>
+        <li><a href="#programs" class="nav-link">Programs</a></li>
+        <li><a href="#impact-map" class="nav-link">Impact Map</a></li>
+        <li><a href="#stories" class="nav-link">Success Stories</a></li>
+        <li><a href="#team" class="nav-link">Team</a></li>
+        <li><a href="#resources" class="nav-link">Resources</a></li>
+        <li><a href="#volunteer" class="nav-link">Get Involved</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark/Light Mode" title="Toggle Mode">
+          <!-- Sun Icon (displayed in dark mode) -->
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+          <!-- Moon Icon (displayed in light mode) -->
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </button>
+        <a href="#donate" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.9rem;">Donate</a>
+        
+        <button class="hamburger" id="hamburger" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Side Navigation -->
+  <aside class="mobile-nav" id="mobileNav">
+    <ul class="mobile-nav-links">
+      <li><a href="#hero" class="mobile-nav-link active">Home</a></li>
+      <li><a href="#story" class="mobile-nav-link">Our Story</a></li>
+      <li><a href="#programs" class="mobile-nav-link">Programs</a></li>
+      <li><a href="#impact-map" class="mobile-nav-link">Impact Map</a></li>
+      <li><a href="#stories" class="mobile-nav-link">Success Stories</a></li>
+      <li><a href="#team" class="mobile-nav-link">Team</a></li>
+      <li><a href="#resources" class="mobile-nav-link">Resources</a></li>
+      <li><a href="#volunteer" class="mobile-nav-link">Get Involved</a></li>
+      <li><a href="#donate" class="mobile-nav-link">Donate Now</a></li>
+    </ul>
+  </aside>
+
+  <!-- HERO SECTION -->
+  <header class="section hero-section" id="hero">
+    <div class="container grid-2">
+      <div class="hero-content">
+        <h1 class="heading-xl" id="heroTitle">Empowering Nepal's Next Generation of Leaders</h1>
+        <p class="hero-subtitle" id="heroSubtitle" style="margin: 1.5rem 0 2.5rem; font-size: clamp(1.1rem, 2vw, 1.25rem); color: var(--text-muted);">
+          We bridge the gap between potential and opportunity, equipping Nepali students with world-class exposure, STEM programs, and leadership pipelines.
+        </p>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="#volunteer" class="btn btn-primary" id="heroCtaPrimary">Join Navigo</a>
+          <a href="#contact" class="btn btn-secondary" id="heroCtaSecondary">Partner With Us</a>
+        </div>
+      </div>
+      
+      <div class="hero-visual">
+        <div class="hero-img-backdrop"></div>
+        <div class="hero-card">
+          <!-- Stylized premium visual representation of nepalese student exposure -->
+          <svg viewBox="0 0 400 380" fill="none" xmlns="http://www.w3.org/2000/svg" style="background: linear-gradient(135deg, #0f172a 0%, #020617 100%);">
+            <defs>
+              <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#2563EB" />
+                <stop offset="100%" stop-color="#10B981" />
+              </linearGradient>
+              <radialGradient id="radialGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#2563EB" stop-opacity="0.3" />
+                <stop offset="100%" stop-color="#020617" stop-opacity="0" />
+              </radialGradient>
+            </defs>
+            <rect width="400" height="380" fill="url(#radialGlow)" />
+            <!-- Himalayas Stylized Background -->
+            <path d="M-20 300 L60 200 L120 250 L220 120 L300 220 L420 80 L450 380 L-20 380 Z" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.05)" stroke-width="2"/>
+            <path d="M20 320 L100 240 L160 280 L260 160 L320 240 L400 120 L440 380 L20 380 Z" fill="rgba(255,255,255,0.02)" />
+            <!-- Glowing network node circles -->
+            <circle cx="120" cy="180" r="40" fill="rgba(37,99,235,0.15)" stroke="#2563EB" stroke-width="2" />
+            <circle cx="280" cy="140" r="30" fill="rgba(16,185,129,0.15)" stroke="#10B981" stroke-width="2" />
+            <!-- Connective lines representing mentorship network -->
+            <line x1="120" y1="180" x2="280" y2="140" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-dasharray="4 4" />
+            <line x1="120" y1="180" x2="200" y2="300" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" />
+            <line x1="280" y1="140" x2="200" y2="300" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" />
+            
+            <circle cx="200" cy="300" r="50" fill="rgba(255,255,255,0.05)" stroke="url(#grad1)" stroke-width="3" />
+            <!-- Inside details of nodes: Icons representation -->
+            <!-- Graduation Cap in center -->
+            <path d="M200 285 L225 295 L200 305 L175 295 Z" fill="none" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M185 300 L185 315 C185 320, 215 320, 215 315 L215 300" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <path d="M220 297 L220 312 L223 312" fill="none" stroke="white" stroke-width="1.5"/>
+            
+            <!-- STEM cpu visual in left circle -->
+            <rect x="110" y="170" width="20" height="20" rx="3" fill="none" stroke="white" stroke-width="2"/>
+            <line x1="105" y1="175" x2="110" y2="175" stroke="white" stroke-width="2"/>
+            <line x1="105" y1="185" x2="110" y2="185" stroke="white" stroke-width="2"/>
+            <line x1="130" y1="175" x2="135" y2="175" stroke="white" stroke-width="2"/>
+            <line x1="130" y1="185" x2="135" y2="185" stroke="white" stroke-width="2"/>
+            
+            <!-- Trophy in right circle -->
+            <path d="M275 130 H285 V145 C285 148 282 150 279 150 C276 150 275 148 275 145 Z" fill="none" stroke="white" stroke-width="2"/>
+            <path d="M272 133 C270 133 268 135 268 138 C268 141 270 142 272 142 H275" fill="none" stroke="white" stroke-width="1.5"/>
+            <path d="M288 133 C290 133 292 135 292 138 C292 141 290 142 288 142 H285" fill="none" stroke="white" stroke-width="1.5"/>
+            <path d="M280 150 V154 M276 154 H284" stroke="white" stroke-width="2"/>
+
+            <text x="200" y="37" fill="white" font-family="Outfit" font-size="16" font-weight="800" text-anchor="middle" letter-spacing="4">NAVIGO IMPACT</text>
+            <circle cx="200" cy="32" r="2" fill="#10B981" />
+          </svg>
+          <div class="hero-card-tag">
+            <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.15rem;">Student Incubation Hub</h4>
+            <p style="font-size: 0.8rem; opacity: 0.85;">Empowering 25,000+ change-makers nationwide.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- IMPACT DASHBOARD SECTION -->
+  <section class="section" id="impact" style="background: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+      <div style="text-align: center; max-width: 600px; margin: 0 auto 3rem;">
+        <span class="gradient-accent" style="font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; display: inline-block; margin-bottom: 0.5rem;">Measurable Excellence</span>
+        <h2 class="heading-lg">Our Footprint in Numbers</h2>
+        <p style="color: var(--text-muted); margin-top: 0.5rem;">Transparent, actual figures of our educational outreach, mentorship, and regional development programs across Nepal.</p>
+      </div>
+
+      <div class="grid-3 metrics-grid" id="metricsGrid">
+        <!-- Rendered Dynamically from js/cms.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR STORY & TIMELINE SECTION -->
+  <section class="section" id="story">
+    <div class="container">
+      <div class="story-header">
+        <span class="gradient-accent" style="font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; display: inline-block; margin-bottom: 0.5rem;">Bridging Opportunities</span>
+        <h2 class="heading-lg">Our Story & Mission</h2>
+        <p style="color: var(--text-muted); margin-top: 0.5rem;">A youth-led movement working to ensure that every student in Nepal has access to top-tier mentorship, advanced technical modules, and global pipelines.</p>
+      </div>
+
+      <!-- Mission / Vision / Values Cards -->
+      <div class="grid-2 story-values-grid" id="storyValuesGrid">
+        <!-- Mission & Vision Glass Card -->
+        <div class="glass-panel" style="padding: 3rem; display: flex; flex-direction: column; gap: 2.5rem; justify-content: center;">
+          <div>
+            <h3 style="font-size: 1.6rem; color: var(--accent-color); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+              Our Mission
+            </h3>
+            <p id="storyMission" style="color: var(--text-main); font-size: 1.05rem; line-height: 1.7;"></p>
+          </div>
+          <div style="border-top: 1px solid var(--border-color); padding-top: 2rem;">
+            <h3 style="font-size: 1.6rem; color: var(--success-color); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><eye xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Our Vision
+            </h3>
+            <p id="storyVision" style="color: var(--text-main); font-size: 1.05rem; line-height: 1.7;"></p>
+          </div>
+        </div>
+
+        <!-- Core Values Grid -->
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;" id="coreValuesList">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+
+      <!-- Timeline Title -->
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <h3 class="heading-lg" style="font-size: 2rem;">Navigo Journey & Milestones</h3>
+        <p style="color: var(--text-muted); margin-top: 0.5rem;">How a small student initiative evolved into a national educational catalyst.</p>
+      </div>
+
+      <!-- Milestones Timeline -->
+      <div class="timeline-wrapper">
+        <div class="timeline-line"></div>
+        <div id="timelineContainer">
+          <!-- Rendered Dynamically from js/cms.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMS SECTION -->
+  <section class="section" id="programs" style="background: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto 4rem;">
+        <span class="gradient-accent" style="font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; display: inline-block; margin-bottom: 0.5rem;">Empowerment Pipelines</span>
+        <h2 class="heading-lg">Our Comprehensive Programs</h2>
+        <p style="color: var(--text-muted); margin-top: 0.5rem;">From tech discovery in rural valleys to preparation bootcamps for international Olympiads, explore our active structural pathways.</p>
+      </div>
+
+      <div class="grid-3 programs-grid" id="programsGrid">
+        <!-- Rendered Dynamically from js/cms.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- NEPAL IMPACT MAP SECTION -->
+  <section class="section" id="impact-map">
+    <div class="container">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto 4rem;">
+        <span class="gradient-accent" style="font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; display: inline-block; margin-bottom: 0.5rem;">Regional Outreach</span>
+        <h2 class="heading-lg">Interactive Impact Map</h2>
+        <p style="color: var(--text-muted); margin-top: 0.5rem;">Select or hover over the different provinces on our custom geographic map to see real-time statistics of Navigo's student outreach and projects.</p>
+      </div>
+
+      <div class="map-layout">
+        <!-- Interactive stylized SVG Nepal Map representing 7 provinces -->
+        <div class="map-container">
+          <svg viewBox="0 0 800 400" id="nepalMap">
+            <!-- Background grids representing modern tech styling -->
+            <g opacity="0.05">
+              <line x1="0" y1="50" x2="800" y2="50" stroke="var(--text-main)" stroke-width="0.5"/>
+              <line x1="0" y1="100" x2="800" y2="100" stroke="var(--text-main)" stroke-width="0.5"/>
+              <line x1="0" y1="150" x2="800" y2="150" stroke="var(--text-main)" stroke-width="0.5"/>
+              <line x1="0" y1="200" x2="800" y2="200" stroke="var(--text-main)" stroke-width="0.5"/>
+              <line x1="0" y1="250" x2="800" y2="250" stroke="var(--text-main)" stroke-width="0.5"/>
+              <line x1="0" y1="300" x2="800" y2="300" stroke="var(--text-main)" stroke-width="0.5"/>
+              <line x1="0" y1="350" x2="800" y2="350" stroke="var(--text-main)" stroke-width="0.5"/>
+              <line x1="100" y1="0" x2="100" y2="400" stroke="var(--text-main)" stroke-width="0.5"/>
+              <line x1="200" y1="0" x2="200" y2="400" stroke="var(--text-main)" stroke-width="0.5"/>
+              <line x1="300" y1="0" x2="300" y2="400" stroke="var(--text-main)" stroke-width="0.5"/>
+              <line x1="400" y1="0" x2="400" y2="400" stroke="var(--text-main)" stroke-width="0.5"/>
+              <line x1="500" y1="0" x2="500" y2="400" stroke="var(--text-main)" stroke-width="0.5"/>
+              <line x1="600" y1="0" x2="600" y2="400" stroke="var(--text-main)" stroke-width="0.5"/>
+              <line x1="700" y1="0" x2="700" y2="400" stroke="var(--text-main)" stroke-width="0.5"/>
+            </g>
+
+            <!-- Stylized provinces pathways -->
+            <!-- Sudurpashchim (Far West) -->
+            <path id="path-sudurpashchim" class="province-path" d="M30,120 L80,100 L110,130 L105,185 L50,210 L15,190 L20,150 Z" />
+            <text x="50" y="160" font-size="10" font-family="Outfit" font-weight="700" fill="var(--text-main)" pointer-events="none" opacity="0.6">Sudurpashchim</text>
+
+            <!-- Karnali (Mid West) -->
+            <path id="path-karnali" class="province-path" d="M80,100 L170,75 L220,105 L210,165 L150,180 L110,130 Z" />
+            <text x="135" y="125" font-size="10" font-family="Outfit" font-weight="700" fill="var(--text-main)" pointer-events="none" opacity="0.6">Karnali</text>
+
+            <!-- Lumbini -->
+            <path id="path-lumbini" class="province-path" d="M105,185 L150,180 L210,165 L240,195 L220,250 L120,245 Z" />
+            <text x="160" y="215" font-size="10" font-family="Outfit" font-weight="700" fill="var(--text-main)" pointer-events="none" opacity="0.6">Lumbini</text>
+
+            <!-- Gandaki -->
+            <path id="path-gandaki" class="province-path" d="M220,105 L350,110 L370,185 L320,210 L240,195 Z" />
+            <text x="290" y="150" font-size="10" font-family="Outfit" font-weight="700" fill="var(--text-main)" pointer-events="none" opacity="0.6">Gandaki</text>
+
+            <!-- Bagmati (surrounding Kathmandu) -->
+            <path id="path-bagmati" class="province-path" d="M350,110 L480,140 L450,225 L370,185 Z" />
+            <text x="400" y="165" font-size="10" font-family="Outfit" font-weight="700" fill="var(--text-main)" pointer-events="none" opacity="0.6">Bagmati</text>
+
+            <!-- Madhesh -->
+            <path id="path-madhesh" class="province-path" d="M450,225 L480,140 L530,225 L590,230 L590,265 L460,250 Z" />
+            <text x="510" y="245" font-size="10" font-family="Outfit" font-weight="700" fill="var(--text-main)" pointer-events="none" opacity="0.6">Madhesh</text>
+
+            <!-- Koshi (East) -->
+            <path id="path-koshi" class="province-path" d="M480,140 L620,165 L660,280 L590,265 L590,230 L530,225 Z" />
+            <text x="580" y="195" font-size="10" font-family="Outfit" font-weight="700" fill="var(--text-main)" pointer-events="none" opacity="0.6">Koshi</text>
+
+            <!-- Small dots representing educational capital hubs -->
+            <circle cx="410" cy="180" r="5" fill="#2563EB" stroke="white" stroke-width="1.5" />
+            <text x="420" y="184" font-size="9" font-family="Outfit" font-weight="700" fill="var(--text-main)">KTM</text>
+
+            <circle cx="285" cy="175" r="5" fill="#2563EB" stroke="white" stroke-width="1.5" />
+            <text x="295" y="179" font-size="9" font-family="Outfit" font-weight="700" fill="var(--text-main)">Pokhara</text>
+
+            <circle cx="585" cy="245" r="5" fill="#2563EB" stroke="white" stroke-width="1.5" />
+            <text x="595" y="249" font-size="9" font-family="Outfit" font-weight="700" fill="var(--text-main)">Biratnagar</text>
+          </svg>
+        </div>
+
+        <!-- Real-time Regional Stats Sidebar Panel -->
+        <div class="glass-panel" id="mapStatsPanel" style="display: flex; flex-direction: column; gap: 1.5rem; justify-content: center;">
+          <!-- Loaded Dynamically when user interacts with map -->
+          <div style="text-align: center; padding: 2rem 0;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-color); opacity: 0.6; margin-bottom: 1rem;"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;">Explore Nepal Regional Impact</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Click or hover over any province path on the SVG map to check local schools connected, student counts, and core milestones reached.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUCCESS STORIES section -->
+  <section class="section" id="stories" style="background: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+      <div style="text-align: center; max-width: 600px; margin: 0 auto 3rem;">
+        <span class="gradient-accent" style="font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; display: inline-block; margin-bottom: 0.5rem;">Leadership Journeys</span>
+        <h2 class="heading-lg">Success Stories</h2>
+        <p style="color: var(--text-muted); margin-top: 0.5rem;">Direct testimonials and academic achievements of youth empowered by Navigo Nepal's networks.</p>
+      </div>
+
+      <!-- Testimonial Carousel -->
+      <div class="carousel-wrapper">
+        <div class="carousel-container" id="carouselContainer">
+          <!-- Rendered Dynamically from js/cms.js -->
+        </div>
+        
+        <!-- Navigation Controls -->
+        <div class="carousel-nav" id="carouselNav">
+          <!-- Rendered Dynamically from js/cms.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM SECTION -->
+  <section class="section" id="team">
+    <div class="container">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto 4rem;">
+        <span class="gradient-accent" style="font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; display: inline-block; margin-bottom: 0.5rem;">Youth-Led Board</span>
+        <h2 class="heading-lg">Team & Leadership</h2>
+        <p style="color: var(--text-muted); margin-top: 0.5rem;">Meet the young change-makers, educators, and academic coordinators spearheading the educational revolution at Navigo Nepal.</p>
+      </div>
+
+      <div class="grid-4 team-grid" id="teamGrid">
+        <!-- Rendered Dynamically from js/cms.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS SECTION -->
+  <section class="section" id="partners" style="background: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 3rem 0;">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <h4 style="font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 0.95rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.15em;">Supported & Trusted By Leading Institutions</h4>
+      </div>
+      
+      <!-- Infinite scrolling ticker -->
+      <div class="partners-ticker-container">
+        <div class="partners-ticker" id="partnersTicker">
+          <!-- Loaded Dynamically and Duplicated for Seamless Rolling Loop -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG & RESOURCES SECTION -->
+  <section class="section" id="resources">
+    <div class="container">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto 4rem;">
+        <span class="gradient-accent" style="font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; display: inline-block; margin-bottom: 0.5rem;">Academic Assets</span>
+        <h2 class="heading-lg">Blog & Resources</h2>
+        <p style="color: var(--text-muted); margin-top: 0.5rem;">Download free Olympiad training manuals, STEM club guidelines, scholarship cheat sheets, or read detailed research articles.</p>
+      </div>
+
+      <div class="blog-layout">
+        <!-- Articles column -->
+        <div>
+          <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.5rem; margin-bottom: 2rem; color: var(--text-main); display: flex; align-items: center; gap: 0.5rem;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+            Featured Articles
+          </h3>
+          <div class="blog-grid" id="blogGrid">
+            <!-- Rendered Dynamically from js/cms.js -->
+          </div>
+        </div>
+
+        <!-- Downloads Column -->
+        <div class="glass-panel" style="padding: 2rem;">
+          <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.35rem; margin-bottom: 1.5rem; color: var(--accent-color); display: flex; align-items: center; gap: 0.5rem;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Academic Resource Hub
+          </h3>
+          <div class="resources-list" id="resourcesList">
+            <!-- Rendered Dynamically from js/cms.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOLUNTEER PORTAL SECTION -->
+  <section class="section" id="volunteer" style="background: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto 4rem;">
+        <span class="gradient-accent" style="font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; display: inline-block; margin-bottom: 0.5rem;">Join the Movement</span>
+        <h2 class="heading-lg">Volunteer Portal</h2>
+        <p style="color: var(--text-muted); margin-top: 0.5rem;">Empower local students, share your STEM expertise, facilitate academic workshops, or coordinate regional clubs. Apply to join our 500+ volunteer network.</p>
+      </div>
+
+      <div class="grid-3 volunteer-positions-grid" id="volunteerGrid">
+        <!-- Rendered Dynamically from js/cms.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- DONATION & PARTNERSHIP SECTION -->
+  <section class="section" id="donate">
+    <div class="container">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">
+        <span class="gradient-accent" style="font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; display: inline-block; margin-bottom: 0.5rem;">Direct Educational Fuel</span>
+        <h2 class="heading-lg">Fuel Educational Transformation</h2>
+        <p style="color: var(--text-muted); margin-top: 0.5rem;">Every rupee directly funds hardware micro-controllers, Olympiad manuals, and structured training materials deployed directly to community schools.</p>
+      </div>
+
+      <div class="grid-2 donation-grid" id="donationGrid">
+        <!-- Rendered Dynamically from js/cms.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT & NEWSLETTER SECTION -->
+  <section class="section" id="contact" style="background: var(--bg-secondary); border-top: 1px solid var(--border-color);">
+    <div class="container">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto 4rem;">
+        <span class="gradient-accent" style="font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; display: inline-block; margin-bottom: 0.5rem;">Reach Out</span>
+        <h2 class="heading-lg">Get in Touch</h2>
+        <p style="color: var(--text-muted); margin-top: 0.5rem;">Have questions about our programs, sponsorships, or volunteering paths? Send us a message and our team will get back within 24 hours.</p>
+      </div>
+
+      <div class="contact-layout">
+        <!-- Info column -->
+        <div class="contact-info-list">
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="contact-info-text">
+              <h3>Office Headquarters</h3>
+              <p>Pulse Incubator Hub, Sanepa, Lalitpur, Nepal</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </div>
+            <div class="contact-info-text">
+              <h3>Direct Email</h3>
+              <p>contact@navigonepal.org</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="contact-info-text">
+              <h3>Telephone Outreach</h3>
+              <p>+977-1-5542890</p>
+            </div>
+          </div>
+
+          <!-- Social Button Grid -->
+          <div class="social-links">
+            <a href="https://facebook.com/navigonepal" class="social-btn btn-facebook" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://twitter.com/navigonepal" class="social-btn btn-twitter" aria-label="Twitter">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+            </a>
+            <a href="https://instagram.com/navigonepal" class="social-btn btn-instagram" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2"/></svg>
+            </a>
+            <a href="https://linkedin.com/company/navigonepal" class="social-btn btn-linkedin" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Validated Contact Form inside Glassmorphic card -->
+        <div class="glass-panel">
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="contactName">Full Name</label>
+                <input type="text" id="contactName" class="form-control" placeholder="Aayush Adhikari" required>
+              </div>
+              <div class="form-group">
+                <label for="contactEmail">Email Address</label>
+                <input type="email" id="contactEmail" class="form-control" placeholder="aayush@gmail.com" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contactSubject">Subject Interest</label>
+              <select id="contactSubject" class="form-control">
+                <option value="general">General Inquiry</option>
+                <option value="sponsorship">Sponsorship & Partnership</option>
+                <option value="school-club">Establish School Club</option>
+                <option value="mentorship">Mentorship Network Join</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="contactMessage">Your Message</label>
+              <textarea id="contactMessage" class="form-control" placeholder="Share details on how we can work together..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polyline points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1 -->
+        <div class="footer-col" style="display: flex; flex-direction: column; gap: 1rem;">
+          <a href="#hero" class="logo">
+            <div class="logo-symbol">N</div>
+            <span>Navigo<span>Nepal</span></span>
+          </a>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+            A youth-led, non-profit educational catalyst bridging academic and technological frontiers for public students across all 7 provinces of Nepal.
+          </p>
+        </div>
+
+        <!-- Col 2 -->
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links" style="margin-top: 1rem;">
+            <li><a href="#story">Our Story</a></li>
+            <li><a href="#programs">Key Programs</a></li>
+            <li><a href="#impact-map">Outreach Map</a></li>
+            <li><a href="#stories">Student Success</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3 -->
+        <div class="footer-col">
+          <h3>Get Involved</h3>
+          <ul class="footer-links" style="margin-top: 1rem;">
+            <li><a href="#volunteer">Join as Mentor</a></li>
+            <li><a href="#donate">Sponsor a School</a></li>
+            <li><a href="#contact">Partnering Options</a></li>
+            <li><a href="#resources">Resource Downloads</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4 -->
+        <div class="footer-col footer-newsletter">
+          <h3>Newsletter</h3>
+          <p>Subscribe to our monthly digest of student innovations and resource dispatches.</p>
+          <form class="newsletter-form" id="newsletterForm" novalidate>
+            <input type="email" id="newsletterEmail" class="form-control" placeholder="email@address.com" required aria-label="Newsletter Email">
+            <button type="submit" class="btn btn-primary" aria-label="Subscribe">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Navigo Nepal. Youth-Led Educational Empowerment Organization. All rights reserved.</p>
+        <p>Built with Pure HTML, CSS, and JS. Designed for Global Trust.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== PREMIUM GLASSMORPHIC MODAL SHEETS ==================== -->
+  
+  <!-- General Program Details Modal -->
+  <div class="modal-overlay" id="programModal">
+    <div class="modal-content">
+      <button class="modal-close-btn" id="closeProgramModal" aria-label="Close Modal">&times;</button>
+      <div class="modal-header">
+        <span class="gradient-accent" id="modalProgramTag" style="font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">STEM EDUCATION</span>
+        <h2 id="modalProgramTitle" style="margin-top: 0.25rem;">Program Description</h2>
+      </div>
+      <div class="modal-body" id="modalProgramBody" style="font-size: 1rem; line-height: 1.7; color: var(--text-main);">
+        <!-- Filled Dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Volunteer Application Form Modal -->
+  <div class="modal-overlay" id="volunteerModal">
+    <div class="modal-content">
+      <button class="modal-close-btn" id="closeVolunteerModal" aria-label="Close Modal">&times;</button>
+      <div class="modal-header">
+        <span class="gradient-accent" style="font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">VOLUNTEER APPLICATION</span>
+        <h2 id="modalVolunteerTitle" style="margin-top: 0.25rem;">Apply as STEM Mentor</h2>
+        <p>Complete this quick profile. Our coordination team will follow up via email.</p>
+      </div>
+      <form class="modal-body contact-form" id="volunteerForm" novalidate>
+        <input type="hidden" id="volunteerPositionId">
+        <div class="form-group-row">
+          <div class="form-group">
+            <label for="volName">Full Name</label>
+            <input type="text" id="volName" class="form-control" required placeholder="Samir Karki">
+          </div>
+          <div class="form-group">
+            <label for="volEmail">Email Address</label>
+            <input type="email" id="volEmail" class="form-control" required placeholder="samir@gmail.com">
+          </div>
+        </div>
+
+        <div class="form-group-row">
+          <div class="form-group">
+            <label for="volPhone">Phone Number</label>
+            <input type="tel" id="volPhone" class="form-control" required placeholder="9841234567">
+          </div>
+          <div class="form-group">
+            <label for="volDistrict">Active District</label>
+            <input type="text" id="volDistrict" class="form-control" required placeholder="Kathmandu">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="volBio">Brief Academic background / Skills</label>
+          <textarea id="volBio" class="form-control" required placeholder="Engineering student, Olympiad alumnus, teaching experience..." style="min-height: 80px;"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">
+          Submit Application
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Donation / Sponsorship Checkout Modal -->
+  <div class="modal-overlay" id="donationModal">
+    <div class="modal-content">
+      <button class="modal-close-btn" id="closeDonationModal" aria-label="Close Modal">&times;</button>
+      <div class="modal-header">
+        <span class="gradient-accent" style="font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">SECURE SPONSORSHIP</span>
+        <h2 id="modalDonationTitle" style="margin-top: 0.25rem;">Sponsor a Student</h2>
+        <p>Support direct learning materials, robotic microchips, and study aids.</p>
+      </div>
+      <form class="modal-body contact-form" id="donationForm" novalidate style="gap: 1.25rem;">
+        <input type="hidden" id="donationTierId">
+        
+        <!-- Display chosen package summary -->
+        <div class="glass-panel" style="padding: 1.25rem; display: flex; justify-content: space-between; align-items: center; border-color: rgba(16, 185, 129, 0.25); background: rgba(16, 185, 129, 0.03);">
+          <div>
+            <h4 id="checkoutTierLabel" style="font-size: 1.1rem;">Sponsor Student</h4>
+            <p style="font-size: 0.8rem; color: var(--text-muted);">Direct resource funding</p>
+          </div>
+          <div style="text-align: right;">
+            <span style="font-family: 'Outfit'; font-size: 1.5rem; font-weight: 800; color: var(--success-color);" id="checkoutTierAmount">₨ 5,000</span>
+            <p style="font-size: 0.75rem; color: var(--text-muted);" id="checkoutTierPeriod">/ month</p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="donorName">Your Full Name / Organization</label>
+          <input type="text" id="donorName" class="form-control" required placeholder="Himalayan Tech Foundation">
+        </div>
+
+        <div class="form-group-row">
+          <div class="form-group">
+            <label for="donorEmail">Billing Email</label>
+            <input type="email" id="donorEmail" class="form-control" required placeholder="billing@himalayantech.com">
+          </div>
+          <div class="form-group">
+            <label for="donorPhone">Contact Phone</label>
+            <input type="tel" id="donorPhone" class="form-control" required placeholder="9851012345">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="paymentMethod">Select Nepalese Payment Gateway</label>
+          <select id="paymentMethod" class="form-control">
+            <option value="esewa">eSewa Mobile Wallet</option>
+            <option value="khalti">Khalti Wallet</option>
+            <option value="bank">Direct Bank Transfer (Himalayan Bank)</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; gap: 0.5rem; background: linear-gradient(135deg, hsl(var(--emerald-green)) 0%, hsl(var(--electric-blue)) 100%); border: none;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+          Proceed to Secure Gateway
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Fullscreen Celebratory Confetti Canvas -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Javascript Core Logic and CMS binding -->
+  <script src="js/cms.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
