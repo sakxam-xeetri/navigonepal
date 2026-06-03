@@ -1,5 +1,5 @@
-// Navigo Nepal - Luxury Editorial Application Logic
-// Orchestrates theme variables, metric count-ups, SVG map regions, carousels, and classic champagne confetti.
+// Navigo Nepal - Premium International-Grade Application Logic
+// Orchestrates theme variables, scroll animations, metric counters, map interactions, carousels, and confetti.
 
 document.addEventListener("DOMContentLoaded", () => {
   const CMS = window.NAVIGO_CMS;
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const sunIcon = themeToggle.querySelector(".sun-icon");
   const moonIcon = themeToggle.querySelector(".moon-icon");
 
-  const savedTheme = localStorage.getItem("navigo-theme") || "dark";
+  const savedTheme = localStorage.getItem("navigo-theme") || "light";
   htmlElement.setAttribute("data-theme", savedTheme);
   updateThemeIcons(savedTheme);
 
@@ -63,6 +63,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  // Navbar scroll effect
+  const navbar = document.getElementById("mainNav");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+  });
+
   // Active Link Observer
   const sections = document.querySelectorAll("header.section, section.section, footer.section");
   const navLinks = document.querySelectorAll(".nav-link");
@@ -101,7 +111,27 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  // ==================== 2. CMS CONTENT RENDERING ====================
+  // ==================== 2. SCROLL REVEAL ANIMATIONS ====================
+  
+  const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+  
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    root: null,
+    rootMargin: '0px 0px -60px 0px',
+    threshold: 0.1
+  });
+
+  revealElements.forEach(el => revealObserver.observe(el));
+
+
+  // ==================== 3. CMS CONTENT RENDERING ====================
   
   // Render Hero
   document.getElementById("heroTitle").textContent = CMS.hero.title;
@@ -115,33 +145,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Render Values List
   const coreValuesList = document.getElementById("coreValuesList");
-  coreValuesList.innerHTML = CMS.story.values.map(val => `
-    <div class="glass-panel glass-panel-hover" style="padding: 2rem 2.5rem;">
-      <h4 style="font-size: 1.4rem; color: var(--accent-color); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.75rem; font-family: 'Cormorant Garamond';">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+  coreValuesList.innerHTML = CMS.story.values.map((val, idx) => `
+    <div class="glass-panel glass-panel-hover" style="padding: 1.75rem 2rem;">
+      <h4 style="font-size: 1.15rem; color: var(--accent-color); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.75rem; font-weight: 700;">
+        <div style="width: 32px; height: 32px; background: linear-gradient(135deg, rgba(37,99,235,0.1), rgba(16,185,129,0.08)); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
         ${val.title}
       </h4>
-      <p style="color: var(--text-muted); font-size: 0.9rem; font-weight: 300;">${val.desc}</p>
+      <p style="color: var(--text-muted); font-size: 0.9rem; font-weight: 400; padding-left: 2.9rem; line-height: 1.7;">${val.desc}</p>
     </div>
   `).join("");
 
   // Render Impact Metrics grid
   const metricsGrid = document.getElementById("metricsGrid");
-  metricsGrid.innerHTML = CMS.impactMetrics.map(metric => `
-    <div class="metric-card" data-target="${metric.value}" data-suffix="${metric.suffix}">
+  metricsGrid.innerHTML = CMS.impactMetrics.map((metric, idx) => `
+    <div class="metric-card reveal stagger-${(idx % 3) + 1}" data-target="${metric.value}" data-suffix="${metric.suffix}">
+      <div class="metric-icon-bg">
+        ${getMetricIcon(metric.icon)}
+      </div>
       <div class="metric-number">0</div>
       <div class="metric-label">${metric.label}</div>
     </div>
   `).join("");
 
+  function getMetricIcon(icon) {
+    const icons = {
+      school: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 10 3 12 0v-5"/></svg>',
+      users: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+      map: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>',
+      award: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>',
+      activity: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>',
+      globe: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>'
+    };
+    return icons[icon] || icons.globe;
+  }
+
   // Render Milestones Timeline
   const timelineContainer = document.getElementById("timelineContainer");
   timelineContainer.innerHTML = CMS.story.timeline.map((mile, idx) => `
-    <div class="timeline-item">
+    <div class="timeline-item reveal stagger-${(idx % 3) + 1}">
       <div class="timeline-dot"></div>
       <div class="timeline-year">${mile.year}</div>
       <div class="timeline-content">
-        <h4 style="font-family: 'Cormorant Garamond'; font-size: 1.6rem; color: var(--text-main); margin-bottom: 0.75rem;">${mile.title}</h4>
+        <h4 style="font-size: 1.2rem; color: var(--text-main); margin-bottom: 0.5rem; font-weight: 700;">${mile.title}</h4>
         <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.7;">${mile.desc}</p>
       </div>
     </div>
@@ -149,8 +196,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Render Programs
   const programsGrid = document.getElementById("programsGrid");
-  programsGrid.innerHTML = CMS.programs.map(prog => `
-    <div class="program-card">
+  programsGrid.innerHTML = CMS.programs.map((prog, idx) => `
+    <div class="program-card reveal stagger-${(idx % 3) + 1}">
       <div class="program-icon">
         ${getProgramIcon(prog.id)}
       </div>
@@ -158,35 +205,32 @@ document.addEventListener("DOMContentLoaded", () => {
       <p>${prog.shortDesc}</p>
       <div class="program-learn-more" data-id="${prog.id}">
         Explore Details 
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </div>
     </div>
   `).join("");
 
   function getProgramIcon(id) {
-    // Elegant, thin-line (stroke-width="1") custom SVGs
-    if (id === 'stem') return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="0"/><rect width="6" height="6" x="9" y="9" rx="0"/><path d="M9 1v3"/><path d="M15 1v3"/><path d="M9 20v3"/><path d="M15 20v3"/><path d="M20 9h3"/><path d="M20 15h3"/><path d="M1 9h3"/><path d="M1 15h3"/></svg>`;
-    if (id === 'olympiad') return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.5V12h7.5"/><circle cx="12" cy="12" r="10"/></svg>`;
-    if (id === 'leadership') return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>`;
-    if (id === 'career') return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="0"/></svg>`;
-    if (id === 'clubs') return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 2.7-2 3.5h19c0-.8-.5-2.24-2-3.5"/><path d="M22 10a10 10 0 0 0-20 0"/></svg>`;
-    if (id === 'mentorship') return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>`;
-    if (id === 'entrepreneurship') return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A5 5 0 0 0 8 8c0 1 .3 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>`;
-    return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="12" x="2" y="6" rx="0"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01 M18 12h.01"/></svg>`;
+    if (id === 'stem') return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M9 1v3"/><path d="M15 1v3"/><path d="M9 20v3"/><path d="M15 20v3"/><path d="M20 9h3"/><path d="M20 15h3"/><path d="M1 9h3"/><path d="M1 15h3"/></svg>`;
+    if (id === 'olympiad') return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>`;
+    if (id === 'leadership') return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>`;
+    if (id === 'career') return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>`;
+    if (id === 'clubs') return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`;
+    if (id === 'mentorship') return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>`;
+    if (id === 'entrepreneurship') return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A5 5 0 0 0 8 8c0 1 .3 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>`;
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01 M18 12h.01"/></svg>`;
   }
 
-  // Render Testimonials
+  // Render Testimonials with images
   const carouselContainer = document.getElementById("carouselContainer");
   carouselContainer.innerHTML = CMS.successStories.map(story => `
     <div class="carousel-slide">
       <div class="testimonial-card">
         <div class="testimonial-img-wrapper">
-          <div style="width: 100%; height: 100%; background: var(--bg-primary); border-right: 1px solid var(--border-color); color: var(--accent-color); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond'; font-size: 3rem; font-weight: 300;">
-            ${story.name[0]}
-          </div>
+          <img src="${story.image}" alt="${story.name}" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\\'width:100%;height:100%;background:linear-gradient(135deg,rgba(37,99,235,0.15),rgba(16,185,129,0.1));display:flex;align-items:center;justify-content:center;color:var(--accent-color);font-family:Plus Jakarta Sans;font-size:2.5rem;font-weight:800;\\'>${story.name[0]}</div>'">
         </div>
         <div class="testimonial-content">
-          <span class="gradient-accent" style="font-weight: 500; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; display: inline-block; margin-bottom: 1rem;">${story.highlight}</span>
+          <span class="gradient-accent" style="font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; display: inline-block; margin-bottom: 0.75rem;">${story.highlight}</span>
           <p class="testimonial-quote">${story.quote}</p>
           <div class="testimonial-author">${story.name}</div>
           <div class="testimonial-meta">${story.role} &bull; ${story.location}</div>
@@ -197,11 +241,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Render Team Grid
   const teamGrid = document.getElementById("teamGrid");
-  teamGrid.innerHTML = CMS.team.map(member => `
-    <div class="team-card">
+  teamGrid.innerHTML = CMS.team.map((member, idx) => `
+    <div class="team-card reveal stagger-${(idx % 4) + 1}">
       <div class="team-img-box">
-        <!-- Thin editorial avatar container -->
-        <div style="width: 100%; height: 100%; background: linear-gradient(135deg, rgba(17,17,17,0.95) 0%, rgba(197,168,128,0.3) 100%); display: flex; align-items: center; justify-content: center; color: var(--accent-color);">
+        <div style="width: 100%; height: 100%; background: linear-gradient(135deg, rgba(10,35,66,0.9) 0%, rgba(37,99,235,0.3) 100%); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.6);">
           <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         </div>
         <div class="team-bio-overlay">
@@ -218,7 +261,7 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
   `).join("");
 
-  // Render Partners Dynamic Ticker
+  // Render Partners Ticker
   const partnersTicker = document.getElementById("partnersTicker");
   const fullPartnerList = [...CMS.partners, ...CMS.partners];
   partnersTicker.innerHTML = fullPartnerList.map(part => `
@@ -228,25 +271,23 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
   `).join("");
 
-  // Render Blog Grid
+  // Render Blog Grid with images
   const blogGrid = document.getElementById("blogGrid");
   blogGrid.innerHTML = CMS.blog.map(post => `
-    <div class="blog-post-card">
+    <div class="blog-post-card reveal">
       <div class="blog-post-img">
-        <div style="width: 100%; height: 100%; background: var(--bg-primary); display: flex; align-items: center; justify-content: center;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-color); opacity: 0.6;"><path d="M4 22V4c0-.5.2-1 .6-1.4C5 2.2 5.5 2 6 2h12c.5 0 1 .2 1.4.6.4.4.6.9.6 1.4v18l-8-4-8 4z"/></svg>
-        </div>
+        <img src="${post.image}" alt="${post.title}" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\\'width:100%;height:100%;background:linear-gradient(135deg,rgba(37,99,235,0.08),rgba(16,185,129,0.05));display:flex;align-items:center;justify-content:center;\\'><svg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'30\\' height=\\'30\\' viewBox=\\'0 0 24 24\\' fill=\\'none\\' stroke=\\'currentColor\\' stroke-width=\\'1\\' style=\\'color:var(--accent-color);opacity:0.5\\'><path d=\\'M4 22V4c0-.5.2-1 .6-1.4C5 2.2 5.5 2 6 2h12c.5 0 1 .2 1.4.6.4.4.6.9.6 1.4v18l-8-4-8 4z\\'/></svg></div>'">
       </div>
       <div class="blog-post-content">
         <div class="blog-post-meta">By ${post.author} &bull; ${post.date}</div>
         <h3>${post.title}</h3>
         <p>${post.excerpt}</p>
-        <span class="blog-read-more">Read Transcript &rarr;</span>
+        <span class="blog-read-more">Read More &rarr;</span>
       </div>
     </div>
   `).join("");
 
-  // Render Academic Resource Downloads
+  // Render Resources
   const resourcesList = document.getElementById("resourcesList");
   resourcesList.innerHTML = CMS.resources.map(res => `
     <div class="resource-item">
@@ -263,8 +304,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Render Volunteer Opportunities
   const volunteerGrid = document.getElementById("volunteerGrid");
-  volunteerGrid.innerHTML = CMS.volunteerPositions.map(pos => `
-    <div class="position-card">
+  volunteerGrid.innerHTML = CMS.volunteerPositions.map((pos, idx) => `
+    <div class="position-card reveal stagger-${(idx % 3) + 1}">
       <div class="position-meta">
         <span class="meta-tag">${pos.type}</span>
         <span class="meta-tag meta-tag-highlight">${pos.commitment}</span>
@@ -280,22 +321,22 @@ document.addEventListener("DOMContentLoaded", () => {
   // Render Donations
   const donationGrid = document.getElementById("donationGrid");
   donationGrid.innerHTML = CMS.donations.map((tier, idx) => `
-    <div class="donation-card">
+    <div class="donation-card ${idx === 1 ? 'featured' : ''} reveal stagger-${idx + 1}">
       <div class="donation-tier-header">
-        <span class="gradient-accent" style="font-weight: 500; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em;">${idx === 1 ? 'INSTITUTIONAL PARTNERSHIP' : 'INDIVIDUAL SPONSORSHIP'}</span>
-        <h3 style="font-size: 1.8rem; font-weight: 400; margin-top: 0.5rem; font-family: 'Cormorant Garamond';">${tier.title}</h3>
+        <span class="gradient-accent" style="font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em;">${idx === 1 ? 'INSTITUTIONAL PARTNERSHIP' : 'INDIVIDUAL SPONSORSHIP'}</span>
+        <h3 style="font-size: 1.5rem; font-weight: 700; margin-top: 0.5rem;">${tier.title}</h3>
         <div class="donation-amount-wrapper">
           <span class="donation-currency">₨</span>
           <span class="donation-val">${tier.amount}</span>
           <span class="donation-period">/ ${tier.period}</span>
         </div>
-        <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; margin-top: 0.5rem; font-weight: 300;">${tier.desc}</p>
+        <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; margin-top: 0.5rem;">${tier.desc}</p>
       </div>
       
       <ul class="donation-features">
         ${tier.features.map(feat => `
           <li>
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
             ${feat}
           </li>
         `).join("")}
@@ -307,8 +348,13 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
   `).join("");
 
+  // Re-observe newly created reveal elements
+  document.querySelectorAll('.reveal:not(.revealed), .reveal-left:not(.revealed), .reveal-right:not(.revealed), .reveal-scale:not(.revealed)').forEach(el => {
+    revealObserver.observe(el);
+  });
 
-  // ==================== 3. SCROLL METRIC COUNTERS ====================
+
+  // ==================== 4. SCROLL METRIC COUNTERS ====================
   
   const metricCards = document.querySelectorAll(".metric-card");
   
@@ -332,7 +378,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const suffix = card.getAttribute("data-suffix");
     
     let current = 0;
-    const duration = 1800; // ms
+    const duration = 2000;
     const startTime = performance.now();
 
     function update(now) {
@@ -343,20 +389,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const easeProgress = 1 - Math.pow(1 - progress, 3);
       current = Math.floor(easeProgress * targetValue);
       
-      if (targetValue >= 1000) {
-        numEl.textContent = formatMetricNumber(current) + suffix;
-      } else {
-        numEl.textContent = current + suffix;
-      }
+      numEl.textContent = formatMetricNumber(current) + suffix;
 
       if (progress < 1) {
         requestAnimationFrame(update);
       } else {
-        if (targetValue >= 1000) {
-          numEl.textContent = formatMetricNumber(targetValue) + suffix;
-        } else {
-          numEl.textContent = targetValue + suffix;
-        }
+        numEl.textContent = formatMetricNumber(targetValue) + suffix;
       }
     }
 
@@ -365,13 +403,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function formatMetricNumber(num) {
     if (num >= 1000) {
-      return (num / 1000).toFixed(0) + ",000";
+      return num.toLocaleString();
     }
     return num.toString();
   }
 
 
-  // ==================== 4. NEPAL SVG MAP INTERACTIONS ====================
+  // ==================== 5. NEPAL SVG MAP INTERACTIONS ====================
   
   const provincePaths = document.querySelectorAll(".province-path");
   const mapStatsPanel = document.getElementById("mapStatsPanel");
@@ -391,7 +429,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     path.addEventListener("mouseover", () => {
       if (!path.classList.contains("active")) {
-        path.style.fill = "rgba(197, 168, 128, 0.08)";
+        path.style.fill = "rgba(37, 99, 235, 0.08)";
       }
     });
 
@@ -410,46 +448,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
     mapStatsPanel.innerHTML = `
       <div>
-        <span class="gradient-accent" style="font-weight: 500; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em;">PROVINCIAL FOOTPRINT</span>
-        <h3 style="font-size: 1.8rem; font-family: 'Cormorant Garamond'; font-weight: 400; margin-top: 0.25rem; color: var(--text-main);">${data.name}</h3>
+        <span class="gradient-accent" style="font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em;">PROVINCIAL FOOTPRINT</span>
+        <h3 style="font-size: 1.5rem; font-weight: 700; margin-top: 0.25rem; color: var(--text-main);">${data.name}</h3>
       </div>
       
-      <div style="display: flex; flex-direction: column; gap: 1.5rem; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1.5rem 0;">
-        <!-- Schools bar -->
+      <div style="display: flex; flex-direction: column; gap: 1.25rem; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1.25rem 0;">
         <div>
-          <div style="display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 400; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">
+          <div style="display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 500; margin-bottom: 0.5rem;">
             <span>Schools Connected</span>
-            <span style="color: var(--accent-color); font-weight: 500;">${data.schools} Hubs</span>
+            <span style="color: var(--accent-color); font-weight: 700;">${data.schools} Hubs</span>
           </div>
-          <div style="width: 100%; height: 2px; background: var(--border-color); overflow: hidden;">
-            <div style="width: ${schoolPercent}%; height: 100%; background: var(--accent-color); transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);"></div>
+          <div style="width: 100%; height: 4px; background: var(--border-color); overflow: hidden; border-radius: 4px;">
+            <div style="width: ${schoolPercent}%; height: 100%; background: var(--gradient-primary); transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1); border-radius: 4px;"></div>
           </div>
         </div>
 
-        <!-- Students bar -->
         <div>
-          <div style="display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 400; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">
+          <div style="display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 500; margin-bottom: 0.5rem;">
             <span>Students Reached</span>
-            <span style="color: var(--accent-color); font-weight: 500;">${data.students.toLocaleString()} Students</span>
+            <span style="color: var(--accent-color); font-weight: 700;">${data.students.toLocaleString()} Students</span>
           </div>
-          <div style="width: 100%; height: 2px; background: var(--border-color); overflow: hidden;">
-            <div style="width: ${studentPercent}%; height: 100%; background: var(--accent-color); transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);"></div>
+          <div style="width: 100%; height: 4px; background: var(--border-color); overflow: hidden; border-radius: 4px;">
+            <div style="width: ${studentPercent}%; height: 100%; background: linear-gradient(90deg, #2563EB, #10B981); transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1); border-radius: 4px;"></div>
           </div>
         </div>
 
-        <!-- Clubs Tag -->
-        <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">
+        <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.8rem; font-weight: 500;">
           <span>Active Navigo Clubs</span>
-          <span style="border: 1px solid var(--accent-color); padding: 0.25rem 0.75rem; color: var(--accent-color); font-weight: 500; font-size: 0.75rem;">${data.clubs} Clubs</span>
+          <span style="background: linear-gradient(135deg, rgba(37,99,235,0.1), rgba(16,185,129,0.1)); padding: 0.25rem 0.75rem; color: var(--accent-color); font-weight: 700; font-size: 0.78rem; border-radius: 6px;">${data.clubs} Clubs</span>
         </div>
       </div>
 
       <div>
-        <h4 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.25rem; color: var(--text-main);">Primary Focus:</h4>
-        <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; font-weight: 300;">${data.leadProgram}</p>
+        <h4 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.25rem; color: var(--text-main); font-weight: 600;">Primary Focus:</h4>
+        <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">${data.leadProgram}</p>
         
-        <h4 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 1rem; margin-bottom: 0.25rem; color: var(--text-main);">Recent Milestone:</h4>
-        <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; font-style: italic; font-weight: 300;">"${data.milestone}"</p>
+        <h4 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 1rem; margin-bottom: 0.25rem; color: var(--text-main); font-weight: 600;">Recent Milestone:</h4>
+        <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; font-style: italic;">"${data.milestone}"</p>
       </div>
     `;
   }
@@ -462,7 +497,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  // ==================== 5. SUCCESS STORIES CAROUSEL ====================
+  // ==================== 6. SUCCESS STORIES CAROUSEL ====================
   
   const carousel = document.getElementById("carouselContainer");
   const slides = document.querySelectorAll(".carousel-slide");
@@ -471,7 +506,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const slideCount = slides.length;
   let autoplayInterval;
 
-  // Build Pagination navigation dots
   navDotsWrapper.innerHTML = CMS.successStories.map((_, idx) => `
     <button class="carousel-dot ${idx === 0 ? 'active' : ''}" aria-label="View Story ${idx+1}"></button>
   `).join("");
@@ -512,7 +546,7 @@ document.addEventListener("DOMContentLoaded", () => {
   startAutoplay();
 
 
-  // ==================== 6. MODAL SYSTEM ====================
+  // ==================== 7. MODAL SYSTEM ====================
   
   // A. Program details
   const programModal = document.getElementById("programModal");
@@ -527,12 +561,12 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("modalProgramTag").textContent = prog.title.toUpperCase();
         document.getElementById("modalProgramTitle").textContent = prog.title;
         document.getElementById("modalProgramBody").innerHTML = `
-          <p style="margin-bottom: 2rem; font-size: 1.25rem; font-family: 'Cormorant Garamond'; color: var(--text-main);">${prog.shortDesc}</p>
+          <p style="margin-bottom: 1.5rem; font-size: 1.1rem; font-weight: 600; color: var(--text-main);">${prog.shortDesc}</p>
           <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 2rem;">${prog.fullDesc}</p>
           
-          <div style="padding: 2rem; background: var(--bg-primary); border: 1px solid var(--border-color); display: flex; align-items: center; gap: 1.5rem;">
+          <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(37,99,235,0.05), rgba(16,185,129,0.03)); border: 1px solid var(--border-color); border-radius: 12px; display: flex; align-items: center; gap: 1.25rem;">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-color); flex-shrink: 0;"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">Want this program in your local school? Reach out via our <a href="#contact" onclick="document.getElementById('programModal').classList.remove('active');" style="color: var(--accent-color); font-weight: 500; border-bottom: 1px solid var(--accent-color);">Contact Form</a> to establish a new School Club hub.</p>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">Want this program in your local school? Reach out via our <a href="#contact" onclick="document.getElementById('programModal').classList.remove('active');" style="color: var(--accent-color); font-weight: 600;">Contact Form</a> to establish a new School Club hub.</p>
           </div>
         `;
         programModal.classList.add("active");
@@ -591,14 +625,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-  // ==================== 7. FORM SUBMISSIONS & CHAMPAGNE CONFETTI ====================
+  // ==================== 8. FORM SUBMISSIONS & PREMIUM CONFETTI ====================
   
-  // Confetti Particle Physics tailored for luxury colors (Sand gold, champagne, deep carbon, sand dust)
   const canvas = document.getElementById("confetti-canvas");
   const ctx = canvas.getContext("2d");
   let confettiActive = false;
   let particles = [];
-  const luxuryColors = ["#C5A880", "#8E7249", "#FAFAFA", "#E5D4C0", "#5C5C56", "#A38450"];
+  // Premium navy/blue/emerald confetti palette
+  const premiumColors = ["#2563EB", "#4F9CF9", "#10B981", "#34D399", "#DCEEFF", "#0A2342", "#FFFFFF"];
 
   function resizeCanvas() {
     canvas.width = window.innerWidth;
@@ -611,12 +645,13 @@ document.addEventListener("DOMContentLoaded", () => {
     constructor() {
       this.x = Math.random() * canvas.width;
       this.y = Math.random() * -canvas.height - 20;
-      this.size = Math.random() * 6 + 4; // fine dust particles
-      this.color = luxuryColors[Math.floor(Math.random() * luxuryColors.length)];
-      this.speedY = Math.random() * 2 + 1.5;
+      this.size = Math.random() * 8 + 4;
+      this.color = premiumColors[Math.floor(Math.random() * premiumColors.length)];
+      this.speedY = Math.random() * 2.5 + 1.5;
       this.speedX = Math.random() * 1.5 - 0.75;
       this.rotation = Math.random() * 360;
-      this.rotationSpeed = Math.random() * 1.5 - 0.75;
+      this.rotationSpeed = Math.random() * 2 - 1;
+      this.opacity = Math.random() * 0.5 + 0.5;
     }
     
     update() {
@@ -631,17 +666,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     draw() {
       ctx.save();
+      ctx.globalAlpha = this.opacity;
       ctx.translate(this.x + this.size/2, this.y + this.size/2);
       ctx.rotate((this.rotation * Math.PI) / 180);
       ctx.fillStyle = this.color;
-      ctx.fillRect(-this.size/2, -this.size/2, this.size, this.size);
+      // Mix of circles and rectangles
+      if (Math.random() > 0.5) {
+        ctx.fillRect(-this.size/2, -this.size/4, this.size, this.size/2);
+      } else {
+        ctx.beginPath();
+        ctx.arc(0, 0, this.size/2.5, 0, Math.PI * 2);
+        ctx.fill();
+      }
       ctx.restore();
     }
   }
 
   function launchConfettiShower() {
     particles = [];
-    for (let i = 0; i < 180; i++) {
+    for (let i = 0; i < 200; i++) {
       particles.push(new ConfettiParticle());
     }
     
@@ -658,7 +701,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       
       frameCount++;
-      if (frameCount < 280) {
+      if (frameCount < 300) {
         requestAnimationFrame(loop);
       } else {
         confettiActive = false;
@@ -669,7 +712,7 @@ document.addEventListener("DOMContentLoaded", () => {
     requestAnimationFrame(loop);
   }
 
-  // A. Contact Form validation
+  // A. Contact Form
   const contactForm = document.getElementById("contactForm");
   contactForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -689,11 +732,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     launchConfettiShower();
-    alert(`Thank you, ${name}! Your request has been dispatched. Our team will contact you shortly.`);
+    alert(`Thank you, ${name}! Your message has been sent. Our team will contact you shortly.`);
     contactForm.reset();
   });
 
-  // B. Volunteer Form validation
+  // B. Volunteer Form
   const volunteerForm = document.getElementById("volunteerForm");
   volunteerForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -716,11 +759,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     volunteerModal.classList.remove("active");
     launchConfettiShower();
-    alert(`Registration Successful! Thank you ${name} for stepping forward to lead student empowerment in ${district}. Check your inbox for confirmation guides.`);
+    alert(`Registration Successful! Thank you ${name} for stepping forward to lead student empowerment in ${district}. Check your inbox for confirmation.`);
     volunteerForm.reset();
   });
 
-  // C. Donation Form validation
+  // C. Donation Form
   const donationForm = document.getElementById("donationForm");
   donationForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -749,11 +792,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (payment === 'khalti') gatewayText = "Khalti Wallet";
     if (payment === 'bank') gatewayText = "Himalayan Bank Gateway";
 
-    alert(`Redirecting to Secure ${gatewayText}... \n\nThank you for choosing to support ${tier} at ${amount}. Your support empowers public education networks across Nepal!`);
+    alert(`Redirecting to Secure ${gatewayText}...\n\nThank you for choosing to support ${tier} at ${amount}. Your support empowers public education networks across Nepal!`);
     donationForm.reset();
   });
 
-  // D. Newsletter Form validation
+  // D. Newsletter Form
   const newsletterForm = document.getElementById("newsletterForm");
   newsletterForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -765,16 +808,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     launchConfettiShower();
-    alert("Subscribed! Thank you for joining the Navigo Nepal resource dispatches.");
+    alert("Subscribed! Thank you for joining the Navigo Nepal community.");
     newsletterForm.reset();
   });
 
-  // E. Resource downloads click triggers
+  // E. Resource downloads
   document.querySelectorAll(".resource-download-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       const title = btn.getAttribute("data-title");
       launchConfettiShower();
-      alert(`Preparing Download for Navigo Guide: \n"${title}" \n\nThank you for utilizing our open academic library!`);
+      alert(`Preparing Download:\n"${title}"\n\nThank you for utilizing our open academic library!`);
     });
   });
 
