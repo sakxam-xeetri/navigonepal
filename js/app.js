@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
   coreValuesList.innerHTML = CMS.story.values.map((val, idx) => `
     <div class="glass-panel glass-panel-hover" style="padding: 1.75rem 2rem;">
       <h4 style="font-size: 1.15rem; color: var(--accent-color); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.75rem; font-weight: 700;">
-        <div style="width: 32px; height: 32px; background: linear-gradient(135deg, rgba(37,99,235,0.1), rgba(16,185,129,0.08)); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+        <div style="width: 32px; height: 32px; background: linear-gradient(135deg, rgba(37,99,235,0.1), rgba(16,185,129,0.08)); border-radius: 0px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
         </div>
         ${val.title}
@@ -458,8 +458,8 @@ document.addEventListener("DOMContentLoaded", () => {
             <span>Schools Connected</span>
             <span style="color: var(--accent-color); font-weight: 700;">${data.schools} Hubs</span>
           </div>
-          <div style="width: 100%; height: 4px; background: var(--border-color); overflow: hidden; border-radius: 4px;">
-            <div style="width: ${schoolPercent}%; height: 100%; background: var(--gradient-primary); transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1); border-radius: 4px;"></div>
+          <div style="width: 100%; height: 4px; background: var(--border-color); overflow: hidden; border-radius: 0px;">
+            <div style="width: ${schoolPercent}%; height: 100%; background: var(--gradient-primary); transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1); border-radius: 0px;"></div>
           </div>
         </div>
 
@@ -468,14 +468,14 @@ document.addEventListener("DOMContentLoaded", () => {
             <span>Students Reached</span>
             <span style="color: var(--accent-color); font-weight: 700;">${data.students.toLocaleString()} Students</span>
           </div>
-          <div style="width: 100%; height: 4px; background: var(--border-color); overflow: hidden; border-radius: 4px;">
-            <div style="width: ${studentPercent}%; height: 100%; background: linear-gradient(90deg, #2563EB, #10B981); transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1); border-radius: 4px;"></div>
+          <div style="width: 100%; height: 4px; background: var(--border-color); overflow: hidden; border-radius: 0px;">
+            <div style="width: ${studentPercent}%; height: 100%; background: linear-gradient(90deg, #2563EB, #10B981); transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1); border-radius: 0px;"></div>
           </div>
         </div>
 
         <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.8rem; font-weight: 500;">
           <span>Active Navigo Clubs</span>
-          <span style="background: linear-gradient(135deg, rgba(37,99,235,0.1), rgba(16,185,129,0.1)); padding: 0.25rem 0.75rem; color: var(--accent-color); font-weight: 700; font-size: 0.78rem; border-radius: 6px;">${data.clubs} Clubs</span>
+          <span style="background: linear-gradient(135deg, rgba(37,99,235,0.1), rgba(16,185,129,0.1)); padding: 0.25rem 0.75rem; color: var(--accent-color); font-weight: 700; font-size: 0.78rem; border-radius: 0px;">${data.clubs} Clubs</span>
         </div>
       </div>
 
@@ -564,7 +564,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <p style="margin-bottom: 1.5rem; font-size: 1.1rem; font-weight: 600; color: var(--text-main);">${prog.shortDesc}</p>
           <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 2rem;">${prog.fullDesc}</p>
           
-          <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(37,99,235,0.05), rgba(16,185,129,0.03)); border: 1px solid var(--border-color); border-radius: 12px; display: flex; align-items: center; gap: 1.25rem;">
+          <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(37,99,235,0.05), rgba(16,185,129,0.03)); border: 1px solid var(--border-color); border-radius: 0px; display: flex; align-items: center; gap: 1.25rem;">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-color); flex-shrink: 0;"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
             <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">Want this program in your local school? Reach out via our <a href="#contact" onclick="document.getElementById('programModal').classList.remove('active');" style="color: var(--accent-color); font-weight: 600;">Contact Form</a> to establish a new School Club hub.</p>
           </div>

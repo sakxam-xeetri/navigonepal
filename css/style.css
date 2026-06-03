@@ -48,10 +48,10 @@
   --shadow-xl: 0 25px 60px rgba(10, 35, 66, 0.12);
   --shadow-glow: 0 0 30px rgba(37, 99, 235, 0.15);
 
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
   --radius-full: 9999px;
 }
 
@@ -205,7 +205,7 @@ select:focus-visible {
 /* ==================== LAYOUT SYSTEM ==================== */
 .container {
   width: 90%;
-  max-width: 1320px;
+  max-width: 1440px;
   margin: 0 auto;
   position: relative;
   z-index: 10;
