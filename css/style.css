@@ -1388,7 +1388,8 @@ select:focus-visible {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(10, 35, 66, 0.08);
-  border-radius: var(--radius-md); /* Sharp 0px */
+  border-radius: var(--radius-md);
+  /* Sharp 0px */
   padding: 2.25rem 2rem;
   position: relative;
   overflow: hidden;
@@ -1529,8 +1530,15 @@ select:focus-visible {
 }
 
 @keyframes pulse-ring {
-  0% { transform: scale(1); opacity: 1; }
-  100% { transform: scale(3.5); opacity: 0; }
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(3.5);
+    opacity: 0;
+  }
 }
 
 /* Wide Bento Card */
@@ -1618,6 +1626,7 @@ select:focus-visible {
   .bento-card-wide .bento-card-body {
     flex: 1;
   }
+
   .bento-card-wide .bento-visual {
     width: 240px;
     height: 160px;
@@ -1658,10 +1667,25 @@ select:focus-visible {
   box-shadow: 0 0 10px var(--card-color);
 }
 
-.school-nodes .node-1 { top: 10%; left: 15%; }
-.school-nodes .node-2 { top: 15%; right: 10%; }
-.school-nodes .node-3 { bottom: 15%; left: 10%; }
-.school-nodes .node-4 { bottom: 10%; right: 15%; }
+.school-nodes .node-1 {
+  top: 10%;
+  left: 15%;
+}
+
+.school-nodes .node-2 {
+  top: 15%;
+  right: 10%;
+}
+
+.school-nodes .node-3 {
+  bottom: 15%;
+  left: 10%;
+}
+
+.school-nodes .node-4 {
+  bottom: 10%;
+  right: 15%;
+}
 
 .school-nodes .node-line {
   position: absolute;
@@ -1672,10 +1696,33 @@ select:focus-visible {
   transition: all 0.3s ease;
 }
 
-.node-line-1 { top: 50%; left: 50%; width: 44px; transform: translate(-50%, -50%) rotate(205deg); }
-.node-line-2 { top: 50%; left: 50%; width: 46px; transform: translate(-50%, -50%) rotate(-30deg); }
-.node-line-3 { top: 50%; left: 50%; width: 46px; transform: translate(-50%, -50%) rotate(145deg); }
-.node-line-4 { top: 50%; left: 50%; width: 44px; transform: translate(-50%, -50%) rotate(35deg); }
+.node-line-1 {
+  top: 50%;
+  left: 50%;
+  width: 44px;
+  transform: translate(-50%, -50%) rotate(205deg);
+}
+
+.node-line-2 {
+  top: 50%;
+  left: 50%;
+  width: 46px;
+  transform: translate(-50%, -50%) rotate(-30deg);
+}
+
+.node-line-3 {
+  top: 50%;
+  left: 50%;
+  width: 46px;
+  transform: translate(-50%, -50%) rotate(145deg);
+}
+
+.node-line-4 {
+  top: 50%;
+  left: 50%;
+  width: 44px;
+  transform: translate(-50%, -50%) rotate(35deg);
+}
 
 .bento-card:hover .school-nodes .node:not(.hub) {
   background: var(--card-color);
@@ -1740,10 +1787,26 @@ select:focus-visible {
   margin-left: 0;
 }
 
-.avatar.av-1 { border-color: #6366f1; color: #6366f1; }
-.avatar.av-2 { border-color: #a855f7; color: #a855f7; }
-.avatar.av-3 { border-color: #ec4899; color: #ec4899; }
-.avatar.av-more { border-color: var(--card-color); background: var(--card-color); color: #FFF; }
+.avatar.av-1 {
+  border-color: #6366f1;
+  color: #6366f1;
+}
+
+.avatar.av-2 {
+  border-color: #a855f7;
+  color: #a855f7;
+}
+
+.avatar.av-3 {
+  border-color: #ec4899;
+  color: #ec4899;
+}
+
+.avatar.av-more {
+  border-color: var(--card-color);
+  background: var(--card-color);
+  color: #FFF;
+}
 
 .bento-card:hover .avatar {
   margin-left: -4px;
@@ -1780,9 +1843,20 @@ select:focus-visible {
   transition: all 0.3s ease;
 }
 
-.rc-1 { width: 26px; height: 26px; }
-.rc-2 { width: 48px; height: 48px; }
-.rc-3 { width: 70px; height: 70px; }
+.rc-1 {
+  width: 26px;
+  height: 26px;
+}
+
+.rc-2 {
+  width: 48px;
+  height: 48px;
+}
+
+.rc-3 {
+  width: 70px;
+  height: 70px;
+}
 
 .radar-sweep {
   position: absolute;
@@ -1797,8 +1871,13 @@ select:focus-visible {
 }
 
 @keyframes radar-spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .radar-ping {
@@ -1825,8 +1904,15 @@ select:focus-visible {
 }
 
 @keyframes ping-pulse {
-  0% { transform: scale(1); opacity: 1; }
-  100% { transform: scale(3.5); opacity: 0; }
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(3.5);
+    opacity: 0;
+  }
 }
 
 .bento-card:hover .radar-circle {
@@ -1925,11 +2011,30 @@ select:focus-visible {
   transition: all 0.3s ease;
 }
 
-.md-1 { top: 15%; left: 15%; }
-.md-2 { top: 60%; left: 35%; }
-.md-3 { top: 25%; left: 60%; }
-.md-4 { top: 70%; left: 75%; }
-.md-5 { top: 15%; left: 85%; }
+.md-1 {
+  top: 15%;
+  left: 15%;
+}
+
+.md-2 {
+  top: 60%;
+  left: 35%;
+}
+
+.md-3 {
+  top: 25%;
+  left: 60%;
+}
+
+.md-4 {
+  top: 70%;
+  left: 75%;
+}
+
+.md-5 {
+  top: 15%;
+  left: 85%;
+}
 
 .bento-card:hover .mesh-dot {
   opacity: 1;
@@ -1969,7 +2074,12 @@ select:focus-visible {
 
 @media (min-width: 992px) {
   .founding-story-block {
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+  }
+  .founding-story-video {
+    height: 100%;
+    aspect-ratio: auto;
   }
 }
 
@@ -1986,14 +2096,18 @@ select:focus-visible {
   border: 1px solid var(--border-color);
   background: #000;
   z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .founding-story-video iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
   height: 100%;
+  aspect-ratio: 16 / 9;
   border: 0;
   border-radius: 0 !important;
   /* Strict sharp corners as requested */
