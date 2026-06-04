@@ -882,7 +882,7 @@ select:focus-visible {
   gap: 2rem;
   min-height: calc(100vh - 5rem);
   padding-top: 6rem;
-  padding-bottom: 10rem; /* Space for overlapping search console */
+  padding-bottom: 7rem; /* Reduced space for tighter layout */
 }
 
 .hero-text-content {
@@ -994,20 +994,28 @@ select:focus-visible {
 /* Overlapping Bottom Search Console */
 .hero-search-console {
   position: absolute;
-  bottom: 0;
+  bottom: 40px;
   left: 50%;
-  transform: translate(-50%, 50%);
+  transform: translate(-50%, 0);
   width: 100%;
   max-width: 1140px;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  box-shadow: var(--shadow-xl);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 40px rgba(10, 35, 66, 0.12), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
   display: flex;
   align-items: center;
   padding: 0.75rem 0.75rem 0.75rem 1.75rem;
   z-index: 100;
-  border-radius: var(--radius-sm); /* Sharp edges 0px per PDR */
+  border-radius: var(--radius-xl);
   transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+[data-theme="dark"] .hero-search-console {
+  background: rgba(10, 35, 66, 0.85);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .hero-search-console:focus-within {
@@ -2933,127 +2941,3 @@ select.form-control {
   }
 }
 
-/* ==================== HERO SEARCH CONSOLE ==================== */
-.hero-search-console {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translate(-50%, 0);
-  width: 100%;
-  max-width: 1140px;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 15px 40px rgba(10, 35, 66, 0.12), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
-  display: flex;
-  align-items: center;
-  padding: 0.75rem 0.75rem 0.75rem 1.75rem;
-  z-index: 100;
-  border-radius: var(--radius-xl);
-  transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-}
-
-[data-theme="dark"] .hero-search-console {
-  background: rgba(10, 35, 66, 0.85);
-  border-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-}
-
-.hero-search-console:focus-within {
-  border-color: var(--accent-light);
-  box-shadow: var(--shadow-xl), var(--shadow-glow);
-}
-
-.search-input-group {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  flex: 1;
-  position: relative;
-}
-
-.search-icon-wrapper {
-  color: var(--text-muted);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  opacity: 0.7;
-}
-
-.search-input-field {
-  width: 100%;
-  background: transparent;
-  border: none;
-  color: var(--text-main);
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem;
-  outline: none;
-  padding: 0.5rem 0;
-}
-.search-input-field::placeholder {
-  color: var(--text-muted);
-}
-
-.search-divider-vertical {
-  width: 1px;
-  height: 2.5rem;
-  background: var(--border-color);
-  margin: 0 1.5rem;
-}
-
-.search-select-field {
-  background: transparent;
-  border: none;
-  color: var(--text-main);
-  font-family: 'Inter', sans-serif;
-  font-size: 0.95rem;
-  outline: none;
-  width: 100%;
-  cursor: pointer;
-  appearance: none;
-}
-.search-select-field:focus {
-  color: var(--primary-navy);
-}
-
-.btn-search-go {
-  background: var(--primary-navy);
-  color: #fff;
-  border: none;
-  padding: 0.85rem 2rem;
-  border-radius: var(--radius-lg);
-  font-weight: 600;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-.btn-search-go:hover {
-  background: var(--luxury-blue);
-  transform: translateY(-2px);
-}
-
-@media (max-width: 768px) {
-  .hero-search-console {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    transform: none;
-    flex-direction: column;
-    padding: 1.5rem;
-    gap: 1.25rem;
-    margin-top: 2rem;
-  }
-  .search-divider-vertical {
-    display: none;
-  }
-  .search-input-group {
-    width: 100%;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 0.5rem;
-  }
-  .search-select-field {
-    padding-right: 2rem;
-  }
-}
