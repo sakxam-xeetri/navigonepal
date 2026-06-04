@@ -8,6 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
+  // Page load animation
+  requestAnimationFrame(() => {
+    document.body.classList.remove('loading');
+    document.body.classList.add('loaded');
+  });
+
   // ==================== 1. LAYOUT & THEME TOGGLE ====================
   
   const themeToggle = document.getElementById("themeToggle");
@@ -139,6 +145,25 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("heroCtaPrimary").textContent = CMS.hero.ctaPrimary;
   document.getElementById("heroCtaSecondary").textContent = CMS.hero.ctaSecondary;
 
+  // Render Founding Story
+  const foundingStoryText = document.getElementById("foundingStoryText");
+  if (foundingStoryText && CMS.story.foundingStory) {
+    foundingStoryText.textContent = CMS.story.foundingStory;
+  }
+
+  // Render Leadership Quote
+  if (CMS.story.leadershipMessage) {
+    const quoteText = document.getElementById("leadershipQuoteText");
+    const quoteAuthor = document.getElementById("leadershipQuoteAuthor");
+    const quoteRole = document.getElementById("leadershipQuoteRole");
+    const quoteAvatar = document.getElementById("leadershipQuoteAvatar");
+    
+    if (quoteText) quoteText.textContent = CMS.story.leadershipMessage.quote;
+    if (quoteAuthor) quoteAuthor.textContent = CMS.story.leadershipMessage.author;
+    if (quoteRole) quoteRole.textContent = CMS.story.leadershipMessage.role;
+    if (quoteAvatar) quoteAvatar.textContent = CMS.story.leadershipMessage.author[0];
+  }
+
   // Render Mission & Vision
   document.getElementById("storyMission").textContent = CMS.story.mission;
   document.getElementById("storyVision").textContent = CMS.story.vision;
@@ -193,6 +218,37 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     </div>
   `).join("");
+
+  // Render Future Goals
+  const goalsGrid = document.getElementById("goalsGrid");
+  if (goalsGrid && CMS.story.futureGoals) {
+    goalsGrid.innerHTML = CMS.story.futureGoals.map((goal, idx) => `
+      <div class="goal-card reveal stagger-${(idx % 2) + 1}">
+        <div class="goal-icon">
+          ${getGoalIcon(goal.icon)}
+        </div>
+        <h3>${goal.title}</h3>
+        <p>${goal.desc}</p>
+        <div class="goal-progress-bar">
+          <div class="goal-progress-fill" style="width: 0%;" data-progress="${goal.progress}"></div>
+        </div>
+        <div class="goal-progress-label">
+          <span>Progress</span>
+          <span>${goal.progress}%</span>
+        </div>
+      </div>
+    `).join("");
+  }
+
+  function getGoalIcon(icon) {
+    const icons = {
+      target: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>',
+      flask: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16.5h10"/></svg>',
+      trophy: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>',
+      monitor: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>'
+    };
+    return icons[icon] || icons.target;
+  }
 
   // Render Programs
   const programsGrid = document.getElementById("programsGrid");
@@ -409,6 +465,26 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
+  // ==================== 4b. GOAL PROGRESS BAR ANIMATION ====================
+  
+  const goalCards = document.querySelectorAll(".goal-progress-fill");
+  
+  const goalObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const fill = entry.target;
+        const progress = fill.getAttribute("data-progress");
+        setTimeout(() => {
+          fill.style.width = progress + "%";
+        }, 300);
+        goalObserver.unobserve(fill);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  goalCards.forEach(fill => goalObserver.observe(fill));
+
+
   // ==================== 5. NEPAL SVG MAP INTERACTIONS ====================
   
   const provincePaths = document.querySelectorAll(".province-path");
@@ -458,8 +534,8 @@ document.addEventListener("DOMContentLoaded", () => {
             <span>Schools Connected</span>
             <span style="color: var(--accent-color); font-weight: 700;">${data.schools} Hubs</span>
           </div>
-          <div style="width: 100%; height: 4px; background: var(--border-color); overflow: hidden; border-radius: 0px;">
-            <div style="width: ${schoolPercent}%; height: 100%; background: var(--gradient-primary); transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1); border-radius: 0px;"></div>
+          <div style="width: 100%; height: 4px; background: var(--border-color); overflow: hidden;">
+            <div style="width: ${schoolPercent}%; height: 100%; background: var(--gradient-primary); transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);"></div>
           </div>
         </div>
 
@@ -468,14 +544,14 @@ document.addEventListener("DOMContentLoaded", () => {
             <span>Students Reached</span>
             <span style="color: var(--accent-color); font-weight: 700;">${data.students.toLocaleString()} Students</span>
           </div>
-          <div style="width: 100%; height: 4px; background: var(--border-color); overflow: hidden; border-radius: 0px;">
-            <div style="width: ${studentPercent}%; height: 100%; background: linear-gradient(90deg, #2563EB, #10B981); transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1); border-radius: 0px;"></div>
+          <div style="width: 100%; height: 4px; background: var(--border-color); overflow: hidden;">
+            <div style="width: ${studentPercent}%; height: 100%; background: linear-gradient(90deg, #2563EB, #10B981); transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);"></div>
           </div>
         </div>
 
         <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.8rem; font-weight: 500;">
           <span>Active Navigo Clubs</span>
-          <span style="background: linear-gradient(135deg, rgba(37,99,235,0.1), rgba(16,185,129,0.1)); padding: 0.25rem 0.75rem; color: var(--accent-color); font-weight: 700; font-size: 0.78rem; border-radius: 0px;">${data.clubs} Clubs</span>
+          <span style="background: linear-gradient(135deg, rgba(37,99,235,0.1), rgba(16,185,129,0.1)); padding: 0.25rem 0.75rem; color: var(--accent-color); font-weight: 700; font-size: 0.78rem;">${data.clubs} Clubs</span>
         </div>
       </div>
 
@@ -564,7 +640,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <p style="margin-bottom: 1.5rem; font-size: 1.1rem; font-weight: 600; color: var(--text-main);">${prog.shortDesc}</p>
           <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 2rem;">${prog.fullDesc}</p>
           
-          <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(37,99,235,0.05), rgba(16,185,129,0.03)); border: 1px solid var(--border-color); border-radius: 0px; display: flex; align-items: center; gap: 1.25rem;">
+          <div style="padding: 1.5rem; background: linear-gradient(135deg, rgba(37,99,235,0.05), rgba(16,185,129,0.03)); border: 1px solid var(--border-color); display: flex; align-items: center; gap: 1.25rem;">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-color); flex-shrink: 0;"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
             <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">Want this program in your local school? Reach out via our <a href="#contact" onclick="document.getElementById('programModal').classList.remove('active');" style="color: var(--accent-color); font-weight: 600;">Contact Form</a> to establish a new School Club hub.</p>
           </div>
@@ -824,5 +900,18 @@ document.addEventListener("DOMContentLoaded", () => {
   function validateEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
+  }
+
+
+  // ==================== 9. PARALLAX HERO BACKGROUND ====================
+  
+  const heroBg = document.querySelector('.hero-bg-image');
+  if (heroBg) {
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY;
+      if (scrolled < window.innerHeight) {
+        heroBg.style.transform = `translateY(${scrolled * 0.3}px) scale(1.1)`;
+      }
+    }, { passive: true });
   }
 });
