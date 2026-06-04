@@ -182,17 +182,38 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
   `).join("");
 
-  // Render Impact Metrics grid
+  // Render Impact Metrics Infographic Timeline
   const metricsGrid = document.getElementById("metricsGrid");
-  metricsGrid.innerHTML = CMS.impactMetrics.map((metric, idx) => `
-    <div class="metric-card reveal stagger-${(idx % 3) + 1}" data-target="${metric.value}" data-suffix="${metric.suffix}">
-      <div class="metric-icon-bg">
-        ${getMetricIcon(metric.icon)}
+  if (metricsGrid) {
+    metricsGrid.innerHTML = CMS.impactMetrics.map((metric, idx) => `
+      <div class="impact-timeline-item reveal stagger-${(idx % 3) + 1}" style="--item-color: ${metric.color};">
+        <!-- Colored Circle with Step Number -->
+        <div class="timeline-circle" style="background-color: ${metric.color};">
+          0${idx + 1}
+        </div>
+        
+        <!-- Connecting Line and Ring -->
+        <div class="timeline-connector">
+          <div class="timeline-connector-line"></div>
+          <div class="timeline-connector-ring"></div>
+        </div>
+        
+        <!-- Metric Card -->
+        <div class="metric-card" data-target="${metric.value}" data-suffix="${metric.suffix}">
+          <div class="metric-card-icon" style="color: ${metric.color}; background-color: ${metric.color}15;">
+            ${getMetricIcon(metric.icon)}
+          </div>
+          <div class="metric-card-details">
+            <div class="metric-card-header">
+              <span class="metric-number" style="background: ${metric.gradient}; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">0</span>
+              <span class="metric-label">${metric.label}</span>
+            </div>
+            <p class="metric-desc">${metric.desc || ''}</p>
+          </div>
+        </div>
       </div>
-      <div class="metric-number">0</div>
-      <div class="metric-label">${metric.label}</div>
-    </div>
-  `).join("");
+    `).join("");
+  }
 
   function getMetricIcon(icon) {
     const icons = {

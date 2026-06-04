@@ -14,12 +14,12 @@ const NAVIGO_CMS = {
   },
 
   impactMetrics: [
-    { id: "schools", label: "Schools Connected", value: 120, suffix: "+", icon: "school" },
-    { id: "students", label: "Students Reached", value: 25000, suffix: "+", icon: "users" },
-    { id: "districts", label: "Districts Covered", value: 35, suffix: "+", icon: "map" },
-    { id: "clubs", label: "Clubs Created", value: 45, suffix: "", icon: "award" },
-    { id: "workshops", label: "Workshops Conducted", value: 280, suffix: "+", icon: "activity" },
-    { id: "volunteers", label: "Volunteer Network", value: 500, suffix: "+", icon: "globe" }
+    { id: "schools", label: "Schools Connected", value: 120, suffix: "+", icon: "school", color: "#6366f1", gradient: "linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)", desc: "Empowering community and public secondary schools with physical STEM labs and robotics equipment." },
+    { id: "students", label: "Students Reached", value: 25000, suffix: "+", icon: "users", color: "#a855f7", gradient: "linear-gradient(135deg, #a855f7 0%, #7c3aed 100%)", desc: "A nationwide network of active secondary students engaging in academic bootcamps and workshops." },
+    { id: "districts", label: "Districts Covered", value: 35, suffix: "+", icon: "map", color: "#ec4899", gradient: "linear-gradient(135deg, #ec4899 0%, #c026d3 100%)", desc: "Spanning across mountains, hills, and plains to reach remote and underserved regions." },
+    { id: "clubs", label: "Clubs Created", value: 45, suffix: "", icon: "award", color: "#f97316", gradient: "linear-gradient(135deg, #f97316 0%, #ea580c 100%)", desc: "Self-sustaining, student-led weekly clubs focused on science, tech, debate, and social activism." },
+    { id: "workshops", label: "Workshops Conducted", value: 280, suffix: "+", icon: "activity", color: "#f59e0b", gradient: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)", desc: "Hands-on robotics assemblies, computer programming bootcamps, and Olympiad awareness sessions." },
+    { id: "volunteers", label: "Volunteer Network", value: 500, suffix: "+", icon: "globe", color: "#10b981", gradient: "linear-gradient(135deg, #10b981 0%, #059669 100%)", desc: "A dedicated community of collegiate mentors, academic tutors, and Olympiad gold medalists." }
   ],
 
   story: {
