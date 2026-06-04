@@ -1,5 +1,5 @@
 /* ============================================================
-   Navigo Nepal — Premium International-Grade Design System
+   Navigo Nepal ΓÇö Premium International-Grade Design System
    Inspired by UNESCO, UNICEF, Gates Foundation, TED, AG Pashmina
    ============================================================ */
 
@@ -463,7 +463,7 @@ select:focus-visible {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.85rem 5%;
+  padding: 0.55rem 5%;
   background: var(--bg-navbar);
   width: 100%;
   max-width: 100%;
@@ -486,7 +486,7 @@ select:focus-visible {
 }
 
 .logo-img {
-  height: 42px;
+  height: 36px;
   width: auto;
   object-fit: contain;
   transition: filter 0.4s ease;
@@ -2933,116 +2933,127 @@ select.form-control {
   }
 }
 
- / *   S e a r c h   C o n s o l e   C S S   * / 
- . h e r o - s e a r c h - c o n s o l e   { 
-     b a c k g r o u n d :   v a r ( - - b g - s e c o n d a r y ) ; 
-     b o r d e r :   1 p x   s o l i d   v a r ( - - b o r d e r - c o l o r ) ; 
-     b o x - s h a d o w :   v a r ( - - s h a d o w - x l ) ; 
-     d i s p l a y :   f l e x ; 
-     a l i g n - i t e m s :   c e n t e r ; 
-     p a d d i n g :   0 . 7 5 r e m   0 . 7 5 r e m   0 . 7 5 r e m   1 . 7 5 r e m ; 
-     z - i n d e x :   1 0 0 ; 
-     b o r d e r - r a d i u s :   v a r ( - - r a d i u s - s m ) ; 
-     t r a n s i t i o n :   b o x - s h a d o w   0 . 3 s   e a s e ,   b o r d e r - c o l o r   0 . 3 s   e a s e ,   t r a n s f o r m   0 . 3 s   e a s e ; 
-     p o s i t i o n :   r e l a t i v e ; 
-     w i d t h :   1 0 0 % ; 
- } 
- 
- . h e r o - s e a r c h - c o n s o l e : f o c u s - w i t h i n   { 
-     b o r d e r - c o l o r :   v a r ( - - a c c e n t - l i g h t ) ; 
-     b o x - s h a d o w :   v a r ( - - s h a d o w - x l ) ,   v a r ( - - s h a d o w - g l o w ) ; 
- } 
- 
- . s e a r c h - i n p u t - g r o u p   { 
-     d i s p l a y :   f l e x ; 
-     a l i g n - i t e m s :   c e n t e r ; 
-     g a p :   0 . 8 5 r e m ; 
-     f l e x :   1 ; 
-     p o s i t i o n :   r e l a t i v e ; 
- } 
- 
- . s e a r c h - i c o n - w r a p p e r   { 
-     c o l o r :   v a r ( - - t e x t - m u t e d ) ; 
-     d i s p l a y :   f l e x ; 
-     a l i g n - i t e m s :   c e n t e r ; 
-     j u s t i f y - c o n t e n t :   c e n t e r ; 
-     f l e x - s h r i n k :   0 ; 
-     o p a c i t y :   0 . 7 ; 
- } 
- 
- . s e a r c h - i n p u t - f i e l d   { 
-     w i d t h :   1 0 0 % ; 
-     b a c k g r o u n d :   t r a n s p a r e n t ; 
-     b o r d e r :   n o n e ; 
-     c o l o r :   v a r ( - - t e x t - m a i n ) ; 
-     f o n t - f a m i l y :   " I n t e r " ,   s a n s - s e r i f ; 
-     f o n t - s i z e :   1 r e m ; 
-     o u t l i n e :   n o n e ; 
-     p a d d i n g :   0 . 5 r e m   0 ; 
- } 
- 
- . s e a r c h - i n p u t - f i e l d : : p l a c e h o l d e r   { 
-     c o l o r :   v a r ( - - t e x t - m u t e d ) ; 
- } 
- 
- . s e a r c h - d i v i d e r - v e r t i c a l   { 
-     w i d t h :   1 p x ; 
-     h e i g h t :   2 . 5 r e m ; 
-     b a c k g r o u n d :   v a r ( - - b o r d e r - c o l o r ) ; 
-     m a r g i n :   0   1 . 5 r e m ; 
- } 
- 
- . s e a r c h - s e l e c t - f i e l d   { 
-     b a c k g r o u n d :   t r a n s p a r e n t ; 
-     b o r d e r :   n o n e ; 
-     c o l o r :   v a r ( - - t e x t - m a i n ) ; 
-     f o n t - f a m i l y :   " I n t e r " ,   s a n s - s e r i f ; 
-     f o n t - s i z e :   0 . 9 5 r e m ; 
-     o u t l i n e :   n o n e ; 
-     w i d t h :   1 0 0 % ; 
-     c u r s o r :   p o i n t e r ; 
-     a p p e a r a n c e :   n o n e ; 
- } 
- 
- . s e a r c h - s e l e c t - f i e l d : f o c u s   { 
-     c o l o r :   v a r ( - - p r i m a r y - n a v y ) ; 
- } 
- 
- . b t n - s e a r c h - g o   { 
-     b a c k g r o u n d :   v a r ( - - p r i m a r y - n a v y ) ; 
-     c o l o r :   # f f f ; 
-     b o r d e r :   n o n e ; 
-     p a d d i n g :   0 . 8 5 r e m   2 r e m ; 
-     b o r d e r - r a d i u s :   v a r ( - - r a d i u s - s m ) ; 
-     f o n t - w e i g h t :   6 0 0 ; 
-     c u r s o r :   p o i n t e r ; 
-     w h i t e - s p a c e :   n o w r a p ; 
-     t r a n s i t i o n :   b a c k g r o u n d   0 . 3 s   e a s e ,   t r a n s f o r m   0 . 2 s   e a s e ; 
- } 
- 
- . b t n - s e a r c h - g o : h o v e r   { 
-     b a c k g r o u n d :   v a r ( - - l u x u r y - b l u e ) ; 
-     t r a n s f o r m :   t r a n s l a t e Y ( - 2 p x ) ; 
- } 
- 
- / *   M o b i l e   R e s p o n s i v e n e s s   f o r   S e a r c h   C o n s o l e   * / 
- @ m e d i a   ( m a x - w i d t h :   7 6 8 p x )   { 
-     . h e r o - s e a r c h - c o n s o l e   { 
-         f l e x - d i r e c t i o n :   c o l u m n ; 
-         p a d d i n g :   1 . 5 r e m ; 
-         g a p :   1 . 2 5 r e m ; 
-     } 
-     . s e a r c h - d i v i d e r - v e r t i c a l   { 
-         d i s p l a y :   n o n e ; 
-     } 
-     . s e a r c h - i n p u t - g r o u p   { 
-         w i d t h :   1 0 0 % ; 
-         b o r d e r - b o t t o m :   1 p x   s o l i d   v a r ( - - b o r d e r - c o l o r ) ; 
-         p a d d i n g - b o t t o m :   0 . 5 r e m ; 
-     } 
-     . s e a r c h - s e l e c t - f i e l d   { 
-         p a d d i n g - r i g h t :   2 r e m ; 
-     } 
- } 
-  
- 
+/* ==================== HERO SEARCH CONSOLE ==================== */
+.hero-search-console {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 100%;
+  max-width: 1140px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 40px rgba(10, 35, 66, 0.12), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 0.75rem 0.75rem 1.75rem;
+  z-index: 100;
+  border-radius: var(--radius-xl);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+[data-theme="dark"] .hero-search-console {
+  background: rgba(10, 35, 66, 0.85);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.hero-search-console:focus-within {
+  border-color: var(--accent-light);
+  box-shadow: var(--shadow-xl), var(--shadow-glow);
+}
+
+.search-input-group {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex: 1;
+  position: relative;
+}
+
+.search-icon-wrapper {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.search-input-field {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  outline: none;
+  padding: 0.5rem 0;
+}
+.search-input-field::placeholder {
+  color: var(--text-muted);
+}
+
+.search-divider-vertical {
+  width: 1px;
+  height: 2.5rem;
+  background: var(--border-color);
+  margin: 0 1.5rem;
+}
+
+.search-select-field {
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  width: 100%;
+  cursor: pointer;
+  appearance: none;
+}
+.search-select-field:focus {
+  color: var(--primary-navy);
+}
+
+.btn-search-go {
+  background: var(--primary-navy);
+  color: #fff;
+  border: none;
+  padding: 0.85rem 2rem;
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.btn-search-go:hover {
+  background: var(--luxury-blue);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .hero-search-console {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+  .search-divider-vertical {
+    display: none;
+  }
+  .search-input-group {
+    width: 100%;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+  }
+  .search-select-field {
+    padding-right: 2rem;
+  }
+}
