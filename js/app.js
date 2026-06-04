@@ -250,22 +250,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return icons[icon] || icons.target;
   }
 
-  // Render Programs
-  const programsGrid = document.getElementById("programsGrid");
-  programsGrid.innerHTML = CMS.programs.map((prog, idx) => `
-    <div class="program-card reveal stagger-${(idx % 3) + 1}">
-      <div class="program-icon">
-        ${getProgramIcon(prog.id)}
-      </div>
-      <h3>${prog.title}</h3>
-      <p>${prog.shortDesc}</p>
-      <div class="program-learn-more" data-id="${prog.id}">
-        Explore Details 
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </div>
-    </div>
-  `).join("");
-
+  // Render Programs - Helper Function to allow dynamic filtering
   function getProgramIcon(id) {
     if (id === 'stem') return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M9 1v3"/><path d="M15 1v3"/><path d="M9 20v3"/><path d="M15 20v3"/><path d="M20 9h3"/><path d="M20 15h3"/><path d="M1 9h3"/><path d="M1 15h3"/></svg>`;
     if (id === 'olympiad') return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>`;
@@ -275,6 +260,175 @@ document.addEventListener("DOMContentLoaded", () => {
     if (id === 'mentorship') return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>`;
     if (id === 'entrepreneurship') return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A5 5 0 0 0 8 8c0 1 .3 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>`;
     return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01 M18 12h.01"/></svg>`;
+  }
+
+  const programsGrid = document.getElementById("programsGrid");
+
+  function renderProgramsList(list, highlightedId = '') {
+    if (!programsGrid) return;
+    
+    if (list.length === 0) {
+      programsGrid.innerHTML = `
+        <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 2rem; background: var(--bg-card); border: 1px dashed var(--border-color); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem; width: 100%;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-muted); opacity: 0.6;"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <div>
+            <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--text-main);">No programs match your search</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; max-width: 400px; margin: 0 auto;">Try checking for different keywords like 'STEM', 'Math', 'Mentorship', or select another province.</p>
+          </div>
+          <button type="button" class="btn btn-secondary" id="resetSearchBtn" style="padding: 0.6rem 1.5rem; font-size: 0.8rem;">Show All Programs</button>
+        </div>
+      `;
+      
+      const resetBtn = document.getElementById("resetSearchBtn");
+      if (resetBtn) {
+        resetBtn.addEventListener("click", () => {
+          document.getElementById("programSearchInput").value = "";
+          document.getElementById("provinceSearchSelect").value = "";
+          renderProgramsList(CMS.programs);
+        });
+      }
+      return;
+    }
+    
+    programsGrid.innerHTML = list.map((prog, idx) => {
+      const isMatch = highlightedId && (prog.id === highlightedId || prog.title.toLowerCase().includes(highlightedId.toLowerCase()));
+      const highlightClass = isMatch ? 'highlight-match' : '';
+      return `
+        <div class="program-card reveal stagger-${(idx % 3) + 1} ${highlightClass}" data-program-id="${prog.id}">
+          <div class="program-icon">
+            ${getProgramIcon(prog.id)}
+          </div>
+          <h3>${prog.title}</h3>
+          <p>${prog.shortDesc}</p>
+          <div class="program-learn-more" data-id="${prog.id}">
+            Explore Details 
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </div>
+      `;
+    }).join("");
+
+    if (highlightedId) {
+      setTimeout(() => {
+        document.querySelectorAll('.program-card.highlight-match').forEach(card => {
+          card.classList.remove('highlight-match');
+        });
+      }, 3000);
+    }
+    
+    // Re-observe reveal elements since we replaced innerHTML
+    if (revealObserver) {
+      programsGrid.querySelectorAll('.reveal').forEach(el => {
+        revealObserver.observe(el);
+      });
+    }
+  }
+
+  // Initial Render of All Programs
+  renderProgramsList(CMS.programs);
+
+  // ==================== 3b. SEARCH CONSOLE LOGIC ====================
+  const searchInput = document.getElementById("programSearchInput");
+  const suggestionsDropdown = document.getElementById("searchSuggestions");
+  const provinceSelect = document.getElementById("provinceSearchSelect");
+  const searchBtn = document.getElementById("searchSubmitBtn");
+
+  if (searchInput && suggestionsDropdown) {
+    searchInput.addEventListener("input", (e) => {
+      const val = e.target.value.toLowerCase().trim();
+      suggestionsDropdown.innerHTML = '';
+      
+      if (!val) {
+        suggestionsDropdown.classList.remove("active");
+        return;
+      }
+      
+      const matches = CMS.programs.filter(p => 
+        p.title.toLowerCase().includes(val) || 
+        p.shortDesc.toLowerCase().includes(val)
+      );
+      
+      if (matches.length > 0) {
+        suggestionsDropdown.innerHTML = matches.slice(0, 5).map(m => `
+          <div class="suggestion-item" data-id="${m.id}" data-title="${m.title}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="suggestion-icon"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <div style="display:flex; flex-direction:column;">
+              <span style="font-weight:600; font-size:0.95rem; color:var(--color-deep-navy);">${m.title}</span>
+              <span style="font-size:0.8rem; color:#666;">${m.shortDesc.substring(0, 45)}...</span>
+            </div>
+          </div>
+        `).join('');
+        suggestionsDropdown.classList.add("active");
+      } else {
+        suggestionsDropdown.classList.remove("active");
+      }
+    });
+
+    suggestionsDropdown.addEventListener("click", (e) => {
+      const item = e.target.closest(".suggestion-item");
+      if (item) {
+        searchInput.value = item.getAttribute("data-title");
+        suggestionsDropdown.classList.remove("active");
+        executeSearch(item.getAttribute("data-id"));
+      }
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!searchInput.contains(e.target) && !suggestionsDropdown.contains(e.target)) {
+        suggestionsDropdown.classList.remove("active");
+      }
+    });
+  }
+
+  function executeSearch(highlightId = '') {
+    const kw = searchInput ? searchInput.value.toLowerCase().trim() : '';
+    const prov = provinceSelect ? provinceSelect.value : '';
+    
+    let filtered = CMS.programs;
+    if (kw) {
+      filtered = filtered.filter(p => 
+        p.title.toLowerCase().includes(kw) || 
+        p.shortDesc.toLowerCase().includes(kw) ||
+        p.fullDesc.toLowerCase().includes(kw)
+      );
+    }
+    
+    renderProgramsList(filtered, highlightId || kw);
+    
+    const progSec = document.getElementById("programs");
+    if (progSec) {
+      // Offset by header height
+      const y = progSec.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+    
+    if (prov) {
+      const mapPaths = document.querySelectorAll(".province-path");
+      mapPaths.forEach(p => p.classList.remove("active"));
+      
+      const targetPath = document.getElementById("path-" + prov);
+      if (targetPath) {
+        targetPath.classList.add("active");
+        
+        const provData = CMS.provinces.find(p => p.id === prov);
+        if (provData && typeof updateMapPanel === 'function') {
+           updateMapPanel(provData);
+        }
+      }
+    }
+  }
+
+  if (searchBtn) {
+    searchBtn.addEventListener("click", () => executeSearch());
+  }
+  if (searchInput) {
+    searchInput.addEventListener("keypress", (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        if(suggestionsDropdown) suggestionsDropdown.classList.remove("active");
+        executeSearch();
+      }
+    });
   }
 
   // Render Testimonials with images
@@ -628,8 +782,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const programModal = document.getElementById("programModal");
   const closeProgramModal = document.getElementById("closeProgramModal");
   
-  document.querySelectorAll(".program-learn-more").forEach(btn => {
-    btn.addEventListener("click", () => {
+  if (programsGrid) {
+    programsGrid.addEventListener("click", (e) => {
+      const btn = e.target.closest(".program-learn-more");
+      if (!btn) return;
+      
       const progId = btn.getAttribute("data-id");
       const prog = CMS.programs.find(p => p.id === progId);
       
@@ -648,7 +805,7 @@ document.addEventListener("DOMContentLoaded", () => {
         programModal.classList.add("active");
       }
     });
-  });
+  }
 
   closeProgramModal.addEventListener("click", () => programModal.classList.remove("active"));
   
@@ -901,6 +1058,173 @@ document.addEventListener("DOMContentLoaded", () => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
   }
+
+
+  // ==================== 8b. HERO SEARCH & SUGGESTIONS CONSOLE ====================
+  const programSearchInput = document.getElementById("programSearchInput");
+  const searchSuggestions = document.getElementById("searchSuggestions");
+  const provinceSearchSelect = document.getElementById("provinceSearchSelect");
+  const searchSubmitBtn = document.getElementById("searchSubmitBtn");
+
+  if (programSearchInput && searchSuggestions) {
+    // Autocomplete Input Handler
+    programSearchInput.addEventListener("input", () => {
+      const query = programSearchInput.value.trim().toLowerCase();
+      if (!query) {
+        searchSuggestions.style.display = "none";
+        searchSuggestions.innerHTML = "";
+        return;
+      }
+
+      // Filter titles from CMS.programs
+      const matches = CMS.programs.filter(p => 
+        p.title.toLowerCase().includes(query) || 
+        p.shortDesc.toLowerCase().includes(query)
+      );
+
+      if (matches.length > 0) {
+        searchSuggestions.innerHTML = matches.map(match => `
+          <div class="suggestion-item" data-id="${match.id}">${match.title}</div>
+        `).join("");
+        searchSuggestions.style.display = "block";
+      } else {
+        searchSuggestions.style.display = "none";
+        searchSuggestions.innerHTML = "";
+      }
+    });
+
+    // Suggestions Click Handler
+    searchSuggestions.addEventListener("click", (e) => {
+      const item = e.target.closest(".suggestion-item");
+      if (!item) return;
+
+      programSearchInput.value = item.textContent;
+      searchSuggestions.style.display = "none";
+      searchSuggestions.innerHTML = "";
+      
+      // Automatically trigger search when click suggestions
+      executeHeroSearch();
+    });
+
+    // Close suggestions dropdown when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!programSearchInput.contains(e.target) && !searchSuggestions.contains(e.target)) {
+        searchSuggestions.style.display = "none";
+      }
+    });
+
+    // Handle Enter key on input
+    programSearchInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        executeHeroSearch();
+      }
+    });
+  }
+
+  if (searchSubmitBtn) {
+    searchSubmitBtn.addEventListener("click", executeHeroSearch);
+  }
+
+  function executeHeroSearch() {
+    const query = programSearchInput ? programSearchInput.value.trim() : "";
+    const provinceId = provinceSearchSelect ? provinceSearchSelect.value : "";
+
+    if (!query && !provinceId) {
+      // If nothing selected/typed, reset to show all programs and scroll to programs
+      renderProgramsList(CMS.programs);
+      const progSection = document.getElementById("programs");
+      if (progSection) {
+        progSection.scrollIntoView({ behavior: "smooth" });
+      }
+      return;
+    }
+
+    // 1. Process Program Search Filtering
+    let filteredPrograms = CMS.programs;
+    
+    if (query) {
+      const q = query.toLowerCase();
+      filteredPrograms = CMS.programs.filter(p => 
+        p.title.toLowerCase().includes(q) || 
+        p.shortDesc.toLowerCase().includes(q) ||
+        p.fullDesc.toLowerCase().includes(q)
+      );
+    }
+
+    // 2. Process Province Select (Map Synchronizing)
+    if (provinceId) {
+      const path = document.getElementById(`path-${provinceId}`);
+      if (path) {
+        // Trigger click event on province path to select it on map
+        path.click();
+      }
+    }
+
+    // 3. Navigation Strategy
+    // If user searched for a query, scroll to programs section to view matching cards
+    if (query) {
+      renderProgramsList(filteredPrograms, query);
+      const progSection = document.getElementById("programs");
+      if (progSection) {
+        progSection.scrollIntoView({ behavior: "smooth" });
+      }
+      
+      // If a province was also selected, update map, but prioritize scrolling to programs
+      // The map will be updated in the background so when they scroll down further they see it selected!
+    } else if (provinceId) {
+      // If ONLY province is selected, navigate directly to map section!
+      const mapSection = document.getElementById("impact-map");
+      if (mapSection) {
+        mapSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }
+
+
+  // ==================== 8c. NAVIGATION DROPDOWN INTERACTION ====================
+  // Mobile accordion sub-menu toggles
+  const mobileDropdowns = document.querySelectorAll(".mobile-has-dropdown");
+  mobileDropdowns.forEach(dropdown => {
+    const toggle = dropdown.querySelector(".mobile-dropdown-toggle");
+    if (toggle) {
+      toggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // Close other dropdowns first (accordion behavior)
+        mobileDropdowns.forEach(other => {
+          if (other !== dropdown) {
+            other.classList.remove("open");
+          }
+        });
+        
+        dropdown.classList.toggle("open");
+      });
+    }
+  });
+
+  // Close mobile navigation sidebar when clicking sub-menu items
+  document.querySelectorAll(".mobile-subnav-link").forEach(link => {
+    link.addEventListener("click", () => {
+      const hamburger = document.getElementById("hamburger");
+      const mobileNav = document.getElementById("mobileNav");
+      if (hamburger) hamburger.classList.remove("open");
+      if (mobileNav) mobileNav.classList.remove("open");
+    });
+  });
+
+  // Link subprogram links in both desktop and mobile dropdowns to the search console
+  document.querySelectorAll(".subprogram-link").forEach(link => {
+    link.addEventListener("click", (e) => {
+      const kw = link.getAttribute("data-search-kw");
+      if (kw) {
+        if (programSearchInput) {
+          programSearchInput.value = kw;
+        }
+        executeHeroSearch();
+      }
+    });
+  });
 
 
   // ==================== 9. PARALLAX HERO BACKGROUND ====================

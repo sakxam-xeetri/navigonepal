@@ -45,13 +45,64 @@
       
       <ul class="nav-links">
         <li><a href="#hero" class="nav-link active">Home</a></li>
-        <li><a href="#story" class="nav-link">Our Story</a></li>
-        <li><a href="#programs" class="nav-link">Programs</a></li>
+        
+        <li class="has-dropdown">
+          <a href="#story" class="nav-link">
+            Our Story
+            <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#story">Our Vision</a></li>
+            <li><a href="#foundingStoryBlock">Founding Story</a></li>
+            <li><a href="#leadershipQuoteBlock">Leadership Message</a></li>
+            <li><a href="#goalsGrid">Future Goals (2027)</a></li>
+          </ul>
+        </li>
+        
+        <li class="has-dropdown">
+          <a href="#programs" class="nav-link">
+            Programs
+            <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <ul class="dropdown-menu dropdown-double">
+            <li><a href="#programs" class="subprogram-link" data-search-kw="STEM">STEM Exposure</a></li>
+            <li><a href="#programs" class="subprogram-link" data-search-kw="Olympiad">Olympiad Prep</a></li>
+            <li><a href="#programs" class="subprogram-link" data-search-kw="Leadership">Leadership Pipelines</a></li>
+            <li><a href="#programs" class="subprogram-link" data-search-kw="Career">Career Exploration</a></li>
+            <li><a href="#programs" class="subprogram-link" data-search-kw="Clubs">School Clubs</a></li>
+            <li><a href="#programs" class="subprogram-link" data-search-kw="Mentorship">Global Mentorship</a></li>
+            <li><a href="#programs" class="subprogram-link" data-search-kw="Entrepreneurship">Youth Incubation</a></li>
+            <li><a href="#programs" class="subprogram-link" data-search-kw="Finance">Financial Literacy</a></li>
+          </ul>
+        </li>
+        
         <li><a href="#impact-map" class="nav-link">Impact Map</a></li>
         <li><a href="#stories" class="nav-link">Stories</a></li>
         <li><a href="#team" class="nav-link">Team</a></li>
-        <li><a href="#resources" class="nav-link">Resources</a></li>
-        <li><a href="#volunteer" class="nav-link">Get Involved</a></li>
+        
+        <li class="has-dropdown">
+          <a href="#resources" class="nav-link">
+            Resources
+            <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#resources">Olympiad Prep Materials</a></li>
+            <li><a href="#resources">STEM Club Startup Kit</a></li>
+            <li><a href="#resources">Career Roadmaps</a></li>
+          </ul>
+        </li>
+        
+        <li class="has-dropdown">
+          <a href="#volunteer" class="nav-link">
+            Get Involved
+            <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#volunteer">Volunteer Openings</a></li>
+            <li><a href="#donate">Secure Sponsorship</a></li>
+            <li><a href="#contact">Become a Partner</a></li>
+          </ul>
+        </li>
       </ul>
 
       <div class="nav-controls">
@@ -76,103 +127,150 @@
   <aside class="mobile-nav" id="mobileNav">
     <ul class="mobile-nav-links">
       <li><a href="#hero" class="mobile-nav-link active">Home</a></li>
-      <li><a href="#story" class="mobile-nav-link">Our Story</a></li>
-      <li><a href="#programs" class="mobile-nav-link">Programs</a></li>
+      
+      <li class="mobile-has-dropdown">
+        <div class="mobile-nav-row">
+          <a href="#story" class="mobile-nav-link">Our Story</a>
+          <button class="mobile-dropdown-toggle" aria-label="Toggle Submenu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+        </div>
+        <ul class="mobile-dropdown-menu">
+          <li><a href="#story" class="mobile-subnav-link">Our Vision</a></li>
+          <li><a href="#foundingStoryBlock" class="mobile-subnav-link">Founding Story</a></li>
+          <li><a href="#leadershipQuoteBlock" class="mobile-subnav-link">Leadership Message</a></li>
+          <li><a href="#goalsGrid" class="mobile-subnav-link">Future Goals</a></li>
+        </ul>
+      </li>
+
+      <li class="mobile-has-dropdown">
+        <div class="mobile-nav-row">
+          <a href="#programs" class="mobile-nav-link">Programs</a>
+          <button class="mobile-dropdown-toggle" aria-label="Toggle Submenu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+        </div>
+        <ul class="mobile-dropdown-menu">
+          <li><a href="#programs" class="mobile-subnav-link subprogram-link" data-search-kw="STEM">STEM Exposure</a></li>
+          <li><a href="#programs" class="mobile-subnav-link subprogram-link" data-search-kw="Olympiad">Olympiad Prep</a></li>
+          <li><a href="#programs" class="mobile-subnav-link subprogram-link" data-search-kw="Leadership">Leadership Pipelines</a></li>
+          <li><a href="#programs" class="mobile-subnav-link subprogram-link" data-search-kw="Career">Career Exploration</a></li>
+          <li><a href="#programs" class="mobile-subnav-link subprogram-link" data-search-kw="Clubs">School Clubs</a></li>
+          <li><a href="#programs" class="mobile-subnav-link subprogram-link" data-search-kw="Mentorship">Global Mentorship</a></li>
+          <li><a href="#programs" class="mobile-subnav-link subprogram-link" data-search-kw="Entrepreneurship">Youth Incubation</a></li>
+          <li><a href="#programs" class="mobile-subnav-link subprogram-link" data-search-kw="Finance">Financial Literacy</a></li>
+        </ul>
+      </li>
+
       <li><a href="#impact-map" class="mobile-nav-link">Impact Map</a></li>
       <li><a href="#stories" class="mobile-nav-link">Success Stories</a></li>
       <li><a href="#team" class="mobile-nav-link">Team</a></li>
-      <li><a href="#resources" class="mobile-nav-link">Resources</a></li>
-      <li><a href="#volunteer" class="mobile-nav-link">Get Involved</a></li>
-      <li><a href="#donate" class="mobile-nav-link">Donate Now</a></li>
+      
+      <li class="mobile-has-dropdown">
+        <div class="mobile-nav-row">
+          <a href="#resources" class="mobile-nav-link">Resources</a>
+          <button class="mobile-dropdown-toggle" aria-label="Toggle Submenu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+        </div>
+        <ul class="mobile-dropdown-menu">
+          <li><a href="#resources" class="mobile-subnav-link">Olympiad Materials</a></li>
+          <li><a href="#resources" class="mobile-subnav-link">STEM Club Kit</a></li>
+          <li><a href="#resources" class="mobile-subnav-link">Career Guides</a></li>
+        </ul>
+      </li>
+
+      <li class="mobile-has-dropdown">
+        <div class="mobile-nav-row">
+          <a href="#volunteer" class="mobile-nav-link">Get Involved</a>
+          <button class="mobile-dropdown-toggle" aria-label="Toggle Submenu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+        </div>
+        <ul class="mobile-dropdown-menu">
+          <li><a href="#volunteer" class="mobile-subnav-link">Volunteer Positions</a></li>
+          <li><a href="#donate" class="mobile-subnav-link">Secure Sponsorship</a></li>
+          <li><a href="#contact" class="mobile-subnav-link">Become a Partner</a></li>
+        </ul>
+      </li>
     </ul>
   </aside>
 
   <!-- HERO SECTION - Full-Screen Cinematic -->
+  <!-- HERO SECTION - Full-Screen Cinematic Segmented Layout -->
   <header class="section hero-section" id="hero">
-    <img src="assets/hero_bg.png" alt="" class="hero-bg-image" aria-hidden="true">
-    <div class="container grid-2">
-      <div class="hero-content">
-        <span class="section-label" style="color: rgba(255,255,255,0.7); margin-bottom: 1.5rem;">
-          <span style="background: rgba(255,255,255,0.3); width: 24px; height: 2px; display: inline-block;"></span>
-          Youth Empowerment &amp; STEM Hub
+    <img src="assets/hero_students.png" alt="Navigo Nepal Youth Leaders" class="hero-bg-image" aria-hidden="true" onerror="this.src='assets/hero_bg.png'">
+    <div class="hero-overlay"></div>
+    <div class="container hero-container-layout">
+      
+      <div class="hero-text-content">
+        <span class="section-label" style="color: rgba(255,255,255,0.75); margin-bottom: 1.5rem;">
+          <span style="background: var(--accent-light); width: 24px; height: 2px; display: inline-block;"></span>
+          Empowering Nepal's Next Generation
         </span>
-        <h1 class="heading-xl" id="heroTitle">Empowering Nepal's Future Leaders, Innovators, and Changemakers</h1>
-        <p class="hero-subtitle" id="heroSubtitle" style="margin: 2rem 0 2.5rem; font-size: 1.05rem; line-height: 1.8; color: rgba(255,255,255,0.7); font-weight: 400; max-width: 520px;">
+        <h1 class="heading-xl hero-main-title" id="heroTitle">Empowering Nepal's Future Leaders, Innovators, and Changemakers</h1>
+        <p class="hero-subtitle" id="heroSubtitle">
           Building opportunities, leadership, and impact for students across Nepal.
         </p>
-        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-          <a href="#volunteer" class="btn btn-primary btn-lg" id="heroCtaPrimary">Join Navigo</a>
-          <a href="#contact" class="btn btn-white btn-lg" id="heroCtaSecondary">Become a Partner</a>
-        </div>
 
-        <!-- Trust Indicators -->
-        <div class="hero-trust-strip">
-          <span class="hero-trust-label">Trusted By</span>
-          <div class="hero-trust-logos">
-            <span>Tribhuvan University</span>
-            <span>•</span>
-            <span>Kathmandu University</span>
-            <span>•</span>
-            <span>Nepal STEM Alliance</span>
+        <!-- Segmented CTAs matching Robert Half Archetype -->
+        <div class="hero-cta-segments">
+          <!-- Student Segment -->
+          <div class="cta-segment">
+            <span class="segment-label-small">For Students &amp; Youth</span>
+            <div class="segment-actions">
+              <a href="#programs" class="btn btn-primary btn-lg" id="heroCtaPrimary">Join Navigo</a>
+            </div>
+          </div>
+
+          <!-- Vertical Divider -->
+          <div class="segment-divider-line"></div>
+
+          <!-- Business/Partner Segment -->
+          <div class="cta-segment">
+            <span class="segment-label-small">For Partners &amp; Schools</span>
+            <div class="segment-actions">
+              <a href="#contact" class="btn btn-white btn-lg" id="heroCtaSecondary">Become a Partner</a>
+              <a href="#volunteer" class="btn btn-white btn-outline-only btn-lg">Explore Programs</a>
+            </div>
           </div>
         </div>
       </div>
-      
-      <div class="hero-visual">
-        <!-- Floating stat cards -->
-        <div class="hero-stat-float" style="top: 10%; right: -10%;">
-          <div class="stat-value" id="heroStatStudents">25K+</div>
-          <div class="stat-label">Students Reached</div>
-        </div>
-        <div class="hero-stat-float" style="bottom: 15%; left: -5%; animation-delay: 2s;">
-          <div class="stat-value" id="heroStatProvinces">7</div>
-          <div class="stat-label">Provinces Active</div>
-        </div>
-        
-        <div class="hero-card">
-          <!-- Elegant Network Visualization -->
-          <svg viewBox="0 0 400 380" fill="none" xmlns="http://www.w3.org/2000/svg" style="background: rgba(10,35,66,0.6);">
-            <defs>
-              <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#4F9CF9" />
-                <stop offset="100%" stop-color="#10B981" />
-              </linearGradient>
-            </defs>
-            
-            <!-- Himalayas Wireframe -->
-            <path d="M-20 280 L80 180 L140 230 L240 100 L310 200 L420 50" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-            <path d="M10 320 L120 220 L180 260 L290 140 L350 210 L440 80" stroke="rgba(255,255,255,0.08)" stroke-width="0.75" stroke-dasharray="2 2" />
-            
-            <!-- Network Connections -->
-            <line x1="120" y1="170" x2="280" y2="130" stroke="#4F9CF9" stroke-width="1" opacity="0.4" />
-            <line x1="120" y1="170" x2="200" y2="280" stroke="#4F9CF9" stroke-width="1" opacity="0.4" />
-            <line x1="280" y1="130" x2="200" y2="280" stroke="#10B981" stroke-width="1" opacity="0.4" />
-            
-            <circle cx="120" cy="170" r="25" stroke="#4F9CF9" stroke-width="0.75" fill="rgba(10,35,66,0.6)" />
-            <circle cx="280" cy="130" r="20" stroke="#10B981" stroke-width="0.75" fill="rgba(10,35,66,0.6)" />
-            <circle cx="200" cy="280" r="35" stroke="url(#blueGrad)" stroke-width="1" fill="rgba(10,35,66,0.6)" />
-            
-            <!-- STEM Symbol -->
-            <rect x="190" y="270" width="20" height="20" rx="2" fill="none" stroke="#FFFFFF" stroke-width="1"/>
-            <line x1="185" y1="275" x2="190" y2="275" stroke="#FFFFFF" stroke-width="1"/>
-            <line x1="185" y1="285" x2="190" y2="285" stroke="#FFFFFF" stroke-width="1"/>
-            <line x1="210" y1="275" x2="215" y2="275" stroke="#FFFFFF" stroke-width="1"/>
-            <line x1="210" y1="285" x2="215" y2="285" stroke="#FFFFFF" stroke-width="1"/>
 
-            <!-- Math Symbol -->
-            <text x="120" y="176" fill="#FFFFFF" font-family="Inter" font-size="16" text-anchor="middle">∑</text>
-            <!-- Leadership Star -->
-            <path d="M280 123 L283 129 L289 130 L285 134 L286 140 L280 137 L274 140 L275 134 L271 130 L277 129 Z" fill="#4F9CF9"/>
-
-            <text x="200" y="45" fill="rgba(255,255,255,0.7)" font-family="Inter" font-size="11" font-weight="500" text-anchor="middle" letter-spacing="6">NAVIGO NEPAL</text>
-            <line x1="150" y1="55" x2="250" y2="55" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
-          </svg>
-          <div class="hero-card-tag">
-            <h4 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 0.15rem;">Empowerment Network</h4>
-            <p style="font-size: 0.75rem; color: rgba(255,255,255,0.6);">Bridging opportunities across 7 provinces.</p>
+      <!-- Overlapping Bottom Search Console -->
+      <div class="hero-search-console">
+        <!-- Keyword Search -->
+        <div class="search-input-group">
+          <div class="search-icon-wrapper" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
           </div>
+          <input type="text" id="programSearchInput" class="search-input-field" placeholder="Search Programs, Skills, or Keywords..." autocomplete="off" aria-label="Search Programs or Keywords">
+          <!-- Autocomplete Dropdown suggestions list -->
+          <div class="search-suggestions-dropdown" id="searchSuggestions" aria-live="polite"></div>
         </div>
+
+        <div class="search-divider-vertical"></div>
+
+        <!-- Province / District selector -->
+        <div class="search-input-group">
+          <div class="search-icon-wrapper" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <select id="provinceSearchSelect" class="search-select-field" aria-label="Select Province">
+            <option value="">All Provinces &amp; Districts</option>
+            <option value="bagmati">Bagmati Province (Kathmandu, Lalitpur...)</option>
+            <option value="koshi">Koshi Province (Biratnagar, Dharan...)</option>
+            <option value="gandaki">Gandaki Province (Pokhara, Baglung...)</option>
+            <option value="lumbini">Lumbini Province (Butwal, Bhairahawa...)</option>
+            <option value="madhesh">Madhesh Province (Janakpur, Birgunj...)</option>
+            <option value="karnali">Karnali Province (Surkhet, Jumla...)</option>
+            <option value="sudurpashchim">Sudurpashchim Province (Dhangadhi...)</option>
+          </select>
+        </div>
+
+        <button type="button" class="btn btn-search-go" id="searchSubmitBtn">Search Programs</button>
       </div>
+
     </div>
   </header>
 
