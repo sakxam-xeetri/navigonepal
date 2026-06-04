@@ -182,37 +182,135 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
   `).join("");
 
-  // Render Impact Metrics Infographic Timeline
-  const metricsGrid = document.getElementById("metricsGrid");
-  if (metricsGrid) {
-    metricsGrid.innerHTML = CMS.impactMetrics.map((metric, idx) => `
-      <div class="impact-timeline-item reveal stagger-${(idx % 3) + 1}" style="--item-color: ${metric.color};">
-        <!-- Colored Circle with Step Number -->
-        <div class="timeline-circle" style="background-color: ${metric.color};">
-          0${idx + 1}
-        </div>
-        
-        <!-- Connecting Line and Ring -->
-        <div class="timeline-connector">
-          <div class="timeline-connector-line"></div>
-          <div class="timeline-connector-ring"></div>
-        </div>
-        
-        <!-- Metric Card -->
-        <div class="metric-card" data-target="${metric.value}" data-suffix="${metric.suffix}">
-          <div class="metric-card-icon" style="color: ${metric.color}; background-color: ${metric.color}15;">
-            ${getMetricIcon(metric.icon)}
-          </div>
-          <div class="metric-card-details">
-            <div class="metric-card-header">
-              <span class="metric-number" style="background: ${metric.gradient}; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">0</span>
-              <span class="metric-label">${metric.label}</span>
-            </div>
-            <p class="metric-desc">${metric.desc || ''}</p>
+  // Render Impact Metrics Bento Grid
+  const impactBentoGrid = document.getElementById("impactBentoGrid");
+  if (impactBentoGrid) {
+    let html = `
+      <!-- Bento Hero Card (Spans 2 rows, 1 col on desktop) -->
+      <div class="bento-card bento-hero-card reveal-left">
+        <div class="bento-hero-glow"></div>
+        <div class="bento-hero-content">
+          <span class="gradient-accent section-label" style="margin-bottom: 0.75rem;">Measurable Footprints</span>
+          <h2 class="heading-lg" style="margin-bottom: 1rem;">Our National Impact</h2>
+          <p class="bento-hero-desc">
+            Transparent statistics indicating our structural educational outreach, high-school clubs, and academic preparations deployed across community schools.
+          </p>
+          <div class="bento-hero-badge">
+            <span class="pulse-dot"></span> Live Metrics Hub
           </div>
         </div>
       </div>
-    `).join("");
+    `;
+
+    html += CMS.impactMetrics.map((metric, idx) => {
+      // Determine columns and styles for each metric
+      let gridClass = "bento-card reveal";
+      if (metric.id === "schools") {
+        gridClass += " bento-card-wide reveal-right";
+      } else {
+        gridClass += ` stagger-${(idx % 3) + 1}`;
+      }
+
+      // Generate custom visual based on card ID
+      let customVisual = "";
+      if (metric.id === "schools") {
+        customVisual = `
+          <div class="bento-visual schools-visual">
+            <div class="school-nodes">
+              <span class="node hub"></span>
+              <span class="node node-1"></span>
+              <span class="node node-2"></span>
+              <span class="node node-3"></span>
+              <span class="node node-4"></span>
+              <div class="node-line node-line-1"></div>
+              <div class="node-line node-line-2"></div>
+              <div class="node-line node-line-3"></div>
+              <div class="node-line node-line-4"></div>
+            </div>
+            <div class="schools-progress-track">
+              <div class="schools-progress-bar" style="background: ${metric.gradient};"></div>
+            </div>
+          </div>
+        `;
+      } else if (metric.id === "students") {
+        customVisual = `
+          <div class="bento-visual students-visual">
+            <div class="avatar-stack">
+              <div class="avatar av-1"><span>S1</span></div>
+              <div class="avatar av-2"><span>S2</span></div>
+              <div class="avatar av-3"><span>S3</span></div>
+              <div class="avatar av-more"><span>+</span></div>
+            </div>
+            <div class="growth-pill">+12% MoM</div>
+          </div>
+        `;
+      } else if (metric.id === "districts") {
+        customVisual = `
+          <div class="bento-visual districts-visual">
+            <div class="radar-container">
+              <div class="radar-circle rc-1"></div>
+              <div class="radar-circle rc-2"></div>
+              <div class="radar-circle rc-3"></div>
+              <div class="radar-sweep"></div>
+              <div class="radar-ping"></div>
+            </div>
+          </div>
+        `;
+      } else if (metric.id === "clubs") {
+        customVisual = `
+          <div class="bento-visual clubs-visual">
+            <div class="gear-badge">
+              <div class="gear-inner">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+              </div>
+            </div>
+          </div>
+        `;
+      } else if (metric.id === "workshops") {
+        customVisual = `
+          <div class="bento-visual workshops-visual">
+            <svg class="sparkline" viewBox="0 0 100 30">
+              <path d="M0,25 Q15,5 30,20 T60,10 T90,5 L100,5" fill="none" stroke="${metric.color}" stroke-width="2" stroke-linecap="round"></path>
+              <circle cx="90" cy="5" r="3" fill="${metric.color}"></circle>
+            </svg>
+          </div>
+        `;
+      } else if (metric.id === "volunteers") {
+        customVisual = `
+          <div class="bento-visual volunteers-visual">
+            <div class="mesh-network">
+              <span class="mesh-dot md-1"></span>
+              <span class="mesh-dot md-2"></span>
+              <span class="mesh-dot md-3"></span>
+              <span class="mesh-dot md-4"></span>
+              <span class="mesh-dot md-5"></span>
+            </div>
+          </div>
+        `;
+      }
+
+      return `
+        <div class="${gridClass} metric-card" data-target="${metric.value}" data-suffix="${metric.suffix}" style="--card-color: ${metric.color};">
+          <div class="bento-card-header">
+            <div class="bento-icon-box" style="color: ${metric.color}; background-color: ${metric.color}12;">
+              ${getMetricIcon(metric.icon)}
+            </div>
+            <span class="bento-label">${metric.label}</span>
+          </div>
+          
+          <div class="bento-card-body">
+            <div class="bento-number-wrapper">
+              <span class="metric-number" style="background: ${metric.gradient}; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">0</span>
+            </div>
+            <p class="bento-desc">${metric.desc || ''}</p>
+          </div>
+          
+          ${customVisual}
+        </div>
+      `;
+    }).join("");
+
+    impactBentoGrid.innerHTML = html;
   }
 
   function getMetricIcon(icon) {
