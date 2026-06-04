@@ -7,10 +7,10 @@ const NAVIGO_CMS = {
   description: "A youth-led educational empowerment organization transforming the future of Nepal through student exposure, leadership development, STEM education, Olympiad awareness, mentorship, and community impact.",
   
   hero: {
-    title: "Empowering Nepal's Next Generation of Leaders and Innovators",
-    subtitle: "We bridge the gap between potential and opportunity, equipping Nepali students with world-class exposure, STEM programs, and leadership pipelines.",
+    title: "Empowering Nepal's Future Leaders, Innovators, and Changemakers",
+    subtitle: "Building opportunities, leadership, and impact for students across Nepal.",
     ctaPrimary: "Join Navigo",
-    ctaSecondary: "Partner With Us"
+    ctaSecondary: "Become a Partner"
   },
 
   impactMetrics: [
@@ -37,6 +37,38 @@ const NAVIGO_CMS = {
       { year: "2024", title: "Mentorship & Scale", desc: "Established the Mentorship Network, matching 100+ rural students with mentors from top global universities. Expanded operations to Koshi and Gandaki." },
       { year: "2025", title: "Innovation Incubation", desc: "Created the Student Entrepreneurship Camp and Financial Literacy course, turning high-school ideas into community-funded prototypes." },
       { year: "2026", title: "Nationwide Horizons", desc: "Scaling across all 7 provinces, targeting 50,000+ students, establishing regional STEM labs, and aiming for international Olympiad honors." }
+    ],
+    foundingStory: "Navigo Nepal was born in 2022 from a simple yet powerful observation — thousands of talented students across Nepal's public schools had the potential to compete on global stages, but lacked the exposure, mentorship, and resources to do so. A group of passionate university students, who themselves had struggled through the same gaps in Nepal's educational system, decided to bridge this divide. What started as a weekend robotics camp in a single Bagmati Province school has grown into a nationwide movement touching all 7 provinces, empowering over 25,000 students, and building a volunteer network of 500+ mentors. Our journey is fueled by the belief that geography and socioeconomic background should never determine a student's ceiling.",
+    leadershipMessage: {
+      quote: "Every student in Nepal deserves access to the same quality of mentorship, resources, and opportunities that students in the world's best institutions receive. That's not just our mission — it's our responsibility as young Nepalis who have been fortunate enough to access those resources ourselves.",
+      author: "Binaya Shrestha",
+      role: "Co-Founder & Executive Director"
+    },
+    futureGoals: [
+      {
+        title: "50,000+ Students by 2027",
+        desc: "Scaling our reach to touch 50,000 students across every district in Nepal through expanded school clubs and digital mentorship platforms.",
+        icon: "target",
+        progress: 50
+      },
+      {
+        title: "Regional STEM Labs",
+        desc: "Establishing permanent STEM innovation labs in each of Nepal's 7 provinces, equipped with advanced hardware and mentorship infrastructure.",
+        icon: "flask",
+        progress: 28
+      },
+      {
+        title: "International Olympiad Honors",
+        desc: "Training and supporting Nepal's brightest public school students to represent the nation at International Mathematics, Physics, and Chemistry Olympiads.",
+        icon: "trophy",
+        progress: 35
+      },
+      {
+        title: "Digital Learning Platform",
+        desc: "Building an open-access, bilingual (English/Nepali) digital platform with courses, mentorship matching, and scholarship discovery tools.",
+        icon: "monitor",
+        progress: 15
+      }
     ]
   },
 

@@ -1,6 +1,6 @@
 /* ============================================================
    Navigo Nepal — Premium International-Grade Design System
-   Inspired by UNESCO, UNICEF, Gates Foundation, TED
+   Inspired by UNESCO, UNICEF, Gates Foundation, TED, AG Pashmina
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&display=swap');
@@ -39,6 +39,7 @@
   --gradient-hero: linear-gradient(135deg, #0A2342 0%, #1a3a5c 50%, #06172F 100%);
   --gradient-accent: linear-gradient(135deg, #2563EB 0%, #10B981 100%);
   --gradient-card: linear-gradient(180deg, rgba(37,99,235,0.03) 0%, rgba(16,185,129,0.03) 100%);
+  --gradient-subtle: linear-gradient(180deg, rgba(37,99,235,0.02) 0%, transparent 100%);
 
   --glow-1: rgba(79, 156, 249, 0.08);
   --glow-2: rgba(16, 185, 129, 0.05);
@@ -74,6 +75,7 @@
 
   --gradient-primary: linear-gradient(135deg, #4F9CF9 0%, #7BB8FF 100%);
   --gradient-card: linear-gradient(180deg, rgba(79,156,249,0.05) 0%, rgba(52,211,153,0.05) 100%);
+  --gradient-subtle: linear-gradient(180deg, rgba(79,156,249,0.03) 0%, transparent 100%);
 
   --glow-1: rgba(79, 156, 249, 0.12);
   --glow-2: rgba(16, 185, 129, 0.08);
@@ -106,6 +108,16 @@ body {
   transition: background-color 0.5s ease, color 0.5s ease;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Page Load Animation */
+body.loading {
+  opacity: 0;
+}
+
+body.loaded {
+  opacity: 1;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -212,7 +224,7 @@ select:focus-visible {
 }
 
 .section {
-  padding: clamp(5rem, 10vw, 9rem) 0;
+  padding: clamp(6rem, 12vw, 10rem) 0;
   position: relative;
   overflow: hidden;
 }
@@ -245,6 +257,31 @@ select:focus-visible {
   gap: 1.5rem;
 }
 
+/* ==================== DOT GRID PATTERN ==================== */
+.dot-pattern::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle at 1px 1px, var(--border-color) 1px, transparent 0);
+  background-size: 40px 40px;
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ==================== SECTION DIVIDERS ==================== */
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--accent-color) 20%, var(--accent-emerald) 80%, transparent 100%);
+  opacity: 0.15;
+  margin: 0;
+  border: none;
+}
+
 /* ==================== GLASSMORPHISM PANELS ==================== */
 .glass-panel {
   background: var(--bg-card);
@@ -271,7 +308,7 @@ select:focus-visible {
 
 .glass-panel-hover:hover {
   border-color: var(--accent-color);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-lg), 0 0 0 1px rgba(37, 99, 235, 0.05);
   transform: translateY(-4px);
 }
 
@@ -350,12 +387,12 @@ select:focus-visible {
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.4);
 }
 
 .btn-primary:active {
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 .btn-secondary {
@@ -369,6 +406,7 @@ select:focus-visible {
   border-color: var(--accent-color);
   color: var(--accent-color);
   background: rgba(37, 99, 235, 0.04);
+  transform: translateY(-2px);
 }
 
 .btn-lg {
@@ -389,7 +427,7 @@ select:focus-visible {
 .btn-white:hover {
   background: rgba(255,255,255,0.25);
   border-color: rgba(255,255,255,0.4);
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.02);
 }
 
 /* ==================== SCROLL PROGRESS BAR ==================== */
@@ -398,7 +436,7 @@ select:focus-visible {
   top: 0;
   left: 0;
   height: 3px;
-  background: var(--gradient-primary);
+  background: var(--gradient-accent);
   width: 0;
   z-index: 10001;
   transition: width 0.1s linear;
@@ -640,6 +678,20 @@ select:focus-visible {
   z-index: 1;
 }
 
+/* Dot grid overlay on hero */
+.hero-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.04) 1px, transparent 0);
+  background-size: 48px 48px;
+  z-index: 1;
+  pointer-events: none;
+}
+
 .hero-section .container {
   z-index: 5;
 }
@@ -806,14 +858,14 @@ select:focus-visible {
   left: 0;
   right: 0;
   height: 3px;
-  background: var(--gradient-primary);
+  background: var(--gradient-accent);
   opacity: 0;
   transition: opacity 0.4s ease;
 }
 
 .metric-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
   border-color: rgba(37, 99, 235, 0.2);
 }
 
@@ -865,6 +917,111 @@ select:focus-visible {
   margin-bottom: 5rem;
 }
 
+/* Founding Story Block */
+.founding-story-block {
+  margin-bottom: 5rem;
+  padding: 3.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  position: relative;
+}
+
+.founding-story-block::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 40%;
+  background: var(--gradient-subtle);
+  pointer-events: none;
+}
+
+.founding-story-text {
+  font-size: 1.05rem;
+  line-height: 2;
+  color: var(--text-main);
+  font-weight: 400;
+  max-width: 800px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Leadership Quote */
+.leadership-quote {
+  margin: 4rem 0;
+  padding: 3rem 3.5rem;
+  background: linear-gradient(135deg, rgba(37,99,235,0.04) 0%, rgba(16,185,129,0.02) 100%);
+  border: 1px solid var(--border-color);
+  position: relative;
+}
+
+.leadership-quote::before {
+  content: '"';
+  position: absolute;
+  top: -0.5rem;
+  left: 2rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 8rem;
+  font-weight: 800;
+  line-height: 1;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.leadership-quote blockquote {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-weight: 500;
+  line-height: 1.8;
+  color: var(--text-main);
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+
+.leadership-quote-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.leadership-quote-avatar {
+  width: 48px;
+  height: 48px;
+  background: var(--gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.leadership-quote-info h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.15rem;
+}
+
+.leadership-quote-info span {
+  font-size: 0.82rem;
+  color: var(--accent-color);
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Timeline */
 .timeline-wrapper {
   position: relative;
   max-width: 100%;
@@ -939,6 +1096,105 @@ select:focus-visible {
   margin-bottom: 0.5rem;
 }
 
+/* ==================== FUTURE GOALS ==================== */
+.goals-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+@media (min-width: 768px) {
+  .goals-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.goal-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 2.5rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.goal-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-accent);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+  transform-origin: left;
+}
+
+.goal-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(37, 99, 235, 0.15);
+}
+
+.goal-card:hover::before {
+  transform: scaleX(1);
+}
+
+.goal-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, rgba(37,99,235,0.1) 0%, rgba(16,185,129,0.08) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  color: var(--accent-color);
+}
+
+.goal-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.goal-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.goal-progress-bar {
+  width: 100%;
+  height: 4px;
+  background: var(--border-color);
+  overflow: hidden;
+  margin-top: auto;
+}
+
+.goal-progress-fill {
+  height: 100%;
+  background: var(--gradient-accent);
+  transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.goal-progress-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+  font-size: 0.72rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.goal-progress-label span:last-child {
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
 /* ==================== PROGRAMS SECTION ==================== */
 .programs-grid {
   margin-top: 3rem;
@@ -965,7 +1221,7 @@ select:focus-visible {
   left: 0;
   right: 0;
   height: 3px;
-  background: var(--gradient-primary);
+  background: var(--gradient-accent);
   transform: scaleX(0);
   transition: transform 0.4s ease;
   transform-origin: left;
@@ -973,7 +1229,7 @@ select:focus-visible {
 
 .program-card:hover {
   transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
   border-color: rgba(37, 99, 235, 0.2);
 }
 
@@ -1861,7 +2117,7 @@ select.form-control {
   left: 0;
   right: 0;
   height: 3px;
-  background: var(--gradient-primary);
+  background: var(--gradient-accent);
 }
 
 .footer-grid {
@@ -2135,6 +2391,26 @@ select.form-control {
   background: var(--bg-secondary);
 }
 
+/* Dot pattern section backgrounds */
+.section.dot-pattern {
+  position: relative;
+}
+
+/* ==================== SHIMMER EFFECT ==================== */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, var(--accent-color) 0%, var(--accent-light) 30%, var(--accent-emerald) 50%, var(--accent-light) 70%, var(--accent-color) 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
 /* ==================== RESPONSIVE ==================== */
 @media (max-width: 768px) {
   .hero-section {
@@ -2178,6 +2454,18 @@ select.form-control {
 
   .container {
     width: 92%;
+  }
+
+  .founding-story-block {
+    padding: 2rem;
+  }
+
+  .leadership-quote {
+    padding: 2rem;
+  }
+
+  .goals-grid {
+    grid-template-columns: 1fr;
   }
 }
 

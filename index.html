@@ -3,10 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Navigo Nepal | Empowering Nepal's Next Generation of Leaders</title>
+  <title>Navigo Nepal | Empowering Nepal's Future Leaders, Innovators, and Changemakers</title>
   <meta name="description" content="Navigo Nepal is a leading youth-led educational empowerment organization transforming Nepal's future through STEM education, Olympiad awareness, leadership development, mentorship, and national-scale community impact.">
   <meta name="keywords" content="Navigo Nepal, STEM education Nepal, youth empowerment, Olympiad awareness, leadership development, educational nonprofit Nepal">
   
+  <!-- Open Graph -->
+  <meta property="og:title" content="Navigo Nepal | Empowering Nepal's Future Leaders">
+  <meta property="og:description" content="A premium youth-led educational empowerment platform connecting students, schools, mentors, innovators, and opportunities across Nepal.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="png_new_logo.png">
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="png_new_logo.png">
   <link rel="apple-touch-icon" href="png_new_logo.png">
@@ -14,11 +20,12 @@
   <!-- Google Fonts - Premium Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- CSS Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="loading">
 
   <!-- Scroll Progress Bar -->
   <div class="scroll-progress" id="scrollProgress"></div>
@@ -89,13 +96,13 @@
           <span style="background: rgba(255,255,255,0.3); width: 24px; height: 2px; display: inline-block;"></span>
           Youth Empowerment &amp; STEM Hub
         </span>
-        <h1 class="heading-xl" id="heroTitle">Empowering Nepal's Next Generation of Leaders</h1>
+        <h1 class="heading-xl" id="heroTitle">Empowering Nepal's Future Leaders, Innovators, and Changemakers</h1>
         <p class="hero-subtitle" id="heroSubtitle" style="margin: 2rem 0 2.5rem; font-size: 1.05rem; line-height: 1.8; color: rgba(255,255,255,0.7); font-weight: 400; max-width: 520px;">
-          We bridge the gap between potential and opportunity, equipping Nepali students with world-class exposure, STEM programs, and leadership pipelines.
+          Building opportunities, leadership, and impact for students across Nepal.
         </p>
         <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
           <a href="#volunteer" class="btn btn-primary btn-lg" id="heroCtaPrimary">Join Navigo</a>
-          <a href="#contact" class="btn btn-white btn-lg" id="heroCtaSecondary">Partner With Us</a>
+          <a href="#contact" class="btn btn-white btn-lg" id="heroCtaSecondary">Become a Partner</a>
         </div>
 
         <!-- Trust Indicators -->
@@ -169,8 +176,11 @@
     </div>
   </header>
 
+  <!-- Section Divider -->
+  <hr class="section-divider">
+
   <!-- IMPACT SHOWCASE DASHBOARD -->
-  <section class="section section-alt" id="impact">
+  <section class="section section-alt dot-pattern" id="impact">
     <div class="container">
       <div class="reveal" style="max-width: 700px; margin-bottom: 3rem;">
         <span class="gradient-accent section-label">Measurable Footprints</span>
@@ -184,13 +194,24 @@
     </div>
   </section>
 
+  <!-- Section Divider -->
+  <hr class="section-divider">
+
   <!-- OUR STORY & STORYTELLING -->
   <section class="section" id="story">
     <div class="container">
       <div class="story-header reveal">
         <span class="gradient-accent section-label">Our Foundation</span>
-        <h2 class="heading-lg">Our Vision & Core Mandate</h2>
+        <h2 class="heading-lg">Our Vision &amp; Core Mandate</h2>
         <p style="color: var(--text-muted); margin-top: 0.75rem; font-size: 0.95rem; line-height: 1.8;">A youth-led movement working to ensure that every student in Nepal has access to top-tier mentorship, advanced technical modules, and global pipelines.</p>
+      </div>
+
+      <!-- Founding Story Block -->
+      <div class="founding-story-block reveal" id="foundingStoryBlock">
+        <span class="gradient-accent section-label" style="margin-bottom: 1.5rem;">The Origin Story</span>
+        <p class="founding-story-text" id="foundingStoryText">
+          <!-- Rendered dynamically -->
+        </p>
       </div>
 
       <!-- Mission & Vision Grid -->
@@ -219,6 +240,18 @@
         </div>
       </div>
 
+      <!-- Leadership Quote -->
+      <div class="leadership-quote reveal" id="leadershipQuoteBlock">
+        <blockquote id="leadershipQuoteText"></blockquote>
+        <div class="leadership-quote-author">
+          <div class="leadership-quote-avatar" id="leadershipQuoteAvatar">B</div>
+          <div class="leadership-quote-info">
+            <h4 id="leadershipQuoteAuthor">Binaya Shrestha</h4>
+            <span id="leadershipQuoteRole">Co-Founder & Executive Director</span>
+          </div>
+        </div>
+      </div>
+
       <!-- Timeline Title -->
       <div class="reveal" style="margin-bottom: 3rem;">
         <h3 class="heading-lg" style="font-size: 2rem;">Milestones Journey</h3>
@@ -232,8 +265,21 @@
           <!-- Rendered Dynamically from js/cms.js -->
         </div>
       </div>
+
+      <!-- Future Goals Section -->
+      <div class="reveal" style="margin-top: 5rem; margin-bottom: 2rem;">
+        <span class="gradient-accent section-label">Looking Ahead</span>
+        <h3 class="heading-lg" style="font-size: 2rem;">Future Goals &amp; Aspirations</h3>
+        <p style="color: var(--text-muted); margin-top: 0.5rem; font-size: 0.9rem;">Our roadmap for expanding educational excellence across Nepal.</p>
+      </div>
+      <div class="goals-grid" id="goalsGrid">
+        <!-- Rendered Dynamically -->
+      </div>
     </div>
   </section>
+
+  <!-- Section Divider -->
+  <hr class="section-divider">
 
   <!-- PROGRAMS SECTION -->
   <section class="section section-alt" id="programs">
@@ -250,8 +296,11 @@
     </div>
   </section>
 
+  <!-- Section Divider -->
+  <hr class="section-divider">
+
   <!-- NEPAL IMPACT MAP SECTION -->
-  <section class="section" id="impact-map">
+  <section class="section dot-pattern" id="impact-map">
     <div class="container">
       <div class="reveal" style="max-width: 700px; margin-bottom: 3rem;">
         <span class="gradient-accent section-label">Geographic Coverage</span>
@@ -320,12 +369,15 @@
     </div>
   </section>
 
+  <!-- Section Divider -->
+  <hr class="section-divider">
+
   <!-- SUCCESS STORIES section -->
   <section class="section section-alt" id="stories">
     <div class="container">
       <div class="reveal" style="max-width: 700px; margin-bottom: 3rem;">
         <span class="gradient-accent section-label">Student Spotlights</span>
-        <h2 class="heading-lg">Success Stories & Journeys</h2>
+        <h2 class="heading-lg">Success Stories &amp; Journeys</h2>
         <p style="color: var(--text-muted); margin-top: 0.75rem; font-size: 0.95rem; line-height: 1.8;">Hear from students whose lives have been transformed through Navigo Nepal's mentorship and educational programs.</p>
       </div>
 
@@ -342,11 +394,14 @@
     </div>
   </section>
 
+  <!-- Section Divider -->
+  <hr class="section-divider">
+
   <!-- TEAM SECTION -->
   <section class="section" id="team">
     <div class="container">
       <div class="reveal" style="max-width: 700px; margin-bottom: 3rem;">
-        <span class="gradient-accent section-label">Board & Leadership</span>
+        <span class="gradient-accent section-label">Board &amp; Leadership</span>
         <h2 class="heading-lg">Navigo Coordinators</h2>
         <p style="color: var(--text-muted); margin-top: 0.75rem; font-size: 0.95rem; line-height: 1.8;">A youth-led assembly of educators, collegiate mentors, and Olympiad gold medalists spearheading public educational excellence.</p>
       </div>
@@ -373,12 +428,15 @@
     </div>
   </section>
 
+  <!-- Section Divider -->
+  <hr class="section-divider">
+
   <!-- BLOG & RESOURCES SECTION -->
   <section class="section" id="resources">
     <div class="container">
       <div class="reveal" style="max-width: 700px; margin-bottom: 3rem;">
         <span class="gradient-accent section-label">Educational Archives</span>
-        <h2 class="heading-lg">Blog & Resources</h2>
+        <h2 class="heading-lg">Blog &amp; Resources</h2>
         <p style="color: var(--text-muted); margin-top: 0.75rem; font-size: 0.95rem; line-height: 1.8;">Direct download portals for mathematics training packets, STEM coordinator scripts, and university applications guides.</p>
       </div>
 
@@ -408,6 +466,9 @@
     </div>
   </section>
 
+  <!-- Section Divider -->
+  <hr class="section-divider">
+
   <!-- VOLUNTEER PORTAL SECTION -->
   <section class="section section-alt" id="volunteer">
     <div class="container">
@@ -423,12 +484,15 @@
     </div>
   </section>
 
+  <!-- Section Divider -->
+  <hr class="section-divider">
+
   <!-- DONATION & PARTNERSHIP SECTION -->
   <section class="section" id="donate">
     <div class="container">
       <div class="reveal" style="max-width: 700px; margin-bottom: 3rem;">
         <span class="gradient-accent section-label">Direct Sponsorship</span>
-        <h2 class="heading-lg">Sponsor Curriculums & Tech Kits</h2>
+        <h2 class="heading-lg">Sponsor Curriculums &amp; Tech Kits</h2>
         <p style="color: var(--text-muted); margin-top: 0.75rem; font-size: 0.95rem; line-height: 1.8;">Secure funding paths to distribute physical micro-controllers, Olympiad literature, and specialized tutor workshops directly to community high schools.</p>
       </div>
 
@@ -437,6 +501,9 @@
       </div>
     </div>
   </section>
+
+  <!-- Section Divider -->
+  <hr class="section-divider">
 
   <!-- CONTACT & NEWSLETTER SECTION -->
   <section class="section section-alt" id="contact">
@@ -515,7 +582,7 @@
               <label for="contactSubject">Subject Interest</label>
               <select id="contactSubject" class="form-control">
                 <option value="general">General Inquiry</option>
-                <option value="sponsorship">Sponsorship & Alliance</option>
+                <option value="sponsorship">Sponsorship &amp; Alliance</option>
                 <option value="school-club">Establish School Club</option>
                 <option value="mentorship">Mentorship Network Join</option>
               </select>
@@ -666,7 +733,7 @@
         <input type="hidden" id="donationTierId">
         
         <!-- Package Summary -->
-        <div style="border: 1.5px solid var(--accent-color); border-radius: var(--radius-lg); padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; background: linear-gradient(135deg, rgba(37,99,235,0.04), rgba(16,185,129,0.04));">
+        <div style="border: 1.5px solid var(--accent-color); padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; background: linear-gradient(135deg, rgba(37,99,235,0.04), rgba(16,185,129,0.04));">
           <div>
             <h4 id="checkoutTierLabel" style="font-size: 1.2rem; font-weight: 700;">Sponsor Student</h4>
             <p style="font-size: 0.75rem; color: var(--text-muted);">Direct resource funding</p>
