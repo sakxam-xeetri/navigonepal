@@ -785,7 +785,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     path.addEventListener("mouseover", () => {
       if (!path.classList.contains("active")) {
-        path.style.fill = "rgba(37, 99, 235, 0.08)";
+        path.style.fill = "#fca5a5"; // light red hover
       }
     });
 

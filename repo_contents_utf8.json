@@ -1,0 +1,165 @@
+﻿{
+    "value":  [
+                  {
+                      "name":  "LICENSE.txt",
+                      "path":  "LICENSE.txt",
+                      "sha":  "56166056e771f12e43ee7a8c703247c35c5035b2",
+                      "size":  1071,
+                      "url":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/contents/LICENSE.txt?ref=master",
+                      "html_url":  "https://github.com/dipbazz/Nepal-map-with-7-states-in-svg/blob/master/LICENSE.txt",
+                      "git_url":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/git/blobs/56166056e771f12e43ee7a8c703247c35c5035b2",
+                      "download_url":  "https://raw.githubusercontent.com/dipbazz/Nepal-map-with-7-states-in-svg/master/LICENSE.txt",
+                      "type":  "file",
+                      "_links":  {
+                                     "self":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/contents/LICENSE.txt?ref=master",
+                                     "git":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/git/blobs/56166056e771f12e43ee7a8c703247c35c5035b2",
+                                     "html":  "https://github.com/dipbazz/Nepal-map-with-7-states-in-svg/blob/master/LICENSE.txt"
+                                 }
+                  },
+                  {
+                      "name":  "Nepal map.svg",
+                      "path":  "Nepal map.svg",
+                      "sha":  "33c2f8e79112385fd3bb7ef9ebf160c7419c06ae",
+                      "size":  91700,
+                      "url":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/contents/Nepal%20map.svg?ref=master",
+                      "html_url":  "https://github.com/dipbazz/Nepal-map-with-7-states-in-svg/blob/master/Nepal%20map.svg",
+                      "git_url":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/git/blobs/33c2f8e79112385fd3bb7ef9ebf160c7419c06ae",
+                      "download_url":  "https://raw.githubusercontent.com/dipbazz/Nepal-map-with-7-states-in-svg/master/Nepal%20map.svg",
+                      "type":  "file",
+                      "_links":  {
+                                     "self":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/contents/Nepal%20map.svg?ref=master",
+                                     "git":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/git/blobs/33c2f8e79112385fd3bb7ef9ebf160c7419c06ae",
+                                     "html":  "https://github.com/dipbazz/Nepal-map-with-7-states-in-svg/blob/master/Nepal%20map.svg"
+                                 }
+                  },
+                  {
+                      "name":  "README.md",
+                      "path":  "README.md",
+                      "sha":  "ef9d4187441d4fd64ecdd0c934cfb6871fe38c59",
+                      "size":  427,
+                      "url":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/contents/README.md?ref=master",
+                      "html_url":  "https://github.com/dipbazz/Nepal-map-with-7-states-in-svg/blob/master/README.md",
+                      "git_url":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/git/blobs/ef9d4187441d4fd64ecdd0c934cfb6871fe38c59",
+                      "download_url":  "https://raw.githubusercontent.com/dipbazz/Nepal-map-with-7-states-in-svg/master/README.md",
+                      "type":  "file",
+                      "_links":  {
+                                     "self":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/contents/README.md?ref=master",
+                                     "git":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/git/blobs/ef9d4187441d4fd64ecdd0c934cfb6871fe38c59",
+                                     "html":  "https://github.com/dipbazz/Nepal-map-with-7-states-in-svg/blob/master/README.md"
+                                 }
+                  },
+                  {
+                      "name":  "province 1.svg",
+                      "path":  "province 1.svg",
+                      "sha":  "50a5e0d38012db3a027758528518324f15704471",
+                      "size":  13531,
+                      "url":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/contents/province%201.svg?ref=master",
+                      "html_url":  "https://github.com/dipbazz/Nepal-map-with-7-states-in-svg/blob/master/province%201.svg",
+                      "git_url":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/git/blobs/50a5e0d38012db3a027758528518324f15704471",
+                      "download_url":  "https://raw.githubusercontent.com/dipbazz/Nepal-map-with-7-states-in-svg/master/province%201.svg",
+                      "type":  "file",
+                      "_links":  {
+                                     "self":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/contents/province%201.svg?ref=master",
+                                     "git":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/git/blobs/50a5e0d38012db3a027758528518324f15704471",
+                                     "html":  "https://github.com/dipbazz/Nepal-map-with-7-states-in-svg/blob/master/province%201.svg"
+                                 }
+                  },
+                  {
+                      "name":  "province 2.svg",
+                      "path":  "province 2.svg",
+                      "sha":  "4bd6156d557d63e408e31c765699f87ae8eb3808",
+                      "size":  10929,
+                      "url":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/contents/province%202.svg?ref=master",
+                      "html_url":  "https://github.com/dipbazz/Nepal-map-with-7-states-in-svg/blob/master/province%202.svg",
+                      "git_url":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/git/blobs/4bd6156d557d63e408e31c765699f87ae8eb3808",
+                      "download_url":  "https://raw.githubusercontent.com/dipbazz/Nepal-map-with-7-states-in-svg/master/province%202.svg",
+                      "type":  "file",
+                      "_links":  {
+                                     "self":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/contents/province%202.svg?ref=master",
+                                     "git":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/git/blobs/4bd6156d557d63e408e31c765699f87ae8eb3808",
+                                     "html":  "https://github.com/dipbazz/Nepal-map-with-7-states-in-svg/blob/master/province%202.svg"
+                                 }
+                  },
+                  {
+                      "name":  "province 3.svg",
+                      "path":  "province 3.svg",
+                      "sha":  "594e7cef5c8d72651792cec66f980d34ba4ab04b",
+                      "size":  13203,
+                      "url":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/contents/province%203.svg?ref=master",
+                      "html_url":  "https://github.com/dipbazz/Nepal-map-with-7-states-in-svg/blob/master/province%203.svg",
+                      "git_url":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/git/blobs/594e7cef5c8d72651792cec66f980d34ba4ab04b",
+                      "download_url":  "https://raw.githubusercontent.com/dipbazz/Nepal-map-with-7-states-in-svg/master/province%203.svg",
+                      "type":  "file",
+                      "_links":  {
+                                     "self":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/contents/province%203.svg?ref=master",
+                                     "git":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/git/blobs/594e7cef5c8d72651792cec66f980d34ba4ab04b",
+                                     "html":  "https://github.com/dipbazz/Nepal-map-with-7-states-in-svg/blob/master/province%203.svg"
+                                 }
+                  },
+                  {
+                      "name":  "province 4.svg",
+                      "path":  "province 4.svg",
+                      "sha":  "6f003bf3e8621245dc4b3abf2dda47056e227cab",
+                      "size":  15657,
+                      "url":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/contents/province%204.svg?ref=master",
+                      "html_url":  "https://github.com/dipbazz/Nepal-map-with-7-states-in-svg/blob/master/province%204.svg",
+                      "git_url":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/git/blobs/6f003bf3e8621245dc4b3abf2dda47056e227cab",
+                      "download_url":  "https://raw.githubusercontent.com/dipbazz/Nepal-map-with-7-states-in-svg/master/province%204.svg",
+                      "type":  "file",
+                      "_links":  {
+                                     "self":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/contents/province%204.svg?ref=master",
+                                     "git":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/git/blobs/6f003bf3e8621245dc4b3abf2dda47056e227cab",
+                                     "html":  "https://github.com/dipbazz/Nepal-map-with-7-states-in-svg/blob/master/province%204.svg"
+                                 }
+                  },
+                  {
+                      "name":  "province 5.svg",
+                      "path":  "province 5.svg",
+                      "sha":  "9558e21ad4241d90378a160b0157d632543ce2ae",
+                      "size":  15376,
+                      "url":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/contents/province%205.svg?ref=master",
+                      "html_url":  "https://github.com/dipbazz/Nepal-map-with-7-states-in-svg/blob/master/province%205.svg",
+                      "git_url":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/git/blobs/9558e21ad4241d90378a160b0157d632543ce2ae",
+                      "download_url":  "https://raw.githubusercontent.com/dipbazz/Nepal-map-with-7-states-in-svg/master/province%205.svg",
+                      "type":  "file",
+                      "_links":  {
+                                     "self":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/contents/province%205.svg?ref=master",
+                                     "git":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/git/blobs/9558e21ad4241d90378a160b0157d632543ce2ae",
+                                     "html":  "https://github.com/dipbazz/Nepal-map-with-7-states-in-svg/blob/master/province%205.svg"
+                                 }
+                  },
+                  {
+                      "name":  "province 6.svg",
+                      "path":  "province 6.svg",
+                      "sha":  "f805788f19052719c667b8737c589d375671168b",
+                      "size":  17132,
+                      "url":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/contents/province%206.svg?ref=master",
+                      "html_url":  "https://github.com/dipbazz/Nepal-map-with-7-states-in-svg/blob/master/province%206.svg",
+                      "git_url":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/git/blobs/f805788f19052719c667b8737c589d375671168b",
+                      "download_url":  "https://raw.githubusercontent.com/dipbazz/Nepal-map-with-7-states-in-svg/master/province%206.svg",
+                      "type":  "file",
+                      "_links":  {
+                                     "self":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/contents/province%206.svg?ref=master",
+                                     "git":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/git/blobs/f805788f19052719c667b8737c589d375671168b",
+                                     "html":  "https://github.com/dipbazz/Nepal-map-with-7-states-in-svg/blob/master/province%206.svg"
+                                 }
+                  },
+                  {
+                      "name":  "province 7.svg",
+                      "path":  "province 7.svg",
+                      "sha":  "3832388b723d5d1e37ffcf1e14b2a402912508db",
+                      "size":  9952,
+                      "url":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/contents/province%207.svg?ref=master",
+                      "html_url":  "https://github.com/dipbazz/Nepal-map-with-7-states-in-svg/blob/master/province%207.svg",
+                      "git_url":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/git/blobs/3832388b723d5d1e37ffcf1e14b2a402912508db",
+                      "download_url":  "https://raw.githubusercontent.com/dipbazz/Nepal-map-with-7-states-in-svg/master/province%207.svg",
+                      "type":  "file",
+                      "_links":  {
+                                     "self":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/contents/province%207.svg?ref=master",
+                                     "git":  "https://api.github.com/repos/dipbazz/Nepal-map-with-7-states-in-svg/git/blobs/3832388b723d5d1e37ffcf1e14b2a402912508db",
+                                     "html":  "https://github.com/dipbazz/Nepal-map-with-7-states-in-svg/blob/master/province%207.svg"
+                                 }
+                  }
+              ],
+    "Count":  10
+}
