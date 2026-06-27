@@ -12,7 +12,7 @@ This web dashboard displays nationwide community impact, dynamic portfolios, int
 
 ---
 
-## 🚀 Key Features
+##  Key Features
 
 *   **Client-Side CMS Architecture**: Powered by a unified data store ([js/cms.js](file:///d:/navigonepal/js/cms.js)) to manage content dynamically, including programs, metrics, stories, resources, and volunteer listings.
 *   **Interactive Vector GIS Mapping**: A premium, custom-styled SVG map of Nepal's provinces that shows real-time stats (schools reached, students mentored, active clubs) upon hover and selection.
@@ -24,7 +24,7 @@ This web dashboard displays nationwide community impact, dynamic portfolios, int
 
 ---
 
-## 📁 Repository Structure
+##  Repository Structure
 
 ```tree
 d:/navigonepal
@@ -47,7 +47,7 @@ d:/navigonepal
 
 ---
 
-## 🛠️ System Architecture
+##  System Architecture
 
 The dashboard is engineered with a separation of concerns, decoupling structural markup from high-fidelity content structures.
 
@@ -78,7 +78,7 @@ graph TD
 
 ---
 
-## 💻 Installation & Local Development
+##  Installation & Local Development
 
 This project is a high-fidelity frontend static dashboard. It has no build step or node package requirements. You can run it locally with any simple HTTP server.
 
@@ -95,7 +95,7 @@ Then navigate to `http://localhost:8000` in your web browser.
 
 ---
 
-## ⚙️ Development & Automation Tools
+##  Development & Automation Tools
 
 To simplify updating subpages and keeping selectors safe, the project includes several Python developer scripts:
 
@@ -115,7 +115,7 @@ To simplify updating subpages and keeping selectors safe, the project includes s
 
 ---
 
-## 🌐 SEO & Performance
+##  SEO & Performance
 
 *   **Semantic Elements**: Structured using HTML5 tags (`<nav>`, `<header>`, `<main>`, `<section>`, `<aside>`, `<footer>`) to optimize search engine crawling and screen reader accessibility.
 *   **Meta Parameters**: Contains comprehensive SEO titles, meta-descriptions, keywords, viewport adjustments, and Open Graph tags for social media shares.
@@ -123,7 +123,7 @@ To simplify updating subpages and keeping selectors safe, the project includes s
 
 ---
 
-## ⚖️ License
+##  License
 
 Distributed under the MIT License. See `LICENSE` for details.
 
