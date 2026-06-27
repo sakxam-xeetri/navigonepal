@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   htmlElement.setAttribute("data-theme", savedTheme);
   updateThemeIcons(savedTheme);
 
-  themeToggle.addEventListener("click", () => {
+  if(themeToggle) themeToggle.addEventListener("click", () => {
     const currentTheme = htmlElement.getAttribute("data-theme");
     const newTheme = currentTheme === "dark" ? "light" : "dark";
     htmlElement.setAttribute("data-theme", newTheme);
@@ -35,11 +35,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateThemeIcons(theme) {
     if (theme === "dark") {
-      sunIcon.style.display = "block";
-      moonIcon.style.display = "none";
+      if(sunIcon) sunIcon.style.display = "block";
+      if(moonIcon) moonIcon.style.display = "none";
     } else {
-      sunIcon.style.display = "none";
-      moonIcon.style.display = "block";
+      if(sunIcon) sunIcon.style.display = "none";
+      if(moonIcon) moonIcon.style.display = "block";
     }
   }
 
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.getElementById("hamburger");
   const mobileNav = document.getElementById("mobileNav");
   
-  hamburger.addEventListener("click", () => {
+  if(hamburger) hamburger.addEventListener("click", () => {
     hamburger.classList.toggle("open");
     mobileNav.classList.toggle("open");
   });
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
     if (totalHeight > 0) {
       const percentage = (window.scrollY / totalHeight) * 100;
-      scrollProgress.style.width = `${percentage}%`;
+      if(scrollProgress) scrollProgress.style.width = `${percentage}%`;
     }
   });
 
@@ -73,9 +73,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const navbar = document.getElementById("mainNav");
   window.addEventListener("scroll", () => {
     if (window.scrollY > 50) {
-      navbar.classList.add("scrolled");
+      if(navbar) navbar.classList.add("scrolled");
     } else {
-      navbar.classList.remove("scrolled");
+      if(navbar) navbar.classList.remove("scrolled");
     }
   });
 
@@ -140,10 +140,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // ==================== 3. CMS CONTENT RENDERING ====================
   
   // Render Hero
-  document.getElementById("heroTitle").textContent = CMS.hero.title;
-  document.getElementById("heroSubtitle").textContent = CMS.hero.subtitle;
-  document.getElementById("heroCtaPrimary").textContent = CMS.hero.ctaPrimary;
-  document.getElementById("heroCtaSecondary").textContent = CMS.hero.ctaSecondary;
+  if(document.getElementById("heroTitle")) document.getElementById("heroTitle").textContent = CMS.hero.title;
+  if(document.getElementById("heroSubtitle")) document.getElementById("heroSubtitle").textContent = CMS.hero.subtitle;
+  if(document.getElementById("heroCtaPrimary")) document.getElementById("heroCtaPrimary").textContent = CMS.hero.ctaPrimary;
+  if(document.getElementById("heroCtaSecondary")) document.getElementById("heroCtaSecondary").textContent = CMS.hero.ctaSecondary;
 
   // Render Founding Story
   const foundingStoryText = document.getElementById("foundingStoryText");
@@ -165,12 +165,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Render Mission & Vision
-  document.getElementById("storyMission").textContent = CMS.story.mission;
-  document.getElementById("storyVision").textContent = CMS.story.vision;
+  if(document.getElementById("storyMission")) document.getElementById("storyMission").textContent = CMS.story.mission;
+  if(document.getElementById("storyVision")) document.getElementById("storyVision").textContent = CMS.story.vision;
 
   // Render Values List
   const coreValuesList = document.getElementById("coreValuesList");
-  coreValuesList.innerHTML = CMS.story.values.map((val, idx) => `
+  if (coreValuesList) coreValuesList.innerHTML = CMS.story.values.map((val, idx) => `
     <div class="glass-panel glass-panel-hover" style="padding: 1.75rem 2rem;">
       <h4 style="font-size: 1.15rem; color: var(--accent-color); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.75rem; font-weight: 700;">
         <div style="width: 32px; height: 32px; background: linear-gradient(135deg, rgba(37,99,235,0.1), rgba(16,185,129,0.08)); border-radius: 0px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
@@ -327,7 +327,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Render Milestones Timeline
   const timelineContainer = document.getElementById("timelineContainer");
-  timelineContainer.innerHTML = CMS.story.timeline.map((mile, idx) => `
+  if (timelineContainer) timelineContainer.innerHTML = CMS.story.timeline.map((mile, idx) => `
     <div class="timeline-item reveal stagger-${(idx % 3) + 1}">
       <div class="timeline-dot"></div>
       <div class="timeline-year">${mile.year}</div>
@@ -552,7 +552,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Render Testimonials with images
   const carouselContainer = document.getElementById("carouselContainer");
-  carouselContainer.innerHTML = CMS.successStories.map(story => `
+  if (carouselContainer) carouselContainer.innerHTML = CMS.successStories.map(story => `
     <div class="carousel-slide">
       <div class="testimonial-card">
         <div class="testimonial-img-wrapper">
@@ -570,7 +570,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Render Team Grid
   const teamGrid = document.getElementById("teamGrid");
-  teamGrid.innerHTML = CMS.team.map((member, idx) => `
+  if (teamGrid) teamGrid.innerHTML = CMS.team.map((member, idx) => `
     <div class="team-card reveal stagger-${(idx % 4) + 1}">
       <div class="team-img-box">
         <div style="width: 100%; height: 100%; background: linear-gradient(135deg, rgba(10,35,66,0.9) 0%, rgba(37,99,235,0.3) 100%); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.6);">
@@ -609,7 +609,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Render Blog Grid with images
   const blogGrid = document.getElementById("blogGrid");
-  blogGrid.innerHTML = CMS.blog.map(post => `
+  if (blogGrid) blogGrid.innerHTML = CMS.blog.map(post => `
     <div class="blog-post-card reveal">
       <div class="blog-post-img">
         <img src="${post.image}" alt="${post.title}" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\\'width:100%;height:100%;background:linear-gradient(135deg,rgba(37,99,235,0.08),rgba(16,185,129,0.05));display:flex;align-items:center;justify-content:center;\\'><svg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'30\\' height=\\'30\\' viewBox=\\'0 0 24 24\\' fill=\\'none\\' stroke=\\'currentColor\\' stroke-width=\\'1\\' style=\\'color:var(--accent-color);opacity:0.5\\'><path d=\\'M4 22V4c0-.5.2-1 .6-1.4C5 2.2 5.5 2 6 2h12c.5 0 1 .2 1.4.6.4.4.6.9.6 1.4v18l-8-4-8 4z\\'/></svg></div>'">
@@ -625,7 +625,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Render Resources
   const resourcesList = document.getElementById("resourcesList");
-  resourcesList.innerHTML = CMS.resources.map(res => `
+  if (resourcesList) resourcesList.innerHTML = CMS.resources.map(res => `
     <div class="resource-item">
       <div class="resource-header">
         <span class="resource-tag">${res.category}</span>
@@ -640,7 +640,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Render Volunteer Opportunities
   const volunteerGrid = document.getElementById("volunteerGrid");
-  volunteerGrid.innerHTML = CMS.volunteerPositions.map((pos, idx) => `
+  if (volunteerGrid) volunteerGrid.innerHTML = CMS.volunteerPositions.map((pos, idx) => `
     <div class="position-card reveal stagger-${(idx % 3) + 1}">
       <div class="position-meta">
         <span class="meta-tag">${pos.type}</span>
@@ -656,7 +656,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Render Donations
   const donationGrid = document.getElementById("donationGrid");
-  donationGrid.innerHTML = CMS.donations.map((tier, idx) => `
+  if (donationGrid) donationGrid.innerHTML = CMS.donations.map((tier, idx) => `
     <div class="donation-card ${idx === 1 ? 'featured' : ''} reveal stagger-${idx + 1}">
       <div class="donation-tier-header">
         <span class="gradient-accent" style="font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em;">${idx === 1 ? 'INSTITUTIONAL PARTNERSHIP' : 'INDIVIDUAL SPONSORSHIP'}</span>
