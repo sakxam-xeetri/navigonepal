@@ -3120,206 +3120,55 @@ select:focus-visible {
   line-height: 1.6;
 }
 
-/* Partners Card Grid */
-.partners-grid {
+/* Partners Logo Grid */
+.partners-logo-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
-  max-width: 1100px;
-  margin: 0 auto 4rem;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.partner-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 2rem 1.5rem;
-  text-align: center;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.partner-card:hover {
-  border-color: rgba(79, 156, 249, 0.2);
-  background: rgba(79, 156, 249, 0.04);
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-}
-
-.partner-card-icon {
-  width: 56px;
-  height: 56px;
-  background: rgba(79, 156, 249, 0.1);
-  border: 1px solid rgba(79, 156, 249, 0.15);
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.25rem;
-  color: #4F9CF9;
-  transition: all 0.4s ease;
-}
-
-.partner-card:hover .partner-card-icon {
-  background: rgba(79, 156, 249, 0.15);
-  transform: scale(1.08);
-}
-
-.partner-card-icon.unicef {
-  background: rgba(16, 185, 129, 0.1);
-  border-color: rgba(16, 185, 129, 0.15);
-  color: #10B981;
-}
-
-.partner-card:hover .partner-card-icon.unicef {
-  background: rgba(16, 185, 129, 0.15);
-}
-
-.partner-card-icon.usaid {
-  background: rgba(239, 68, 68, 0.1);
-  border-color: rgba(239, 68, 68, 0.15);
-  color: #EF4444;
-}
-
-.partner-card:hover .partner-card-icon.usaid {
-  background: rgba(239, 68, 68, 0.15);
-}
-
-.partner-card-icon.aiesec {
-  background: rgba(168, 85, 247, 0.1);
-  border-color: rgba(168, 85, 247, 0.15);
-  color: #A855F7;
-}
-
-.partner-card:hover .partner-card-icon.aiesec {
-  background: rgba(168, 85, 247, 0.15);
-}
-
-.partner-card-name {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 0.4rem;
-}
-
-.partner-card-type {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: #4F9CF9;
-  display: block;
-  margin-bottom: 1rem;
-}
-
-.partner-card-desc {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.55);
-  line-height: 1.6;
-}
-
-/* Partners Schools Header */
-.partners-schools-header {
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-.partners-schools-label {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: rgba(255, 255, 255, 0.4);
-}
-
-/* Partners Ticker */
-.partners-ticker-container {
-  overflow: hidden;
-  padding: 1rem 0;
-  position: relative;
-  width: 100%;
-}
-
-.partners-ticker-container::before,
-.partners-ticker-container::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 150px;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.partners-ticker-container::before {
-  left: 0;
-  background: linear-gradient(to right, #030B18 0%, transparent 100%);
-}
-
-.partners-ticker-container::after {
-  right: 0;
-  background: linear-gradient(to left, #030B18 0%, transparent 100%);
-}
-
-.partners-ticker {
-  display: flex;
-  width: max-content;
-  animation: scroll-ticker 35s linear infinite;
-  gap: 0;
-}
-
-.partner-logo-item {
+.partner-logo-cell {
   display: flex;
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 1rem 1.5rem;
-  margin: 0 0.5rem;
-  height: 70px;
-  min-width: 150px;
-  max-width: 200px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  aspect-ratio: 16 / 10;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
 }
 
-.partner-logo-item:hover {
-  border-color: rgba(79, 156, 249, 0.3);
-  background: rgba(79, 156, 249, 0.05);
+.partner-logo-cell:hover {
+  border-color: rgba(79, 156, 249, 0.25);
+  background: rgba(79, 156, 249, 0.06);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
 }
 
-.partner-logo-img {
+.partner-logo-cell img {
+  width: 100%;
   height: 100%;
-  width: auto;
-  max-height: 45px;
-  max-width: 100%;
   object-fit: contain;
-  filter: brightness(0.7) grayscale(30%);
-  opacity: 0.6;
+  filter: brightness(0.75) grayscale(20%);
+  opacity: 0.65;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.partner-logo-item:hover .partner-logo-img {
+.partner-logo-cell:hover img {
   filter: brightness(1) grayscale(0%);
   opacity: 1;
-}
-
-@keyframes scroll-ticker {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(calc(-50%));
-  }
+  transform: scale(1.05);
 }
 
 /* Partners Responsive */
 @media (max-width: 1024px) {
-  .partners-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .partners-logo-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
   }
 }
 
@@ -3336,42 +3185,24 @@ select:focus-visible {
     font-size: 0.9rem;
   }
 
-  .partners-grid {
-    grid-template-columns: 1fr;
+  .partners-logo-grid {
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
 
-  .partner-card {
-    padding: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    text-align: left;
+  .partner-logo-cell {
+    padding: 1rem 1.25rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .partners-logo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
   }
 
-  .partner-card-icon {
-    margin: 0;
-    flex-shrink: 0;
-    width: 48px;
-    height: 48px;
-  }
-
-  .partner-card-name {
-    font-size: 1rem;
-  }
-
-  .partner-card-desc {
-    display: none;
-  }
-
-  .partner-logo-item {
-    height: 60px;
-    min-width: 120px;
+  .partner-logo-cell {
     padding: 0.75rem 1rem;
-  }
-
-  .partner-logo-img {
-    max-height: 35px;
   }
 }
 

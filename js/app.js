@@ -212,23 +212,6 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
   `).join("");
 
-  // Render Partners Ticker with actual school images
-  const partnersTicker = document.getElementById("partnersTicker");
-  if (partnersTicker) {
-    const partnerImages = [
-      "photo1.png", "photo3.png", "photo4.png", "photo5.png",
-      "photo6.png", "photo7.png", "photo8.png", "photo9.png",
-      "photo10.png", "photo11.png", "photo12.png", "photo13.png"
-    ];
-    // Duplicate list twice for seamless infinite scrolling loop
-    const fullPartnerImagesList = [...partnerImages, ...partnerImages, ...partnerImages];
-    partnersTicker.innerHTML = fullPartnerImagesList.map(imgName => `
-      <div class="partner-logo-item">
-        <img src="assets/partner/${imgName}" alt="Navigo Nepal Partner School" class="partner-logo-img" onerror="this.style.display='none'">
-      </div>
-    `).join("");
-  }
-
   // Render Blog Grid with images
   const blogGrid = document.getElementById("blogGrid");
   if (blogGrid) blogGrid.innerHTML = CMS.blog.map(post => `
