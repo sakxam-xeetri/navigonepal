@@ -935,10 +935,11 @@ select:focus-visible {
   display: flex;
   align-items: center;
   padding-top: 5rem;
-  background: linear-gradient(135deg, #0A2342 0%, #06172F 50%, #030b18 100%);
+  background: #06172F;
+  /* Deep solid fallback */
   position: relative;
-  overflow: hidden;
-  z-index: 1;
+  overflow: visible;
+  /* Required so search console can overlap bottom fold */
 }
 
 .hero-overlay {
@@ -1295,14 +1296,7 @@ select:focus-visible {
 /* Responsive adjustments */
 @media (max-width: 991px) {
   .hero-section {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding-top: 5rem;
-    background: linear-gradient(135deg, #0A2342 0%, #06172F 50%, #030b18 100%);
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
+    overflow: visible;
   }
 
   .hero-container-layout {
@@ -1547,7 +1541,7 @@ select:focus-visible {
 
 .fm-portrait-caption {
   padding: 1rem 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
 
 .fm-caption-label {
@@ -1556,7 +1550,7 @@ select:focus-visible {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255,255,255,0.4);
 }
 
 /* Quote Column */
@@ -1790,8 +1784,8 @@ select:focus-visible {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
   background-size: 60px 60px;
   z-index: 0;
   pointer-events: none;
@@ -1843,14 +1837,16 @@ select:focus-visible {
 }
 
 .vision-title-accent {
-  color: #4F9CF9;
+  background: linear-gradient(135deg, #4F9CF9, #10B981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
-
 
 .vision-subtitle {
   font-family: 'Inter', sans-serif;
   font-size: clamp(0.9rem, 1.6vw, 1.05rem);
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255,255,255,0.6);
   max-width: 660px;
   margin: 0 auto;
   line-height: 1.8;
@@ -1864,8 +1860,8 @@ select:focus-visible {
   max-width: 860px;
   margin: 0 auto 5rem auto;
   padding: 3.5rem 3rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
   backdrop-filter: blur(12px);
   text-align: center;
 }
@@ -1905,7 +1901,7 @@ select:focus-visible {
 .vision-tagline-attribution {
   font-family: 'Inter', sans-serif;
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255,255,255,0.4);
   font-style: italic;
   font-weight: 400;
 }
@@ -1933,7 +1929,7 @@ select:focus-visible {
   display: flex;
   gap: 1.25rem;
   padding: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255,255,255,0.06);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
@@ -1943,7 +1939,7 @@ select:focus-visible {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, transparent 100%);
+  background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, transparent 100%);
   pointer-events: none;
 }
 
@@ -1967,7 +1963,7 @@ select:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255,255,255,0.1);
   color: var(--luxury-blue);
 }
 
@@ -1998,7 +1994,7 @@ select:focus-visible {
   font-family: 'Inter', sans-serif;
   font-size: 0.88rem;
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255,255,255,0.75);
   font-weight: 400;
 }
 
@@ -2037,7 +2033,7 @@ select:focus-visible {
 .vision-mandate-sub {
   font-family: 'Inter', sans-serif;
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255,255,255,0.5);
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.7;
@@ -2066,7 +2062,7 @@ select:focus-visible {
 .vision-mandate-card {
   position: relative;
   padding: 2.5rem 1.75rem;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255,255,255,0.06);
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
   cursor: default;
@@ -2075,7 +2071,7 @@ select:focus-visible {
 .vision-mandate-card-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(79, 156, 249, 0.04) 0%, transparent 100%);
+  background: linear-gradient(180deg, rgba(79,156,249,0.04) 0%, transparent 100%);
   opacity: 0;
   transition: opacity 0.5s ease;
   pointer-events: none;
@@ -2120,7 +2116,7 @@ select:focus-visible {
   font-family: 'Inter', sans-serif;
   font-size: 0.82rem;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255,255,255,0.55);
   font-weight: 400;
 }
 
@@ -2171,8 +2167,8 @@ select:focus-visible {
 /* Enhanced value cards inside the values grid */
 .vision-values-grid .glass-panel,
 .vision-value-card {
-  background: rgba(255, 255, 255, 0.03) !important;
-  border-color: rgba(255, 255, 255, 0.06) !important;
+  background: rgba(255,255,255,0.03) !important;
+  border-color: rgba(255,255,255,0.06) !important;
   backdrop-filter: blur(8px);
   padding: 1.75rem 2rem !important;
 }
@@ -2180,7 +2176,7 @@ select:focus-visible {
 .vision-values-grid .glass-panel:hover,
 .vision-value-card:hover {
   border-color: rgba(79, 156, 249, 0.2) !important;
-  background: rgba(255, 255, 255, 0.05) !important;
+  background: rgba(255,255,255,0.05) !important;
 }
 
 .vision-value-card h4 {
@@ -2188,7 +2184,7 @@ select:focus-visible {
 }
 
 .vision-value-card p {
-  color: rgba(255, 255, 255, 0.55) !important;
+  color: rgba(255,255,255,0.55) !important;
 }
 
 /* Responsive */
@@ -2330,7 +2326,7 @@ select:focus-visible {
   direction: rtl;
 }
 
-.uq-block-grid--reversed>* {
+.uq-block-grid--reversed > * {
   direction: ltr;
 }
 
@@ -2797,37 +2793,14 @@ select:focus-visible {
   letter-spacing: 0.02em;
 }
 
-.coord-avatar--blue {
-  background: linear-gradient(135deg, #2563EB, #4F9CF9);
-}
-
-.coord-avatar--emerald {
-  background: linear-gradient(135deg, #059669, #10B981);
-}
-
-.coord-avatar--purple {
-  background: linear-gradient(135deg, #7C3AED, #A78BFA);
-}
-
-.coord-avatar--sky {
-  background: linear-gradient(135deg, #0284C7, #38BDF8);
-}
-
-.coord-avatar--rose {
-  background: linear-gradient(135deg, #E11D48, #FB7185);
-}
-
-.coord-avatar--amber {
-  background: linear-gradient(135deg, #D97706, #FBBF24);
-}
-
-.coord-avatar--violet {
-  background: linear-gradient(135deg, #7C3AED, #C084FC);
-}
-
-.coord-avatar--cyan {
-  background: linear-gradient(135deg, #0891B2, #22D3EE);
-}
+.coord-avatar--blue { background: linear-gradient(135deg, #2563EB, #4F9CF9); }
+.coord-avatar--emerald { background: linear-gradient(135deg, #059669, #10B981); }
+.coord-avatar--purple { background: linear-gradient(135deg, #7C3AED, #A78BFA); }
+.coord-avatar--sky { background: linear-gradient(135deg, #0284C7, #38BDF8); }
+.coord-avatar--rose { background: linear-gradient(135deg, #E11D48, #FB7185); }
+.coord-avatar--amber { background: linear-gradient(135deg, #D97706, #FBBF24); }
+.coord-avatar--violet { background: linear-gradient(135deg, #7C3AED, #C084FC); }
+.coord-avatar--cyan { background: linear-gradient(135deg, #0891B2, #22D3EE); }
 
 .coord-leader-info {
   position: relative;
@@ -4025,14 +3998,9 @@ select.form-control {
 /* ==================== RESPONSIVE ==================== */
 @media (max-width: 768px) {
   .hero-section {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding-top: 5rem;
-    background: linear-gradient(135deg, #0A2342 0%, #06172F 50%, #030b18 100%);
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
+    padding-top: 6rem;
+    min-height: auto;
+    padding-bottom: 3rem;
   }
 
   .hero-content .heading-xl {
@@ -4109,7 +4077,7 @@ select.form-control {
   display: flex;
   align-items: center;
   box-shadow: var(--shadow-md);
-
+  
   /* Modern slanted style spanning full screen width */
   transform: rotate(-1.2deg) scale(1.03);
   transform-origin: center;
@@ -4171,7 +4139,6 @@ select.form-control {
   0% {
     transform: translate3d(0, 0, 0);
   }
-
   100% {
     transform: translate3d(-50%, 0, 0);
   }
@@ -4184,7 +4151,7 @@ select.form-control {
     /* Reduce angle slightly on small viewports */
     transform: rotate(-0.8deg) scale(1.03);
   }
-
+  
   .marquee-item {
     font-size: 0.85rem;
     padding: 0 2.5rem;
@@ -4568,7 +4535,7 @@ select.form-control {
   content: '';
   position: absolute;
   inset: 0;
-  background:
+  background: 
     radial-gradient(ellipse 50% 80% at 0% 50%, rgba(79, 156, 249, 0.15), transparent),
     radial-gradient(ellipse 40% 70% at 100% 50%, rgba(16, 185, 129, 0.1), transparent);
   pointer-events: none;

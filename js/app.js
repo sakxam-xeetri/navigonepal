@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ==================== 1. LAYOUT & THEME TOGGLE ====================
-  
+
   const themeToggle = document.getElementById("themeToggle");
   const htmlElement = document.documentElement;
   const sunIcon = themeToggle.querySelector(".sun-icon");
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   htmlElement.setAttribute("data-theme", savedTheme);
   updateThemeIcons(savedTheme);
 
-  if(themeToggle) themeToggle.addEventListener("click", () => {
+  if (themeToggle) themeToggle.addEventListener("click", () => {
     const currentTheme = htmlElement.getAttribute("data-theme");
     const newTheme = currentTheme === "dark" ? "light" : "dark";
     htmlElement.setAttribute("data-theme", newTheme);
@@ -35,19 +35,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateThemeIcons(theme) {
     if (theme === "dark") {
-      if(sunIcon) sunIcon.style.display = "block";
-      if(moonIcon) moonIcon.style.display = "none";
+      if (sunIcon) sunIcon.style.display = "block";
+      if (moonIcon) moonIcon.style.display = "none";
     } else {
-      if(sunIcon) sunIcon.style.display = "none";
-      if(moonIcon) moonIcon.style.display = "block";
+      if (sunIcon) sunIcon.style.display = "none";
+      if (moonIcon) moonIcon.style.display = "block";
     }
   }
 
   // Hamburger Menu
   const hamburger = document.getElementById("hamburger");
   const mobileNav = document.getElementById("mobileNav");
-  
-  if(hamburger) hamburger.addEventListener("click", () => {
+
+  if (hamburger) hamburger.addEventListener("click", () => {
     hamburger.classList.toggle("open");
     mobileNav.classList.toggle("open");
   });
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
     if (totalHeight > 0) {
       const percentage = (window.scrollY / totalHeight) * 100;
-      if(scrollProgress) scrollProgress.style.width = `${percentage}%`;
+      if (scrollProgress) scrollProgress.style.width = `${percentage}%`;
     }
   });
 
@@ -73,9 +73,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const navbar = document.getElementById("mainNav");
   window.addEventListener("scroll", () => {
     if (window.scrollY > 50) {
-      if(navbar) navbar.classList.add("scrolled");
+      if (navbar) navbar.classList.add("scrolled");
     } else {
-      if(navbar) navbar.classList.remove("scrolled");
+      if (navbar) navbar.classList.remove("scrolled");
     }
   });
 
@@ -118,9 +118,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // ==================== 2. SCROLL REVEAL ANIMATIONS ====================
-  
+
   const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
-  
+
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -138,12 +138,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // ==================== 3. CMS CONTENT RENDERING ====================
-  
+
   // Render Hero
-  if(document.getElementById("heroTitle")) document.getElementById("heroTitle").innerHTML = CMS.hero.title;
-  if(document.getElementById("heroSubtitle")) document.getElementById("heroSubtitle").textContent = CMS.hero.subtitle;
-  if(document.getElementById("heroCtaPrimary")) document.getElementById("heroCtaPrimary").textContent = CMS.hero.ctaPrimary;
-  if(document.getElementById("heroCtaSecondary")) document.getElementById("heroCtaSecondary").textContent = CMS.hero.ctaSecondary;
+  if (document.getElementById("heroTitle")) document.getElementById("heroTitle").innerHTML = CMS.hero.title;
+  if (document.getElementById("heroSubtitle")) document.getElementById("heroSubtitle").textContent = CMS.hero.subtitle;
+  if (document.getElementById("heroCtaPrimary")) document.getElementById("heroCtaPrimary").textContent = CMS.hero.ctaPrimary;
+  if (document.getElementById("heroCtaSecondary")) document.getElementById("heroCtaSecondary").textContent = CMS.hero.ctaSecondary;
 
   // Render Founding Story
   const foundingStoryText = document.getElementById("foundingStoryText");
@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const quoteAuthor = document.getElementById("leadershipQuoteAuthor");
     const quoteRole = document.getElementById("leadershipQuoteRole");
     const quoteAvatar = document.getElementById("leadershipQuoteAvatar");
-    
+
     if (quoteText) quoteText.textContent = CMS.story.leadershipMessage.quote;
     if (quoteAuthor) quoteAuthor.textContent = CMS.story.leadershipMessage.author;
     if (quoteRole) quoteRole.textContent = CMS.story.leadershipMessage.role;
@@ -171,8 +171,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Render Mission & Vision
-  if(document.getElementById("storyMission")) document.getElementById("storyMission").textContent = CMS.story.mission;
-  if(document.getElementById("storyVision")) document.getElementById("storyVision").textContent = CMS.story.vision;
+  if (document.getElementById("storyMission")) document.getElementById("storyMission").textContent = CMS.story.mission;
+  if (document.getElementById("storyVision")) document.getElementById("storyVision").textContent = CMS.story.vision;
 
   // Render Values List
   const coreValuesList = document.getElementById("coreValuesList");
@@ -248,8 +248,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const partnersTicker = document.getElementById("partnersTicker");
   if (partnersTicker) {
     const partnerImages = [
-      "photo1.png", "photo3.png", "photo4.png", "photo5.png", 
-      "photo6.png", "photo7.png", "photo8.png", "photo9.png", 
+      "photo1.png", "photo3.png", "photo4.png", "photo5.png",
+      "photo6.png", "photo7.png", "photo8.png", "photo9.png",
       "photo10.png", "photo11.png", "photo12.png", "photo13.png"
     ];
     // Duplicate list twice for seamless infinite scrolling loop
@@ -345,9 +345,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // ==================== 4. SCROLL METRIC COUNTERS ====================
-  
+
   const metricCards = document.querySelectorAll(".metric-card");
-  
+
   const metricObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -366,7 +366,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const numEl = card.querySelector(".metric-number");
     const targetValue = parseInt(card.getAttribute("data-target"));
     const suffix = card.getAttribute("data-suffix");
-    
+
     let current = 0;
     const duration = 2000;
     const startTime = performance.now();
@@ -374,11 +374,11 @@ document.addEventListener("DOMContentLoaded", () => {
     function update(now) {
       const elapsed = now - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      
+
       // Easing out cubic
       const easeProgress = 1 - Math.pow(1 - progress, 3);
       current = Math.floor(easeProgress * targetValue);
-      
+
       numEl.textContent = formatMetricNumber(current) + suffix;
 
       if (progress < 1) {
@@ -403,7 +403,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // ==================== 5. NEPAL SVG MAP INTERACTIONS ====================
-  
+
   const provincePaths = document.querySelectorAll(".province-path");
   const mapStatsPanel = document.getElementById("mapStatsPanel");
 
@@ -411,10 +411,10 @@ document.addEventListener("DOMContentLoaded", () => {
     path.addEventListener("click", () => {
       provincePaths.forEach(p => p.classList.remove("active"));
       path.classList.add("active");
-      
+
       const provinceId = path.getAttribute("id").replace("path-", "");
       const provData = CMS.provinces.find(p => p.id === provinceId);
-      
+
       if (provData) {
         updateMapPanel(provData);
       }
@@ -491,7 +491,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // ==================== 6. SUCCESS STORIES CAROUSEL ====================
-  
+
   const carousel = document.getElementById("carouselContainer");
   const slides = document.querySelectorAll(".carousel-slide");
   const navDotsWrapper = document.getElementById("carouselNav");
@@ -500,11 +500,11 @@ document.addEventListener("DOMContentLoaded", () => {
   let autoplayInterval;
 
   navDotsWrapper.innerHTML = CMS.successStories.map((_, idx) => `
-    <button class="carousel-dot ${idx === 0 ? 'active' : ''}" aria-label="View Story ${idx+1}"></button>
+    <button class="carousel-dot ${idx === 0 ? 'active' : ''}" aria-label="View Story ${idx + 1}"></button>
   `).join("");
 
   const dots = navDotsWrapper.querySelectorAll(".carousel-dot");
-  
+
   dots.forEach((dot, idx) => {
     dot.addEventListener("click", () => {
       goToSlide(idx);
@@ -515,10 +515,10 @@ document.addEventListener("DOMContentLoaded", () => {
   function goToSlide(index) {
     if (index < 0) index = slideCount - 1;
     if (index >= slideCount) index = 0;
-    
+
     activeIndex = index;
     carousel.style.transform = `translateX(-${activeIndex * 100}%)`;
-    
+
     dots.forEach((dot, idx) => {
       if (idx === activeIndex) dot.classList.add("active");
       else dot.classList.remove("active");
@@ -540,19 +540,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // ==================== 7. MODAL SYSTEM ====================
-  
+
   // A. Program details
   const programModal = document.getElementById("programModal");
   const closeProgramModal = document.getElementById("closeProgramModal");
-  
+
   if (programsGrid) {
     programsGrid.addEventListener("click", (e) => {
       const btn = e.target.closest(".program-learn-more");
       if (!btn) return;
-      
+
       const progId = btn.getAttribute("data-id");
       const prog = CMS.programs.find(p => p.id === progId);
-      
+
       if (prog) {
         document.getElementById("modalProgramTag").textContent = prog.title.toUpperCase();
         document.getElementById("modalProgramTitle").textContent = prog.title;
@@ -571,7 +571,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   closeProgramModal.addEventListener("click", () => programModal.classList.remove("active"));
-  
+
   // B. Volunteer enrollment
   const volunteerModal = document.getElementById("volunteerModal");
   const closeVolunteerModal = document.getElementById("closeVolunteerModal");
@@ -582,7 +582,7 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", () => {
       const posId = btn.getAttribute("data-id");
       const posTitle = btn.getAttribute("data-title");
-      
+
       volPositionInput.value = posId;
       volTitleEl.textContent = `Apply as ${posTitle}`;
       volunteerModal.classList.add("active");
@@ -594,7 +594,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // C. Donation Secure Gateways
   const donationModal = document.getElementById("donationModal");
   const closeDonationModal = document.getElementById("closeDonationModal");
-  
+
   document.querySelectorAll(".sponsor-checkout-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       const id = btn.getAttribute("data-id");
@@ -607,7 +607,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("checkoutTierLabel").textContent = title;
       document.getElementById("checkoutTierAmount").textContent = `₨ ${amount}`;
       document.getElementById("checkoutTierPeriod").textContent = `/ ${period}`;
-      
+
       donationModal.classList.add("active");
     });
   });
@@ -622,7 +622,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // ==================== 8. FORM SUBMISSIONS & PREMIUM CONFETTI ====================
-  
+
   const canvas = document.getElementById("confetti-canvas");
   const ctx = canvas.getContext("2d");
   let confettiActive = false;
@@ -649,7 +649,7 @@ document.addEventListener("DOMContentLoaded", () => {
       this.rotationSpeed = Math.random() * 2 - 1;
       this.opacity = Math.random() * 0.5 + 0.5;
     }
-    
+
     update() {
       this.y += this.speedY;
       this.x += this.speedX;
@@ -663,15 +663,15 @@ document.addEventListener("DOMContentLoaded", () => {
     draw() {
       ctx.save();
       ctx.globalAlpha = this.opacity;
-      ctx.translate(this.x + this.size/2, this.y + this.size/2);
+      ctx.translate(this.x + this.size / 2, this.y + this.size / 2);
       ctx.rotate((this.rotation * Math.PI) / 180);
       ctx.fillStyle = this.color;
       // Mix of circles and rectangles
       if (Math.random() > 0.5) {
-        ctx.fillRect(-this.size/2, -this.size/4, this.size, this.size/2);
+        ctx.fillRect(-this.size / 2, -this.size / 4, this.size, this.size / 2);
       } else {
         ctx.beginPath();
-        ctx.arc(0, 0, this.size/2.5, 0, Math.PI * 2);
+        ctx.arc(0, 0, this.size / 2.5, 0, Math.PI * 2);
         ctx.fill();
       }
       ctx.restore();
@@ -683,19 +683,19 @@ document.addEventListener("DOMContentLoaded", () => {
     for (let i = 0; i < 200; i++) {
       particles.push(new ConfettiParticle());
     }
-    
+
     confettiActive = true;
     let frameCount = 0;
-    
+
     function loop() {
       if (!confettiActive) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
+
       particles.forEach(p => {
         p.update();
         p.draw();
       });
-      
+
       frameCount++;
       if (frameCount < 300) {
         requestAnimationFrame(loop);
@@ -704,7 +704,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
       }
     }
-    
+
     requestAnimationFrame(loop);
   }
 
@@ -712,7 +712,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const contactForm = document.getElementById("contactForm");
   contactForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    
+
     const name = document.getElementById("contactName").value.trim();
     const email = document.getElementById("contactEmail").value.trim();
     const message = document.getElementById("contactMessage").value.trim();
@@ -736,7 +736,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const volunteerForm = document.getElementById("volunteerForm");
   volunteerForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    
+
     const name = document.getElementById("volName").value.trim();
     const email = document.getElementById("volEmail").value.trim();
     const phone = document.getElementById("volPhone").value.trim();
@@ -763,7 +763,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const donationForm = document.getElementById("donationForm");
   donationForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    
+
     const name = document.getElementById("donorName").value.trim();
     const email = document.getElementById("donorEmail").value.trim();
     const phone = document.getElementById("donorPhone").value.trim();
@@ -783,7 +783,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     donationModal.classList.remove("active");
     launchConfettiShower();
-    
+
     let gatewayText = "eSewa Portal";
     if (payment === 'khalti') gatewayText = "Khalti Wallet";
     if (payment === 'bank') gatewayText = "Himalayan Bank Gateway";
@@ -840,8 +840,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       // Filter titles from CMS.programs
-      const matches = CMS.programs.filter(p => 
-        p.title.toLowerCase().includes(query) || 
+      const matches = CMS.programs.filter(p =>
+        p.title.toLowerCase().includes(query) ||
         p.shortDesc.toLowerCase().includes(query)
       );
 
@@ -864,7 +864,7 @@ document.addEventListener("DOMContentLoaded", () => {
       programSearchInput.value = item.textContent;
       searchSuggestions.style.display = "none";
       searchSuggestions.innerHTML = "";
-      
+
       // Automatically trigger search when click suggestions
       executeHeroSearch();
     });
@@ -959,14 +959,14 @@ document.addEventListener("DOMContentLoaded", () => {
       toggle.addEventListener("click", (e) => {
         e.preventDefault();
         e.stopPropagation();
-        
+
         // Close other dropdowns first (accordion behavior)
         mobileDropdowns.forEach(other => {
           if (other !== dropdown) {
             other.classList.remove("open");
           }
         });
-        
+
         dropdown.classList.toggle("open");
       });
     }
@@ -997,7 +997,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // ==================== 9. PARALLAX HERO BACKGROUND ====================
-  
+
   const heroBg = document.querySelector('.hero-bg-image');
   if (heroBg) {
     window.addEventListener('scroll', () => {
@@ -1030,7 +1030,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Dynamic particle count based on screen area
     const particleCount = Math.min(70, Math.floor((canvas.width * canvas.height) / 18000));
     const connectionDistance = 120;
-    
+
     class Particle {
       constructor() {
         this.x = Math.random() * canvas.width;
