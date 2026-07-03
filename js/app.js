@@ -174,24 +174,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (document.getElementById("storyMission")) document.getElementById("storyMission").textContent = CMS.story.mission;
   if (document.getElementById("storyVision")) document.getElementById("storyVision").textContent = CMS.story.vision;
 
-  // Render Values List
-  const coreValuesList = document.getElementById("coreValuesList");
-  if (coreValuesList) coreValuesList.innerHTML = CMS.story.values.map((val, idx) => `
-    <div class="vision-value-card glass-panel glass-panel-hover" style="padding: 1.75rem 2rem;">
-      <div style="display: flex; align-items: flex-start; gap: 1rem;">
-        <div style="width: 40px; height: 40px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: rgba(79, 156, 249, 0.08);">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #4F9CF9;"><polyline points="20 6 9 17 4 12"/></svg>
-        </div>
-        <div>
-          <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.4rem; color: #ffffff !important;">${val.title}</h4>
-          <p style="font-size: 0.85rem; font-weight: 400; line-height: 1.7; color: rgba(255,255,255,0.55);">${val.desc}</p>
-        </div>
-      </div>
-    </div>
-  `).join("");
-
-
-
   // Render Programs - Helper Function to allow dynamic filtering
   function getProgramIcon(id) {
     if (id === 'stem') return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M9 1v3"/><path d="M15 1v3"/><path d="M9 20v3"/><path d="M15 20v3"/><path d="M20 9h3"/><path d="M20 15h3"/><path d="M1 9h3"/><path d="M1 15h3"/></svg>`;
