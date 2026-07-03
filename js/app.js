@@ -163,13 +163,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (quoteRole) quoteRole.textContent = CMS.story.leadershipMessage.role;
     if (quoteAvatar) {
       if (CMS.story.leadershipMessage.avatar) {
-        if (quoteAvatar.tagName.toLowerCase() === 'img') {
-          quoteAvatar.src = CMS.story.leadershipMessage.avatar;
-        } else {
-          quoteAvatar.innerHTML = `<img src="${CMS.story.leadershipMessage.avatar}" alt="${CMS.story.leadershipMessage.author}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">`;
-        }
+        quoteAvatar.src = CMS.story.leadershipMessage.avatar;
       } else {
-        quoteAvatar.textContent = CMS.story.leadershipMessage.author[0];
+        quoteAvatar.alt = CMS.story.leadershipMessage.author;
       }
     }
   }
@@ -181,14 +177,16 @@ document.addEventListener("DOMContentLoaded", () => {
   // Render Values List
   const coreValuesList = document.getElementById("coreValuesList");
   if (coreValuesList) coreValuesList.innerHTML = CMS.story.values.map((val, idx) => `
-    <div class="glass-panel glass-panel-hover" style="padding: 1.75rem 2rem;">
-      <h4 style="font-size: 1.15rem; color: var(--accent-color); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.75rem; font-weight: 700;">
-        <div style="width: 32px; height: 32px; background: linear-gradient(135deg, rgba(37,99,235,0.1), rgba(16,185,129,0.08)); border-radius: 0px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    <div class="vision-value-card glass-panel glass-panel-hover" style="padding: 1.75rem 2rem;">
+      <div style="display: flex; align-items: flex-start; gap: 1rem;">
+        <div style="width: 40px; height: 40px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: rgba(79, 156, 249, 0.08);">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #4F9CF9;"><polyline points="20 6 9 17 4 12"/></svg>
         </div>
-        ${val.title}
-      </h4>
-      <p style="color: var(--text-muted); font-size: 0.9rem; font-weight: 400; padding-left: 2.9rem; line-height: 1.7;">${val.desc}</p>
+        <div>
+          <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.4rem; color: #ffffff !important;">${val.title}</h4>
+          <p style="font-size: 0.85rem; font-weight: 400; line-height: 1.7; color: rgba(255,255,255,0.55);">${val.desc}</p>
+        </div>
+      </div>
     </div>
   `).join("");
 
@@ -1035,7 +1033,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ==================== 10. UNIQUENESS CONSTELLATION CANVAS ====================
   const initConstellation = () => {
-    const canvas = document.getElementById("uniqueness-constellation-canvas");
+    const canvas = document.getElementById("uq-constellation");
     if (!canvas) return;
 
     const ctx = canvas.getContext("2d");

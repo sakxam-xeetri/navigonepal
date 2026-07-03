@@ -23,13 +23,13 @@ const NAVIGO_CMS = {
   ],
 
   story: {
-    mission: "To empower students across Nepal by transforming their educational experience from a narrow academic focus to a holistic approach that includes personal development, leadership, and practical problem-solving skills.",
-    vision: "A future where every student in Nepal has the knowledge, practical skills, and resources to make informed decisions about their academic and career paths.",
+    mission: "To empower students across Nepal by transforming their educational experience from a narrow academic focus to a holistic journey encompassing personal development, leadership cultivation, and practical problem-solving — equipping every learner with the agency to navigate their own future with confidence.",
+    vision: "A Nepal where every student — regardless of geography or background — possesses the knowledge, practical skills, and resources to make informed decisions about their education and career, unlocking their full potential as leaders, innovators, and changemakers.",
     values: [
-      { title: "Empowerment", desc: "Fostering youth leadership and confidence by putting students in charge of their own school clubs." },
-      { title: "Practicality", desc: "Ending rote learning by integrating interactive games, debates, and group discussions into classrooms." },
-      { title: "Inclusivity", desc: "Expanding program resources and local coordinator networks to reach underserved rural schools." },
-      { title: "Environmentalism", desc: "Inspiring the next generation to act as environmental stewards through hands-on conservation campaigns." }
+      { title: "Empowerment", desc: "Fostering youth agency by placing students at the helm of their own school clubs, initiatives, and leadership journeys — building confidence through ownership, not instruction." },
+      { title: "Practicality", desc: "Replacing passive rote learning with active, experiential education — interactive games, real-world debates, and collaborative problem-solving that mirror life beyond the classroom." },
+      { title: "Inclusivity", desc: "Extending program infrastructure and trained coordinator networks to the most underserved rural schools, ensuring no student is left behind due to geography or circumstance." },
+      { title: "Environmental Stewardship", desc: "Inspiring the next generation to champion climate action through hands-on conservation campaigns, SDG-driven awareness, and partnerships with global organizations like UNICEF and USAID." }
     ],
     timeline: [
       { year: "Jan 2024", title: "Research & Assessment", desc: "Conducted qualitative and quantitative needs surveys with 100+ students to map local educational gaps and extracurricular needs." },
@@ -40,7 +40,7 @@ const NAVIGO_CMS = {
     ],
     foundingStory: "Navigo Nepal was founded in early 2024 by Anupam Neupane, Biyog Man Dangol, and Prajwal Dhungana. Realizing that the school system left SEE (grade 10) graduates unprepared and anxious about stream and career transitions, they established Navigo—Latin for 'Navigate'—to build a practical learning bridge. Starting with grass-roots workshops in Nuwakot, Navigo Nepal has rapidly expanded into a youth-led movement. The co-founders are supported by a strategic partnership with Gurubaa, Nepal's largest educational content creator, and a growing cohort of local student leaders, district ambassadors ('Navigers'), and volunteers.",
     leadershipMessage: {
-      quote: "We started Navigo Nepal when we felt about what we were deprived of in our school days. Our mission is to end the conventionality of our education system and bridge the academic gap. We aim to replace passive textbook recitation with active, interactive problem-solving, cultivating a hands-on learning environment where students can confidently figure out what they want to become and navigate their own future.",
+      quote: "We started Navigo Nepal because we lived through the same gap every SEE graduate faces — the silence after the results, the confusion before choosing a stream, the absence of anyone who could show us what comes next. Our mission is to end the conventionality of our education system and replace passive textbook recitation with active, hands-on problem-solving. We want every student to walk out of our sessions not just informed, but equipped — with the clarity, confidence, and tools to figure out exactly what they want to become and how to get there.",
       author: "Anupam Neupane, Biyog Man Dangol, & Prajwal Dhungana",
       role: "Co-Founders, Navigo Nepal",
       avatar: "assets/169567052.jpg"
