@@ -211,22 +211,7 @@
         <li><a href="#team" class="nav-link">Team</a></li>
 
         <li class="has-dropdown">
-          <a href="#resources" class="nav-link">
-            Resources
-            <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </a>
-          <ul class="dropdown-menu">
-            <li><a href="#resources">Olympiad Prep Materials</a></li>
-            <li><a href="#resources">STEM Club Startup Kit</a></li>
-            <li><a href="#resources">Career Roadmaps</a></li>
-          </ul>
-        </li>
-
-        <li class="has-dropdown">
-          <a href="#volunteer" class="nav-link">
+          <a href="#donate" class="nav-link">
             Get Involved
             <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"
               fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -234,7 +219,6 @@
             </svg>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="#volunteer">Volunteer Openings</a></li>
             <li><a href="#donate">Secure Sponsorship</a></li>
             <li><a href="#contact">Become a Partner</a></li>
           </ul>
@@ -331,7 +315,7 @@
 
       <li class="mobile-has-dropdown">
         <div class="mobile-nav-row">
-          <a href="#resources" class="mobile-nav-link">Resources</a>
+          <a href="#donate" class="mobile-nav-link">Get Involved</a>
           <button class="mobile-dropdown-toggle" aria-label="Toggle Submenu">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -340,24 +324,6 @@
           </button>
         </div>
         <ul class="mobile-dropdown-menu">
-          <li><a href="#resources" class="mobile-subnav-link">Olympiad Materials</a></li>
-          <li><a href="#resources" class="mobile-subnav-link">STEM Club Kit</a></li>
-          <li><a href="#resources" class="mobile-subnav-link">Career Guides</a></li>
-        </ul>
-      </li>
-
-      <li class="mobile-has-dropdown">
-        <div class="mobile-nav-row">
-          <a href="#volunteer" class="mobile-nav-link">Get Involved</a>
-          <button class="mobile-dropdown-toggle" aria-label="Toggle Submenu">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-        </div>
-        <ul class="mobile-dropdown-menu">
-          <li><a href="#volunteer" class="mobile-subnav-link">Volunteer Positions</a></li>
           <li><a href="#donate" class="mobile-subnav-link">Secure Sponsorship</a></li>
           <li><a href="#contact" class="mobile-subnav-link">Become a Partner</a></li>
         </ul>
@@ -403,7 +369,7 @@
             <span class="segment-label-small">For Partners &amp; Schools</span>
             <div class="segment-actions">
               <a href="#contact" class="btn btn-white btn-lg" id="heroCtaSecondary">Become a Partner</a>
-              <a href="#volunteer" class="btn btn-white btn-outline-only btn-lg">Explore Programs</a>
+              <a href="#programs" class="btn btn-white btn-outline-only btn-lg">Explore Programs</a>
             </div>
           </div>
         </div>
@@ -846,13 +812,23 @@
         <h2 class="heading-lg">A Message from Our Leadership</h2>
       </div>
 
-      <div class="leadership-quote reveal" id="leadershipQuoteBlock">
-        <blockquote id="leadershipQuoteText"></blockquote>
-        <div class="leadership-quote-author">
-          <div class="leadership-quote-avatar" id="leadershipQuoteAvatar">A</div>
-          <div class="leadership-quote-info">
-            <h4 id="leadershipQuoteAuthor">Anupam Neupane, Biyog Man Dangol, &amp; Prajwal Dhungana</h4>
-            <span id="leadershipQuoteRole">Co-Founders, Navigo Nepal</span>
+      <div class="leadership-container reveal" id="leadershipQuoteBlock">
+        <!-- Left Column: Big Portrait Image -->
+        <div class="leadership-image-col">
+          <div class="leadership-image-wrapper">
+            <img src="assets/169567052.jpg" alt="Navigo Nepal Co-Founders" class="leadership-founder-img" id="leadershipQuoteAvatar">
+            <div class="leadership-image-glow"></div>
+          </div>
+        </div>
+
+        <!-- Right Column: Quote Content -->
+        <div class="leadership-quote-col">
+          <div class="leadership-quote-block">
+            <blockquote id="leadershipQuoteText"></blockquote>
+            <div class="leadership-quote-info">
+              <h4 id="leadershipQuoteAuthor">Anupam Neupane, Biyog Man Dangol, &amp; Prajwal Dhungana</h4>
+              <span id="leadershipQuoteRole">Co-Founders, Navigo Nepal</span>
+            </div>
           </div>
         </div>
       </div>
@@ -865,59 +841,66 @@
   <hr class="section-divider">
 
   <!-- HOW WE ARE UNIQUE SECTION -->
-  <section class="section" id="programs">
-    <div class="container">
-      <div class="reveal" style="max-width: 700px; margin-bottom: 4rem;">
+  <section class="uniqueness-section" id="programs">
+    <!-- Animated Constellation Canvas Background -->
+    <canvas id="uniqueness-constellation-canvas" class="constellation-canvas"></canvas>
+
+    <div class="uniqueness-container">
+      <!-- Section Header -->
+      <div class="uniqueness-header reveal">
         <span class="gradient-accent section-label">Our Practical Paradigm</span>
-        <h2 class="heading-lg">How Are We Unique?</h2>
-        <p style="color: var(--text-muted); margin-top: 0.75rem; font-size: 0.95rem; line-height: 1.8;">
-          First of all we are giving things that we couldn’t get. We want students to have sufficient exposure regarding things that generally matter in not only their academics but in their whole life.
+        <h2 class="heading-lg uniqueness-title">How Are We <span class="uniqueness-title-accent">Unique?</span></h2>
+        <p class="uniqueness-subtitle">
+          Bridging the gap between conventional education and real-world leadership through active, peer-to-peer exploration.
         </p>
+        <div class="uniqueness-divider"></div>
       </div>
 
-      <div class="uniqueness-grid">
-        <!-- Feature 1 -->
-        <div class="uniqueness-card reveal stagger-1">
-          <div class="uniqueness-image-wrapper">
-            <img src="assets/1.jpeg" alt="Interactive Advocacy" class="uniqueness-img" loading="lazy">
-            <span class="uniqueness-badge accent-purple">Advocacy: Through Counseling</span>
+      <!-- Row 1: 2x2 Image Grid (Left) + Text Description (Right) -->
+      <div class="uniqueness-row uniqueness-row-1">
+        <div class="uniqueness-col-left reveal">
+          <div class="uniqueness-image-grid">
+            <div class="grid-img-wrapper">
+              <img src="assets/1.jpeg" alt="Mentorship session" loading="lazy">
+            </div>
+            <div class="grid-img-wrapper">
+              <img src="assets/2.jpeg" alt="E-Spark workshop" loading="lazy">
+            </div>
+            <div class="grid-img-wrapper">
+              <img src="assets/3.jpeg" alt="Community engagement" loading="lazy">
+            </div>
+            <div class="grid-img-wrapper">
+              <img src="assets/leadership_summit.png" alt="Youth Leadership Summit" loading="lazy">
+            </div>
           </div>
-          <div class="uniqueness-content">
-            <span class="uniqueness-step">01 / Beyond Rote Learning</span>
-            <h3>Giving things we couldn't get</h3>
+        </div>
+        <div class="uniqueness-col-right reveal">
+          <div class="uniqueness-text-block">
             <p>
-              We want students to have sufficient exposure regarding things that generally matter in not only their academics but in their whole life. For attaining our goal, we do not just pave our path through advocacy. Yes, we go to school and explain things, but we do it in a very unique way. We let students interact among themselves, run debate sessions, handle group discussions, organize problem-solving sessions, and advocate about necessary things through different games so that they don’t feel like they are being suggested. At the end of the sessions, they will be able to connect all the dots and get the necessary exposure for their learning path.
+              <strong>First of all, we are giving things that we couldn’t get.</strong> We want students to have sufficient exposure regarding things that generally matter in not only their academics but in their whole life. For attaining our goal, we do not just pave our path through standard advocacy. Yes, we go to schools and explain things, but we do it in a very unique way.
+            </p>
+            <p>
+              We let students interact among themselves, run debate sessions, handle group discussions, organize problem-solving sessions, and advocate about necessary things through different games so that they don’t feel like they are being lectured. At the end of the sessions, they are able to connect all the dots and get the necessary exposure for their learning path.
             </p>
           </div>
         </div>
+      </div>
 
-        <!-- Feature 2 -->
-        <div class="uniqueness-card reveal stagger-2">
-          <div class="uniqueness-image-wrapper">
-            <img src="assets/2.jpeg" alt="Experiential Problem-Solving" class="uniqueness-img" loading="lazy">
-            <span class="uniqueness-badge accent-emerald">Problem-Solving: Hidden Lessons</span>
-          </div>
-          <div class="uniqueness-content">
-            <span class="uniqueness-step">02 / Learn by Doing</span>
-            <h3>Camps &amp; Practical Application</h3>
+      <!-- Row 2: Text Description (Left) + Landscape Image (Right) -->
+      <div class="uniqueness-row uniqueness-row-2">
+        <div class="uniqueness-col-left reveal">
+          <div class="uniqueness-text-block">
             <p>
-              We are not just limited in advocacy. After running advocacy sessions, we organize different camps and provide them the opportunity to learn things by doing. For example, by running entrepreneurial spark, we will provide the opportunity to students who are interested in carrying out business or studying economics, accounting, computer science and other fields too by being involved in product development activities.
+              <strong>We are not just limited to advocacy.</strong> After running introductory advocacy sessions, we organize different camps and provide students the opportunity to learn by doing. For example, by running our <em>Entrepreneurial Spark</em> sessions, we provide the opportunity to students who are interested in carrying out business, economics, accounting, computer science, or leadership to gain hands-on experience through active product development and collaborative simulation activities.
+            </p>
+            <p>
+              <strong>Transmitting across the nation:</strong> We distribute our sessions throughout the country. Since we were initially localized to Kathmandu and nearby districts, we designed a network framework to transmit our program to interested youth coordinators across Nepal. We provide them with all the necessary training before they deliver this to their schools, leveraging a network of passionate youth leaders eager to drive local change.
             </p>
           </div>
         </div>
-
-        <!-- Feature 3 -->
-        <div class="uniqueness-card reveal stagger-3">
-          <div class="uniqueness-image-wrapper">
-            <img src="assets/3.jpeg" alt="Nationwide Transmission" class="uniqueness-img" loading="lazy">
-            <span class="uniqueness-badge accent-indigo">Transmission: District Networks</span>
-          </div>
-          <div class="uniqueness-content">
-            <span class="uniqueness-step">03 / Scaling Nationwide</span>
-            <h3>Transmitting Across the Nation</h3>
-            <p>
-              We plan to distribute our sessions throughout the country. As we are limited in Kathmandu or districts near to the Kathmandu, we planned to transmit our program to the interested students who are willing to coordinate with us. We will provide them with all the necessary training before they deliver this to their school. This will cover all parts of our nation where we can't physically go, leveraging a network of passionate youth leaders already eager to support.
-            </p>
+        <div class="uniqueness-col-right reveal">
+          <div class="uniqueness-landscape-wrapper">
+            <img src="assets/hero_students.png" alt="Navigo Nepal Student Network" class="uniqueness-landscape-img" loading="lazy">
           </div>
         </div>
       </div>
@@ -1376,76 +1359,6 @@
         <div class="partners-ticker" id="partnersTicker">
           <!-- Loaded Dynamically and Duplicated for Seamless Loop -->
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section Divider -->
-  <hr class="section-divider">
-
-  <!-- BLOG & RESOURCES SECTION -->
-  <section class="section section-alt" id="resources">
-    <div class="container">
-      <div class="reveal" style="max-width: 700px; margin-bottom: 3rem;">
-        <span class="gradient-accent section-label">Educational Archives</span>
-        <h2 class="heading-lg">Blog &amp; Resources</h2>
-        <p style="color: var(--text-muted); margin-top: 0.75rem; font-size: 0.95rem; line-height: 1.8;">Direct download
-          portals for mathematics training packets, STEM coordinator scripts, and university applications guides.</p>
-      </div>
-
-      <div class="blog-layout">
-        <!-- Articles column -->
-        <div>
-          <h3
-            style="font-size: 1.4rem; font-weight: 700; margin-bottom: 2rem; color: var(--text-main); display: flex; align-items: center; gap: 0.75rem;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z" />
-              <path d="M6 6h10" />
-              <path d="M6 10h10" />
-            </svg>
-            Featured Articles
-          </h3>
-          <div class="blog-grid" id="blogGrid">
-            <!-- Rendered Dynamically from js/cms.js -->
-          </div>
-        </div>
-
-        <!-- Downloads Column -->
-        <div class="glass-panel" style="padding: 2rem;">
-          <h3
-            style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--accent-color); display: flex; align-items: center; gap: 0.75rem;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-              <polyline points="7 10 12 15 17 10" />
-              <line x1="12" y1="15" x2="12" y2="3" />
-            </svg>
-            Resource Hub
-          </h3>
-          <div class="resources-list" id="resourcesList">
-            <!-- Rendered Dynamically from js/cms.js -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section Divider -->
-  <hr class="section-divider">
-
-  <!-- VOLUNTEER PORTAL SECTION -->
-  <section class="section" id="volunteer">
-    <div class="container">
-      <div class="reveal" style="max-width: 700px; margin-bottom: 3rem;">
-        <span class="gradient-accent section-label">Join the Movement</span>
-        <h2 class="heading-lg">Volunteer Openings</h2>
-        <p style="color: var(--text-muted); margin-top: 0.75rem; font-size: 0.95rem; line-height: 1.8;">Lend your
-          science backgrounds, programming experience, or coordinator skills to mentor active high-school cells.</p>
-      </div>
-
-      <div class="grid-3 volunteer-positions-grid" id="volunteerGrid">
-        <!-- Rendered Dynamically from js/cms.js -->
       </div>
     </div>
   </section>

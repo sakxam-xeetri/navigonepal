@@ -40,9 +40,10 @@ const NAVIGO_CMS = {
     ],
     foundingStory: "Navigo Nepal was founded in early 2024 by Anupam Neupane, Biyog Man Dangol, and Prajwal Dhungana. Realizing that the school system left SEE (grade 10) graduates unprepared and anxious about stream and career transitions, they established Navigo—Latin for 'Navigate'—to build a practical learning bridge. Starting with grass-roots workshops in Nuwakot, Navigo Nepal has rapidly expanded into a youth-led movement. The co-founders are supported by a strategic partnership with Gurubaa, Nepal's largest educational content creator, and a growing cohort of local student leaders, district ambassadors ('Navigers'), and volunteers.",
     leadershipMessage: {
-      quote: "We started Navigo Nepal to give students what we ourselves were deprived of. We aim to replace passive textbook recitation with active, interactive problem-solving, so every student can find their true path.",
+      quote: "We started Navigo Nepal when we felt about what we were deprived of in our school days. Our mission is to end the conventionality of our education system and bridge the academic gap. We aim to replace passive textbook recitation with active, interactive problem-solving, cultivating a hands-on learning environment where students can confidently figure out what they want to become and navigate their own future.",
       author: "Anupam Neupane, Biyog Man Dangol, & Prajwal Dhungana",
-      role: "Co-Founders, Navigo Nepal"
+      role: "Co-Founders, Navigo Nepal",
+      avatar: "assets/169567052.jpg"
     },
     futureGoals: [
       {
@@ -183,12 +184,12 @@ const NAVIGO_CMS = {
 
   successStories: [
     {
-      name: "Gyanodaya Scout Lead",
+      name: "Aayush Bhandari",
       location: "Kathmandu",
-      role: "Leadership Participant",
+      role: "Scout Leader, Gyanodaya School",
       image: "assets/success_aayush.jpg",
-      quote: "The Balloon Game and 'How Many F's' activities made us realize that teamwork and critical thinking are essential for our growth. We are eager to start our Eco Club next!",
-      highlight: "Scout Leader"
+      quote: "Before the Navigo workshop, most of our Scout members viewed leadership as just a title. Through their interactive Balloon and focus games, we immediately saw how personal growth goes hand-in-hand with academic focus and communication. It broke the ice, transforming quiet students into active team leaders who are now launching our first school Eco Club.",
+      highlight: "Gyanodaya Scout Lead"
     },
     {
       name: "Chandrajyoti Student",

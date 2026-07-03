@@ -161,7 +161,17 @@ document.addEventListener("DOMContentLoaded", () => {
     if (quoteText) quoteText.textContent = CMS.story.leadershipMessage.quote;
     if (quoteAuthor) quoteAuthor.textContent = CMS.story.leadershipMessage.author;
     if (quoteRole) quoteRole.textContent = CMS.story.leadershipMessage.role;
-    if (quoteAvatar) quoteAvatar.textContent = CMS.story.leadershipMessage.author[0];
+    if (quoteAvatar) {
+      if (CMS.story.leadershipMessage.avatar) {
+        if (quoteAvatar.tagName.toLowerCase() === 'img') {
+          quoteAvatar.src = CMS.story.leadershipMessage.avatar;
+        } else {
+          quoteAvatar.innerHTML = `<img src="${CMS.story.leadershipMessage.avatar}" alt="${CMS.story.leadershipMessage.author}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">`;
+        }
+      } else {
+        quoteAvatar.textContent = CMS.story.leadershipMessage.author[0];
+      }
+    }
   }
 
   // Render Mission & Vision
@@ -1021,4 +1031,111 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }, { passive: true });
   }
+
+
+  // ==================== 10. UNIQUENESS CONSTELLATION CANVAS ====================
+  const initConstellation = () => {
+    const canvas = document.getElementById("uniqueness-constellation-canvas");
+    if (!canvas) return;
+
+    const ctx = canvas.getContext("2d");
+    let particles = [];
+    let animationFrameId;
+
+    const resizeCanvas = () => {
+      const rect = canvas.getBoundingClientRect();
+      canvas.width = rect.width || canvas.clientWidth || window.innerWidth;
+      canvas.height = rect.height || canvas.clientHeight || 600;
+    };
+
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+
+    // Dynamic particle count based on screen area
+    const particleCount = Math.min(70, Math.floor((canvas.width * canvas.height) / 18000));
+    const connectionDistance = 120;
+    
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.vx = (Math.random() - 0.5) * 0.4; // slow movement speed
+        this.vy = (Math.random() - 0.5) * 0.4;
+        this.radius = Math.random() * 1.5 + 1; // 1px to 2.5px
+      }
+
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+
+        // Wrap around canvas edges
+        if (this.x < 0) this.x = canvas.width;
+        if (this.x > canvas.width) this.x = 0;
+        if (this.y < 0) this.y = canvas.height;
+        if (this.y > canvas.height) this.y = 0;
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(79, 156, 249, 0.5)"; // matching accent light blue
+        ctx.fill();
+      }
+    }
+
+    // Initialize particle array
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
+    }
+
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      particles.forEach((p) => {
+        p.update();
+        p.draw();
+      });
+
+      // Connect close particles with fading lines
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < connectionDistance) {
+            const alpha = (1 - dist / connectionDistance) * 0.18;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(79, 156, 249, ${alpha})`;
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+          }
+        }
+      }
+
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    // Use IntersectionObserver to optimize CPU when section is out of viewport
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animate();
+        } else {
+          cancelAnimationFrame(animationFrameId);
+        }
+      });
+    }, { threshold: 0.05 });
+
+    const uniquenessSection = document.getElementById("programs");
+    if (uniquenessSection) {
+      observer.observe(uniquenessSection);
+    } else {
+      animate(); // fallback if section is missing or doesn't support observer
+    }
+  };
+
+  initConstellation();
 });
