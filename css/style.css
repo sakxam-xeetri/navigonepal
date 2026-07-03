@@ -1857,129 +1857,30 @@ select:focus-visible {
   font-weight: 400;
 }
 
-/* Tagline Cinematic Block */
-.vision-tagline-block {
-  position: relative;
-  z-index: 2;
-  max-width: 860px;
-  margin: 0 auto 5rem auto;
-  padding: 3.5rem 3rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(12px);
-  text-align: center;
-}
-
-.vision-tagline-inner {
-  position: relative;
-}
-
-.vision-tagline-label {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: #10B981;
-  display: block;
-  margin-bottom: 1.25rem;
-}
-
-.vision-tagline-text {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
-  font-weight: 700;
-  color: #ffffff;
-  line-height: 1.3;
-  letter-spacing: -0.02em;
-  margin-bottom: 1.5rem;
-}
-
-.vision-tagline-divider {
-  width: 60px;
-  height: 2px;
-  background: linear-gradient(90deg, #4F9CF9, #10B981);
-  margin: 0 auto 1.25rem auto;
-}
-
-.vision-tagline-attribution {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.5);
-  font-style: italic;
-  font-weight: 400;
-}
-
-/* Mission & Vision Editorial Grid */
-.vision-mv-grid {
+/* Mission & Vision New Layout */
+.vision-mv-new {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
   margin-bottom: 5rem;
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
+  align-items: center;
+  width: 100vw;
+  margin-left: -5vw;
+  padding: 0 5vw;
 }
 
-@media (min-width: 768px) {
-  .vision-mv-grid {
-    grid-template-columns: 1fr 1fr;
+@media (max-width: 768px) {
+  .vision-mv-new {
+    grid-template-columns: 1fr;
+    width: 100%;
+    margin-left: 0;
+    padding: 0;
   }
 }
 
-.vision-mv-card {
-  display: flex;
-  gap: 1.25rem;
-  padding: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
-  overflow: hidden;
-}
-
-.vision-mv-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, transparent 100%);
-  pointer-events: none;
-}
-
-.vision-mv-card:hover {
-  border-color: rgba(79, 156, 249, 0.2);
-  transform: translateY(-3px);
-}
-
-.vision-mission-card {
-  border-left: 3px solid var(--luxury-blue);
-}
-
-.vision-vision-card {
-  border-left: 3px solid var(--emerald);
-}
-
-.vision-mv-icon {
-  flex-shrink: 0;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--luxury-blue);
-}
-
-.vision-vision-card .vision-mv-icon {
-  color: var(--emerald);
-}
-
-.vision-mv-content {
-  flex: 1;
-}
-
-.vision-mv-label {
+.vision-mv-overline {
   font-family: 'Inter', sans-serif;
   font-size: 0.7rem;
   font-weight: 700;
@@ -1987,19 +1888,43 @@ select:focus-visible {
   letter-spacing: 0.15em;
   color: #4F9CF9;
   display: block;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.75rem;
+  margin-top: 2rem;
 }
 
-.vision-vision-card .vision-mv-label {
-  color: #10B981;
+.vision-mv-overline:first-child {
+  margin-top: 0;
 }
 
-.vision-mv-text {
+.vision-mv-paragraph {
   font-family: 'Inter', sans-serif;
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.8;
   color: rgba(255, 255, 255, 0.7);
   font-weight: 400;
+}
+
+.vision-mv-image-col {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.vision-mv-image-wrapper {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.vision-mv-image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(100%);
+  transition: filter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.vision-mv-image-wrapper:hover img {
+  filter: grayscale(0%);
 }
 
 /* Core Mandate Section */
@@ -2045,13 +1970,13 @@ select:focus-visible {
 
 .vision-mandate-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 4px;
-  max-width: 900px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-@media (min-width: 1100px) {
+@media (max-width: 1000px) {
   .vision-mandate-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -2078,7 +2003,7 @@ select:focus-visible {
 .vision-mandate-card-image {
   position: relative;
   width: 100%;
-  height: 200px;
+  height: 120px;
   overflow: hidden;
 }
 
@@ -2103,21 +2028,21 @@ select:focus-visible {
 
 /* Card Content */
 .vision-mandate-card-content {
-  padding: 1.5rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
 .vision-mandate-card-icon {
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: rgba(79, 156, 249, 0.1);
   border: 1px solid rgba(79, 156, 249, 0.15);
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   color: #4F9CF9;
   transition: all 0.4s ease;
 }
@@ -2129,18 +2054,18 @@ select:focus-visible {
 
 .vision-mandate-card-title {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: #ffffff;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
   line-height: 1.3;
   letter-spacing: -0.01em;
 }
 
 .vision-mandate-card-text {
   font-family: 'Inter', sans-serif;
-  font-size: 0.9rem;
-  line-height: 1.7;
+  font-size: 0.82rem;
+  line-height: 1.6;
   color: rgba(255, 255, 255, 0.6);
   font-weight: 400;
 }
@@ -2217,25 +2142,17 @@ select:focus-visible {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .vision-tagline-block {
-    padding: 2rem 1.5rem;
-    margin-bottom: 3rem;
-  }
-
-  .vision-mv-grid {
-    margin-bottom: 3rem;
-  }
-
   .vision-mandate-grid {
-    gap: 3px;
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 
   .vision-mandate-card-image {
-    height: 160px;
+    height: 140px;
   }
 
   .vision-mandate-card-content {
-    padding: 1.25rem;
+    padding: 1rem;
   }
 
   .vision-mandate-card-title {
@@ -2244,10 +2161,6 @@ select:focus-visible {
 
   .vision-mandate-card-text {
     font-size: 0.85rem;
-  }
-
-  .tagline-br {
-    display: none;
   }
 }
 
