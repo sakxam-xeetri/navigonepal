@@ -709,31 +709,61 @@
   <!-- Section Divider -->
   <hr class="section-divider">
 
-  <!-- FOUNDING STORY SECTION -->
-  <section class="section" id="founding-story">
+  <!-- FOUNDING STORY SECTION - Redesigned Premium -->
+  <section class="fs-section" id="founding-story">
+    <!-- Ambient decorative elements -->
+    <div class="fs-ambient-orb fs-orb-1"></div>
+    <div class="fs-ambient-orb fs-orb-2"></div>
+    <div class="fs-grid-lines" aria-hidden="true"></div>
+
     <div class="container">
-      <div class="founding-story-block reveal" id="foundingStoryBlock" style="margin-bottom: 4rem;">
-        <div class="founding-story-content">
-          <span
-            style="color: var(--accent-color); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.12em; display: block; margin-bottom: 1.5rem;">—
-            THE ORIGIN STORY</span>
-          <p class="founding-story-text" id="foundingStoryText">
+      <!-- Section Header -->
+      <div class="fs-header reveal">
+        <div class="fs-label-row">
+          <span class="fs-label-line"></span>
+          <span class="fs-label-text">The Origin Story</span>
+          <span class="fs-label-line"></span>
+        </div>
+        <h2 class="fs-title">
+          Born From <span class="fs-title-accent">Grassroots.</span><br>
+          Driven By <span class="fs-title-accent">Impact.</span>
+        </h2>
+        <p class="fs-subtitle">
+          Three young visionaries realized the school system left SEE graduates unprepared, and set out to build a practical learning bridge.
+        </p>
+      </div>
+
+      <!-- Founding Story Block -->
+      <div class="fs-story-grid reveal" id="foundingStoryBlock">
+        <div class="fs-story-content-wrapper">
+          <div class="fs-quote-icon-container">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V21z" />
+              <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" />
+            </svg>
+          </div>
+          <p class="fs-story-text" id="foundingStoryText">
             <!-- Rendered dynamically -->
           </p>
         </div>
-        <div class="founding-story-video">
-          <iframe src="https://www.youtube.com/embed/Pe_Q26Ba2YE?si=gYN2ujN7Wkc_VtGm" title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="fs-story-video-container">
+          <div class="fs-video-glow"></div>
+          <div class="fs-story-video">
+            <iframe src="https://www.youtube.com/embed/Pe_Q26Ba2YE?si=gYN2ujN7Wkc_VtGm" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
         </div>
       </div>
 
-      <!-- Timeline Title -->
-      <div class="reveal" style="margin-bottom: 3rem; margin-top: 4rem;">
-        <h3 class="heading-lg" style="font-size: 2rem;">Milestones Journey</h3>
-        <p style="color: var(--text-muted); margin-top: 0.5rem; font-size: 0.9rem;">From grass-roots student counseling
-          into a national youth educational movement.</p>
+      <!-- Timeline Heading -->
+      <div class="fs-timeline-heading reveal">
+        <div class="fs-timeline-label">
+          <span class="fs-timeline-label-text">Milestones Journey</span>
+        </div>
+        <h3 class="fs-timeline-title">Our Growth Over Time</h3>
+        <p class="fs-timeline-subtitle">From grassroots student counseling into a national youth educational movement.</p>
       </div>
 
       <!-- Milestones Timeline -->
