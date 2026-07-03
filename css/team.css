@@ -1,0 +1,297 @@
+/* ============================================================
+   Team Page — Professional Card Layout
+   ============================================================ */
+
+/* --- SECTION HEADER --- */
+.team-section-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.team-section-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #2563EB;
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.4rem 1rem;
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  background: rgba(37, 99, 235, 0.06);
+}
+
+.team-section-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  color: #0A2342;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.team-section-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #64748B;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* --- GRID LAYOUTS --- */
+.team-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.team-grid--advisors {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.team-grid--founders {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.team-grid--core {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.team-grid--alumni {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* --- CARD STYLES --- */
+.team-card {
+  background: #ffffff;
+  border: 1px solid #E2E8F0;
+  padding: 2rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.team-card:hover {
+  border-color: rgba(37, 99, 235, 0.2);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
+}
+
+/* --- AVATAR --- */
+.team-card-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.team-avatar-initials {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.team-avatar--navy { background: #0A2342; }
+.team-avatar--blue { background: #2563EB; }
+.team-avatar--green { background: #10B981; }
+.team-avatar--purple { background: #8B5CF6; }
+.team-avatar--sky { background: #0EA5E9; }
+.team-avatar--rose { background: #F43F5E; }
+.team-avatar--amber { background: #F59E0B; }
+.team-avatar--violet { background: #7C3AED; }
+.team-avatar--cyan { background: #06B6D4; }
+.team-avatar--teal { background: #14B8A6; }
+
+/* --- ADVISOR CARD --- */
+.team-card--advisor {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 1.75rem;
+}
+
+.team-card--advisor .team-card-avatar {
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+
+.team-card--advisor .team-card-name {
+  font-size: 1.05rem;
+}
+
+.team-card--advisor .team-card-bio {
+  font-size: 0.85rem;
+  color: #64748B;
+  line-height: 1.65;
+  margin-top: 0.5rem;
+}
+
+/* --- FOUNDER CARD --- */
+.team-card--founder {
+  text-align: center;
+  padding: 2.5rem 2rem;
+}
+
+.team-card--founder .team-card-avatar {
+  margin: 0 auto 1.25rem;
+  width: 80px;
+  height: 80px;
+}
+
+.team-card--founder .team-card-avatar .team-avatar-initials {
+  font-size: 1.4rem;
+}
+
+.team-card-dept {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #2563EB;
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: rgba(37, 99, 235, 0.06);
+  border: 1px solid rgba(37, 99, 235, 0.15);
+  margin-bottom: 1rem;
+}
+
+.team-card-name {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0A2342;
+  margin-bottom: 0.35rem;
+}
+
+.team-card-role {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #64748B;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.team-card-bio {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  color: #475569;
+  line-height: 1.7;
+}
+
+/* --- CORE CARD --- */
+.team-card--core {
+  padding: 1.75rem;
+}
+
+.team-card--core .team-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.team-card--core .team-card-avatar {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 0;
+}
+
+.team-card--core .team-card-avatar .team-avatar-initials {
+  font-size: 1rem;
+}
+
+.team-card-dept-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #2563EB;
+  padding: 0.3rem 0.65rem;
+  background: rgba(37, 99, 235, 0.06);
+  border: 1px solid rgba(37, 99, 235, 0.12);
+}
+
+.team-card--core .team-card-name {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.team-card--core .team-card-role {
+  font-size: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.team-card--core .team-card-bio {
+  font-size: 0.85rem;
+  line-height: 1.65;
+}
+
+/* --- ALUMNI CARD --- */
+.team-card--alumni {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 1.75rem;
+}
+
+.team-card--alumni .team-card-avatar {
+  margin-bottom: 0;
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+}
+
+.team-card--alumni .team-card-avatar .team-avatar-initials {
+  font-size: 1.1rem;
+}
+
+.team-card--alumni .team-card-name {
+  font-size: 1.05rem;
+}
+
+.team-card--alumni .team-card-bio {
+  font-size: 0.85rem;
+  color: #64748B;
+  line-height: 1.65;
+  margin-top: 0.5rem;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .team-grid--founders {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-grid--core {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .team-grid--advisors,
+  .team-grid--founders,
+  .team-grid--core,
+  .team-grid--alumni {
+    grid-template-columns: 1fr;
+  }
+
+  .team-card--advisor,
+  .team-card--alumni {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
