@@ -8,7 +8,7 @@ const NAVIGO_CMS = {
   
   hero: {
     title: "Where Conventionality Ends and Practicality Starts",
-    subtitle: "Bridging the educational transition gap and equipping students with the real-world skills, guidance, and exposure they need to lead.",
+    subtitle: "Navigo Nepal is a non-profit helping students navigate their path after the 10th grade. We provide career guidance and personality development, giving this generation the real-world mentorship and opportunities that the previous one missed.",
     ctaPrimary: "Join Navigo",
     ctaSecondary: "Partner With Us"
   },

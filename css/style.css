@@ -3,7 +3,7 @@
    Inspired by UNESCO, UNICEF, Gates Foundation, TED, AG Pashmina
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
 
 /* ==================== CSS CUSTOM PROPERTIES ==================== */
 :root {
@@ -1039,6 +1039,7 @@ select:focus-visible {
 
 .hero-text-content .heading-xl {
   color: #FFFFFF;
+  font-family: 'Outfit', sans-serif;
   font-size: clamp(2.4rem, 5vw, 4rem);
   line-height: 1.1;
   margin-bottom: 1.5rem;
@@ -1048,12 +1049,14 @@ select:focus-visible {
 
 .hero-text-content .hero-subtitle {
   color: rgba(255, 255, 255, 0.75) !important;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: clamp(0.95rem, 1.8vw, 1.15rem);
   line-height: 1.8;
   margin-top: 1.5rem;
   margin-bottom: 3.5rem;
-  max-width: 580px;
+  max-width: 650px;
   font-weight: 400;
+  letter-spacing: -0.01em;
 }
 
 /* Segmented CTAs - Robert Half Style */
@@ -2084,6 +2087,7 @@ select:focus-visible {
     grid-template-columns: 1fr 1fr;
     align-items: stretch;
   }
+
   .founding-story-video {
     height: 100%;
     aspect-ratio: auto;
@@ -2534,7 +2538,8 @@ select:focus-visible {
 }
 
 .province-path {
-  fill: #D91C2A; /* Nepal flag red */
+  fill: #D91C2A;
+  /* Nepal flag red */
   stroke: rgba(255, 255, 255, 0.25);
   stroke-width: 0.8;
   stroke-linejoin: round;
@@ -2544,7 +2549,8 @@ select:focus-visible {
 
 .province-path:hover,
 .province-path.active {
-  fill: #E32636; /* Slightly brighter red */
+  fill: #E32636;
+  /* Slightly brighter red */
   stroke: rgba(255, 255, 255, 0.8);
   stroke-width: 1.5;
 }

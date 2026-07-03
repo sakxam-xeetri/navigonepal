@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ==================== 3. CMS CONTENT RENDERING ====================
   
   // Render Hero
-  if(document.getElementById("heroTitle")) document.getElementById("heroTitle").textContent = CMS.hero.title;
+  if(document.getElementById("heroTitle")) document.getElementById("heroTitle").innerHTML = CMS.hero.title;
   if(document.getElementById("heroSubtitle")) document.getElementById("heroSubtitle").textContent = CMS.hero.subtitle;
   if(document.getElementById("heroCtaPrimary")) document.getElementById("heroCtaPrimary").textContent = CMS.hero.ctaPrimary;
   if(document.getElementById("heroCtaSecondary")) document.getElementById("heroCtaSecondary").textContent = CMS.hero.ctaSecondary;
