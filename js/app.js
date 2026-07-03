@@ -191,20 +191,6 @@ document.addEventListener("DOMContentLoaded", () => {
   `).join("");
 
 
-  // Render Milestones Timeline
-  const timelineContainer = document.getElementById("timelineContainer");
-  if (timelineContainer) timelineContainer.innerHTML = CMS.story.timeline.map((mile, idx) => `
-    <div class="timeline-item reveal stagger-${(idx % 3) + 1}">
-      <div class="timeline-dot"></div>
-      <div class="timeline-year">${mile.year}</div>
-      <div class="timeline-content">
-        <h4 style="font-size: 1.2rem; color: var(--text-main); margin-bottom: 0.5rem; font-weight: 700;">${mile.title}</h4>
-        <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.7;">${mile.desc}</p>
-      </div>
-    </div>
-  `).join("");
-
-
 
   // Render Programs - Helper Function to allow dynamic filtering
   function getProgramIcon(id) {
