@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Navigo Nepal | Empowering Nepal's Future Leaders, Innovators, and Changemakers</title>
-  <meta name="description" content="Navigo Nepal is a leading youth-led educational empowerment organization transforming Nepal's future through STEM education, Olympiad awareness, leadership development, mentorship, and national-scale community impact.">
-  <meta name="keywords" content="Navigo Nepal, STEM education Nepal, youth empowerment, Olympiad awareness, leadership development, educational nonprofit Nepal">
+  <meta name="description" content="Navigo Nepal is a youth-led educational non-profit organization bridging academic learning and real-world skills through student counseling, club networks, and leadership programs.">
+  <meta name="keywords" content="Navigo Nepal, education gap Nepal, SEE stream selection, youth empowerment, student clubs, Gurubaa, education non-profit Nepal">
   
   <!-- Open Graph -->
   <meta property="og:title" content="Navigo Nepal | Empowering Nepal's Future Leaders">
@@ -24,6 +24,103 @@
   
   <!-- CSS Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Tab System */
+    .tabs-container {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .project-tab {
+      padding: 0.8rem 1.8rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 0px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .project-tab:hover, .project-tab.active {
+      color: var(--pure-white);
+      background: var(--accent-color);
+      border-color: var(--accent-color);
+      box-shadow: var(--shadow-md);
+    }
+    
+    /* Tab Content Panels */
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.5s ease forwards;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Table styling */
+    .table-wrapper {
+      overflow-x: auto;
+      margin-top: 1.5rem;
+      border: 1px solid var(--border-color);
+      background: var(--bg-card);
+      border-radius: 0px;
+      box-shadow: var(--shadow-sm);
+    }
+    .past-projects-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
+    .past-projects-table th {
+      background: rgba(37, 99, 235, 0.05);
+      color: var(--accent-color);
+      font-weight: 700;
+      padding: 1rem 1.25rem;
+      border-bottom: 2px solid var(--border-color);
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+    }
+    .past-projects-table td {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .past-projects-table tr:last-child td {
+      border-bottom: none;
+    }
+    .past-projects-table tbody tr:hover {
+      background: rgba(37, 99, 235, 0.02);
+    }
+
+    /* Info highlight box */
+    .info-highlight {
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.02), rgba(16, 185, 129, 0.02));
+      border-left: 4px solid var(--accent-color);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .info-highlight h4 {
+      margin-bottom: 0.5rem;
+      color: var(--accent-color);
+      font-weight: 700;
+    }
+    .info-highlight p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+  </style>
 </head>
 <body class="loading">
 
@@ -47,32 +144,30 @@
         <li><a href="#hero" class="nav-link active">Home</a></li>
         
         <li class="has-dropdown">
-          <a href="our-vision.html" class="nav-link">
+          <a href="#vision" class="nav-link">
             Our Story
             <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="our-vision.html">Our Vision</a></li>
-            <li><a href="founding-story.html">Founding Story</a></li>
-            <li><a href="leadership-message.html">Leadership Message</a></li>
-            <li><a href="future-goals.html">Future Goals (2027)</a></li>
+            <li><a href="#vision">Our Vision</a></li>
+            <li><a href="#founding-story">Founding Story</a></li>
+            <li><a href="#leadership-message">Leadership Message</a></li>
+            <li><a href="#future-goals">Future Goals (2027)</a></li>
           </ul>
         </li>
         
         <li class="has-dropdown">
-          <a href="#programs" class="nav-link">
+          <a href="programs.html" class="nav-link">
             Programs
             <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
-          <ul class="dropdown-menu dropdown-double">
-            <li><a href="#programs" class="subprogram-link" data-search-kw="STEM">STEM Exposure</a></li>
-            <li><a href="#programs" class="subprogram-link" data-search-kw="Olympiad">Olympiad Prep</a></li>
-            <li><a href="#programs" class="subprogram-link" data-search-kw="Leadership">Leadership Pipelines</a></li>
-            <li><a href="#programs" class="subprogram-link" data-search-kw="Career">Career Exploration</a></li>
-            <li><a href="#programs" class="subprogram-link" data-search-kw="Clubs">School Clubs</a></li>
-            <li><a href="#programs" class="subprogram-link" data-search-kw="Mentorship">Global Mentorship</a></li>
-            <li><a href="#programs" class="subprogram-link" data-search-kw="Entrepreneurship">Youth Incubation</a></li>
-            <li><a href="#programs" class="subprogram-link" data-search-kw="Finance">Financial Literacy</a></li>
+          <ul class="dropdown-menu">
+            <li><a href="#programs" class="subprogram-link" data-search-kw="What's Next">What's Next? Campaign</a></li>
+            <li><a href="#programs" class="subprogram-link" data-search-kw="Leadership">Leadership &amp; Personality</a></li>
+            <li><a href="#programs" class="subprogram-link" data-search-kw="Clubs">School Clubs &amp; ECAs</a></li>
+            <li><a href="#programs" class="subprogram-link" data-search-kw="Environmental">Environmental Stewardship</a></li>
+            <li><a href="#programs" class="subprogram-link" data-search-kw="Veda">Connect Tech to Veda</a></li>
+            <li style="border-top: 1px solid var(--border-color); margin-top: 0.5rem; padding-top: 0.5rem;"><a href="#past-initiatives" style="font-weight: 600; color: var(--accent-color);">View Past Projects Log</a></li>
           </ul>
         </li>
         
@@ -130,35 +225,33 @@
       
       <li class="mobile-has-dropdown">
         <div class="mobile-nav-row">
-          <a href="our-vision.html" class="mobile-nav-link">Our Story</a>
+          <a href="#vision" class="mobile-nav-link">Our Story</a>
           <button class="mobile-dropdown-toggle" aria-label="Toggle Submenu">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
         </div>
         <ul class="mobile-dropdown-menu">
-          <li><a href="our-vision.html" class="mobile-subnav-link">Our Vision</a></li>
-          <li><a href="founding-story.html" class="mobile-subnav-link">Founding Story</a></li>
-          <li><a href="leadership-message.html" class="mobile-subnav-link">Leadership Message</a></li>
-          <li><a href="future-goals.html" class="mobile-subnav-link">Future Goals</a></li>
+          <li><a href="#vision" class="mobile-subnav-link">Our Vision</a></li>
+          <li><a href="#founding-story" class="mobile-subnav-link">Founding Story</a></li>
+          <li><a href="#leadership-message" class="mobile-subnav-link">Leadership Message</a></li>
+          <li><a href="#future-goals" class="mobile-subnav-link">Future Goals</a></li>
         </ul>
       </li>
 
       <li class="mobile-has-dropdown">
         <div class="mobile-nav-row">
-          <a href="#programs" class="mobile-nav-link">Programs</a>
+          <a href="programs.html" class="mobile-nav-link">Programs</a>
           <button class="mobile-dropdown-toggle" aria-label="Toggle Submenu">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
         </div>
         <ul class="mobile-dropdown-menu">
-          <li><a href="#programs" class="mobile-subnav-link subprogram-link" data-search-kw="STEM">STEM Exposure</a></li>
-          <li><a href="#programs" class="mobile-subnav-link subprogram-link" data-search-kw="Olympiad">Olympiad Prep</a></li>
-          <li><a href="#programs" class="mobile-subnav-link subprogram-link" data-search-kw="Leadership">Leadership Pipelines</a></li>
-          <li><a href="#programs" class="mobile-subnav-link subprogram-link" data-search-kw="Career">Career Exploration</a></li>
-          <li><a href="#programs" class="mobile-subnav-link subprogram-link" data-search-kw="Clubs">School Clubs</a></li>
-          <li><a href="#programs" class="mobile-subnav-link subprogram-link" data-search-kw="Mentorship">Global Mentorship</a></li>
-          <li><a href="#programs" class="mobile-subnav-link subprogram-link" data-search-kw="Entrepreneurship">Youth Incubation</a></li>
-          <li><a href="#programs" class="mobile-subnav-link subprogram-link" data-search-kw="Finance">Financial Literacy</a></li>
+          <li><a href="#programs" class="mobile-subnav-link subprogram-link" data-search-kw="What's Next">What's Next? Campaign</a></li>
+          <li><a href="#programs" class="mobile-subnav-link subprogram-link" data-search-kw="Leadership">Leadership &amp; Personality</a></li>
+          <li><a href="#programs" class="mobile-subnav-link subprogram-link" data-search-kw="Clubs">School Clubs &amp; ECAs</a></li>
+          <li><a href="#programs" class="mobile-subnav-link subprogram-link" data-search-kw="Environmental">Environmental Stewardship</a></li>
+          <li><a href="#programs" class="mobile-subnav-link subprogram-link" data-search-kw="Veda">Connect Tech to Veda</a></li>
+          <li style="border-top: 1px solid var(--border-color); margin-top: 0.5rem; padding-top: 0.5rem;"><a href="#past-initiatives" class="mobile-subnav-link" style="font-weight: 600; color: var(--accent-color);">View Past Projects Log</a></li>
         </ul>
       </li>
 
@@ -294,7 +387,117 @@
   <!-- Section Divider -->
   <hr class="section-divider">
 
-  
+  <!-- OUR VISION SECTION -->
+  <section class="section section-alt" id="vision">
+    <div class="container">
+      <div class="story-header reveal">
+        <span class="gradient-accent section-label">Our Foundation</span>
+        <h2 class="heading-lg">Our Vision &amp; Core Mandate</h2>
+        <p style="color: var(--text-muted); margin-top: 0.75rem; font-size: 0.95rem; line-height: 1.8;">A youth-led movement bridging the transition to higher studies and equipping students with real-world skills, guidance, and community leadership.</p>
+      </div>
+
+      <!-- Mission & Vision Grid -->
+      <div class="grid-2 story-values-grid" id="storyValuesGrid" style="gap: 3rem; margin-top: 3rem;">
+        <!-- Mission & Vision panel -->
+        <div class="glass-panel reveal-left" style="padding: 2.5rem; display: flex; flex-direction: column; gap: 2.5rem; justify-content: center;">
+          <div>
+            <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--accent-color); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+              Our Mission
+            </h3>
+            <p id="storyMission" style="color: var(--text-main); font-size: 0.95rem; line-height: 1.8; font-weight: 400;"></p>
+          </div>
+          <div style="border-top: 1px solid var(--border-color); padding-top: 2rem;">
+            <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+              Our Vision
+            </h3>
+            <p id="storyVision" style="color: var(--text-main); font-size: 0.95rem; line-height: 1.8; font-weight: 400;"></p>
+          </div>
+        </div>
+
+        <!-- Core Values List -->
+        <div class="reveal-right" style="display: flex; flex-direction: column; gap: 1rem;" id="coreValuesList">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Divider -->
+  <hr class="section-divider">
+
+  <!-- FOUNDING STORY SECTION -->
+  <section class="section" id="founding-story">
+    <div class="container">
+      <div class="founding-story-block reveal" id="foundingStoryBlock" style="margin-bottom: 4rem;">
+        <div class="founding-story-content">
+          <span class="gradient-accent section-label" style="margin-bottom: 1.5rem;">The Origin Story</span>
+          <p class="founding-story-text" id="foundingStoryText">
+            <!-- Rendered dynamically -->
+          </p>
+        </div>
+        <div class="founding-story-video">
+          <iframe src="https://www.youtube.com/embed/Pe_Q26Ba2YE?si=gYN2ujN7Wkc_VtGm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <!-- Timeline Title -->
+      <div class="reveal" style="margin-bottom: 3rem; margin-top: 4rem;">
+        <h3 class="heading-lg" style="font-size: 2rem;">Milestones Journey</h3>
+        <p style="color: var(--text-muted); margin-top: 0.5rem; font-size: 0.9rem;">From grass-roots student counseling into a national youth educational movement.</p>
+      </div>
+
+      <!-- Milestones Timeline -->
+      <div class="timeline-wrapper">
+        <div class="timeline-line"></div>
+        <div id="timelineContainer">
+          <!-- Rendered Dynamically from js/cms.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Divider -->
+  <hr class="section-divider">
+
+  <!-- LEADERSHIP MESSAGE SECTION -->
+  <section class="section section-alt" id="leadership-message">
+    <div class="container">
+      <div class="reveal" style="max-width: 700px; margin-bottom: 3rem;">
+        <span class="gradient-accent section-label">Founders Message</span>
+        <h2 class="heading-lg">A Message from Our Leadership</h2>
+      </div>
+      
+      <div class="leadership-quote reveal" id="leadershipQuoteBlock">
+        <blockquote id="leadershipQuoteText"></blockquote>
+        <div class="leadership-quote-author">
+          <div class="leadership-quote-avatar" id="leadershipQuoteAvatar">A</div>
+          <div class="leadership-quote-info">
+            <h4 id="leadershipQuoteAuthor">Anupam Neupane, Biyog Man Dangol, &amp; Prajwal Dhungana</h4>
+            <span id="leadershipQuoteRole">Co-Founders, Navigo Nepal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Divider -->
+  <hr class="section-divider">
+
+  <!-- FUTURE GOALS SECTION -->
+  <section class="section" id="future-goals">
+    <div class="container">
+      <div class="reveal" style="margin-bottom: 3rem;">
+        <span class="gradient-accent section-label">Looking Ahead</span>
+        <h3 class="heading-lg" style="font-size: 2rem;">Future Goals &amp; Aspirations</h3>
+        <p style="color: var(--text-muted); margin-top: 0.5rem; font-size: 0.9rem;">Our roadmap for expanding educational excellence across Nepal.</p>
+      </div>
+      <div class="goals-grid" id="goalsGrid">
+        <!-- Rendered Dynamically -->
+      </div>
+    </div>
+  </section>
 
   <!-- Section Divider -->
   <hr class="section-divider">
@@ -305,13 +508,318 @@
       <div class="reveal" style="max-width: 700px; margin-bottom: 3rem;">
         <span class="gradient-accent section-label">Educational Portfolios</span>
         <h2 class="heading-lg">Active Curricular Programs</h2>
-        <p style="color: var(--text-muted); margin-top: 0.75rem; font-size: 0.95rem; line-height: 1.8;">Explore our structured networks providing hands-on hardware assemblies, regional Olympiad bootcamps, and direct global university mentorship pathways.</p>
+        <p style="color: var(--text-muted); margin-top: 0.75rem; font-size: 0.95rem; line-height: 1.8;">Explore our interactive counseling campaigns, leadership through play sessions, student club structures, and our environmental and tech integrations.</p>
       </div>
 
 
 
       <div class="grid-3 programs-grid" id="programsGrid">
         <!-- Rendered Dynamically from js/cms.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Divider -->
+  <hr class="section-divider">
+
+  <!-- PAST PROJECTS SECTION -->
+  <section class="section section-alt" id="past-initiatives">
+    <div class="container">
+      <div class="reveal" style="max-width: 700px; margin-bottom: 3rem;">
+        <span class="gradient-accent section-label">Historical Logs</span>
+        <h2 class="heading-lg">Past Projects &amp; Executed Sessions</h2>
+        <p style="color: var(--text-muted); margin-top: 0.75rem; font-size: 0.95rem; line-height: 1.8;">Review detailed logs of our student engagements, geographic coverage, volunteer coordination, and real metrics achieved during our projects.</p>
+      </div>
+
+      <!-- Interactive Tab Selector -->
+      <div class="tabs-container reveal">
+        <button class="project-tab active" data-tab="tab-whatsnext">SEE "What's Next?"</button>
+        <button class="project-tab" data-tab="tab-leadership">Scout &amp; Leadership</button>
+        <button class="project-tab" data-tab="tab-aiesec">AIESEC SDG 13 Climate</button>
+        <button class="project-tab" data-tab="tab-unicef">UNICEF &amp; USAID Green</button>
+        <button class="project-tab" data-tab="tab-veda">Connect Tech to Veda</button>
+      </div>
+
+      <!-- Tab Content Panels -->
+      <div class="tabs-content-wrapper reveal">
+        
+        <!-- Tab 1: What's Next SEE Campaign -->
+        <div class="tab-content active" id="tab-whatsnext">
+          <div class="info-highlight">
+            <h4>SEE and Grade 12 Counseling Campaign</h4>
+            <p>Bridging the transitional gap after basic schooling (grade 10 SEE) and high school (grade 12) so students can select their academic stream wisely. Sessions focus on stream parameters, career options, scholarship applications, and hands-on club orientation.</p>
+          </div>
+          <h3>Campaign Schools &amp; Impact Details</h3>
+          <div class="table-wrapper">
+            <table class="past-projects-table">
+              <thead>
+                <tr>
+                  <th>School Name</th>
+                  <th>Location</th>
+                  <th>Students Reached</th>
+                  <th>Clubs Formed</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Shree Chandra Jyoti School</strong></td>
+                  <td>Pipaltar, Nuwakot</td>
+                  <td>100 (Grades 9 &amp; 10)</td>
+                  <td>5 Active Clubs</td>
+                </tr>
+                <tr>
+                  <td><strong>Dhading Gurukul</strong></td>
+                  <td>Dhading District</td>
+                  <td>40 Students</td>
+                  <td>1 Club</td>
+                </tr>
+                <tr>
+                  <td><strong>Whizkids International School</strong></td>
+                  <td>Baluwatar, Kathmandu</td>
+                  <td>40 Students</td>
+                  <td>5 Clubs</td>
+                </tr>
+                <tr>
+                  <td><strong>Yuva Sahavagita School</strong></td>
+                  <td>Swayambhu, Kathmandu</td>
+                  <td>45 Students</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td><strong>Jyoti Academy</strong></td>
+                  <td>Sitapaila, Kathmandu</td>
+                  <td>40 Students</td>
+                  <td>2 Clubs</td>
+                </tr>
+                <tr>
+                  <td><strong>Advanced English Boarding HS</strong></td>
+                  <td>HadiGaun, Kathmandu</td>
+                  <td>60 Students</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td><strong>Shree Tangal Secondary School</strong></td>
+                  <td>Tangal, Kathmandu</td>
+                  <td>140 Students</td>
+                  <td>4 Clubs</td>
+                </tr>
+                <tr>
+                  <td><strong>Columbus International School</strong></td>
+                  <td>Maligaun, Kathmandu</td>
+                  <td>60 Students</td>
+                  <td>3 Clubs</td>
+                </tr>
+                <tr>
+                  <td><strong>Arunima Educational Foundation</strong></td>
+                  <td>Jorpati, Kathmandu</td>
+                  <td>200 Students</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td><strong>Shangri-la Public School</strong></td>
+                  <td>Jorpati, Kathmandu</td>
+                  <td>50 Students</td>
+                  <td>1 Club</td>
+                </tr>
+                <tr>
+                  <td><strong>Pashupati Mitra Secondary School</strong></td>
+                  <td>Chabahil, Kathmandu</td>
+                  <td>40 Students</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td><strong>Shree Bhumeshwori Secondary School</strong></td>
+                  <td>Sindhupalchowk</td>
+                  <td>140 Students</td>
+                  <td>4 Clubs</td>
+                </tr>
+                <tr>
+                  <td><strong>Parbat District School</strong></td>
+                  <td>Parbat</td>
+                  <td>40 Students</td>
+                  <td>2 Clubs</td>
+                </tr>
+                <tr>
+                  <td><strong>Baglung District School</strong></td>
+                  <td>Baglung</td>
+                  <td>60 Students</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td><strong>Rupandehi District School</strong></td>
+                  <td>Rupandehi</td>
+                  <td>60 Students</td>
+                  <td>3 Clubs</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Tab 2: Scout Leadership -->
+        <div class="tab-content" id="tab-leadership">
+          <div class="info-highlight">
+            <h4>Leadership &amp; Personality Workshops</h4>
+            <p>Cultivating core skills (teamwork, communication, critical thinking, confidence) through active play. Designed specifically at the request of school authorities for Scout and student groups, teaching leadership concepts dynamically without dry lecturing.</p>
+          </div>
+          <h3>Leadership Training Logs</h3>
+          <div class="table-wrapper">
+            <table class="past-projects-table">
+              <thead>
+                <tr>
+                  <th>School Name</th>
+                  <th>Target Group</th>
+                  <th>Students Reached</th>
+                  <th>Key Activities &amp; Outcomes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Gyanodaya Secondary School</strong></td>
+                  <td>Scout Students</td>
+                  <td>120 Students</td>
+                  <td>Balloon Game, "How Many F's" critical thinking check, announced collaborative **Eco Clubs** setup.</td>
+                </tr>
+                <tr>
+                  <td><strong>Padmodaya Secondary School</strong></td>
+                  <td>Scout &amp; General Group</td>
+                  <td>60 Students</td>
+                  <td>Communication and cooperation challenges, positive feedback channels for future leadership tracks.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Tab 3: AIESEC Collaboration -->
+        <div class="tab-content" id="tab-aiesec">
+          <div class="info-highlight">
+            <h4>AIESEC x Navigo Nepal SDG 13 Climate Action</h4>
+            <p>Collaborated with AIESEC on the Sustainable Development Goals (SDG) program. We educated young students about climate change and human impact, utilizing group discussions, art activities, drawings, and interactive games in schools without slide projection resources.</p>
+          </div>
+          <h3>AIESEC Collaboration Sessions</h3>
+          <div class="table-wrapper">
+            <table class="past-projects-table">
+              <thead>
+                <tr>
+                  <th>School Name</th>
+                  <th>Location</th>
+                  <th>Students Reached</th>
+                  <th>Navigo Organizers / Members</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Steiner Academy</strong></td>
+                  <td>Old Baneshwor, Kathmandu</td>
+                  <td>30 (Class 8)</td>
+                  <td>Prajwal Jung Thapa, Monsoon Khatiwada</td>
+                </tr>
+                <tr>
+                  <td><strong>Mount SEB School</strong></td>
+                  <td>Jadibuti, Bhaktapur</td>
+                  <td>60 (Class 8)</td>
+                  <td>Biyog Man Dangol, Sunayan Poudel, Krishav Jung Shahi</td>
+                </tr>
+                <tr>
+                  <td><strong>Everest School</strong></td>
+                  <td>Thaiba, Kathmandu</td>
+                  <td>40 (Class 6)</td>
+                  <td>Rishav Bhattarai, Prajwal Dhungana</td>
+                </tr>
+                <tr>
+                  <td><strong>NJSN High School</strong></td>
+                  <td>Narephat, Kathmandu</td>
+                  <td>80 (Classes 6, 7 &amp; 8)</td>
+                  <td>Pratik Ban, Atal Raj Poudel</td>
+                </tr>
+                <tr>
+                  <td><strong>Navjyoti School</strong></td>
+                  <td>Tinkune, Kathmandu</td>
+                  <td>35 (Class 6)</td>
+                  <td>Aabrity Poudel, Sanju Thapa, Biprash Pandey</td>
+                </tr>
+                <tr>
+                  <td><strong>Asha Mandir School</strong></td>
+                  <td>Baneshwor, Kathmandu</td>
+                  <td>60 (Classes 6, 7 &amp; 8)</td>
+                  <td>Anupam Neupane &amp; Volunteer Team</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Tab 4: UNICEF/USAID Green -->
+        <div class="tab-content" id="tab-unicef">
+          <div class="info-highlight">
+            <h4>World Environment Day Awareness Campaign</h4>
+            <p>Partnered with local organizations and the Kathmandu Metropolitan City 'BaBa Program' to drive environmental stewardship. Supported by USAID Clean Air and UNICEF Nepal, these activities focused on hands-on conservation models and public advocacy.</p>
+          </div>
+          <h3>Environment Day Event Logs</h3>
+          <div class="table-wrapper">
+            <table class="past-projects-table">
+              <thead>
+                <tr>
+                  <th>Campaign Activity</th>
+                  <th>Target Audience</th>
+                  <th>Organizers &amp; Partners</th>
+                  <th>Outcomes / Highlights</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Plastic Bottle Gardening</strong></td>
+                  <td>Community School Students</td>
+                  <td>Navigo Nepal, UNICEF Nepal, USAID Clean Air</td>
+                  <td>Repurposed plastic bottles to build vertical wall gardens, teaching reuse.</td>
+                </tr>
+                <tr>
+                  <td><strong>Environmental Rallies</strong></td>
+                  <td>Public &amp; Community Members</td>
+                  <td>Students, teachers, and Kathmandu Metro BaBa Program</td>
+                  <td>Street rallies raising awareness for climate protection, air quality, and local ecology.</td>
+                </tr>
+                <tr>
+                  <td><strong>Face Painting &amp; Art Exhibits</strong></td>
+                  <td>School Children</td>
+                  <td>Local school students and volunteers</td>
+                  <td>Creative environmental art exhibitions and pamphlets highlighting climate action steps.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Tab 5: Tech to Veda -->
+        <div class="tab-content" id="tab-veda">
+          <div class="info-highlight">
+            <h4>Connect Tech to Veda</h4>
+            <p>A pilot research project connecting traditional Vedic/Sanskrit education with contemporary computer tools. Initiated after the co-founders noticed that despite having resources, students lacked training. We taught computer basics and artificial intelligence applications.</p>
+          </div>
+          <h3>Tech to Veda Logs</h3>
+          <div class="table-wrapper">
+            <table class="past-projects-table">
+              <thead>
+                <tr>
+                  <th>Location / Institution</th>
+                  <th>Target Group</th>
+                  <th>Sessions / Materials</th>
+                  <th>Project Objectives</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Brahmeshwor Gurukul</strong></td>
+                  <td>Gurukul Vedic Students</td>
+                  <td>Basic Computer Literacy &amp; AI Tools Orientation</td>
+                  <td>Connecting spiritual studies with modern software tools; preparing Vedic scholars for a digital world.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -398,7 +906,7 @@
       <div class="reveal" style="max-width: 700px; margin-bottom: 3rem;">
         <span class="gradient-accent section-label">Board &amp; Leadership</span>
         <h2 class="heading-lg">Navigo Coordinators</h2>
-        <p style="color: var(--text-muted); margin-top: 0.75rem; font-size: 0.95rem; line-height: 1.8;">A youth-led assembly of educators, collegiate mentors, and Olympiad gold medalists spearheading public educational excellence.</p>
+        <p style="color: var(--text-muted); margin-top: 0.75rem; font-size: 0.95rem; line-height: 1.8;">A youth-led team bridging academic and real-world skills, supported by local educators and regional ambassadors.</p>
       </div>
 
       <div class="grid-4 team-grid" id="teamGrid">
@@ -488,8 +996,8 @@
     <div class="container">
       <div class="reveal" style="max-width: 700px; margin-bottom: 3rem;">
         <span class="gradient-accent section-label">Direct Sponsorship</span>
-        <h2 class="heading-lg">Sponsor Curriculums &amp; Tech Kits</h2>
-        <p style="color: var(--text-muted); margin-top: 0.75rem; font-size: 0.95rem; line-height: 1.8;">Secure funding paths to distribute physical micro-controllers, Olympiad literature, and specialized tutor workshops directly to community high schools.</p>
+        <h2 class="heading-lg">Sponsor Programs &amp; Student Clubs</h2>
+        <p style="color: var(--text-muted); margin-top: 0.75rem; font-size: 0.95rem; line-height: 1.8;">Secure support to expand post-SEE counseling materials, student club starter guides, and environmental action kits directly to schools across Nepal.</p>
       </div>
 
       <div class="grid-2 donation-grid" id="donationGrid">
@@ -733,7 +1241,7 @@
 
         <div class="form-group">
           <label for="volBio">Brief Academic Background / Skills</label>
-          <textarea id="volBio" class="form-control" required placeholder="Engineering student, Olympiad alumnus, teaching experience..." style="min-height: 100px;"></textarea>
+          <textarea id="volBio" class="form-control" required placeholder="High school graduate, college student, volunteer experience, interest in teaching or counseling..." style="min-height: 100px;"></textarea>
         </div>
 
         <button type="submit" class="btn btn-primary" style="width: 100%;">
@@ -806,5 +1314,28 @@
   <!-- Javascript -->
   <script src="js/cms.js"></script>
   <script src="js/app.js"></script>
+
+  <!-- Tab switcher script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const tabs = document.querySelectorAll(".project-tab");
+      const contents = document.querySelectorAll(".tab-content");
+
+      tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+          const target = tab.getAttribute("data-tab");
+          
+          tabs.forEach(t => t.classList.remove("active"));
+          contents.forEach(c => c.classList.remove("active"));
+          
+          tab.classList.add("active");
+          const activeContent = document.getElementById(target);
+          if (activeContent) {
+            activeContent.classList.add("active");
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

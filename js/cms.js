@@ -3,69 +3,69 @@
 
 const NAVIGO_CMS = {
   organizationName: "Navigo Nepal",
-  tagline: "Empowering Nepal's Next Generation of Leaders and Innovators",
-  description: "A youth-led educational empowerment organization transforming the future of Nepal through student exposure, leadership development, STEM education, Olympiad awareness, mentorship, and community impact.",
+  tagline: "Where Conventionality Ends and Practicality Starts",
+  description: "A youth-led, non-profit organization dedicated to empowering junior high and high school students across Nepal to confidently navigate their future by bridging the gap between academic learning and real-world skills.",
   
   hero: {
-    title: "Empowering Nepal's Future Leaders, Innovators, and Changemakers",
-    subtitle: "Building opportunities, leadership, and impact for students across Nepal.",
+    title: "Where Conventionality Ends and Practicality Starts",
+    subtitle: "Bridging the educational transition gap and equipping students with the real-world skills, guidance, and exposure they need to lead.",
     ctaPrimary: "Join Navigo",
-    ctaSecondary: "Become a Partner"
+    ctaSecondary: "Partner With Us"
   },
 
   impactMetrics: [
-    { id: "schools", label: "Schools Connected", value: 120, suffix: "+", icon: "school", color: "#6366f1", gradient: "linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)", desc: "Empowering community and public secondary schools with physical STEM labs and robotics equipment." },
-    { id: "students", label: "Students Reached", value: 25000, suffix: "+", icon: "users", color: "#a855f7", gradient: "linear-gradient(135deg, #a855f7 0%, #7c3aed 100%)", desc: "A nationwide network of active secondary students engaging in academic bootcamps and workshops." },
-    { id: "districts", label: "Districts Covered", value: 35, suffix: "+", icon: "map", color: "#ec4899", gradient: "linear-gradient(135deg, #ec4899 0%, #c026d3 100%)", desc: "Spanning across mountains, hills, and plains to reach remote and underserved regions." },
-    { id: "clubs", label: "Clubs Created", value: 45, suffix: "", icon: "award", color: "#f97316", gradient: "linear-gradient(135deg, #f97316 0%, #ea580c 100%)", desc: "Self-sustaining, student-led weekly clubs focused on science, tech, debate, and social activism." },
-    { id: "workshops", label: "Workshops Conducted", value: 280, suffix: "+", icon: "activity", color: "#f59e0b", gradient: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)", desc: "Hands-on robotics assemblies, computer programming bootcamps, and Olympiad awareness sessions." },
-    { id: "volunteers", label: "Volunteer Network", value: 500, suffix: "+", icon: "globe", color: "#10b981", gradient: "linear-gradient(135deg, #10b981 0%, #059669 100%)", desc: "A dedicated community of collegiate mentors, academic tutors, and Olympiad gold medalists." }
+    { id: "schools", label: "Schools Connected", value: 20, suffix: "+", icon: "school", color: "#6366f1", gradient: "linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)", desc: "Connecting public, private, and community schools with practical workshops and counseling." },
+    { id: "students", label: "Students Reached", value: 1600, suffix: "+", icon: "users", color: "#a855f7", gradient: "linear-gradient(135deg, #a855f7 0%, #7c3aed 100%)", desc: "Empowered through SEE/12th grade counseling, leadership training, and climate awareness." },
+    { id: "districts", label: "Districts Covered", value: 11, suffix: "+", icon: "map", color: "#ec4899", gradient: "linear-gradient(135deg, #ec4899 0%, #c026d3 100%)", desc: "Conducted programs and mapped coordinator networks across various geographical regions." },
+    { id: "clubs", label: "Clubs Created", value: 29, suffix: "+", icon: "award", color: "#f97316", gradient: "linear-gradient(135deg, #f97316 0%, #ea580c 100%)", desc: "Active, student-led circles (Eco Clubs, interest groups) fostering peer collaboration." },
+    { id: "workshops", label: "Workshops Conducted", value: 35, suffix: "+", icon: "activity", color: "#f59e0b", gradient: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)", desc: "Interactive sessions on career streams, environment protection, and digital literacy." },
+    { id: "volunteers", label: "Volunteer Network", value: 50, suffix: "+", icon: "globe", color: "#10b981", gradient: "linear-gradient(135deg, #10b981 0%, #059669 100%)", desc: "Passionate collegiate coordinators and local district ambassadors ('Navigers')." }
   ],
 
   story: {
-    mission: "To ignite curiosity, build critical thinking, and unlock paths of global competitiveness for every student in Nepal, regardless of geographical or socioeconomic limits.",
-    vision: "An equitable Nepal where youth lead tech innovation, excel in international forums, and drive sustainable development through education and leadership.",
+    mission: "To empower students across Nepal by transforming their educational experience from a narrow academic focus to a holistic approach that includes personal development, leadership, and practical problem-solving skills.",
+    vision: "A future where every student in Nepal has the knowledge, practical skills, and resources to make informed decisions about their academic and career paths.",
     values: [
-      { title: "Empowerment", desc: "Placing youth at the steering wheel of community advancement." },
-      { title: "Innovation", desc: "Pioneering STEM, interactive classrooms, and advanced problem-solving." },
-      { title: "Inclusivity", desc: "Ensuring deep rural areas receive the same world-class mentorship as capital hubs." },
-      { title: "Integrity", desc: "Unwavering commitment to quality education, accountability, and student safety." }
+      { title: "Empowerment", desc: "Fostering youth leadership and confidence by putting students in charge of their own school clubs." },
+      { title: "Practicality", desc: "Ending rote learning by integrating interactive games, debates, and group discussions into classrooms." },
+      { title: "Inclusivity", desc: "Expanding program resources and local coordinator networks to reach underserved rural schools." },
+      { title: "Environmentalism", desc: "Inspiring the next generation to act as environmental stewards through hands-on conservation campaigns." }
     ],
     timeline: [
-      { year: "2022", title: "The Spark", desc: "Founded by a group of passionate students. Conducted the first STEM & Practical Robotics camp for 500 students across 10 public schools in Bagmati Province." },
-      { year: "2023", title: "Olympiad Push", desc: "Launched Nepal's first youth-led Olympiad Awareness Campaign, distributing resources to 20+ remote districts. Initiated 15 Navigo School Clubs." },
-      { year: "2024", title: "Mentorship & Scale", desc: "Established the Mentorship Network, matching 100+ rural students with mentors from top global universities. Expanded operations to Koshi and Gandaki." },
-      { year: "2025", title: "Innovation Incubation", desc: "Created the Student Entrepreneurship Camp and Financial Literacy course, turning high-school ideas into community-funded prototypes." },
-      { year: "2026", title: "Nationwide Horizons", desc: "Scaling across all 7 provinces, targeting 50,000+ students, establishing regional STEM labs, and aiming for international Olympiad honors." }
+      { year: "Jan 2024", title: "Research & Assessment", desc: "Conducted qualitative and quantitative needs surveys with 100+ students to map local educational gaps and extracurricular needs." },
+      { year: "Apr 2024", title: "First Counseling Campaigns", desc: "Launched our pilot 'What's Next?' projects at Shree Chandra Jyoti School in Nuwakot and Dhading, counseling 140+ students." },
+      { year: "May 2024", title: "Leadership Development", desc: "Conducted personality and leadership workshops for 180+ Scout and general students at Gyanodaya and Padmodaya schools." },
+      { year: "Jun 2024", title: "UNICEF & USAID Green Action", desc: "Collaborated on World Environment Day for plastic bottle gardening and environmental awareness, featured on global agency pages. Formally announced our partnership with Gurubaa." },
+      { year: "Jul 2024", title: "AIESEC Partnerships & Scale", desc: "Teamed with AIESEC Nepal for the SDG 13 Climate Action campaign in schools, training hundreds of students across multiple Kathmandu classrooms." }
     ],
-    foundingStory: "Navigo Nepal was born in 2022 from a simple yet powerful observation — thousands of talented students across Nepal's public schools had the potential to compete on global stages, but lacked the exposure, mentorship, and resources to do so. A group of passionate university students, who themselves had struggled through the same gaps in Nepal's educational system, decided to bridge this divide. What started as a weekend robotics camp in a single Bagmati Province school has grown into a nationwide movement touching all 7 provinces, empowering over 25,000 students, and building a volunteer network of 500+ mentors. Our journey is fueled by the belief that geography and socioeconomic background should never determine a student's ceiling.",
+    foundingStory: "Navigo Nepal was founded in early 2024 by Anupam Neupane, Biyog Man Dangol, and Prajwal Dhungana. Realizing that the school system left SEE (grade 10) graduates unprepared and anxious about stream and career transitions, they established Navigo—Latin for 'Navigate'—to build a practical learning bridge. Starting with grass-roots workshops in Nuwakot, Navigo Nepal has rapidly expanded into a youth-led movement. The co-founders are supported by a strategic partnership with Gurubaa, Nepal's largest educational content creator, and a growing cohort of local student leaders, district ambassadors ('Navigers'), and volunteers.",
     leadershipMessage: {
-      quote: "Every student in Nepal deserves access to the same quality of mentorship, resources, and opportunities that students in the world's best institutions receive. That's not just our mission — it's our responsibility as young Nepalis who have been fortunate enough to access those resources ourselves.",
-      author: "Binaya Shrestha",
-      role: "Co-Founder & Executive Director"
+      quote: "We started Navigo Nepal to give students what we ourselves were deprived of. We aim to replace passive textbook recitation with active, interactive problem-solving, so every student can find their true path.",
+      author: "Anupam Neupane, Biyog Man Dangol, & Prajwal Dhungana",
+      role: "Co-Founders, Navigo Nepal"
     },
     futureGoals: [
       {
-        title: "50,000+ Students by 2027",
-        desc: "Scaling our reach to touch 50,000 students across every district in Nepal through expanded school clubs and digital mentorship platforms.",
+        title: "Nation-wide Expansion (15+ Districts)",
+        desc: "Scaling our programs from the initial pilot areas to over 15 districts through localized resource transmission.",
         icon: "target",
-        progress: 50
+        progress: 45
       },
       {
-        title: "Regional STEM Labs",
-        desc: "Establishing permanent STEM innovation labs in each of Nepal's 7 provinces, equipped with advanced hardware and mentorship infrastructure.",
+        title: "District Ambassador Network",
+        desc: "Orienting regional 'Navigers'—exceptional student leaders who track local needs and manage newly established clubs.",
+        icon: "globe",
+        progress: 60
+      },
+      {
+        title: "Eco Clubs & Waste Projects",
+        desc: "Scaling environment conservation projects like plastic gardening and trash management models across partner schools.",
         icon: "flask",
-        progress: 28
+        progress: 30
       },
       {
-        title: "International Olympiad Honors",
-        desc: "Training and supporting Nepal's brightest public school students to represent the nation at International Mathematics, Physics, and Chemistry Olympiads.",
-        icon: "trophy",
-        progress: 35
-      },
-      {
-        title: "Digital Learning Platform",
-        desc: "Building an open-access, bilingual (English/Nepali) digital platform with courses, mentorship matching, and scholarship discovery tools.",
+        title: "Reviving Extracurriculars with Tech",
+        desc: "Deploying hands-on tools (computers, VR) to help high school students retain their creative passions alongside SEE/12th academic pressure.",
         icon: "monitor",
         progress: 15
       }
@@ -74,293 +74,267 @@ const NAVIGO_CMS = {
 
   programs: [
     {
-      id: "stem",
-      title: "STEM Exposure",
-      shortDesc: "Igniting technical potential through interactive experimentation.",
-      fullDesc: "Hands-on workshops in robotics, computer programming, physics design, and digital literacy. We provide schools with physical micro-controllers, sensors, and basic kits to convert passive classrooms into active innovation labs.",
-      icon: "cpu",
-      color: "blue"
-    },
-    {
-      id: "olympiad",
-      title: "Olympiad Awareness",
-      shortDesc: "Equipping minds to compete in international academic arenas.",
-      fullDesc: "Demystifying math, physics, biology, and chemistry Olympiads. We distribute comprehensive reference books, run intensive problem-solving bootcamps, and mentor selected prodigies to qualify for global contests.",
-      icon: "binary",
-      color: "green"
-    },
-    {
-      id: "leadership",
-      title: "Leadership Pipelines",
-      shortDesc: "Cultivating responsible change-makers for local communities.",
-      fullDesc: "Public speaking training, design thinking workshops, and community impact design. We guide students to identify local problems—ranging from trash management to tech access—and execute real solutions.",
+      id: "whatsnext",
+      title: "What's Next? Campaign",
+      shortDesc: "SEE and grade 12 stream and career counseling.",
+      fullDesc: "Helping students navigate academic streams (+2, A-Levels, CTEVT), colleges, and course selections through need assessment surveys, diagnostic tests, stream comparisons, and interactive guidance.",
       icon: "compass",
       color: "blue"
     },
     {
-      id: "career",
-      title: "Career Exploration",
-      shortDesc: "Exposing young minds to contemporary vocational frontiers.",
-      fullDesc: "Connecting high-schoolers with leading professionals in software engineering, bioscience, renewable energy, civil services, and creative arts. Expanding horizons beyond typical standard paths.",
-      icon: "briefcase",
+      id: "leadership",
+      title: "Leadership & Personality Development",
+      shortDesc: "Teamwork and critical thinking training.",
+      fullDesc: "Interactive workshops for Scouts and general students using games (Balloon Game, puzzle challenges) to demonstrate real-time leadership, cooperation, and community problem-solving.",
+      icon: "users",
       color: "green"
     },
     {
       id: "clubs",
-      title: "Navigo School Clubs",
-      shortDesc: "Establishing self-sustaining hubs of interactive learning.",
-      fullDesc: "Helping schools set up student-led weekly clubs focused on science, tech, debate, and social activism. We provide structured curriculum templates and support student-elected cabinet officers.",
+      title: "School Clubs & ECAs Support",
+      shortDesc: "Establishing student-led interest circles.",
+      fullDesc: "Fostering practical student responsibility by helping schools structure, elect, and run active extracurricular clubs (such as Eco Clubs or sports circles) with curriculum templates.",
       icon: "shapes",
       color: "blue"
     },
     {
-      id: "mentorship",
-      title: "Global Mentorship",
-      shortDesc: "Direct bridges between local students and global experts.",
-      fullDesc: "A 1-on-1 virtual network linking talented Nepali high school students with university students and working professionals from institutions like Harvard, MIT, IoE, and Kathmandu University.",
-      icon: "heart-handshake",
+      id: "environment",
+      title: "Environmental Stewardship",
+      shortDesc: "Climate action campaigns and SDG awareness.",
+      fullDesc: "World Environment Day events, bottle gardening, face painting, street rallies, and SDG 13 (Climate Action) lessons, executed in partnership with UNICEF, USAID Clean Air, and AIESEC.",
+      icon: "globe",
       color: "green"
     },
     {
-      id: "entrepreneurship",
-      title: "Youth Incubation",
-      shortDesc: "Turning raw, creative concepts into local enterprises.",
-      fullDesc: "Equipping young students with basic startup frameworks: defining problem statements, customer discovery, minimal prototype assembly, and pitch presentations. Selected ideas receive seed micro-funding.",
-      icon: "lightbulb",
+      id: "techveda",
+      title: "Connect Tech to Veda",
+      shortDesc: "Integrating computer education with Vedic traditions.",
+      fullDesc: "A research initiative piloted at Brahmeshwor Gurukul. We provide computer literacy, explore artificial intelligence applications, and connect modern technology with traditional Sanskrit and spiritual studies.",
+      icon: "cpu",
       color: "blue"
-    },
-    {
-      id: "finance",
-      title: "Financial Literacy",
-      shortDesc: "Essential fiscal skills for long-term youth independence.",
-      fullDesc: "Interactive gamified modules on personal budgeting, the power of compound interest, basic banking in Nepal, micro-investments, and digital transactions (e-sewa, Khalti, mobile banking safety).",
-      icon: "wallet",
-      color: "green"
     }
   ],
 
   provinces: [
     {
-      id: "koshi",
-      name: "Koshi Province",
-      schools: 22,
-      students: 4500,
-      clubs: 8,
-      leadProgram: "STEM Outreach & Robotics Camps",
-      milestone: "Established three regional high school science labs in Biratnagar and Dharan."
-    },
-    {
-      id: "madhesh",
-      name: "Madhesh Province",
-      schools: 15,
-      students: 3200,
-      clubs: 5,
-      leadProgram: "Financial Literacy & Olympiad Awareness",
-      milestone: "Conducted extensive multi-school Math Bootcamps in Janakpur and Birgunj."
-    },
-    {
       id: "bagmati",
       name: "Bagmati Province",
-      schools: 42,
-      students: 9800,
-      clubs: 18,
-      leadProgram: "Leadership Pipelines & Innovation Hubs",
-      milestone: "Hosted the annual Navigo Youth Leadership Summit in Kathmandu for 400+ delegates."
+      schools: 15,
+      students: 1200,
+      clubs: 20,
+      leadProgram: "What's Next? counseling, Scout leadership workshops, and UNICEF green projects.",
+      milestone: "Run pilot campaigns in Nuwakot (Chandrajyoti), Dhading, Sindhupalchowk, and Kathmandu schools."
     },
     {
       id: "gandaki",
       name: "Gandaki Province",
-      schools: 18,
-      students: 3600,
-      clubs: 7,
-      leadProgram: "Career Exploration & Tech Workshops",
-      milestone: "Equipped schools in Pokhara and Baglung with advanced Arduino programming kits."
+      schools: 4,
+      students: 160,
+      clubs: 4,
+      leadProgram: "What's Next? stream guidance and student-led clubs.",
+      milestone: "Established clubs and held workshops in Pokhara, Baglung, and Parbat."
     },
     {
       id: "lumbini",
       name: "Lumbini Province",
-      schools: 14,
-      students: 2800,
-      clubs: 4,
-      leadProgram: "STEM Exposure & Public Speaking",
-      milestone: "Conducted public speaking tours across schools in Butwal and Bhairahawa."
+      schools: 3,
+      students: 120,
+      clubs: 3,
+      leadProgram: "What's Next? counseling and local volunteer setups.",
+      milestone: "Delivered What's Next workshops in Banke and Rupandehi (Butwal)."
+    },
+    {
+      id: "koshi",
+      name: "Koshi Province",
+      schools: 0,
+      students: 0,
+      clubs: 0,
+      leadProgram: "Future Resource Transmission & Navigers Program",
+      milestone: "Mapping regional schools and recruiting local collegiate coordinators for workshops."
+    },
+    {
+      id: "madhesh",
+      name: "Madhesh Province",
+      schools: 0,
+      students: 0,
+      clubs: 0,
+      leadProgram: "Future counseling kit distribution",
+      milestone: "Preparing print guides and translating materials for student clubs in Birgunj and Janakpur."
     },
     {
       id: "karnali",
       name: "Karnali Province",
-      schools: 5,
-      students: 800,
-      clubs: 1,
-      leadProgram: "Remote Scholarship Guides & Mentorship",
-      milestone: "Distributed physical paper books and guides to high schoolers in Surkhet and Jumla."
+      schools: 0,
+      students: 0,
+      clubs: 0,
+      leadProgram: "Remote school outreach",
+      milestone: "Adapting counseling materials for remote areas where physical visits are limited."
     },
     {
       id: "sudurpashchim",
       name: "Sudurpashchim Province",
-      schools: 6,
-      students: 1100,
-      clubs: 2,
-      leadProgram: "STEM Camps & Olympiad Bootcamps",
-      milestone: "Deployed hybrid mentorship structures for students in Dhangadhi."
+      schools: 0,
+      students: 0,
+      clubs: 0,
+      leadProgram: "Regional coordinator training",
+      milestone: "Designing onboarding guides to empower local youth leaders to run workshops."
     }
   ],
 
   successStories: [
     {
-      name: "Aayush Shrestha",
-      location: "Biratnagar",
-      role: "Navigo Mentorship Alumnus",
+      name: "Gyanodaya Scout Lead",
+      location: "Kathmandu",
+      role: "Leadership Participant",
       image: "assets/success_aayush.jpg",
-      quote: "Navigo completely changed my perspective on what's possible. Coming from a school in Biratnagar, I had no guidance on pursuing computer science. My mentor from Navigo matched with me, helped me build code projects, guided me through study applications, and today I have a fully funded education program.",
-      highlight: "Scholarship Recipient"
+      quote: "The Balloon Game and 'How Many F's' activities made us realize that teamwork and critical thinking are essential for our growth. We are eager to start our Eco Club next!",
+      highlight: "Scout Leader"
     },
     {
-      name: "Pooja Karki",
-      location: "Pokhara",
-      role: "Navigo School Club Lead",
+      name: "Chandrajyoti Student",
+      location: "Nuwakot",
+      role: "What's Next Participant",
       image: "assets/success_pooja.jpg",
-      quote: "Before Navigo introduced Olympiad preparation materials in our school, we didn't even know these competitions existed. We thought they were only for elite capital-city students. The math camps pushed my limits, and last year I was proud to qualify for national physics selections.",
-      highlight: "National Olympiad Contender"
+      quote: "We were completely blank on what streams to choose after grade 10. The What's Next presentation explained the streams, colleges, and scholarships clearly, giving us much-needed confidence.",
+      highlight: "SEE Graduate"
     },
     {
-      name: "Samir Magar",
-      location: "Lalitpur",
-      role: "Navigo Entrepreneurship Winner",
+      name: "Everest School Student",
+      location: "Thaiba",
+      role: "SDG 13 Participant",
       image: "assets/success_samir.jpg",
-      quote: "At the Navigo Entrepreneurship incubation workshop, we drafted a proposal for localized waste segregation. They taught us how to pitch and run spreadsheets, and helped us test our first prototype. Now our high-school club successfully recycles paper and plastic across our district.",
-      highlight: "Community Eco-Founder"
+      quote: "We discussed climate action through drawings and interactive group activities. The ideas like making plastic baskets and small changes at home showed us that we can all make a difference.",
+      highlight: "Climate Advocate"
     }
   ],
 
   team: [
     {
-      name: "Binaya Shrestha",
-      role: "Co-Founder & Executive Director",
-      bio: "An advocate for democratizing education, Binaya drives the vision and international partnerships of Navigo. He is an alumnus of global youth networking fellowships.",
+      name: "Anupam Neupane",
+      role: "Co-Founder & Content Director",
+      bio: "Designs interactive, game-based learning modules, Scout leadership sessions, and counsels students on SEE streams.",
       image: "assets/team_binaya.jpg",
-      linkedin: "https://linkedin.com/in/binaya-navigo"
+      linkedin: "https://linkedin.com/in/anupam-neupane"
     },
     {
-      name: "Samikshya Adhikari",
-      role: "Co-Founder & Program Director",
-      bio: "A roboticist and teacher, Samikshya oversees curriculum design for Navigo's STEM outreach and coordinates regional trainers across rural districts.",
-      image: "assets/team_samikshya.jpg",
-      linkedin: "https://linkedin.com/in/samikshya-navigo"
-    },
-    {
-      name: "Rajesh Thapa",
-      role: "Academic Coordinator & Olympiad Lead",
-      bio: "Gold medalist in physics contests, Rajesh designs the Olympiad awareness guides and coordinates free academic prep classes for public students.",
-      image: "assets/team_rajesh.jpg",
-      linkedin: "https://linkedin.com/in/rajesh-navigo"
-    },
-    {
-      name: "Sneha Giri",
-      role: "Volunteer Network Manager",
-      bio: "Sneha coordinates Navigo's 500+ volunteer team, managing school assignments, scheduling mentorship pairs, and evaluating district impacts.",
+      name: "Prajwal Dhungana",
+      role: "Co-Founder & Operations Lead",
+      bio: "Coordinates nationwide school outreach, volunteer orientations, and project logistics in partner districts.",
       image: "assets/team_sneha.jpg",
-      linkedin: "https://linkedin.com/in/sneha-navigo"
+      linkedin: "https://linkedin.com/in/prajwal-dhungana"
+    },
+    {
+      name: "Biyog Man Dangol",
+      role: "Co-Founder & Technology Lead",
+      bio: "Manages technical support, computer literacy programs, and leads research on the Connect Tech to Veda project.",
+      image: "assets/team_samikshya.jpg",
+      linkedin: "https://linkedin.com/in/biyog-dangol"
+    },
+    {
+      name: "Krishav Jung Shahi",
+      role: "Event & Volunteer Coordinator",
+      bio: "Runs volunteer selection interviews, coordinates local school events, and acts as a contact for regional ambassadors.",
+      image: "assets/team_rajesh.jpg",
+      linkedin: "https://linkedin.com/in/krishav-shahi"
     }
   ],
 
   partners: [
-    { name: "Tribhuvan University", logoText: "TU", type: "University" },
-    { name: "Kathmandu University", logoText: "KU", type: "University" },
-    { name: "Nepal STEM Alliance", logoText: "NSA", type: "NGO" },
-    { name: "Youth Education Trust", logoText: "YET", type: "NGO" },
-    { name: "Everest Tech Academy", logoText: "ETA", type: "Sponsor" },
-    { name: "Himalayan Bank Foundation", logoText: "HBF", type: "Sponsor" }
+    { name: "Gurubaa", logoText: "Gurubaa", type: "Strategic Partner" },
+    { name: "UNICEF Nepal", logoText: "UNICEF", type: "Collaborator" },
+    { name: "USAID Clean Air", logoText: "USAID", type: "Collaborator" },
+    { name: "AIESEC Nepal", logoText: "AIESEC", type: "Collaborator" }
   ],
 
   resources: [
     {
-      title: "Cracking the Math Olympiad",
+      title: "What's Next? Post-SEE Stream Guide",
       category: "Academic",
-      desc: "Our introductory guide featuring structural problem solving, key formulas, and past selection papers from Nepal National Mathematics Olympiad.",
-      fileSize: "4.2 MB",
+      desc: "Detailed reference guide covering streams (Science, Management, Humanities, CTEVT), college parameters, and scholarship opportunities in Nepal.",
+      fileSize: "3.8 MB",
       format: "PDF"
     },
     {
-      title: "High School Career Roadmap",
-      category: "Mentorship",
-      desc: "A comprehensive roadmap outlining modern vocations: from software development to research, renewable energy, and creative pathways in Nepal.",
-      fileSize: "2.8 MB",
-      format: "PDF"
-    },
-    {
-      title: "Establishing a STEM Club",
+      title: "Establishing a Student Club Guide",
       category: "School Kit",
-      desc: "A hands-on, week-by-week guide for school teachers and student cabinet members to run interactive robotics and programming circles.",
-      fileSize: "5.1 MB",
+      desc: "A step-by-step framework to help students structure, elect officers, and run active extracurricular clubs like Eco Clubs.",
+      fileSize: "4.5 MB",
+      format: "PDF"
+    },
+    {
+      title: "Climate Action (SDG 13) Activity Kit",
+      category: "Environment",
+      desc: "Interactive lessons, drawing ideas, and group activities to teach environmental stewardship at school and home.",
+      fileSize: "2.9 MB",
       format: "PDF"
     }
   ],
 
   blog: [
     {
-      title: "Why STEM Education is the Key to Nepal's Future",
-      date: "May 24, 2026",
-      author: "Samikshya Adhikari",
-      excerpt: "Passive textbook recitation is holding back Nepal's innovators. By integrating active labs and critical coding into public secondary schools, we can unlock a digital economy...",
+      title: "Bridging the Post-SEE Transition: The Story Behind What's Next",
+      date: "May 28, 2024",
+      author: "Anupam Neupane",
+      excerpt: "We reflected on the academic pressure and lack of exposure we faced after SEE. Here is why stream counseling is critical for every student...",
       image: "assets/blog_stem.jpg"
     },
     {
-      title: "Democratizing Academic Olympiads Outside Kathmandu",
-      date: "April 15, 2026",
-      author: "Rajesh Thapa",
-      excerpt: "For years, international science teams were representing only high-end capital schools. In this article, we map the results of our district-level bootcamps and show the untapped genius in public sectors...",
+      title: "Veda and Tech: Computing at Brahmeshwor Gurukul",
+      date: "June 10, 2024",
+      author: "Biyog Man Dangol",
+      excerpt: "Bridging centuries-old spiritual heritage with Artificial Intelligence and computer literacy. An insight into our pilot research connecting Vedic studies with technology...",
       image: "assets/blog_olympiad.jpg"
     }
   ],
 
   volunteerPositions: [
     {
-      id: "stem-mentor",
-      title: "STEM Workshop Trainer",
-      type: "Hybrid / Field",
-      commitment: "4 hours / week",
-      location: "Bagmati, Koshi, or Gandaki",
-      desc: "Lead weekend robotics, programming, or physics experiment setups at our school hubs. Materials and curriculums are pre-provided."
-    },
-    {
-      id: "olympiad-tutor",
-      title: "Olympiad Academic Tutor",
-      type: "Remote",
-      commitment: "2 hours / week",
-      location: "Online",
-      desc: "Facilitate specialized problem-solving zoom sessions for bright public school students preparing for the National Mathematics Olympiad."
-    },
-    {
-      id: "club-coordinator",
-      title: "School Club Coordinator",
+      id: "counselor",
+      title: "What's Next? Counselor",
       type: "Field",
+      commitment: "4 hours / week",
+      location: "Kathmandu & regional districts",
+      desc: "Facilitate interactive stream selection and college counseling workshops for secondary school students."
+    },
+    {
+      id: "ambassador",
+      title: "District Ambassador ('Naviger')",
+      type: "Remote",
       commitment: "3 hours / week",
-      location: "Local (Your own district)",
-      desc: "Serve as a supportive supervisor for 2 or 3 local school clubs, ensuring cabinet officers run interactive sessions weekly."
+      location: "Your local district",
+      desc: "Serve as the main liaison for your district. Track local school needs, coordinate resources, and help launch local clubs."
+    },
+    {
+      id: "green-volunteer",
+      title: "Environmental Program Helper",
+      type: "Field",
+      commitment: "4 hours / week",
+      location: "Kathmandu Metropolitan",
+      desc: "Lead bottle gardening, environmental rallies, and SDG 13 drawing sessions in collaboration with local community schools."
     }
   ],
 
   donations: [
     {
-      title: "Sponsor a Student",
-      amount: "5,000",
+      title: "Sponsor a Counselor",
+      amount: "3,500",
       period: "monthly",
-      desc: "Provides a talented public school student with textbook packages, specialized STEM kits, weekly mentorship, and academic exam entries.",
+      desc: "Helps print Post-SEE guides, cover travel logistics for workshops in remote districts like Nuwakot and Dhading.",
       features: [
-        "1-on-1 progress report every term",
-        "Personal letters from your student",
-        "Access to student's STEM project builds"
+        "Monthly progress report from the field",
+        "Direct feedback from schools and principal interviews",
+        "Sponsor mention in workshop materials"
       ]
     },
     {
-      title: "Sponsor a School Club",
-      amount: "25,000",
+      title: "Sponsor a Student Club Kit",
+      amount: "15,000",
       period: "annually",
-      desc: "Establishes a fully functioning STEM and Olympiad cell inside a community high school, complete with 10 physical hardware micro-controllers and teacher training workshops.",
+      desc: "Provides seed resources, training materials, and coordinator support to establish a self-sustaining student club.",
       features: [
-        "Your name listed on the club shield",
-        "Quarterly live virtual demo with students",
-        "Direct updates on club innovation prototypes"
+        "Name listed on the club's startup guidebook",
+        "Quarterly update on club activities and eco projects",
+        "Virtual invite to student club demo sessions"
       ]
     }
   ]
