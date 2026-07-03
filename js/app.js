@@ -244,28 +244,6 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
   `).join("");
 
-  // Render Team Grid
-  const teamGrid = document.getElementById("teamGrid");
-  if (teamGrid) teamGrid.innerHTML = CMS.team.map((member, idx) => `
-    <div class="team-card reveal stagger-${(idx % 4) + 1}">
-      <div class="team-img-box">
-        <div style="width: 100%; height: 100%; background: linear-gradient(135deg, rgba(10,35,66,0.9) 0%, rgba(37,99,235,0.3) 100%); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.6);">
-          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        </div>
-        <div class="team-bio-overlay">
-          <p>${member.bio}</p>
-        </div>
-      </div>
-      <div class="team-info">
-        <h3>${member.name}</h3>
-        <div class="team-role">${member.role}</div>
-        <a href="${member.linkedin}" target="_blank" class="team-linkedin" aria-label="${member.name} LinkedIn Profile" rel="noopener">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
-      </div>
-    </div>
-  `).join("");
-
   // Render Partners Ticker with actual school images
   const partnersTicker = document.getElementById("partnersTicker");
   if (partnersTicker) {
