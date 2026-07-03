@@ -182,148 +182,6 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
   `).join("");
 
-  // Render Impact Metrics Bento Grid
-  const impactBentoGrid = document.getElementById("impactBentoGrid");
-  if (impactBentoGrid) {
-    let html = `
-      <!-- Bento Hero Card (Spans 2 rows, 1 col on desktop) -->
-      <div class="bento-card bento-hero-card reveal-left">
-        <div class="bento-hero-glow"></div>
-        <div class="bento-hero-content">
-          <span class="gradient-accent section-label" style="margin-bottom: 0.75rem;">Measurable Footprints</span>
-          <h2 class="heading-lg" style="margin-bottom: 1rem;">Our National Impact</h2>
-          <p class="bento-hero-desc">
-            Transparent statistics indicating our structural educational outreach, high-school clubs, and academic preparations deployed across community schools.
-          </p>
-          <div class="bento-hero-badge">
-            <span class="pulse-dot"></span> Live Metrics Hub
-          </div>
-        </div>
-      </div>
-    `;
-
-    html += CMS.impactMetrics.map((metric, idx) => {
-      // Determine columns and styles for each metric
-      let gridClass = "bento-card reveal";
-      if (metric.id === "schools") {
-        gridClass += " bento-card-wide reveal-right";
-      } else {
-        gridClass += ` stagger-${(idx % 3) + 1}`;
-      }
-
-      // Generate custom visual based on card ID
-      let customVisual = "";
-      if (metric.id === "schools") {
-        customVisual = `
-          <div class="bento-visual schools-visual">
-            <div class="school-nodes">
-              <span class="node hub"></span>
-              <span class="node node-1"></span>
-              <span class="node node-2"></span>
-              <span class="node node-3"></span>
-              <span class="node node-4"></span>
-              <div class="node-line node-line-1"></div>
-              <div class="node-line node-line-2"></div>
-              <div class="node-line node-line-3"></div>
-              <div class="node-line node-line-4"></div>
-            </div>
-            <div class="schools-progress-track">
-              <div class="schools-progress-bar" style="background: ${metric.gradient};"></div>
-            </div>
-          </div>
-        `;
-      } else if (metric.id === "students") {
-        customVisual = `
-          <div class="bento-visual students-visual">
-            <div class="avatar-stack">
-              <div class="avatar av-1"><span>S1</span></div>
-              <div class="avatar av-2"><span>S2</span></div>
-              <div class="avatar av-3"><span>S3</span></div>
-              <div class="avatar av-more"><span>+</span></div>
-            </div>
-            <div class="growth-pill">+12% MoM</div>
-          </div>
-        `;
-      } else if (metric.id === "districts") {
-        customVisual = `
-          <div class="bento-visual districts-visual">
-            <div class="radar-container">
-              <div class="radar-circle rc-1"></div>
-              <div class="radar-circle rc-2"></div>
-              <div class="radar-circle rc-3"></div>
-              <div class="radar-sweep"></div>
-              <div class="radar-ping"></div>
-            </div>
-          </div>
-        `;
-      } else if (metric.id === "clubs") {
-        customVisual = `
-          <div class="bento-visual clubs-visual">
-            <div class="gear-badge">
-              <div class="gear-inner">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-              </div>
-            </div>
-          </div>
-        `;
-      } else if (metric.id === "workshops") {
-        customVisual = `
-          <div class="bento-visual workshops-visual">
-            <svg class="sparkline" viewBox="0 0 100 30">
-              <path d="M0,25 Q15,5 30,20 T60,10 T90,5 L100,5" fill="none" stroke="${metric.color}" stroke-width="2" stroke-linecap="round"></path>
-              <circle cx="90" cy="5" r="3" fill="${metric.color}"></circle>
-            </svg>
-          </div>
-        `;
-      } else if (metric.id === "volunteers") {
-        customVisual = `
-          <div class="bento-visual volunteers-visual">
-            <div class="mesh-network">
-              <span class="mesh-dot md-1"></span>
-              <span class="mesh-dot md-2"></span>
-              <span class="mesh-dot md-3"></span>
-              <span class="mesh-dot md-4"></span>
-              <span class="mesh-dot md-5"></span>
-            </div>
-          </div>
-        `;
-      }
-
-      return `
-        <div class="${gridClass} metric-card" data-target="${metric.value}" data-suffix="${metric.suffix}" style="--card-color: ${metric.color};">
-          <div class="bento-card-header">
-            <div class="bento-icon-box" style="color: ${metric.color}; background-color: ${metric.color}12;">
-              ${getMetricIcon(metric.icon)}
-            </div>
-            <span class="bento-label">${metric.label}</span>
-          </div>
-          
-          <div class="bento-card-body">
-            <div class="bento-number-wrapper">
-              <span class="metric-number" style="background: ${metric.gradient}; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">0</span>
-            </div>
-            <p class="bento-desc">${metric.desc || ''}</p>
-          </div>
-          
-          ${customVisual}
-        </div>
-      `;
-    }).join("");
-
-    impactBentoGrid.innerHTML = html;
-  }
-
-  function getMetricIcon(icon) {
-    const icons = {
-      school: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 10 3 12 0v-5"/></svg>',
-      users: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
-      map: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>',
-      award: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>',
-      activity: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>',
-      globe: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>'
-    };
-    return icons[icon] || icons.globe;
-  }
 
   // Render Milestones Timeline
   const timelineContainer = document.getElementById("timelineContainer");
@@ -338,36 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
   `).join("");
 
-  // Render Future Goals
-  const goalsGrid = document.getElementById("goalsGrid");
-  if (goalsGrid && CMS.story.futureGoals) {
-    goalsGrid.innerHTML = CMS.story.futureGoals.map((goal, idx) => `
-      <div class="goal-card reveal stagger-${(idx % 2) + 1}">
-        <div class="goal-icon">
-          ${getGoalIcon(goal.icon)}
-        </div>
-        <h3>${goal.title}</h3>
-        <p>${goal.desc}</p>
-        <div class="goal-progress-bar">
-          <div class="goal-progress-fill" style="width: 0%;" data-progress="${goal.progress}"></div>
-        </div>
-        <div class="goal-progress-label">
-          <span>Progress</span>
-          <span>${goal.progress}%</span>
-        </div>
-      </div>
-    `).join("");
-  }
 
-  function getGoalIcon(icon) {
-    const icons = {
-      target: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>',
-      flask: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16.5h10"/></svg>',
-      trophy: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>',
-      monitor: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>'
-    };
-    return icons[icon] || icons.target;
-  }
 
   // Render Programs - Helper Function to allow dynamic filtering
   function getProgramIcon(id) {
@@ -384,171 +213,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const programsGrid = document.getElementById("programsGrid");
 
   function renderProgramsList(list, highlightedId = '') {
-    if (!programsGrid) return;
-    
-    if (list.length === 0) {
-      programsGrid.innerHTML = `
-        <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 2rem; background: var(--bg-card); border: 1px dashed var(--border-color); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem; width: 100%;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-muted); opacity: 0.6;"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <div>
-            <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--text-main);">No programs match your search</h3>
-            <p style="color: var(--text-muted); font-size: 0.9rem; max-width: 400px; margin: 0 auto;">Try checking for different keywords like 'STEM', 'Math', 'Mentorship', or select another province.</p>
-          </div>
-          <button type="button" class="btn btn-secondary" id="resetSearchBtn" style="padding: 0.6rem 1.5rem; font-size: 0.8rem;">Show All Programs</button>
-        </div>
-      `;
-      
-      const resetBtn = document.getElementById("resetSearchBtn");
-      if (resetBtn) {
-        resetBtn.addEventListener("click", () => {
-          document.getElementById("programSearchInput").value = "";
-          document.getElementById("provinceSearchSelect").value = "";
-          renderProgramsList(CMS.programs);
-        });
-      }
-      return;
-    }
-    
-    programsGrid.innerHTML = list.map((prog, idx) => {
-      const isMatch = highlightedId && (prog.id === highlightedId || prog.title.toLowerCase().includes(highlightedId.toLowerCase()));
-      const highlightClass = isMatch ? 'highlight-match' : '';
-      return `
-        <div class="program-card reveal stagger-${(idx % 3) + 1} ${highlightClass}" data-program-id="${prog.id}">
-          <div class="program-icon">
-            ${getProgramIcon(prog.id)}
-          </div>
-          <h3>${prog.title}</h3>
-          <p>${prog.shortDesc}</p>
-          <div class="program-learn-more" data-id="${prog.id}">
-            Explore Details 
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </div>
-        </div>
-      `;
-    }).join("");
-
-    if (highlightedId) {
-      setTimeout(() => {
-        document.querySelectorAll('.program-card.highlight-match').forEach(card => {
-          card.classList.remove('highlight-match');
-        });
-      }, 3000);
-    }
-    
-    // Re-observe reveal elements since we replaced innerHTML
-    if (revealObserver) {
-      programsGrid.querySelectorAll('.reveal').forEach(el => {
-        revealObserver.observe(el);
-      });
-    }
+    // Disabled: Curricular programs list is replaced by the static "How Are We Unique?" section.
   }
 
-  // Initial Render of All Programs
-  renderProgramsList(CMS.programs);
 
-  // ==================== 3b. SEARCH CONSOLE LOGIC ====================
-  const searchInput = document.getElementById("programSearchInput");
-  const suggestionsDropdown = document.getElementById("searchSuggestions");
-  const provinceSelect = document.getElementById("provinceSearchSelect");
-  const searchBtn = document.getElementById("searchSubmitBtn");
-
-  if (searchInput && suggestionsDropdown) {
-    searchInput.addEventListener("input", (e) => {
-      const val = e.target.value.toLowerCase().trim();
-      suggestionsDropdown.innerHTML = '';
-      
-      if (!val) {
-        suggestionsDropdown.classList.remove("active");
-        return;
-      }
-      
-      const matches = CMS.programs.filter(p => 
-        p.title.toLowerCase().includes(val) || 
-        p.shortDesc.toLowerCase().includes(val)
-      );
-      
-      if (matches.length > 0) {
-        suggestionsDropdown.innerHTML = matches.slice(0, 5).map(m => `
-          <div class="suggestion-item" data-id="${m.id}" data-title="${m.title}">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="suggestion-icon"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            <div style="display:flex; flex-direction:column;">
-              <span style="font-weight:600; font-size:0.95rem; color:var(--color-deep-navy);">${m.title}</span>
-              <span style="font-size:0.8rem; color:#666;">${m.shortDesc.substring(0, 45)}...</span>
-            </div>
-          </div>
-        `).join('');
-        suggestionsDropdown.classList.add("active");
-      } else {
-        suggestionsDropdown.classList.remove("active");
-      }
-    });
-
-    suggestionsDropdown.addEventListener("click", (e) => {
-      const item = e.target.closest(".suggestion-item");
-      if (item) {
-        searchInput.value = item.getAttribute("data-title");
-        suggestionsDropdown.classList.remove("active");
-        executeSearch(item.getAttribute("data-id"));
-      }
-    });
-
-    document.addEventListener("click", (e) => {
-      if (!searchInput.contains(e.target) && !suggestionsDropdown.contains(e.target)) {
-        suggestionsDropdown.classList.remove("active");
-      }
-    });
-  }
-
-  function executeSearch(highlightId = '') {
-    const kw = searchInput ? searchInput.value.toLowerCase().trim() : '';
-    const prov = provinceSelect ? provinceSelect.value : '';
-    
-    let filtered = CMS.programs;
-    if (kw) {
-      filtered = filtered.filter(p => 
-        p.title.toLowerCase().includes(kw) || 
-        p.shortDesc.toLowerCase().includes(kw) ||
-        p.fullDesc.toLowerCase().includes(kw)
-      );
-    }
-    
-    renderProgramsList(filtered, highlightId || kw);
-    
-    const progSec = document.getElementById("programs");
-    if (progSec) {
-      // Offset by header height
-      const y = progSec.getBoundingClientRect().top + window.scrollY - 80;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    }
-    
-    if (prov) {
-      const mapPaths = document.querySelectorAll(".province-path");
-      mapPaths.forEach(p => p.classList.remove("active"));
-      
-      const targetPath = document.getElementById("path-" + prov);
-      if (targetPath) {
-        targetPath.classList.add("active");
-        
-        const provData = CMS.provinces.find(p => p.id === prov);
-        if (provData && typeof updateMapPanel === 'function') {
-           updateMapPanel(provData);
-        }
-      }
-    }
-  }
-
-  if (searchBtn) {
-    searchBtn.addEventListener("click", () => executeSearch());
-  }
-  if (searchInput) {
-    searchInput.addEventListener("keypress", (e) => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        if(suggestionsDropdown) suggestionsDropdown.classList.remove("active");
-        executeSearch();
-      }
-    });
-  }
 
   // Render Testimonials with images
   const carouselContainer = document.getElementById("carouselContainer");
@@ -745,24 +413,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  // ==================== 4b. GOAL PROGRESS BAR ANIMATION ====================
-  
-  const goalCards = document.querySelectorAll(".goal-progress-fill");
-  
-  const goalObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const fill = entry.target;
-        const progress = fill.getAttribute("data-progress");
-        setTimeout(() => {
-          fill.style.width = progress + "%";
-        }, 300);
-        goalObserver.unobserve(fill);
-      }
-    });
-  }, { threshold: 0.1 });
 
-  goalCards.forEach(fill => goalObserver.observe(fill));
 
 
   // ==================== 5. NEPAL SVG MAP INTERACTIONS ====================
@@ -1256,8 +907,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const provinceId = provinceSearchSelect ? provinceSearchSelect.value : "";
 
     if (!query && !provinceId) {
-      // If nothing selected/typed, reset to show all programs and scroll to programs
-      renderProgramsList(CMS.programs);
+      // If nothing selected/typed, scroll to the uniqueness section
       const progSection = document.getElementById("programs");
       if (progSection) {
         progSection.scrollIntoView({ behavior: "smooth" });
@@ -1265,43 +915,50 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // 1. Process Program Search Filtering
-    let filteredPrograms = CMS.programs;
-    
+    // 1. Process Program Search Filtering (Redirect to Past Projects Tabs)
     if (query) {
       const q = query.toLowerCase();
-      filteredPrograms = CMS.programs.filter(p => 
-        p.title.toLowerCase().includes(q) || 
-        p.shortDesc.toLowerCase().includes(q) ||
-        p.fullDesc.toLowerCase().includes(q)
-      );
+      let targetTabId = "tab-whatsnext"; // default
+
+      if (q.includes("veda") || q.includes("tech") || q.includes("sanskrit") || q.includes("computer")) {
+        targetTabId = "tab-veda";
+      } else if (q.includes("unicef") || q.includes("usaid") || q.includes("green") || q.includes("environmental")) {
+        targetTabId = "tab-unicef";
+      } else if (q.includes("climate") || q.includes("aiesec") || q.includes("sdg")) {
+        targetTabId = "tab-aiesec";
+      } else if (q.includes("leadership") || q.includes("scout") || q.includes("personality") || q.includes("club") || q.includes("eca")) {
+        targetTabId = "tab-leadership";
+      } else if (q.includes("next") || q.includes("counseling") || q.includes("see") || q.includes("12")) {
+        targetTabId = "tab-whatsnext";
+      }
+
+      // Activate the corresponding tab in the past projects section
+      const tabButton = document.querySelector(`.project-tab[data-tab="${targetTabId}"]`);
+      if (tabButton) {
+        tabButton.click();
+      }
+
+      // Scroll to past projects section
+      const pastSection = document.getElementById("past-initiatives");
+      if (pastSection) {
+        // Offset by header height
+        const y = pastSection.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
     }
 
     // 2. Process Province Select (Map Synchronizing)
     if (provinceId) {
       const path = document.getElementById(`path-${provinceId}`);
       if (path) {
-        // Trigger click event on province path to select it on map
         path.click();
       }
-    }
-
-    // 3. Navigation Strategy
-    // If user searched for a query, scroll to programs section to view matching cards
-    if (query) {
-      renderProgramsList(filteredPrograms, query);
-      const progSection = document.getElementById("programs");
-      if (progSection) {
-        progSection.scrollIntoView({ behavior: "smooth" });
-      }
-      
-      // If a province was also selected, update map, but prioritize scrolling to programs
-      // The map will be updated in the background so when they scroll down further they see it selected!
-    } else if (provinceId) {
-      // If ONLY province is selected, navigate directly to map section!
-      const mapSection = document.getElementById("impact-map");
-      if (mapSection) {
-        mapSection.scrollIntoView({ behavior: "smooth" });
+      if (!query) {
+        // If ONLY province is selected, navigate directly to map section!
+        const mapSection = document.getElementById("impact-map");
+        if (mapSection) {
+          mapSection.scrollIntoView({ behavior: "smooth" });
+        }
       }
     }
   }
