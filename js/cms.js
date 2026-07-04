@@ -180,7 +180,7 @@ const NAVIGO_CMS = {
       name: "Aayush Bhandari",
       location: "Kathmandu",
       role: "Scout Leader, Gyanodaya School",
-      image: "assets/success_aayush.jpg",
+      image: "assets/11.png",
       quote: "Before the Navigo workshop, most of our Scout members viewed leadership as just a title. Through their interactive Balloon and focus games, we immediately saw how personal growth goes hand-in-hand with academic focus and communication. It broke the ice, transforming quiet students into active team leaders who are now launching our first school Eco Club.",
       highlight: "Gyanodaya Scout Lead"
     },
@@ -188,7 +188,7 @@ const NAVIGO_CMS = {
       name: "Chandrajyoti Student",
       location: "Nuwakot",
       role: "What's Next Participant",
-      image: "assets/success_pooja.jpg",
+      image: "assets/22.png",
       quote: "We were completely blank on what streams to choose after grade 10. The What's Next presentation explained the streams, colleges, and scholarships clearly, giving us much-needed confidence.",
       highlight: "SEE Graduate"
     },
@@ -196,7 +196,7 @@ const NAVIGO_CMS = {
       name: "Everest School Student",
       location: "Thaiba",
       role: "SDG 13 Participant",
-      image: "assets/success_samir.jpg",
+      image: "assets/33.png",
       quote: "We discussed climate action through drawings and interactive group activities. The ideas like making plastic baskets and small changes at home showed us that we can all make a difference.",
       highlight: "Climate Advocate"
     }
