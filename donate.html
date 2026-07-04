@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate | Navigo Nepal</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/programs.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <img src="assets/logo.svg" alt="Navigo Nepal Logo" class="logo-img">
+        <span class="logo-text">Navigo<span class="logo-highlight">Nepal</span></span>
+      </a>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+
+        <li class="has-dropdown">
+          <a href="index.html#story" class="nav-link">
+            About Us
+            <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html#story">Our Story</a></li>
+            <li><a href="index.html#vision">Our Vision</a></li>
+            <li><a href="index.html#founding-story">Founding Story</a></li>
+            <li><a href="index.html#leadership-message">Leadership Message</a></li>
+            <li><a href="index.html#future-goals">Future Goals (2027)</a></li>
+          </ul>
+        </li>
+
+        <li class="has-dropdown">
+          <a href="programs.html" class="nav-link">
+            Programs
+            <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="programs.html">All Programs</a></li>
+            <li><a href="programs.html#whats-next">What's Next? Campaign</a></li>
+            <li><a href="programs.html#leadership">Leadership &amp; Personality</a></li>
+            <li><a href="programs.html#clubs">School Clubs &amp; ECAs</a></li>
+            <li><a href="programs.html#environmental">Environmental Stewardship</a></li>
+            <li><a href="programs.html#tech-veda">Connect Tech to Veda</a></li>
+            <li style="border-top: 1px solid var(--border-color); margin-top: 0.5rem; padding-top: 0.5rem;"><a
+                href="past-events.html" style="font-weight: 600; color: var(--accent-color);">Past Events</a></li>
+          </ul>
+        </li>
+
+        <li><a href="team.html" class="nav-link">Team</a></li>
+
+        <li class="has-dropdown">
+          <a href="donate.html" class="nav-link">
+            Get Involved
+            <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="volunteer.html">Volunteer With Us</a></li>
+            <li><a href="propose-project.html">Propose a Project</a></li>
+            <li><a href="intern.html">Intern at Navigo</a></li>
+            <li style="border-top: 1px solid var(--border-color); margin-top: 0.5rem; padding-top: 0.5rem;"><a
+                href="donate.html">Donate</a></li>
+            <li><a href="#contact">Become a Partner</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="nav-controls">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark/Light Mode" title="Toggle Mode">
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+            style="display: none;">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2" /><path d="M12 20v2" />
+            <path d="m4.93 4.93 1.41 1.41" /><path d="m17.66 17.66 1.41 1.41" />
+            <path d="M2 12h2" /><path d="M20 12h2" />
+            <path d="m6.34 17.66-1.41 1.41" /><path d="m19.07 4.93-1.41 1.41" />
+          </svg>
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+            style="display: block;">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+          </svg>
+        </button>
+        <a href="donate.html" class="btn btn-primary" style="padding: 0.55rem 1.5rem; font-size: 0.8rem;">Donate</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle Navigation Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="prog-hero donate-hero">
+    <div class="container">
+      <div class="prog-hero-content">
+        <span class="prog-hero-tag">Support Our Mission</span>
+        <h1 class="prog-hero-title">Make a <span class="prog-hero-accent">Difference</span></h1>
+        <p class="prog-hero-desc">
+          Your contribution helps us provide quality education, mentorship, and resources
+          to students across Nepal. Every donation, no matter the size, creates lasting impact.
+        </p>
+        <div class="prog-hero-stats">
+          <div class="prog-hero-stat">
+            <span class="prog-hero-stat-number">500+</span>
+            <span class="prog-hero-stat-label">Students Supported</span>
+          </div>
+          <div class="prog-hero-stat-divider"></div>
+          <div class="prog-hero-stat">
+            <span class="prog-hero-stat-number">15+</span>
+            <span class="prog-hero-stat-label">Schools Reached</span>
+          </div>
+          <div class="prog-hero-stat-divider"></div>
+          <div class="prog-hero-stat">
+            <span class="prog-hero-stat-number">100%</span>
+            <span class="prog-hero-stat-label">Goes to Students</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DONATION CARDS -->
+  <section class="prog-section donate-options" id="options">
+    <div class="container">
+      <div class="prog-section-header">
+        <span class="prog-section-tag">How You Can Help</span>
+        <h2 class="prog-section-title">Choose How to Donate</h2>
+        <p class="prog-section-desc">
+          Select the type of donation that works best for you. Every contribution
+          directly supports students and schools in need.
+        </p>
+      </div>
+
+      <div class="donate-cards-grid">
+
+        <!-- Donate Money -->
+        <div class="donate-card">
+          <div class="donate-card-icon donate-card-icon--blue">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="1" x2="12" y2="23" />
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+            </svg>
+          </div>
+          <h3 class="donate-card-title">Donate Money</h3>
+          <p class="donate-card-desc">
+            Financial contributions help us organize workshops, provide learning materials,
+            cover transportation costs, and support school programs across Nepal.
+          </p>
+          <ul class="donate-card-list">
+            <li>Rs. 500 can provide stationery for 5 students</li>
+            <li>Rs. 2,000 can fund a career guidance session</li>
+            <li>Rs. 10,000 can sponsor a full school club launch</li>
+          </ul>
+          <a href="index.html#donate" class="donate-card-btn">
+            <span>Donate Now</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Donate Books -->
+        <div class="donate-card">
+          <div class="donate-card-icon donate-card-icon--green">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+              <line x1="9" y1="7" x2="15" y2="7" />
+              <line x1="9" y1="11" x2="13" y2="11" />
+            </svg>
+          </div>
+          <h3 class="donate-card-title">Donate Books</h3>
+          <p class="donate-card-desc">
+            Your used textbooks, novels, and reference materials can become valuable
+            resources for students who lack access to educational books.
+          </p>
+          <ul class="donate-card-list">
+            <li>Textbooks (SEE, +2, Bachelor's level)</li>
+            <li>Reference guides and prep materials</li>
+            <li>Children's books and storybooks</li>
+            <li>English and Nepali dictionaries</li>
+          </ul>
+          <a href="index.html#contact" class="donate-card-btn">
+            <span>Contact to Donate</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Donate Goods & Used Products -->
+        <div class="donate-card">
+          <div class="donate-card-icon donate-card-icon--purple">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+              <line x1="12" y1="22.08" x2="12" y2="12" />
+            </svg>
+          </div>
+          <h3 class="donate-card-title">Donate Goods &amp; Products</h3>
+          <p class="donate-card-desc">
+            Stationery, school supplies, and educational products help students
+            who cannot afford basic learning materials.
+          </p>
+          <ul class="donate-card-list">
+            <li>Notebooks, pens, pencils, erasers</li>
+            <li>Bags, pencil cases, geometry boxes</li>
+            <li>Art supplies and craft materials</li>
+            <li>Used laptops or tablets for learning</li>
+          </ul>
+          <a href="index.html#contact" class="donate-card-btn">
+            <span>Contact to Donate</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- HOW DONATIONS HELP -->
+  <section class="prog-section" id="impact">
+    <div class="container">
+      <div class="prog-section-header">
+        <span class="prog-section-tag">Impact</span>
+        <h2 class="prog-section-title">How Your Donation Helps</h2>
+      </div>
+
+      <div class="donate-impact-grid">
+        <div class="donate-impact-card">
+          <div class="donate-impact-number">01</div>
+          <h4 class="donate-impact-title">Materials Reach Students</h4>
+          <p class="donate-impact-text">
+            Donated books, stationery, and supplies are distributed directly to students
+            in partner schools across Nepal, starting with communities most in need.
+          </p>
+        </div>
+        <div class="donate-impact-card">
+          <div class="donate-impact-number">02</div>
+          <h4 class="donate-impact-title">Programs Are Launched</h4>
+          <p class="donate-impact-text">
+            Financial donations fund career guidance workshops, leadership training sessions,
+            school club formations, and environmental campaigns in rural schools.
+          </p>
+        </div>
+        <div class="donate-impact-card">
+          <div class="donate-impact-number">03</div>
+          <h4 class="donate-impact-title">Communities Grow</h4>
+          <p class="donate-impact-text">
+            Every donation creates a ripple effect &mdash; students who receive support become
+            mentors, leaders, and changemakers in their own communities.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col" style="display: flex; flex-direction: column; gap: 1.25rem;">
+          <a href="index.html" class="logo">
+            <img src="assets/logo.svg" alt="Navigo Nepal Logo" class="logo-img">
+            <span class="logo-text">Navigo<span class="logo-highlight">Nepal</span></span>
+          </a>
+          <p class="footer-desc">
+            A youth-led movement bridging the transition to higher studies and equipping students with real-world skills.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="past-events.html">Past Events</a></li>
+            <li><a href="donate.html">Donate</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Get Involved</h4>
+          <ul class="footer-links">
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="propose-project.html">Propose a Project</a></li>
+            <li><a href="intern.html">Internships</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Contact</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:navigonepal@gmail.com">navigonepal@gmail.com</a></li>
+            <li><a href="#">Kathmandu, Nepal</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Navigo Nepal. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -741,6 +741,197 @@
   transform: translateY(0);
 }
 
+/* ==================== DONATE PAGE ==================== */
+.donate-hero {
+  background: linear-gradient(160deg, #081f3e 0%, #0d2d5e 40%, #1a3f7a 100%);
+}
+
+.donate-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.donate-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.donate-card:hover {
+  border-color: rgba(79, 156, 249, 0.25);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.donate-card-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.donate-card-icon--blue {
+  background: rgba(79, 156, 249, 0.12);
+  color: #4F9CF9;
+}
+
+.donate-card-icon--green {
+  background: rgba(16, 185, 129, 0.12);
+  color: #10B981;
+}
+
+.donate-card-icon--purple {
+  background: rgba(139, 92, 246, 0.12);
+  color: #8B5CF6;
+}
+
+.donate-card-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.donate-card-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 1.25rem;
+}
+
+.donate-card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.donate-card-list li {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.55);
+  padding-left: 1.25rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.donate-card-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #4F9CF9;
+}
+
+.donate-card:nth-child(2) .donate-card-list li::before {
+  background: #10B981;
+}
+
+.donate-card:nth-child(3) .donate-card-list li::before {
+  background: #8B5CF6;
+}
+
+.donate-card-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: rgba(79, 156, 249, 0.15);
+  border: 1px solid rgba(79, 156, 249, 0.25);
+  border-radius: 8px;
+  padding: 0.7rem 1.25rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.donate-card-btn:hover {
+  background: rgba(79, 156, 249, 0.25);
+  transform: translateX(3px);
+}
+
+.donate-card:nth-child(2) .donate-card-btn {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: rgba(16, 185, 129, 0.25);
+}
+
+.donate-card:nth-child(2) .donate-card-btn:hover {
+  background: rgba(16, 185, 129, 0.25);
+}
+
+.donate-card:nth-child(3) .donate-card-btn {
+  background: rgba(139, 92, 246, 0.15);
+  border-color: rgba(139, 92, 246, 0.25);
+}
+
+.donate-card:nth-child(3) .donate-card-btn:hover {
+  background: rgba(139, 92, 246, 0.25);
+}
+
+.donate-impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.donate-impact-card {
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.donate-impact-number {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: rgba(79, 156, 249, 0.2);
+  margin-bottom: 0.75rem;
+}
+
+.donate-impact-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.donate-impact-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+@media (max-width: 1000px) {
+  .donate-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .donate-impact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 768px) {
   .prog-hero {
     padding: 8rem 0 3.5rem;
