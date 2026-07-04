@@ -6088,3 +6088,128 @@ select.form-control {
     padding: 0.85rem;
   }
 }
+
+/* ============================================================
+   DUAL DYNAMIC CROSSING MARQUEES - Premium Agency Interaction
+   ============================================================ */
+
+.marquee-cross-container {
+  position: relative;
+  width: 100%;
+  height: 190px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  margin: 5.5rem 0;
+  z-index: 10;
+}
+
+.marquee-cross-container .marquee-banner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Banner 1: Navy background, slanted down, scrolling left */
+.marquee-banner-1 {
+  background: var(--primary-navy) !important;
+  transform: rotate(-3.5deg) scale(1.08);
+  transform-origin: center;
+  z-index: 11;
+}
+
+/* Banner 2: Gradient background, slanted up, scrolling right */
+.marquee-banner-2 {
+  background: linear-gradient(90deg, var(--accent-color) 0%, var(--accent-emerald) 100%) !important;
+  transform: rotate(3.5deg) scale(1.08);
+  transform-origin: center;
+  z-index: 12;
+  box-shadow: 0 -4px 25px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="dark"] .marquee-banner-1 {
+  background: var(--bg-card) !important;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .marquee-banner-2 {
+  background: linear-gradient(90deg, rgba(79, 156, 249, 0.9) 0%, rgba(52, 211, 153, 0.9) 100%) !important;
+}
+
+/* Reverse Scroll Animation Track */
+.marquee-track-reverse {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll-reverse 35s linear infinite;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%);
+}
+
+.marquee-track-reverse:hover {
+  animation-play-state: paused;
+}
+
+/* Make sure text elements in reverse track match normal items style */
+.marquee-track-reverse .marquee-item {
+  display: flex;
+  align-items: center;
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--pure-white);
+  white-space: nowrap;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0 3.5rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.18);
+  transition: color 0.3s ease;
+}
+
+[data-theme="dark"] .marquee-track-reverse .marquee-item {
+  color: var(--text-main);
+  border-right: 1px solid var(--border-color);
+}
+
+.marquee-track-reverse .marquee-item:hover {
+  color: var(--accent-light);
+}
+
+@keyframes marquee-scroll-reverse {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Responsive Crossing Marquees Override */
+@media (max-width: 991px) {
+  .marquee-cross-container {
+    height: 150px;
+    margin: 4rem 0 3.5rem;
+  }
+  
+  .marquee-banner-1 {
+    transform: rotate(-2deg) scale(1.05);
+  }
+  
+  .marquee-banner-2 {
+    transform: rotate(2deg) scale(1.05);
+  }
+  
+  .marquee-track-reverse .marquee-item {
+    font-size: 0.85rem;
+    padding: 0 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .marquee-cross-container {
+    height: 130px;
+    margin: 3.5rem 0 2.5rem;
+  }
+}
