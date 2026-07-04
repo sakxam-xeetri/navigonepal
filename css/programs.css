@@ -742,10 +742,6 @@
 }
 
 /* ==================== DONATE PAGE ==================== */
-.donate-hero {
-  background: linear-gradient(160deg, #081f3e 0%, #0d2d5e 40%, #1a3f7a 100%);
-}
-
 .donate-cards-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
