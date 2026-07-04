@@ -52,17 +52,23 @@
 }
 
 .coord-hero-title {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 800;
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(4.25rem, 14vw, 9.25rem);
+  font-weight: 950;
   color: #ffffff;
-  letter-spacing: -0.03em;
-  margin-bottom: 0.75rem;
-  line-height: 1.1;
+  letter-spacing: -0.05em;
+  line-height: 0.82;
+  text-transform: uppercase;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .coord-hero-accent {
   color: #4F9CF9;
+  display: inline-block;
 }
 
 .coord-hero-subtitle {
@@ -600,7 +606,7 @@
 
 @media (max-width: 480px) {
   .coord-hero-title {
-    font-size: 2rem;
+    line-height: 0.88;
   }
 
   .coord-stat-number {

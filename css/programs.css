@@ -52,17 +52,27 @@
 }
 
 .prog-hero-title {
-  font-family: 'Outfit', sans-serif;
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 900;
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(4.25rem, 14vw, 9.25rem);
+  font-weight: 950;
   color: #ffffff;
-  letter-spacing: -0.03em;
-  margin-bottom: 0.75rem;
-  line-height: 1.1;
+  letter-spacing: -0.05em;
+  line-height: 0.82;
+  text-transform: uppercase;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .prog-hero-accent {
-  color: #4F9CF9;
+  color: #4F9CF9; /* Solid Blue! */
+  background: none;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+  background-clip: initial;
+  display: inline-block;
 }
 
 .prog-hero-subtitle {
@@ -995,38 +1005,5 @@
 
   .prog-timeline-content {
     padding: 1.25rem 1.5rem;
-  }
-}
-
-/* ============================================================
-   STORY HERO GIANT TITLE REDESIGN
-   ============================================================ */
-
-.story-hero-giant-title {
-  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(4.25rem, 14vw, 9.25rem);
-  font-weight: 950;
-  color: #ffffff;
-  letter-spacing: -0.05em;
-  line-height: 0.82;
-  text-transform: uppercase;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.story-hero-accent {
-  background: linear-gradient(135deg, #4F9CF9 0%, #34D399 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  display: inline-block;
-}
-
-@media (max-width: 768px) {
-  .story-hero-giant-title {
-    line-height: 0.88;
   }
 }
