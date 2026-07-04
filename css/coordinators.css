@@ -177,42 +177,36 @@
 .coord-leader-card {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(79, 156, 249, 0.08);
-  padding: 2.5rem 2rem;
+  padding: 2rem;
   position: relative;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
-}
-
-.coord-leader-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(79, 156, 249, 0.4), transparent);
-  opacity: 0;
-  transition: opacity 0.4s ease;
+  border-radius: var(--radius-md);
 }
 
 .coord-leader-card:hover {
-  border-color: rgba(79, 156, 249, 0.2);
-  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(79, 156, 249, 0.15);
   transform: translateY(-4px);
 }
 
-.coord-leader-card:hover::before {
-  opacity: 1;
-}
-
 .coord-leader-avatar {
-  width: 64px;
-  height: 64px;
+  width: 120px;
+  height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1.5rem;
   position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #0d2a4a;
+}
+
+.coord-leader-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .coord-avatar-initials {
@@ -223,14 +217,14 @@
   letter-spacing: 0.02em;
 }
 
-.coord-avatar--blue { background: linear-gradient(135deg, #2563EB, #4F9CF9); }
-.coord-avatar--emerald { background: linear-gradient(135deg, #059669, #10B981); }
-.coord-avatar--purple { background: linear-gradient(135deg, #7C3AED, #A78BFA); }
-.coord-avatar--sky { background: linear-gradient(135deg, #0284C7, #38BDF8); }
-.coord-avatar--rose { background: linear-gradient(135deg, #E11D48, #FB7185); }
-.coord-avatar--amber { background: linear-gradient(135deg, #D97706, #FBBF24); }
-.coord-avatar--violet { background: linear-gradient(135deg, #7C3AED, #C084FC); }
-.coord-avatar--cyan { background: linear-gradient(135deg, #0891B2, #22D3EE); }
+.coord-avatar--blue { background: #0d2a4a; }
+.coord-avatar--emerald { background: #0d2a4a; }
+.coord-avatar--purple { background: #0d2a4a; }
+.coord-avatar--sky { background: #0d2a4a; }
+.coord-avatar--rose { background: #0d2a4a; }
+.coord-avatar--amber { background: #0d2a4a; }
+.coord-avatar--violet { background: #0d2a4a; }
+.coord-avatar--cyan { background: #0d2a4a; }
 
 .coord-leader-info {
   position: relative;
@@ -328,15 +322,21 @@
 }
 
 .coord-card-avatar {
-  width: 52px;
-  height: 52px;
+  width: 80px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #0d2a4a;
 }
 
-.coord-card-avatar .coord-avatar-initials {
-  font-size: 1rem;
+.coord-card-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .coord-card-meta {
