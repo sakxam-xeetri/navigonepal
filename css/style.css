@@ -2564,15 +2564,14 @@ select:focus-visible {
 /* --- Landscape Image --- */
 .uq-landscape-frame {
   width: 100%;
-  aspect-ratio: 1.6;
   overflow: hidden;
   background: #06172F;
 }
 
 .uq-landscape-img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  display: block;
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
   filter: brightness(0.8) contrast(1.05);
 }
@@ -3861,7 +3860,7 @@ select.form-control {
 }
 
 .footer .logo-img {
-  filter: invert(1) brightness(2);
+  filter: none;
 }
 
 .footer-col h3 {
