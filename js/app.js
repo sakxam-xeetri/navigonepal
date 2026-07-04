@@ -780,6 +780,34 @@ document.addEventListener("DOMContentLoaded", () => {
   const provinceSearchSelect = document.getElementById("provinceSearchSelect");
   const searchSubmitBtn = document.getElementById("searchSubmitBtn");
 
+  // Searchable content database
+  const searchableContent = [
+    // Programs
+    { title: "What's Next? Campaign", desc: "Career guidance for SEE graduates after 10th grade", url: "programs.html#whats-next", category: "Programs", keywords: "career counseling see 10th grade college stream selection" },
+    { title: "Leadership & Personality Development", desc: "Workshops for student leadership and personality growth", url: "programs.html#leadership", category: "Programs", keywords: "leadership scout personality workshop training" },
+    { title: "School Clubs & ECAs", desc: "Establishing and managing student clubs in schools", url: "programs.html#clubs", category: "Programs", keywords: "club eca extracurricular activities school" },
+    { title: "Environmental Stewardship", desc: "World Environment Day and environmental conservation programs", url: "programs.html#environmental", category: "Programs", keywords: "environment green unicef usaid climate conservation" },
+    { title: "Connect Tech to Veda", desc: "Technology and computer literacy programs for students", url: "programs.html#tech-veda", category: "Programs", keywords: "tech veda computer technology digital literacy" },
+    // Pages
+    { title: "Our Story", desc: "The complete story of Navigo Nepal's journey", url: "our-story.html", category: "About", keywords: "about story mission vision founding" },
+    { title: "Our Team", desc: "Meet the team behind Navigo Nepal", url: "team.html", category: "About", keywords: "team members founders cofounders" },
+    { title: "Coordinators", desc: "District coordinators and ambassadors across Nepal", url: "coordinators.html", category: "About", keywords: "coordinator ambassador district naviger" },
+    { title: "Past Events", desc: "Timeline of past projects and collaborations", url: "past-events.html", category: "About", keywords: "past events timeline projects history" },
+    // Get Involved
+    { title: "Join Navigo", desc: "Join us as a volunteer, intern, or partner", url: "join.html", category: "Get Involved", keywords: "join volunteer intern partner contact" },
+    { title: "Volunteer With Us", desc: "Deliver programs and inspire students across Nepal", url: "volunteer.html", category: "Get Involved", keywords: "volunteer apply help teach" },
+    { title: "Intern at Navigo", desc: "Gain hands-on experience in program delivery", url: "intern.html", category: "Get Involved", keywords: "intern internship experience" },
+    { title: "Propose a Project", desc: "Submit your project idea to Navigo Nepal", url: "propose-project.html", category: "Get Involved", keywords: "propose project idea submit" },
+    { title: "Donate", desc: "Support our mission through donations and sponsorships", url: "donate.html", category: "Get Involved", keywords: "donate donation sponsor sponsorship support fund" },
+    // Provinces
+    { title: "Kathmandu", desc: "Programs in Kathmandu Metropolitan City", url: "programs.html", category: "Location", keywords: "kathmandu valley bagmati", province: "bagmati" },
+    { title: "Nuwakot", desc: "What's Next? program in Nuwakot district", url: "programs.html#whats-next", category: "Location", keywords: "nuwakot", province: "bagmati" },
+    { title: "Dhading", desc: "Leadership training in Dhading district", url: "programs.html#leadership", category: "Location", keywords: "dhading", province: "bagmati" },
+    { title: "Pokhara", desc: "Programs in Pokhara, Gandaki Province", url: "programs.html", category: "Location", keywords: "pokhara gandaki", province: "gandaki" },
+    { title: "Butwal", desc: "Programs in Butwal, Lumbini Province", url: "programs.html", category: "Location", keywords: "butwal lumbini", province: "lumbini" },
+    { title: "Banke", desc: "What's Next? program in Banke district", url: "programs.html#whats-next", category: "Location", keywords: "banke", province: "lumbini" },
+  ];
+
   if (programSearchInput && searchSuggestions) {
     // Autocomplete Input Handler
     programSearchInput.addEventListener("input", () => {
@@ -790,15 +818,20 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // Filter titles from CMS.programs
-      const matches = CMS.programs.filter(p =>
-        p.title.toLowerCase().includes(query) ||
-        p.shortDesc.toLowerCase().includes(query)
-      );
+      // Filter content by title, description, and keywords
+      const matches = searchableContent.filter(item =>
+        item.title.toLowerCase().includes(query) ||
+        item.desc.toLowerCase().includes(query) ||
+        item.keywords.toLowerCase().includes(query)
+      ).slice(0, 6); // Limit to 6 suggestions
 
       if (matches.length > 0) {
         searchSuggestions.innerHTML = matches.map(match => `
-          <div class="suggestion-item" data-id="${match.id}">${match.title}</div>
+          <div class="suggestion-item" data-url="${match.url}" data-keywords="${match.keywords}">
+            <span class="suggestion-category">${match.category}</span>
+            <span class="suggestion-title">${match.title}</span>
+            <span class="suggestion-desc">${match.desc}</span>
+          </div>
         `).join("");
         searchSuggestions.style.display = "block";
       } else {
@@ -812,12 +845,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const item = e.target.closest(".suggestion-item");
       if (!item) return;
 
-      programSearchInput.value = item.textContent;
+      const url = item.getAttribute("data-url");
+      if (url) {
+        window.location.href = url;
+      }
+
       searchSuggestions.style.display = "none";
       searchSuggestions.innerHTML = "";
-
-      // Automatically trigger search when click suggestions
-      executeHeroSearch();
     });
 
     // Close suggestions dropdown when clicking outside
@@ -840,11 +874,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function executeHeroSearch() {
-    const query = programSearchInput ? programSearchInput.value.trim() : "";
+    const query = programSearchInput ? programSearchInput.value.trim().toLowerCase() : "";
     const provinceId = provinceSearchSelect ? provinceSearchSelect.value : "";
 
     if (!query && !provinceId) {
-      // If nothing selected/typed, scroll to the uniqueness section
+      // If nothing selected/typed, scroll to the programs section
       const progSection = document.getElementById("programs");
       if (progSection) {
         progSection.scrollIntoView({ behavior: "smooth" });
@@ -852,35 +886,103 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // 1. Process Program Search Filtering (Redirect to Past Projects Tabs)
+    // 1. Process keyword search - find best matching page
     if (query) {
-      const q = query.toLowerCase();
-      let targetTabId = "tab-whatsnext"; // default
+      // Check for page-level matches first
+      const pageKeywords = {
+        "volunteer": "volunteer.html",
+        "intern": "intern.html",
+        "donate": "donate.html",
+        "donation": "donate.html",
+        "sponsor": "donate.html",
+        "team": "team.html",
+        "coordinator": "coordinators.html",
+        "partner": "join.html#partner",
+        "join": "join.html",
+        "propose": "propose-project.html",
+        "project": "propose-project.html",
+        "story": "our-story.html",
+        "about": "our-story.html",
+        "mission": "our-story.html",
+        "vision": "our-story.html",
+        "events": "past-events.html",
+        "past": "past-events.html",
+        "programs": "programs.html",
+      };
 
-      if (q.includes("veda") || q.includes("tech") || q.includes("sanskrit") || q.includes("computer")) {
-        targetTabId = "tab-veda";
-      } else if (q.includes("unicef") || q.includes("usaid") || q.includes("green") || q.includes("environmental")) {
-        targetTabId = "tab-unicef";
-      } else if (q.includes("climate") || q.includes("aiesec") || q.includes("sdg")) {
-        targetTabId = "tab-aiesec";
-      } else if (q.includes("leadership") || q.includes("scout") || q.includes("personality") || q.includes("club") || q.includes("eca")) {
-        targetTabId = "tab-leadership";
-      } else if (q.includes("next") || q.includes("counseling") || q.includes("see") || q.includes("12")) {
-        targetTabId = "tab-whatsnext";
+      // Check for exact page match
+      for (const [key, url] of Object.entries(pageKeywords)) {
+        if (query.includes(key)) {
+          window.location.href = url;
+          return;
+        }
       }
 
-      // Activate the corresponding tab in the past projects section
-      const tabButton = document.querySelector(`.project-tab[data-tab="${targetTabId}"]`);
-      if (tabButton) {
-        tabButton.click();
+      // Check for program section matches
+      const programKeywords = {
+        "whats next": "programs.html#whats-next",
+        "what's next": "programs.html#whats-next",
+        "career": "programs.html#whats-next",
+        "counseling": "programs.html#whats-next",
+        "leadership": "programs.html#leadership",
+        "personality": "programs.html#leadership",
+        "scout": "programs.html#leadership",
+        "club": "programs.html#clubs",
+        "eca": "programs.html#clubs",
+        "environment": "programs.html#environmental",
+        "green": "programs.html#environmental",
+        "unicef": "programs.html#environmental",
+        "usaid": "programs.html#environmental",
+        "climate": "programs.html#environmental",
+        "tech": "programs.html#tech-veda",
+        "veda": "programs.html#tech-veda",
+        "computer": "programs.html#tech-veda",
+        "digital": "programs.html#tech-veda",
+      };
+
+      for (const [key, url] of Object.entries(programKeywords)) {
+        if (query.includes(key)) {
+          window.location.href = url;
+          return;
+        }
       }
 
-      // Scroll to past projects section
-      const pastSection = document.getElementById("past-initiatives");
-      if (pastSection) {
-        // Offset by header height
-        const y = pastSection.getBoundingClientRect().top + window.scrollY - 80;
-        window.scrollTo({ top: y, behavior: 'smooth' });
+      // Check for location matches
+      const locationKeywords = {
+        "kathmandu": "programs.html",
+        "nuwakot": "programs.html#whats-next",
+        "dhading": "programs.html#leadership",
+        "pokhara": "programs.html",
+        "butwal": "programs.html",
+        "banke": "programs.html#whats-next",
+        "rasuwa": "programs.html",
+        "bhaktapur": "programs.html",
+        "lalitpur": "programs.html",
+      };
+
+      for (const [key, url] of Object.entries(locationKeywords)) {
+        if (query.includes(key)) {
+          window.location.href = url;
+          return;
+        }
+      }
+
+      // If no specific match found, search through all content
+      const match = searchableContent.find(item =>
+        item.title.toLowerCase().includes(query) ||
+        item.desc.toLowerCase().includes(query) ||
+        item.keywords.toLowerCase().includes(query)
+      );
+
+      if (match) {
+        window.location.href = match.url;
+        return;
+      }
+
+      // Fallback: scroll to programs section
+      const progSection = document.getElementById("programs");
+      if (progSection) {
+        progSection.scrollIntoView({ behavior: "smooth" });
       }
     }
 
@@ -891,7 +993,7 @@ document.addEventListener("DOMContentLoaded", () => {
         path.click();
       }
       if (!query) {
-        // If ONLY province is selected, navigate directly to map section!
+        // If ONLY province is selected, navigate directly to map section
         const mapSection = document.getElementById("impact-map");
         if (mapSection) {
           mapSection.scrollIntoView({ behavior: "smooth" });
