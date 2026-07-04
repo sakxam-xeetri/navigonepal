@@ -344,8 +344,13 @@
   <!-- HERO SECTION - Full-Screen Cinematic Segmented Layout -->
   <header class="section hero-section" id="hero">
     <div class="hero-bg-container">
-      <img src="assets/3.jpeg" alt="Navigo Nepal Youth Leaders" class="hero-bg-image" aria-hidden="true"
-        onerror="this.src='assets/hero_bg.png'">
+      <div class="hero-slideshow" id="heroSlideshow">
+        <img src="assets/3.jpeg" alt="Navigo Nepal Youth Leaders" class="hero-bg-image active" aria-hidden="true">
+        <img src="assets/2.jpeg" alt="Navigo Nepal Workshop" class="hero-bg-image" aria-hidden="true">
+        <img src="assets/1.jpeg" alt="Navigo Nepal Students" class="hero-bg-image" aria-hidden="true">
+        <img src="assets/169567052.jpg" alt="Navigo Nepal Event" class="hero-bg-image" aria-hidden="true">
+        <img src="assets/hero_students.png" alt="Navigo Nepal Team" class="hero-bg-image" aria-hidden="true">
+      </div>
     </div>
     <div class="hero-particle-system" id="particleSystem"></div>
     <div class="hero-light-beam"></div>
@@ -449,56 +454,31 @@
     </div>
   </header>
 
-  <!-- INFINITE MARQUEE BANNER -->
-  <div class="marquee-banner">
-    <div class="marquee-track">
-      <div class="marquee-content">
-        <div class="marquee-item">5,000+ Students Guided</div>
-        <div class="marquee-item">50+ High Schools Partnered</div>
-        <div class="marquee-item">Youth-Led Educational Empowerment</div>
-        <div class="marquee-item">STEM Club Startup Kits</div>
-        <div class="marquee-item">Post-SEE Stream Guidance</div>
-        <div class="marquee-item">Leadership &amp; Personality Development</div>
-        <div class="marquee-item">Environmental Stewardship</div>
-        <div class="marquee-item">Digital Literacy &amp; Innovation</div>
-      </div>
-      <div class="marquee-content">
-        <div class="marquee-item">5,000+ Students Guided</div>
-        <div class="marquee-item">50+ High Schools Partnered</div>
-        <div class="marquee-item">Youth-Led Educational Empowerment</div>
-        <div class="marquee-item">STEM Club Startup Kits</div>
-        <div class="marquee-item">Post-SEE Stream Guidance</div>
-        <div class="marquee-item">Leadership &amp; Personality Development</div>
-        <div class="marquee-item">Environmental Stewardship</div>
-        <div class="marquee-item">Digital Literacy &amp; Innovation</div>
+  <!-- BRAND BANNER (UNICEF STYLE) -->
+  <section class="wwe-brand-banner" id="why-exist">
+    <div class="container">
+      <div class="unicef-banner-content">
+        <h2 class="unicef-banner-title">The System Prepared Them for Exams.<br>We Prepare Them for Life.</h2>
+        <p class="unicef-banner-text">
+          Nepal's education system leaves over 500,000 SEE graduates each year without career direction, practical
+          skills, or real-world mentorship. Navigo Nepal exists to change that.
+        </p>
+        <div class="unicef-banner-buttons">
+          <a href="#why-exist-details" class="unicef-banner-btn">See our results</a>
+          <a href="donate.html" class="unicef-banner-btn">Donate any amount</a>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- WHY WE EXIST SECTION - Redesigned Premium -->
-  <section class="wwe-section" id="why-exist">
+  <section class="wwe-section" id="why-exist-details" style="padding-top: 5rem;">
     <!-- Ambient decorative elements -->
     <div class="wwe-ambient-orb wwe-orb-1"></div>
     <div class="wwe-ambient-orb wwe-orb-2"></div>
     <div class="wwe-grid-lines" aria-hidden="true"></div>
 
     <div class="container">
-      <!-- Section Header -->
-      <div class="wwe-header reveal">
-        <div class="wwe-label-row">
-          <span class="wwe-label-line"></span>
-          <span class="wwe-label-text">Why We Exist</span>
-          <span class="wwe-label-line"></span>
-        </div>
-        <h2 class="wwe-title">
-          The System Prepared Them for <span class="wwe-title-accent">Exams.</span><br>
-          We Prepare Them for <span class="wwe-title-accent">Life.</span>
-        </h2>
-        <p class="wwe-subtitle">
-          Nepal's education system leaves over 500,000 SEE graduates each year without career direction, practical
-          skills, or real-world mentorship. Navigo Nepal exists to change that.
-        </p>
-      </div>
 
       <!-- Stats Bar -->
       <div class="wwe-stats-bar reveal">
@@ -797,8 +777,31 @@
     </div>
   </section>
 
-  <!-- Section Divider -->
-  <hr class="section-divider">
+  <!-- INFINITE MARQUEE BANNER SECTION DIVIDER -->
+  <div class="marquee-banner" style="margin: 0; z-index: 10;">
+    <div class="marquee-track">
+      <div class="marquee-content">
+        <div class="marquee-item">5,000+ Students Guided</div>
+        <div class="marquee-item">50+ High Schools Partnered</div>
+        <div class="marquee-item">Youth-Led Educational Empowerment</div>
+        <div class="marquee-item">STEM Club Startup Kits</div>
+        <div class="marquee-item">Post-SEE Stream Guidance</div>
+        <div class="marquee-item">Leadership &amp; Personality Development</div>
+        <div class="marquee-item">Environmental Stewardship</div>
+        <div class="marquee-item">Digital Literacy &amp; Innovation</div>
+      </div>
+      <div class="marquee-content">
+        <div class="marquee-item">5,000+ Students Guided</div>
+        <div class="marquee-item">50+ High Schools Partnered</div>
+        <div class="marquee-item">Youth-Led Educational Empowerment</div>
+        <div class="marquee-item">STEM Club Startup Kits</div>
+        <div class="marquee-item">Post-SEE Stream Guidance</div>
+        <div class="marquee-item">Leadership &amp; Personality Development</div>
+        <div class="marquee-item">Environmental Stewardship</div>
+        <div class="marquee-item">Digital Literacy &amp; Innovation</div>
+      </div>
+    </div>
+  </div>
 
   <!-- FOUNDING STORY SECTION - Redesigned Premium -->
   <section class="fs-section" id="founding-story">
@@ -1806,7 +1809,64 @@
     </div>
   </section>
 
-
+  <!-- OUR PARTNERS SECTION -->
+  <section class="partners-section">
+    <div class="container">
+      <div class="partners-title-wrapper reveal">
+        <h2 class="partners-title">Our Partners</h2>
+      </div>
+      <div class="partners-grid reveal">
+        <!-- Partner Card 1 -->
+        <div class="partner-logo-card">
+          <img src="assets/partner/photo1.png" alt="Partner Logo" loading="lazy">
+        </div>
+        <!-- Partner Card 2 -->
+        <div class="partner-logo-card">
+          <img src="assets/partner/photo3.png" alt="Partner Logo" loading="lazy">
+        </div>
+        <!-- Partner Card 3 -->
+        <div class="partner-logo-card">
+          <img src="assets/partner/photo4.png" alt="Partner Logo" loading="lazy">
+        </div>
+        <!-- Partner Card 4 -->
+        <div class="partner-logo-card">
+          <img src="assets/partner/photo5.png" alt="Partner Logo" loading="lazy">
+        </div>
+        <!-- Partner Card 5 -->
+        <div class="partner-logo-card">
+          <img src="assets/partner/photo6.png" alt="Partner Logo" loading="lazy">
+        </div>
+        <!-- Partner Card 6 -->
+        <div class="partner-logo-card">
+          <img src="assets/partner/photo7.png" alt="Partner Logo" loading="lazy">
+        </div>
+        <!-- Partner Card 7 -->
+        <div class="partner-logo-card">
+          <img src="assets/partner/photo8.png" alt="Partner Logo" loading="lazy">
+        </div>
+        <!-- Partner Card 8 -->
+        <div class="partner-logo-card">
+          <img src="assets/partner/photo9.png" alt="Partner Logo" loading="lazy">
+        </div>
+        <!-- Partner Card 9 -->
+        <div class="partner-logo-card">
+          <img src="assets/partner/photo10.png" alt="Partner Logo" loading="lazy">
+        </div>
+        <!-- Partner Card 10 -->
+        <div class="partner-logo-card">
+          <img src="assets/partner/photo11.png" alt="Partner Logo" loading="lazy">
+        </div>
+        <!-- Partner Card 11 -->
+        <div class="partner-logo-card">
+          <img src="assets/partner/photo12.png" alt="Partner Logo" loading="lazy">
+        </div>
+        <!-- Partner Card 12 -->
+        <div class="partner-logo-card">
+          <img src="assets/partner/photo13.png" alt="Partner Logo" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- DONATION & PARTNERSHIP SECTION -->
   <section class="section section-alt" id="donate">

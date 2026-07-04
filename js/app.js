@@ -14,6 +14,21 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.add('loaded');
   });
 
+  // ==================== HERO SLIDESHOW ====================
+  const heroSlideshow = document.getElementById("heroSlideshow");
+  if (heroSlideshow) {
+    const slides = heroSlideshow.querySelectorAll(".hero-bg-image");
+    let currentSlide = 0;
+
+    function nextSlide() {
+      slides[currentSlide].classList.remove("active");
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add("active");
+    }
+
+    setInterval(nextSlide, 3000);
+  }
+
   // ==================== 1. LAYOUT & THEME TOGGLE ====================
 
   const themeToggle = document.getElementById("themeToggle");
