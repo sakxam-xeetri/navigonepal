@@ -326,6 +326,89 @@
     </div>
   </section>
 
+  <hr class="section-divider">
+
+  <!-- PROPOSAL FORM -->
+  <section class="prog-section" id="form">
+    <div class="container">
+      <div class="prog-form-wrapper">
+        <div class="prog-form-header">
+          <span class="prog-section-tag">Submit</span>
+          <h2 class="prog-section-title">Project Proposal Form</h2>
+          <p class="prog-form-subtitle">Describe your idea and we will review it within two weeks.</p>
+        </div>
+
+        <form class="prog-form" id="proposalForm" action="https://formsubmit.co/navigonepal@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="Project Proposal">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+
+          <div class="prog-form-row">
+            <div class="prog-form-group">
+              <label for="prop-name">Your Full Name *</label>
+              <input type="text" id="prop-name" name="Name" required placeholder="Your full name">
+            </div>
+            <div class="prog-form-group">
+              <label for="prop-email">Email Address *</label>
+              <input type="email" id="prop-email" name="Email" required placeholder="you@example.com">
+            </div>
+          </div>
+
+          <div class="prog-form-row">
+            <div class="prog-form-group">
+              <label for="prop-phone">Phone Number *</label>
+              <input type="tel" id="prop-phone" name="Phone" required placeholder="+977 98XXXXXXXX">
+            </div>
+            <div class="prog-form-group">
+              <label for="prop-location">District / Location *</label>
+              <input type="text" id="prop-location" name="Location" required placeholder="e.g. Kathmandu, Kaski, Chitwan">
+            </div>
+          </div>
+
+          <div class="prog-form-group">
+            <label for="prop-project-name">Project Name *</label>
+            <input type="text" id="prop-project-name" name="Project Name" required placeholder="Give your project a title">
+          </div>
+
+          <div class="prog-form-group">
+            <label for="prop-problem">1. Problem Statement *</label>
+            <textarea id="prop-problem" name="Problem" rows="4" required placeholder="Describe the problem you want to solve. Who is affected and where?"></textarea>
+          </div>
+
+          <div class="prog-form-group">
+            <label for="prop-solution">2. Proposed Solution *</label>
+            <textarea id="prop-solution" name="Solution" rows="4" required placeholder="What do you plan to do and how? Include activities, format, and duration."></textarea>
+          </div>
+
+          <div class="prog-form-group">
+            <label for="prop-audience">3. Target Audience *</label>
+            <textarea id="prop-audience" name="Target Audience" rows="3" required placeholder="Who will benefit? Specify age group, number of participants, school/community."></textarea>
+          </div>
+
+          <div class="prog-form-group">
+            <label for="prop-impact">4. Expected Impact *</label>
+            <textarea id="prop-impact" name="Expected Impact" rows="3" required placeholder="What outcomes do you expect? How will you measure success?"></textarea>
+          </div>
+
+          <div class="prog-form-group">
+            <label for="prop-resources">5. Resources Needed</label>
+            <textarea id="prop-resources" name="Resources" rows="3" placeholder="What support do you need from Navigo Nepal? (materials, volunteers, school access, etc.)"></textarea>
+          </div>
+
+          <div class="prog-form-group">
+            <label for="prop-timeline">6. Proposed Timeline</label>
+            <input type="text" id="prop-timeline" name="Timeline" placeholder="e.g. 3 months, starting August 2026">
+          </div>
+
+          <button type="submit" class="prog-form-submit">
+            <span>Submit Proposal</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">

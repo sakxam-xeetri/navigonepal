@@ -598,6 +598,149 @@
   }
 }
 
+/* ==================== FORM SECTION ==================== */
+.prog-form-wrapper {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.prog-form-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.prog-form-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: rgba(0, 0, 0, 0.5);
+  margin-top: 0.75rem;
+}
+
+.prog-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.prog-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+@media (max-width: 600px) {
+  .prog-form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.prog-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.prog-form-group label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.7);
+  letter-spacing: 0.02em;
+}
+
+.prog-form-group input[type="text"],
+.prog-form-group input[type="email"],
+.prog-form-group input[type="tel"],
+.prog-form-group input[type="url"],
+.prog-form-group input[type="number"],
+.prog-form-group select,
+.prog-form-group textarea {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  padding: 0.8rem 1rem;
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: #1a1a2e;
+  border-radius: 6px;
+  transition: border-color 0.3s ease, background 0.3s ease;
+  outline: none;
+  width: 100%;
+}
+
+.prog-form-group input:focus,
+.prog-form-group select:focus,
+.prog-form-group textarea:focus {
+  border-color: #4F9CF9;
+  background: rgba(79, 156, 249, 0.05);
+}
+
+.prog-form-group input::placeholder,
+.prog-form-group textarea::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.prog-form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgba(0,0,0,0.5)' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+.prog-form-group select option {
+  background: #ffffff;
+  color: #1a1a2e;
+}
+
+.prog-form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.prog-form-checkbox {
+  width: auto !important;
+  margin-right: 0.5rem;
+  accent-color: #4F9CF9;
+}
+
+.prog-form-group:has(.prog-form-checkbox) {
+  flex-direction: row;
+  align-items: center;
+}
+
+.prog-form-group:has(.prog-form-checkbox) label {
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 400;
+}
+
+.prog-form-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.9rem 2rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, #4F9CF9, #6366F1);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 0.5rem;
+  align-self: flex-start;
+}
+
+.prog-form-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(79, 156, 249, 0.3);
+}
+
+.prog-form-submit:active {
+  transform: translateY(0);
+}
+
 @media (max-width: 768px) {
   .prog-hero {
     padding: 8rem 0 3.5rem;
