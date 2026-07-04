@@ -5592,6 +5592,7 @@ select.form-control {
 .fs-story-content-wrapper {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
+  border-radius: 16px;
   padding: 3rem;
   position: relative;
   overflow: hidden;
@@ -5607,12 +5608,14 @@ select.form-control {
   bottom: 0;
   width: 4px;
   background: linear-gradient(180deg, var(--accent-color), var(--accent-emerald));
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
 }
 
 .fs-story-content-wrapper:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
-  border-color: rgba(37, 99, 235, 0.12);
+  border-color: rgba(37, 99, 235, 0.18);
 }
 
 .fs-quote-icon-container {
@@ -5622,31 +5625,58 @@ select.form-control {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: rgba(37, 99, 235, 0.08);
+  background: linear-gradient(135deg, rgba(79, 156, 249, 0.12) 0%, rgba(52, 211, 153, 0.12) 100%);
+  border: 1px solid rgba(79, 156, 249, 0.15);
   color: var(--accent-color);
   margin-bottom: 2rem;
 }
 
 .fs-story-text {
   font-family: 'Inter', sans-serif;
-  font-size: 1.08rem;
-  line-height: 1.95;
+  font-size: 1.02rem;
+  line-height: 1.85;
   color: var(--text-main);
   margin: 0;
+}
+
+.fs-story-text p {
+  margin: 0 0 1.25rem 0;
+  line-height: 1.85;
+}
+
+.fs-story-text p:last-child {
+  margin-bottom: 0;
+}
+
+.fs-story-text strong {
+  font-weight: 700;
+  color: var(--text-main);
 }
 
 /* --- Video Section --- */
 .fs-story-video-container {
   position: relative;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fs-story-video-container:hover {
+  transform: translateY(-6px);
 }
 
 .fs-video-glow {
   position: absolute;
-  inset: -15px;
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.12), rgba(16, 185, 129, 0.08));
+  inset: -20px;
+  background: radial-gradient(circle, rgba(79, 156, 249, 0.22) 0%, rgba(52, 211, 153, 0.12) 70%);
   filter: blur(25px);
   z-index: 0;
   pointer-events: none;
+  opacity: 0.6;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fs-story-video-container:hover .fs-video-glow {
+  opacity: 0.95;
+  transform: scale(1.06);
 }
 
 .fs-story-video {
@@ -5654,16 +5684,18 @@ select.form-control {
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
+  border-radius: 16px;
   border: 1px solid var(--border-color);
   background: #000000;
   z-index: 1;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .fs-story-video iframe {
   width: 100%;
   height: 100%;
   border: 0;
+  display: block;
 }
 
 /* --- Timeline Heading --- */

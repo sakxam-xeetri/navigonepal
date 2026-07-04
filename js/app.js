@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Render Founding Story
   const foundingStoryText = document.getElementById("foundingStoryText");
   if (foundingStoryText && CMS.story.foundingStory) {
-    foundingStoryText.textContent = CMS.story.foundingStory;
+    foundingStoryText.innerHTML = CMS.story.foundingStory;
   }
 
   // Render Leadership Quote
