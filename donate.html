@@ -109,9 +109,35 @@
             <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
           </svg>
         </button>
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
   </nav>
+
+  <!-- Mobile Side Navigation -->
+  <aside class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close Navigation Menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg>
+    </button>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="our-story.html" class="mobile-nav-link">Our Story</a></li>
+      <li><a href="programs.html" class="mobile-nav-link">Programs</a></li>
+      <li><a href="team.html" class="mobile-nav-link">Team</a></li>
+      <li><a href="donate.html" class="mobile-nav-link">Donate</a></li>
+      <li><a href="join.html" class="mobile-nav-link">Get Involved</a></li>
+    </ul>
+  </aside>
+  <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
 
   <!-- HERO -->
   <section class="prog-hero">

@@ -265,6 +265,13 @@
 
   <!-- Mobile Side Navigation -->
   <aside class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close Navigation Menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg>
+    </button>
     <ul class="mobile-nav-links">
       <li><a href="#hero" class="mobile-nav-link active">Home</a></li>
 
@@ -339,6 +346,7 @@
       </li>
     </ul>
   </aside>
+  <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
 
   <!-- HERO SECTION - Full-Screen Cinematic -->
   <!-- HERO SECTION - Full-Screen Cinematic Segmented Layout -->
@@ -456,6 +464,7 @@
 
   <!-- BRAND BANNER (UNICEF STYLE) -->
   <section class="wwe-brand-banner" id="why-exist">
+    <div class="wwe-brand-banner-grid" aria-hidden="true"></div>
     <div class="container">
       <div class="unicef-banner-content">
         <h2 class="unicef-banner-title">The System Prepared Them for Exams.<br>We Prepare Them for Life.</h2>
@@ -464,8 +473,8 @@
           skills, or real-world mentorship. Navigo Nepal exists to change that.
         </p>
         <div class="unicef-banner-buttons">
-          <a href="#why-exist-details" class="unicef-banner-btn">See our results</a>
-          <a href="donate.html" class="unicef-banner-btn">Donate any amount</a>
+          <a href="#why-exist-details" class="unicef-banner-btn unicef-banner-btn-primary">See our results</a>
+          <a href="donate.html" class="unicef-banner-btn unicef-banner-btn-secondary">Donate any amount</a>
         </div>
       </div>
     </div>

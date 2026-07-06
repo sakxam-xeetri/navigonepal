@@ -59,18 +59,39 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Hamburger Menu
-  const hamburger = document.getElementById("hamburger");
+  const hamburger = document.getElementById("hamburger") || document.getElementById("mobileMenuToggle");
   const mobileNav = document.getElementById("mobileNav");
+  const mobileNavClose = document.getElementById("mobileNavClose");
+  const mobileNavOverlay = document.getElementById("mobileNavOverlay");
+
+  function openMobileNav() {
+    if (hamburger) hamburger.classList.add("open");
+    if (mobileNav) mobileNav.classList.add("open");
+    if (mobileNavOverlay) mobileNavOverlay.classList.add("open");
+    document.body.classList.add("nav-open");
+  }
+
+  function closeMobileNav() {
+    if (hamburger) hamburger.classList.remove("open");
+    if (mobileNav) mobileNav.classList.remove("open");
+    if (mobileNavOverlay) mobileNavOverlay.classList.remove("open");
+    document.body.classList.remove("nav-open");
+  }
 
   if (hamburger) hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("open");
-    mobileNav.classList.toggle("open");
+    if (mobileNav && mobileNav.classList.contains("open")) {
+      closeMobileNav();
+    } else {
+      openMobileNav();
+    }
   });
+
+  if (mobileNavClose) mobileNavClose.addEventListener("click", closeMobileNav);
+  if (mobileNavOverlay) mobileNavOverlay.addEventListener("click", closeMobileNav);
 
   document.querySelectorAll(".mobile-nav-link").forEach(link => {
     link.addEventListener("click", () => {
-      hamburger.classList.remove("open");
-      mobileNav.classList.remove("open");
+      closeMobileNav();
     });
   });
 
@@ -1019,10 +1040,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // ==================== 8c. NAVIGATION DROPDOWN INTERACTION ====================
-  // Mobile accordion sub-menu toggles
-  const mobileDropdowns = document.querySelectorAll(".mobile-has-dropdown");
+  // Mobile accordion sub-menu toggles (supports both class patterns)
+  const mobileDropdowns = document.querySelectorAll(".mobile-has-dropdown, .mobile-nav-has-dropdown");
   mobileDropdowns.forEach(dropdown => {
-    const toggle = dropdown.querySelector(".mobile-dropdown-toggle");
+    const toggle = dropdown.querySelector(".mobile-dropdown-toggle, .mobile-nav-dropdown-toggle");
     if (toggle) {
       toggle.addEventListener("click", (e) => {
         e.preventDefault();
@@ -1043,10 +1064,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Close mobile navigation sidebar when clicking sub-menu items
   document.querySelectorAll(".mobile-subnav-link").forEach(link => {
     link.addEventListener("click", () => {
-      const hamburger = document.getElementById("hamburger");
-      const mobileNav = document.getElementById("mobileNav");
-      if (hamburger) hamburger.classList.remove("open");
-      if (mobileNav) mobileNav.classList.remove("open");
+      closeMobileNav();
     });
   });
 
