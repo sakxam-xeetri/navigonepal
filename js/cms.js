@@ -16,7 +16,7 @@ const NAVIGO_CMS = {
   impactMetrics: [
     { id: "schools", label: "Schools Connected", value: 20, suffix: "+", icon: "school", color: "#6366f1", gradient: "linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)", desc: "Connecting public, private, and community schools with practical workshops and counseling." },
     { id: "students", label: "Students Reached", value: 1600, suffix: "+", icon: "users", color: "#a855f7", gradient: "linear-gradient(135deg, #a855f7 0%, #7c3aed 100%)", desc: "Empowered through SEE/12th grade counseling, leadership training, and climate awareness." },
-    { id: "districts", label: "Districts Covered", value: 11, suffix: "+", icon: "map", color: "#ec4899", gradient: "linear-gradient(135deg, #ec4899 0%, #c026d3 100%)", desc: "Conducted programs and mapped coordinator networks across various geographical regions." },
+    { id: "districts", label: "Districts Covered", value: 24, suffix: "+", icon: "map", color: "#ec4899", gradient: "linear-gradient(135deg, #ec4899 0%, #c026d3 100%)", desc: "Conducted programs and mapped coordinator networks across various geographical regions." },
     { id: "clubs", label: "Clubs Created", value: 29, suffix: "+", icon: "award", color: "#f97316", gradient: "linear-gradient(135deg, #f97316 0%, #ea580c 100%)", desc: "Active, student-led circles (Eco Clubs, interest groups) fostering peer collaboration." },
     { id: "workshops", label: "Workshops Conducted", value: 35, suffix: "+", icon: "activity", color: "#f59e0b", gradient: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)", desc: "Interactive sessions on career streams, environment protection, and digital literacy." },
     { id: "volunteers", label: "Volunteer Network", value: 50, suffix: "+", icon: "globe", color: "#10b981", gradient: "linear-gradient(135deg, #10b981 0%, #059669 100%)", desc: "Passionate collegiate coordinators and local district ambassadors ('Navigers')." }
@@ -40,8 +40,8 @@ const NAVIGO_CMS = {
     },
     futureGoals: [
       {
-        title: "Nation-wide Expansion (15+ Districts)",
-        desc: "Scaling our programs from the initial pilot areas to over 15 districts through localized resource transmission.",
+        title: "Nation-wide Expansion (35+ Districts)",
+        desc: "Scaling our programs from the initial pilot areas to over 35 districts through localized resource transmission.",
         icon: "target",
         progress: 45
       },

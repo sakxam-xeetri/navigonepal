@@ -102,7 +102,7 @@ Navigo Nepal stands out because we don’t just advocate for change; we actively
 
 ## **1.4 Our Cohort** 
 
-Navigo Nepal was co-founded by Anupam Nyaupane, Biyog Dangol and Prajwal Dhungana. Navigo Nepal's first project included other two members along with the cofounders, who have now become Alumni: Swapnil Sapkota, who is current studying at New York University at Abu Dhabi, and Atal Raj Paudel, who is an incoming freshman at University of Texas at Arlington. The Navigo Nepal's team slowly grew along with its projects. Today, Navigo Nepal have 13 active members along with two Board of Advisors who work together to run Navigo Nepal as an organization. 
+Navigo Nepal was co-founded by Anupam Neupane, Biyog Dangol and Prajwal Dhungana. Navigo Nepal's first project included other two members along with the cofounders, who have now become Alumni: Swapnil Sapkota, who is current studying at New York University at Abu Dhabi, and Atal Raj Paudel, who is an incoming freshman at University of Texas at Arlington. The Navigo Nepal's team slowly grew along with its projects. Today, Navigo Nepal have 13 active members along with two Board of Advisors who work together to run Navigo Nepal as an organization. 
 
 4 
 
@@ -378,7 +378,7 @@ The following table shows information on schools and members from Navigo Nepal w
 **----- End of picture text -----**<br>
 
 
-Anupam Nyuapane 
+Anupam Neupane 
 
 ## **What students Say about us?** 
 
@@ -388,7 +388,7 @@ The central idea behind the formation of Navigo Nepal is to provide essential ex
 
 We believe that we are still missing a lot of such students scattered all over the country in rural areas of Nepal and sometimes even in urban schools. Some places don’t even have the proper infrastructure to provide normal education to students where the concept of ECAs and clubs are rarely understood and implemented. We aim to reach out to these areas and expand our programs nationwide. 
 
-For meeting this purpose, navigo Nepal has successfully organized many sessions in different districts of Nepal. Up until now, we have reached to 4 districts and we are determined to take this number to more than 15 districts. After getting proper amount of funding and recognition, we will be reaching in every possible corner of the country where there is lack of exposure to students. 
+For meeting this purpose, navigo Nepal has successfully organized many sessions in different districts of Nepal. Up until now, we have reached to 24 districts and we are determined to take this number to more than 35 districts. After getting proper amount of funding and recognition, we will be reaching in every possible corner of the country where there is lack of exposure to students. 
 
 ## **Sustainability** 
 

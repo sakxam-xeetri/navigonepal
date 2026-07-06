@@ -2,7 +2,7 @@
 
 Team members (who participated): 
 
-Anupam Nyaupane Biyog Man Dangol Prajwal Dhungana Swapnil Sapkota Atal Raj Poudel 
+Anupam Neupane Biyog Man Dangol Prajwal Dhungana Swapnil Sapkota Atal Raj Poudel 
 
 Date: 28[th] April, 2024 
 
@@ -24,7 +24,7 @@ The presentation slides consisted of crucial information to help students unders
 
 Fig: Members of Navigo Nepal giving presentation to students 
 
-We divided our whole session into two major parts. One was focused on mainly providing essential information on helping students navigate their paths after grade 10[th] and the other was focused on extracurricular activities such as student clubs which the students were completely unaware of. Mr. Prajwal Dhungana ,Mr. Biyog Man Dangol and Mr. Swapnil Sapkota took the lead for the former while Mr. Anupam Nyaupane and Mr. Atal Raj Poudel  for the latter. We were provided with projector as well as a digital board to conduct our session. 
+We divided our whole session into two major parts. One was focused on mainly providing essential information on helping students navigate their paths after grade 10[th] and the other was focused on extracurricular activities such as student clubs which the students were completely unaware of. Mr. Prajwal Dhungana ,Mr. Biyog Man Dangol and Mr. Swapnil Sapkota took the lead for the former while Mr. Anupam Neupane and Mr. Atal Raj Poudel  for the latter. We were provided with projector as well as a digital board to conduct our session. 
 
 Our whole session can be condensed into these three following points: 
 

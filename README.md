@@ -17,7 +17,7 @@ This web dashboard displays nationwide community impact, dynamic portfolios, int
 *   **Client-Side CMS Architecture**: Powered by a unified data store ([js/cms.js](file:///d:/navigonepal/js/cms.js)) to manage content dynamically, including programs, metrics, stories, resources, and volunteer listings.
 *   **Interactive Vector GIS Mapping**: A premium, custom-styled SVG map of Nepal's provinces that shows real-time stats (schools reached, students mentored, active clubs) upon hover and selection.
 *   **Global Search & Autocomplete Engine**: A custom search console with text auto-completion and province/district filtering to connect students to local resources instantly.
-*   **Impact Bento Grid**: Dynamically counts and displays organization stats (25,000+ Students, 120+ Schools, 35+ Districts) with counting animations.
+*   **Impact Bento Grid**: Dynamically counts and displays organization stats (25,000+ Students, 120+ Schools, 24+ Districts) with counting animations.
 *   **Dual-Theme Mode (Dark/Light)**: Responsive design that matches preferences automatically or enables toggling between modes.
 *   **Micro-Animations & Visual Excellence**: Premium glassmorphism effects, custom HSL gradients, cinematic scroll progress, scroll reveal triggers, and page-load transitions.
 *   **Dynamic Modals**: Fully integrated forms for volunteer registration, partner/sponsor application, and secure checkout sponsorships.
