@@ -5816,7 +5816,7 @@ select.form-control {
 
 .cr-image-frame {
   position: relative;
-  border-radius: 16px;
+  border-radius: 0;
   overflow: hidden;
   aspect-ratio: 4 / 5;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
@@ -5897,7 +5897,7 @@ select.form-control {
   align-items: flex-start;
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
-  border-radius: 14px;
+  border-radius: 0;
   padding: 1.5rem;
   margin-top: 0.5rem;
 }
@@ -5910,7 +5910,7 @@ select.form-control {
   flex-shrink: 0;
   width: 120px;
   height: 120px;
-  border-radius: 10px;
+  border-radius: 0;
   overflow: hidden;
 }
 
