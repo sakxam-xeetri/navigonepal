@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Navigo Nepal</title>
+  <link rel="icon" type="image/jpeg" href="assets/navigo logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <script>
+    // Initialize theme before rendering to avoid flashes
+    (function() {
+      const savedTheme = localStorage.getItem("navigo-theme") || "light";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    })();
+  </script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      position: relative;
+      overflow-x: hidden;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* Ambient background circles */
+    .glow-circle {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      filter: blur(120px);
+      z-index: 1;
+      opacity: 0.12;
+      pointer-events: none;
+    }
+
+    .glow-circle-1 {
+      top: -10%;
+      right: -10%;
+      background: var(--accent-color);
+    }
+
+    .glow-circle-2 {
+      bottom: -10%;
+      left: -10%;
+      background: var(--accent-emerald);
+    }
+
+    /* Navbar positioning */
+    .admin-header {
+      width: 100%;
+      z-index: 10;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-navbar);
+      border-bottom: 1px solid var(--border-color);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .admin-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--text-main);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 1.25rem;
+    }
+
+    .admin-logo img {
+      height: 40px;
+      border-radius: var(--radius-sm);
+    }
+
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logout-btn {
+      background: transparent;
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.85rem;
+      display: none; /* Shown only after login */
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .logout-btn:hover {
+      background: rgba(239, 68, 68, 0.1);
+      border-color: #ef4444;
+      color: #ef4444;
+    }
+
+    /* Main Container */
+    .main-wrapper {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      z-index: 2;
+    }
+
+    /* Login Box (Glassmorphic) */
+    .login-container {
+      max-width: 420px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border-glass);
+      padding: 3rem 2.5rem;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-xl);
+      text-align: center;
+      animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Dashboard Box (Full Width layout) */
+    .dashboard-container {
+      max-width: 1000px;
+      width: 100%;
+      display: none; /* Initially hidden */
+      flex-direction: column;
+      gap: 2rem;
+      animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1, h2 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, var(--text-main) 30%, var(--accent-color) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+
+    /* Form Styles */
+    .form-group {
+      margin-bottom: 1.5rem;
+      text-align: left;
+      position: relative;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      background: rgba(10, 35, 66, 0.02);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+
+    [data-theme="dark"] .form-input {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+      background: transparent;
+    }
+
+    .eye-btn {
+      position: absolute;
+      right: 1rem;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .eye-btn:hover {
+      color: var(--text-main);
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 0.9rem;
+      background: var(--gradient-primary);
+      border: none;
+      color: var(--text-inverse);
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-md);
+    }
+
+    .login-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .login-btn:active {
+      transform: translateY(0);
+    }
+
+    .error-msg {
+      color: #ef4444;
+      font-size: 0.85rem;
+      margin-top: 1rem;
+      display: none;
+      background: rgba(239, 68, 68, 0.08);
+      padding: 0.6rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(239, 68, 68, 0.15);
+      text-align: center;
+    }
+
+    /* Dashboard Grid Layout */
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .dashboard-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .dash-card {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-xl);
+      padding: 2rem;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .dash-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-main);
+    }
+
+    /* Switch Component */
+    .control-panel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      padding: 1.5rem 0;
+    }
+
+    .maintenance-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+      margin-bottom: 2rem;
+      transition: all 0.3s ease;
+    }
+
+    .status-active {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.2);
+      color: #ef4444;
+    }
+
+    .status-inactive {
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      color: var(--accent-emerald);
+    }
+
+    /* Premium Toggle Switch */
+    .switch-label {
+      position: relative;
+      display: inline-block;
+      width: 80px;
+      height: 44px;
+      cursor: pointer;
+    }
+
+    .switch-label input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--border-color);
+      transition: .4s cubic-bezier(0.16, 1, 0.3, 1);
+      border-radius: 44px;
+      border: 1px solid var(--border-glass);
+      box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 36px;
+      width: 36px;
+      left: 3px;
+      bottom: 3px;
+      background-color: var(--pure-white);
+      transition: .4s cubic-bezier(0.16, 1, 0.3, 1);
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    input:checked + .slider {
+      background-color: #ef4444;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(36px);
+    }
+
+    .slider-glow {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 44px;
+      opacity: 0;
+      transition: opacity 0.4s;
+      z-index: -1;
+    }
+
+    input:checked + .slider .slider-glow {
+      opacity: 0.3;
+      box-shadow: 0 0 25px #ef4444;
+    }
+
+    .toggle-description {
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-align: center;
+      max-width: 280px;
+    }
+
+    /* Analytics Cards */
+    .telemetry-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      flex: 1;
+    }
+
+    .telemetry-item {
+      background: rgba(10, 35, 66, 0.02);
+      border: 1px solid var(--border-color);
+      padding: 1.25rem;
+      border-radius: var(--radius-lg);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    [data-theme="dark"] .telemetry-item {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .telemetry-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .telemetry-value {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin: 0.5rem 0;
+      color: var(--text-main);
+    }
+
+    .telemetry-indicator {
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .indicator-up { color: var(--accent-emerald); }
+    .indicator-warn { color: #f59e0b; }
+
+    /* Developer Guide Section */
+    .guide-card {
+      grid-column: span 2;
+    }
+
+    @media (max-width: 768px) {
+      .guide-card {
+        grid-column: span 1;
+      }
+    }
+
+    .alert-banner {
+      background: rgba(37, 99, 235, 0.06);
+      border: 1px solid rgba(37, 99, 235, 0.15);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      display: flex;
+      gap: 1rem;
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+
+    .alert-banner svg {
+      flex-shrink: 0;
+      color: var(--accent-color);
+      margin-top: 0.1rem;
+    }
+
+    .alert-title {
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .alert-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .code-snippet {
+      background: rgba(0, 0, 0, 0.05);
+      font-family: monospace;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+    }
+
+    [data-theme="dark"] .code-snippet {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-text {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-color);
+      background: var(--bg-navbar);
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="glow-circle glow-circle-1"></div>
+  <div class="glow-circle glow-circle-2"></div>
+
+  <!-- Header -->
+  <header class="admin-header">
+    <a href="index.html" class="admin-logo">
+      <img src="assets/navigo logo.png" alt="Navigo Nepal Logo" onerror="this.src='assets/navigo logo.jpg'">
+      <span>Admin Console</span>
+    </a>
+    <div class="header-controls">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme" title="Toggle Mode">
+        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4" />
+          <path d="M12 2v2M12 20v2M4.93 4.93 1.41 1.41M17.66 17.66 1.41 1.41M2 12h2M20 12h2M6.34 17.66-1.41 1.41M19.07 4.93-1.41 1.41" />
+        </svg>
+        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+        </svg>
+      </button>
+      <button class="logout-btn" id="logoutBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/>
+        </svg>
+        Logout
+      </button>
+    </div>
+  </header>
+
+  <!-- Content Container -->
+  <main class="main-wrapper">
+
+    <!-- LOGIN PANEL -->
+    <div class="login-container" id="loginPanel">
+      <h1>Portal Login</h1>
+      <p class="subtitle">Access the administrative command controls</p>
+      
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="username">USERNAME</label>
+          <input type="text" id="username" class="form-input" placeholder="Enter username" required autocomplete="username">
+        </div>
+        <div class="form-group">
+          <label for="password">PASSWORD</label>
+          <div class="input-wrapper">
+            <input type="password" id="password" class="form-input" placeholder="Enter password" required autocomplete="current-password">
+            <button type="button" class="eye-btn" id="passwordEye" aria-label="Toggle Password Visibility">
+              <svg id="eyeShowIcon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+              <svg id="eyeHideIcon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+                <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68M6.61 6.61A13.52 13.52 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61M2 2l20 20" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <button type="submit" class="login-btn">Log In</button>
+      </form>
+      <div class="error-msg" id="errorMsg">Invalid credentials. Please try again.</div>
+    </div>
+
+    <!-- ADMIN DASHBOARD -->
+    <div class="dashboard-container" id="dashboardPanel">
+      <div>
+        <h1>Welcome, Administrator</h1>
+        <p class="subtitle">System state administration console</p>
+      </div>
+
+      <div class="dashboard-grid">
+        <!-- Maintenance Mode Switch -->
+        <div class="dash-card">
+          <h3>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            </svg>
+            System Status Control
+          </h3>
+          <div class="control-panel">
+            <div id="statusBadge" class="maintenance-status-badge">
+              Maintenance Active
+            </div>
+            
+            <label class="switch-label">
+              <input type="checkbox" id="maintenanceToggle">
+              <span class="slider">
+                <span class="slider-glow"></span>
+              </span>
+            </label>
+            
+            <div class="toggle-description">
+              Toggling this switch will change the live deployment state of the website in your local session storage.
+            </div>
+          </div>
+        </div>
+
+        <!-- Telemetry Details -->
+        <div class="dash-card">
+          <h3>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+            </svg>
+            Live Server Telemetry
+          </h3>
+          <div class="telemetry-grid">
+            <div class="telemetry-item">
+              <span class="telemetry-label">CPU LOAD</span>
+              <span class="telemetry-value" id="cpuVal">12.4%</span>
+              <span class="telemetry-indicator indicator-up">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+                Stable
+              </span>
+            </div>
+            <div class="telemetry-item">
+              <span class="telemetry-label">DB RESPONSE</span>
+              <span class="telemetry-value" id="dbVal">18ms</span>
+              <span class="telemetry-indicator indicator-up">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+                Optimal
+              </span>
+            </div>
+            <div class="telemetry-item">
+              <span class="telemetry-label">ACTIVE VISITORS</span>
+              <span class="telemetry-value">0</span>
+              <span class="telemetry-indicator indicator-warn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                Redirected
+              </span>
+            </div>
+            <div class="telemetry-item">
+              <span class="telemetry-label">MEM CONSUMPTION</span>
+              <span class="telemetry-value">256MB</span>
+              <span class="telemetry-indicator indicator-up">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+                Normal
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Developer Guidance Alert -->
+        <div class="dash-card guide-card">
+          <h3>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
+            </svg>
+            Architectural Tip: Moving to Production
+          </h3>
+          <div class="alert-banner">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <div>
+              <div class="alert-title">Upgrading from LocalStorage Override</div>
+              <div class="alert-desc">
+                Currently, toggling maintenance mode saves the state to <span class="code-snippet">localStorage.setItem('navigo-maintenance-mode')</span> in the current browser. This is perfect for local testing and validation.
+                <br><br>
+                For a live deployment where <strong>all users</strong> are toggled globally:
+                <br>
+                1. Change the check in <span class="code-snippet">js/maintenance.js</span> to run a fast <span class="code-snippet">fetch()</span> call targeting a lightweight JSON configuration, a serverless cloud function, or a CDN KV store.
+                <br>
+                2. Connect this toggle switch to an API endpoint (e.g. via an authenticated <span class="code-snippet">POST</span> request) that modifies that remote database/file state globally.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer-text">
+    &copy; 2026 Navigo Nepal. Youth-Led Educational Empowerment.
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. Theme Switcher Logic
+      const themeToggle = document.getElementById("themeToggle");
+      const html = document.documentElement;
+      const sunIcon = themeToggle.querySelector(".sun-icon");
+      const moonIcon = themeToggle.querySelector(".moon-icon");
+
+      function updateThemeIcons(theme) {
+        if (theme === "dark") {
+          sunIcon.style.display = "block";
+          moonIcon.style.display = "none";
+        } else {
+          sunIcon.style.display = "none";
+          moonIcon.style.display = "block";
+        }
+      }
+
+      updateThemeIcons(html.getAttribute("data-theme") || "light");
+
+      if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+          const current = html.getAttribute("data-theme");
+          const next = current === "dark" ? "light" : "dark";
+          html.setAttribute("data-theme", next);
+          localStorage.setItem("navigo-theme", next);
+          updateThemeIcons(next);
+        });
+      }
+
+      // 2. Password Visibility Eye Toggle
+      const passwordEye = document.getElementById("passwordEye");
+      const passwordInput = document.getElementById("password");
+      const eyeShowIcon = document.getElementById("eyeShowIcon");
+      const eyeHideIcon = document.getElementById("eyeHideIcon");
+
+      if (passwordEye) {
+        passwordEye.addEventListener("click", () => {
+          if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            eyeShowIcon.style.display = "none";
+            eyeHideIcon.style.display = "block";
+          } else {
+            passwordInput.type = "password";
+            eyeShowIcon.style.display = "block";
+            eyeHideIcon.style.display = "none";
+          }
+        });
+      }
+
+      // 3. Login Session Logic
+      const loginForm = document.getElementById("loginForm");
+      const errorMsg = document.getElementById("errorMsg");
+      const loginPanel = document.getElementById("loginPanel");
+      const dashboardPanel = document.getElementById("dashboardPanel");
+      const logoutBtn = document.getElementById("logoutBtn");
+
+      // Elements inside dashboard
+      const maintenanceToggle = document.getElementById("maintenanceToggle");
+      const statusBadge = document.getElementById("statusBadge");
+
+      // Check current login state in sessionStorage
+      if (sessionStorage.getItem("navigo-admin-session") === "active") {
+        showDashboard();
+      }
+
+      loginForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const username = document.getElementById("username").value.trim();
+        const password = passwordInput.value.trim();
+
+        // Check credentials
+        if (username === "admin" && password === "navigo-admin-2026") {
+          sessionStorage.setItem("navigo-admin-session", "active");
+          errorMsg.style.display = "none";
+          showDashboard();
+        } else {
+          errorMsg.style.display = "block";
+          passwordInput.value = "";
+        }
+      });
+
+      logoutBtn.addEventListener("click", () => {
+        sessionStorage.removeItem("navigo-admin-session");
+        hideDashboard();
+      });
+
+      function showDashboard() {
+        loginPanel.style.display = "none";
+        dashboardPanel.style.display = "flex";
+        logoutBtn.style.display = "flex";
+        
+        // Initialize Toggle state from localStorage
+        const localMaintenance = localStorage.getItem('navigo-maintenance-mode');
+        const isMaintenance = localMaintenance !== null ? (localMaintenance === 'true') : true;
+        
+        maintenanceToggle.checked = isMaintenance;
+        updateBadge(isMaintenance);
+        startTelemetrySimulation();
+      }
+
+      function hideDashboard() {
+        loginPanel.style.display = "block";
+        dashboardPanel.style.display = "none";
+        logoutBtn.style.display = "none";
+        stopTelemetrySimulation();
+      }
+
+      // 4. Toggle Event
+      maintenanceToggle.addEventListener("change", () => {
+        const isChecked = maintenanceToggle.checked;
+        localStorage.setItem("navigo-maintenance-mode", isChecked ? "true" : "false");
+        updateBadge(isChecked);
+      });
+
+      function updateBadge(active) {
+        if (active) {
+          statusBadge.textContent = "Maintenance Mode: ON (Active)";
+          statusBadge.className = "maintenance-status-badge status-active";
+        } else {
+          statusBadge.textContent = "Maintenance Mode: OFF (Bypassed)";
+          statusBadge.className = "maintenance-status-badge status-inactive";
+        }
+      }
+
+      // 5. Telemetry Simulation
+      let telemetryTimer;
+      function startTelemetrySimulation() {
+        const cpuVal = document.getElementById("cpuVal");
+        const dbVal = document.getElementById("dbVal");
+        
+        telemetryTimer = setInterval(() => {
+          // Simulated minor fluctuations
+          const randCpu = (10 + Math.random() * 5).toFixed(1);
+          const randDb = Math.floor(15 + Math.random() * 6);
+          if (cpuVal) cpuVal.textContent = randCpu + "%";
+          if (dbVal) dbVal.textContent = randDb + "ms";
+        }, 3000);
+      }
+
+      function stopTelemetrySimulation() {
+        if (telemetryTimer) clearInterval(telemetryTimer);
+      }
+    });
+  </script>
+</body>
+</html>
