@@ -5844,9 +5844,17 @@ select.form-control {
   height: 5px;
 }
 
-.cr-seg-red   { background: #E63946; }
-.cr-seg-yellow { background: #F4A261; }
-.cr-seg-green  { background: #2A9D8F; }
+.cr-seg-red {
+  background: #E63946;
+}
+
+.cr-seg-yellow {
+  background: #F4A261;
+}
+
+.cr-seg-green {
+  background: #2A9D8F;
+}
 
 .cr-eyebrow {
   font-family: 'Inter', sans-serif;
