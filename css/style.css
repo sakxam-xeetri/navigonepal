@@ -3238,7 +3238,17 @@ body.nav-open {
 }
 
 /* Core Coordinators Grid */
-.coord-core-grid {
+.coord-core-grid--top {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto 1.25rem;
+}
+
+.coord-core-grid--bottom {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
@@ -3289,6 +3299,16 @@ body.nav-open {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.coord-card-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
 }
 
 .coord-card-avatar .coord-avatar-initials {
@@ -3355,7 +3375,8 @@ body.nav-open {
     gap: 1rem;
   }
 
-  .coord-core-grid {
+  .coord-core-grid--top,
+  .coord-core-grid--bottom {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -3369,7 +3390,8 @@ body.nav-open {
     margin-bottom: 3rem;
   }
 
-  .coord-core-grid {
+  .coord-core-grid--top,
+  .coord-core-grid--bottom {
     grid-template-columns: 1fr;
   }
 }
