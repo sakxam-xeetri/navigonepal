@@ -349,191 +349,205 @@
   </aside>
   <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
 
-  <!-- HERO SECTION - Full-Screen Cinematic -->
-  <!-- HERO SECTION - Full-Screen Cinematic Segmented Layout -->
-  <header class="section hero-section" id="hero">
-    <div class="hero-bg-container">
-      <div class="hero-slideshow" id="heroSlideshow">
-        <img src="assets/3.jpeg" alt="Navigo Nepal Youth Leaders" class="hero-bg-image active" aria-hidden="true">
-        <img src="assets/2.jpeg" alt="Navigo Nepal Workshop" class="hero-bg-image" aria-hidden="true">
-        <img src="assets/mentor/490190961_2986328848185723_3347339506819732855_n.jpg" alt="Navigo Nepal Students"
-          class="hero-bg-image" aria-hidden="true">
-        <img src="assets/bg.jpg" alt="Navigo Nepal Event" class="hero-bg-image" aria-hidden="true">
-        <img src="assets/mentor/469837851_122157357158283666_2194395108200675076_n.jpg" alt="Navigo Nepal Team"
-          class="hero-bg-image" aria-hidden="true">
-      </div>
-    </div>
-    <div class="hero-particle-system" id="particleSystem"></div>
-    <div class="hero-light-beam"></div>
-    <div class="hero-light-glow"></div>
-    <div class="hero-floating-shapes">
-      <div class="hero-shape shape-circle-1"></div>
-      <div class="hero-shape shape-circle-2"></div>
-      <div class="hero-shape shape-circle-3"></div>
-      <div class="hero-shape shape-triangle"></div>
-      <div class="hero-shape shape-square"></div>
-    </div>
-    <div class="hero-overlay"></div>
-    <div class="container hero-container-layout">
+  <!-- HERO SECTION - Nepal Map Composition -->
+  <header class="section hero-map-section" id="hero">
+    <div class="container hero-map-container">
 
-      <div class="hero-text-content">
-        <span class="section-label" style="color: rgba(255,255,255,0.75); margin-bottom: 1.5rem;">
-          <span style="background: var(--accent-light); width: 24px; height: 2px; display: inline-block;"></span>
+      <!-- Left: Text Content -->
+      <div class="hero-map-text">
+        <span class="hero-map-label">
+          <span class="hero-map-label-line"></span>
           Empowering Nepal's Next Generation
         </span>
-        <h1 class="heading-xl hero-main-title" id="heroTitle">Where Conventionality Ends and Practicality Starts</h1>
-        <p class="hero-subtitle" id="heroSubtitle">
-          Navigo Nepal is a non-profit helping students navigate their path after the 10th grade. We provide career
-          guidance and personality development, giving this generation the real-world mentorship and opportunities that
-          the previous one missed.
+        <h1 class="hero-map-title" id="heroTitle">A future where no child's potential goes unguided.</h1>
+        <p class="hero-map-subtitle" id="heroSubtitle">
+          Every year, over 500,000 students in Nepal make life-defining decisions
+          without any career guidance — and you can help change that.
         </p>
-
-        <!-- Segmented CTAs matching Robert Half Archetype -->
-        <div class="hero-cta-segments">
-          <!-- Student Segment -->
-          <div class="cta-segment">
-            <span class="segment-label-small">For Students &amp; Youth</span>
-            <div class="segment-actions">
-              <a href="join.html" class="btn btn-primary btn-lg" id="heroCtaPrimary">Join Navigo</a>
-            </div>
-          </div>
-
-          <!-- Vertical Divider -->
-          <div class="segment-divider-line"></div>
-
-          <!-- Business/Partner Segment -->
-          <div class="cta-segment">
-            <span class="segment-label-small">For Partners &amp; Schools</span>
-            <div class="segment-actions">
-              <a href="join.html#partner" class="btn btn-white btn-lg" id="heroCtaSecondary">Become a Partner</a>
-              <a href="#programs" class="btn btn-white btn-outline-only btn-lg">Explore Programs</a>
-            </div>
-          </div>
+        <div class="hero-map-ctas">
+          <a href="donate.html" class="hero-btn-dark" id="heroCtaPrimary">Donate now</a>
+          <a href="#why-exist-details" class="hero-btn-outline" id="heroCtaSecondary">Discover →</a>
         </div>
       </div>
 
-      <!-- Hero Video Player -->
-      <div class="hero-logo-display reveal-scale" style="flex: 1; display: flex; justify-content: center; align-items: center; max-width: 560px; width: 100%;">
-        <div class="hero-video-wrapper" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border: 1.5px solid rgba(255,255,255,0.15); box-shadow: var(--shadow-xl); background: #000;">
-          <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fnavigonepal%2Fvideos%2F717521050790002%2F&show_text=false&width=560&t=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:none; overflow:hidden;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-        </div>
-      </div>
-
-      <!-- Overlapping Bottom Search Console -->
-      <div class="hero-search-console">
-        <!-- Keyword Search -->
-        <div class="search-input-group">
-          <div class="search-icon-wrapper" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="11" cy="11" r="8" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" />
-            </svg>
-          </div>
-          <input type="text" id="programSearchInput" class="search-input-field"
-            placeholder="Search Programs, Skills, or Keywords..." autocomplete="off"
-            aria-label="Search Programs or Keywords">
-          <!-- Autocomplete Dropdown suggestions list -->
-          <div class="search-suggestions-dropdown" id="searchSuggestions" aria-live="polite"></div>
+      <!-- Right: Nepal Map Composition -->
+      <div class="hero-map-visual">
+        <!-- Background map silhouette (large, faded) -->
+        <div class="hero-map-silhouette" aria-hidden="true">
+          <img src="assets/nepal.png" alt="">
         </div>
 
-        <div class="search-divider-vertical"></div>
-
-        <!-- Province / District selector -->
-        <div class="search-input-group">
-          <div class="search-icon-wrapper" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z" />
-              <circle cx="12" cy="10" r="3" />
-            </svg>
-          </div>
-          <select id="provinceSearchSelect" class="search-select-field" aria-label="Select Province">
-            <option value="">All Provinces &amp; Districts</option>
-            <option value="bagmati">Bagmati Province (Kathmandu, Lalitpur...)</option>
-            <option value="koshi">Koshi Province (Biratnagar, Dharan...)</option>
-            <option value="gandaki">Gandaki Province (Pokhara, Baglung...)</option>
-            <option value="lumbini">Lumbini Province (Butwal, Bhairahawa...)</option>
-            <option value="madhesh">Madhesh Province (Janakpur, Birgunj...)</option>
-            <option value="karnali">Karnali Province (Surkhet, Jumla...)</option>
-            <option value="sudurpashchim">Sudurpashchim Province (Dhangadhi...)</option>
-          </select>
+        <!-- Student photo masked to Nepal shape -->
+        <div class="hero-map-photo">
+          <img src="assets/girl.png" alt="Nepali student holding Global Goals poster">
         </div>
 
-        <button type="button" class="btn btn-search-go" id="searchSubmitBtn">Search Programs</button>
+        <!-- Decorative brush strokes -->
+        <svg class="hero-brush-stroke hero-brush-1" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M5 35C25 15 55 5 95 15C135 25 165 45 195 30" stroke="#2563EB" stroke-width="28" stroke-linecap="round" opacity="0.55"/>
+        </svg>
+        <svg class="hero-brush-stroke hero-brush-2" viewBox="0 0 180 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M5 25C35 45 75 10 115 30C155 50 175 20 175 25" stroke="#10B981" stroke-width="22" stroke-linecap="round" opacity="0.45"/>
+        </svg>
+        <svg class="hero-brush-stroke hero-brush-3" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M5 20C25 5 55 35 85 15C105 5 115 25 115 20" stroke="#4F9CF9" stroke-width="18" stroke-linecap="round" opacity="0.35"/>
+        </svg>
+
+        <!-- Stats bubble -->
+        <div class="hero-stats-bubble">
+          <span class="hero-stats-number">5,000+</span>
+          <span class="hero-stats-label">students guided<br>across Nepal</span>
+        </div>
       </div>
 
     </div>
   </header>
 
   <!-- SINGLE INFINITE MARQUEE BANNER -->
-  <div class="marquee-banner" style="background: #000000 !important; border-top: 1px solid rgba(255, 255, 255, 0.1); border-bottom: 1px solid rgba(255, 255, 255, 0.1); margin: 0 !important; transform: none !important;">
+  <div class="marquee-banner"
+    style="background: #000000 !important; border-top: 1px solid rgba(255, 255, 255, 0.1); border-bottom: 1px solid rgba(255, 255, 255, 0.1); margin: 0 !important; transform: none !important;">
     <div class="marquee-track">
       <div class="marquee-content">
         <div class="marquee-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--elite-blue)" stroke-width="2.5" style="margin-right: 0.75rem; vertical-align: middle;"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="var(--elite-blue)" stroke-width="2.5" style="margin-right: 0.75rem; vertical-align: middle;">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+            <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5" />
+          </svg>
           5,000+ Students Guided
         </div>
         <div class="marquee-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--elite-blue)" stroke-width="2.5" style="margin-right: 0.75rem; vertical-align: middle;"><path d="m2 22 1-1h3l1 1"/><path d="M22 22v-5c0-1.1-.9-2-2-2h-3c-1.1 0-2 .9-2 2v5"/><path d="M14 2H4a2 2 0 0 0-2 2v16"/><path d="M14 2v20"/><path d="M6 6h2"/><path d="M6 10h2"/><path d="M6 14h2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="var(--elite-blue)" stroke-width="2.5" style="margin-right: 0.75rem; vertical-align: middle;">
+            <path d="m2 22 1-1h3l1 1" />
+            <path d="M22 22v-5c0-1.1-.9-2-2-2h-3c-1.1 0-2 .9-2 2v5" />
+            <path d="M14 2H4a2 2 0 0 0-2 2v16" />
+            <path d="M14 2v20" />
+            <path d="M6 6h2" />
+            <path d="M6 10h2" />
+            <path d="M6 14h2" />
+          </svg>
           50+ High Schools Partnered
         </div>
         <div class="marquee-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--elite-blue)" stroke-width="2.5" style="margin-right: 0.75rem; vertical-align: middle;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="var(--elite-blue)" stroke-width="2.5" style="margin-right: 0.75rem; vertical-align: middle;">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+          </svg>
           Youth-Led Educational Empowerment
         </div>
         <div class="marquee-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--elite-blue)" stroke-width="2.5" style="margin-right: 0.75rem; vertical-align: middle;"><path d="M4.5 16.5c-1.5 1.26-2.5 3.19-2.5 5.5h20c0-2.31-1-4.24-2.5-5.5"/><path d="M12 2v14"/><path d="m16 6-4 4-4-4"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="var(--elite-blue)" stroke-width="2.5" style="margin-right: 0.75rem; vertical-align: middle;">
+            <path d="M4.5 16.5c-1.5 1.26-2.5 3.19-2.5 5.5h20c0-2.31-1-4.24-2.5-5.5" />
+            <path d="M12 2v14" />
+            <path d="m16 6-4 4-4-4" />
+          </svg>
           STEM Club Startup Kits
         </div>
         <div class="marquee-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--elite-blue)" stroke-width="2.5" style="margin-right: 0.75rem; vertical-align: middle;"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="var(--elite-blue)" stroke-width="2.5" style="margin-right: 0.75rem; vertical-align: middle;">
+            <circle cx="12" cy="12" r="10" />
+            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+          </svg>
           Post-SEE Stream Guidance
         </div>
         <div class="marquee-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--elite-blue)" stroke-width="2.5" style="margin-right: 0.75rem; vertical-align: middle;"><circle cx="12" cy="8" r="7"/><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="var(--elite-blue)" stroke-width="2.5" style="margin-right: 0.75rem; vertical-align: middle;">
+            <circle cx="12" cy="8" r="7" />
+            <path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12" />
+          </svg>
           Leadership &amp; Personality Development
         </div>
         <div class="marquee-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--elite-blue)" stroke-width="2.5" style="margin-right: 0.75rem; vertical-align: middle;"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 0 8.5C17 15 14 18 11 20z"/><path d="M19 2c-2.26 4.33-5.27 7.14-8 10"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="var(--elite-blue)" stroke-width="2.5" style="margin-right: 0.75rem; vertical-align: middle;">
+            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 0 8.5C17 15 14 18 11 20z" />
+            <path d="M19 2c-2.26 4.33-5.27 7.14-8 10" />
+          </svg>
           Environmental Stewardship
         </div>
         <div class="marquee-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--elite-blue)" stroke-width="2.5" style="margin-right: 0.75rem; vertical-align: middle;"><rect width="20" height="15" x="2" y="3" rx="2"/><path d="M12 18v4"/><path d="M8 22h8"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="var(--elite-blue)" stroke-width="2.5" style="margin-right: 0.75rem; vertical-align: middle;">
+            <rect width="20" height="15" x="2" y="3" rx="2" />
+            <path d="M12 18v4" />
+            <path d="M8 22h8" />
+          </svg>
           Digital Literacy &amp; Innovation
         </div>
       </div>
       <div class="marquee-content">
         <div class="marquee-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--elite-blue)" stroke-width="2.5" style="margin-right: 0.75rem; vertical-align: middle;"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="var(--elite-blue)" stroke-width="2.5" style="margin-right: 0.75rem; vertical-align: middle;">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+            <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5" />
+          </svg>
           5,000+ Students Guided
         </div>
         <div class="marquee-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--elite-blue)" stroke-width="2.5" style="margin-right: 0.75rem; vertical-align: middle;"><path d="m2 22 1-1h3l1 1"/><path d="M22 22v-5c0-1.1-.9-2-2-2h-3c-1.1 0-2 .9-2 2v5"/><path d="M14 2H4a2 2 0 0 0-2 2v16"/><path d="M14 2v20"/><path d="M6 6h2"/><path d="M6 10h2"/><path d="M6 14h2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="var(--elite-blue)" stroke-width="2.5" style="margin-right: 0.75rem; vertical-align: middle;">
+            <path d="m2 22 1-1h3l1 1" />
+            <path d="M22 22v-5c0-1.1-.9-2-2-2h-3c-1.1 0-2 .9-2 2v5" />
+            <path d="M14 2H4a2 2 0 0 0-2 2v16" />
+            <path d="M14 2v20" />
+            <path d="M6 6h2" />
+            <path d="M6 10h2" />
+            <path d="M6 14h2" />
+          </svg>
           50+ High Schools Partnered
         </div>
         <div class="marquee-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--elite-blue)" stroke-width="2.5" style="margin-right: 0.75rem; vertical-align: middle;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="var(--elite-blue)" stroke-width="2.5" style="margin-right: 0.75rem; vertical-align: middle;">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+          </svg>
           Youth-Led Educational Empowerment
         </div>
         <div class="marquee-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--elite-blue)" stroke-width="2.5" style="margin-right: 0.75rem; vertical-align: middle;"><path d="M4.5 16.5c-1.5 1.26-2.5 3.19-2.5 5.5h20c0-2.31-1-4.24-2.5-5.5"/><path d="M12 2v14"/><path d="m16 6-4 4-4-4"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="var(--elite-blue)" stroke-width="2.5" style="margin-right: 0.75rem; vertical-align: middle;">
+            <path d="M4.5 16.5c-1.5 1.26-2.5 3.19-2.5 5.5h20c0-2.31-1-4.24-2.5-5.5" />
+            <path d="M12 2v14" />
+            <path d="m16 6-4 4-4-4" />
+          </svg>
           STEM Club Startup Kits
         </div>
         <div class="marquee-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--elite-blue)" stroke-width="2.5" style="margin-right: 0.75rem; vertical-align: middle;"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="var(--elite-blue)" stroke-width="2.5" style="margin-right: 0.75rem; vertical-align: middle;">
+            <circle cx="12" cy="12" r="10" />
+            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+          </svg>
           Post-SEE Stream Guidance
         </div>
         <div class="marquee-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--elite-blue)" stroke-width="2.5" style="margin-right: 0.75rem; vertical-align: middle;"><circle cx="12" cy="8" r="7"/><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="var(--elite-blue)" stroke-width="2.5" style="margin-right: 0.75rem; vertical-align: middle;">
+            <circle cx="12" cy="8" r="7" />
+            <path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12" />
+          </svg>
           Leadership &amp; Personality Development
         </div>
         <div class="marquee-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--elite-blue)" stroke-width="2.5" style="margin-right: 0.75rem; vertical-align: middle;"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 0 8.5C17 15 14 18 11 20z"/><path d="M19 2c-2.26 4.33-5.27 7.14-8 10"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="var(--elite-blue)" stroke-width="2.5" style="margin-right: 0.75rem; vertical-align: middle;">
+            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 0 8.5C17 15 14 18 11 20z" />
+            <path d="M19 2c-2.26 4.33-5.27 7.14-8 10" />
+          </svg>
           Environmental Stewardship
         </div>
         <div class="marquee-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--elite-blue)" stroke-width="2.5" style="margin-right: 0.75rem; vertical-align: middle;"><rect width="20" height="15" x="2" y="3" rx="2"/><path d="M12 18v4"/><path d="M8 22h8"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="var(--elite-blue)" stroke-width="2.5" style="margin-right: 0.75rem; vertical-align: middle;">
+            <rect width="20" height="15" x="2" y="3" rx="2" />
+            <path d="M12 18v4" />
+            <path d="M8 22h8" />
+          </svg>
           Digital Literacy &amp; Innovation
         </div>
       </div>
@@ -2165,12 +2179,20 @@
           </select>
         </div>
 
-        <div id="qrPaymentDetails" style="display: block; border: 1.5px dashed var(--accent-color); padding: 1.5rem; background: var(--bg-primary); margin-top: 1rem; text-align: center;">
-          <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-main);">Scan Fonepay QR Code to Pay</h4>
-          <img id="bankQrImage" src="assets/bank.jpeg" alt="Navigo Nepal Bank QR" style="max-width: 200px; margin: 0.75rem auto; display: block; border: 1px solid var(--border-color); padding: 6px; background: #FFFFFF; border-radius: 0px;">
-          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.75rem; line-height: 1.6; text-align: left;">
-            <strong>Step 1:</strong> Scan the QR code above with your mobile banking or wallet app to complete the transfer.<br>
-            <strong>Step 2:</strong> Please upload/send your **payment screenshot** to our official **social media accounts** or email it to <a href="mailto:contact@navigonepal.org" style="color: var(--accent-color); font-weight: 600; text-decoration: underline;">contact@navigonepal.org</a> to validate and activate your social media appreciation/account recognition.
+        <div id="qrPaymentDetails"
+          style="display: block; border: 1.5px dashed var(--accent-color); padding: 1.5rem; background: var(--bg-primary); margin-top: 1rem; text-align: center;">
+          <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-main);">Scan Fonepay
+            QR Code to Pay</h4>
+          <img id="bankQrImage" src="assets/bank.jpeg" alt="Navigo Nepal Bank QR"
+            style="max-width: 200px; margin: 0.75rem auto; display: block; border: 1px solid var(--border-color); padding: 6px; background: #FFFFFF; border-radius: 0px;">
+          <p
+            style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.75rem; line-height: 1.6; text-align: left;">
+            <strong>Step 1:</strong> Scan the QR code above with your mobile banking or wallet app to complete the
+            transfer.<br>
+            <strong>Step 2:</strong> Please upload/send your **payment screenshot** to our official **social media
+            accounts** or email it to <a href="mailto:contact@navigonepal.org"
+              style="color: var(--accent-color); font-weight: 600; text-decoration: underline;">contact@navigonepal.org</a>
+            to validate and activate your social media appreciation/account recognition.
           </p>
         </div>
 

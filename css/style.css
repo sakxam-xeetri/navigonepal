@@ -1114,19 +1114,425 @@ body.nav-open {
   padding-bottom: 0.5rem;
 }
 
-/* ==================== HERO SECTION ==================== */
-.hero-section {
+/* ==================== HERO SECTION — NEPAL MAP COMPOSITION ==================== */
+.hero-map-section {
   min-height: 100vh;
   display: flex;
   align-items: center;
   padding-top: 5rem;
-  background: linear-gradient(135deg, #0A2342 0%, #06172F 50%, #030b18 100%);
+  background: #FAFAF8;
   position: relative;
   overflow: hidden;
   z-index: 1;
 }
 
-.hero-overlay {
+.hero-map-section::after {
+  display: none;
+}
+
+[data-theme="dark"] .hero-map-section {
+  background: #06172F;
+}
+
+.hero-map-container {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+  min-height: calc(100vh - 5rem);
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/* ---- Left: Text Content ---- */
+.hero-map-text {
+  flex: 1;
+  max-width: 580px;
+  text-align: left;
+  animation: heroTextSlide 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes heroTextSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hero-map-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-map-label-line {
+  width: 28px;
+  height: 2px;
+  background: var(--gradient-primary);
+  display: inline-block;
+}
+
+.hero-map-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4.2rem);
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+}
+
+.hero-map-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+  font-weight: 400;
+  color: var(--text-muted);
+  line-height: 1.8;
+  max-width: 520px;
+  margin-bottom: 2.5rem;
+}
+
+/* ---- CTA Buttons ---- */
+.hero-map-ctas {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.hero-btn-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.95rem 2.2rem;
+  background: var(--primary-navy);
+  color: #FFFFFF;
+  border: 2px solid var(--primary-navy);
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: 0.02em;
+}
+
+.hero-btn-dark:hover {
+  background: var(--elite-blue);
+  border-color: var(--elite-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+}
+
+[data-theme="dark"] .hero-btn-dark {
+  background: var(--elite-blue);
+  border-color: var(--elite-blue);
+}
+
+[data-theme="dark"] .hero-btn-dark:hover {
+  background: var(--luxury-blue);
+  border-color: var(--luxury-blue);
+}
+
+.hero-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.95rem 2.2rem;
+  background: transparent;
+  color: var(--text-main);
+  border: 2px solid var(--border-color);
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: 0.02em;
+}
+
+.hero-btn-outline:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+/* ---- Right: Nepal Map Visual Composition ---- */
+.hero-map-visual {
+  flex: 1;
+  position: relative;
+  max-width: 620px;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: heroVisualFade 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+@keyframes heroVisualFade {
+  from {
+    opacity: 0;
+    transform: translateX(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* Background silhouette — large, faded Nepal map */
+.hero-map-silhouette {
+  position: absolute;
+  top: -10%;
+  right: -15%;
+  width: 130%;
+  height: 120%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-map-silhouette img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(1) brightness(1.8) contrast(0.5);
+  opacity: 0.12;
+}
+
+[data-theme="dark"] .hero-map-silhouette img {
+  filter: grayscale(1) brightness(0.3) contrast(0.5);
+  opacity: 0.2;
+}
+
+/* Student photo masked to Nepal shape */
+.hero-map-photo {
+  position: relative;
+  width: 90%;
+  z-index: 2;
+  -webkit-mask-image: url('../assets/nepal.png');
+  mask-image: url('../assets/nepal.png');
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+.hero-map-photo img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  min-height: 280px;
+}
+
+/* ---- Decorative Brush Strokes ---- */
+.hero-brush-stroke {
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.hero-brush-1 {
+  width: 220px;
+  top: 10%;
+  right: 2%;
+  transform: rotate(-8deg);
+  animation: brushFloat1 8s ease-in-out infinite;
+}
+
+.hero-brush-2 {
+  width: 180px;
+  bottom: 18%;
+  left: 2%;
+  transform: rotate(5deg);
+  animation: brushFloat2 10s ease-in-out infinite;
+}
+
+.hero-brush-3 {
+  width: 140px;
+  bottom: 40%;
+  right: -8%;
+  transform: rotate(-12deg);
+  animation: brushFloat3 12s ease-in-out infinite;
+}
+
+@keyframes brushFloat1 {
+  0%, 100% { transform: rotate(-8deg) translate(0, 0); }
+  50% { transform: rotate(-6deg) translate(-5px, 8px); }
+}
+
+@keyframes brushFloat2 {
+  0%, 100% { transform: rotate(5deg) translate(0, 0); }
+  50% { transform: rotate(7deg) translate(8px, -5px); }
+}
+
+@keyframes brushFloat3 {
+  0%, 100% { transform: rotate(-12deg) translate(0, 0); }
+  50% { transform: rotate(-10deg) translate(-6px, 6px); }
+}
+
+/* ---- Stats Bubble ---- */
+.hero-stats-bubble {
+  position: absolute;
+  bottom: 8%;
+  right: 0%;
+  width: 120px;
+  height: 120px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.3);
+  animation: statsPulse 3s ease-in-out infinite;
+}
+
+.hero-stats-number {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1;
+}
+
+.hero-stats-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.58rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+  line-height: 1.3;
+  margin-top: 0.25rem;
+}
+
+@keyframes statsPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* ---- Hero Responsive ---- */
+@media (max-width: 992px) {
+  .hero-map-section {
+    min-height: auto;
+  }
+
+  .hero-map-container {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+    gap: 2.5rem;
+    min-height: auto;
+  }
+
+  .hero-map-text {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .hero-map-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-map-ctas {
+    justify-content: center;
+  }
+
+  .hero-map-visual {
+    max-width: 100%;
+    min-height: 300px;
+  }
+
+  .hero-map-silhouette {
+    top: -5%;
+    right: -10%;
+    width: 120%;
+    height: 110%;
+  }
+
+  .hero-stats-bubble {
+    width: 100px;
+    height: 100px;
+    bottom: 5%;
+    right: 5%;
+  }
+
+  .hero-stats-number {
+    font-size: 1.3rem;
+  }
+
+  .hero-stats-label {
+    font-size: 0.52rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-map-container {
+    padding-top: 5rem;
+  }
+
+  .hero-map-title {
+    font-size: 2rem;
+  }
+
+  .hero-map-visual {
+    min-height: 220px;
+  }
+
+  .hero-brush-1 {
+    width: 140px;
+  }
+
+  .hero-brush-2 {
+    width: 110px;
+  }
+
+  .hero-brush-3 {
+    width: 90px;
+  }
+
+  .hero-stats-bubble {
+    width: 80px;
+    height: 80px;
+  }
+
+  .hero-stats-number {
+    font-size: 1.1rem;
+  }
+
+  .hero-stats-label {
+    font-size: 0.48rem;
+  }
+
+  .hero-btn-dark,
+  .hero-btn-outline {
+    padding: 0.85rem 1.8rem;
+    font-size: 0.85rem;
+  }
+
+
   position: absolute;
   top: 0;
   left: 0;
@@ -7134,14 +7540,37 @@ select.form-control {
   transform: translateY(0);
 }
 
-.nv-coord-card:nth-child(1).reveal { transition-delay: 0s; }
-.nv-coord-card:nth-child(2).reveal { transition-delay: 0.08s; }
-.nv-coord-card:nth-child(3).reveal { transition-delay: 0.16s; }
-.nv-coord-card:nth-child(4).reveal { transition-delay: 0.24s; }
-.nv-coord-card:nth-child(5).reveal { transition-delay: 0.32s; }
-.nv-coord-card:nth-child(6).reveal { transition-delay: 0.40s; }
-.nv-coord-card:nth-child(7).reveal { transition-delay: 0.48s; }
-.nv-coord-card:nth-child(8).reveal { transition-delay: 0.56s; }
+.nv-coord-card:nth-child(1).reveal {
+  transition-delay: 0s;
+}
+
+.nv-coord-card:nth-child(2).reveal {
+  transition-delay: 0.08s;
+}
+
+.nv-coord-card:nth-child(3).reveal {
+  transition-delay: 0.16s;
+}
+
+.nv-coord-card:nth-child(4).reveal {
+  transition-delay: 0.24s;
+}
+
+.nv-coord-card:nth-child(5).reveal {
+  transition-delay: 0.32s;
+}
+
+.nv-coord-card:nth-child(6).reveal {
+  transition-delay: 0.40s;
+}
+
+.nv-coord-card:nth-child(7).reveal {
+  transition-delay: 0.48s;
+}
+
+.nv-coord-card:nth-child(8).reveal {
+  transition-delay: 0.56s;
+}
 
 /* --- Responsive: Tablet --- */
 @media (max-width: 1024px) {

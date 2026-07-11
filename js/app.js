@@ -785,7 +785,7 @@ document.addEventListener("DOMContentLoaded", () => {
     launchConfettiShower();
 
     alert(`Bank Transfer Request Submitted!\n\nPlease scan the QR code to complete your payment, and upload/send your payment screenshot to our official social media accounts or email contact@navigonepal.org to validate and activate your social media appreciation/account recognition.\n\nThank you for choosing to support ${tier} at ${amount}. Your support empowers public education networks across Nepal!`);
-    
+
     donationForm.reset();
     if (qrPaymentDetailsBox) qrPaymentDetailsBox.style.display = "block";
   });
