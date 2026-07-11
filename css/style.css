@@ -2193,129 +2193,112 @@ body.nav-open {
   position: relative;
 }
 
-.vision-mv-image-outer-frame {
-  width: 100%;
-  height: 100%;
+.vision-collage {
   position: relative;
-  padding: 0;
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.vision-mv-image-outer-frame::after {
-  content: '';
-  position: absolute;
-  bottom: -15px;
-  right: -15px;
   width: 100%;
-  height: 100%;
-  border: 1px solid rgba(37, 99, 235, 0.2);
-  z-index: 1;
-  pointer-events: none;
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.vision-mv-image-col:hover .vision-mv-image-outer-frame::after {
-  bottom: -8px;
-  right: -8px;
-  border-color: rgba(37, 99, 235, 0.45);
+  max-width: 585px;
+  height: 530px;
+  margin: 0 auto;
 }
 
 @media (max-width: 768px) {
-  .vision-mv-image-outer-frame {
-    margin-right: 15px;
-    margin-bottom: 15px;
+  .vision-collage {
+    max-width: 470px;
+    height: 430px;
+    margin-top: 2rem;
   }
 }
 
-.vision-mv-image-wrapper {
-  width: 100%;
-  height: 100%;
+.collage-item {
+  position: absolute;
   overflow: hidden;
-  position: relative;
+  background: var(--bg-card);
+  border: 5px solid #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 2;
-  border: 1px solid var(--border-color);
-  background: var(--bg-primary);
 }
 
-.vision-mv-image-wrapper img {
+.collage-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  filter: grayscale(100%) contrast(1.05);
-  transition: filter 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: grayscale(100%);
+  transition: filter 0.5s ease, transform 0.5s ease;
 }
 
-.vision-mv-image-col:hover img {
-  filter: grayscale(0%) contrast(1);
-  transform: scale(1.03);
+.collage-item:hover {
+  transform: translateY(-5px) scale(1.03);
+  z-index: 5;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
-.vision-img-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(248, 251, 255, 0.2) 0%, rgba(248, 251, 255, 0) 50%);
-  pointer-events: none;
+.collage-item:hover img {
+  filter: grayscale(0%);
+}
+
+.item-top-left {
+  top: 15%;
+  left: 0;
+  width: 32%;
+  aspect-ratio: 1.1 / 1;
+}
+
+.item-center-tall {
+  top: 0;
+  left: 36%;
+  width: 38%;
+  height: 60%;
   z-index: 3;
-  transition: opacity 0.6s ease;
 }
 
-.vision-mv-image-col:hover .vision-img-overlay {
-  opacity: 0.3;
+.item-bottom-center {
+  top: 64%;
+  left: 36%;
+  width: 38%;
+  height: 36%;
+  z-index: 3;
 }
 
-/* Pulsing Floating Badge */
-.vision-img-badge {
+.item-middle-right {
+  top: 42%;
+  left: 70%;
+  width: 30%;
+  aspect-ratio: 1.1 / 1;
+}
+
+.collage-brush {
   position: absolute;
-  top: 1.25rem;
-  right: 1.25rem;
-  z-index: 4;
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  backdrop-filter: blur(8px);
-  padding: 0.35rem 0.75rem;
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
   pointer-events: none;
+  z-index: 1;
 }
 
-.badge-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: #10B981;
-  box-shadow: 0 0 8px #10B981;
-  animation: badge-pulse 2s infinite ease-in-out;
+.collage-brush svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
-.badge-text {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.65rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--text-main);
+.brush-yellow-top {
+  top: -6%;
+  right: 18%;
+  width: 32%;
+  height: 20%;
 }
 
-@keyframes badge-pulse {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
-  }
+.brush-green-left {
+  top: 48%;
+  left: 28%;
+  width: 12%;
+  height: 22%;
+}
 
-  70% {
-    transform: scale(1);
-    opacity: 0.5;
-    box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
-  }
-
-  100% {
-    transform: scale(1);
-    opacity: 0;
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
-  }
+.brush-yellow-bottom {
+  bottom: 10%;
+  right: 10%;
+  width: 34%;
+  height: 20%;
 }
 
 /* Core Mandate Section */
