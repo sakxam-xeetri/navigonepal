@@ -241,20 +241,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  // Render Testimonials with images
-  const carouselContainer = document.getElementById("carouselContainer");
-  if (carouselContainer) carouselContainer.innerHTML = CMS.successStories.map(story => `
-    <div class="carousel-slide">
-      <div class="testimonial-card">
-        <div class="testimonial-img-wrapper">
-          <img src="${story.image}" alt="${story.name}" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\\'width:100%;height:100%;background:rgba(37,99,235,0.08);display:flex;align-items:center;justify-content:center;color:var(--accent-color);font-family:Plus Jakarta Sans;font-size:2.5rem;font-weight:800;\\'>${story.name[0]}</div>'">
-        </div>
-        <div class="testimonial-content">
-          <span style="color: var(--elite-blue); font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; display: inline-block; margin-bottom: 0.75rem;">${story.highlight}</span>
-          <p class="testimonial-quote">${story.quote}</p>
-          <div class="testimonial-author">${story.name}</div>
-          <div class="testimonial-meta">${story.role} &bull; ${story.location}</div>
-        </div>
+  // Render Student Spotlights Grid (Sharp Edges)
+  const spotlightsGrid = document.getElementById("spotlightsGrid");
+  if (spotlightsGrid) spotlightsGrid.innerHTML = CMS.successStories.map((story, idx) => `
+    <div class="spotlight-card reveal stagger-${idx + 1}">
+      <div class="spotlight-img-wrapper">
+        <img src="${story.image}" alt="${story.name}" class="spotlight-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\\'width:100%;height:100%;background:rgba(37,99,235,0.08);display:flex;align-items:center;justify-content:center;color:var(--accent-color);font-family:Bebas Neue;font-size:2.5rem;font-weight:400;\\'>${story.name[0]}</div>'">
+      </div>
+      <div class="spotlight-content">
+        <span class="spotlight-highlight">${story.highlight}</span>
+        <p class="spotlight-quote">"${story.quote}"</p>
+      </div>
+      <div class="spotlight-meta-panel">
+        <div class="spotlight-author">${story.name}</div>
+        <div class="spotlight-meta-text">${story.role} &bull; ${story.location}</div>
       </div>
     </div>
   `).join("");
@@ -491,50 +491,54 @@ document.addEventListener("DOMContentLoaded", () => {
   // ==================== 6. SUCCESS STORIES CAROUSEL ====================
 
   const carousel = document.getElementById("carouselContainer");
-  const slides = document.querySelectorAll(".carousel-slide");
-  const navDotsWrapper = document.getElementById("carouselNav");
-  let activeIndex = 0;
-  const slideCount = slides.length;
-  let autoplayInterval;
+  if (carousel) {
+    const slides = document.querySelectorAll(".carousel-slide");
+    const navDotsWrapper = document.getElementById("carouselNav");
+    let activeIndex = 0;
+    const slideCount = slides.length;
+    let autoplayInterval;
 
-  navDotsWrapper.innerHTML = CMS.successStories.map((_, idx) => `
-    <button class="carousel-dot ${idx === 0 ? 'active' : ''}" aria-label="View Story ${idx + 1}"></button>
-  `).join("");
+    if (navDotsWrapper) {
+      navDotsWrapper.innerHTML = CMS.successStories.map((_, idx) => `
+        <button class="carousel-dot ${idx === 0 ? 'active' : ''}" aria-label="View Story ${idx + 1}"></button>
+      `).join("");
 
-  const dots = navDotsWrapper.querySelectorAll(".carousel-dot");
+      const dots = navDotsWrapper.querySelectorAll(".carousel-dot");
 
-  dots.forEach((dot, idx) => {
-    dot.addEventListener("click", () => {
-      goToSlide(idx);
-      resetAutoplay();
-    });
-  });
+      dots.forEach((dot, idx) => {
+        dot.addEventListener("click", () => {
+          goToSlide(idx);
+          resetAutoplay();
+        });
+      });
 
-  function goToSlide(index) {
-    if (index < 0) index = slideCount - 1;
-    if (index >= slideCount) index = 0;
+      function goToSlide(index) {
+        if (index < 0) index = slideCount - 1;
+        if (index >= slideCount) index = 0;
 
-    activeIndex = index;
-    carousel.style.transform = `translateX(-${activeIndex * 100}%)`;
+        activeIndex = index;
+        carousel.style.transform = `translateX(-${activeIndex * 100}%)`;
 
-    dots.forEach((dot, idx) => {
-      if (idx === activeIndex) dot.classList.add("active");
-      else dot.classList.remove("active");
-    });
+        dots.forEach((dot, idx) => {
+          if (idx === activeIndex) dot.classList.add("active");
+          else dot.classList.remove("active");
+        });
+      }
+
+      function startAutoplay() {
+        autoplayInterval = setInterval(() => {
+          goToSlide(activeIndex + 1);
+        }, 7000);
+      }
+
+      function resetAutoplay() {
+        clearInterval(autoplayInterval);
+        startAutoplay();
+      }
+
+      startAutoplay();
+    }
   }
-
-  function startAutoplay() {
-    autoplayInterval = setInterval(() => {
-      goToSlide(activeIndex + 1);
-    }, 7000);
-  }
-
-  function resetAutoplay() {
-    clearInterval(autoplayInterval);
-    startAutoplay();
-  }
-
-  startAutoplay();
 
 
   // ==================== 7. MODAL SYSTEM ====================

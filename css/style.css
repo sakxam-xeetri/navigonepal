@@ -2908,114 +2908,110 @@ body.nav-open {
   margin-top: 3rem;
 }
 
-.carousel-container {
-  display: flex;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.carousel-slide {
-  min-width: 100%;
-  padding: 0 0.5rem;
-}
-
-.testimonial-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-left: 4px solid var(--elite-blue);
-  border-radius: 0px;
-  padding: 3rem;
-  display: flex;
-  flex-direction: column;
+.spotlights-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  box-shadow: var(--shadow-md);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
+  margin-top: 1.5rem;
 }
 
-.testimonial-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-  border-color: rgba(37, 99, 235, 0.15);
-}
-
-@media (min-width: 768px) {
-  .testimonial-card {
-    flex-direction: row;
-    align-items: center;
-    padding: 3rem;
+@media (max-width: 991px) {
+  .spotlights-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
 }
 
-.testimonial-img-wrapper {
-  flex-shrink: 0;
-  width: 160px;
-  height: 160px;
-  border-radius: 0px;
-  overflow: hidden;
-  border: 3px solid rgba(37, 99, 235, 0.15);
+@media (max-width: 640px) {
+  .spotlights-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 }
 
-.testimonial-img-wrapper img {
+.spotlight-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 0px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.spotlight-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(37, 99, 235, 0.25);
+}
+
+.spotlight-img-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.spotlight-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter 0.5s ease, transform 0.5s ease;
 }
 
-.testimonial-content {
+.spotlight-card:hover .spotlight-img {
+  filter: grayscale(0%);
+  transform: scale(1.02);
+}
+
+.spotlight-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
   flex-grow: 1;
 }
 
-.quote-icon {
-  display: none;
-}
-
-.testimonial-quote {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
-  font-weight: 500;
-  font-style: normal;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-  color: var(--text-main);
-  border-left: 3px solid var(--accent-color);
-  padding-left: 1.5rem;
-}
-
-.testimonial-author {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+.spotlight-highlight {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
   font-weight: 700;
-  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent-color);
 }
 
-.testimonial-meta {
+.spotlight-quote {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  font-style: italic;
+  margin: 0;
+}
+
+.spotlight-meta-panel {
+  background: var(--bg-primary);
+  border-top: 1px solid var(--border-color);
+  padding: 1rem 1.5rem;
+}
+
+.spotlight-author {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.spotlight-meta-text {
   font-family: 'Inter', sans-serif;
   font-size: 0.8rem;
-  font-weight: 500;
   color: var(--text-muted);
-  margin-top: 0.25rem;
-}
-
-.carousel-nav {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 2rem;
-}
-
-.carousel-dot {
-  width: 10px;
-  height: 10px;
-  background: var(--border-color);
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.carousel-dot.active {
-  background: var(--accent-color);
-  width: 28px;
-  border-radius: var(--radius-full);
+  margin-top: 0.15rem;
 }
 
 /* ==================== COORDINATORS SECTION ==================== */
@@ -6610,38 +6606,21 @@ select.form-control {
 }
 
 .partners-title-wrapper {
-  margin-bottom: 3.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
 }
 
 .partners-title {
   display: inline-block;
-  font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif;
-  font-size: 1.65rem;
-  font-weight: 800;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 400;
   color: var(--text-main);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 0.5rem 2.2rem;
-  position: relative;
+  letter-spacing: 0.03em;
+  line-height: 1.0;
   margin: 0;
-}
-
-.partners-title::before,
-.partners-title::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background-color: var(--accent-color);
-}
-
-.partners-title::before {
-  top: 0;
-}
-
-.partners-title::after {
-  bottom: 0;
+  position: relative;
 }
 
 .partners-grid {
