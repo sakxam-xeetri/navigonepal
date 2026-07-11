@@ -56,7 +56,13 @@
   grid-template-columns: repeat(3, 1fr);
 }
 
-.team-grid--core {
+.team-grid--core-top {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
+}
+
+.team-grid--core-bottom {
   grid-template-columns: repeat(3, 1fr);
 }
 
@@ -89,6 +95,15 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 1.25rem;
+  overflow: hidden;
+}
+
+.team-card-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
 }
 
 .team-avatar-initials {
@@ -275,7 +290,8 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .team-grid--core {
+  .team-grid--core-top,
+  .team-grid--core-bottom {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -283,7 +299,8 @@
 @media (max-width: 768px) {
   .team-grid--advisors,
   .team-grid--founders,
-  .team-grid--core,
+  .team-grid--core-top,
+  .team-grid--core-bottom,
   .team-grid--alumni {
     grid-template-columns: 1fr;
   }
