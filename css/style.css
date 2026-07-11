@@ -2322,11 +2322,13 @@ body.nav-open {
     opacity: 1;
     box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
   }
+
   70% {
     transform: scale(1);
     opacity: 0.5;
     box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
   }
+
   100% {
     transform: scale(1);
     opacity: 0;
@@ -4720,7 +4722,8 @@ select.form-control {
   text-align: left;
   position: relative;
   z-index: 2;
-  margin-left: 2.5rem; /* Inward alignment offset matching reference */
+  margin-left: 2.5rem;
+  /* Inward alignment offset matching reference */
 }
 
 .unicef-banner-title {
@@ -4805,17 +4808,21 @@ select.form-control {
   .wwe-brand-banner {
     padding: 4rem 0;
   }
+
   .unicef-banner-title {
     font-size: 1.85rem;
   }
+
   .unicef-banner-text {
     font-size: 1rem;
     margin-bottom: 1.75rem;
   }
+
   .unicef-banner-btn {
     width: 100%;
     padding: 0.85rem 1.5rem;
   }
+
   .unicef-banner-buttons {
     gap: 0.75rem;
   }
@@ -4946,7 +4953,8 @@ select.form-control {
   align-items: stretch;
   justify-content: center;
   gap: 0;
-  background: #F8FAFC; /* Light gray background matching reference design */
+  background: #F8FAFC;
+  /* Light gray background matching reference design */
   border: 1px solid var(--border-color);
   padding: 3rem 2rem;
   position: relative;
@@ -5976,9 +5984,11 @@ select.form-control {
 [data-theme="dark"] .cr-section-title {
   color: var(--text-main);
 }
+
 [data-theme="dark"] .cr-response-block {
   background: rgba(255, 255, 255, 0.03);
 }
+
 [data-theme="dark"] .cr-image-frame {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
@@ -6688,10 +6698,12 @@ select.form-control {
   .partners-section {
     padding: 4rem 0;
   }
+
   .partners-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
   }
+
   .partners-title {
     font-size: 1.45rem;
     padding: 0.4rem 1.8rem;
@@ -6703,6 +6715,7 @@ select.form-control {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
   }
+
   .partner-logo-card {
     height: 90px;
     padding: 0.85rem;
@@ -6801,6 +6814,7 @@ select.form-control {
   0% {
     transform: translate3d(-50%, 0, 0);
   }
+
   100% {
     transform: translate3d(0, 0, 0);
   }
@@ -6812,15 +6826,15 @@ select.form-control {
     height: 150px;
     margin: 4rem 0 3.5rem;
   }
-  
+
   .marquee-banner-1 {
     transform: rotate(-2deg) scale(1.05);
   }
-  
+
   .marquee-banner-2 {
     transform: rotate(2deg) scale(1.05);
   }
-  
+
   .marquee-track-reverse .marquee-item {
     font-size: 0.85rem;
     padding: 0 2.5rem;
