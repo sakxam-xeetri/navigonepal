@@ -929,6 +929,313 @@
   color: rgba(255, 255, 255, 0.55);
 }
 
+/* ==================== DONATE SECTION LIGHT ==================== */
+.donate-section-light {
+  background: #ffffff;
+}
+
+.donate-section-light .prog-section-tag {
+  color: #4F9CF9;
+}
+
+.donate-section-light .prog-section-title {
+  color: #0F172A;
+}
+
+.donate-section-light .prog-section-desc {
+  color: rgba(15, 23, 42, 0.6);
+}
+
+.donate-section-light .donate-card {
+  background: #F8FAFC;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.donate-section-light .donate-card:hover {
+  background: #F1F5F9;
+  border-color: rgba(79, 156, 249, 0.3);
+}
+
+.donate-section-light .donate-card-title {
+  color: #0F172A;
+}
+
+.donate-section-light .donate-card-desc {
+  color: rgba(15, 23, 42, 0.6);
+}
+
+.donate-section-light .donate-card-list li {
+  color: rgba(15, 23, 42, 0.65);
+}
+
+.donate-section-light .donate-card-btn {
+  background: #0F172A;
+  color: #ffffff;
+}
+
+.donate-section-light .donate-card-btn:hover {
+  background: #1E293B;
+  border-color: #1E293B;
+}
+
+.donate-section-light .donate-card:nth-child(2) .donate-card-btn {
+  background: #10B981;
+}
+
+.donate-section-light .donate-card:nth-child(2) .donate-card-btn:hover {
+  background: #059669;
+}
+
+.donate-section-light .donate-card:nth-child(3) .donate-card-btn {
+  background: #8B5CF6;
+}
+
+.donate-section-light .donate-card:nth-child(3) .donate-card-btn:hover {
+  background: #7C3AED;
+}
+
+@media (max-width: 1000px) {
+  .donate-section-light .donate-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.donate-section-light .donate-impact-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.donate-section-light .donate-impact-card {
+  background: #F8FAFC;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 0;
+  padding: 2.5rem 2rem;
+  transition: all 0.3s ease;
+}
+
+.donate-section-light .donate-impact-card:hover {
+  background: #F1F5F9;
+  border-color: rgba(79, 156, 249, 0.3);
+}
+
+.donate-section-light .donate-impact-number {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: rgba(79, 156, 249, 0.2);
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.donate-section-light .donate-impact-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 0.75rem;
+}
+
+.donate-section-light .donate-impact-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: rgba(15, 23, 42, 0.6);
+}
+
+@media (max-width: 1000px) {
+  .donate-section-light .donate-impact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==================== PAYMENT METHODS ==================== */
+.payment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.payment-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 0;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.payment-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(79, 156, 249, 0.3);
+}
+
+.payment-card--featured {
+  background: rgba(79, 156, 249, 0.06);
+  border-color: rgba(79, 156, 249, 0.2);
+}
+
+.payment-card--featured:hover {
+  background: rgba(79, 156, 249, 0.1);
+  border-color: rgba(79, 156, 249, 0.4);
+}
+
+.payment-card-badge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #4F9CF9;
+  background: rgba(79, 156, 249, 0.12);
+  padding: 0.3rem 0.75rem;
+  border-radius: 0;
+}
+
+.payment-card-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.payment-card-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 1.5rem;
+}
+
+/* QR Code */
+.payment-qr-wrap {
+  background: #ffffff;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  border-radius: 0;
+}
+
+.payment-qr-img {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  display: block;
+}
+
+.payment-qr-hint {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  font-style: italic;
+}
+
+/* Payment Methods List */
+.payment-method-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+.payment-method {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 0;
+  transition: all 0.3s ease;
+}
+
+.payment-method:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(79, 156, 249, 0.2);
+}
+
+.payment-method-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 800;
+  flex-shrink: 0;
+  color: #ffffff;
+}
+
+.payment-method-icon--esewa {
+  background: #60BB46;
+}
+
+.payment-method-icon--khalti {
+  background: #5C2D91;
+}
+
+.payment-method-icon--ime {
+  background: #E31837;
+}
+
+.payment-method-icon--bank {
+  background: rgba(79, 156, 249, 0.2);
+  color: #4F9CF9;
+  font-size: 0.65rem;
+}
+
+.payment-method-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #ffffff;
+  display: block;
+}
+
+.payment-method-id {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.45);
+  display: block;
+  margin-top: 0.15rem;
+}
+
+/* Payment Note */
+.payment-note {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  margin-top: 2.5rem;
+  line-height: 1.7;
+}
+
+.payment-note a {
+  color: #4F9CF9;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.payment-note a:hover {
+  color: #7AB8FF;
+  text-decoration: underline;
+}
+
+@media (max-width: 1000px) {
+  .payment-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 1000px) {
   .donate-cards-grid {
     grid-template-columns: 1fr;
