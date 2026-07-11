@@ -187,6 +187,17 @@ document.addEventListener("DOMContentLoaded", () => {
     foundingStoryText.innerHTML = CMS.story.foundingStory;
   }
 
+  // Background Slideshow for Founding Story (cycles every 5 seconds)
+  const fsSlides = document.querySelectorAll(".fs-slide");
+  if (fsSlides.length > 0) {
+    let currentSlide = 0;
+    setInterval(() => {
+      fsSlides[currentSlide].classList.remove("active");
+      currentSlide = (currentSlide + 1) % fsSlides.length;
+      fsSlides[currentSlide].classList.add("active");
+    }, 5000);
+  }
+
   // Render Leadership Quote
   if (CMS.story.leadershipMessage) {
     const quoteText = document.getElementById("leadershipQuoteText");
