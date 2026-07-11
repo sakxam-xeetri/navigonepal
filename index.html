@@ -351,11 +351,15 @@
 
   <!-- HERO SECTION - Nepal Map Composition -->
   <header class="section hero-map-section" id="hero">
-    <!-- Ambient Background Video -->
+    <!-- Ambient Background Slideshow -->
     <div class="hero-video-bg-container">
-      <video class="hero-bg-video" autoplay loop muted playsinline>
-        <source src="assets/herosection.mp4" type="video/mp4">
-      </video>
+      <div class="hero-bg-slideshow" id="heroBgSlideshow">
+        <img src="https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=1920&q=80" alt="" class="hero-bg-slide active" loading="eager">
+        <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1920&q=80" alt="" class="hero-bg-slide" loading="eager">
+        <img src="https://images.unsplash.com/photo-1526712318848-5f38e2740d44?w=1920&q=80" alt="" class="hero-bg-slide" loading="eager">
+        <img src="https://images.unsplash.com/photo-1558799401-1dcba79834c2?w=1920&q=80" alt="" class="hero-bg-slide" loading="eager">
+        <img src="https://images.unsplash.com/photo-1533130061792-64b345e4a833?w=1920&q=80" alt="" class="hero-bg-slide" loading="eager">
+      </div>
       <div class="hero-video-overlay"></div>
     </div>
 
@@ -385,9 +389,11 @@
           <img src="assets/nepal.png" alt="">
         </div>
 
-        <!-- Student photo masked to Nepal shape -->
+        <!-- Hero video masked to Nepal shape -->
         <div class="hero-map-photo">
-          <img src="assets/girl.png" alt="Nepali student holding Global Goals poster">
+          <video autoplay loop muted playsinline style="width:100%;height:auto;display:block;object-fit:cover;">
+            <source src="assets/herosection.mp4" type="video/mp4">
+          </video>
         </div>
 
         <!-- Decorative brush strokes -->
@@ -2250,6 +2256,20 @@
         });
       });
     });
+  </script>
+
+  <!-- Hero Background Slideshow Script -->
+  <script>
+    (function() {
+      const slides = document.querySelectorAll('.hero-bg-slide');
+      if (slides.length === 0) return;
+      let current = 0;
+      setInterval(function() {
+        slides[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
+      }, 5000);
+    })();
   </script>
 </body>
 

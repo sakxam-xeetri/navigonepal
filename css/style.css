@@ -1137,19 +1137,30 @@ body.nav-open {
   pointer-events: none;
 }
 
-.hero-bg-video {
+.hero-bg-slideshow {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-bg-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.16;
-  /* Subtly transparent to blend beautifully */
+  opacity: 0;
   filter: saturate(0.8) contrast(1.1);
-  transition: opacity 0.5s ease;
+  transition: opacity 1.2s ease-in-out;
 }
 
-[data-theme="dark"] .hero-bg-video {
-  opacity: 0.08;
-  /* Slightly less opacity in dark mode to blend with deep navy background */
+.hero-bg-slide.active {
+  opacity: 0.18;
+}
+
+[data-theme="dark"] .hero-bg-slide.active {
+  opacity: 0.10;
 }
 
 .hero-video-overlay {
