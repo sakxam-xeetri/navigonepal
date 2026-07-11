@@ -2158,12 +2158,19 @@
         </div>
 
         <div class="form-group">
-          <label for="paymentMethod">Select Payment Gateway</label>
+          <label for="paymentMethod">Payment Method</label>
           <select id="paymentMethod" class="form-control">
-            <option value="esewa">eSewa Mobile Wallet</option>
-            <option value="khalti">Khalti Wallet</option>
-            <option value="bank">Direct Bank Transfer (Himalayan Bank)</option>
+            <option value="bank_qr" selected>Direct Bank Transfer (Fonepay QR)</option>
           </select>
+        </div>
+
+        <div id="qrPaymentDetails" style="display: block; border: 1.5px dashed var(--accent-color); padding: 1.5rem; background: var(--bg-primary); margin-top: 1rem; text-align: center;">
+          <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-main);">Scan Fonepay QR Code to Pay</h4>
+          <img id="bankQrImage" src="assets/bank.jpeg" alt="Navigo Nepal Bank QR" style="max-width: 200px; margin: 0.75rem auto; display: block; border: 1px solid var(--border-color); padding: 6px; background: #FFFFFF; border-radius: 0px;">
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.75rem; line-height: 1.6; text-align: left;">
+            <strong>Step 1:</strong> Scan the QR code above with your mobile banking or wallet app to complete the transfer.<br>
+            <strong>Step 2:</strong> Please upload/send your **payment screenshot** to our official **social media accounts** or email it to <a href="mailto:contact@navigonepal.org" style="color: var(--accent-color); font-weight: 600; text-decoration: underline;">contact@navigonepal.org</a> to validate and activate your social media appreciation/account recognition.
+          </p>
         </div>
 
         <button type="submit" class="btn btn-primary" style="width: 100%; gap: 0.75rem;">

@@ -748,6 +748,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // C. Donation Form
   const donationForm = document.getElementById("donationForm");
+  const paymentMethodSelect = document.getElementById("paymentMethod");
+  const qrPaymentDetailsBox = document.getElementById("qrPaymentDetails");
+
+  if (paymentMethodSelect && qrPaymentDetailsBox) {
+    paymentMethodSelect.addEventListener("change", () => {
+      if (paymentMethodSelect.value === "bank_qr") {
+        qrPaymentDetailsBox.style.display = "block";
+      } else {
+        qrPaymentDetailsBox.style.display = "none";
+      }
+    });
+  }
+
   donationForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -771,12 +784,10 @@ document.addEventListener("DOMContentLoaded", () => {
     donationModal.classList.remove("active");
     launchConfettiShower();
 
-    let gatewayText = "eSewa Portal";
-    if (payment === 'khalti') gatewayText = "Khalti Wallet";
-    if (payment === 'bank') gatewayText = "Himalayan Bank Gateway";
-
-    alert(`Redirecting to Secure ${gatewayText}...\n\nThank you for choosing to support ${tier} at ${amount}. Your support empowers public education networks across Nepal!`);
+    alert(`Bank Transfer Request Submitted!\n\nPlease scan the QR code to complete your payment, and upload/send your payment screenshot to our official social media accounts or email contact@navigonepal.org to validate and activate your social media appreciation/account recognition.\n\nThank you for choosing to support ${tier} at ${amount}. Your support empowers public education networks across Nepal!`);
+    
     donationForm.reset();
+    if (qrPaymentDetailsBox) qrPaymentDetailsBox.style.display = "block";
   });
 
   // D. Newsletter Form
