@@ -1968,7 +1968,11 @@ body.nav-open {
   position: relative;
   background: #ffffff;
   color: var(--text-main);
-  padding: clamp(6rem, 10vw, 8rem) 0;
+  height: 100vh;
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  padding: 0;
   overflow: hidden;
   border-top: 1px solid var(--border-color);
 }
@@ -2003,7 +2007,7 @@ body.nav-open {
   text-align: center;
   position: relative;
   z-index: 2;
-  margin-bottom: 5rem;
+  margin-bottom: 2.5rem;
 }
 
 .vision-label-row {
@@ -2011,7 +2015,7 @@ body.nav-open {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .vision-label-line {
@@ -2040,7 +2044,7 @@ body.nav-open {
   color: var(--text-main);
   line-height: 1.0;
   letter-spacing: 0.03em;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
   text-transform: uppercase;
 }
 
@@ -2048,14 +2052,13 @@ body.nav-open {
   color: var(--accent-color);
 }
 
-
 .vision-subtitle {
   font-family: 'Inter', sans-serif;
-  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
   color: var(--text-muted);
   max-width: 660px;
   margin: 0 auto;
-  line-height: 1.8;
+  line-height: 1.7;
   font-weight: 400;
 }
 
@@ -2064,13 +2067,71 @@ body.nav-open {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1.25fr 0.75fr;
   gap: 4rem;
-  margin-bottom: 5rem;
   align-items: center;
-  width: 100vw;
-  margin-left: -5vw;
-  padding: 0 5vw;
+  width: 100%;
+}
+
+.vision-content-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.vision-mv-cards-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.vision-mv-card-flat {
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 3.5px solid var(--accent-color);
+}
+
+.vision-values-flat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.25rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.25rem;
+}
+
+.vision-value-item {
+  position: relative;
+  padding-left: 1.25rem;
+  border-left: 3px solid #10B981;
+}
+
+.vision-value-item-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0 0 0.35rem 0;
+}
+
+.vision-value-item-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .vision-mv-cards-row {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .vision-values-flat-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
 }
 
 @media (max-width: 991px) {

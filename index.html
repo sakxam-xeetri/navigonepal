@@ -771,60 +771,50 @@
 
     <div class="container">
       <!-- Section Header -->
-      <div class="vision-header reveal">
-        <div class="vision-label-row">
-          <span class="vision-label-line"></span>
-          <span class="vision-label-text">Our Foundation</span>
-          <span class="vision-label-line"></span>
+      <div class="reveal" style="text-align: center; margin-bottom: 3.5rem; width: 100%; max-width: 100%;">
+        <!-- Accent bar -->
+        <div class="cr-accent-bar" style="justify-content: center; margin-bottom: 0.75rem;">
+          <span class="cr-accent-seg cr-seg-red"></span>
+          <span class="cr-accent-seg cr-seg-yellow"></span>
+          <span class="cr-accent-seg cr-seg-green"></span>
         </div>
-        <h2 class="vision-title">
+        <p class="cr-eyebrow" style="text-align: center; margin-bottom: 0.5rem;">Our Foundation</p>
+        <h2 class="partners-title" style="font-size: clamp(2.4rem, 5vw, 3.8rem); margin-bottom: 1rem;">
           Our Vision &amp; <span class="vision-title-accent">Core Mandate</span>
         </h2>
-        <p class="vision-subtitle">
+        <p style="color: var(--text-muted); margin: 0 auto; max-width: 720px; font-size: 1.05rem; line-height: 1.8;">
           A youth-led movement bridging the transition to higher studies and equipping students with real-world skills,
           guidance, and community leadership.
         </p>
       </div>
 
-      <!-- Mission & Vision Layout -->
+      <!-- Mission, Vision & Core Values Layout -->
       <div class="vision-mv-new reveal">
-        <div class="vision-mv-cards">
-          <!-- Mission Card -->
-          <div class="vision-mv-card glass-panel glass-panel-hover">
-            <div class="vision-card-header">
-              <div class="vision-card-icon-wrapper">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
-                  class="vision-card-icon">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <circle cx="12" cy="12" r="6"></circle>
-                  <circle cx="12" cy="12" r="2"></circle>
-                </svg>
-              </div>
+        <!-- Left Content Column -->
+        <div class="vision-content-column">
+          <div class="vision-mv-cards-row">
+            <!-- Mission Card -->
+            <div class="vision-mv-card-flat">
               <span class="vision-mv-overline">Our Mission</span>
+              <h3 class="vision-card-title">Fostering Educational Agency</h3>
+              <p id="storyMission" class="vision-mv-paragraph"></p>
             </div>
-            <h3 class="vision-card-title">Fostering Educational Agency</h3>
-            <p id="storyMission" class="vision-mv-paragraph"></p>
+
+            <!-- Vision Card -->
+            <div class="vision-mv-card-flat">
+              <span class="vision-mv-overline">Our Vision</span>
+              <h3 class="vision-card-title">A Nation of Inspired Leaders</h3>
+              <p id="storyVision" class="vision-mv-paragraph"></p>
+            </div>
           </div>
 
-          <!-- Vision Card -->
-          <div class="vision-mv-card glass-panel glass-panel-hover">
-            <div class="vision-card-header">
-              <div class="vision-card-icon-wrapper">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
-                  class="vision-card-icon">
-                  <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
-                  <circle cx="12" cy="12" r="3"></circle>
-                </svg>
-              </div>
-              <span class="vision-mv-overline">Our Vision</span>
-            </div>
-            <h3 class="vision-card-title">A Nation of Inspired Leaders</h3>
-            <p id="storyVision" class="vision-mv-paragraph"></p>
+          <!-- Core Values List (Flat Grid) -->
+          <div class="vision-values-flat-grid" id="coreValuesList">
+            <!-- Rendered dynamically from cms.js -->
           </div>
         </div>
 
+        <!-- Right Collage Column -->
         <div class="vision-mv-image-col">
           <div class="vision-collage">
             <!-- Brush strokes -->
@@ -861,14 +851,6 @@
           </div>
         </div>
       </div>
-
-
-
-
-      <div class="vision-values-grid" id="coreValuesList">
-        <!-- Rendered dynamically from cms.js -->
-      </div>
-    </div>
     </div>
   </section>
 

@@ -221,6 +221,17 @@ document.addEventListener("DOMContentLoaded", () => {
   if (document.getElementById("storyMission")) document.getElementById("storyMission").textContent = CMS.story.mission;
   if (document.getElementById("storyVision")) document.getElementById("storyVision").textContent = CMS.story.vision;
 
+  // Render Core Values List (Flat layout)
+  const coreValuesList = document.getElementById("coreValuesList");
+  if (coreValuesList && CMS.story.values) {
+    coreValuesList.innerHTML = CMS.story.values.map(val => `
+      <div class="vision-value-item reveal">
+        <h4 class="vision-value-item-title">${val.title}</h4>
+        <p class="vision-value-item-desc">${val.desc}</p>
+      </div>
+    `).join("");
+  }
+
   // Render Programs - Helper Function to allow dynamic filtering
   function getProgramIcon(id) {
     if (id === 'stem') return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M9 1v3"/><path d="M15 1v3"/><path d="M9 20v3"/><path d="M15 20v3"/><path d="M20 9h3"/><path d="M20 15h3"/><path d="M1 9h3"/><path d="M1 15h3"/></svg>`;
