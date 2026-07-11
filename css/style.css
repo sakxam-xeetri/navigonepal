@@ -1115,12 +1115,13 @@ body.nav-open {
 }
 
 /* ==================== HERO SECTION — NEPAL MAP COMPOSITION ==================== */
+/* ==================== HERO SECTION - Dark Editorial ==================== */
 .hero-map-section {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding-top: 5rem;
-  background: #FAFAF8;
+  padding-top: 0;
+  background: #0a0a0a;
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -1151,16 +1152,16 @@ body.nav-open {
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  filter: saturate(0.8) contrast(1.1);
-  transition: opacity 1.2s ease-in-out;
+  filter: grayscale(1) brightness(0.45) contrast(1.15);
+  transition: opacity 1.5s ease-in-out;
 }
 
 .hero-bg-slide.active {
-  opacity: 0.18;
+  opacity: 1;
 }
 
-[data-theme="dark"] .hero-bg-slide.active {
-  opacity: 0.10;
+[data-theme="dark"] .hero-bg-slide {
+  filter: grayscale(1) brightness(0.35) contrast(1.1);
 }
 
 .hero-video-overlay {
@@ -1169,12 +1170,22 @@ body.nav-open {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 30% 50%, rgba(250, 250, 248, 0.4) 0%, rgba(250, 250, 248, 0.92) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.45) 50%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
   pointer-events: none;
 }
 
 [data-theme="dark"] .hero-video-overlay {
-  background: radial-gradient(circle at 30% 50%, rgba(6, 23, 47, 0.45) 0%, rgba(6, 23, 47, 0.96) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.82) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.72) 100%
+  );
 }
 
 .hero-map-section::after {
@@ -1182,26 +1193,55 @@ body.nav-open {
 }
 
 [data-theme="dark"] .hero-map-section {
-  background: #06172F;
+  background: #050505;
 }
 
 .hero-map-container {
   position: relative;
   z-index: 5;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 4rem;
-  min-height: calc(100vh - 5rem);
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding-top: 10rem;
+  padding-bottom: 5rem;
 }
 
-/* ---- Left: Text Content ---- */
+/* ---- Colored Accent Bar ---- */
+.hero-accent-bar {
+  display: flex;
+  gap: 0;
+  margin-bottom: 2rem;
+  width: auto;
+}
+
+.hero-accent-segment {
+  display: block;
+  width: 40px;
+  height: 5px;
+}
+
+.hero-accent-red {
+  background: #E63946;
+}
+
+.hero-accent-yellow {
+  background: #F4A261;
+}
+
+.hero-accent-green {
+  background: #2A9D8F;
+}
+
+.hero-accent-blue {
+  background: #2563EB;
+}
+
+/* ---- Text Content ---- */
 .hero-map-text {
   flex: 1;
-  max-width: 580px;
+  max-width: 750px;
   text-align: left;
   animation: heroTextSlide 1s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
@@ -1209,63 +1249,100 @@ body.nav-open {
 @keyframes heroTextSlide {
   from {
     opacity: 0;
-    transform: translateX(-30px);
+    transform: translateY(30px);
   }
 
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
 
 .hero-map-label {
   font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 0.75rem;
+  font-weight: 500;
+  font-size: 0.85rem;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--text-muted);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
+  letter-spacing: 0.18em;
+  color: rgba(255, 255, 255, 0.6);
+  display: block;
+  margin-bottom: 1.25rem;
 }
 
 .hero-map-label-line {
-  width: 28px;
-  height: 2px;
-  background: var(--gradient-primary);
-  display: inline-block;
+  display: none;
 }
 
 .hero-map-title {
   font-family: 'Outfit', sans-serif;
-  font-size: clamp(2.5rem, 5vw, 4.2rem);
-  font-weight: 800;
-  color: var(--text-main);
-  line-height: 1.08;
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 1.02;
   letter-spacing: -0.03em;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
+  text-transform: uppercase;
 }
 
 .hero-map-subtitle {
   font-family: 'Inter', sans-serif;
-  font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
   font-weight: 400;
-  color: var(--text-muted);
-  line-height: 1.8;
-  max-width: 520px;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.85;
+  max-width: 620px;
   margin-bottom: 2.5rem;
 }
 
-/* ---- CTA Buttons ---- */
+/* ---- CTA Buttons (Colored Blocks) ---- */
 .hero-map-ctas {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 0;
   flex-wrap: wrap;
 }
 
+.hero-btn-accent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  padding: 1rem 2rem;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.hero-btn-green {
+  background: #2A9D8F;
+}
+
+.hero-btn-green:hover {
+  background: #21867a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(42, 157, 143, 0.35);
+  color: #FFFFFF;
+}
+
+.hero-btn-yellow {
+  background: #F4A261;
+}
+
+.hero-btn-yellow:hover {
+  background: #e08e4a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(244, 162, 97, 0.35);
+  color: #FFFFFF;
+}
+
+/* Keep old btn classes for compatibility elsewhere */
 .hero-btn-dark {
   display: inline-flex;
   align-items: center;
@@ -1309,8 +1386,8 @@ body.nav-open {
   font-size: 0.9rem;
   padding: 0.95rem 2.2rem;
   background: transparent;
-  color: var(--text-main);
-  border: 2px solid var(--border-color);
+  color: #FFFFFF;
+  border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 0;
   cursor: pointer;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1318,198 +1395,9 @@ body.nav-open {
 }
 
 .hero-btn-outline:hover {
-  border-color: var(--accent-color);
-  color: var(--accent-color);
-  transform: translateY(-2px);
-}
-
-/* ---- Right: Nepal Map Visual Composition ---- */
-.hero-map-visual {
-  flex: 1;
-  position: relative;
-  max-width: 820px;
-  /* Scaled up by an additional 10% (820px) */
-  min-height: 450px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: heroVisualFade 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
-}
-
-@keyframes heroVisualFade {
-  from {
-    opacity: 0;
-    transform: translateX(30px) scale(0.95);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-  }
-}
-
-/* Background silhouette — drop shadow outline offset slightly larger than the foreground */
-.hero-map-silhouette {
-  position: absolute;
-  top: -2%;
-  left: -2.5%;
-  width: 105%;
-  height: 105%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.hero-map-silhouette img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  filter: grayscale(1) brightness(1.7) contrast(0.6);
-  opacity: 0.16;
-}
-
-[data-theme="dark"] .hero-map-silhouette img {
-  filter: grayscale(1) brightness(0.3) contrast(0.5);
-  opacity: 0.22;
-}
-
-/* Student photo masked to Nepal shape - enlarged to take full width */
-.hero-map-photo {
-  position: relative;
-  width: 100%;
-  z-index: 2;
-  -webkit-mask-image: url('../assets/nepal.png');
-  mask-image: url('../assets/nepal.png');
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
-}
-
-.hero-map-photo img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  display: block;
-}
-
-/* ---- Decorative Brush Strokes ---- */
-.hero-brush-stroke {
-  position: absolute;
-  z-index: 3;
-  pointer-events: none;
-}
-
-.hero-brush-1 {
-  width: 220px;
-  top: 10%;
-  right: 2%;
-  transform: rotate(-8deg);
-  animation: brushFloat1 8s ease-in-out infinite;
-}
-
-.hero-brush-2 {
-  width: 180px;
-  bottom: 18%;
-  left: 2%;
-  transform: rotate(5deg);
-  animation: brushFloat2 10s ease-in-out infinite;
-}
-
-.hero-brush-3 {
-  width: 140px;
-  bottom: 40%;
-  right: -8%;
-  transform: rotate(-12deg);
-  animation: brushFloat3 12s ease-in-out infinite;
-}
-
-@keyframes brushFloat1 {
-
-  0%,
-  100% {
-    transform: rotate(-8deg) translate(0, 0);
-  }
-
-  50% {
-    transform: rotate(-6deg) translate(-5px, 8px);
-  }
-}
-
-@keyframes brushFloat2 {
-
-  0%,
-  100% {
-    transform: rotate(5deg) translate(0, 0);
-  }
-
-  50% {
-    transform: rotate(7deg) translate(8px, -5px);
-  }
-}
-
-@keyframes brushFloat3 {
-
-  0%,
-  100% {
-    transform: rotate(-12deg) translate(0, 0);
-  }
-
-  50% {
-    transform: rotate(-10deg) translate(-6px, 6px);
-  }
-}
-
-/* ---- Stats Bubble ---- */
-.hero-stats-bubble {
-  position: absolute;
-  bottom: 8%;
-  right: 0%;
-  width: 120px;
-  height: 120px;
-  background: var(--accent-color);
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 5;
-  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.3);
-  animation: statsPulse 3s ease-in-out infinite;
-}
-
-.hero-stats-number {
-  font-family: 'Outfit', sans-serif;
-  font-size: 1.6rem;
-  font-weight: 800;
+  border-color: #FFFFFF;
   color: #FFFFFF;
-  line-height: 1;
-}
-
-.hero-stats-label {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.58rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.85);
-  text-align: center;
-  line-height: 1.3;
-  margin-top: 0.25rem;
-}
-
-@keyframes statsPulse {
-
-  0%,
-  100% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.05);
-  }
+  transform: translateY(-2px);
 }
 
 /* ---- Hero Responsive ---- */
@@ -1519,92 +1407,38 @@ body.nav-open {
   }
 
   .hero-map-container {
-    flex-direction: column;
-    text-align: center;
-    padding-top: 6rem;
-    padding-bottom: 3rem;
-    gap: 2.5rem;
-    min-height: auto;
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+    min-height: 100vh;
   }
 
   .hero-map-text {
-    text-align: center;
     max-width: 100%;
-  }
-
-  .hero-map-subtitle {
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .hero-map-ctas {
-    justify-content: center;
-  }
-
-  .hero-map-visual {
-    max-width: 100%;
-    min-height: 300px;
-  }
-
-  .hero-map-silhouette {
-    top: -5%;
-    right: -10%;
-    width: 120%;
-    height: 110%;
-  }
-
-  .hero-stats-bubble {
-    width: 100px;
-    height: 100px;
-    bottom: 5%;
-    right: 5%;
-  }
-
-  .hero-stats-number {
-    font-size: 1.3rem;
-  }
-
-  .hero-stats-label {
-    font-size: 0.52rem;
+    flex-wrap: wrap;
   }
 }
 
 @media (max-width: 576px) {
   .hero-map-container {
-    padding-top: 5rem;
+    padding-top: 7rem;
+    padding-bottom: 3rem;
   }
 
   .hero-map-title {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
-  .hero-map-visual {
-    min-height: 220px;
+  .hero-accent-segment {
+    width: 28px;
+    height: 4px;
   }
 
-  .hero-brush-1 {
-    width: 140px;
-  }
-
-  .hero-brush-2 {
-    width: 110px;
-  }
-
-  .hero-brush-3 {
-    width: 90px;
-  }
-
-  .hero-stats-bubble {
-    width: 80px;
-    height: 80px;
-  }
-
-  .hero-stats-number {
-    font-size: 1.1rem;
-  }
-
-  .hero-stats-label {
-    font-size: 0.48rem;
+  .hero-btn-accent {
+    padding: 0.85rem 1.6rem;
+    font-size: 0.78rem;
   }
 
   .hero-btn-dark,
