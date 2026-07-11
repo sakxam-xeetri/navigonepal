@@ -181,18 +181,22 @@
 }
 
 .coord-leader-card {
-  background: rgba(255, 255, 255, 0.02);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
   border: 1px solid rgba(79, 156, 249, 0.08);
   padding: 2rem;
   position: relative;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
   border-radius: var(--radius-md);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .coord-leader-card:hover {
-  border-color: rgba(79, 156, 249, 0.15);
-  transform: translateY(-4px);
+  border-color: rgba(79, 156, 249, 0.25);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35), 0 0 30px rgba(79, 156, 249, 0.15);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
 }
 
 .coord-leader-avatar {
@@ -206,6 +210,12 @@
   border-radius: var(--radius-md);
   overflow: hidden;
   background: #0d2a4a;
+  border: 2px solid rgba(79, 156, 249, 0.15);
+  transition: border-color 0.4s ease;
+}
+
+.coord-leader-card:hover .coord-leader-avatar {
+  border-color: rgba(79, 156, 249, 0.4);
 }
 
 .coord-leader-avatar img {
@@ -213,6 +223,11 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.coord-leader-card:hover .coord-leader-avatar img {
+  transform: scale(1.08);
 }
 
 .coord-avatar-initials {
@@ -292,11 +307,14 @@
 }
 
 .coord-card {
-  background: rgba(255, 255, 255, 0.02);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
   border: 1px solid rgba(79, 156, 249, 0.06);
   padding: 2rem;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .coord-card::after {
@@ -311,9 +329,10 @@
 }
 
 .coord-card:hover {
-  border-color: rgba(79, 156, 249, 0.15);
-  background: rgba(255, 255, 255, 0.04);
-  transform: translateY(-3px);
+  border-color: rgba(79, 156, 249, 0.2);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 25px rgba(79, 156, 249, 0.12);
 }
 
 .coord-card:hover::after {
@@ -336,6 +355,12 @@
   border-radius: var(--radius-md);
   overflow: hidden;
   background: #0d2a4a;
+  border: 2px solid rgba(79, 156, 249, 0.12);
+  transition: border-color 0.4s ease;
+}
+
+.coord-card:hover .coord-card-avatar {
+  border-color: rgba(79, 156, 249, 0.35);
 }
 
 .coord-card-avatar img {
@@ -343,6 +368,11 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.coord-card:hover .coord-card-avatar img {
+  transform: scale(1.08);
 }
 
 .coord-card-meta {
