@@ -6847,3 +6847,437 @@ select.form-control {
     margin: 3.5rem 0 2.5rem;
   }
 }
+
+/* ============================================================
+   NAVIGO COORDINATORS SECTION — Premium NGO-Grade Design
+   ============================================================ */
+
+/* --- Section Container --- */
+.nv-coord-section {
+  position: relative;
+  padding: 7rem 0 6rem;
+  background: linear-gradient(180deg, #030B18 0%, #06172F 40%, #0A1E3D 70%, #030B18 100%);
+  overflow: hidden;
+}
+
+/* --- Decorative Background --- */
+.nv-coord-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.nv-coord-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(79, 156, 249, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(79, 156, 249, 0.035) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 80%);
+}
+
+.nv-coord-bg-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.5;
+}
+
+.nv-coord-bg-glow--1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
+  top: -10%;
+  left: -8%;
+  animation: nvCoordFloat 18s ease-in-out infinite;
+}
+
+.nv-coord-bg-glow--2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
+  bottom: -5%;
+  right: -5%;
+  animation: nvCoordFloat 22s ease-in-out infinite reverse;
+}
+
+.nv-coord-bg-glow--3 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(79, 156, 249, 0.08) 0%, transparent 70%);
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: nvCoordFloat 15s ease-in-out infinite 3s;
+}
+
+@keyframes nvCoordFloat {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(15px, -20px); }
+  66% { transform: translate(-10px, 15px); }
+}
+
+/* --- Section Header --- */
+.nv-coord-header {
+  text-align: center;
+  margin-bottom: 4.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.nv-coord-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(79, 156, 249, 0.06);
+  border: 1px solid rgba(79, 156, 249, 0.12);
+  border-radius: 100px;
+  padding: 0.45rem 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.nv-coord-badge-dot {
+  width: 7px;
+  height: 7px;
+  background: #4F9CF9;
+  border-radius: 50%;
+  display: inline-block;
+  animation: nvCoordPulse 2s ease-in-out infinite;
+  box-shadow: 0 0 8px rgba(79, 156, 249, 0.5);
+}
+
+@keyframes nvCoordPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.75); }
+}
+
+.nv-coord-badge-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #4F9CF9;
+}
+
+.nv-coord-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+
+.nv-coord-title-accent {
+  background: linear-gradient(135deg, #4F9CF9, #10B981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nv-coord-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+  color: #8BA3C4;
+  line-height: 1.75;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+}
+
+.nv-coord-title-line {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #4F9CF9, #10B981);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* --- Grid Layout — 4 cards per row --- */
+.nv-coord-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Card Design --- */
+.nv-coord-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.nv-coord-card-glow {
+  position: absolute;
+  inset: -1px;
+  border-radius: 17px;
+  background: linear-gradient(135deg, rgba(79, 156, 249, 0.08), rgba(16, 185, 129, 0.04), transparent);
+  z-index: 0;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nv-coord-card:hover .nv-coord-card-glow {
+  background: linear-gradient(135deg, rgba(79, 156, 249, 0.2), rgba(16, 185, 129, 0.1), transparent);
+}
+
+.nv-coord-card-inner {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(170deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+  border: 1px solid rgba(79, 156, 249, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.nv-coord-card:hover .nv-coord-card-inner {
+  border-color: rgba(79, 156, 249, 0.22);
+  transform: translateY(-8px);
+  box-shadow:
+    0 24px 48px rgba(0, 0, 0, 0.35),
+    0 0 40px rgba(79, 156, 249, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* --- Card Image --- */
+.nv-coord-card-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0d1f3c 0%, #0a1628 100%);
+}
+
+.nv-coord-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+  filter: brightness(0.92) contrast(1.04);
+}
+
+.nv-coord-card:hover .nv-coord-card-img {
+  transform: scale(1.08);
+  filter: brightness(1) contrast(1.02);
+}
+
+.nv-coord-card-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(3, 11, 24, 0.85) 100%);
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.nv-coord-card:hover .nv-coord-card-img-overlay {
+  background: linear-gradient(180deg, transparent 30%, rgba(3, 11, 24, 0.75) 100%);
+}
+
+/* --- Initials Avatar (for members without photos) --- */
+.nv-coord-card-initials-wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.nv-coord-card-initials-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 25% 35%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 75% 65%, rgba(79, 156, 249, 0.04) 0%, transparent 40%);
+}
+
+.nv-coord-avatar--emerald {
+  background: linear-gradient(135deg, #064e3b 0%, #0d2a4a 50%, #065f46 100%);
+}
+
+.nv-coord-avatar--sky {
+  background: linear-gradient(135deg, #0c4a6e 0%, #0d2a4a 50%, #075985 100%);
+}
+
+.nv-coord-avatar--violet {
+  background: linear-gradient(135deg, #4c1d95 0%, #1e1b4b 50%, #5b21b6 100%);
+}
+
+.nv-coord-card-initials {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.05em;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  transition: color 0.4s ease, text-shadow 0.4s ease;
+}
+
+.nv-coord-card:hover .nv-coord-card-initials {
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 0 20px rgba(79, 156, 249, 0.3);
+}
+
+/* --- Card Content --- */
+.nv-coord-card-content {
+  padding: 1.25rem 1.25rem 1.5rem;
+}
+
+.nv-coord-card-role {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #4F9CF9;
+  display: block;
+  margin-bottom: 0.5rem;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.nv-coord-card:hover .nv-coord-card-role {
+  opacity: 1;
+}
+
+.nv-coord-card-name {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 0.6rem;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.nv-coord-card-quote {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.42);
+  font-style: italic;
+  margin: 0;
+  transition: color 0.4s ease;
+}
+
+.nv-coord-card:hover .nv-coord-card-quote {
+  color: rgba(255, 255, 255, 0.58);
+}
+
+/* --- Card Bottom Accent Line --- */
+.nv-coord-card-accent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #4F9CF9, #10B981, #4F9CF9);
+  background-size: 200% 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 2;
+}
+
+.nv-coord-card:hover .nv-coord-card-accent {
+  transform: scaleX(1);
+  animation: nvCoordAccentShimmer 2s linear infinite;
+}
+
+@keyframes nvCoordAccentShimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* --- Staggered Reveal Animation --- */
+.nv-coord-card.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nv-coord-card.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nv-coord-card:nth-child(1).reveal { transition-delay: 0s; }
+.nv-coord-card:nth-child(2).reveal { transition-delay: 0.08s; }
+.nv-coord-card:nth-child(3).reveal { transition-delay: 0.16s; }
+.nv-coord-card:nth-child(4).reveal { transition-delay: 0.24s; }
+.nv-coord-card:nth-child(5).reveal { transition-delay: 0.32s; }
+.nv-coord-card:nth-child(6).reveal { transition-delay: 0.40s; }
+.nv-coord-card:nth-child(7).reveal { transition-delay: 0.48s; }
+.nv-coord-card:nth-child(8).reveal { transition-delay: 0.56s; }
+
+/* --- Responsive: Tablet --- */
+@media (max-width: 1024px) {
+  .nv-coord-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .nv-coord-section {
+    padding: 5rem 0 4rem;
+  }
+
+  .nv-coord-header {
+    margin-bottom: 3.5rem;
+  }
+}
+
+/* --- Responsive: Mobile --- */
+@media (max-width: 640px) {
+  .nv-coord-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+  }
+
+  .nv-coord-section {
+    padding: 4rem 0 3rem;
+  }
+
+  .nv-coord-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .nv-coord-card-content {
+    padding: 0.85rem 0.85rem 1.1rem;
+  }
+
+  .nv-coord-card-name {
+    font-size: 0.9rem;
+  }
+
+  .nv-coord-card-quote {
+    font-size: 0.72rem;
+    line-height: 1.6;
+  }
+
+  .nv-coord-card-role {
+    font-size: 0.55rem;
+  }
+
+  .nv-coord-card-initials {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .nv-coord-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
