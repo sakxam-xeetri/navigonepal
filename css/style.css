@@ -1230,7 +1230,8 @@ body.nav-open {
   }
 
   .hero-logo-display {
-    display: none;
+    width: 100%;
+    margin-top: 3rem;
   }
 }
 
