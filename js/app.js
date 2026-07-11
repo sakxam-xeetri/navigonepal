@@ -33,8 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const themeToggle = document.getElementById("themeToggle");
   const htmlElement = document.documentElement;
-  const sunIcon = themeToggle.querySelector(".sun-icon");
-  const moonIcon = themeToggle.querySelector(".moon-icon");
+  const sunIcon = themeToggle ? themeToggle.querySelector(".sun-icon") : null;
+  const moonIcon = themeToggle ? themeToggle.querySelector(".moon-icon") : null;
 
   const savedTheme = localStorage.getItem("navigo-theme") || "light";
   htmlElement.setAttribute("data-theme", savedTheme);
