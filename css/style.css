@@ -4086,11 +4086,12 @@ select.form-control {
 
 /* ==================== PREMIUM FOOTER ==================== */
 .footer {
-  background: var(--primary-navy);
+  background: #0a0a0a;
   color: rgba(255, 255, 255, 0.8);
   padding: 5rem 0 2rem;
   position: relative;
   z-index: 10;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .footer::before {
@@ -4099,8 +4100,8 @@ select.form-control {
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: var(--gradient-accent);
+  height: 4px;
+  background: linear-gradient(90deg, #E63946 0%, #E63946 25%, #F4A261 25%, #F4A261 50%, #2A9D8F 50%, #2A9D8F 75%, #2563EB 75%, #2563EB 100%);
 }
 
 .footer-grid {
@@ -4121,9 +4122,9 @@ select.form-control {
 }
 
 .footer-col h3 {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 1.05rem;
-  font-weight: 700;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 400;
   color: #FFFFFF;
   margin-bottom: 1.5rem;
   position: relative;
@@ -4136,9 +4137,9 @@ select.form-control {
   position: absolute;
   bottom: -0.5rem;
   left: 0;
-  width: 24px;
+  width: 28px;
   height: 2px;
-  background: var(--color-accent-green);
+  background: #2A9D8F;
 }
 
 .footer-links {
@@ -4158,7 +4159,7 @@ select.form-control {
 }
 
 .footer-links a:hover {
-  color: var(--color-accent-green);
+  color: var(--accent-light);
   padding-left: 6px;
 }
 
@@ -4179,9 +4180,9 @@ select.form-control {
 }
 
 .social-btn-footer:hover {
-  background: var(--color-accent-green);
-  border-color: var(--color-accent-green);
-  color: var(--color-deep-navy);
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: #ffffff;
   transform: translateY(-2px);
 }
 
@@ -4221,14 +4222,14 @@ select.form-control {
 .newsletter-form .btn {
   border-radius: 0;
   padding: 0 1.25rem;
-  background: var(--color-luxury-blue);
+  background: var(--accent-color);
   color: white;
   border: none;
   transition: background 0.3s ease;
 }
 
 .newsletter-form .btn:hover {
-  background: var(--color-primary-navy);
+  background: var(--accent-light);
 }
 
 .footer-bottom {
@@ -4266,7 +4267,7 @@ select.form-control {
 }
 
 .footer-bottom-links a:hover {
-  color: var(--color-accent-green);
+  color: var(--accent-light);
 }
 
 .back-to-top-btn {
