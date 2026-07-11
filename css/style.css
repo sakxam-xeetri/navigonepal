@@ -2934,12 +2934,20 @@ body.nav-open {
 .testimonial-card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-xl);
+  border-left: 4px solid var(--elite-blue);
+  border-radius: 0px;
   padding: 3rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
   box-shadow: var(--shadow-md);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(37, 99, 235, 0.15);
 }
 
 @media (min-width: 768px) {
@@ -2954,7 +2962,7 @@ body.nav-open {
   flex-shrink: 0;
   width: 160px;
   height: 160px;
-  border-radius: var(--radius-lg);
+  border-radius: 0px;
   overflow: hidden;
   border: 3px solid rgba(37, 99, 235, 0.15);
 }

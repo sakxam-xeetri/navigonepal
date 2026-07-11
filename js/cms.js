@@ -177,7 +177,7 @@ const NAVIGO_CMS = {
 
   successStories: [
     {
-      name: "Aayush Bhandari",
+      name: "Ayushi Bhandari",
       location: "Kathmandu",
       role: "Scout Leader, Gyanodaya School",
       image: "assets/11.png",

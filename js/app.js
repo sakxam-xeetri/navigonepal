@@ -236,10 +236,10 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="carousel-slide">
       <div class="testimonial-card">
         <div class="testimonial-img-wrapper">
-          <img src="${story.image}" alt="${story.name}" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\\'width:100%;height:100%;background:linear-gradient(135deg,rgba(37,99,235,0.15),rgba(16,185,129,0.1));display:flex;align-items:center;justify-content:center;color:var(--accent-color);font-family:Plus Jakarta Sans;font-size:2.5rem;font-weight:800;\\'>${story.name[0]}</div>'">
+          <img src="${story.image}" alt="${story.name}" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\\'width:100%;height:100%;background:rgba(37,99,235,0.08);display:flex;align-items:center;justify-content:center;color:var(--accent-color);font-family:Plus Jakarta Sans;font-size:2.5rem;font-weight:800;\\'>${story.name[0]}</div>'">
         </div>
         <div class="testimonial-content">
-          <span class="gradient-accent" style="font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; display: inline-block; margin-bottom: 0.75rem;">${story.highlight}</span>
+          <span style="color: var(--elite-blue); font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; display: inline-block; margin-bottom: 0.75rem;">${story.highlight}</span>
           <p class="testimonial-quote">${story.quote}</p>
           <div class="testimonial-author">${story.name}</div>
           <div class="testimonial-meta">${story.role} &bull; ${story.location}</div>
@@ -1199,5 +1199,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  initConstellation();
+  // initConstellation();
 });
