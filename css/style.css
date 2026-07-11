@@ -1928,6 +1928,10 @@ body.nav-open {
   border-top: 1px solid var(--border-color);
 }
 
+[data-theme="dark"] .vision-section {
+  background: #030b18;
+}
+
 /* Ambient decorative elements */
 .vision-ambient-orb {
   display: none;
@@ -2059,7 +2063,7 @@ body.nav-open {
 
 .vision-value-item-title {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: var(--text-main);
   margin: 0 0 0.35rem 0;
@@ -2067,8 +2071,8 @@ body.nav-open {
 
 .vision-value-item-desc {
   font-family: 'Inter', sans-serif;
-  font-size: 0.8rem;
-  line-height: 1.55;
+  font-size: 0.9rem;
+  line-height: 1.6;
   color: var(--text-muted);
   margin: 0;
 }
@@ -2171,7 +2175,7 @@ body.nav-open {
 
 .vision-card-title {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(1.25rem, 2vw, 1.45rem);
+  font-size: clamp(1.35rem, 2.2vw, 1.55rem);
   font-weight: 700;
   color: var(--text-main);
   margin-bottom: 0.75rem;
@@ -2180,7 +2184,7 @@ body.nav-open {
 
 .vision-mv-overline {
   font-family: 'Inter', sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.15em;
@@ -2191,7 +2195,7 @@ body.nav-open {
 
 .vision-mv-paragraph {
   font-family: 'Inter', sans-serif;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   line-height: 1.75;
   color: var(--text-muted);
   font-weight: 400;
