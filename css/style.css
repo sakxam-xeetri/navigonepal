@@ -6187,7 +6187,7 @@ select.form-control {
 }
 
 .fs-title-accent {
-  color: var(--accent-color) !important;
+  color: #F4A261 !important;
   background: none !important;
   -webkit-text-fill-color: initial !important;
   background-clip: initial !important;
@@ -6231,7 +6231,7 @@ select.form-control {
   top: 0;
   bottom: 0;
   width: 4px;
-  background: var(--accent-color);
+  background: #10B981;
   border-radius: 0px;
 }
 
