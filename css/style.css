@@ -37,12 +37,12 @@
 
   --gradient-primary: linear-gradient(135deg, #2563EB 0%, #4F9CF9 100%);
   --gradient-hero: linear-gradient(135deg, #0A2342 0%, #1a3a5c 50%, #06172F 100%);
-  --gradient-accent: linear-gradient(135deg, #2563EB 0%, #10B981 100%);
-  --gradient-card: linear-gradient(180deg, rgba(37, 99, 235, 0.03) 0%, rgba(16, 185, 129, 0.03) 100%);
+  --gradient-accent: #2563EB;
+  --gradient-card: linear-gradient(180deg, rgba(37, 99, 235, 0.03) 0%, rgba(10, 35, 66, 0.03) 100%);
   --gradient-subtle: linear-gradient(180deg, rgba(37, 99, 235, 0.02) 0%, transparent 100%);
 
   --glow-1: rgba(79, 156, 249, 0.08);
-  --glow-2: rgba(16, 185, 129, 0.05);
+  --glow-2: rgba(37, 99, 235, 0.05);
   --shadow-sm: 0 1px 3px rgba(10, 35, 66, 0.06);
   --shadow-md: 0 4px 20px rgba(10, 35, 66, 0.08);
   --shadow-lg: 0 12px 40px rgba(10, 35, 66, 0.1);
@@ -74,11 +74,11 @@
   --secondary-color: #F0F6FF;
 
   --gradient-primary: linear-gradient(135deg, #4F9CF9 0%, #7BB8FF 100%);
-  --gradient-card: linear-gradient(180deg, rgba(79, 156, 249, 0.05) 0%, rgba(52, 211, 153, 0.05) 100%);
+  --gradient-card: linear-gradient(180deg, rgba(79, 156, 249, 0.05) 0%, rgba(13, 42, 74, 0.05) 100%);
   --gradient-subtle: linear-gradient(180deg, rgba(79, 156, 249, 0.03) 0%, transparent 100%);
 
   --glow-1: rgba(79, 156, 249, 0.12);
-  --glow-2: rgba(16, 185, 129, 0.08);
+  --glow-2: rgba(79, 156, 249, 0.08);
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
   --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.25);
   --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.3);
