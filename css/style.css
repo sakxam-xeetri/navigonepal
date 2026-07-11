@@ -1200,12 +1200,13 @@ body.nav-open {
   position: relative;
   z-index: 5;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
   min-height: 100vh;
-  padding-top: 10rem;
-  padding-bottom: 5rem;
+  padding-top: 8rem;
+  padding-bottom: 4rem;
 }
 
 /* ---- Colored Accent Bar ---- */
@@ -1241,7 +1242,7 @@ body.nav-open {
 /* ---- Text Content ---- */
 .hero-map-text {
   flex: 1;
-  max-width: 750px;
+  max-width: 620px;
   text-align: left;
   animation: heroTextSlide 1s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
@@ -1274,23 +1275,23 @@ body.nav-open {
 }
 
 .hero-map-title {
-  font-family: 'Outfit', sans-serif;
-  font-size: clamp(2.8rem, 6vw, 5rem);
-  font-weight: 900;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.8rem, 5.5vw, 5rem);
+  font-weight: 400;
   color: #FFFFFF;
-  line-height: 1.02;
-  letter-spacing: -0.03em;
-  margin-bottom: 1.75rem;
+  line-height: 1.0;
+  letter-spacing: 0.03em;
+  margin-bottom: 1.5rem;
   text-transform: uppercase;
 }
 
 .hero-map-subtitle {
   font-family: 'Inter', sans-serif;
-  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  font-size: clamp(0.92rem, 1.4vw, 1.05rem);
   font-weight: 400;
   color: rgba(255, 255, 255, 0.72);
   line-height: 1.85;
-  max-width: 620px;
+  max-width: 540px;
   margin-bottom: 2.5rem;
 }
 
@@ -1400,6 +1401,110 @@ body.nav-open {
   transform: translateY(-2px);
 }
 
+/* ---- Right: Nepal Map + Video Visual ---- */
+.hero-map-visual {
+  flex: 0 0 auto;
+  position: relative;
+  width: 900px;
+  max-width: 80vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: heroMapFloat 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+@keyframes heroMapFloat {
+  from {
+    opacity: 0;
+    transform: translateX(40px) scale(0.92);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* Continuous gentle float */
+.hero-map-visual::before {
+  content: '';
+  display: block;
+}
+
+/* SVG Map outline overlay */
+.hero-map-svg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-map-svg-overlay img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.12;
+  mix-blend-mode: screen;
+}
+
+/* Video masked to Nepal shape */
+.hero-map-photo {
+  position: relative;
+  width: 100%;
+  z-index: 2;
+  -webkit-mask-image: url('../assets/nepal.png');
+  mask-image: url('../assets/nepal.png');
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  animation: mapSubtleFloat 8s ease-in-out infinite;
+}
+
+@keyframes mapSubtleFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.hero-map-photo video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* Ambient glow behind the map */
+.hero-map-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  height: 70%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(37, 99, 235, 0.18) 0%,
+    rgba(42, 157, 143, 0.08) 40%,
+    transparent 70%
+  );
+  z-index: 0;
+  pointer-events: none;
+  filter: blur(40px);
+}
+
 /* ---- Hero Responsive ---- */
 @media (max-width: 992px) {
   .hero-map-section {
@@ -1407,28 +1512,46 @@ body.nav-open {
   }
 
   .hero-map-container {
-    padding-top: 8rem;
-    padding-bottom: 4rem;
-    min-height: 100vh;
+    flex-direction: column;
+    padding-top: 7rem;
+    padding-bottom: 3rem;
+    min-height: auto;
+    gap: 3rem;
   }
 
   .hero-map-text {
     max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-accent-bar {
+    justify-content: center;
+  }
+
+  .hero-map-subtitle {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .hero-map-ctas {
+    justify-content: center;
     flex-wrap: wrap;
+  }
+
+  .hero-map-visual {
+    width: 100%;
+    max-width: 400px;
   }
 }
 
 @media (max-width: 576px) {
   .hero-map-container {
-    padding-top: 7rem;
-    padding-bottom: 3rem;
+    padding-top: 6rem;
+    padding-bottom: 2.5rem;
   }
 
   .hero-map-title {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .hero-accent-segment {
@@ -1439,6 +1562,10 @@ body.nav-open {
   .hero-btn-accent {
     padding: 0.85rem 1.6rem;
     font-size: 0.78rem;
+  }
+
+  .hero-map-visual {
+    max-width: 320px;
   }
 
   .hero-btn-dark,
