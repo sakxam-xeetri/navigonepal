@@ -6621,7 +6621,7 @@ select.form-control {
 .partner-logo-card {
   background-color: #FFFFFF;
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
+  border-radius: 0px;
   height: 105px;
   display: flex;
   align-items: center;
