@@ -718,6 +718,63 @@ document.addEventListener("DOMContentLoaded", () => {
     requestAnimationFrame(loop);
   }
 
+  // Inject spinner styles dynamically for Formspree loading states
+  const spinnerStyle = document.createElement("style");
+  spinnerStyle.textContent = `
+    .form-spinner {
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: #fff;
+      animation: form-spin 0.8s linear infinite;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
+    @keyframes form-spin {
+      to { transform: rotate(360deg); }
+    }
+  `;
+  document.head.appendChild(spinnerStyle);
+
+  // Common Formspree Submit Handler
+  function handleFormspreeSubmit(form, submitBtn, successCallback) {
+    const originalBtnHtml = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span class="form-spinner"></span> Submitting...';
+
+    const formData = new FormData(form);
+    fetch(form.action, {
+      method: "POST",
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        if (successCallback) successCallback();
+        window.location.href = "thank-you.html";
+      } else {
+        response.json().then(data => {
+          if (data && data.errors) {
+            alert("Error: " + data.errors.map(err => err.message).join(", "));
+          } else {
+            alert("Oops! There was a problem submitting your form. Please try again.");
+          }
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnHtml;
+        });
+      }
+    })
+    .catch(error => {
+      alert("Oops! There was a network error. Please check your internet connection and try again.");
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalBtnHtml;
+    });
+  }
+
   // A. Contact Form
   const contactForm = document.getElementById("contactForm");
   contactForm.addEventListener("submit", (e) => {
@@ -737,9 +794,8 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    launchConfettiShower();
-    alert(`Thank you, ${name}! Your message has been sent. Our team will contact you shortly.`);
-    contactForm.reset();
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    handleFormspreeSubmit(contactForm, submitBtn);
   });
 
   // B. Volunteer Form
@@ -763,10 +819,10 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    volunteerModal.classList.remove("active");
-    launchConfettiShower();
-    alert(`Registration Successful! Thank you ${name} for stepping forward to lead student empowerment in ${district}. Check your inbox for confirmation.`);
-    volunteerForm.reset();
+    const submitBtn = volunteerForm.querySelector('button[type="submit"]');
+    handleFormspreeSubmit(volunteerForm, submitBtn, () => {
+      volunteerModal.classList.remove("active");
+    });
   });
 
   // C. Donation Form
@@ -804,13 +860,14 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    donationModal.classList.remove("active");
-    launchConfettiShower();
+    // Set hidden fields
+    document.getElementById("donorTier").value = tier;
+    document.getElementById("donorAmount").value = amount;
 
-    alert(`Bank Transfer Request Submitted!\n\nPlease scan the QR code to complete your payment, and upload/send your payment screenshot to our official social media accounts or email contact@navigonepal.org to validate and activate your social media appreciation/account recognition.\n\nThank you for choosing to support ${tier} at ${amount}. Your support empowers public education networks across Nepal!`);
-
-    donationForm.reset();
-    if (qrPaymentDetailsBox) qrPaymentDetailsBox.style.display = "block";
+    const submitBtn = donationForm.querySelector('button[type="submit"]');
+    handleFormspreeSubmit(donationForm, submitBtn, () => {
+      donationModal.classList.remove("active");
+    });
   });
 
   // D. Newsletter Form

@@ -1953,8 +1953,8 @@ body.nav-open {
     linear-gradient(90deg, rgba(10, 35, 66, 0.02) 1px, transparent 1px);
   background-size: 60px 60px;
   z-index: 0;
-  pointer-events: none;n
-  opacity: 0.8;
+  pointer-events: none;
+  n opacity: 0.8;
 }
 
 /* Section Header */
@@ -2584,13 +2584,19 @@ body.nav-open {
 }
 
 .uq-slide.active {
-  opacity: 0.12; /* Subtle background photo */
+  opacity: 0.12;
+  /* Subtle background photo */
 }
 
 /* Subtle Ken Burns zoom on active slide */
 @keyframes uq-slide-zoom {
-  0%   { transform: scale(1.04); }
-  100% { transform: scale(1.10); }
+  0% {
+    transform: scale(1.04);
+  }
+
+  100% {
+    transform: scale(1.10);
+  }
 }
 
 /* Multi-layer dark overlay — radial + bottom gradient */
@@ -4017,8 +4023,8 @@ body.nav-open {
 .nv-contact-white-section .glass-panel {
   background: #ffffff !important;
   border: 1px solid rgba(0, 0, 0, 0.06) !important;
-  box-shadow: 
-    0 30px 60px rgba(0, 0, 0, 0.03), 
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.03),
     0 12px 24px rgba(0, 0, 0, 0.02) !important;
   border-radius: 12px !important;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -4026,8 +4032,8 @@ body.nav-open {
 
 .nv-contact-white-section .glass-panel:hover {
   border-color: rgba(244, 162, 97, 0.15) !important;
-  box-shadow: 
-    0 35px 70px rgba(244, 162, 97, 0.03), 
+  box-shadow:
+    0 35px 70px rgba(244, 162, 97, 0.03),
     0 15px 30px rgba(0, 0, 0, 0.02) !important;
 }
 
@@ -7144,8 +7150,13 @@ select.form-control {
 
 /* Subtle Ken Burns zoom on active slide */
 @keyframes nv-slide-zoom {
-  0%   { transform: scale(1.04); }
-  100% { transform: scale(1.10); }
+  0% {
+    transform: scale(1.04);
+  }
+
+  100% {
+    transform: scale(1.10);
+  }
 }
 
 /* Multi-layer dark overlay — radial + bottom gradient */
@@ -7364,12 +7375,10 @@ select.form-control {
 .nv-coord-card-img-shine {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    transparent 40%,
-    rgba(244, 162, 97, 0.06) 60%,
-    transparent 80%
-  );
+  background: linear-gradient(135deg,
+      transparent 40%,
+      rgba(244, 162, 97, 0.06) 60%,
+      transparent 80%);
   opacity: 0;
   transition: opacity 0.5s ease;
   pointer-events: none;
@@ -7436,24 +7445,20 @@ select.form-control {
   right: 0;
   z-index: 3;
   padding: 1.25rem 1rem 1rem;
-  background: linear-gradient(
-    to top,
-    rgba(10, 10, 10, 0.95) 0%,
-    rgba(10, 10, 10, 0.8) 50%,
-    rgba(10, 10, 10, 0.3) 80%,
-    transparent 100%
-  );
+  background: linear-gradient(to top,
+      rgba(10, 10, 10, 0.95) 0%,
+      rgba(10, 10, 10, 0.8) 50%,
+      rgba(10, 10, 10, 0.3) 80%,
+      transparent 100%);
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.4s ease;
 }
 
 .nv-coord-card:hover .nv-coord-card-content {
-  background: linear-gradient(
-    to top,
-    rgba(10, 10, 10, 0.98) 0%,
-    rgba(10, 10, 10, 0.92) 60%,
-    rgba(10, 10, 10, 0.6) 90%,
-    transparent 100%
-  );
+  background: linear-gradient(to top,
+      rgba(10, 10, 10, 0.98) 0%,
+      rgba(10, 10, 10, 0.92) 60%,
+      rgba(10, 10, 10, 0.6) 90%,
+      transparent 100%);
 }
 
 .nv-coord-card-role {
@@ -7545,14 +7550,37 @@ select.form-control {
   transform: translateY(0);
 }
 
-.nv-coord-card:nth-child(1).reveal { transition-delay: 0s; }
-.nv-coord-card:nth-child(2).reveal { transition-delay: 0.05s; }
-.nv-coord-card:nth-child(3).reveal { transition-delay: 0.1s; }
-.nv-coord-card:nth-child(4).reveal { transition-delay: 0.15s; }
-.nv-coord-card:nth-child(5).reveal { transition-delay: 0.2s; }
-.nv-coord-card:nth-child(6).reveal { transition-delay: 0.25s; }
-.nv-coord-card:nth-child(7).reveal { transition-delay: 0.3s; }
-.nv-coord-card:nth-child(8).reveal { transition-delay: 0.35s; }
+.nv-coord-card:nth-child(1).reveal {
+  transition-delay: 0s;
+}
+
+.nv-coord-card:nth-child(2).reveal {
+  transition-delay: 0.05s;
+}
+
+.nv-coord-card:nth-child(3).reveal {
+  transition-delay: 0.1s;
+}
+
+.nv-coord-card:nth-child(4).reveal {
+  transition-delay: 0.15s;
+}
+
+.nv-coord-card:nth-child(5).reveal {
+  transition-delay: 0.2s;
+}
+
+.nv-coord-card:nth-child(6).reveal {
+  transition-delay: 0.25s;
+}
+
+.nv-coord-card:nth-child(7).reveal {
+  transition-delay: 0.3s;
+}
+
+.nv-coord-card:nth-child(8).reveal {
+  transition-delay: 0.35s;
+}
 
 /* --- Responsive: Tablet --- */
 @media (max-width: 1024px) {
@@ -7620,4 +7648,3 @@ select.form-control {
     gap: 0.75rem;
   }
 }
-

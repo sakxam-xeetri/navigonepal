@@ -4,6 +4,7 @@
 <head>
   <script src="js/maintenance.js"></script>
   <script src="js/theme.js"></script>
+  <script src="js/form-handler.js" defer></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Join Navigo — Navigo Nepal</title>
@@ -263,10 +264,10 @@
           <p class="prog-form-subtitle">Have questions? Want to collaborate? Send us a message and we'll get back to you.</p>
         </div>
 
-        <form class="prog-form" id="joinForm" action="https://formsubmit.co/navigonepal@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="Join Navigo Inquiry">
+        <form class="prog-form" id="joinForm" action="https://formspree.io/f/REPLACE_JOIN_ID" method="POST">
+          <input type="hidden" name="_subject" value="Join Request Submission">
           <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="thank-you.html">
 
           <div class="prog-form-row">
             <div class="prog-form-group">

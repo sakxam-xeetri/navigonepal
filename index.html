@@ -1896,21 +1896,24 @@
 
         <!-- Contact Form -->
         <div class="glass-panel reveal-right" style="padding: 2.5rem;">
-          <form class="contact-form" id="contactForm" novalidate>
+          <form class="contact-form" id="contactForm" action="https://formspree.io/f/REPLACE_CONTACT_ID" method="POST" novalidate>
+            <input type="hidden" name="_subject" value="Contact Inquiry Submission">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="thank-you.html">
             <div class="form-group-row">
               <div class="form-group">
                 <label for="contactName">Full Name</label>
-                <input type="text" id="contactName" class="form-control" placeholder="Samir Karki" required>
+                <input type="text" id="contactName" name="Name" class="form-control" placeholder="Samir Karki" required>
               </div>
               <div class="form-group">
                 <label for="contactEmail">Email Address</label>
-                <input type="email" id="contactEmail" class="form-control" placeholder="samir@gmail.com" required>
+                <input type="email" id="contactEmail" name="Email" class="form-control" placeholder="samir@gmail.com" required>
               </div>
             </div>
 
             <div class="form-group">
               <label for="contactSubject">Subject Interest</label>
-              <select id="contactSubject" class="form-control">
+              <select id="contactSubject" name="Subject" class="form-control">
                 <option value="general">General Inquiry</option>
                 <option value="sponsorship">Sponsorship &amp; Alliance</option>
                 <option value="school-club">Establish School Club</option>
@@ -1920,7 +1923,7 @@
 
             <div class="form-group">
               <label for="contactMessage">Message</label>
-              <textarea id="contactMessage" class="form-control"
+              <textarea id="contactMessage" name="Message" class="form-control"
                 placeholder="Outline details on how we can align our educational objectives..." required></textarea>
             </div>
 
@@ -2077,33 +2080,36 @@
         <h2 id="modalVolunteerTitle" style="margin-top: 0.5rem;">Apply as STEM Mentor</h2>
         <p>Complete this quick profile. Our coordination team will follow up via email.</p>
       </div>
-      <form class="modal-body contact-form" id="volunteerForm" novalidate>
-        <input type="hidden" id="volunteerPositionId">
+      <form class="modal-body contact-form" id="volunteerForm" action="https://formspree.io/f/REPLACE_VOLUNTEER_ID" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="Volunteer Application Submission">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="thank-you.html">
+        <input type="hidden" id="volunteerPositionId" name="Position ID">
         <div class="form-group-row">
           <div class="form-group">
             <label for="volName">Full Name</label>
-            <input type="text" id="volName" class="form-control" required placeholder="Aayusha Shrestha">
+            <input type="text" id="volName" name="Name" class="form-control" required placeholder="Aayusha Shrestha">
           </div>
           <div class="form-group">
             <label for="volEmail">Email Address</label>
-            <input type="email" id="volEmail" class="form-control" required placeholder="aayush@gmail.com">
+            <input type="email" id="volEmail" name="Email" class="form-control" required placeholder="aayush@gmail.com">
           </div>
         </div>
 
         <div class="form-group-row">
           <div class="form-group">
             <label for="volPhone">Phone Number</label>
-            <input type="tel" id="volPhone" class="form-control" required placeholder="9841234567">
+            <input type="tel" id="volPhone" name="Phone" class="form-control" required placeholder="9841234567">
           </div>
           <div class="form-group">
             <label for="volDistrict">Active District</label>
-            <input type="text" id="volDistrict" class="form-control" required placeholder="Kathmandu">
+            <input type="text" id="volDistrict" name="District" class="form-control" required placeholder="Kathmandu">
           </div>
         </div>
 
         <div class="form-group">
           <label for="volBio">Brief Academic Background / Skills</label>
-          <textarea id="volBio" class="form-control" required
+          <textarea id="volBio" name="Bio" class="form-control" required
             placeholder="High school graduate, college student, volunteer experience, interest in teaching or counseling..."
             style="min-height: 100px;"></textarea>
         </div>
@@ -2126,8 +2132,13 @@
         <h2 id="modalDonationTitle" style="margin-top: 0.5rem;">Sponsor a Student</h2>
         <p>Support direct learning materials, robotic microchips, and study aids.</p>
       </div>
-      <form class="modal-body contact-form" id="donationForm" novalidate style="gap: 1.5rem;">
-        <input type="hidden" id="donationTierId">
+      <form class="modal-body contact-form" id="donationForm" action="https://formspree.io/f/REPLACE_DONATION_ID" method="POST" novalidate style="gap: 1.5rem;">
+        <input type="hidden" name="_subject" value="Donation Submission">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="thank-you.html">
+        <input type="hidden" id="donationTierId" name="Tier ID">
+        <input type="hidden" id="donorTier" name="Tier">
+        <input type="hidden" id="donorAmount" name="Amount">
 
         <!-- Package Summary -->
         <div
@@ -2146,23 +2157,23 @@
 
         <div class="form-group">
           <label for="donorName">Your Full Name / Organization</label>
-          <input type="text" id="donorName" class="form-control" required placeholder="Himalayan Tech Foundation">
+          <input type="text" id="donorName" name="Name" class="form-control" required placeholder="Himalayan Tech Foundation">
         </div>
 
         <div class="form-group-row">
           <div class="form-group">
             <label for="donorEmail">Billing Email</label>
-            <input type="email" id="donorEmail" class="form-control" required placeholder="billing@himalayantech.com">
+            <input type="email" id="donorEmail" name="Email" class="form-control" required placeholder="billing@himalayantech.com">
           </div>
           <div class="form-group">
             <label for="donorPhone">Contact Phone</label>
-            <input type="tel" id="donorPhone" class="form-control" required placeholder="9851012345">
+            <input type="tel" id="donorPhone" name="Phone" class="form-control" required placeholder="9851012345">
           </div>
         </div>
 
         <div class="form-group">
           <label for="paymentMethod">Payment Method</label>
-          <select id="paymentMethod" class="form-control">
+          <select id="paymentMethod" name="Payment Method" class="form-control">
             <option value="bank_qr" selected>Direct Bank Transfer (Fonepay QR)</option>
           </select>
         </div>

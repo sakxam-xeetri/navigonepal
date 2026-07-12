@@ -4,6 +4,7 @@
 <head>
   <script src="js/maintenance.js"></script>
   <script src="js/theme.js"></script>
+  <script src="js/form-handler.js" defer></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Propose a Project — Navigo Nepal</title>
@@ -361,10 +362,10 @@
           <p class="prog-form-subtitle">Describe your idea and we will review it within two weeks.</p>
         </div>
 
-        <form class="prog-form" id="proposalForm" action="https://formsubmit.co/navigonepal@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="Project Proposal">
+        <form class="prog-form" id="proposalForm" action="https://formspree.io/f/REPLACE_PROJECT_ID" method="POST">
+          <input type="hidden" name="_subject" value="Project Proposal Submission">
           <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="thank-you.html">
 
           <div class="prog-form-row">
             <div class="prog-form-group">
