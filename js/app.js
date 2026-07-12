@@ -30,33 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==================== 1. LAYOUT & THEME TOGGLE ====================
-
-  const themeToggle = document.getElementById("themeToggle");
-  const htmlElement = document.documentElement;
-  const sunIcon = themeToggle ? themeToggle.querySelector(".sun-icon") : null;
-  const moonIcon = themeToggle ? themeToggle.querySelector(".moon-icon") : null;
-
-  const savedTheme = localStorage.getItem("navigo-theme") || "light";
-  htmlElement.setAttribute("data-theme", savedTheme);
-  updateThemeIcons(savedTheme);
-
-  if (themeToggle) themeToggle.addEventListener("click", () => {
-    const currentTheme = htmlElement.getAttribute("data-theme");
-    const newTheme = currentTheme === "dark" ? "light" : "dark";
-    htmlElement.setAttribute("data-theme", newTheme);
-    localStorage.setItem("navigo-theme", newTheme);
-    updateThemeIcons(newTheme);
-  });
-
-  function updateThemeIcons(theme) {
-    if (theme === "dark") {
-      if (sunIcon) sunIcon.style.display = "block";
-      if (moonIcon) moonIcon.style.display = "none";
-    } else {
-      if (sunIcon) sunIcon.style.display = "none";
-      if (moonIcon) moonIcon.style.display = "block";
-    }
-  }
+  // (Handled globally by js/theme.js to ensure consistency across subpages)
 
   // Hamburger Menu
   const hamburger = document.getElementById("hamburger") || document.getElementById("mobileMenuToggle");

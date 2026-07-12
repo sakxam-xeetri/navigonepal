@@ -3,6 +3,7 @@
 
 <head>
   <script src="js/maintenance.js"></script>
+  <script src="js/theme.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Programs — Navigo Nepal</title>
@@ -997,15 +998,6 @@
   <!-- Theme Toggle Script -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const toggle = document.getElementById("themeToggle");
-      const html = document.documentElement;
-      if (toggle) {
-        toggle.addEventListener("click", () => {
-          const current = html.getAttribute("data-theme");
-          html.setAttribute("data-theme", current === "dark" ? "light" : "dark");
-        });
-      }
-
       // Tab switching
       const tabs = document.querySelectorAll(".prog-tab");
       const sections = document.querySelectorAll(".prog-section");

@@ -3,6 +3,7 @@
 
 <head>
   <script src="js/maintenance.js"></script>
+  <script src="js/theme.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Story — Navigo Nepal</title>
@@ -186,13 +187,25 @@
   <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
 
   <!-- HERO SECTION -->
-  <section class="prog-hero" id="top">
-    <div class="prog-hero-bg"></div>
+  <section class="prog-hero" id="top" style="background: var(--gradient-hero);">
+    <div class="wwe-grid-lines" aria-hidden="true" style="opacity: 0.15;"></div>
+    <div class="wwe-ambient-orb wwe-orb-1" style="opacity: 0.3;"></div>
+    <div class="wwe-ambient-orb wwe-orb-2" style="opacity: 0.2;"></div>
     <div class="container prog-hero-inner">
-      <h1 class="prog-hero-title">
+      <!-- Colored accent bar -->
+      <div class="hero-accent-bar" style="margin: 0 auto 1.5rem; justify-content: center; display: flex; gap: 0;">
+        <span class="hero-accent-segment hero-accent-red" style="width: 35px; height: 5px; background: #E63946; display: inline-block;"></span>
+        <span class="hero-accent-segment hero-accent-yellow" style="width: 35px; height: 5px; background: #F4A261; display: inline-block;"></span>
+        <span class="hero-accent-segment hero-accent-green" style="width: 35px; height: 5px; background: #2A9D8F; display: inline-block;"></span>
+        <span class="hero-accent-segment hero-accent-blue" style="width: 35px; height: 5px; background: #2563EB; display: inline-block;"></span>
+      </div>
+      <h1 class="prog-hero-title" style="margin-bottom: 1.5rem;">
         Our<br>
         <span class="prog-hero-accent">Story</span>
       </h1>
+      <p class="prog-hero-subtitle" style="font-family: 'Inter', sans-serif; font-size: clamp(1rem, 2vw, 1.25rem); color: #8BA3C4; line-height: 1.8; max-width: 600px; margin: 0 auto;">
+        The journey of Navigo Nepal &mdash; bridging academic learning and real-world skills to empower the next generation of leaders.
+      </p>
     </div>
   </section>
 
@@ -987,18 +1000,7 @@
     </div>
   </footer>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const toggle = document.getElementById("themeToggle");
-      if (toggle) {
-        toggle.addEventListener("click", () => {
-          const html = document.documentElement;
-          const current = html.getAttribute("data-theme");
-          html.setAttribute("data-theme", current === "dark" ? "light" : "dark");
-        });
-      }
-    });
-  </script>
+
 </body>
 
 </html>

@@ -26,7 +26,7 @@
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: clamp(1.75rem, 3.5vw, 2.5rem);
   font-weight: 800;
-  color: #0A2342;
+  color: var(--text-main);
   letter-spacing: -0.02em;
   margin-bottom: 1rem;
 }
@@ -34,7 +34,7 @@
 .team-section-desc {
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
-  color: #64748B;
+  color: var(--text-muted);
   max-width: 500px;
   margin: 0 auto;
   line-height: 1.7;
@@ -74,8 +74,8 @@
 
 /* --- CARD STYLES --- */
 .team-card {
-  background: #ffffff;
-  border: 1px solid #E2E8F0;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
   padding: 2rem;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -113,7 +113,7 @@
   color: #ffffff;
 }
 
-.team-avatar--navy { background: #0A2342; }
+.team-avatar--navy { background: var(--text-main); }
 .team-avatar--blue { background: #2563EB; }
 .team-avatar--green { background: #10B981; }
 .team-avatar--purple { background: #8B5CF6; }
@@ -143,7 +143,7 @@
 
 .team-card--advisor .team-card-bio {
   font-size: 0.85rem;
-  color: #64748B;
+  color: var(--text-muted);
   line-height: 1.65;
   margin-top: 0.5rem;
 }
@@ -182,7 +182,7 @@
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 1.15rem;
   font-weight: 700;
-  color: #0A2342;
+  color: var(--text-main);
   margin-bottom: 0.35rem;
 }
 
@@ -190,7 +190,7 @@
   font-family: 'Inter', sans-serif;
   font-size: 0.8rem;
   font-weight: 500;
-  color: #64748B;
+  color: var(--text-muted);
   display: block;
   margin-bottom: 1rem;
 }
@@ -198,7 +198,7 @@
 .team-card-bio {
   font-family: 'Inter', sans-serif;
   font-size: 0.88rem;
-  color: #475569;
+  color: var(--text-muted);
   line-height: 1.7;
 }
 
@@ -255,7 +255,7 @@
   font-size: 1.05rem;
   font-weight: 700;
   margin-bottom: 0.25rem;
-  color: #0A2342;
+  color: var(--text-main);
 }
 
 .team-card--core .team-card-role {
@@ -268,7 +268,7 @@
 .team-card--core .team-card-bio {
   font-size: 0.85rem;
   line-height: 1.65;
-  color: #475569;
+  color: var(--text-muted);
   margin: 0;
 }
 
@@ -308,7 +308,7 @@
 
 .team-card--alumni .team-card-bio {
   font-size: 0.85rem;
-  color: #64748B;
+  color: var(--text-muted);
   line-height: 1.65;
   margin-top: 0.5rem;
 }
