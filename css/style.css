@@ -2563,6 +2563,46 @@ body.nav-open {
   overflow: hidden;
 }
 
+/* --- Uniqueness Background Slideshow --- */
+.uq-slideshow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.uq-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  transform: scale(1.04);
+  animation: uq-slide-zoom 12s ease-in-out infinite;
+}
+
+.uq-slide.active {
+  opacity: 0.12; /* Subtle background photo */
+}
+
+/* Subtle Ken Burns zoom on active slide */
+@keyframes uq-slide-zoom {
+  0%   { transform: scale(1.04); }
+  100% { transform: scale(1.10); }
+}
+
+/* Multi-layer dark overlay — radial + bottom gradient */
+.uq-slide-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 70% at 50% 50%, transparent 20%, #0a0a0a 85%),
+    linear-gradient(to bottom, #0a0a0a 0%, transparent 20%, transparent 80%, #0a0a0a 100%);
+  z-index: 1;
+}
+
 .uq-constellation {
   position: absolute;
   top: 0;
@@ -6990,6 +7030,7 @@ select.form-control {
 .nv-coord-section,
 #donate.nv-coord-section,
 #past-initiatives.nv-coord-section,
+.uniqueness-section.nv-coord-section,
 #contact.nv-coord-section {
   position: relative;
   padding: 4rem 0 3.5rem;

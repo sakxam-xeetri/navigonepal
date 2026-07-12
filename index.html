@@ -943,23 +943,44 @@
   <hr class="section-divider">
 
   <!-- HOW WE ARE UNIQUE SECTION -->
-  <section class="uniqueness-section" id="programs">
-    <!-- Subtle grid background -->
-    <div class="uq-bg-grid" aria-hidden="true"></div>
+  <section class="uniqueness-section nv-coord-section" id="programs" style="border-top: none;">
+    <!-- Background Slideshow — 3 photos cycling every 4s -->
+    <div class="uq-slideshow" aria-hidden="true">
+      <div class="uq-slide active" style="background-image: url('assets/1.jpeg');"></div>
+      <div class="uq-slide" style="background-image: url('assets/2.jpeg');"></div>
+      <div class="uq-slide" style="background-image: url('assets/3.jpeg');"></div>
+      <!-- Dark overlay so text stays highly readable -->
+      <div class="uq-slide-overlay"></div>
+    </div>
 
-    <div class="container">
+    <!-- Decorative Grid Background -->
+    <div class="nv-coord-bg" aria-hidden="true">
+      <div class="nv-coord-bg-grid"></div>
+      <div class="nv-coord-glow-orb nv-coord-glow-orb--1" style="top: -50px; left: -50px;"></div>
+    </div>
 
-      <!-- Section Header -->
-      <div class="uq-header reveal">
-        <div class="uq-label-row">
-          <span class="uq-label-line"></span>
-          <span class="uq-label-text">Our Practical Paradigm</span>
-          <span class="uq-label-line"></span>
+    <div class="container" style="position: relative; z-index: 1;">
+      <!-- Section Header — Bebas Neue Grassroots style -->
+      <div class="nv-coord-header reveal">
+        <!-- Eyebrow accent bar (red/amber/green) -->
+        <div class="nv-coord-accent-bar">
+          <span class="nv-coord-seg nv-coord-seg--red"></span>
+          <span class="nv-coord-seg nv-coord-seg--amber"></span>
+          <span class="nv-coord-seg nv-coord-seg--green"></span>
         </div>
-        <h2 class="uq-title">How Are We <span class="uq-title-accent">Unique?</span></h2>
-        <p class="uq-subtitle">
-          Bridging the gap between conventional education and real-world leadership through active, peer-to-peer
-          exploration.
+
+        <!-- Small eyebrow label -->
+        <p class="nv-coord-eyebrow">Our Practical Paradigm</p>
+
+        <!-- Two-line Bebas Neue heading -->
+        <h2 class="nv-coord-title">
+          How Are We<br>
+          <span class="nv-coord-title-accent">Unique?</span>
+        </h2>
+
+        <!-- Subtitle -->
+        <p class="nv-coord-subtitle">
+          Bridging the gap between conventional education and real-world leadership through active, peer-to-peer exploration.
         </p>
       </div>
 

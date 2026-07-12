@@ -209,6 +209,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 3000);
   }
 
+  // Background Slideshow for How Are We Unique? section (cycles every 4 seconds)
+  const uqSlides = document.querySelectorAll(".uq-slide");
+  if (uqSlides.length > 0) {
+    let uqCurrent = 0;
+    setInterval(() => {
+      uqSlides[uqCurrent].classList.remove("active");
+      uqCurrent = (uqCurrent + 1) % uqSlides.length;
+      uqSlides[uqCurrent].classList.add("active");
+    }, 4000);
+  }
+
 
   // Render Leadership Quote
   if (CMS.story.leadershipMessage) {
