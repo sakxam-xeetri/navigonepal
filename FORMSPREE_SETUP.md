@@ -17,25 +17,19 @@ Create a new project in your Formspree dashboard, and create **six (6) separate 
 * **Project Proposal** (for submitting new campaign or curriculum ideas)
 * **Donation Form** (for securing secure sponsorships)
 
-## Step 4: Copy Form Endpoints
-For each form you created, copy the unique Formspree endpoint URL from the integration dashboard.
-Example endpoint: `https://formspree.io/f/xdkjweop`
+## Step 4: Active Endpoints in the Project
+The forms in the codebase are now fully populated with your live Formspree endpoint IDs:
 
-## Step 5: Replace Placeholders in the Project Files
-Search your workspace files for the following placeholder IDs and replace them with your actual Formspree form IDs:
+| Form Name | Target File(s) | Endpoint / Form ID | Status |
+| :--- | :--- | :--- | :--- |
+| **Volunteer Form** | [volunteer.html](file:///d:/navigonepal/volunteer.html) & [index.html](file:///d:/navigonepal/index.html) | `xpqvabpr` | Connected |
+| **Contact Form** | [index.html](file:///d:/navigonepal/index.html) | `xkodwyjz` | Connected |
+| **Internship Form** | [intern.html](file:///d:/navigonepal/intern.html) | `xrenzjpo` | Connected |
+| **Join Form** | [join.html](file:///d:/navigonepal/join.html) | `mbdnrwgq` | Connected |
+| **Project Proposal** | [propose-project.html](file:///d:/navigonepal/propose-project.html) | `xnjeawpw` | Connected |
+| **Donation Form** | [index.html](file:///d:/navigonepal/index.html) | `xdaqnbev` | Connected |
 
-| Placeholder ID | Target Forms / Files |
-| :--- | :--- |
-| `REPLACE_VOLUNTEER_ID` | `volunteer.html` (form action) & `index.html` (modal form action) |
-| `REPLACE_CONTACT_ID` | `index.html` (contact form action) |
-| `REPLACE_INTERNSHIP_ID` | `intern.html` (form action) |
-| `REPLACE_JOIN_ID` | `join.html` (form action) |
-| `REPLACE_PROJECT_ID` | `propose-project.html` (form action) |
-| `REPLACE_DONATION_ID` | `index.html` (donation modal form action) |
-
-*You can open the project in your editor and perform a global search-and-replace for these keywords.*
-
-## Step 6: Commit and Deploy
+## Step 5: Commit and Deploy
 Save your changes and deploy them to GitHub Pages by executing the following terminal commands:
 
 ```bash
