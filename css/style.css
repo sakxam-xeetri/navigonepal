@@ -3948,40 +3948,69 @@ body.nav-open {
 
 /* ==================== CONTACT SECTION ==================== */
 /* ==================== CONTACT SECTION — White Premium Aesthetic ==================== */
+/* --- Section Container --- */
 .nv-contact-white-section {
   position: relative;
-  padding: 4.5rem 0 4rem;
+  padding: 5rem 0 4.5rem;
   background-color: #ffffff !important;
   color: #111111 !important;
   overflow: hidden;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 /* Force light theme colors on form and elements */
 .nv-contact-white-section .contact-info-text h3 {
   color: #111111 !important;
+  font-size: 1.1rem;
+  font-weight: 700;
+  transition: color 0.3s ease;
 }
 
 .nv-contact-white-section .contact-info-text p {
   color: #555555 !important;
+  font-size: 0.92rem;
+  line-height: 1.6;
 }
 
 .nv-contact-white-section .contact-info-icon {
-  background: rgba(244, 162, 97, 0.08) !important;
+  background: rgba(244, 162, 97, 0.06) !important;
   color: #F4A261 !important;
-  border: 1px solid rgba(244, 162, 97, 0.15) !important;
+  border: 1px solid rgba(244, 162, 97, 0.12) !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Hover effects for contact details card list */
+.nv-contact-white-section .contact-info-item {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.nv-contact-white-section .contact-info-item:hover {
+  transform: translateX(4px);
+}
+
+.nv-contact-white-section .contact-info-item:hover .contact-info-icon {
+  background: rgba(244, 162, 97, 0.12) !important;
+  border-color: rgba(244, 162, 97, 0.3) !important;
+  transform: scale(1.05);
+}
+
+.nv-contact-white-section .contact-info-item:hover h3 {
+  color: #F4A261 !important;
 }
 
 .nv-contact-white-section .social-btn {
   background-color: #ffffff !important;
   border: 1px solid rgba(0, 0, 0, 0.08) !important;
   color: #555555 !important;
+  transition: all 0.3s ease !important;
 }
 
 .nv-contact-white-section .social-btn:hover {
   border-color: #F4A261 !important;
   color: #F4A261 !important;
   background-color: rgba(244, 162, 97, 0.04) !important;
+  transform: translateY(-2px);
 }
 
 /* Clean, premium form container wrapper */
@@ -3989,15 +4018,28 @@ body.nav-open {
   background: #ffffff !important;
   border: 1px solid rgba(0, 0, 0, 0.06) !important;
   box-shadow: 
-    0 24px 48px rgba(0, 0, 0, 0.04), 
-    0 6px 16px rgba(0, 0, 0, 0.02) !important;
-  border-radius: var(--radius-xl) !important;
+    0 30px 60px rgba(0, 0, 0, 0.03), 
+    0 12px 24px rgba(0, 0, 0, 0.02) !important;
+  border-radius: 12px !important;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+.nv-contact-white-section .glass-panel:hover {
+  border-color: rgba(244, 162, 97, 0.15) !important;
+  box-shadow: 
+    0 35px 70px rgba(244, 162, 97, 0.03), 
+    0 15px 30px rgba(0, 0, 0, 0.02) !important;
+}
+
+/* Form inputs & controls styles */
 .nv-contact-white-section .form-control {
-  background-color: #f7f7f7 !important;
+  background-color: #f8f9fa !important;
   border: 1px solid rgba(0, 0, 0, 0.08) !important;
   color: #111111 !important;
+  border-radius: 8px !important;
+  padding: 0.95rem 1.25rem !important;
+  font-size: 0.88rem !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .nv-contact-white-section .form-control:focus {
@@ -4007,9 +4049,46 @@ body.nav-open {
 }
 
 .nv-contact-white-section label {
-  color: #333333 !important;
+  color: #475569 !important;
   font-weight: 600 !important;
+  font-size: 0.82rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  margin-bottom: 0.5rem !important;
 }
+
+/* Premium High-Contrast Button overrides */
+.nv-contact-white-section .btn-primary {
+  background: #111111 !important;
+  border: 1px solid #111111 !important;
+  color: #ffffff !important;
+  padding: 1rem 2rem !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.75rem !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  cursor: pointer;
+}
+
+.nv-contact-white-section .btn-primary:hover {
+  background: #F4A261 !important;
+  border-color: #F4A261 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(244, 162, 97, 0.25) !important;
+}
+
+.nv-contact-white-section .btn-primary svg {
+  transition: transform 0.3s ease;
+}
+
+.nv-contact-white-section .btn-primary:hover svg {
+  transform: translate(2px, -2px);
+}
+
 
 /* White grid overlay background */
 .contact-white-bg {
