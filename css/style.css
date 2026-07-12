@@ -1953,7 +1953,7 @@ body.nav-open {
     linear-gradient(90deg, rgba(10, 35, 66, 0.02) 1px, transparent 1px);
   background-size: 60px 60px;
   z-index: 0;
-  pointer-events: none;
+  pointer-events: none;n
   opacity: 0.8;
 }
 
@@ -3806,7 +3806,7 @@ body.nav-open {
 }
 
 .donation-grid {
-  margin-top: 3rem;
+  margin-top: 1.5rem;
   max-width: 100%;
   position: relative;
   z-index: 2;
@@ -3817,7 +3817,7 @@ body.nav-open {
   flex-direction: column;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-xl);
-  padding: 3rem;
+  padding: 1.75rem 2rem;
   background: var(--bg-card);
   box-shadow: var(--shadow-md);
   transition: all 0.4s ease;
@@ -3837,12 +3837,12 @@ body.nav-open {
 .donation-card.featured::before {
   content: 'MOST POPULAR';
   position: absolute;
-  top: 1.5rem;
-  right: -2rem;
+  top: 1.2rem;
+  right: -2.2rem;
   background: var(--gradient-primary);
   color: white;
-  padding: 0.3rem 3rem;
-  font-size: 0.65rem;
+  padding: 0.2rem 2.5rem;
+  font-size: 0.58rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   transform: rotate(45deg);
@@ -3851,17 +3851,17 @@ body.nav-open {
 .donation-tier-header {
   text-align: left;
   border-bottom: 1px solid var(--border-color);
-  padding-bottom: 2rem;
-  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 .donation-amount-wrapper {
-  margin: 1.5rem 0;
+  margin: 0.75rem 0;
 }
 
 .donation-currency {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 700;
   vertical-align: super;
   color: var(--text-muted);
@@ -3869,7 +3869,7 @@ body.nav-open {
 
 .donation-val {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 3.5rem;
+  font-size: 2.6rem;
   font-weight: 800;
   background: var(--gradient-primary);
   -webkit-background-clip: text;
@@ -3880,7 +3880,7 @@ body.nav-open {
 .donation-period {
   font-family: 'Inter', sans-serif;
   color: var(--text-muted);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 500;
 }
 
@@ -3888,16 +3888,16 @@ body.nav-open {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
-  margin-bottom: 2rem;
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
   flex-grow: 1;
 }
 
 .donation-features li {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  font-size: 0.9rem;
+  gap: 0.65rem;
+  font-size: 0.85rem;
   color: var(--text-main);
 }
 
@@ -3907,23 +3907,165 @@ body.nav-open {
 }
 
 /* ==================== CONTACT SECTION ==================== */
-#contact {
-  background-color: var(--bg-primary);
+/* ==================== CONTACT SECTION — White Premium Aesthetic ==================== */
+.nv-contact-white-section {
+  position: relative;
+  padding: 4.5rem 0 4rem;
+  background-color: #ffffff !important;
+  color: #111111 !important;
+  overflow: hidden;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-.contact-bg-overlay {
+/* Force light theme colors on form and elements */
+.nv-contact-white-section .contact-info-text h3 {
+  color: #111111 !important;
+}
+
+.nv-contact-white-section .contact-info-text p {
+  color: #555555 !important;
+}
+
+.nv-contact-white-section .contact-info-icon {
+  background: rgba(244, 162, 97, 0.08) !important;
+  color: #F4A261 !important;
+  border: 1px solid rgba(244, 162, 97, 0.15) !important;
+}
+
+.nv-contact-white-section .social-btn {
+  background-color: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  color: #555555 !important;
+}
+
+.nv-contact-white-section .social-btn:hover {
+  border-color: #F4A261 !important;
+  color: #F4A261 !important;
+  background-color: rgba(244, 162, 97, 0.04) !important;
+}
+
+/* Clean, premium form container wrapper */
+.nv-contact-white-section .glass-panel {
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  box-shadow: 
+    0 24px 48px rgba(0, 0, 0, 0.04), 
+    0 6px 16px rgba(0, 0, 0, 0.02) !important;
+  border-radius: var(--radius-xl) !important;
+}
+
+.nv-contact-white-section .form-control {
+  background-color: #f7f7f7 !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  color: #111111 !important;
+}
+
+.nv-contact-white-section .form-control:focus {
+  background-color: #ffffff !important;
+  border-color: #F4A261 !important;
+  box-shadow: 0 0 0 4px rgba(244, 162, 97, 0.12) !important;
+}
+
+.nv-contact-white-section label {
+  color: #333333 !important;
+  font-weight: 600 !important;
+}
+
+/* White grid overlay background */
+.contact-white-bg {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('../assets/bg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0.1;
+  inset: 0;
   pointer-events: none;
+  z-index: 0;
+}
+
+.contact-white-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.025) 1px, transparent 1px);
+  background-size: 80px 80px;
+  opacity: 0.8;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 40%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 40%, transparent 100%);
+}
+
+/* Contact White Header */
+.contact-white-header {
+  text-align: left;
+  margin-bottom: 3.5rem;
+  position: relative;
   z-index: 1;
+  max-width: 100%;
+}
+
+.contact-white-accent-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+  margin-bottom: 1.25rem;
+}
+
+.contact-white-seg {
+  height: 4px;
+  border-radius: 2px;
+  display: block;
+}
+
+.contact-white-seg--red {
+  width: 24px;
+  background: #DC2626;
+}
+
+.contact-white-seg--amber {
+  width: 16px;
+  background: #F4A261;
+}
+
+.contact-white-seg--grey {
+  width: 20px;
+  background: #E5E7EB;
+}
+
+.contact-white-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: rgba(0, 0, 0, 0.45);
+  margin: 0 0 1.5rem;
+}
+
+.contact-white-title {
+  font-family: 'Bebas Neue', 'Outfit', sans-serif;
+  font-size: clamp(3.5rem, 7.5vw, 6.2rem);
+  font-weight: 400;
+  color: #111111;
+  letter-spacing: 0.02em;
+  line-height: 0.9;
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.contact-white-title-accent {
+  color: #F4A261 !important;
+  background: none !important;
+  -webkit-text-fill-color: initial !important;
+  background-clip: initial !important;
+}
+
+.contact-white-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  line-height: 1.85;
+  color: rgba(0, 0, 0, 0.6);
+  max-width: 600px;
+  margin: 0 0 0;
+  text-align: left;
 }
 
 #contact .container {
@@ -6838,17 +6980,64 @@ select.form-control {
   }
 }
 
+
 /* ============================================================
-   NAVIGO COORDINATORS SECTION — Premium NGO-Grade Design
+   NAVIGO COORDINATORS SECTION — Matching Grassroots Aesthetic
+   Dark background, warm amber accents, premium NGO-grade design
    ============================================================ */
 
 /* --- Section Container --- */
-.nv-coord-section {
+.nv-coord-section,
+#donate.nv-coord-section,
+#past-initiatives.nv-coord-section,
+#contact.nv-coord-section {
   position: relative;
-  padding: 7rem 0 6rem;
-  background: #030B18;
+  padding: 4rem 0 3.5rem;
+  background: #0a0a0a !important;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- Background Slideshow --- */
+.nv-coord-slideshow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
   overflow: hidden;
 }
+
+.nv-coord-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  transform: scale(1.04);
+  animation: nv-slide-zoom 9s ease-in-out infinite;
+}
+
+.nv-coord-slide.active {
+  opacity: 0.13;
+}
+
+/* Subtle Ken Burns zoom on active slide */
+@keyframes nv-slide-zoom {
+  0%   { transform: scale(1.04); }
+  100% { transform: scale(1.10); }
+}
+
+/* Multi-layer dark overlay — radial + bottom gradient */
+.nv-coord-slide-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 70% at 50% 50%, transparent 20%, #0a0a0a 85%),
+    linear-gradient(to bottom, #0a0a0a 0%, transparent 20%, transparent 80%, #0a0a0a 100%);
+  z-index: 1;
+}
+
 
 /* --- Decorative Background --- */
 .nv-coord-bg {
@@ -6862,88 +7051,136 @@ select.form-control {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(79, 156, 249, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(79, 156, 249, 0.035) 1px, transparent 1px);
-  background-size: 60px 60px;
-  mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 80%);
-  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 80%);
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 80px 80px;
+  opacity: 0.15;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 30%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 30%, transparent 100%);
 }
 
-.nv-coord-bg-glow {
-  display: none;
+/* Ambient glow orbs — warm amber like Grassroots section */
+.nv-coord-glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.07;
 }
 
-.nv-coord-bg-glow--1 {
-  display: none;
+.nv-coord-glow-orb--1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #F4A261, transparent 70%);
+  top: -100px;
+  left: -100px;
 }
 
-.nv-coord-bg-glow--2 {
-  display: none;
-}
-
-.nv-coord-bg-glow--3 {
-  display: none;
+.nv-coord-glow-orb--2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #10B981, transparent 70%);
+  bottom: -80px;
+  right: -80px;
+  opacity: 0.05;
 }
 
 /* --- Section Header --- */
 .nv-coord-header {
-  text-align: center;
+  text-align: left;
   margin-bottom: 4.5rem;
   position: relative;
   z-index: 1;
+  max-width: 100%;
 }
 
-.nv-coord-badge {
-  display: none;
-}
-
-.nv-coord-badge-dot {
-  display: none;
-}
-
-.nv-coord-badge-text {
-  display: none;
-}
-
-.nv-coord-title {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(2rem, 4.5vw, 3.2rem);
-  font-weight: 800;
-  color: #ffffff;
-  letter-spacing: -0.03em;
-  line-height: 1.15;
+/* Accent bar segments — identical to cr-accent-bar from index.html */
+.nv-coord-accent-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
   margin-bottom: 1.25rem;
 }
 
+.nv-coord-seg {
+  height: 4px;
+  border-radius: 2px;
+  display: block;
+}
+
+.nv-coord-seg--red {
+  width: 24px;
+  background: #DC2626;
+}
+
+.nv-coord-seg--amber {
+  width: 16px;
+  background: #F4A261;
+}
+
+.nv-coord-seg--green {
+  width: 20px;
+  background: #10B981;
+}
+
+/* Eyebrow label — centered, small caps, amber */
+.nv-coord-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  margin: 0 0 1.5rem;
+}
+
+/* ============================================================
+   MASSIVE BEBAS NEUE HEADING — exact replica of Grassroots style
+   ============================================================ */
+.nv-coord-title {
+  font-family: 'Bebas Neue', 'Outfit', sans-serif;
+  font-size: clamp(3.5rem, 7.5vw, 6.2rem);
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  line-height: 0.9;
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+/* Warm amber accent word — matching fs-title-accent */
 .nv-coord-title-accent {
-  color: var(--accent-light) !important;
+  color: #F4A261 !important;
   background: none !important;
   -webkit-text-fill-color: initial !important;
   background-clip: initial !important;
 }
 
+/* Subtitle — matches fs-subtitle style */
 .nv-coord-subtitle {
   font-family: 'Inter', sans-serif;
-  font-size: clamp(0.9rem, 1.8vw, 1.05rem);
-  color: #8BA3C4;
-  line-height: 1.75;
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.55);
   max-width: 600px;
-  margin: 0 auto 1.5rem;
+  margin: 0 0 0;
+  text-align: left;
 }
 
+/* Decorative bottom rule — hidden now (header is left aligned) */
 .nv-coord-title-line {
-  width: 60px;
-  height: 3px;
-  background: var(--accent-light);
-  margin: 0 auto;
-  border-radius: 0px;
+  display: none;
 }
+
+
 
 /* --- Grid Layout — 4 cards per row --- */
 .nv-coord-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  gap: 1rem;
   position: relative;
   z-index: 1;
 }
@@ -6955,19 +7192,13 @@ select.form-control {
   overflow: hidden;
 }
 
-.nv-coord-card-glow {
-  display: none;
-}
-
-.nv-coord-card:hover .nv-coord-card-glow {
-  display: none;
-}
-
 .nv-coord-card-inner {
   position: relative;
   z-index: 1;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(79, 156, 249, 0.08);
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 0px;
   overflow: hidden;
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
@@ -6976,21 +7207,23 @@ select.form-control {
 }
 
 .nv-coord-card:hover .nv-coord-card-inner {
-  border-color: rgba(79, 156, 249, 0.22);
-  transform: translateY(-8px);
+  border-color: rgba(244, 162, 97, 0.35);
+  transform: translateY(-4px);
   box-shadow:
-    0 24px 48px rgba(0, 0, 0, 0.35),
-    0 0 40px rgba(79, 156, 249, 0.08),
+    0 16px 32px rgba(0, 0, 0, 0.6),
+    0 0 25px rgba(244, 162, 97, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 /* --- Card Image --- */
 .nv-coord-card-img-wrap {
-  position: relative;
+  position: absolute;
+  inset: 0;
   width: 100%;
-  aspect-ratio: 1 / 1;
+  height: 100%;
   overflow: hidden;
-  background: #0d1f3c;
+  background: #111;
+  z-index: 1;
 }
 
 .nv-coord-card-img {
@@ -6999,20 +7232,32 @@ select.form-control {
   object-fit: cover;
   display: block;
   transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
-  filter: brightness(0.92) contrast(1.04);
+  filter: brightness(0.8) contrast(1.05) grayscale(0.15);
 }
 
 .nv-coord-card:hover .nv-coord-card-img {
   transform: scale(1.08);
-  filter: brightness(1) contrast(1.02);
+  filter: brightness(0.85) contrast(1.05) grayscale(0);
 }
 
-.nv-coord-card-img-overlay {
-  display: none;
+/* Shine overlay on image hover */
+.nv-coord-card-img-shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 40%,
+    rgba(244, 162, 97, 0.06) 60%,
+    transparent 80%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  z-index: 2;
 }
 
-.nv-coord-card:hover .nv-coord-card-img-overlay {
-  display: none;
+.nv-coord-card:hover .nv-coord-card-img-shine {
+  opacity: 1;
 }
 
 /* --- Initials Avatar (for members without photos) --- */
@@ -7030,54 +7275,77 @@ select.form-control {
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(circle at 25% 35%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 75% 65%, rgba(79, 156, 249, 0.04) 0%, transparent 40%);
+    radial-gradient(circle at 25% 35%, rgba(244, 162, 97, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 75% 65%, rgba(244, 162, 97, 0.04) 0%, transparent 40%);
 }
 
 .nv-coord-avatar--emerald {
-  background: #064e3b;
+  background: #062a1a;
 }
 
 .nv-coord-avatar--sky {
-  background: #0c4a6e;
+  background: #061a2a;
 }
 
 .nv-coord-avatar--violet {
-  background: #4c1d95;
+  background: #1a0a2e;
 }
 
 .nv-coord-card-initials {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 800;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.5);
   letter-spacing: 0.05em;
   position: relative;
-  z-index: 1;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
   transition: color 0.4s ease, text-shadow 0.4s ease;
 }
 
 .nv-coord-card:hover .nv-coord-card-initials {
-  color: rgba(255, 255, 255, 0.85);
-  text-shadow: 0 0 20px rgba(79, 156, 249, 0.3);
+  color: rgba(244, 162, 97, 0.8);
+  text-shadow: 0 0 20px rgba(244, 162, 97, 0.25);
 }
 
-/* --- Card Content --- */
+/* --- Card Content Overlay --- */
 .nv-coord-card-content {
-  padding: 1.25rem 1.25rem 1.5rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  padding: 1.25rem 1rem 1rem;
+  background: linear-gradient(
+    to top,
+    rgba(10, 10, 10, 0.95) 0%,
+    rgba(10, 10, 10, 0.8) 50%,
+    rgba(10, 10, 10, 0.3) 80%,
+    transparent 100%
+  );
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.4s ease;
+}
+
+.nv-coord-card:hover .nv-coord-card-content {
+  background: linear-gradient(
+    to top,
+    rgba(10, 10, 10, 0.98) 0%,
+    rgba(10, 10, 10, 0.92) 60%,
+    rgba(10, 10, 10, 0.6) 90%,
+    transparent 100%
+  );
 }
 
 .nv-coord-card-role {
   font-family: 'Inter', sans-serif;
-  font-size: 0.62rem;
-  font-weight: 600;
+  font-size: 0.58rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: #4F9CF9;
+  letter-spacing: 0.15em;
+  color: #F4A261;
   display: block;
-  margin-bottom: 0.5rem;
-  opacity: 0.85;
+  margin-bottom: 0.25rem;
+  opacity: 0.8;
   transition: opacity 0.3s ease;
 }
 
@@ -7087,40 +7355,47 @@ select.form-control {
 
 .nv-coord-card-name {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   font-weight: 800;
   color: #ffffff;
-  margin: 0 0 0.6rem;
+  margin: 0;
   letter-spacing: -0.01em;
-  line-height: 1.25;
+  line-height: 1.2;
 }
 
+/* Quote starts hidden and expands/fades in on hover */
 .nv-coord-card-quote {
   font-family: 'Inter', sans-serif;
-  font-size: 0.78rem;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.42);
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.5);
   font-style: italic;
   margin: 0;
-  transition: color 0.4s ease;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.4s ease, max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), margin 0.4s ease;
 }
 
 .nv-coord-card:hover .nv-coord-card-quote {
-  color: rgba(255, 255, 255, 0.58);
+  opacity: 1;
+  max-height: 75px;
+  margin-top: 0.5rem;
+  color: rgba(255, 255, 255, 0.75);
 }
 
-/* --- Card Bottom Accent Line --- */
+/* --- Card Bottom Accent Line — warm amber gradient --- */
 .nv-coord-card-accent {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 3px;
-  background: var(--accent-light);
+  background: linear-gradient(90deg, #F4A261, #DC2626);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  z-index: 2;
+  z-index: 4;
 }
 
 .nv-coord-card:hover .nv-coord-card-accent {
@@ -7130,7 +7405,7 @@ select.form-control {
 /* --- Staggered Reveal Animation --- */
 .nv-coord-card.reveal {
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(30px);
   transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -7139,59 +7414,31 @@ select.form-control {
   transform: translateY(0);
 }
 
-.nv-coord-card:nth-child(1).reveal {
-  transition-delay: 0s;
+.nv-coord-header.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.nv-coord-card:nth-child(2).reveal {
-  transition-delay: 0.08s;
+.nv-coord-header.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.nv-coord-card:nth-child(3).reveal {
-  transition-delay: 0.16s;
-}
-
-.nv-coord-card:nth-child(4).reveal {
-  transition-delay: 0.24s;
-}
-
-.nv-coord-card:nth-child(5).reveal {
-  transition-delay: 0.32s;
-}
-
-.nv-coord-card:nth-child(6).reveal {
-  transition-delay: 0.40s;
-}
-
-.nv-coord-card:nth-child(7).reveal {
-  transition-delay: 0.48s;
-}
-
-.nv-coord-card:nth-child(8).reveal {
-  transition-delay: 0.56s;
-}
+.nv-coord-card:nth-child(1).reveal { transition-delay: 0s; }
+.nv-coord-card:nth-child(2).reveal { transition-delay: 0.05s; }
+.nv-coord-card:nth-child(3).reveal { transition-delay: 0.1s; }
+.nv-coord-card:nth-child(4).reveal { transition-delay: 0.15s; }
+.nv-coord-card:nth-child(5).reveal { transition-delay: 0.2s; }
+.nv-coord-card:nth-child(6).reveal { transition-delay: 0.25s; }
+.nv-coord-card:nth-child(7).reveal { transition-delay: 0.3s; }
+.nv-coord-card:nth-child(8).reveal { transition-delay: 0.35s; }
 
 /* --- Responsive: Tablet --- */
 @media (max-width: 1024px) {
   .nv-coord-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
-  }
-
-  .nv-coord-section {
-    padding: 5rem 0 4rem;
-  }
-
-  .nv-coord-header {
-    margin-bottom: 3.5rem;
-  }
-}
-
-/* --- Responsive: Mobile --- */
-@media (max-width: 640px) {
-  .nv-coord-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 0.85rem;
+    gap: 1rem;
   }
 
   .nv-coord-section {
@@ -7202,31 +7449,55 @@ select.form-control {
     margin-bottom: 2.5rem;
   }
 
+  .nv-coord-title {
+    font-size: clamp(3rem, 8vw, 5.5rem);
+  }
+}
+
+/* --- Responsive: Mobile --- */
+@media (max-width: 640px) {
+  .nv-coord-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+
+  .nv-coord-section {
+    padding: 3.5rem 0 2.5rem;
+  }
+
+  .nv-coord-header {
+    margin-bottom: 2rem;
+  }
+
+  .nv-coord-title {
+    font-size: clamp(2.4rem, 8vw, 3.8rem);
+  }
+
   .nv-coord-card-content {
-    padding: 0.85rem 0.85rem 1.1rem;
+    padding: 0.75rem;
   }
 
   .nv-coord-card-name {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 
   .nv-coord-card-quote {
-    font-size: 0.72rem;
-    line-height: 1.6;
+    font-size: 0.68rem;
   }
 
   .nv-coord-card-role {
-    font-size: 0.55rem;
+    font-size: 0.52rem;
   }
 
   .nv-coord-card-initials {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
 
 @media (max-width: 380px) {
   .nv-coord-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 0.75rem;
   }
 }
+

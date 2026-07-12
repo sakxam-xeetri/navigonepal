@@ -198,6 +198,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 5000);
   }
 
+  // Background Slideshow for Navigo Coordinators section (cycles every 3 seconds)
+  const nvSlides = document.querySelectorAll(".nv-coord-slide");
+  if (nvSlides.length > 0) {
+    let nvCurrent = 0;
+    setInterval(() => {
+      nvSlides[nvCurrent].classList.remove("active");
+      nvCurrent = (nvCurrent + 1) % nvSlides.length;
+      nvSlides[nvCurrent].classList.add("active");
+    }, 3000);
+  }
+
+
   // Render Leadership Quote
   if (CMS.story.leadershipMessage) {
     const quoteText = document.getElementById("leadershipQuoteText");
@@ -1059,18 +1071,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // 2. Process Province Select (Map Synchronizing)
+    // 2. Process Province Select
     if (provinceId) {
       const path = document.getElementById(`path-${provinceId}`);
       if (path) {
         path.click();
-      }
-      if (!query) {
-        // If ONLY province is selected, navigate directly to map section
-        const mapSection = document.getElementById("impact-map");
-        if (mapSection) {
-          mapSection.scrollIntoView({ behavior: "smooth" });
-        }
       }
     }
   }
