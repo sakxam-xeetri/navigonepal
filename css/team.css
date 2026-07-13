@@ -354,3 +354,12 @@
     text-align: center;
   }
 }
+
+/* 3-column Layout for Core/Advisor Grid */
+@media (min-width: 1025px) {
+  .nv-coord-grid-3 {
+    grid-template-columns: repeat(3, 1fr) !important;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
