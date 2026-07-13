@@ -19,7 +19,16 @@
   <link rel="stylesheet" href="css/programs.css">
 </head>
 
-<body>
+<body class="loading">
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Ambient Background Glow -->
+  <div class="glow-wrapper">
+    <div class="glow-orb orb-blue"></div>
+    <div class="glow-orb orb-green"></div>
+  </div>
 
   <!-- Premium Navigation Bar -->
   <nav class="navbar" id="mainNav">
@@ -193,11 +202,11 @@
     <div class="wwe-ambient-orb wwe-orb-2" style="opacity: 0.2;"></div>
     <div class="container prog-hero-inner">
       <!-- Colored accent bar -->
-      <div class="hero-accent-bar" style="margin: 0 auto 1.5rem; justify-content: center; display: flex; gap: 0;">
-        <span class="hero-accent-segment hero-accent-red" style="width: 35px; height: 5px; background: #E63946; display: inline-block;"></span>
-        <span class="hero-accent-segment hero-accent-yellow" style="width: 35px; height: 5px; background: #F4A261; display: inline-block;"></span>
-        <span class="hero-accent-segment hero-accent-green" style="width: 35px; height: 5px; background: #2A9D8F; display: inline-block;"></span>
-        <span class="hero-accent-segment hero-accent-blue" style="width: 35px; height: 5px; background: #2563EB; display: inline-block;"></span>
+      <div class="hero-accent-bar" style="margin: 0 auto 1.5rem; justify-content: center;">
+        <span class="hero-accent-segment hero-accent-red"></span>
+        <span class="hero-accent-segment hero-accent-yellow"></span>
+        <span class="hero-accent-segment hero-accent-green"></span>
+        <span class="hero-accent-segment hero-accent-blue"></span>
       </div>
       <h1 class="prog-hero-title" style="margin-bottom: 1.5rem;">
         Our<br>
