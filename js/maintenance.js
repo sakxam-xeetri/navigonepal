@@ -1,8 +1,8 @@
 (function() {
   // Check localStorage for a state override first
-  // If not set, we default to maintenance mode active (true)
+  // If not set, we default to maintenance mode inactive (false)
   const localMaintenance = localStorage.getItem('navigo-maintenance-mode');
-  const isMaintenanceMode = localMaintenance !== null ? (localMaintenance === 'true') : true;
+  const isMaintenanceMode = localMaintenance !== null ? (localMaintenance === 'true') : false;
 
   if (isMaintenanceMode) {
     const currentPath = window.location.pathname;

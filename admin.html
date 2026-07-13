@@ -1156,7 +1156,7 @@
         
         // Initialize Toggle state from localStorage
         const localMaintenance = localStorage.getItem('navigo-maintenance-mode');
-        const isMaintenance = localMaintenance !== null ? (localMaintenance === 'true') : true;
+        const isMaintenance = localMaintenance !== null ? (localMaintenance === 'true') : false;
         
         maintenanceToggle.checked = isMaintenance;
         updateBadge(isMaintenance);
