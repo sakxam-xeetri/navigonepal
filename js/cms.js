@@ -188,7 +188,7 @@ const NAVIGO_CMS = {
       name: "Chandrajyoti Student",
       location: "Nuwakot",
       role: "What's Next Participant",
-      image: "assets/22.png",
+      image: "assets/images.jpg",
       quote: "We were completely blank on what streams to choose after grade 10. The What's Next presentation explained the streams, colleges, and scholarships clearly, giving us much-needed confidence.",
       highlight: "SEE Graduate"
     },
