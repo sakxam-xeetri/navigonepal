@@ -2,7 +2,15 @@
 // Orchestrates theme variables, scroll animations, metric counters, map interactions, carousels, and confetti.
 
 document.addEventListener("DOMContentLoaded", () => {
-  const CMS = window.NAVIGO_CMS;
+  const CMS = (() => {
+    try {
+      const localData = localStorage.getItem("navigo-cms-data");
+      return localData ? JSON.parse(localData) : window.NAVIGO_CMS;
+    } catch (e) {
+      console.warn("Failed to load local CMS override: ", e);
+      return window.NAVIGO_CMS;
+    }
+  })();
   if (!CMS) {
     console.error("Navigo CMS data layer not detected.");
     return;
@@ -154,6 +162,21 @@ document.addEventListener("DOMContentLoaded", () => {
   if (document.getElementById("heroSubtitle")) document.getElementById("heroSubtitle").textContent = CMS.hero.subtitle;
   if (document.getElementById("heroCtaPrimary")) document.getElementById("heroCtaPrimary").textContent = CMS.hero.ctaPrimary;
   if (document.getElementById("heroCtaSecondary")) document.getElementById("heroCtaSecondary").textContent = CMS.hero.ctaSecondary;
+
+  // Render Founding Stats Dynamically
+  const statMembersVal = CMS.impactMetrics.find(m => m.id === "volunteers");
+  const statSchoolsVal = CMS.impactMetrics.find(m => m.id === "schools");
+  const statDistrictsVal = CMS.impactMetrics.find(m => m.id === "districts");
+
+  if (document.getElementById("statMembers") && statMembersVal) {
+    document.getElementById("statMembers").textContent = statMembersVal.value + statMembersVal.suffix;
+  }
+  if (document.getElementById("statSchools") && statSchoolsVal) {
+    document.getElementById("statSchools").textContent = statSchoolsVal.value + statSchoolsVal.suffix;
+  }
+  if (document.getElementById("statDistricts") && statDistrictsVal) {
+    document.getElementById("statDistricts").textContent = statDistrictsVal.value + statDistrictsVal.suffix;
+  }
 
   // Render Founding Story
   const foundingStoryText = document.getElementById("foundingStoryText");

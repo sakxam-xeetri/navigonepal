@@ -510,6 +510,248 @@
       background: rgba(255, 255, 255, 0.08);
     }
 
+    /* CMS Tab Bar Navigation */
+    .admin-tabs {
+      display: flex;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.5rem;
+      margin-bottom: 2rem;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+    }
+
+    .admin-tab-btn {
+      padding: 0.75rem 1.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .admin-tab-btn:hover {
+      color: var(--text-main);
+      background: rgba(37, 99, 235, 0.05);
+    }
+
+    .admin-tab-btn.active {
+      color: var(--text-inverse);
+      background: var(--accent-color);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Tab Content Panels */
+    .tab-content-panel {
+      display: none;
+      animation: fadeIn 0.4s ease forwards;
+    }
+
+    .tab-content-panel.active {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Form Design for CMS Editor */
+    .editor-section-card {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-xl);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-md);
+      text-align: left;
+    }
+
+    .editor-section-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .editor-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .editor-grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .editor-form-input {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      background: rgba(10, 35, 66, 0.02);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+
+    [data-theme="dark"] .editor-form-input {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .editor-form-input:focus {
+      outline: none;
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+      background: transparent;
+    }
+
+    .editor-form-textarea {
+      width: 100%;
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    /* Slider styling */
+    .slider-group-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      background: rgba(10, 35, 66, 0.02);
+      border: 1px solid var(--border-color);
+      padding: 1.5rem;
+      border-radius: var(--radius-lg);
+      text-align: left;
+    }
+
+    [data-theme="dark"] .slider-group-container {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .slider-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .slider-goal-title {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
+
+    .slider-goal-val {
+      font-weight: 700;
+      color: var(--accent-color);
+      font-size: 0.9rem;
+    }
+
+    .goal-slider-bar {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 8px;
+      border-radius: var(--radius-full);
+      background: var(--border-color);
+      outline: none;
+      transition: background 0.3s;
+    }
+
+    .goal-slider-bar::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--accent-color);
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s;
+    }
+
+    .goal-slider-bar::-webkit-slider-thumb:hover {
+      transform: scale(1.2);
+    }
+
+    /* Footer Action panel */
+    .editor-action-panel {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+      margin-top: 1rem;
+      padding: 1.5rem 0;
+      border-top: 1px solid var(--border-color);
+      width: 100%;
+    }
+
+    .btn-action {
+      padding: 0.8rem 2rem;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 700;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      outline: none;
+    }
+
+    .btn-save-cms {
+      background: var(--gradient-primary);
+      color: var(--text-inverse);
+      border: none;
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-save-cms:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .btn-reset-cms {
+      background: transparent;
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+    }
+
+    .btn-reset-cms:hover {
+      background: rgba(239, 68, 68, 0.05);
+      border-color: rgba(239, 68, 68, 0.3);
+      color: #ef4444;
+    }
+
+    /* Success message banner */
+    .success-alert {
+      display: none;
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      color: var(--accent-emerald);
+      padding: 1rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1.5rem;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.9rem;
+      animation: fadeIn 0.4s ease;
+      width: 100%;
+    }
+
     .footer-text {
       text-align: center;
       padding: 2rem;
@@ -591,103 +833,215 @@
         <p class="subtitle">System state administration console</p>
       </div>
 
-      <div class="dashboard-grid">
-        <!-- Maintenance Mode Switch -->
-        <div class="dash-card">
-          <h3>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-            </svg>
-            System Status Control
-          </h3>
-          <div class="control-panel">
-            <div id="statusBadge" class="maintenance-status-badge">
-              Maintenance Active
-            </div>
-            
-            <label class="switch-label">
-              <input type="checkbox" id="maintenanceToggle">
-              <span class="slider">
-                <span class="slider-glow"></span>
-              </span>
-            </label>
-            
-            <div class="toggle-description">
-              Toggling this switch will change the live deployment state of the website in your local session storage.
-            </div>
-          </div>
-        </div>
+      <!-- Tab Buttons -->
+      <div class="admin-tabs">
+        <button class="admin-tab-btn active" type="button" data-target-panel="panelStatus">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/><path d="M15 3v18"/></svg>
+          System Console
+        </button>
+        <button class="admin-tab-btn" type="button" data-target-panel="panelHero">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+          Edit Hero
+        </button>
+        <button class="admin-tab-btn" type="button" data-target-panel="panelMetrics">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          Key Statistics
+        </button>
+        <button class="admin-tab-btn" type="button" data-target-panel="panelGoals">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
+          Strategic Goals
+        </button>
+        <button class="admin-tab-btn" type="button" data-target-panel="panelVision">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          Mission &amp; Vision
+        </button>
+      </div>
 
-        <!-- Telemetry Details -->
-        <div class="dash-card">
-          <h3>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
-            </svg>
-            Live Server Telemetry
-          </h3>
-          <div class="telemetry-grid">
-            <div class="telemetry-item">
-              <span class="telemetry-label">CPU LOAD</span>
-              <span class="telemetry-value" id="cpuVal">12.4%</span>
-              <span class="telemetry-indicator indicator-up">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
-                Stable
-              </span>
-            </div>
-            <div class="telemetry-item">
-              <span class="telemetry-label">DB RESPONSE</span>
-              <span class="telemetry-value" id="dbVal">18ms</span>
-              <span class="telemetry-indicator indicator-up">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
-                Optimal
-              </span>
-            </div>
-            <div class="telemetry-item">
-              <span class="telemetry-label">ACTIVE VISITORS</span>
-              <span class="telemetry-value">0</span>
-              <span class="telemetry-indicator indicator-warn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                Redirected
-              </span>
-            </div>
-            <div class="telemetry-item">
-              <span class="telemetry-label">MEM CONSUMPTION</span>
-              <span class="telemetry-value">256MB</span>
-              <span class="telemetry-indicator indicator-up">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
-                Normal
-              </span>
-            </div>
-          </div>
-        </div>
+      <!-- Success Banner -->
+      <div id="cmsSuccessAlert" class="success-alert">
+        Success! Changes saved and live in your session.
+      </div>
 
-        <!-- Developer Guidance Alert -->
-        <div class="dash-card guide-card">
-          <h3>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
-            </svg>
-            Architectural Tip: Moving to Production
-          </h3>
-          <div class="alert-banner">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-            <div>
-              <div class="alert-title">Upgrading from LocalStorage Override</div>
-              <div class="alert-desc">
-                Currently, toggling maintenance mode saves the state to <span class="code-snippet">localStorage.setItem('navigo-maintenance-mode')</span> in the current browser. This is perfect for local testing and validation.
-                <br><br>
-                For a live deployment where <strong>all users</strong> are toggled globally:
-                <br>
-                1. Change the check in <span class="code-snippet">js/maintenance.js</span> to run a fast <span class="code-snippet">fetch()</span> call targeting a lightweight JSON configuration, a serverless cloud function, or a CDN KV store.
-                <br>
-                2. Connect this toggle switch to an API endpoint (e.g. via an authenticated <span class="code-snippet">POST</span> request) that modifies that remote database/file state globally.
+      <form id="cmsForm">
+        <!-- Panel 1: System Console -->
+        <div class="tab-content-panel active" id="panelStatus">
+          <div class="dashboard-grid">
+            <!-- Maintenance Mode Switch -->
+            <div class="dash-card">
+              <h3>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                </svg>
+                System Status Control
+              </h3>
+              <div class="control-panel">
+                <div id="statusBadge" class="maintenance-status-badge">
+                  Maintenance Active
+                </div>
+                
+                <label class="switch-label">
+                  <input type="checkbox" id="maintenanceToggle">
+                  <span class="slider">
+                    <span class="slider-glow"></span>
+                  </span>
+                </label>
+                
+                <div class="toggle-description">
+                  Toggling this switch will change the live deployment state of the website in your local session storage.
+                </div>
+              </div>
+            </div>
+
+            <!-- Telemetry Details -->
+            <div class="dash-card">
+              <h3>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+                </svg>
+                Live Server Telemetry
+              </h3>
+              <div class="telemetry-grid">
+                <div class="telemetry-item">
+                  <span class="telemetry-label">CPU LOAD</span>
+                  <span class="telemetry-value" id="cpuVal">12.4%</span>
+                  <span class="telemetry-indicator indicator-up">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+                    Stable
+                  </span>
+                </div>
+                <div class="telemetry-item">
+                  <span class="telemetry-label">DB RESPONSE</span>
+                  <span class="telemetry-value" id="dbVal">18ms</span>
+                  <span class="telemetry-indicator indicator-up">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+                    Optimal
+                  </span>
+                </div>
+                <div class="telemetry-item">
+                  <span class="telemetry-label">ACTIVE VISITORS</span>
+                  <span class="telemetry-value">0</span>
+                  <span class="telemetry-indicator indicator-warn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    Redirected
+                  </span>
+                </div>
+                <div class="telemetry-item">
+                  <span class="telemetry-label">MEM CONSUMPTION</span>
+                  <span class="telemetry-value">256MB</span>
+                  <span class="telemetry-indicator indicator-up">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+                    Normal
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Developer Guidance Alert -->
+            <div class="dash-card guide-card">
+              <h3>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
+                </svg>
+                Architectural Tip: Moving to Production
+              </h3>
+              <div class="alert-banner">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                <div>
+                  <div class="alert-title">Upgrading from LocalStorage Override</div>
+                  <div class="alert-desc">
+                    Currently, toggling maintenance mode saves the state to <span class="code-snippet">localStorage.setItem('navigo-maintenance-mode')</span> in the current browser. This is perfect for local testing and validation.
+                    <br><br>
+                    For a live deployment where <strong>all users</strong> are toggled globally:
+                    <br>
+                    1. Change the check in <span class="code-snippet">js/maintenance.js</span> to run a fast <span class="code-snippet">fetch()</span> call targeting a lightweight JSON configuration, a serverless cloud function, or a CDN KV store.
+                    <br>
+                    2. Connect this toggle switch to an API endpoint (e.g. via an authenticated <span class="code-snippet">POST</span> request) that modifies that remote database/file state globally.
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+
+        <!-- Panel 2: Edit Hero -->
+        <div class="tab-content-panel" id="panelHero">
+          <div class="editor-section-card">
+            <h3>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+              Homepage Hero Content
+            </h3>
+            <div class="form-group">
+              <label for="inpHeroTitle">HERO TITLE</label>
+              <input type="text" id="inpHeroTitle" class="editor-form-input" placeholder="Hero Title">
+            </div>
+            <div class="form-group">
+              <label for="inpHeroSubtitle">HERO SUBTITLE</label>
+              <textarea id="inpHeroSubtitle" class="editor-form-input editor-form-textarea" placeholder="Hero Subtitle"></textarea>
+            </div>
+            <div class="editor-grid-2">
+              <div class="form-group">
+                <label for="inpHeroCtaPrimary">PRIMARY CTA LABEL</label>
+                <input type="text" id="inpHeroCtaPrimary" class="editor-form-input" placeholder="Primary CTA">
+              </div>
+              <div class="form-group">
+                <label for="inpHeroCtaSecondary">SECONDARY CTA LABEL</label>
+                <input type="text" id="inpHeroCtaSecondary" class="editor-form-input" placeholder="Secondary CTA">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 3: Key Statistics -->
+        <div class="tab-content-panel" id="panelMetrics">
+          <div class="editor-section-card">
+            <h3>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              Key Statistics &amp; Metrics
+            </h3>
+            <div class="editor-grid-2" id="metricsFormContainer">
+              <!-- Dynamically populated metrics inputs will go here -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 4: Strategic Goals -->
+        <div class="tab-content-panel" id="panelGoals">
+          <div class="editor-section-card">
+            <h3>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
+              Future Goals (Progress Meters)
+            </h3>
+            <div class="editor-grid-2" id="goalsFormContainer">
+              <!-- Dynamically populated goals sliders will go here -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 5: Mission & Vision -->
+        <div class="tab-content-panel" id="panelVision">
+          <div class="editor-section-card">
+            <h3>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+              Mission &amp; Vision Statements
+            </h3>
+            <div class="form-group">
+              <label for="inpStoryMission">ORGANIZATION MISSION</label>
+              <textarea id="inpStoryMission" class="editor-form-input editor-form-textarea" placeholder="Mission Statement"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="inpStoryVision">ORGANIZATION VISION</label>
+              <textarea id="inpStoryVision" class="editor-form-input editor-form-textarea" placeholder="Vision Statement"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Actions -->
+        <div class="editor-action-panel">
+          <button type="button" class="btn-action btn-reset-cms" id="resetCmsBtn">Reset to Defaults</button>
+          <button type="submit" class="btn-action btn-save-cms" id="saveCmsBtn">Save Changes</button>
+        </div>
+      </form>
     </div>
 
   </main>
@@ -784,6 +1138,17 @@
         hideDashboard();
       });
 
+      // Active CMS Data (local or fallback to global window data)
+      let CMS = (() => {
+        try {
+          const localData = localStorage.getItem("navigo-cms-data");
+          return localData ? JSON.parse(localData) : window.NAVIGO_CMS;
+        } catch (e) {
+          console.warn("Failed to load local CMS override: ", e);
+          return window.NAVIGO_CMS;
+        }
+      })();
+
       function showDashboard() {
         loginPanel.style.display = "none";
         dashboardPanel.style.display = "flex";
@@ -796,6 +1161,9 @@
         maintenanceToggle.checked = isMaintenance;
         updateBadge(isMaintenance);
         startTelemetrySimulation();
+
+        // Initialize CMS Editor content
+        initializeCmsEditor();
       }
 
       function hideDashboard() {
@@ -839,6 +1207,140 @@
 
       function stopTelemetrySimulation() {
         if (telemetryTimer) clearInterval(telemetryTimer);
+      }
+
+      // 6. CMS Editor Tab Switching
+      const tabBtns = document.querySelectorAll(".admin-tab-btn");
+      const contentPanels = document.querySelectorAll(".tab-content-panel");
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+          // Remove active classes
+          tabBtns.forEach(b => b.classList.remove("active"));
+          contentPanels.forEach(p => p.classList.remove("active"));
+
+          // Add active class to clicked button
+          btn.classList.add("active");
+
+          // Show corresponding panel
+          const targetPanelId = btn.getAttribute("data-target-panel");
+          const targetPanel = document.getElementById(targetPanelId);
+          if (targetPanel) {
+            targetPanel.classList.add("active");
+          }
+        });
+      });
+
+      // 7. CMS Editor Initialization and Forms rendering
+      function initializeCmsEditor() {
+        if (!CMS) return;
+
+        // Populate Hero fields
+        if (document.getElementById("inpHeroTitle")) document.getElementById("inpHeroTitle").value = CMS.hero.title || "";
+        if (document.getElementById("inpHeroSubtitle")) document.getElementById("inpHeroSubtitle").value = CMS.hero.subtitle || "";
+        if (document.getElementById("inpHeroCtaPrimary")) document.getElementById("inpHeroCtaPrimary").value = CMS.hero.ctaPrimary || "";
+        if (document.getElementById("inpHeroCtaSecondary")) document.getElementById("inpHeroCtaSecondary").value = CMS.hero.ctaSecondary || "";
+
+        // Populate Mission & Vision fields
+        if (document.getElementById("inpStoryMission")) document.getElementById("inpStoryMission").value = CMS.story.mission || "";
+        if (document.getElementById("inpStoryVision")) document.getElementById("inpStoryVision").value = CMS.story.vision || "";
+
+        // Render & Populate Metrics inputs
+        const metricsFormContainer = document.getElementById("metricsFormContainer");
+        if (metricsFormContainer && CMS.impactMetrics) {
+          metricsFormContainer.innerHTML = CMS.impactMetrics.map((metric, idx) => `
+            <div class="form-group">
+              <label for="metric_${metric.id}">${metric.label.toUpperCase()} (${metric.suffix})</label>
+              <input type="number" id="metric_${metric.id}" data-id="${metric.id}" class="editor-form-input metric-input-val" value="${metric.value}">
+            </div>
+          `).join("");
+        }
+
+        // Render & Populate Goals sliders
+        const goalsFormContainer = document.getElementById("goalsFormContainer");
+        if (goalsFormContainer && CMS.story.futureGoals) {
+          goalsFormContainer.innerHTML = CMS.story.futureGoals.map((goal, idx) => `
+            <div class="slider-group-container">
+              <div class="slider-header-row">
+                <span class="slider-goal-title">${goal.title}</span>
+                <span class="slider-goal-val" id="goalVal_${idx}">${goal.progress}%</span>
+              </div>
+              <input type="range" min="0" max="100" class="goal-slider-bar goal-slider-input" data-index="${idx}" value="${goal.progress}" id="goalInput_${idx}">
+            </div>
+          `).join("");
+
+          // Update percentages visually during slide
+          document.querySelectorAll(".goal-slider-input").forEach(slider => {
+            slider.addEventListener("input", (e) => {
+              const idx = e.target.getAttribute("data-index");
+              const valIndicator = document.getElementById(`goalVal_${idx}`);
+              if (valIndicator) valIndicator.textContent = e.target.value + "%";
+            });
+          });
+        }
+      }
+
+      // 8. Save Form Submit
+      const cmsForm = document.getElementById("cmsForm");
+      if (cmsForm) {
+        cmsForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          // Update Hero
+          if (CMS.hero) {
+            CMS.hero.title = document.getElementById("inpHeroTitle").value;
+            CMS.hero.subtitle = document.getElementById("inpHeroSubtitle").value;
+            CMS.hero.ctaPrimary = document.getElementById("inpHeroCtaPrimary").value;
+            CMS.hero.ctaSecondary = document.getElementById("inpHeroCtaSecondary").value;
+          }
+
+          // Update Metrics
+          document.querySelectorAll(".metric-input-val").forEach(input => {
+            const mId = input.getAttribute("data-id");
+            const metricObj = CMS.impactMetrics.find(m => m.id === mId);
+            if (metricObj) {
+              metricObj.value = parseInt(input.value) || 0;
+            }
+          });
+
+          // Update Goals
+          document.querySelectorAll(".goal-slider-input").forEach(input => {
+            const idx = parseInt(input.getAttribute("data-index"));
+            if (CMS.story && CMS.story.futureGoals && CMS.story.futureGoals[idx]) {
+              CMS.story.futureGoals[idx].progress = parseInt(input.value) || 0;
+            }
+          });
+
+          // Update Mission/Vision
+          if (CMS.story) {
+            CMS.story.mission = document.getElementById("inpStoryMission").value;
+            CMS.story.vision = document.getElementById("inpStoryVision").value;
+          }
+
+          // Save to LocalStorage
+          localStorage.setItem("navigo-cms-data", JSON.stringify(CMS));
+
+          // Alert banner trigger
+          const successBanner = document.getElementById("cmsSuccessAlert");
+          if (successBanner) {
+            successBanner.style.display = "block";
+            successBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            setTimeout(() => {
+              successBanner.style.display = "none";
+            }, 4000);
+          }
+        });
+      }
+
+      // 9. Reset Defaults button
+      const resetCmsBtn = document.getElementById("resetCmsBtn");
+      if (resetCmsBtn) {
+        resetCmsBtn.addEventListener("click", () => {
+          if (confirm("Are you sure you want to reset all customized site values back to template defaults?")) {
+            localStorage.removeItem("navigo-cms-data");
+            window.location.reload();
+          }
+        });
       }
     });
   </script>
