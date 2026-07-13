@@ -207,14 +207,14 @@ const NAVIGO_CMS = {
       name: "Anupam Neupane",
       role: "Co-Founder & Content Director",
       bio: "Designs interactive, game-based learning modules, Scout leadership sessions, and counsels students on SEE streams.",
-      image: "assets/team_binaya.jpg",
+      image: "assets/169567052.jpg",
       linkedin: "https://linkedin.com/in/anupam-neupane"
     },
     {
       name: "Prajwal Dhungana",
       role: "Co-Founder & Operations Lead",
       bio: "Coordinates nationwide school outreach, volunteer orientations, and project logistics in partner districts.",
-      image: "assets/team_sneha.jpg",
+      image: "assets/advisory/prajal.png",
       linkedin: "https://linkedin.com/in/prajwal-dhungana"
     },
     {
