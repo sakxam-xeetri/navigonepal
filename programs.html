@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 
 <head>
   <script src="js/maintenance.js"></script>
@@ -13,15 +13,447 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/programs.css">
+
+  <style>
+    /* ==================== PROGRAMS FULL BLACK AESTHETIC WITH SHARP EDGES ==================== */
+    
+    /* UNIVERSAL SHARP EDGES OVERRIDE */
+    *,
+    *::before,
+    *::after,
+    .ref-hero-photo,
+    .ref-hero-photo img,
+    .ref-card,
+    .ref-card-icon,
+    .ref-pill-badge,
+    .btn-ref-pill,
+    .premium-card,
+    .sidebar-premium-card,
+    .prog-sidebar-card,
+    .prog-info-box,
+    .prog-cta-card,
+    .prog-cta-icon,
+    .prog-tab,
+    .top-announcement-bar,
+    .btn,
+    img {
+      border-radius: 0px !important;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif !important;
+      background-color: #0A0A0A !important;
+      color: #FFFFFF !important;
+      line-height: 1.7;
+    }
+
+    /* ALL SECTIONS FULL BLACK BACKGROUND */
+    section,
+    .section,
+    .prog-section-dark,
+    .white-bg-section,
+    .prog-tabs-section {
+      background-color: #0A0A0A !important;
+      color: #FFFFFF !important;
+    }
+
+    h1, h2, h3, h4, h5, h6,
+    .ref-hero-title,
+    .prog-section-title,
+    .prog-subtitle,
+    .prog-cta-title,
+    .prog-stat-number,
+    .prog-timeline-title {
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #FFFFFF !important;
+    }
+
+    p, li, span, div,
+    .ref-hero-subtitle,
+    .prog-section-desc,
+    .prog-cta-desc,
+    .prog-sidebar-text,
+    .prog-text-block p {
+      color: #FFFFFF !important;
+      font-family: 'Inter', sans-serif !important;
+      opacity: 0.95;
+    }
+
+    /* Top Banner Announcement */
+    .top-announcement-bar {
+      background: linear-gradient(90deg, #F4A261 0%, #F59E0B 100%);
+      color: #0A0A0A !important;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.84rem;
+      font-weight: 600;
+      padding: 0.45rem 1rem;
+      text-align: center;
+      letter-spacing: 0.02em;
+      box-shadow: 0 2px 10px rgba(245, 158, 11, 0.2);
+    }
+
+    .top-announcement-bar span {
+      color: #0A0A0A !important;
+    }
+
+    /* Hero Section with Grid & Background Overlay */
+    .hero-ref-section {
+      background: linear-gradient(180deg, rgba(10, 10, 10, 0.85) 0%, rgba(10, 10, 10, 0.96) 100%), 
+                  url('assets/program.jpg') center/cover no-repeat !important;
+      position: relative;
+      padding: 6.5rem 0 5.5rem;
+      overflow: hidden;
+    }
+
+    .ref-grid-lines {
+      position: absolute;
+      inset: 0;
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      pointer-events: none;
+    }
+
+    .ref-hero-container {
+      display: grid;
+      grid-template-columns: 270px 1fr 270px;
+      gap: 2.5rem;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    @media (max-width: 992px) {
+      .ref-hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .ref-hero-photo {
+        display: none;
+      }
+    }
+
+    .ref-hero-photo {
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: transform 0.4s ease;
+      background: #141414;
+    }
+
+    .ref-hero-photo:hover {
+      transform: translateY(-5px);
+      border-color: rgba(244, 162, 97, 0.5);
+    }
+
+    .ref-hero-photo img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .ref-hero-photo-left {
+      transform: translateY(-15px);
+    }
+
+    .ref-hero-photo-right {
+      transform: translateY(15px);
+    }
+
+    .ref-hero-content {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .ref-hero-title {
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      font-size: clamp(2.4rem, 4.8vw, 3.8rem);
+      font-weight: 800;
+      color: #FFFFFF !important;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+
+    .ref-hero-subtitle {
+      font-family: 'Inter', sans-serif !important;
+      font-size: 1.05rem;
+      color: #FFFFFF !important;
+      line-height: 1.75;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+    }
+
+    .ref-hero-ctas {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* Buttons */
+    .btn-ref-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.75rem 1.8rem;
+      font-family: 'Inter', sans-serif !important;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-ref-teal {
+      background: #2A9D8F;
+      color: #FFFFFF !important;
+      border: 1px solid #2A9D8F;
+      box-shadow: 0 4px 15px rgba(42, 157, 143, 0.3);
+    }
+
+    .btn-ref-teal:hover {
+      background: #238579;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(42, 157, 143, 0.45);
+      color: #FFFFFF !important;
+    }
+
+    .btn-ref-yellow {
+      background: #F4A261;
+      color: #0A0A0A !important;
+      border: 1px solid #F4A261;
+      box-shadow: 0 4px 15px rgba(244, 162, 97, 0.3);
+    }
+
+    .btn-ref-yellow:hover {
+      background: #e7924d;
+      color: #0A0A0A !important;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(244, 162, 97, 0.45);
+    }
+
+    /* Pill Badges */
+    .ref-pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.38rem 1.1rem;
+      background: rgba(42, 157, 143, 0.15);
+      border: 1px solid rgba(42, 157, 143, 0.35);
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #2A9D8F !important;
+      margin-bottom: 1rem;
+    }
+
+    .ref-pill-badge-teal {
+      background: rgba(42, 157, 143, 0.15);
+      border-color: rgba(42, 157, 143, 0.35);
+      color: #2A9D8F !important;
+    }
+
+    .ref-pill-badge-yellow {
+      background: rgba(244, 162, 97, 0.15);
+      border-color: rgba(244, 162, 97, 0.35);
+      color: #F4A261 !important;
+    }
+
+    .ref-pill-badge-red {
+      background: rgba(230, 57, 70, 0.15);
+      border-color: rgba(230, 57, 70, 0.35);
+      color: #E63946 !important;
+    }
+
+    .ref-pill-badge span {
+      color: inherit !important;
+    }
+
+    /* Stats Bar Refinements */
+    .prog-stats {
+      background-color: #0F0F0F !important;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 2rem 0;
+    }
+
+    .prog-stat-number {
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+
+    .prog-stat-label {
+      color: #FFFFFF !important;
+      font-family: 'Inter', sans-serif !important;
+      font-size: 0.88rem;
+      opacity: 0.9;
+    }
+
+    /* Tabs Bar */
+    .prog-tabs-section {
+      background-color: #0A0A0A !important;
+      padding: 1.5rem 0;
+      position: sticky;
+      top: 70px;
+      z-index: 90;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .prog-tab {
+      background: #141414;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #FFFFFF !important;
+      font-family: 'Inter', sans-serif !important;
+      font-weight: 600;
+      padding: 0.6rem 1.4rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .prog-tab:hover,
+    .prog-tab.active {
+      background: #2A9D8F !important;
+      color: #FFFFFF !important;
+      border-color: #2A9D8F !important;
+    }
+
+    /* ALL CARDS IN FULL BLACK THEME */
+    .prog-sidebar-card,
+    .prog-info-box,
+    .premium-card,
+    .prog-cta-card {
+      background: #141414 !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+      padding: 2rem;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .prog-sidebar-card:hover,
+    .prog-info-box:hover,
+    .premium-card:hover,
+    .prog-cta-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 255, 255, 0.25) !important;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7) !important;
+    }
+
+    .prog-sidebar-card {
+      border-left: 4px solid #2A9D8F !important;
+    }
+
+    .prog-sidebar-card h4 {
+      color: #FFFFFF !important;
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      margin-bottom: 1rem;
+    }
+
+    .prog-sidebar-card ul li {
+      color: #FFFFFF !important;
+      opacity: 0.95;
+      font-family: 'Inter', sans-serif !important;
+    }
+
+    .prog-info-box {
+      border-left: 4px solid #F4A261 !important;
+      margin-top: 2rem;
+    }
+
+    .prog-info-box h4 {
+      color: #F4A261 !important;
+      margin-bottom: 1rem;
+    }
+
+    .prog-info-box p {
+      color: #FFFFFF !important;
+      opacity: 0.95;
+    }
+
+    /* Timeline Markers */
+    .prog-timeline-item {
+      border-left: 2px solid rgba(255, 255, 255, 0.15) !important;
+      padding-left: 1.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .prog-timeline-marker {
+      background: #2A9D8F !important;
+    }
+
+    .prog-timeline-date {
+      color: #E63946 !important;
+      font-weight: 700;
+    }
+
+    /* CTA Section Cards */
+    .prog-cta-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-decoration: none;
+    }
+
+    .prog-cta-icon {
+      width: 56px;
+      height: 56px;
+      background: rgba(42, 157, 143, 0.18);
+      color: #2A9D8F;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .prog-cta-icon--green {
+      background: rgba(16, 185, 129, 0.18);
+      color: #10B981;
+    }
+
+    .prog-cta-icon--purple {
+      background: rgba(244, 162, 97, 0.18);
+      color: #F4A261;
+    }
+
+    .prog-cta-link {
+      color: #2A9D8F !important;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif !important;
+      margin-top: 1rem;
+    }
+  </style>
 </head>
 
-<body>
+<body class="loading">
 
-  <!-- Premium Navigation Bar -->
+  <!-- Top Announcement Bar (Amber / Yellow) -->
+  <div class="top-announcement-bar">
+    <span>Thank you for supporting youth empowerment &amp; education across Nepal! Learn, Lead, and Lift.</span>
+  </div>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Ambient Background Glow -->
+  <div class="glow-wrapper">
+    <div class="glow-orb orb-blue"></div>
+    <div class="glow-orb orb-green"></div>
+  </div>
+
+  <!-- Navigation Bar -->
   <nav class="navbar" id="mainNav">
     <div class="nav-container">
       <a href="index.html" class="logo" id="navLogo">
@@ -41,6 +473,8 @@
           </a>
           <ul class="dropdown-menu">
             <li><a href="our-story.html">Our Full Story</a></li>
+            <li><a href="our-story.html#who-we-are">Who We Are</a></li>
+            <li><a href="our-story.html#what-we-do">What We Do</a></li>
             <li><a href="our-story.html#about">About Navigo Nepal</a></li>
             <li><a href="our-story.html#mission">Mission &amp; Vision</a></li>
             <li><a href="our-story.html#cohort">The Cohort</a></li>
@@ -60,11 +494,11 @@
           </a>
           <ul class="dropdown-menu">
             <li><a href="programs.html">All Programs</a></li>
-            <li><a href="programs.html#whats-next">What's Next? Campaign</a></li>
-            <li><a href="programs.html#leadership">Leadership &amp; Personality</a></li>
-            <li><a href="programs.html#clubs">School Clubs &amp; ECAs</a></li>
-            <li><a href="programs.html#environmental">Environmental Stewardship</a></li>
-            <li><a href="programs.html#tech-veda">Connect Tech to Veda</a></li>
+            <li><a href="#whats-next">What's Next? Campaign</a></li>
+            <li><a href="#leadership">Leadership &amp; Personality</a></li>
+            <li><a href="#clubs">School Clubs &amp; ECAs</a></li>
+            <li><a href="#environmental">Environmental Stewardship</a></li>
+            <li><a href="#tech-veda">Connect Tech to Veda</a></li>
             <li style="border-top: 1px solid var(--border-color); margin-top: 0.5rem; padding-top: 0.5rem;"><a
                 href="past-events.html" style="font-weight: 600; color: var(--accent-color);">Past Events</a></li>
           </ul>
@@ -73,7 +507,7 @@
         <li><a href="team.html" class="nav-link">Team</a></li>
 
         <li class="has-dropdown">
-          <a href="index.html#donate" class="nav-link">
+          <a href="volunteer.html" class="nav-link">
             Get Involved
             <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"
               fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -85,8 +519,8 @@
             <li><a href="propose-project.html">Propose a Project</a></li>
             <li><a href="intern.html">Intern at Navigo</a></li>
             <li style="border-top: 1px solid var(--border-color); margin-top: 0.5rem; padding-top: 0.5rem;"><a
-                href="index.html#donate">Secure Sponsorship</a></li>
-            <li><a href="index.html#contact">Become a Partner</a></li>
+                href="donate.html">Donate</a></li>
+            <li><a href="join.html#partner">Become a Partner</a></li>
           </ul>
         </li>
       </ul>
@@ -95,7 +529,7 @@
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark/Light Mode" title="Toggle Mode">
           <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
             fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-            style="display: none;">
+            style="display: block;">
             <circle cx="12" cy="12" r="4" />
             <path d="M12 2v2" />
             <path d="M12 20v2" />
@@ -108,47 +542,127 @@
           </svg>
           <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
             fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-            style="display: block;">
-            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+            style="display: none;">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
           </svg>
         </button>
 
-        <button class="hamburger" id="hamburger" aria-label="Toggle Navigation Menu">
-          <span></span>
-          <span></span>
-          <span></span>
+        <a href="donate.html" class="btn btn-primary" style="padding: 0.55rem 1.5rem; font-size: 0.8rem; background: #2A9D8F; border-color: #2A9D8F;">Donate Now</a>
+
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Mobile Menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
         </button>
       </div>
     </div>
-  </nav>
 
-  <!-- Mobile Side Navigation -->
-  <aside class="mobile-nav" id="mobileNav">
-    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close Navigation Menu">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="18" y1="6" x2="6" y2="18" />
-        <line x1="6" y1="6" x2="18" y2="18" />
-      </svg>
-    </button>
-    <ul class="mobile-nav-links">
-      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
-      <li><a href="our-story.html" class="mobile-nav-link">Our Story</a></li>
-      <li><a href="programs.html" class="mobile-nav-link">Programs</a></li>
-      <li><a href="team.html" class="mobile-nav-link">Team</a></li>
-      <li><a href="join.html" class="mobile-nav-link">Get Involved</a></li>
-    </ul>
-  </aside>
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+      <div class="mobile-nav-header">
+        <a href="index.html" class="logo">
+          <img src="assets/navigo logo.png" alt="Navigo Nepal" class="logo-img">
+        </a>
+        <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close Mobile Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+      <ul class="mobile-nav-links">
+        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li class="mobile-nav-has-dropdown">
+          <a href="our-story.html" class="mobile-nav-link mobile-nav-dropdown-toggle">Our Story
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </a>
+          <ul class="mobile-nav-submenu">
+            <li><a href="our-story.html" class="mobile-subnav-link">Our Full Story</a></li>
+            <li><a href="our-story.html#who-we-are" class="mobile-subnav-link">Who We Are</a></li>
+            <li><a href="our-story.html#what-we-do" class="mobile-subnav-link">What We Do</a></li>
+            <li><a href="our-story.html#about" class="mobile-subnav-link">About Navigo Nepal</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav-has-dropdown">
+          <a href="programs.html" class="mobile-nav-link mobile-nav-dropdown-toggle">Programs
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </a>
+          <ul class="mobile-nav-submenu">
+            <li><a href="programs.html" class="mobile-subnav-link active">All Programs</a></li>
+            <li><a href="#whats-next" class="mobile-subnav-link">What's Next? Campaign</a></li>
+            <li><a href="#leadership" class="mobile-subnav-link">Leadership &amp; Personality</a></li>
+            <li><a href="#clubs" class="mobile-subnav-link">School Clubs &amp; ECAs</a></li>
+            <li><a href="#environmental" class="mobile-subnav-link">Environmental Stewardship</a></li>
+            <li><a href="#tech-veda" class="mobile-subnav-link">Connect Tech to Veda</a></li>
+            <li><a href="past-events.html" class="mobile-subnav-link">Past Events</a></li>
+          </ul>
+        </li>
+        <li><a href="team.html" class="mobile-nav-link">Team</a></li>
+        <li class="mobile-nav-has-dropdown">
+          <a href="#" class="mobile-nav-link mobile-nav-dropdown-toggle">Get Involved
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </a>
+          <ul class="mobile-nav-submenu">
+            <li><a href="volunteer.html" class="mobile-subnav-link">Volunteer With Us</a></li>
+            <li><a href="propose-project.html" class="mobile-subnav-link">Propose a Project</a></li>
+            <li><a href="intern.html" class="mobile-subnav-link">Intern at Navigo</a></li>
+            <li><a href="donate.html" class="mobile-subnav-link">Donate</a></li>
+            <li><a href="join.html#partner" class="mobile-subnav-link">Become a Partner</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
   <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
 
-  <!-- HERO -->
-  <section class="prog-hero" style="background: linear-gradient(180deg, rgba(6, 23, 47, 0.78) 0%, rgba(6, 23, 47, 0.90) 100%), url('assets/program.jpg') center/cover no-repeat;">
-    <div class="prog-hero-bg"></div>
-    <div class="container prog-hero-inner">
-      <h1 class="prog-hero-title">
-        Our<br>
-        <span class="prog-hero-accent">Programs</span>
-      </h1>
+  <!-- HERO SECTION - Reference Inspired Dual-Photo Floating Grid -->
+  <section class="section hero-ref-section" id="top">
+    <div class="ref-grid-lines" aria-hidden="true"></div>
+    <div class="container ref-hero-container">
+      
+      <!-- Left Photo Frame -->
+      <div class="ref-hero-photo ref-hero-photo-left">
+        <img src="assets/mentor/469612680_122157346844283666_4819403624411688210_n.jpg" alt="Navigo Nepal Program Workshop">
+      </div>
+
+      <!-- Center Content Block -->
+      <div class="ref-hero-content">
+
+        <h1 class="ref-hero-title">
+          Our Educational Programs
+        </h1>
+
+        <p class="ref-hero-subtitle">
+          Transforming youth education across Nepal through stream counseling, leadership development, school club networks, environmental stewardship, and tech-tradition integration.
+        </p>
+
+        <div class="ref-hero-ctas">
+          <a href="#whats-next" class="btn-ref-pill btn-ref-teal">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            Explore Programs
+          </a>
+          <a href="volunteer.html" class="btn-ref-pill btn-ref-yellow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            Join Movement
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Photo Frame -->
+      <div class="ref-hero-photo ref-hero-photo-right">
+        <img src="assets/mentor/469609937_122157357716283666_668614257620270082_n.jpg" alt="Navigo Nepal Leadership Session">
+      </div>
+
     </div>
   </section>
 
@@ -157,22 +671,22 @@
     <div class="container">
       <div class="prog-stats-grid">
         <div class="prog-stat-item">
-          <span class="prog-stat-number">6K+</span>
+          <span class="prog-stat-number" style="color: #F4A261 !important;">10K+</span>
           <span class="prog-stat-label">Students Reached</span>
         </div>
         <div class="prog-stat-divider"></div>
         <div class="prog-stat-item">
-          <span class="prog-stat-number">77+</span>
+          <span class="prog-stat-number" style="color: #E63946 !important;">77+</span>
           <span class="prog-stat-label">Schools Visited</span>
         </div>
         <div class="prog-stat-divider"></div>
         <div class="prog-stat-item">
-          <span class="prog-stat-number">24</span>
+          <span class="prog-stat-number" style="color: #10B981 !important;">24+</span>
           <span class="prog-stat-label">Districts Covered</span>
         </div>
         <div class="prog-stat-divider"></div>
         <div class="prog-stat-item">
-          <span class="prog-stat-number">5</span>
+          <span class="prog-stat-number" style="color: #4F9CF9 !important;">5</span>
           <span class="prog-stat-label">Active Programs</span>
         </div>
       </div>
@@ -194,12 +708,14 @@
   </section>
 
   <!-- ==================== WHAT'S NEXT? CAMPAIGN ==================== -->
-  <section class="prog-section" id="whats-next">
+  <section class="section" id="whats-next" style="padding: 5.5rem 0;">
     <div class="container">
       <div class="prog-content-grid">
         <div class="prog-content-main">
-          <span class="prog-section-tag">Flagship Program</span>
-          <h2 class="prog-section-title">The "What's Next?" Campaign</h2>
+          <div class="ref-pill-badge ref-pill-badge-teal">
+            <span>Flagship Program</span>
+          </div>
+          <h2 class="prog-section-title" style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1.5rem;">The "What's Next?" Campaign</h2>
 
           <div class="prog-text-block">
             <p>
@@ -229,7 +745,7 @@
           </div>
 
           <div class="prog-text-block">
-            <h3 class="prog-subtitle">How the Campaign Works</h3>
+            <h3 class="prog-subtitle" style="font-size: 1.4rem; color: #FFFFFF !important; margin-bottom: 0.75rem;">How the Campaign Works</h3>
             <p>
               We run comprehensive surveys across the country to understand the problems
               students face and their core needs. A need-based assessment test is conducted
@@ -237,43 +753,20 @@
               research, survey data, and assessment results, we develop tailored content for
               each school. On the day of the session, we begin with a baseline diagnostic test
               to gauge students' current understanding. The main session follows, packed with
-              interactive presentations, games, and discussions. We conclude with an end-line
-              survey and compare the impact against our diagnostic results. Finally, we
-              validate our impact through interviews with both teachers and students before
-              preparing our follow-up session plan.
-            </p>
-          </div>
-
-          <div class="prog-text-block">
-            <h3 class="prog-subtitle">Session Methodology</h3>
-            <p>
-              Our sessions employ a dynamic mix of methodologies to keep students engaged
-              and facilitate deep learning. Interactive learning through games, debates, and
-              group discussions encourages active participation. Hands-on experiences allow
-              students to apply what they have learned in practical settings. Every session is
-              carefully tailored based on initial assessments to address the unique needs and
-              interests of each group. Each session typically lasts one and a half hours, with
-              a flexible structure that includes presentations, activities, and open
-              discussions. We initiate sessions with ice-breaker games to set a relaxed
-              atmosphere, followed by group activities and problem-solving exercises that
-              encourage critical and creative thinking. Pre and post-assessments help us
-              measure effectiveness and ensure continuous improvement.
+              interactive presentations, games, and discussions.
             </p>
           </div>
 
           <div class="prog-info-box">
             <h4>Three Core Pillars</h4>
             <p>
-              <strong>Empower Students:</strong> We help students understand the various
+              <strong style="color: #F4A261;">Empower Students:</strong> We help students understand the various
               options available after grade 10, including different streams, courses, and
-              colleges. Our goal is to equip them with the knowledge to make informed
-              decisions about their future education.<br><br>
-              <strong>College and Course Selection:</strong> We present detailed information on
+              colleges.<br><br>
+              <strong style="color: #E63946;">College and Course Selection:</strong> We present detailed information on
               how students can choose the best college and course that aligns with their
-              interests, strengths, and career aspirations, including insights into admission
-              processes and scholarship opportunities.<br><br>
-              <strong>Skill Development for Student Clubs:</strong> In addition to academic
-              guidance, we provide students with the skills needed to establish and run
+              interests, strengths, and career aspirations.<br><br>
+              <strong style="color: #10B981;">Skill Development for Student Clubs:</strong> We provide students with the skills needed to establish and run
               successful student clubs, including leadership, organization, communication,
               and teamwork skills.
             </p>
@@ -283,36 +776,28 @@
         <div class="prog-content-sidebar">
           <div class="prog-sidebar-card">
             <h4>Program Highlights</h4>
-            <ul class="prog-highlight-list">
-              <li>Interactive sessions with games and group discussions</li>
-              <li>Pre and post-assessment for measurable impact</li>
-              <li>Tailored content for each school's unique needs</li>
-              <li>Covers career guidance and club development</li>
-              <li>1.5-hour sessions with flexible structure</li>
+            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem;">
+              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #2A9D8F; font-weight: bold;">✓</span> Interactive sessions with games &amp; debates</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #2A9D8F; font-weight: bold;">✓</span> Pre and post-assessment for measurable impact</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #2A9D8F; font-weight: bold;">✓</span> Tailored content for each school's unique needs</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #2A9D8F; font-weight: bold;">✓</span> Covers career guidance and club development</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #2A9D8F; font-weight: bold;">✓</span> 1.5-hour sessions with flexible structure</li>
             </ul>
-          </div>
-          <div class="prog-sidebar-card">
-            <h4>Schools Visited</h4>
-            <p class="prog-sidebar-text">
-              Kathmandu, Nuwakot, Dhading, Parbat, Baglung, Sindhupalchowk,
-              Rupandehi, Pokhara, Rasuwa, and Banke &mdash; reaching over 77
-              schools with thousands of students.
-            </p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <hr class="section-divider">
-
   <!-- ==================== LEADERSHIP & PERSONALITY ==================== -->
-  <section class="prog-section" id="leadership">
+  <section class="section" id="leadership" style="padding: 5.5rem 0; border-top: 1px solid rgba(255, 255, 255, 0.08);">
     <div class="container">
       <div class="prog-content-grid">
         <div class="prog-content-main">
-          <span class="prog-section-tag">Personal Development</span>
-          <h2 class="prog-section-title">Leadership &amp; Personality Development</h2>
+          <div class="ref-pill-badge ref-pill-badge-red">
+            <span>Personal Development</span>
+          </div>
+          <h2 class="prog-section-title" style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1.5rem;">Leadership &amp; Personality Development</h2>
 
           <div class="prog-text-block">
             <p>
@@ -321,72 +806,27 @@
               real-time experiences that show them how personal growth goes hand in hand
               with academic progress. Our Leadership and Personality Development sessions
               are designed to break the mold of traditional education by making learning a
-              fun, engaging, and transformative process. Rather than telling students what
-              leadership is, we let them discover it through play, collaboration, and
-              hands-on activities.
+              fun, engaging, and transformative process.
             </p>
           </div>
 
           <div class="prog-text-block">
-            <h3 class="prog-subtitle">The Beginning: A Request for Change</h3>
+            <h3 class="prog-subtitle" style="font-size: 1.4rem; color: #FFFFFF !important; margin-bottom: 0.75rem;">Learning Through Play</h3>
             <p>
-              After the successful implementation of our projects at Shree Chandra Jyoti
-              School in Nuwakot and What's Next: Dhading, we received an unexpected but
-              exciting request. Teachers from Gyanodaya School, impressed by our previous
-              work, reached out to us with a special mission. They wanted us to conduct a
-              personality development session specifically for their Scout students. It was
-              not just about leadership skills &mdash; they wanted their students to see how
-              personal growth could go hand in hand with academic progress. We saw this as
-              an incredible opportunity and crafted a session built around interactive games
-              like the Balloon Game and the "How Many F's" game &mdash; activities designed
-              to break the ice while embedding deeper lessons about teamwork, communication,
-              and critical thinking.
+              Rather than beginning with a typical introduction, we immediately involve the
+              students in interactive games. These activities are designed to give students
+              a firsthand experience of core leadership skills: teamwork, communication, and
+              critical thinking. By using these activities, students learn and apply what
+              they have learned in real-time.
             </p>
           </div>
 
           <div class="prog-text-block">
-            <h3 class="prog-subtitle">Learning Through Play</h3>
+            <h3 class="prog-subtitle" style="font-size: 1.4rem; color: #FFFFFF !important; margin-bottom: 0.75rem;">The Impact</h3>
             <p>
-              When the day arrived, we stepped into Gyanodaya School with a carefully
-              crafted plan. Rather than beginning with a typical introduction, we immediately
-              involved the students in interactive games. These activities were not just for
-              fun &mdash; they were designed to give students a firsthand experience of core
-              leadership skills: teamwork, communication, and critical thinking. By using
-              these activities, the students did not just learn; they applied what they had
-              learned in real-time. As the students participated, we saw them challenge
-              themselves, communicate better with one another, and develop leadership skills
-              that they would carry with them beyond the classroom.
-            </p>
-          </div>
-
-          <div class="prog-text-block">
-            <h3 class="prog-subtitle">The Impact</h3>
-            <p>
-              The response was remarkable. Around 120 students from Gyanodaya School
-              participated in the session, and their enthusiasm was contagious. Many of them
-              approached us afterward, eager to learn more about leadership and how they
-              could apply these concepts to their studies and personal lives. This success
-              did not go unnoticed. Soon after, Padmodaya School invited us to conduct a
-              similar program for their students. Although space constraints limited the
-              number of participants to 60, the energy and engagement were no less
-              remarkable. Students from both schools have since kept in touch, expressing
-              their excitement for future sessions and a desire to grow not just as students,
-              but as leaders in their communities.
-            </p>
-          </div>
-
-          <div class="prog-text-block">
-            <h3 class="prog-subtitle">Looking Forward</h3>
-            <p>
-              As we wrapped up the program, we made a significant announcement: a plan to
-              work together with Gyanodaya School to create and manage Eco Clubs for their
-              students. These clubs focus on environmental conservation, combining the
-              leadership skills the students had learned with a cause that would benefit
-              their community and environment. We want the students to take the initiative
-              in these clubs, applying their newfound leadership and personality development
-              skills to real-world challenges. By establishing this collaboration, we aim to
-              create a sustainable impact &mdash; giving students the tools to grow as
-              leaders while taking tangible actions to conserve the environment.
+              Around 120 students from Gyanodaya School and 60 students from Padmodaya School
+              participated in our personality development sessions. Students kept in touch,
+              expressing excitement for future sessions and a desire to grow as community leaders.
             </p>
           </div>
         </div>
@@ -394,12 +834,11 @@
         <div class="prog-content-sidebar">
           <div class="prog-sidebar-card">
             <h4>Key Outcomes</h4>
-            <ul class="prog-highlight-list">
-              <li>120 students participated at Gyanodaya School</li>
-              <li>60 students engaged at Padmodaya School</li>
-              <li>Interactive games for hands-on leadership learning</li>
-              <li>Eco Club collaboration established</li>
-              <li>Continued student engagement post-program</li>
+            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem;">
+              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #E63946; font-weight: bold;">★</span> 120 students at Gyanodaya School</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #E63946; font-weight: bold;">★</span> 60 students at Padmodaya School</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #E63946; font-weight: bold;">★</span> Interactive games for leadership learning</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #E63946; font-weight: bold;">★</span> Eco Club collaboration established</li>
             </ul>
           </div>
         </div>
@@ -407,51 +846,32 @@
     </div>
   </section>
 
-  <hr class="section-divider">
-
   <!-- ==================== SCHOOL CLUBS & ECAs ==================== -->
-  <section class="prog-section" id="clubs">
+  <section class="section" id="clubs" style="padding: 5.5rem 0; border-top: 1px solid rgba(255, 255, 255, 0.08);">
     <div class="container">
       <div class="prog-content-grid">
         <div class="prog-content-main">
-          <span class="prog-section-tag">Extracurricular</span>
-          <h2 class="prog-section-title">School Clubs &amp; Extracurricular Activities</h2>
+          <div class="ref-pill-badge ref-pill-badge-teal">
+            <span>Extracurricular</span>
+          </div>
+          <h2 class="prog-section-title" style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1.5rem;">School Clubs &amp; Extracurricular Activities</h2>
 
           <div class="prog-text-block">
             <p>
               In Nepal, many students develop passions for sports, community engagement, and
               research during grades 9 and 10. However, as they transition to the +2 phase,
-              the burden of books, exams, and the continuous fear of getting left behind
-              compels them to pause those passions. Navigo Nepal's School Clubs and
-              Extracurricular Activities program is designed to revive that passion and
-              provide students with a platform where they can showcase their talents beyond
-              academics. We help schools understand the importance of extracurricular
-              activities and guide them in forming and managing student clubs that foster
-              leadership, teamwork, and personal development.
+              the burden of books and exams compels them to pause those passions. Navigo Nepal's
+              School Clubs program revives that passion and provides students with a platform
+              where they can showcase their talents beyond academics.
             </p>
           </div>
 
           <div class="prog-text-block">
-            <h3 class="prog-subtitle">What We Do</h3>
+            <h3 class="prog-subtitle" style="font-size: 1.4rem; color: #FFFFFF !important; margin-bottom: 0.75rem;">What We Do</h3>
             <p>
               We guide students on how to form clubs inside their schools and engage in
-              meaningful extracurricular activities. Our sessions cover everything from
-              understanding what student clubs are to developing the practical skills needed
-              to run them successfully. Students learn about leadership, organization,
-              communication, and teamwork &mdash; skills that are essential not just for
-              school clubs but for their entire lives. We have helped establish numerous
-              clubs across partner schools, each focused on different areas such as
-              environmental conservation, community service, and academic enrichment.
-            </p>
-          </div>
-
-          <div class="prog-text-block">
-            <p>
-              Beyond just forming clubs, we provide ongoing support and training to ensure
-              these clubs remain active and impactful. Our approach is practical &mdash;
-              students learn by doing, and we provide the framework and mentorship to make
-              that possible. The result is a network of student-led initiatives that are
-              making a real difference in schools and communities across Nepal.
+              meaningful extracurricular activities. Our sessions cover leadership, organization,
+              communication, and teamwork &mdash; skills essential for their entire lives.
             </p>
           </div>
         </div>
@@ -459,12 +879,11 @@
         <div class="prog-content-sidebar">
           <div class="prog-sidebar-card">
             <h4>Club Types Established</h4>
-            <ul class="prog-highlight-list">
-              <li>Environmental &amp; Eco Clubs</li>
-              <li>Community Service Clubs</li>
-              <li>Academic Enrichment Clubs</li>
-              <li>Leadership &amp; Debate Clubs</li>
-              <li>Creative Arts &amp; Culture Clubs</li>
+            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem;">
+              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #10B981; font-weight: bold;">•</span> Environmental &amp; Eco Clubs</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #10B981; font-weight: bold;">•</span> Community Service Clubs</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #10B981; font-weight: bold;">•</span> Academic Enrichment Clubs</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #10B981; font-weight: bold;">•</span> Leadership &amp; Debate Clubs</li>
             </ul>
           </div>
         </div>
@@ -472,76 +891,31 @@
     </div>
   </section>
 
-  <hr class="section-divider">
-
   <!-- ==================== ENVIRONMENTAL STEWARDSHIP ==================== -->
-  <section class="prog-section" id="environmental">
+  <section class="section" id="environmental" style="padding: 5.5rem 0; border-top: 1px solid rgba(255, 255, 255, 0.08);">
     <div class="container">
       <div class="prog-content-grid">
         <div class="prog-content-main">
-          <span class="prog-section-tag">Environment &amp; Climate</span>
-          <h2 class="prog-section-title">Environmental Stewardship</h2>
+          <div class="ref-pill-badge ref-pill-badge-teal">
+            <span>Environment &amp; Climate</span>
+          </div>
+          <h2 class="prog-section-title" style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1.5rem;">Environmental Stewardship</h2>
 
           <div class="prog-text-block">
             <p>
-              At Navigo Nepal, we are driven by a deep passion for environmental
-              conservation &mdash; a necessity we have come to understand through firsthand
-              experience with the impacts of climate change and biodiversity loss. Living in
-              a country where rapid glacial melting threatens both ecosystems and communities,
-              we feel a profound responsibility to act. Our goal is to inspire future
-              generations to recognize environmental stewardship as a noble cause they can
-              champion for long-term impact. We focus on empowering youth to engage with
-              environmental issues by providing hands-on opportunities that connect them
-              with the natural world, equipping students with the knowledge and tools to
-              meet environmental challenges head-on.
+              At Navigo Nepal, we are driven by a deep passion for environmental conservation
+              &mdash; a necessity we have come to understand through firsthand experience with the
+              impacts of climate change. We focus on empowering youth to engage with environmental
+              issues through hands-on opportunities like bottle gardening and community rallies.
             </p>
           </div>
 
           <div class="prog-text-block">
-            <h3 class="prog-subtitle">World Environment Day</h3>
+            <h3 class="prog-subtitle" style="font-size: 1.4rem; color: #FFFFFF !important; margin-bottom: 0.75rem;">World Environment Day &amp; AIESEC Collaboration</h3>
             <p>
-              On June 5th, World Environment Day, Navigo Nepal led a series of environmental
-              awareness events in a community school in Kathmandu Metropolitan City. The
-              activities included bottle gardening projects where students repurposed plastic
-              bottles to create gardens, demonstrating sustainable practices in a practical
-              and engaging way. Environmental-themed face painting sessions allowed students
-              to reflect on environmental concerns through creative expression. A painting
-              exhibition paired with informative pamphlets focused on environmental issues
-              was showcased, and students, teachers, and community members participated in a
-              rally to raise awareness about environmental concerns and actions needed.
-              Interactive educational sessions for children discussed the environmental
-              challenges we face and the steps children can take to contribute to positive
-              change. These events garnered widespread attention, being featured on the
-              official social media pages of both UNICEF Nepal and USAID Clean Air, further
-              amplifying the impact of our work.
-            </p>
-          </div>
-
-          <div class="prog-text-block">
-            <h3 class="prog-subtitle">Collaboration with AIESEC</h3>
-            <p>
-              Navigo Nepal received an incredible opportunity to collaborate with AIESEC, a
-              global organization, on their program focused on Sustainable Development
-              Goals. Members of Navigo Nepal were distributed across different schools in
-              Kathmandu alongside other AIESEC volunteers. SDG 13 &mdash; Climate Action was
-              chosen to make young students aware of the climate change caused by human
-              activity and how they can reduce it through their efforts at home and school.
-              Before visiting the schools, orientation sessions were conducted by AIESEC
-              heads to guide event goers on how to carry out the program. The sessions
-              introduced concepts of the SDGs and the United Nations, climate change and how
-              organizations like AIESEC are addressing the issue worldwide. Students shared
-              creative ideas like making baskets from waste plastic and reusing waste
-              materials, demonstrating their willingness to engage with environmental
-              solutions.
-            </p>
-          </div>
-
-          <div class="prog-text-block">
-            <p>
-              The collaboration reached multiple schools including Steiner Academy, Mount
-              SEB School, Everest School, NJSN High School, Navjyoti School, and Asha
-              Mandir School, engaging hundreds of students in meaningful environmental
-              education and action.
+              In collaboration with UNICEF Nepal, USAID Clean Air, and AIESEC, Navigo Nepal led
+              environmental awareness events, bottle gardening projects, and SDG 13 Climate Action
+              workshops engaging hundreds of students across community schools in Kathmandu.
             </p>
           </div>
         </div>
@@ -549,21 +923,10 @@
         <div class="prog-content-sidebar">
           <div class="prog-sidebar-card">
             <h4>Partner Organizations</h4>
-            <ul class="prog-highlight-list">
-              <li>UNICEF Nepal</li>
-              <li>USAID Clean Air</li>
-              <li>AIESEC Nepal</li>
-              <li>Kathmandu Metropolitan BaBa Program</li>
-            </ul>
-          </div>
-          <div class="prog-sidebar-card">
-            <h4>Activities Conducted</h4>
-            <ul class="prog-highlight-list">
-              <li>Bottle gardening projects</li>
-              <li>Environmental awareness rallies</li>
-              <li>Face painting &amp; art exhibitions</li>
-              <li>SDG 13 Climate Action sessions</li>
-              <li>Educational pamphlet distribution</li>
+            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem;">
+              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #2A9D8F; font-weight: bold;">★</span> UNICEF Nepal</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #2A9D8F; font-weight: bold;">★</span> USAID Clean Air</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #2A9D8F; font-weight: bold;">★</span> AIESEC Nepal</li>
             </ul>
           </div>
         </div>
@@ -571,39 +934,22 @@
     </div>
   </section>
 
-  <hr class="section-divider">
-
   <!-- ==================== CONNECT TECH TO VEDA ==================== -->
-  <section class="prog-section" id="tech-veda">
+  <section class="section" id="tech-veda" style="padding: 5.5rem 0; border-top: 1px solid rgba(255, 255, 255, 0.08);">
     <div class="container">
       <div class="prog-content-grid">
         <div class="prog-content-main">
-          <span class="prog-section-tag">Innovation</span>
-          <h2 class="prog-section-title">Connect Tech to Veda</h2>
-
-          <div class="prog-text-block">
-            <p>
-              During our visit to Brahmeshwor Gurukul, we initially arrived as guests.
-              However, when we noticed that despite having all the computer resources they
-              needed, no one was using them, we saw an opportunity. This observation
-              sparked our "Connect Tech to Veda" project &mdash; an initiative designed to
-              bridge the gap between traditional knowledge and modern technology. We provided
-              students with hands-on training on how to use computers, introduced them to
-              the wonders of Artificial Intelligence, and explored how these technologies
-              can be applied in real life.
-            </p>
+          <div class="ref-pill-badge ref-pill-badge-yellow">
+            <span>Innovation</span>
           </div>
+          <h2 class="prog-section-title" style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1.5rem;">Connect Tech to Veda</h2>
 
           <div class="prog-text-block">
             <p>
-              Our major objective is to connect students with spirituality that has been
-              part of our culture for centuries, while simultaneously equipping them with
-              cutting-edge technological skills. We are still in the process of researching
-              and developing this project, working on innovative ways to connect Veda with
-              technology more intuitively. The vision is to create a learning experience
-              where students can appreciate their cultural heritage while embracing the
-              tools of the future &mdash; understanding that tradition and innovation are
-              not opposing forces, but complementary pathways to knowledge and growth.
+              During our visit to Brahmeshwor Gurukul, we initiated our "Connect Tech to Veda"
+              project &mdash; bridging traditional Vedic wisdom with modern technology. We provide
+              students with hands-on computer literacy training, AI concepts, and practical tools while
+              respecting their cultural heritage.
             </p>
           </div>
         </div>
@@ -611,12 +957,10 @@
         <div class="prog-content-sidebar">
           <div class="prog-sidebar-card">
             <h4>Project Focus</h4>
-            <ul class="prog-highlight-list">
-              <li>Computer literacy training</li>
-              <li>Introduction to Artificial Intelligence</li>
-              <li>Practical technology applications</li>
-              <li>Bridging tradition with innovation</li>
-              <li>Currently in research &amp; development phase</li>
+            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem;">
+              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #F4A261; font-weight: bold;">•</span> Computer literacy training</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #F4A261; font-weight: bold;">•</span> Introduction to Artificial Intelligence</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #F4A261; font-weight: bold;">•</span> Bridging tradition with innovation</li>
             </ul>
           </div>
         </div>
@@ -624,16 +968,17 @@
     </div>
   </section>
 
-  <hr class="section-divider">
-
   <!-- ==================== PAST PROJECTS LOG ==================== -->
-  <section class="prog-section" id="past-projects">
+  <section class="section" id="past-projects" style="padding: 5.5rem 0; border-top: 1px solid rgba(255, 255, 255, 0.08);">
     <div class="container">
-      <div class="prog-section-header">
-        <span class="prog-section-tag">Project Archive</span>
-        <h2 class="prog-section-title">Past Projects Log</h2>
-        <p class="prog-section-desc">A chronological record of every initiative Navigo Nepal
-          has undertaken, from our founding to the present day.</p>
+      <div class="prog-section-header" style="text-align: center; margin-bottom: 3.5rem;">
+        <div class="ref-pill-badge ref-pill-badge-teal">
+          <span>Project Archive</span>
+        </div>
+        <h2 class="prog-section-title" style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem;">Past Projects Log</h2>
+        <p class="prog-section-desc" style="max-width: 650px; margin: 0 auto; line-height: 1.7; color: #FFFFFF !important;">
+          A chronological record of key initiatives Navigo Nepal has undertaken nationwide.
+        </p>
       </div>
 
       <div class="prog-timeline">
@@ -644,14 +989,7 @@
             <span class="prog-timeline-date">January 2024</span>
             <h3 class="prog-timeline-title">Project Planning &amp; Surveys</h3>
             <p>
-              Navigo Nepal began with comprehensive project planning and the first
-              preliminary survey. A qualitative survey was conducted on more than 100
-              students across different districts and schools to understand the major
-              problems they face in learning. The survey was done online through Zoom calls,
-              ensuring every student's ideas were recorded. A quantitative survey was also
-              conducted at specific schools to learn about the state of extracurricular
-              activities. These surveys gave us a clear picture of what we needed to provide
-              during our sessions.
+              Qualitative survey conducted on 100+ students across different districts to understand their major learning challenges.
             </p>
           </div>
         </div>
@@ -659,17 +997,10 @@
         <div class="prog-timeline-item">
           <div class="prog-timeline-marker"></div>
           <div class="prog-timeline-content">
-            <span class="prog-timeline-date">January &ndash; March 2024</span>
-            <h3 class="prog-timeline-title">Content Development</h3>
+            <span class="prog-timeline-date">April 2024</span>
+            <h3 class="prog-timeline-title">What's Next: Nuwakot &amp; Dhading</h3>
             <p>
-              Based on the survey insights, we developed presentation content using Canva
-              and MS PowerPoint. Our presentations incorporated pictures, graphs, games,
-              videos, and animations with minimal text to make them visually appealing and
-              engaging. We refined our materials through multiple iterations, incorporating
-              feedback from students. The slides included crucial information about options
-              after 10th grade, different streams, courses, and colleges, along with games
-              like puzzles and quizzes, brain teasers, and activities to spark critical
-              thinking.
+              Launch of the What's Next campaign at Shree Chandra Jyoti School in Nuwakot and expansion to Dhading.
             </p>
           </div>
         </div>
@@ -677,19 +1008,10 @@
         <div class="prog-timeline-item">
           <div class="prog-timeline-marker"></div>
           <div class="prog-timeline-content">
-            <span class="prog-timeline-date">April 15 &ndash; 18, 2024</span>
-            <h3 class="prog-timeline-title">What's Next: Nuwakot</h3>
+            <span class="prog-timeline-date">June 2024</span>
+            <h3 class="prog-timeline-title">World Environment Day &amp; Gurubaa Partnership</h3>
             <p>
-              Our first official program was conducted at Shree Chandra Jyoti School in
-              Pipaltar, Nuwakot. We chose this small government school to understand the
-              quality of academics and extracurricular resources in rural areas. In total,
-              100 students from grades 9 and 10 received our session. The presentation
-              covered options after 10th grade, including different streams, courses, and
-              colleges. We divided the session into two major parts: one focused on
-              navigating paths after grade 10, and the other on extracurricular activities
-              such as student clubs, which the students were completely unaware of. The
-              session was a major success, giving us the kickstart we needed to expand our
-              reach.
+              USAID Clean Air and UNICEF collaboration for Environment Day. Partnership with Gurubaa announced.
             </p>
           </div>
         </div>
@@ -697,142 +1019,10 @@
         <div class="prog-timeline-item">
           <div class="prog-timeline-marker"></div>
           <div class="prog-timeline-content">
-            <span class="prog-timeline-date">April 25, 2024</span>
-            <h3 class="prog-timeline-title">What's Next: Dhading</h3>
+            <span class="prog-timeline-date">July 2024 &ndash; Present</span>
+            <h3 class="prog-timeline-title">AIESEC SDG 13 &amp; Nationwide Expansion</h3>
             <p>
-              Following the success in Nuwakot, we conducted a similar program in Dhading
-              district. The session structure and outcomes mirrored our Nuwakot program,
-              reinforcing the effectiveness of our approach. Students in Dhading showed
-              similar enthusiasm and need for guidance, further validating the importance
-              of the "What's Next?" campaign in rural communities.
-            </p>
-          </div>
-        </div>
-
-        <div class="prog-timeline-item">
-          <div class="prog-timeline-marker"></div>
-          <div class="prog-timeline-content">
-            <span class="prog-timeline-date">April 30 &ndash; May 2024</span>
-            <h3 class="prog-timeline-title">Personality Development Sessions</h3>
-            <p>
-              We conducted our first three-day personality development session, followed by
-              an extended session. These sessions focused on leadership skills,
-              communication, teamwork, and critical thinking through interactive games and
-              activities. The sessions were designed to make learning fun and engaging while
-              instilling deeper lessons about personal growth and academic progress.
-            </p>
-          </div>
-        </div>
-
-        <div class="prog-timeline-item">
-          <div class="prog-timeline-marker"></div>
-          <div class="prog-timeline-content">
-            <span class="prog-timeline-date">June 5, 2024</span>
-            <h3 class="prog-timeline-title">World Environment Day Collaboration</h3>
-            <p>
-              Navigo Nepal, in collaboration with USAID Clean Air and UNICEF, organized
-              environmental awareness events on World Environment Day. Activities included
-              bottle gardening, environmental-themed face painting, painting exhibitions,
-              educational pamphlets, and a rally for environmental awareness. The events
-              were featured on the official social media pages of UNICEF Nepal and USAID
-              Clean Air, significantly amplifying the impact of our work.
-            </p>
-          </div>
-        </div>
-
-        <div class="prog-timeline-item">
-          <div class="prog-timeline-marker"></div>
-          <div class="prog-timeline-content">
-            <span class="prog-timeline-date">June 6 &ndash; 17, 2024</span>
-            <h3 class="prog-timeline-title">Hawa Khakura Garam Campaign</h3>
-            <p>
-              Following World Environment Day, Navigo Nepal organized further rallies and
-              awareness programs for environmental protection under the "Hawa Khakura Garam"
-              initiative. These continued efforts kept the momentum of environmental
-              consciousness alive in the communities we serve.
-            </p>
-          </div>
-        </div>
-
-        <div class="prog-timeline-item">
-          <div class="prog-timeline-marker"></div>
-          <div class="prog-timeline-content">
-            <span class="prog-timeline-date">June 17, 2024</span>
-            <h3 class="prog-timeline-title">Partnership with Gurubaa</h3>
-            <p>
-              Navigo Nepal officially announced its partnership with Gurubaa, Nepal's
-              largest educational content creator with over 780,000 followers and 128 million
-              views across YouTube. Gurubaa has provided Navigo Nepal with meeting spaces
-              and website development support. The co-founders of Gurubaa &mdash; Mr. Krishna
-              Bhandari, Mr. Bijay Adhikari, and Mr. Binay Adhikari &mdash; have supported
-              Navigo Nepal throughout the journey, and this partnership marks a significant
-              milestone in our growth.
-            </p>
-          </div>
-        </div>
-
-        <div class="prog-timeline-item">
-          <div class="prog-timeline-marker"></div>
-          <div class="prog-timeline-content">
-            <span class="prog-timeline-date">June 18 &ndash; July 10, 2024</span>
-            <h3 class="prog-timeline-title">Volunteer Recruitment &amp; Orientation</h3>
-            <p>
-              Navigo Nepal launched a call for volunteers, followed by a rigorous selection
-              process. The current cohort was finalized through application reviews and
-              interviews. We look for individuals who have passion for doing something good
-              for their community and who can actively contribute to our common goals. The
-              selected volunteers underwent a comprehensive orientation program to prepare
-              them for field work.
-            </p>
-          </div>
-        </div>
-
-        <div class="prog-timeline-item">
-          <div class="prog-timeline-marker"></div>
-          <div class="prog-timeline-content">
-            <span class="prog-timeline-date">July 12 &ndash; 19, 2024</span>
-            <h3 class="prog-timeline-title">AIESEC: World's Largest Lesson</h3>
-            <p>
-              Navigo Nepal partnered with AIESEC for the World's Largest Lesson program,
-              focusing on SDG 13 &mdash; Climate Action. Members were distributed across
-              schools in Kathmandu alongside AIESEC volunteers. Sessions covered the
-              Sustainable Development Goals, climate change awareness, and practical actions
-              students can take. The program reached multiple schools including Steiner
-              Academy, Mount SEB School, Everest School, NJSN High School, Navjyoti School,
-              and Asha Mandir School.
-            </p>
-          </div>
-        </div>
-
-        <div class="prog-timeline-item">
-          <div class="prog-timeline-marker"></div>
-          <div class="prog-timeline-content">
-            <span class="prog-timeline-date">July 21 &ndash; 24, 2024</span>
-            <h3 class="prog-timeline-title">What's Next: Banke</h3>
-            <p>
-              The campaign expanded to Banke district, bringing our career counseling and
-              club development sessions to students in the Terai region. This marked an
-              important step in our nationwide expansion strategy, reaching students beyond
-              the Kathmandu Valley and central hills.
-            </p>
-          </div>
-        </div>
-
-        <div class="prog-timeline-item">
-          <div class="prog-timeline-marker"></div>
-          <div class="prog-timeline-content">
-            <span class="prog-timeline-date">July 26, 2024 &ndash; Present</span>
-            <h3 class="prog-timeline-title">What's Next: Kathmandu &amp; Nationwide</h3>
-            <p>
-              Our largest phase of the "What's Next?" campaign has been running across
-              Kathmandu and expanding nationwide. In Kathmandu alone, we have visited
-              Whiz Kids International School, Yuva Sahavagita School, Jyoti Academy,
-              Advanced English Boarding School, Shree Tangal Secondary School, Columbus
-              International School, Arunima Educational Foundation, Shangri-la Public
-              School, and Pashupati Mitra Higher Secondary School. Nationwide, we have
-              reached schools in Nuwakot, Dhading, Parbat, Baglung, Sindhupalchowk,
-              Rupandehi, Pokhara, and Rasuwa. We are determined to reach every possible
-              corner of the country where there is a lack of exposure for students.
+              Nationwide expansion reaching schools across Kathmandu, Banke, Pokhara, Rupandehi, Baglung, and Rasuwa.
             </p>
           </div>
         </div>
@@ -841,12 +1031,10 @@
     </div>
   </section>
 
-  <hr class="section-divider">
-
   <!-- ==================== GET INVOLVED CTA ==================== -->
-  <section class="prog-cta-section">
+  <section class="section" style="padding: 5.5rem 0; border-top: 1px solid rgba(255, 255, 255, 0.08);">
     <div class="container">
-      <div class="prog-cta-grid">
+      <div class="prog-cta-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
         <a href="volunteer.html" class="prog-cta-card">
           <div class="prog-cta-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
@@ -879,7 +1067,7 @@
           <div class="prog-cta-icon prog-cta-icon--purple">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+              <rect x="2" y="7" width="20" height="14" rx="0" ry="0" />
               <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
             </svg>
           </div>
@@ -899,7 +1087,7 @@
           <a href="index.html" class="logo">
             <img src="assets/navigo logo.png" alt="Navigo Nepal" class="logo-img" style="height: 48px;">
           </a>
-          <p style="color: rgba(255,255,255,0.6); font-size: 0.88rem; line-height: 1.7;">
+          <p style="color: #FFFFFF !important; opacity: 0.8; font-size: 0.88rem; line-height: 1.7;">
             A youth-led, non-profit educational catalyst bridging academic and technological frontiers for public
             students across all 7 provinces of Nepal.
           </p>
@@ -920,7 +1108,7 @@
             <a href="https://instagram.com/navigonepal" class="social-btn social-btn-footer" aria-label="Instagram">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                <rect width="20" height="20" x="2" y="2" rx="0" ry="0" />
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="1.5" />
               </svg>
@@ -948,7 +1136,7 @@
         <div class="footer-col">
           <h3>Get Involved</h3>
           <ul class="footer-links" style="margin-top: 1rem;">
-            <li><a href="volunteer.html">Join as Volunteer</a></li>
+            <li><a href="volunteer.html">Volunteer With Us</a></li>
             <li><a href="propose-project.html">Propose a Project</a></li>
             <li><a href="intern.html">Intern at Navigo</a></li>
             <li><a href="index.html#contact">Institutional Partnership</a></li>
@@ -957,7 +1145,7 @@
 
         <div class="footer-col footer-newsletter">
           <h3>Executive Newsletter</h3>
-          <p>Subscribe to our monthly digest of student innovations, program expansions, and resource updates.</p>
+          <p style="color: #FFFFFF !important; opacity: 0.8;">Subscribe to our monthly digest of student innovations, program expansions, and resource updates.</p>
           <form class="newsletter-form" id="newsletterForm" novalidate>
             <input type="email" id="newsletterEmail" class="form-control" placeholder="corporate@address.com" required
               aria-label="Newsletter Email">
@@ -976,14 +1164,14 @@
 
       <div class="footer-bottom">
         <div class="footer-bottom-text">
-          <p>&copy; 2026 Navigo Nepal. Youth-Led Educational Empowerment.</p>
-          <p>Building world-class educational excellence for Nepal.</p>
+          <p style="color: #FFFFFF !important; opacity: 0.8;">&copy; 2026 Navigo Nepal. Youth-Led Educational Empowerment.</p>
+          <p style="color: #FFFFFF !important; opacity: 0.8;">Building world-class educational excellence for Nepal.</p>
         </div>
         <div class="footer-bottom-links">
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Service</a>
           <a href="#">Careers</a>
-          <a href="index.html#hero" class="back-to-top-btn" aria-label="Back to Top">
+          <a href="#top" class="back-to-top-btn" aria-label="Back to Top">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="18 15 12 9 6 15" />
@@ -995,12 +1183,11 @@
     </div>
   </footer>
 
-  <!-- Theme Toggle Script -->
+  <!-- Tab Switching & Scroll Script -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      // Tab switching
       const tabs = document.querySelectorAll(".prog-tab");
-      const sections = document.querySelectorAll(".prog-section");
+      const sections = document.querySelectorAll(".section");
       tabs.forEach(tab => {
         tab.addEventListener("click", () => {
           const target = tab.getAttribute("data-tab");
@@ -1011,7 +1198,6 @@
         });
       });
 
-      // Active tab on scroll
       window.addEventListener("scroll", () => {
         let current = "";
         sections.forEach(section => {

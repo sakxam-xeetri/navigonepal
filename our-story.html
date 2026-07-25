@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="css/programs.css">
 
   <style>
-    /* ==================== OUR STORY EXACT HOME PAGE TYPOGRAPHY & HIGH CONTRAST DARK/WHITE SECTIONS ==================== */
+    /* ==================== OUR STORY FULL BLACK AESTHETIC WITH SHARP EDGES ==================== */
     
     /* UNIVERSAL SHARP EDGES OVERRIDE */
     *,
@@ -49,21 +49,48 @@
       line-height: 1.7;
     }
 
+    /* ALL SECTIONS FULL BLACK BACKGROUND */
+    section,
+    .section,
+    .ref-who-we-are-section,
+    .ref-what-we-do-section,
+    .white-bg-section,
+    .our-story-dark-section,
+    .our-story-alt-section {
+      background-color: #0A0A0A !important;
+      color: #FFFFFF !important;
+    }
+
     h1, h2, h3, h4, h5, h6,
     .ref-hero-title,
     .ref-who-title,
     .prog-section-title,
     .ref-card-title,
-    .prog-cta-title {
+    .prog-cta-title,
+    .prog-subtitle {
       font-family: 'Plus Jakarta Sans', sans-serif !important;
       font-weight: 700;
       letter-spacing: -0.02em;
+      color: #FFFFFF !important;
+    }
+
+    p, li, span, blockquote, div,
+    .ref-hero-subtitle,
+    .ref-who-text,
+    .ref-motto-quote,
+    .ref-card-desc,
+    .prog-cta-desc,
+    .prog-section-desc,
+    .prog-text-block p {
+      color: #FFFFFF !important;
+      font-family: 'Inter', sans-serif !important;
+      opacity: 0.95;
     }
 
     /* Top Banner Announcement */
     .top-announcement-bar {
       background: linear-gradient(90deg, #F4A261 0%, #F59E0B 100%);
-      color: #0A0A0A;
+      color: #0A0A0A !important;
       font-family: 'Inter', sans-serif;
       font-size: 0.84rem;
       font-weight: 600;
@@ -73,9 +100,13 @@
       box-shadow: 0 2px 10px rgba(245, 158, 11, 0.2);
     }
 
-    /* Hero Section with Grid, Background Image (ourstory.jpg / ourstory.png) & Floating Photos */
+    .top-announcement-bar span {
+      color: #0A0A0A !important;
+    }
+
+    /* Hero Section with Grid, Background Image (ourstory.png / ourstory.jpg) & Floating Photos */
     .hero-ref-section {
-      background: linear-gradient(180deg, rgba(10, 10, 10, 0.85) 0%, rgba(10, 10, 10, 0.94) 100%), 
+      background: linear-gradient(180deg, rgba(10, 10, 10, 0.85) 0%, rgba(10, 10, 10, 0.96) 100%), 
                   url('assets/ourstory.png'), url('assets/ourstory.jpg') center/cover no-repeat !important;
       position: relative;
       padding: 6.5rem 0 5.5rem;
@@ -226,34 +257,37 @@
       font-weight: 700;
       letter-spacing: 0.05em;
       text-transform: uppercase;
-      color: #2A9D8F;
+      color: #2A9D8F !important;
       margin-bottom: 1rem;
     }
 
     .ref-pill-badge-teal {
       background: rgba(42, 157, 143, 0.15);
       border-color: rgba(42, 157, 143, 0.35);
-      color: #2A9D8F;
+      color: #2A9D8F !important;
     }
 
     .ref-pill-badge-yellow {
       background: rgba(244, 162, 97, 0.15);
       border-color: rgba(244, 162, 97, 0.35);
-      color: #F4A261;
+      color: #F4A261 !important;
     }
 
     .ref-pill-badge-red {
       background: rgba(230, 57, 70, 0.15);
       border-color: rgba(230, 57, 70, 0.35);
-      color: #E63946;
+      color: #E63946 !important;
+    }
+
+    .ref-pill-badge span {
+      color: inherit !important;
     }
 
     /* "Who We Are" Section Layout */
     .ref-who-we-are-section {
-      background-color: #0F0F0F !important;
       padding: 5.5rem 0;
       position: relative;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .ref-who-grid {
@@ -341,65 +375,34 @@
       opacity: 0.85;
     }
 
-    /* PURE WHITE COLOR FOR ALL DARK SECTIONS */
-    .our-story-dark-section,
-    .our-story-dark-section p,
-    .our-story-dark-section div,
-    .our-story-dark-section li,
-    .our-story-dark-section span {
-      color: #FFFFFF !important;
+    /* ALL CARDS IN FULL BLACK THEME */
+    .ref-card,
+    .premium-card,
+    .sidebar-premium-card {
+      background: #141414 !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+      padding: 2rem 1.5rem;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .our-story-dark-section p {
-      opacity: 0.95;
-    }
-
-    /* ==================== WHITE BACKGROUND SECTIONS ==================== */
-    .white-bg-section {
-      background-color: #FFFFFF !important;
-      color: #0A2342 !important;
-      padding: 5.5rem 0;
-      border-top: 1px solid rgba(10, 35, 66, 0.08);
-      border-bottom: 1px solid rgba(10, 35, 66, 0.08);
-    }
-
-    .white-bg-section .ref-who-title,
-    .white-bg-section .prog-section-title,
-    .white-bg-section .ref-card-title,
-    .white-bg-section .prog-cta-title {
-      color: #0A2342 !important;
-    }
-
-    .white-bg-section p,
-    .white-bg-section .ref-card-desc,
-    .white-bg-section .prog-cta-desc,
-    .white-bg-section .prog-section-desc {
-      color: #334155 !important;
-      font-family: 'Inter', sans-serif !important;
-    }
-
-    .white-bg-section .ref-card {
-      background: #FFFFFF !important;
-      border: 1px solid rgba(10, 35, 66, 0.12) !important;
-      box-shadow: 0 8px 25px rgba(10, 35, 66, 0.06) !important;
-    }
-
-    .white-bg-section .ref-card:hover {
+    .ref-card:hover,
+    .premium-card:hover,
+    .sidebar-premium-card:hover {
       transform: translateY(-6px);
-      border-color: #2A9D8F !important;
-      box-shadow: 0 15px 35px rgba(10, 35, 66, 0.12) !important;
+      border-color: rgba(255, 255, 255, 0.25) !important;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7) !important;
     }
 
-    .white-bg-section .premium-card {
-      background: #FFFFFF !important;
-      border: 1px solid rgba(10, 35, 66, 0.12) !important;
-      box-shadow: 0 8px 25px rgba(10, 35, 66, 0.06) !important;
-    }
-
-    .white-bg-section .premium-card:hover {
-      transform: translateY(-6px) !important;
-      border-color: #2A9D8F !important;
-      box-shadow: 0 15px 35px rgba(10, 35, 66, 0.12) !important;
+    .premium-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #E63946 0%, #F4A261 33%, #10B981 66%, #2563EB 100%);
+      opacity: 0.85;
     }
 
     /* "What We Do" 4-Cards Grid */
@@ -421,17 +424,6 @@
       }
     }
 
-    .ref-card {
-      background: #141414;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 2rem 1.5rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
     .ref-card-icon {
       width: 54px;
       height: 54px;
@@ -451,12 +443,15 @@
       font-size: 1.15rem;
       font-weight: 700;
       margin-bottom: 0.75rem;
+      color: #FFFFFF !important;
     }
 
     .ref-card-desc {
       font-family: 'Inter', sans-serif !important;
       font-size: 0.92rem;
       line-height: 1.6;
+      color: #FFFFFF !important;
+      opacity: 0.95;
     }
 
     /* TRIANGLE GALLERY LAYOUT FOR 5 IMAGES IN MAKING AN IMPACT */
@@ -507,46 +502,6 @@
       width: 420px;
       max-width: 100%;
       height: 240px;
-    }
-
-    /* Dark section helpers */
-    .our-story-dark-section {
-      background: #0A0A0A !important;
-      position: relative;
-    }
-
-    .our-story-alt-section {
-      background: #0F0F0F !important;
-      position: relative;
-    }
-
-    .premium-card {
-      position: relative;
-      background: #141414 !important;
-      border: 1px solid rgba(255, 255, 255, 0.08) !important;
-      padding: 0.5rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
-      overflow: hidden;
-    }
-
-    .premium-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: linear-gradient(90deg, #E63946 0%, #F4A261 33%, #10B981 66%, #2563EB 100%);
-      opacity: 0.85;
-    }
-
-    .sidebar-premium-card {
-      background: #141414 !important;
-      border: 1px solid rgba(255, 255, 255, 0.08) !important;
-      border-left: 4px solid #2A9D8F !important;
-      padding: 2rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
     }
 
     .sidebar-premium-card h4 {
@@ -848,8 +803,8 @@
     </div>
   </section>
 
-  <!-- WHAT WE DO SECTION: We Do It For All People (WHITE BACKGROUND) -->
-  <section class="section white-bg-section" id="what-we-do">
+  <!-- WHAT WE DO SECTION: We Do It For All People -->
+  <section class="section ref-what-we-do-section" id="what-we-do" style="border-top: 1px solid rgba(255, 255, 255, 0.08);">
     <div class="container">
       <div style="text-align: center; margin-bottom: 3.5rem;">
         <div class="ref-pill-badge ref-pill-badge-teal">
@@ -923,8 +878,8 @@
     </div>
   </section>
 
-  <!-- ABOUT NAVIGO DETAILS (DARK SECTION - PURE WHITE TEXT) -->
-  <section class="prog-section reveal our-story-dark-section" id="about" style="padding: 5.5rem 0; border-top: 1px solid rgba(255, 255, 255, 0.06);">
+  <!-- ABOUT NAVIGO DETAILS -->
+  <section class="section our-story-dark-section" id="about" style="padding: 5.5rem 0; border-top: 1px solid rgba(255, 255, 255, 0.08);">
     <div class="container">
       <div class="prog-content-grid">
         <div class="prog-content-main">
@@ -988,8 +943,8 @@
     </div>
   </section>
 
-  <!-- PROBLEM STATEMENT: The Problem We Solve (WHITE BACKGROUND) -->
-  <section class="section white-bg-section" id="problem">
+  <!-- PROBLEM STATEMENT: The Problem We Solve -->
+  <section class="section" id="problem" style="border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 5.5rem 0;">
     <div class="container">
       <div class="prog-section-header" style="text-align: center; margin-bottom: 3.5rem;">
         
@@ -998,7 +953,7 @@
         </div>
 
         <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif !important; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 1rem;">The Problem We Solve</h2>
-        <p class="prog-section-desc" style="font-family: 'Inter', sans-serif !important; font-size: 1.05rem; line-height: 1.7; max-width: 650px; margin: 0 auto;">
+        <p class="prog-section-desc" style="font-family: 'Inter', sans-serif !important; font-size: 1.05rem; line-height: 1.7; max-width: 650px; margin: 0 auto; color: #FFFFFF !important;">
           In Nepal, many students are confined to a narrow educational experience focused solely on academic achievements.
         </p>
       </div>
@@ -1055,8 +1010,8 @@
     </div>
   </section>
 
-  <!-- MISSION & VISION (DARK SECTION - PURE WHITE TEXT) -->
-  <section class="prog-section reveal our-story-dark-section" id="mission" style="padding: 5.5rem 0; border-top: 1px solid rgba(255, 255, 255, 0.06);">
+  <!-- MISSION & VISION -->
+  <section class="section our-story-dark-section" id="mission" style="padding: 5.5rem 0; border-top: 1px solid rgba(255, 255, 255, 0.08);">
     <div class="container">
       <div class="prog-content-grid">
         <div class="prog-content-main">
@@ -1122,8 +1077,8 @@
     </div>
   </section>
 
-  <!-- IMAGE GALLERY: Making an Impact (WHITE BACKGROUND - TRIANGLE LAYOUT FOR 5 IMAGES) -->
-  <section class="section white-bg-section" id="gallery">
+  <!-- IMAGE GALLERY: Making an Impact (TRIANGLE LAYOUT FOR 5 IMAGES) -->
+  <section class="section" id="gallery" style="padding: 5.5rem 0; border-top: 1px solid rgba(255, 255, 255, 0.08);">
     <div class="container">
       <div class="prog-section-header" style="text-align: center; margin-bottom: 3.5rem;">
         
@@ -1132,7 +1087,7 @@
         </div>
 
         <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif !important; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 1rem;">Making an Impact</h2>
-        <p class="prog-section-desc" style="font-family: 'Inter', sans-serif !important; font-size: 1.05rem; line-height: 1.7; max-width: 650px; margin: 0 auto;">
+        <p class="prog-section-desc" style="font-family: 'Inter', sans-serif !important; font-size: 1.05rem; line-height: 1.7; max-width: 650px; margin: 0 auto; color: #FFFFFF !important;">
           From interactive classroom sessions to nationwide campaigns, see our journey in action.
         </p>
       </div>
@@ -1176,8 +1131,8 @@
     </div>
   </section>
 
-  <!-- THE COHORT (DARK SECTION - PURE WHITE TEXT) -->
-  <section class="prog-section reveal our-story-dark-section" id="cohort" style="padding: 5.5rem 0; border-top: 1px solid rgba(255, 255, 255, 0.06);">
+  <!-- THE COHORT -->
+  <section class="section our-story-dark-section" id="cohort" style="padding: 5.5rem 0; border-top: 1px solid rgba(255, 255, 255, 0.08);">
     <div class="container">
       <div class="prog-content-grid">
         <div class="prog-content-main">
@@ -1239,8 +1194,8 @@
     </div>
   </section>
 
-  <!-- TIMELINE: Timeline of Impact (WHITE BACKGROUND) -->
-  <section class="section white-bg-section" id="timeline">
+  <!-- TIMELINE: Timeline of Impact -->
+  <section class="section" id="timeline" style="padding: 5.5rem 0; border-top: 1px solid rgba(255, 255, 255, 0.08);">
     <div class="container">
       <div class="prog-section-header" style="text-align: center; margin-bottom: 3.5rem;">
         
@@ -1249,7 +1204,7 @@
         </div>
 
         <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif !important; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 1rem;">Timeline of Impact</h2>
-        <p class="prog-section-desc" style="font-family: 'Inter', sans-serif !important; font-size: 1.05rem; line-height: 1.7; max-width: 650px; margin: 0 auto;">
+        <p class="prog-section-desc" style="font-family: 'Inter', sans-serif !important; font-size: 1.05rem; line-height: 1.7; max-width: 650px; margin: 0 auto; color: #FFFFFF !important;">
           From our first session to nationwide expansion &mdash; key milestones in the Navigo Nepal story.
         </p>
       </div>
