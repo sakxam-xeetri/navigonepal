@@ -19,59 +19,513 @@
   <link rel="stylesheet" href="css/programs.css">
 
   <style>
-    /* ==================== OUR STORY PREMIUM DARK AESTHETIC ==================== */
-    body {
-      background-color: #06172F !important;
-      color: #F0F6FF !important;
+    /* ==================== OUR STORY EXACT HOME PAGE TYPOGRAPHY & HIGH CONTRAST DARK/WHITE SECTIONS ==================== */
+    
+    /* UNIVERSAL SHARP EDGES OVERRIDE */
+    *,
+    *::before,
+    *::after,
+    .ref-hero-photo,
+    .ref-hero-photo img,
+    .ref-card,
+    .ref-card-icon,
+    .ref-pill-badge,
+    .btn-ref-pill,
+    .premium-card,
+    .sidebar-premium-card,
+    .uq-landscape-frame,
+    .uq-landscape-img,
+    .prog-cta-icon,
+    .top-announcement-bar,
+    .btn,
+    img {
+      border-radius: 0px !important;
     }
 
+    body {
+      font-family: 'Inter', sans-serif !important;
+      background-color: #0A0A0A !important;
+      color: #FFFFFF !important;
+      line-height: 1.7;
+    }
+
+    h1, h2, h3, h4, h5, h6,
+    .ref-hero-title,
+    .ref-who-title,
+    .prog-section-title,
+    .ref-card-title,
+    .prog-cta-title {
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    /* Top Banner Announcement */
+    .top-announcement-bar {
+      background: linear-gradient(90deg, #F4A261 0%, #F59E0B 100%);
+      color: #0A0A0A;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.84rem;
+      font-weight: 600;
+      padding: 0.45rem 1rem;
+      text-align: center;
+      letter-spacing: 0.02em;
+      box-shadow: 0 2px 10px rgba(245, 158, 11, 0.2);
+    }
+
+    /* Hero Section with Grid, Background Image (ourstory.jpg / ourstory.png) & Floating Photos */
+    .hero-ref-section {
+      background: linear-gradient(180deg, rgba(10, 10, 10, 0.85) 0%, rgba(10, 10, 10, 0.94) 100%), 
+                  url('assets/ourstory.png'), url('assets/ourstory.jpg') center/cover no-repeat !important;
+      position: relative;
+      padding: 6.5rem 0 5.5rem;
+      overflow: hidden;
+    }
+
+    .ref-grid-lines {
+      position: absolute;
+      inset: 0;
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      pointer-events: none;
+    }
+
+    .ref-hero-container {
+      display: grid;
+      grid-template-columns: 270px 1fr 270px;
+      gap: 2.5rem;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    @media (max-width: 992px) {
+      .ref-hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .ref-hero-photo {
+        display: none;
+      }
+    }
+
+    .ref-hero-photo {
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: transform 0.4s ease;
+      background: #141414;
+    }
+
+    .ref-hero-photo:hover {
+      transform: translateY(-5px);
+      border-color: rgba(244, 162, 97, 0.5);
+    }
+
+    .ref-hero-photo img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .ref-hero-photo-left {
+      transform: translateY(-15px);
+    }
+
+    .ref-hero-photo-right {
+      transform: translateY(15px);
+    }
+
+    .ref-hero-content {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .ref-hero-title {
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      font-size: clamp(2.4rem, 4.8vw, 3.8rem);
+      font-weight: 800;
+      color: #FFFFFF !important;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+
+    .ref-hero-subtitle {
+      font-family: 'Inter', sans-serif !important;
+      font-size: 1.05rem;
+      color: #FFFFFF !important;
+      line-height: 1.75;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+    }
+
+    .ref-hero-ctas {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* Buttons */
+    .btn-ref-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.75rem 1.8rem;
+      font-family: 'Inter', sans-serif !important;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-ref-teal {
+      background: #2A9D8F;
+      color: #FFFFFF !important;
+      border: 1px solid #2A9D8F;
+      box-shadow: 0 4px 15px rgba(42, 157, 143, 0.3);
+    }
+
+    .btn-ref-teal:hover {
+      background: #238579;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(42, 157, 143, 0.45);
+      color: #FFFFFF !important;
+    }
+
+    .btn-ref-yellow {
+      background: #F4A261;
+      color: #0A0A0A !important;
+      border: 1px solid #F4A261;
+      box-shadow: 0 4px 15px rgba(244, 162, 97, 0.3);
+    }
+
+    .btn-ref-yellow:hover {
+      background: #e7924d;
+      color: #0A0A0A !important;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(244, 162, 97, 0.45);
+    }
+
+    /* Pill Badges */
+    .ref-pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.38rem 1.1rem;
+      background: rgba(42, 157, 143, 0.15);
+      border: 1px solid rgba(42, 157, 143, 0.35);
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #2A9D8F;
+      margin-bottom: 1rem;
+    }
+
+    .ref-pill-badge-teal {
+      background: rgba(42, 157, 143, 0.15);
+      border-color: rgba(42, 157, 143, 0.35);
+      color: #2A9D8F;
+    }
+
+    .ref-pill-badge-yellow {
+      background: rgba(244, 162, 97, 0.15);
+      border-color: rgba(244, 162, 97, 0.35);
+      color: #F4A261;
+    }
+
+    .ref-pill-badge-red {
+      background: rgba(230, 57, 70, 0.15);
+      border-color: rgba(230, 57, 70, 0.35);
+      color: #E63946;
+    }
+
+    /* "Who We Are" Section Layout */
+    .ref-who-we-are-section {
+      background-color: #0F0F0F !important;
+      padding: 5.5rem 0;
+      position: relative;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .ref-who-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    @media (max-width: 992px) {
+      .ref-who-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+    }
+
+    .ref-who-title {
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      font-weight: 800;
+      color: #FFFFFF !important;
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+    }
+
+    .ref-who-text {
+      font-family: 'Inter', sans-serif !important;
+      font-size: 1.05rem;
+      color: #FFFFFF !important;
+      line-height: 1.75;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+    }
+
+    .ref-motto-quote {
+      font-family: 'Inter', sans-serif !important;
+      font-size: 1.15rem;
+      line-height: 1.85;
+      color: #FFFFFF !important;
+      position: relative;
+      margin-bottom: 2rem;
+    }
+
+    .ref-divider {
+      height: 1px;
+      background: rgba(255, 255, 255, 0.15);
+      margin-bottom: 2rem;
+    }
+
+    .ref-stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 576px) {
+      .ref-stats-row {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+    }
+
+    .ref-stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ref-stat-number {
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      font-size: clamp(2.5rem, 4vw, 3.25rem);
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .stat-yellow { color: #F4A261 !important; }
+    .stat-red { color: #E63946 !important; }
+    .stat-green { color: #10B981 !important; }
+
+    .ref-stat-label {
+      font-family: 'Inter', sans-serif !important;
+      font-size: 0.85rem;
+      color: #FFFFFF !important;
+      line-height: 1.4;
+      opacity: 0.85;
+    }
+
+    /* PURE WHITE COLOR FOR ALL DARK SECTIONS */
+    .our-story-dark-section,
+    .our-story-dark-section p,
+    .our-story-dark-section div,
+    .our-story-dark-section li,
+    .our-story-dark-section span {
+      color: #FFFFFF !important;
+    }
+
+    .our-story-dark-section p {
+      opacity: 0.95;
+    }
+
+    /* ==================== WHITE BACKGROUND SECTIONS ==================== */
+    .white-bg-section {
+      background-color: #FFFFFF !important;
+      color: #0A2342 !important;
+      padding: 5.5rem 0;
+      border-top: 1px solid rgba(10, 35, 66, 0.08);
+      border-bottom: 1px solid rgba(10, 35, 66, 0.08);
+    }
+
+    .white-bg-section .ref-who-title,
+    .white-bg-section .prog-section-title,
+    .white-bg-section .ref-card-title,
+    .white-bg-section .prog-cta-title {
+      color: #0A2342 !important;
+    }
+
+    .white-bg-section p,
+    .white-bg-section .ref-card-desc,
+    .white-bg-section .prog-cta-desc,
+    .white-bg-section .prog-section-desc {
+      color: #334155 !important;
+      font-family: 'Inter', sans-serif !important;
+    }
+
+    .white-bg-section .ref-card {
+      background: #FFFFFF !important;
+      border: 1px solid rgba(10, 35, 66, 0.12) !important;
+      box-shadow: 0 8px 25px rgba(10, 35, 66, 0.06) !important;
+    }
+
+    .white-bg-section .ref-card:hover {
+      transform: translateY(-6px);
+      border-color: #2A9D8F !important;
+      box-shadow: 0 15px 35px rgba(10, 35, 66, 0.12) !important;
+    }
+
+    .white-bg-section .premium-card {
+      background: #FFFFFF !important;
+      border: 1px solid rgba(10, 35, 66, 0.12) !important;
+      box-shadow: 0 8px 25px rgba(10, 35, 66, 0.06) !important;
+    }
+
+    .white-bg-section .premium-card:hover {
+      transform: translateY(-6px) !important;
+      border-color: #2A9D8F !important;
+      box-shadow: 0 15px 35px rgba(10, 35, 66, 0.12) !important;
+    }
+
+    /* "What We Do" 4-Cards Grid */
+    .ref-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 992px) {
+      .ref-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 576px) {
+      .ref-cards-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .ref-card {
+      background: #141414;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 2rem 1.5rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .ref-card-icon {
+      width: 54px;
+      height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .icon-bg-yellow { background: rgba(244, 162, 97, 0.18); }
+    .icon-bg-red { background: rgba(230, 57, 70, 0.18); }
+    .icon-bg-green { background: rgba(16, 185, 129, 0.18); }
+    .icon-bg-blue { background: rgba(79, 156, 249, 0.18); }
+
+    .ref-card-title {
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .ref-card-desc {
+      font-family: 'Inter', sans-serif !important;
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    /* TRIANGLE GALLERY LAYOUT FOR 5 IMAGES IN MAKING AN IMPACT */
+    .triangle-gallery {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .triangle-row-1 {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .triangle-row-1 .premium-card {
+      width: 380px;
+      max-width: 100%;
+      height: 250px;
+    }
+
+    .triangle-row-2 {
+      display: flex;
+      justify-content: center;
+      gap: 1.75rem;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .triangle-row-2 .premium-card {
+      width: 360px;
+      max-width: 100%;
+      height: 240px;
+    }
+
+    .triangle-row-3 {
+      display: flex;
+      justify-content: center;
+      gap: 1.75rem;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .triangle-row-3 .premium-card {
+      width: 420px;
+      max-width: 100%;
+      height: 240px;
+    }
+
+    /* Dark section helpers */
     .our-story-dark-section {
-      background: #06172F !important;
+      background: #0A0A0A !important;
       position: relative;
     }
 
     .our-story-alt-section {
-      background: #0A2342 !important;
+      background: #0F0F0F !important;
       position: relative;
     }
 
-    /* Square Chip Label (Eyebrow Tag) */
-    .square-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      padding: 0.45rem 1.1rem;
-      background: rgba(37, 99, 235, 0.14);
-      border: 1px solid rgba(79, 156, 249, 0.35);
-      border-radius: 0px; /* Sharp Square Corner Chip */
-      font-family: 'Inter', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: #4F9CF9;
-      margin-bottom: 1.25rem;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
-    }
-
-    .square-chip-dot {
-      width: 7px;
-      height: 7px;
-      background: #2563EB;
-      border-radius: 0px; /* Square Dot */
-      display: inline-block;
-    }
-
-    /* Premium Unique Card Layouts */
     .premium-card {
       position: relative;
-      background: rgba(13, 42, 74, 0.75) !important;
-      border: 1px solid rgba(79, 156, 249, 0.18) !important;
-      border-radius: 12px;
-      padding: 2.25rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
-      backdrop-filter: blur(16px);
+      background: #141414 !important;
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      padding: 0.5rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
       transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
       overflow: hidden;
     }
@@ -83,51 +537,40 @@
       left: 0;
       width: 100%;
       height: 3px;
-      background: linear-gradient(90deg, #2563EB 0%, #4F9CF9 50%, #10B981 100%);
+      background: linear-gradient(90deg, #E63946 0%, #F4A261 33%, #10B981 66%, #2563EB 100%);
       opacity: 0.85;
     }
 
-    .premium-card:hover {
-      transform: translateY(-6px) !important;
-      border-color: rgba(79, 156, 249, 0.45) !important;
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45), 0 0 30px rgba(79, 156, 249, 0.2) !important;
-    }
-
     .sidebar-premium-card {
-      background: rgba(13, 42, 74, 0.82) !important;
-      border: 1px solid rgba(79, 156, 249, 0.2) !important;
-      border-left: 4px solid #2563EB !important;
-      border-radius: 12px;
+      background: #141414 !important;
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      border-left: 4px solid #2A9D8F !important;
       padding: 2rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
-      backdrop-filter: blur(16px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
     }
 
     .sidebar-premium-card h4 {
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
       font-weight: 700;
       color: #FFFFFF !important;
       font-size: 1.25rem;
       margin-bottom: 1.2rem;
-      letter-spacing: -0.01em;
     }
 
     .sidebar-premium-card ul li {
-      color: #A0B7D5 !important;
-      font-size: 0.93rem;
-    }
-
-    .prog-section-title {
       color: #FFFFFF !important;
-    }
-
-    .prog-text-block p {
-      color: #A0B7D5 !important;
+      font-size: 0.93rem;
+      opacity: 0.95;
     }
   </style>
 </head>
 
 <body class="loading">
+
+  <!-- Top Announcement Bar (Amber / Yellow) -->
+  <div class="top-announcement-bar">
+    <span>Thank you for supporting youth empowerment &amp; education across Nepal! Learn, Lead, and Lift.</span>
+  </div>
 
   <!-- Scroll Progress Bar -->
   <div class="scroll-progress" id="scrollProgress"></div>
@@ -138,7 +581,7 @@
     <div class="glow-orb orb-green"></div>
   </div>
 
-  <!-- Premium Navigation Bar -->
+  <!-- Navigation Bar -->
   <nav class="navbar" id="mainNav">
     <div class="nav-container">
       <a href="index.html" class="logo" id="navLogo">
@@ -158,12 +601,14 @@
           </a>
           <ul class="dropdown-menu">
             <li><a href="our-story.html">Our Full Story</a></li>
-            <li><a href="our-story.html#about">About Navigo Nepal</a></li>
-            <li><a href="our-story.html#mission">Mission &amp; Vision</a></li>
-            <li><a href="our-story.html#cohort">The Cohort</a></li>
-            <li><a href="our-story.html#whats-next">What's Next? Campaign</a></li>
-            <li><a href="our-story.html#environmental">Environmental Programs</a></li>
-            <li><a href="our-story.html#sustainability">Sustainability &amp; Future</a></li>
+            <li><a href="#who-we-are">Who We Are</a></li>
+            <li><a href="#what-we-do">What We Do</a></li>
+            <li><a href="#about">About Navigo Nepal</a></li>
+            <li><a href="#mission">Mission &amp; Vision</a></li>
+            <li><a href="#cohort">The Cohort</a></li>
+            <li><a href="#whats-next">What's Next? Campaign</a></li>
+            <li><a href="#environmental">Environmental Programs</a></li>
+            <li><a href="#sustainability">Sustainability &amp; Future</a></li>
           </ul>
         </li>
 
@@ -230,7 +675,7 @@
           </svg>
         </button>
 
-        <a href="donate.html" class="btn btn-primary" style="padding: 0.55rem 1.5rem; font-size: 0.8rem;">Donate</a>
+        <a href="donate.html" class="btn btn-primary" style="padding: 0.55rem 1.5rem; font-size: 0.8rem; background: #2A9D8F; border-color: #2A9D8F;">Donate Now</a>
 
         <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Mobile Menu">
           <span class="hamburger-line"></span>
@@ -265,12 +710,14 @@
           </a>
           <ul class="mobile-nav-submenu">
             <li><a href="our-story.html" class="mobile-subnav-link active">Our Full Story</a></li>
-            <li><a href="our-story.html#about" class="mobile-subnav-link">About Navigo Nepal</a></li>
-            <li><a href="our-story.html#mission" class="mobile-subnav-link">Mission &amp; Vision</a></li>
-            <li><a href="our-story.html#cohort" class="mobile-subnav-link">The Cohort</a></li>
-            <li><a href="our-story.html#whats-next" class="mobile-subnav-link">What's Next? Campaign</a></li>
-            <li><a href="our-story.html#environmental" class="mobile-subnav-link">Environmental Programs</a></li>
-            <li><a href="our-story.html#sustainability" class="mobile-subnav-link">Sustainability &amp; Future</a></li>
+            <li><a href="#who-we-are" class="mobile-subnav-link">Who We Are</a></li>
+            <li><a href="#what-we-do" class="mobile-subnav-link">What We Do</a></li>
+            <li><a href="#about" class="mobile-subnav-link">About Navigo Nepal</a></li>
+            <li><a href="#mission" class="mobile-subnav-link">Mission &amp; Vision</a></li>
+            <li><a href="#cohort" class="mobile-subnav-link">The Cohort</a></li>
+            <li><a href="#whats-next" class="mobile-subnav-link">What's Next? Campaign</a></li>
+            <li><a href="#environmental" class="mobile-subnav-link">Environmental Programs</a></li>
+            <li><a href="#sustainability" class="mobile-subnav-link">Sustainability &amp; Future</a></li>
           </ul>
         </li>
         <li class="mobile-nav-has-dropdown">
@@ -311,89 +758,207 @@
   </nav>
   <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
 
-  <!-- HERO SECTION - Full Width Dark Editorial Cover Aesthetic -->
-  <section class="section hero-map-section" id="top" style="background: linear-gradient(180deg, rgba(6, 23, 47, 0.78) 0%, rgba(6, 23, 47, 0.92) 100%), url('assets/ourstory.jpg') center/cover no-repeat; padding: 9.5rem 0 6.5rem; position: relative; overflow: hidden;">
-    <div class="wwe-grid-lines" aria-hidden="true" style="opacity: 0.12;"></div>
-    <div class="wwe-ambient-orb wwe-orb-1" style="opacity: 0.25;"></div>
-    <div class="wwe-ambient-orb wwe-orb-2" style="opacity: 0.15;"></div>
-    <div class="container hero-map-container" style="display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 850px; margin: 0 auto; position: relative; z-index: 2;">
+  <!-- HERO SECTION - Reference Inspired Dual-Photo Floating Grid with ourstory.png Background -->
+  <section class="section hero-ref-section" id="top">
+    <div class="ref-grid-lines" aria-hidden="true"></div>
+    <div class="container ref-hero-container">
       
-      <!-- Multi-Segment Colored Accent Bar -->
-      <div class="hero-accent-bar" aria-hidden="true" style="margin: 0 auto 1.5rem; justify-content: center;">
-        <span class="hero-accent-segment hero-accent-red"></span>
-        <span class="hero-accent-segment hero-accent-yellow"></span>
-        <span class="hero-accent-segment hero-accent-green"></span>
-        <span class="hero-accent-segment hero-accent-blue"></span>
+      <!-- Left Photo Frame -->
+      <div class="ref-hero-photo ref-hero-photo-left">
+        <img src="assets/mentor/494768055_122180105678283666_3769411379411479579_n.jpg" alt="Navigo Nepal Students in Session">
       </div>
 
-      <!-- Square Chip Hero Eyebrow -->
-      <div class="square-chip">
-        <span class="square-chip-dot"></span>
-        <span>MOVEMENT &amp; JOURNEY</span>
+      <!-- Center Content Block -->
+      <div class="ref-hero-content">
+
+        <h1 class="ref-hero-title">
+          Opportunity to change the lives of others
+        </h1>
+
+        <p class="ref-hero-subtitle">
+          Navigo Nepal is a digital &amp; community platform for bridging education and real-world skills, empowering junior high school students across all 7 provinces of Nepal.
+        </p>
+
+        <div class="ref-hero-ctas">
+          <a href="donate.html" class="btn-ref-pill btn-ref-teal">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            Donate Now
+          </a>
+          <a href="#about" class="btn-ref-pill btn-ref-yellow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            Watch Video
+          </a>
+        </div>
       </div>
 
-      <!-- Headline Display Font: Bebas Neue -->
-      <h1 class="hero-map-title" style="text-align: center; font-size: clamp(3.5rem, 8vw, 6rem); margin-bottom: 1.5rem; letter-spacing: 0.03em;">
-        Our Story
-      </h1>
+      <!-- Right Photo Frame -->
+      <div class="ref-hero-photo ref-hero-photo-right">
+        <img src="assets/mentor/469682525_122157350624283666_3962270940172125555_n.jpg" alt="Navigo Nepal Workshop">
+      </div>
 
-      <!-- Capped Paragraph Subtitle -->
-      <p class="hero-map-subtitle" style="text-align: center; max-width: 650px; margin: 0 auto 2.5rem; color: rgba(240, 246, 255, 0.85); font-size: clamp(1rem, 2vw, 1.25rem); line-height: 1.85;">
-        Bridging academic learning and real-world skills to empower the next generation of youth leaders across Nepal.
-      </p>
+    </div>
+  </section>
 
-      <!-- Editorial Block CTA Buttons -->
-      <div class="hero-map-ctas" style="justify-content: center; gap: 1rem; display: flex; flex-wrap: wrap;">
-        <a href="#about" class="hero-btn-accent hero-btn-green">Explore Our Journey</a>
-        <a href="volunteer.html" class="hero-btn-accent hero-btn-yellow">Join The Movement</a>
+  <!-- WHO WE ARE SECTION (Reference Layout) -->
+  <section class="section ref-who-we-are-section" id="who-we-are">
+    <div class="container">
+      <div class="ref-who-grid">
+        
+        <!-- Left Column -->
+        <div class="ref-who-left">
+          <div class="ref-pill-badge ref-pill-badge-teal">
+            <span>Who We Are</span>
+          </div>
+          <h2 class="ref-who-title">
+            We Are Awesome Volunteer Team
+          </h2>
+          <p class="ref-who-text">
+            Our team is a dedicated force of compassionate individuals who believe in the power of volunteering, peer mentorship, and practical education to transform lives and communities across Nepal.
+          </p>
+          <a href="#about" class="btn-ref-pill btn-ref-teal" style="padding: 0.65rem 1.6rem; font-size: 0.9rem;">
+            About Us
+          </a>
+        </div>
+
+        <!-- Right Column -->
+        <div class="ref-who-right">
+          <blockquote class="ref-motto-quote">
+            Our motto is simple yet profound: <strong style="color: #F4A261;">“Learn, Lead, and Lift.”</strong> By leveraging the strengths of each team member and fostering a spirit of collaboration, we amplify our impact and inspire others to join us on this incredible journey.
+          </blockquote>
+
+          <div class="ref-divider"></div>
+
+          <div class="ref-stats-row">
+            <div class="ref-stat-item">
+              <span class="ref-stat-number stat-yellow">10k+</span>
+              <span class="ref-stat-label">Students helped in 2024–2026</span>
+            </div>
+            <div class="ref-stat-item">
+              <span class="ref-stat-number stat-red">24+</span>
+              <span class="ref-stat-label">Districts reached nationwide</span>
+            </div>
+            <div class="ref-stat-item">
+              <span class="ref-stat-number stat-green">15+</span>
+              <span class="ref-stat-label">Partner schools connected</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ABOUT NAVIGO -->
-  <section class="prog-section reveal our-story-dark-section" id="about" style="padding: 5.5rem 0;">
+  <!-- WHAT WE DO SECTION: We Do It For All People (WHITE BACKGROUND) -->
+  <section class="section white-bg-section" id="what-we-do">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 3.5rem;">
+        <div class="ref-pill-badge ref-pill-badge-teal">
+          <span>What We Do</span>
+        </div>
+        <h2 class="ref-who-title" style="margin-bottom: 0.5rem;">
+          We Do It For All People
+        </h2>
+        <p class="ref-card-desc" style="max-width: 600px; margin: 0 auto; line-height: 1.7;">
+          Bridging academic learning with real-world skills, career guidance, environmental stewardship, and leadership.
+        </p>
+      </div>
+
+      <div class="ref-cards-grid">
+        
+        <!-- Card 1: Yellow Accent -->
+        <div class="ref-card">
+          <div class="ref-card-icon icon-bg-yellow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F4A261" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+            </svg>
+          </div>
+          <h3 class="ref-card-title">Stream Guidance</h3>
+          <p class="ref-card-desc">
+            Post-SEE counseling, scholarship discovery, and evidence-based academic guidance for students in need.
+          </p>
+        </div>
+
+        <!-- Card 2: Red Accent -->
+        <div class="ref-card">
+          <div class="ref-card-icon icon-bg-red">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </div>
+          <h3 class="ref-card-title">Leadership &amp; Clubs</h3>
+          <p class="ref-card-desc">
+            Equipping students with skills to build and manage active school clubs, ECAs, and peer networks.
+          </p>
+        </div>
+
+        <!-- Card 3: Green Accent -->
+        <div class="ref-card">
+          <div class="ref-card-icon icon-bg-green">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3 class="ref-card-title">Environmental Action</h3>
+          <p class="ref-card-desc">
+            Bottle gardening, community rallies, and SDG 13 Climate Action sessions alongside UNICEF &amp; USAID.
+          </p>
+        </div>
+
+        <!-- Card 4: Blue/Teal Accent -->
+        <div class="ref-card">
+          <div class="ref-card-icon icon-bg-blue">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4F9CF9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <h3 class="ref-card-title">We Care About Youth</h3>
+          <p class="ref-card-desc">
+            Connecting modern tech tools with Vedic wisdom to nurture responsible, confident future leaders.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT NAVIGO DETAILS (DARK SECTION - PURE WHITE TEXT) -->
+  <section class="prog-section reveal our-story-dark-section" id="about" style="padding: 5.5rem 0; border-top: 1px solid rgba(255, 255, 255, 0.06);">
     <div class="container">
       <div class="prog-content-grid">
         <div class="prog-content-main">
           
-          <!-- Square Chip Tag -->
-          <div class="square-chip">
-            <span class="square-chip-dot"></span>
+          <div class="ref-pill-badge ref-pill-badge-teal">
             <span>WHO WE ARE</span>
           </div>
 
-          <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #FFFFFF; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 1.5rem;">About Navigo Nepal</h2>
+          <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif !important; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #FFFFFF !important; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 1.5rem;">About Navigo Nepal</h2>
 
-          <div class="prog-text-block" style="color: #A0B7D5; font-family: 'Inter', sans-serif; line-height: 1.75; margin-bottom: 1.5rem;">
-            <p>
-              Navigo Nepal is a youth-led, non-profit organization dedicated to empowering junior high school students
-              to confidently navigate their futures by bridging the gap between academic learning and real-world skills.
-              We aim to equip students with the essential knowledge, skills, and opportunities needed to become capable
-              learners, responsible citizens, and global leaders.
+          <div class="prog-text-block" style="color: #FFFFFF !important; font-family: 'Inter', sans-serif !important; line-height: 1.8; margin-bottom: 1.5rem;">
+            <p style="color: #FFFFFF !important;">
+              Navigo Nepal is a youth-led, non-profit organization dedicated to empowering junior high school students to confidently navigate their futures by bridging the gap between academic learning and real-world skills. We aim to equip students with the essential knowledge, skills, and opportunities needed to become capable learners, responsible citizens, and global leaders.
             </p>
           </div>
 
-          <div class="prog-text-block" style="color: #A0B7D5; font-family: 'Inter', sans-serif; line-height: 1.75; margin-bottom: 1.5rem;">
-            <p>
-              Through interactive sessions, hands-on experiences, and nationwide outreach, we provide exposure to
-              scholarships, career paths, and community leadership, encouraging students to explore their potential
-              beyond the classroom. Our programs, which include informative seminars, competitions, and club management
-              workshops, emphasize teamwork, personal development, and innovative thinking.
+          <div class="prog-text-block" style="color: #FFFFFF !important; font-family: 'Inter', sans-serif !important; line-height: 1.8; margin-bottom: 1.5rem;">
+            <p style="color: #FFFFFF !important;">
+              Through interactive sessions, hands-on experiences, and nationwide outreach, we provide exposure to scholarships, career paths, and community leadership, encouraging students to explore their potential beyond the classroom. Our programs, which include informative seminars, competitions, and club management workshops, emphasize teamwork, personal development, and innovative thinking.
             </p>
           </div>
 
           <div style="margin: 2.5rem 0; display: flex; justify-content: center;">
-            <div class="premium-card uq-landscape-frame" style="max-width: 520px; width: 100%; border-radius: 12px; overflow: hidden; padding: 0.6rem;">
+            <div class="premium-card uq-landscape-frame" style="max-width: 540px; width: 100%; border-radius: 0px; overflow: hidden; padding: 0.6rem;">
               <img src="assets/mentor/494768055_122180105678283666_3769411379411479579_n.jpg"
-                alt="Navigo Nepal Students in Session" class="uq-landscape-img" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; transition: transform 0.5s ease;">
+                alt="Navigo Nepal Students in Session" class="uq-landscape-img" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
             </div>
           </div>
 
-          <div class="prog-text-block" style="color: #A0B7D5; font-family: 'Inter', sans-serif; line-height: 1.75;">
-            <p>
+          <div class="prog-text-block" style="color: #FFFFFF !important; font-family: 'Inter', sans-serif !important; line-height: 1.8;">
+            <p style="color: #FFFFFF !important;">
               At Navigo Nepal, we are committed to transforming the educational landscape by fostering an environment
               where students can discover their passions, set meaningful goals, and contribute positively to their
-              communities, guided by our mantra: <strong style="color: #4F9CF9;">Learn, Lead, and Lift</strong>.
+              communities, guided by our mantra: <strong style="color: #F4A261;">Learn, Lead, and Lift</strong>.
             </p>
           </div>
         </div>
@@ -401,21 +966,21 @@
         <div class="prog-content-sidebar" style="display: flex; flex-direction: column; gap: 1.5rem;">
           <div class="sidebar-premium-card">
             <h4>At a Glance</h4>
-            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; color: #A0B7D5; font-size: 0.93rem;">
-              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #4F9CF9; font-weight: bold;">✓</span> Youth-led non-profit organization</li>
-              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #4F9CF9; font-weight: bold;">✓</span> Operating across all 7 provinces</li>
-              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #4F9CF9; font-weight: bold;">✓</span> 10,000+ students reached annually</li>
-              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #4F9CF9; font-weight: bold;">✓</span> Partnerships with UNICEF, USAID, AIESEC</li>
-              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #4F9CF9; font-weight: bold;">✓</span> 13 active team members</li>
-              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #4F9CF9; font-weight: bold;">✓</span> 3 Board of Advisors</li>
+            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; color: #FFFFFF !important; font-size: 0.93rem;">
+              <li style="display: flex; align-items: center; gap: 0.6rem; color: #FFFFFF !important;"><span style="color: #10B981; font-weight: bold;">✓</span> Youth-led non-profit organization</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem; color: #FFFFFF !important;"><span style="color: #10B981; font-weight: bold;">✓</span> Operating across all 7 provinces</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem; color: #FFFFFF !important;"><span style="color: #10B981; font-weight: bold;">✓</span> 10,000+ students reached annually</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem; color: #FFFFFF !important;"><span style="color: #10B981; font-weight: bold;">✓</span> Partnerships with UNICEF, USAID, AIESEC</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem; color: #FFFFFF !important;"><span style="color: #10B981; font-weight: bold;">✓</span> 13 active team members</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem; color: #FFFFFF !important;"><span style="color: #10B981; font-weight: bold;">✓</span> 3 Board of Advisors</li>
             </ul>
           </div>
           <div class="sidebar-premium-card">
             <h4>Our Mantra</h4>
-            <p class="prog-sidebar-text" style="color: #A0B7D5; font-size: 0.93rem; line-height: 1.75;">
-              <strong style="color: #4F9CF9;">Learn</strong> &mdash; Gain knowledge and skills through interactive sessions.<br>
-              <strong style="color: #4F9CF9;">Lead</strong> &mdash; Develop leadership and personality traits.<br>
-              <strong style="color: #4F9CF9;">Lift</strong> &mdash; Empower others in your community.
+            <p class="prog-sidebar-text" style="color: #FFFFFF !important; font-size: 0.93rem; line-height: 1.75;">
+              <strong style="color: #F4A261;">Learn</strong> &mdash; Gain knowledge and skills through interactive sessions.<br>
+              <strong style="color: #E63946;">Lead</strong> &mdash; Develop leadership and personality traits.<br>
+              <strong style="color: #10B981;">Lift</strong> &mdash; Empower others in your community.
             </p>
           </div>
         </div>
@@ -423,26 +988,24 @@
     </div>
   </section>
 
-  <!-- PROBLEM STATEMENT -->
-  <section class="prog-section reveal our-story-alt-section" id="problem" style="padding: 5.5rem 0;">
+  <!-- PROBLEM STATEMENT: The Problem We Solve (WHITE BACKGROUND) -->
+  <section class="section white-bg-section" id="problem">
     <div class="container">
       <div class="prog-section-header" style="text-align: center; margin-bottom: 3.5rem;">
         
-        <!-- Square Chip Tag -->
-        <div class="square-chip">
-          <span class="square-chip-dot"></span>
+        <div class="ref-pill-badge ref-pill-badge-red">
           <span>THE CHALLENGE</span>
         </div>
 
-        <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #FFFFFF; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 1rem;">The Problem We Solve</h2>
-        <p class="prog-section-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 1.05rem; line-height: 1.7; max-width: 650px; margin: 0 auto;">
+        <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif !important; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 1rem;">The Problem We Solve</h2>
+        <p class="prog-section-desc" style="font-family: 'Inter', sans-serif !important; font-size: 1.05rem; line-height: 1.7; max-width: 650px; margin: 0 auto;">
           In Nepal, many students are confined to a narrow educational experience focused solely on academic achievements.
         </p>
       </div>
 
       <div class="prog-cta-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
         <div class="premium-card">
-          <div class="prog-cta-icon" style="width: 56px; height: 56px; border-radius: 8px; background: rgba(230, 57, 70, 0.15); color: #E63946; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+          <div class="prog-cta-icon icon-bg-red" style="width: 56px; height: 56px; color: #E63946; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10" />
@@ -450,30 +1013,30 @@
               <line x1="12" y1="16" x2="12.01" y2="16" />
             </svg>
           </div>
-          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: #FFFFFF; margin-bottom: 1rem;">Lack of Exposure</h3>
-          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 0.95rem; line-height: 1.7;">
+          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif !important; font-weight: 700; font-size: 1.3rem; margin-bottom: 1rem;">Lack of Exposure</h3>
+          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif !important; font-size: 0.95rem; line-height: 1.7;">
             Students lack exposure to different opportunities and have insufficient guidance on post-secondary
             options, creating a significant gap between what they learn and what they need to succeed.
           </p>
         </div>
 
         <div class="premium-card">
-          <div class="prog-cta-icon" style="width: 56px; height: 56px; border-radius: 8px; background: rgba(16, 185, 129, 0.15); color: #10B981; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+          <div class="prog-cta-icon icon-bg-green" style="width: 56px; height: 56px; color: #10B981; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
               <path d="M6 12v5c3 3 9 3 12 0v-5" />
             </svg>
           </div>
-          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: #FFFFFF; margin-bottom: 1rem;">Academic-Only Focus</h3>
-          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 0.95rem; line-height: 1.7;">
+          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif !important; font-weight: 700; font-size: 1.3rem; margin-bottom: 1rem;">Academic-Only Focus</h3>
+          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif !important; font-size: 0.95rem; line-height: 1.7;">
             The narrow focus on exams leaves students unprepared for practical challenges they will face in their
             careers and personal lives.
           </p>
         </div>
 
         <div class="premium-card">
-          <div class="prog-cta-icon" style="width: 56px; height: 56px; border-radius: 8px; background: rgba(79, 156, 249, 0.15); color: #4F9CF9; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+          <div class="prog-cta-icon icon-bg-yellow" style="width: 56px; height: 56px; color: #F4A261; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -482,8 +1045,8 @@
               <path d="M16 3.13a4 4 0 0 1 0 7.75" />
             </svg>
           </div>
-          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: #FFFFFF; margin-bottom: 1rem;">No Career Guidance</h3>
-          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 0.95rem; line-height: 1.7;">
+          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif !important; font-weight: 700; font-size: 1.3rem; margin-bottom: 1rem;">No Career Guidance</h3>
+          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif !important; font-size: 0.95rem; line-height: 1.7;">
             Students complete secondary education without understanding their next steps, leading to poor
             decision-making regarding further education and career choices.
           </p>
@@ -492,23 +1055,21 @@
     </div>
   </section>
 
-  <!-- MISSION & VISION -->
-  <section class="prog-section reveal our-story-dark-section" id="mission" style="padding: 5.5rem 0;">
+  <!-- MISSION & VISION (DARK SECTION - PURE WHITE TEXT) -->
+  <section class="prog-section reveal our-story-dark-section" id="mission" style="padding: 5.5rem 0; border-top: 1px solid rgba(255, 255, 255, 0.06);">
     <div class="container">
       <div class="prog-content-grid">
         <div class="prog-content-main">
           
-          <!-- Square Chip Tag -->
-          <div class="square-chip">
-            <span class="square-chip-dot"></span>
+          <div class="ref-pill-badge ref-pill-badge-teal">
             <span>OUR PURPOSE</span>
           </div>
 
-          <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #FFFFFF; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 2rem;">Mission &amp; Vision</h2>
+          <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif !important; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #FFFFFF !important; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 2rem;">Mission &amp; Vision</h2>
 
-          <div class="prog-text-block" style="color: #A0B7D5; font-family: 'Inter', sans-serif; line-height: 1.75; margin-bottom: 2rem;">
-            <h3 class="prog-subtitle" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: #FFFFFF; font-size: 1.4rem; margin-bottom: 0.75rem;">Our Mission</h3>
-            <p>
+          <div class="prog-text-block" style="color: #FFFFFF !important; font-family: 'Inter', sans-serif !important; line-height: 1.8; margin-bottom: 2rem;">
+            <h3 class="prog-subtitle" style="font-family: 'Plus Jakarta Sans', sans-serif !important; font-weight: 700; color: #FFFFFF !important; font-size: 1.4rem; margin-bottom: 0.75rem;">Our Mission</h3>
+            <p style="color: #FFFFFF !important;">
               To empower students across Nepal by transforming their educational experience from a narrow focus on
               academics to a more holistic approach that includes personal development, leadership, and problem-solving
               skills. We provide the exposure, guidance, and skills students need to navigate their educational and
@@ -516,23 +1077,22 @@
             </p>
           </div>
 
-          <div class="prog-text-block" style="color: #A0B7D5; font-family: 'Inter', sans-serif; line-height: 1.75; margin-bottom: 2rem;">
-            <h3 class="prog-subtitle" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: #FFFFFF; font-size: 1.4rem; margin-bottom: 0.75rem;">Our Vision</h3>
-            <p>
+          <div class="prog-text-block" style="color: #FFFFFF !important; font-family: 'Inter', sans-serif !important; line-height: 1.8; margin-bottom: 2rem;">
+            <h3 class="prog-subtitle" style="font-family: 'Plus Jakarta Sans', sans-serif !important; font-weight: 700; color: #FFFFFF !important; font-size: 1.4rem; margin-bottom: 0.75rem;">Our Vision</h3>
+            <p style="color: #FFFFFF !important;">
               A future where every student in Nepal has the knowledge and tools to make informed decisions about their
               education and career. We envision a generation of confident, capable leaders who can contribute positively
               to their communities and the world.
             </p>
           </div>
 
-          <div class="prog-text-block" style="color: #A0B7D5; font-family: 'Inter', sans-serif; line-height: 1.75;">
-            <h3 class="prog-subtitle" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: #FFFFFF; font-size: 1.4rem; margin-bottom: 0.75rem;">What Makes Us Unique?</h3>
-            <p>
+          <div class="prog-text-block" style="color: #FFFFFF !important; font-family: 'Inter', sans-serif !important; line-height: 1.8;">
+            <h3 class="prog-subtitle" style="font-family: 'Plus Jakarta Sans', sans-serif !important; font-weight: 700; color: #FFFFFF !important; font-size: 1.4rem; margin-bottom: 0.75rem;">What Makes Us Unique?</h3>
+            <p style="color: #FFFFFF !important;">
               Navigo Nepal stands out because we don't just advocate for change &mdash; we actively create it. Our
               sessions are interactive and engaging, using games, discussions, and real-world scenarios to make learning
               fun and impactful. We focus on practical experiences, such as camps and workshops, to ensure students gain
-              hands-on skills. We also aim to reach students across the country, not just in urban centers, by training
-              local leaders.
+              hands-on skills.
             </p>
           </div>
         </div>
@@ -540,21 +1100,21 @@
         <div class="prog-content-sidebar" style="display: flex; flex-direction: column; gap: 1.5rem;">
           <div class="sidebar-premium-card">
             <h4>Our Approach</h4>
-            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; color: #A0B7D5; font-size: 0.93rem;">
-              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #4F9CF9; font-weight: bold;">•</span> Interactive learning through games and debates</li>
-              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #4F9CF9; font-weight: bold;">•</span> Hands-on practical experiences</li>
-              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #4F9CF9; font-weight: bold;">•</span> Tailored content for each school</li>
-              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #4F9CF9; font-weight: bold;">•</span> Pre and post-assessments</li>
-              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #4F9CF9; font-weight: bold;">•</span> Nationwide outreach programs</li>
+            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; color: #FFFFFF !important; font-size: 0.93rem;">
+              <li style="display: flex; align-items: center; gap: 0.6rem; color: #FFFFFF !important;"><span style="color: #2A9D8F; font-weight: bold;">•</span> Interactive learning through games and debates</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem; color: #FFFFFF !important;"><span style="color: #2A9D8F; font-weight: bold;">•</span> Hands-on practical experiences</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem; color: #FFFFFF !important;"><span style="color: #2A9D8F; font-weight: bold;">•</span> Tailored content for each school</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem; color: #FFFFFF !important;"><span style="color: #2A9D8F; font-weight: bold;">•</span> Pre and post-assessments</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem; color: #FFFFFF !important;"><span style="color: #2A9D8F; font-weight: bold;">•</span> Nationwide outreach programs</li>
             </ul>
           </div>
           <div class="sidebar-premium-card">
             <h4>Key Partners</h4>
-            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; color: #A0B7D5; font-size: 0.93rem;">
-              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #4F9CF9; font-weight: bold;">★</span> UNICEF Nepal</li>
-              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #4F9CF9; font-weight: bold;">★</span> USAID Clean Air</li>
-              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #4F9CF9; font-weight: bold;">★</span> AIESEC Nepal</li>
-              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #4F9CF9; font-weight: bold;">★</span> Gurubaa Educational Content</li>
+            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; color: #FFFFFF !important; font-size: 0.93rem;">
+              <li style="display: flex; align-items: center; gap: 0.6rem; color: #FFFFFF !important;"><span style="color: #F4A261; font-weight: bold;">★</span> UNICEF Nepal</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem; color: #FFFFFF !important;"><span style="color: #F4A261; font-weight: bold;">★</span> USAID Clean Air</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem; color: #FFFFFF !important;"><span style="color: #F4A261; font-weight: bold;">★</span> AIESEC Nepal</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem; color: #FFFFFF !important;"><span style="color: #F4A261; font-weight: bold;">★</span> Gurubaa Educational Content</li>
             </ul>
           </div>
         </div>
@@ -562,68 +1122,74 @@
     </div>
   </section>
 
-  <!-- IMAGE GALLERY -->
-  <section class="prog-section reveal our-story-alt-section" id="gallery" style="padding: 5.5rem 0;">
+  <!-- IMAGE GALLERY: Making an Impact (WHITE BACKGROUND - TRIANGLE LAYOUT FOR 5 IMAGES) -->
+  <section class="section white-bg-section" id="gallery">
     <div class="container">
       <div class="prog-section-header" style="text-align: center; margin-bottom: 3.5rem;">
         
-        <!-- Square Chip Tag -->
-        <div class="square-chip">
-          <span class="square-chip-dot"></span>
+        <div class="ref-pill-badge ref-pill-badge-yellow">
           <span>OUR WORK</span>
         </div>
 
-        <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #FFFFFF; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 1rem;">Making an Impact</h2>
-        <p class="prog-section-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 1.05rem; line-height: 1.7; max-width: 650px; margin: 0 auto;">
+        <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif !important; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 1rem;">Making an Impact</h2>
+        <p class="prog-section-desc" style="font-family: 'Inter', sans-serif !important; font-size: 1.05rem; line-height: 1.7; max-width: 650px; margin: 0 auto;">
           From interactive classroom sessions to nationwide campaigns, see our journey in action.
         </p>
       </div>
 
-      <div class="uq-block-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;">
-        <div class="premium-card uq-landscape-frame" style="aspect-ratio: 1; border-radius: 12px; overflow: hidden; padding: 0.5rem;">
-          <img src="assets/mentor/469682525_122157350624283666_3962270940172125555_n.jpg"
-            alt="Navigo Nepal Session" class="uq-landscape-img" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; transition: transform 0.5s ease;">
+      <!-- TRIANGLE LAYOUT (5 IMAGES) -->
+      <div class="triangle-gallery">
+        
+        <!-- Row 1: Top Peak (1 Image Centered) -->
+        <div class="triangle-row-1">
+          <div class="premium-card uq-landscape-frame">
+            <img src="assets/mentor/469682525_122157350624283666_3962270940172125555_n.jpg"
+              alt="Navigo Nepal Session Peak" class="uq-landscape-img" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+          </div>
         </div>
-        <div class="premium-card uq-landscape-frame" style="aspect-ratio: 1; border-radius: 12px; overflow: hidden; padding: 0.5rem;">
-          <img src="assets/mentor/469612680_122157346844283666_4819403624411688210_n.jpg"
-            alt="Students Engaged" class="uq-landscape-img" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; transition: transform 0.5s ease;">
+
+        <!-- Row 2: Middle Level (2 Images Side by Side) -->
+        <div class="triangle-row-2">
+          <div class="premium-card uq-landscape-frame">
+            <img src="assets/mentor/469612680_122157346844283666_4819403624411688210_n.jpg"
+              alt="Students Engaged" class="uq-landscape-img" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+          </div>
+          <div class="premium-card uq-landscape-frame">
+            <img src="assets/mentor/469609937_122157357716283666_668614257620270082_n.jpg"
+              alt="Leadership Training" class="uq-landscape-img" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+          </div>
         </div>
-        <div class="premium-card uq-landscape-frame" style="aspect-ratio: 1; border-radius: 12px; overflow: hidden; padding: 0.5rem;">
-          <img src="assets/mentor/469609937_122157357716283666_668614257620270082_n.jpg"
-            alt="Leadership Training" class="uq-landscape-img" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; transition: transform 0.5s ease;">
+
+        <!-- Row 3: Base Level (2 Images Spread Wider) -->
+        <div class="triangle-row-3">
+          <div class="premium-card uq-landscape-frame">
+            <img src="assets/mentor/469837851_122157357158283666_2194395108200675076_n.jpg"
+              alt="Community Outreach" class="uq-landscape-img" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+          </div>
+          <div class="premium-card uq-landscape-frame">
+            <img src="assets/mentor/470212567_122158118966283666_6621238576151152273_n.jpg"
+              alt="Student Engagement" class="uq-landscape-img" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+          </div>
         </div>
-        <div class="premium-card uq-landscape-frame" style="aspect-ratio: 1; border-radius: 12px; overflow: hidden; padding: 0.5rem;">
-          <img src="assets/mentor/469837851_122157357158283666_2194395108200675076_n.jpg"
-            alt="Community Outreach" class="uq-landscape-img" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; transition: transform 0.5s ease;">
-        </div>
-        <div class="premium-card uq-landscape-frame" style="aspect-ratio: 1; border-radius: 12px; overflow: hidden; padding: 0.5rem;">
-          <img src="assets/mentor/469706649_122157348716283666_4270463278045511651_n.jpg"
-            alt="Workshop Session" class="uq-landscape-img" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; transition: transform 0.5s ease;">
-        </div>
-        <div class="premium-card uq-landscape-frame" style="aspect-ratio: 1; border-radius: 12px; overflow: hidden; padding: 0.5rem;">
-          <img src="assets/mentor/470212567_122158118966283666_6621238576151152273_n.jpg"
-            alt="Student Engagement" class="uq-landscape-img" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; transition: transform 0.5s ease;">
-        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- THE COHORT -->
-  <section class="prog-section reveal our-story-dark-section" id="cohort" style="padding: 5.5rem 0;">
+  <!-- THE COHORT (DARK SECTION - PURE WHITE TEXT) -->
+  <section class="prog-section reveal our-story-dark-section" id="cohort" style="padding: 5.5rem 0; border-top: 1px solid rgba(255, 255, 255, 0.06);">
     <div class="container">
       <div class="prog-content-grid">
         <div class="prog-content-main">
           
-          <!-- Square Chip Tag -->
-          <div class="square-chip">
-            <span class="square-chip-dot"></span>
+          <div class="ref-pill-badge ref-pill-badge-teal">
             <span>OUR TEAM</span>
           </div>
 
-          <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #FFFFFF; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 2rem;">The Cohort Behind Navigo</h2>
+          <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif !important; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #FFFFFF !important; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 2rem;">The Cohort Behind Navigo</h2>
 
-          <div class="prog-text-block" style="color: #A0B7D5; font-family: 'Inter', sans-serif; line-height: 1.75; margin-bottom: 1.5rem;">
-            <p>
+          <div class="prog-text-block" style="color: #FFFFFF !important; font-family: 'Inter', sans-serif !important; line-height: 1.8; margin-bottom: 1.5rem;">
+            <p style="color: #FFFFFF !important;">
               Navigo Nepal was co-founded by <strong style="color: #FFFFFF;">Anupam Neupane</strong>, <strong style="color: #FFFFFF;">Biyog Dangol</strong>, and
               <strong style="color: #FFFFFF;">Prajwal Dhungana</strong>. Our first project included two additional members who have now become
               Alumni: <strong style="color: #FFFFFF;">Swapnil Sapkota</strong>, currently studying at New York University at Abu Dhabi, and
@@ -631,22 +1197,20 @@
             </p>
           </div>
 
-          <div class="prog-text-block" style="color: #A0B7D5; font-family: 'Inter', sans-serif; line-height: 1.75; margin-bottom: 1.5rem;">
-            <p>
-              The Navigo Nepal team slowly grew along with its projects. Today, Navigo Nepal has <strong style="color: #4F9CF9;">13 active
+          <div class="prog-text-block" style="color: #FFFFFF !important; font-family: 'Inter', sans-serif !important; line-height: 1.8; margin-bottom: 1.5rem;">
+            <p style="color: #FFFFFF !important;">
+              The Navigo Nepal team slowly grew along with its projects. Today, Navigo Nepal has <strong style="color: #F4A261;">13 active
               members</strong> along with three Board of Advisors who work together to run Navigo Nepal as an
-              organization. Our collaborative spirit and shared vision have been the driving force behind our growth
-              and impact.
+              organization.
             </p>
           </div>
 
-          <div class="prog-text-block" style="color: #A0B7D5; font-family: 'Inter', sans-serif; line-height: 1.75;">
-            <h3 class="prog-subtitle" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: #FFFFFF; font-size: 1.4rem; margin-bottom: 0.75rem;">Collaboration with Gurubaa</h3>
-            <p>
+          <div class="prog-text-block" style="color: #FFFFFF !important; font-family: 'Inter', sans-serif !important; line-height: 1.8;">
+            <h3 class="prog-subtitle" style="font-family: 'Plus Jakarta Sans', sans-serif !important; font-weight: 700; color: #FFFFFF !important; font-size: 1.4rem; margin-bottom: 0.75rem;">Collaboration with Gurubaa</h3>
+            <p style="color: #FFFFFF !important;">
               Gurubaa is Nepal's largest Educational Content Creator with over 780k followers across YouTube and over
               128 million views. Navigo Nepal has partnered with Gurubaa with a goal of providing exposure to students
-              for their bright future ahead. Mr. Krishna Bhandari, Mr. Bijay Adhikari, and Mr. Binay Adhikari, the
-              co-founders of Gurubaa, have supported Navigo Nepal throughout the journey.
+              for their bright future ahead.
             </p>
           </div>
         </div>
@@ -654,20 +1218,20 @@
         <div class="prog-content-sidebar" style="display: flex; flex-direction: column; gap: 1.5rem;">
           <div class="sidebar-premium-card">
             <h4>Founding Members</h4>
-            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; color: #A0B7D5; font-size: 0.93rem;">
-              <li>Anupam Neupane &mdash; Co-Founder</li>
-              <li>Biyog Dangol &mdash; Co-Founder</li>
-              <li>Prajwal Dhungana &mdash; Co-Founder</li>
-              <li>Swapnil Sapkota &mdash; Alumni</li>
-              <li>Atal Raj Paudel &mdash; Alumni</li>
+            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; color: #FFFFFF !important; font-size: 0.93rem;">
+              <li style="color: #FFFFFF !important;">Anupam Neupane &mdash; Co-Founder</li>
+              <li style="color: #FFFFFF !important;">Biyog Dangol &mdash; Co-Founder</li>
+              <li style="color: #FFFFFF !important;">Prajwal Dhungana &mdash; Co-Founder</li>
+              <li style="color: #FFFFFF !important;">Swapnil Sapkota &mdash; Alumni</li>
+              <li style="color: #FFFFFF !important;">Atal Raj Paudel &mdash; Alumni</li>
             </ul>
           </div>
           <div class="sidebar-premium-card">
             <h4>Gurubaa Partners</h4>
-            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; color: #A0B7D5; font-size: 0.93rem;">
-              <li>Krishna Bhandari</li>
-              <li>Bijay Adhikari</li>
-              <li>Binay Adhikari</li>
+            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; color: #FFFFFF !important; font-size: 0.93rem;">
+              <li style="color: #FFFFFF !important;">Krishna Bhandari</li>
+              <li style="color: #FFFFFF !important;">Bijay Adhikari</li>
+              <li style="color: #FFFFFF !important;">Binay Adhikari</li>
             </ul>
           </div>
         </div>
@@ -675,401 +1239,77 @@
     </div>
   </section>
 
-  <!-- WHAT'S NEXT CAMPAIGN -->
-  <section class="prog-section reveal our-story-alt-section" id="whats-next" style="padding: 5.5rem 0;">
+  <!-- TIMELINE: Timeline of Impact (WHITE BACKGROUND) -->
+  <section class="section white-bg-section" id="timeline">
     <div class="container">
       <div class="prog-section-header" style="text-align: center; margin-bottom: 3.5rem;">
         
-        <!-- Square Chip Tag -->
-        <div class="square-chip">
-          <span class="square-chip-dot"></span>
-          <span>FLAGSHIP PROGRAM</span>
-        </div>
-
-        <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #FFFFFF; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 1rem;">The "What's Next?" Campaign</h2>
-        <p class="prog-section-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 1.05rem; line-height: 1.7; max-width: 650px; margin: 0 auto;">
-          A comprehensive program including counseling sessions, workshops, and hands-on activities designed to help
-          students explore their academic and career options after secondary education.
-        </p>
-      </div>
-
-      <div class="prog-cta-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-        <div class="premium-card">
-          <div class="prog-cta-icon" style="width: 56px; height: 56px; border-radius: 8px; background: rgba(37, 99, 235, 0.15); color: #2563EB; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-              <polyline points="14 2 14 8 20 8" />
-              <line x1="16" y1="13" x2="8" y2="13" />
-              <line x1="16" y1="17" x2="8" y2="17" />
-              <polyline points="10 9 9 9 8 9" />
-            </svg>
-          </div>
-          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: #FFFFFF; margin-bottom: 1rem;">Stream Selection Guidance</h3>
-          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 0.95rem; line-height: 1.7;">
-            Helping students understand their options after secondary school and choose the right academic stream based
-            on their interests and strengths.
-          </p>
-        </div>
-
-        <div class="premium-card">
-          <div class="prog-cta-icon" style="width: 56px; height: 56px; border-radius: 8px; background: rgba(16, 185, 129, 0.15); color: #10B981; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-              <path d="M6 12v5c3 3 9 3 12 0v-5" />
-            </svg>
-          </div>
-          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: #FFFFFF; margin-bottom: 1rem;">College &amp; Course Selection</h3>
-          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 0.95rem; line-height: 1.7;">
-            Providing detailed information on choosing the right college and course, including scholarship discovery
-            and evidence-based counseling frameworks.
-          </p>
-        </div>
-
-        <div class="premium-card">
-          <div class="prog-cta-icon" style="width: 56px; height: 56px; border-radius: 8px; background: rgba(244, 162, 97, 0.15); color: #F4A261; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-              <circle cx="9" cy="7" r="4" />
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-            </svg>
-          </div>
-          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: #FFFFFF; margin-bottom: 1rem;">Student Club Development</h3>
-          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 0.95rem; line-height: 1.7;">
-            Equipping students with the skills needed to establish and run successful student clubs, fostering
-            leadership, teamwork, and extracurricular engagement.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- IMPACT NUMBERS -->
-  <section class="prog-section reveal our-story-dark-section" id="impact" style="padding: 5.5rem 0;">
-    <div class="container">
-      <div class="prog-section-header" style="text-align: center; margin-bottom: 3.5rem;">
-        
-        <!-- Square Chip Tag -->
-        <div class="square-chip">
-          <span class="square-chip-dot"></span>
-          <span>OUR REACH</span>
-        </div>
-
-        <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #FFFFFF; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 1rem;">Nationwide Impact</h2>
-        <p class="prog-section-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 1.05rem; line-height: 1.7; max-width: 650px; margin: 0 auto;">
-          From Kathmandu to remote villages, Navigo Nepal has touched lives across the country.
-        </p>
-      </div>
-
-      <div class="prog-cta-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-        <div class="premium-card">
-          <div class="prog-cta-icon" style="width: 56px; height: 56px; border-radius: 8px; background: rgba(37, 99, 235, 0.15); color: #2563EB; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-              <circle cx="9" cy="7" r="4" />
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-            </svg>
-          </div>
-          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: #FFFFFF; margin-bottom: 1rem;">1,000+ Students</h3>
-          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 0.95rem; line-height: 1.7;">
-            Students participated in our sessions across Kathmandu, Nuwakot, Dhading, Parbat, Baglung,
-            Sindhupalchowk, Rupandehi, Pokhara, Rasuwa, and Banke.
-          </p>
-        </div>
-
-        <div class="premium-card">
-          <div class="prog-cta-icon" style="width: 56px; height: 56px; border-radius: 8px; background: rgba(16, 185, 129, 0.15); color: #10B981; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-              <polyline points="9 22 9 12 15 12 15 22" />
-            </svg>
-          </div>
-          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: #FFFFFF; margin-bottom: 1rem;">15+ Schools</h3>
-          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 0.95rem; line-height: 1.7;">
-            Partner schools including Whiz Kids International, Yuva Sahavagita, Jyoti Academy, Columbus International,
-            Arunima Educational Foundation, and many more.
-          </p>
-        </div>
-
-        <div class="premium-card">
-          <div class="prog-cta-icon" style="width: 56px; height: 56px; border-radius: 8px; background: rgba(79, 156, 249, 0.15); color: #4F9CF9; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-              <circle cx="12" cy="10" r="3" />
-            </svg>
-          </div>
-          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: #FFFFFF; margin-bottom: 1rem;">24+ Districts</h3>
-          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 0.95rem; line-height: 1.7;">
-            We've reached districts including Nuwakot, Dhading, Butwal, Rasuwa, Rupandehi, Banke, Kathmandu,
-            Bhaktapur, and Pokhara, with plans to expand to 35+ districts.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ENVIRONMENTAL STEWARDSHIP -->
-  <section class="prog-section reveal our-story-alt-section" id="environmental" style="padding: 5.5rem 0;">
-    <div class="container">
-      <div class="prog-content-grid">
-        <div class="prog-content-main">
-          
-          <!-- Square Chip Tag -->
-          <div class="square-chip">
-            <span class="square-chip-dot"></span>
-            <span>ENVIRONMENTAL</span>
-          </div>
-
-          <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #FFFFFF; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 2rem;">Bridging Education and Environmental Stewardship</h2>
-
-          <div class="prog-text-block" style="color: #A0B7D5; font-family: 'Inter', sans-serif; line-height: 1.75; margin-bottom: 1.5rem;">
-            <p>
-              At Navigo Nepal, we are driven by a deep passion for environmental conservation, a necessity we've come
-              to understand through firsthand experience with the impacts of climate change and biodiversity loss.
-              Living in a country where rapid glacial melting threatens both ecosystems and communities, we feel a
-              profound responsibility to act.
-            </p>
-          </div>
-
-          <div class="prog-text-block" style="color: #A0B7D5; font-family: 'Inter', sans-serif; line-height: 1.75; margin-bottom: 1.5rem;">
-            <h3 class="prog-subtitle" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: #FFFFFF; font-size: 1.4rem; margin-bottom: 0.75rem;">World Environment Day</h3>
-            <p>
-              On June 5th, World Environment Day, Navigo Nepal led a series of environmental awareness events in a
-              community school in Kathmandu Metropolitan City. Activities included bottle gardening projects,
-              environmental-themed face painting, painting exhibitions, rallies for environmental awareness, and
-              educational sessions for children. These events garnered widespread attention, being featured on the
-              official social media pages of both UNICEF Nepal and USAID Clean Air.
-            </p>
-          </div>
-
-          <div class="prog-text-block" style="color: #A0B7D5; font-family: 'Inter', sans-serif; line-height: 1.75; margin-bottom: 2rem;">
-            <h3 class="prog-subtitle" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: #FFFFFF; font-size: 1.4rem; margin-bottom: 0.75rem;">AIESEC Collaboration</h3>
-            <p>
-              Navigo Nepal collaborated with AIESEC on their Sustainable Development Goals (SDG) program. Members were
-              distributed across different schools alongside other AIESEC volunteers to raise awareness about SDG 13
-              &mdash; Climate Action. Students shared creative ideas like making baskets from waste plastic and reusing
-              waste materials, demonstrating their growing environmental consciousness.
-            </p>
-          </div>
-
-          <div style="margin: 2.5rem 0; display: flex; justify-content: center;">
-            <div class="premium-card uq-landscape-frame" style="max-width: 520px; width: 100%; border-radius: 12px; overflow: hidden; padding: 0.6rem;">
-              <img src="assets/mentor/469882731_122157341966283666_7691355827580967113_n.jpg"
-                alt="Navigo Nepal Environmental Program" class="uq-landscape-img" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; transition: transform 0.5s ease;">
-            </div>
-          </div>
-        </div>
-
-        <div class="prog-content-sidebar" style="display: flex; flex-direction: column; gap: 1.5rem;">
-          <div class="sidebar-premium-card">
-            <h4>Environmental Activities</h4>
-            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; color: #A0B7D5; font-size: 0.93rem;">
-              <li>Bottle gardening projects</li>
-              <li>Environmental face painting</li>
-              <li>Painting exhibitions</li>
-              <li>Community awareness rallies</li>
-              <li>SDG 13 Climate Action sessions</li>
-            </ul>
-          </div>
-          <div class="sidebar-premium-card">
-            <h4>Featured By</h4>
-            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; color: #A0B7D5; font-size: 0.93rem;">
-              <li>UNICEF Nepal</li>
-              <li>USAID Clean Air</li>
-              <li>AIESEC Nepal</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SUSTAINABILITY -->
-  <section class="prog-section reveal our-story-dark-section" id="sustainability" style="padding: 5.5rem 0;">
-    <div class="container">
-      <div class="prog-content-grid">
-        <div class="prog-content-main">
-          
-          <!-- Square Chip Tag (LOOKING AHEAD) -->
-          <div class="square-chip">
-            <span class="square-chip-dot"></span>
-            <span>LOOKING AHEAD</span>
-          </div>
-
-          <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #FFFFFF; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 2rem;">Sustainability &amp; Future Plans</h2>
-
-          <div class="prog-text-block" style="color: #A0B7D5; font-family: 'Inter', sans-serif; line-height: 1.75; margin-bottom: 1.5rem;">
-            <p>
-              One of the most important aspects of success for any organization is sustainability. At this stage,
-              Navigo Nepal has been making success after success in every school we visit. To continue this progress
-              and sustain our impact, we have formulated several strategies.
-            </p>
-          </div>
-
-          <div class="prog-text-block" style="color: #A0B7D5; font-family: 'Inter', sans-serif; line-height: 1.75; margin-bottom: 1.5rem;">
-            <h3 class="prog-subtitle" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: #FFFFFF; font-size: 1.4rem; margin-bottom: 0.75rem;">Volunteer Recruitment</h3>
-            <p>
-              As an organization aiming to reach every corner of the country, we need dedicated individuals working
-              towards this goal. Our volunteer recruitment involves a thorough application process and interviews,
-              looking for individuals with passion for community service who can actively contribute to our common
-              goals.
-            </p>
-          </div>
-
-          <div class="prog-text-block" style="color: #A0B7D5; font-family: 'Inter', sans-serif; line-height: 1.75; margin-bottom: 1.5rem;">
-            <h3 class="prog-subtitle" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: #FFFFFF; font-size: 1.4rem; margin-bottom: 0.75rem;">District Ambassadors &mdash; Navigers</h3>
-            <p>
-              Navigo Nepal identifies exceptional students from each district to represent us as ambassadors or
-              "Navigers." They provide information about clubs established by us and the condition of ECAs in their
-              schools, helping us understand what each school needs so we can create tailored content for them.
-            </p>
-          </div>
-
-          <div class="prog-text-block" style="color: #A0B7D5; font-family: 'Inter', sans-serif; line-height: 1.75;">
-            <h3 class="prog-subtitle" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: #FFFFFF; font-size: 1.4rem; margin-bottom: 0.75rem;">Nationwide Expansion</h3>
-            <p>
-              We have successfully organized sessions in numerous districts of Nepal. Currently we've reached 24+
-              districts, and we are determined to take this number to more than 35 districts. After receiving proper
-              funding and recognition, we will be reaching every possible corner of the country where students lack
-              exposure.
-            </p>
-          </div>
-        </div>
-
-        <div class="prog-content-sidebar" style="display: flex; flex-direction: column; gap: 1.5rem;">
-          <div class="sidebar-premium-card">
-            <h4>Growth Strategy</h4>
-            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; color: #A0B7D5; font-size: 0.93rem;">
-              <li>Volunteer recruitment program</li>
-              <li>District ambassador network</li>
-              <li>School partnership expansion</li>
-              <li>Technology integration</li>
-              <li>35+ districts target</li>
-            </ul>
-          </div>
-          <div class="sidebar-premium-card">
-            <h4>Districts We've Reached</h4>
-            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; color: #A0B7D5; font-size: 0.93rem;">
-              <li>Nuwakot</li>
-              <li>Dhading</li>
-              <li>Parbat</li>
-              <li>Baglung</li>
-              <li>Sindhupalchowk</li>
-              <li>Rupandehi</li>
-              <li>Pokhara</li>
-              <li>Rasuwa</li>
-              <li>Banke</li>
-              <li>Kathmandu</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TIMELINE -->
-  <section class="prog-section reveal our-story-alt-section" id="timeline" style="padding: 5.5rem 0;">
-    <div class="container">
-      <div class="prog-section-header" style="text-align: center; margin-bottom: 3.5rem;">
-        
-        <!-- Square Chip Tag -->
-        <div class="square-chip">
-          <span class="square-chip-dot"></span>
+        <div class="ref-pill-badge ref-pill-badge-teal">
           <span>OUR JOURNEY</span>
         </div>
 
-        <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #FFFFFF; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 1rem;">Timeline of Impact</h2>
-        <p class="prog-section-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 1.05rem; line-height: 1.7; max-width: 650px; margin: 0 auto;">
+        <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif !important; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 1rem;">Timeline of Impact</h2>
+        <p class="prog-section-desc" style="font-family: 'Inter', sans-serif !important; font-size: 1.05rem; line-height: 1.7; max-width: 650px; margin: 0 auto;">
           From our first session to nationwide expansion &mdash; key milestones in the Navigo Nepal story.
         </p>
       </div>
 
       <div class="prog-cta-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
         <div class="premium-card">
-          <div class="prog-cta-icon" style="width: 56px; height: 56px; border-radius: 8px; background: rgba(37, 99, 235, 0.15); color: #2563EB; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+          <div class="prog-cta-icon icon-bg-blue" style="width: 56px; height: 56px; color: #2563EB; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+              <rect x="3" y="4" width="18" height="18" rx="0" ry="0" />
               <line x1="16" y1="2" x2="16" y2="6" />
               <line x1="8" y1="2" x2="8" y2="6" />
               <line x1="3" y1="10" x2="21" y2="10" />
             </svg>
           </div>
-          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: #FFFFFF; margin-bottom: 1rem;">January 2024</h3>
-          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 0.95rem; line-height: 1.7;">
-            Project planning begins. First preliminary survey conducted on 100+ students across different districts
-            and schools to understand their learning challenges.
+          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif !important; font-weight: 700; font-size: 1.3rem; margin-bottom: 1rem;">January 2024</h3>
+          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif !important; font-size: 0.95rem; line-height: 1.7;">
+            Project planning begins. First preliminary survey conducted on 100+ students across different districts to understand their learning challenges.
           </p>
         </div>
 
         <div class="premium-card">
-          <div class="prog-cta-icon" style="width: 56px; height: 56px; border-radius: 8px; background: rgba(16, 185, 129, 0.15); color: #10B981; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+          <div class="prog-cta-icon icon-bg-green" style="width: 56px; height: 56px; color: #10B981; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
               <path d="M6 12v5c3 3 9 3 12 0v-5" />
             </svg>
           </div>
-          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: #FFFFFF; margin-bottom: 1rem;">April 2024</h3>
-          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 0.95rem; line-height: 1.7;">
-            What's Next? campaign launches in Nuwakot and Dhading. First personality development sessions conducted
-            with students.
+          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif !important; font-weight: 700; font-size: 1.3rem; margin-bottom: 1rem;">April 2024</h3>
+          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif !important; font-size: 0.95rem; line-height: 1.7;">
+            What's Next? campaign launches in Nuwakot and Dhading with first personality development sessions.
           </p>
         </div>
 
         <div class="premium-card">
-          <div class="prog-cta-icon" style="width: 56px; height: 56px; border-radius: 8px; background: rgba(79, 156, 249, 0.15); color: #4F9CF9; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-              <circle cx="9" cy="7" r="4" />
-              <path d="M23 21v-2a4 4 0 0 3-3.87" />
-              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-            </svg>
-          </div>
-          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: #FFFFFF; margin-bottom: 1rem;">June 2024</h3>
-          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 0.95rem; line-height: 1.7;">
-            USAID Clean Air and UNICEF collaboration for World Environment Day. Partnership with Gurubaa officially
-            announced. Call for volunteers opens.
-          </p>
-        </div>
-
-        <div class="premium-card">
-          <div class="prog-cta-icon" style="width: 56px; height: 56px; border-radius: 8px; background: rgba(244, 162, 97, 0.15); color: #F4A261; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+          <div class="prog-cta-icon icon-bg-yellow" style="width: 56px; height: 56px; color: #F4A261; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10" />
               <line x1="2" y1="12" x2="22" y2="12" />
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
             </svg>
           </div>
-          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: #FFFFFF; margin-bottom: 1rem;">July 2024</h3>
-          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 0.95rem; line-height: 1.7;">
-            Partnership with AIESEC for World's Largest Lesson. What's Next? expands to Banke and Kathmandu.
-            Nationwide expansion begins.
+          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif !important; font-weight: 700; font-size: 1.3rem; margin-bottom: 1rem;">June 2024</h3>
+          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif !important; font-size: 0.95rem; line-height: 1.7;">
+            USAID Clean Air and UNICEF collaboration for World Environment Day. Official Partnership with Gurubaa announced.
           </p>
         </div>
 
         <div class="premium-card">
-          <div class="prog-cta-icon" style="width: 56px; height: 56px; border-radius: 8px; background: rgba(16, 185, 129, 0.15); color: #10B981; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+          <div class="prog-cta-icon icon-bg-red" style="width: 56px; height: 56px; color: #E63946; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-              <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
-              <line x1="12" y1="22.08" x2="12" y2="12" />
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
             </svg>
           </div>
-          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: #FFFFFF; margin-bottom: 1rem;">2025 &amp; Beyond</h3>
-          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 0.95rem; line-height: 1.7;">
-            Continuing nationwide expansion, launching new programs including Connect Tech to Veda, and reaching
-            35+ districts across Nepal with tailored educational content.
+          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif !important; font-weight: 700; font-size: 1.3rem; margin-bottom: 1rem;">July 2024</h3>
+          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif !important; font-size: 0.95rem; line-height: 1.7;">
+            Partnership with AIESEC for World's Largest Lesson. Nationwide expansion across Banke and Kathmandu.
           </p>
         </div>
       </div>
@@ -1084,7 +1324,7 @@
           <a href="index.html" class="logo">
             <img src="assets/navigo logo.png" alt="Navigo Nepal" class="logo-img" style="height: 48px;">
           </a>
-          <p style="color: rgba(255,255,255,0.6); font-size: 0.88rem; line-height: 1.7;">
+          <p style="color: #FFFFFF !important; opacity: 0.8; font-size: 0.88rem; line-height: 1.7;">
             A youth-led, non-profit educational catalyst bridging academic and technological frontiers for public
             students across all 7 provinces of Nepal.
           </p>
@@ -1105,7 +1345,7 @@
             <a href="https://instagram.com/navigonepal" class="social-btn social-btn-footer" aria-label="Instagram">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                <rect width="20" height="20" x="2" y="2" rx="0" ry="0" />
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="1.5" />
               </svg>
@@ -1142,7 +1382,7 @@
 
         <div class="footer-col footer-newsletter">
           <h3>Executive Newsletter</h3>
-          <p>Subscribe to our monthly digest of student innovations, program expansions, and resource updates.</p>
+          <p style="color: #FFFFFF !important; opacity: 0.8;">Subscribe to our monthly digest of student innovations, program expansions, and resource updates.</p>
           <form class="newsletter-form" id="newsletterForm" novalidate>
             <input type="email" id="newsletterEmail" class="form-control" placeholder="corporate@address.com" required
               aria-label="Newsletter Email">
@@ -1161,8 +1401,8 @@
 
       <div class="footer-bottom">
         <div class="footer-bottom-text">
-          <p>&copy; 2026 Navigo Nepal. Youth-Led Educational Empowerment.</p>
-          <p>Building world-class educational excellence for Nepal.</p>
+          <p style="color: #FFFFFF !important; opacity: 0.8;">&copy; 2026 Navigo Nepal. Youth-Led Educational Empowerment.</p>
+          <p style="color: #FFFFFF !important; opacity: 0.8;">Building world-class educational excellence for Nepal.</p>
         </div>
         <div class="footer-bottom-links">
           <a href="#">Privacy Policy</a>
