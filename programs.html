@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 
 <head>
   <script src="js/maintenance.js"></script>
@@ -17,424 +17,6 @@
     rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/programs.css">
-
-  <style>
-    /* ==================== PROGRAMS FULL BLACK AESTHETIC WITH SHARP EDGES ==================== */
-    
-    /* UNIVERSAL SHARP EDGES OVERRIDE */
-    *,
-    *::before,
-    *::after,
-    .ref-hero-photo,
-    .ref-hero-photo img,
-    .ref-card,
-    .ref-card-icon,
-    .ref-pill-badge,
-    .btn-ref-pill,
-    .premium-card,
-    .sidebar-premium-card,
-    .prog-sidebar-card,
-    .prog-info-box,
-    .prog-cta-card,
-    .prog-cta-icon,
-    .prog-tab,
-    .top-announcement-bar,
-    .btn,
-    img {
-      border-radius: 0px !important;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif !important;
-      background-color: #0A0A0A !important;
-      color: #FFFFFF !important;
-      line-height: 1.7;
-    }
-
-    /* ALL SECTIONS FULL BLACK BACKGROUND */
-    section,
-    .section,
-    .prog-section-dark,
-    .white-bg-section,
-    .prog-tabs-section {
-      background-color: #0A0A0A !important;
-      color: #FFFFFF !important;
-    }
-
-    h1, h2, h3, h4, h5, h6,
-    .ref-hero-title,
-    .prog-section-title,
-    .prog-subtitle,
-    .prog-cta-title,
-    .prog-stat-number,
-    .prog-timeline-title {
-      font-family: 'Plus Jakarta Sans', sans-serif !important;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: #FFFFFF !important;
-    }
-
-    p, li, span, div,
-    .ref-hero-subtitle,
-    .prog-section-desc,
-    .prog-cta-desc,
-    .prog-sidebar-text,
-    .prog-text-block p {
-      color: #FFFFFF !important;
-      font-family: 'Inter', sans-serif !important;
-      opacity: 0.95;
-    }
-
-    /* Top Banner Announcement */
-    .top-announcement-bar {
-      background: linear-gradient(90deg, #F4A261 0%, #F59E0B 100%);
-      color: #0A0A0A !important;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.84rem;
-      font-weight: 600;
-      padding: 0.45rem 1rem;
-      text-align: center;
-      letter-spacing: 0.02em;
-      box-shadow: 0 2px 10px rgba(245, 158, 11, 0.2);
-    }
-
-    .top-announcement-bar span {
-      color: #0A0A0A !important;
-    }
-
-    /* Hero Section with Grid & Background Overlay */
-    .hero-ref-section {
-      background: linear-gradient(180deg, rgba(10, 10, 10, 0.85) 0%, rgba(10, 10, 10, 0.96) 100%), 
-                  url('assets/program.jpg') center/cover no-repeat !important;
-      position: relative;
-      padding: 6.5rem 0 5.5rem;
-      overflow: hidden;
-    }
-
-    .ref-grid-lines {
-      position: absolute;
-      inset: 0;
-      background-size: 40px 40px;
-      background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-      pointer-events: none;
-    }
-
-    .ref-hero-container {
-      display: grid;
-      grid-template-columns: 270px 1fr 270px;
-      gap: 2.5rem;
-      align-items: center;
-      position: relative;
-      z-index: 2;
-    }
-
-    @media (max-width: 992px) {
-      .ref-hero-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      .ref-hero-photo {
-        display: none;
-      }
-    }
-
-    .ref-hero-photo {
-      overflow: hidden;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      transition: transform 0.4s ease;
-      background: #141414;
-    }
-
-    .ref-hero-photo:hover {
-      transform: translateY(-5px);
-      border-color: rgba(244, 162, 97, 0.5);
-    }
-
-    .ref-hero-photo img {
-      width: 100%;
-      height: 360px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .ref-hero-photo-left {
-      transform: translateY(-15px);
-    }
-
-    .ref-hero-photo-right {
-      transform: translateY(15px);
-    }
-
-    .ref-hero-content {
-      text-align: center;
-      max-width: 680px;
-      margin: 0 auto;
-    }
-
-    .ref-hero-title {
-      font-family: 'Plus Jakarta Sans', sans-serif !important;
-      font-size: clamp(2.4rem, 4.8vw, 3.8rem);
-      font-weight: 800;
-      color: #FFFFFF !important;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      margin-bottom: 1.25rem;
-    }
-
-    .ref-hero-subtitle {
-      font-family: 'Inter', sans-serif !important;
-      font-size: 1.05rem;
-      color: #FFFFFF !important;
-      line-height: 1.75;
-      margin-bottom: 2rem;
-      opacity: 0.95;
-    }
-
-    .ref-hero-ctas {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    /* Buttons */
-    .btn-ref-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      padding: 0.75rem 1.8rem;
-      font-family: 'Inter', sans-serif !important;
-      font-size: 0.92rem;
-      font-weight: 600;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      cursor: pointer;
-      text-decoration: none;
-    }
-
-    .btn-ref-teal {
-      background: #2A9D8F;
-      color: #FFFFFF !important;
-      border: 1px solid #2A9D8F;
-      box-shadow: 0 4px 15px rgba(42, 157, 143, 0.3);
-    }
-
-    .btn-ref-teal:hover {
-      background: #238579;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(42, 157, 143, 0.45);
-      color: #FFFFFF !important;
-    }
-
-    .btn-ref-yellow {
-      background: #F4A261;
-      color: #0A0A0A !important;
-      border: 1px solid #F4A261;
-      box-shadow: 0 4px 15px rgba(244, 162, 97, 0.3);
-    }
-
-    .btn-ref-yellow:hover {
-      background: #e7924d;
-      color: #0A0A0A !important;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(244, 162, 97, 0.45);
-    }
-
-    /* Pill Badges */
-    .ref-pill-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.38rem 1.1rem;
-      background: rgba(42, 157, 143, 0.15);
-      border: 1px solid rgba(42, 157, 143, 0.35);
-      font-family: 'Plus Jakarta Sans', sans-serif !important;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: #2A9D8F !important;
-      margin-bottom: 1rem;
-    }
-
-    .ref-pill-badge-teal {
-      background: rgba(42, 157, 143, 0.15);
-      border-color: rgba(42, 157, 143, 0.35);
-      color: #2A9D8F !important;
-    }
-
-    .ref-pill-badge-yellow {
-      background: rgba(244, 162, 97, 0.15);
-      border-color: rgba(244, 162, 97, 0.35);
-      color: #F4A261 !important;
-    }
-
-    .ref-pill-badge-red {
-      background: rgba(230, 57, 70, 0.15);
-      border-color: rgba(230, 57, 70, 0.35);
-      color: #E63946 !important;
-    }
-
-    .ref-pill-badge span {
-      color: inherit !important;
-    }
-
-    /* Stats Bar Refinements */
-    .prog-stats {
-      background-color: #0F0F0F !important;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 2rem 0;
-    }
-
-    .prog-stat-number {
-      font-family: 'Plus Jakarta Sans', sans-serif !important;
-      font-size: 2.5rem;
-      font-weight: 800;
-    }
-
-    .prog-stat-label {
-      color: #FFFFFF !important;
-      font-family: 'Inter', sans-serif !important;
-      font-size: 0.88rem;
-      opacity: 0.9;
-    }
-
-    /* Tabs Bar */
-    .prog-tabs-section {
-      background-color: #0A0A0A !important;
-      padding: 1.5rem 0;
-      position: sticky;
-      top: 70px;
-      z-index: 90;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .prog-tab {
-      background: #141414;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      color: #FFFFFF !important;
-      font-family: 'Inter', sans-serif !important;
-      font-weight: 600;
-      padding: 0.6rem 1.4rem;
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-
-    .prog-tab:hover,
-    .prog-tab.active {
-      background: #2A9D8F !important;
-      color: #FFFFFF !important;
-      border-color: #2A9D8F !important;
-    }
-
-    /* ALL CARDS IN FULL BLACK THEME */
-    .prog-sidebar-card,
-    .prog-info-box,
-    .premium-card,
-    .prog-cta-card {
-      background: #141414 !important;
-      border: 1px solid rgba(255, 255, 255, 0.1) !important;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
-      padding: 2rem;
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .prog-sidebar-card:hover,
-    .prog-info-box:hover,
-    .premium-card:hover,
-    .prog-cta-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(255, 255, 255, 0.25) !important;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7) !important;
-    }
-
-    .prog-sidebar-card {
-      border-left: 4px solid #2A9D8F !important;
-    }
-
-    .prog-sidebar-card h4 {
-      color: #FFFFFF !important;
-      font-family: 'Plus Jakarta Sans', sans-serif !important;
-      margin-bottom: 1rem;
-    }
-
-    .prog-sidebar-card ul li {
-      color: #FFFFFF !important;
-      opacity: 0.95;
-      font-family: 'Inter', sans-serif !important;
-    }
-
-    .prog-info-box {
-      border-left: 4px solid #F4A261 !important;
-      margin-top: 2rem;
-    }
-
-    .prog-info-box h4 {
-      color: #F4A261 !important;
-      margin-bottom: 1rem;
-    }
-
-    .prog-info-box p {
-      color: #FFFFFF !important;
-      opacity: 0.95;
-    }
-
-    /* Timeline Markers */
-    .prog-timeline-item {
-      border-left: 2px solid rgba(255, 255, 255, 0.15) !important;
-      padding-left: 1.5rem;
-      margin-bottom: 2rem;
-      position: relative;
-    }
-
-    .prog-timeline-marker {
-      background: #2A9D8F !important;
-    }
-
-    .prog-timeline-date {
-      color: #E63946 !important;
-      font-weight: 700;
-    }
-
-    /* CTA Section Cards */
-    .prog-cta-card {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      text-decoration: none;
-    }
-
-    .prog-cta-icon {
-      width: 56px;
-      height: 56px;
-      background: rgba(42, 157, 143, 0.18);
-      color: #2A9D8F;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.25rem;
-    }
-
-    .prog-cta-icon--green {
-      background: rgba(16, 185, 129, 0.18);
-      color: #10B981;
-    }
-
-    .prog-cta-icon--purple {
-      background: rgba(244, 162, 97, 0.18);
-      color: #F4A261;
-    }
-
-    .prog-cta-link {
-      color: #2A9D8F !important;
-      font-weight: 700;
-      font-family: 'Inter', sans-serif !important;
-      margin-top: 1rem;
-    }
-  </style>
 </head>
 
 <body class="loading">
@@ -671,22 +253,22 @@
     <div class="container">
       <div class="prog-stats-grid">
         <div class="prog-stat-item">
-          <span class="prog-stat-number" style="color: #F4A261 !important;">10K+</span>
+          <span class="prog-stat-number" style="color: #F4A261;">10K+</span>
           <span class="prog-stat-label">Students Reached</span>
         </div>
         <div class="prog-stat-divider"></div>
         <div class="prog-stat-item">
-          <span class="prog-stat-number" style="color: #E63946 !important;">77+</span>
+          <span class="prog-stat-number" style="color: #E63946;">77+</span>
           <span class="prog-stat-label">Schools Visited</span>
         </div>
         <div class="prog-stat-divider"></div>
         <div class="prog-stat-item">
-          <span class="prog-stat-number" style="color: #10B981 !important;">24+</span>
+          <span class="prog-stat-number" style="color: #10B981;">24+</span>
           <span class="prog-stat-label">Districts Covered</span>
         </div>
         <div class="prog-stat-divider"></div>
         <div class="prog-stat-item">
-          <span class="prog-stat-number" style="color: #4F9CF9 !important;">5</span>
+          <span class="prog-stat-number" style="color: #4F9CF9;">5</span>
           <span class="prog-stat-label">Active Programs</span>
         </div>
       </div>
@@ -708,14 +290,14 @@
   </section>
 
   <!-- ==================== WHAT'S NEXT? CAMPAIGN ==================== -->
-  <section class="section" id="whats-next" style="padding: 5.5rem 0;">
+  <section class="prog-section section" id="whats-next">
     <div class="container">
       <div class="prog-content-grid">
         <div class="prog-content-main">
           <div class="ref-pill-badge ref-pill-badge-teal">
             <span>Flagship Program</span>
           </div>
-          <h2 class="prog-section-title" style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1.5rem;">The "What's Next?" Campaign</h2>
+          <h2 class="prog-section-title">The "What's Next?" Campaign</h2>
 
           <div class="prog-text-block">
             <p>
@@ -745,7 +327,7 @@
           </div>
 
           <div class="prog-text-block">
-            <h3 class="prog-subtitle" style="font-size: 1.4rem; color: #FFFFFF !important; margin-bottom: 0.75rem;">How the Campaign Works</h3>
+            <h3 class="prog-subtitle">How the Campaign Works</h3>
             <p>
               We run comprehensive surveys across the country to understand the problems
               students face and their core needs. A need-based assessment test is conducted
@@ -790,14 +372,14 @@
   </section>
 
   <!-- ==================== LEADERSHIP & PERSONALITY ==================== -->
-  <section class="section" id="leadership" style="padding: 5.5rem 0; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+  <section class="prog-section-alt section" id="leadership">
     <div class="container">
       <div class="prog-content-grid">
         <div class="prog-content-main">
           <div class="ref-pill-badge ref-pill-badge-red">
             <span>Personal Development</span>
           </div>
-          <h2 class="prog-section-title" style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1.5rem;">Leadership &amp; Personality Development</h2>
+          <h2 class="prog-section-title">Leadership &amp; Personality Development</h2>
 
           <div class="prog-text-block">
             <p>
@@ -811,7 +393,7 @@
           </div>
 
           <div class="prog-text-block">
-            <h3 class="prog-subtitle" style="font-size: 1.4rem; color: #FFFFFF !important; margin-bottom: 0.75rem;">Learning Through Play</h3>
+            <h3 class="prog-subtitle">Learning Through Play</h3>
             <p>
               Rather than beginning with a typical introduction, we immediately involve the
               students in interactive games. These activities are designed to give students
@@ -822,7 +404,7 @@
           </div>
 
           <div class="prog-text-block">
-            <h3 class="prog-subtitle" style="font-size: 1.4rem; color: #FFFFFF !important; margin-bottom: 0.75rem;">The Impact</h3>
+            <h3 class="prog-subtitle">The Impact</h3>
             <p>
               Around 120 students from Gyanodaya School and 60 students from Padmodaya School
               participated in our personality development sessions. Students kept in touch,
@@ -847,14 +429,14 @@
   </section>
 
   <!-- ==================== SCHOOL CLUBS & ECAs ==================== -->
-  <section class="section" id="clubs" style="padding: 5.5rem 0; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+  <section class="prog-section section" id="clubs">
     <div class="container">
       <div class="prog-content-grid">
         <div class="prog-content-main">
           <div class="ref-pill-badge ref-pill-badge-teal">
             <span>Extracurricular</span>
           </div>
-          <h2 class="prog-section-title" style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1.5rem;">School Clubs &amp; Extracurricular Activities</h2>
+          <h2 class="prog-section-title">School Clubs &amp; Extracurricular Activities</h2>
 
           <div class="prog-text-block">
             <p>
@@ -867,7 +449,7 @@
           </div>
 
           <div class="prog-text-block">
-            <h3 class="prog-subtitle" style="font-size: 1.4rem; color: #FFFFFF !important; margin-bottom: 0.75rem;">What We Do</h3>
+            <h3 class="prog-subtitle">What We Do</h3>
             <p>
               We guide students on how to form clubs inside their schools and engage in
               meaningful extracurricular activities. Our sessions cover leadership, organization,
@@ -892,14 +474,14 @@
   </section>
 
   <!-- ==================== ENVIRONMENTAL STEWARDSHIP ==================== -->
-  <section class="section" id="environmental" style="padding: 5.5rem 0; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+  <section class="prog-section-alt section" id="environmental">
     <div class="container">
       <div class="prog-content-grid">
         <div class="prog-content-main">
           <div class="ref-pill-badge ref-pill-badge-teal">
             <span>Environment &amp; Climate</span>
           </div>
-          <h2 class="prog-section-title" style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1.5rem;">Environmental Stewardship</h2>
+          <h2 class="prog-section-title">Environmental Stewardship</h2>
 
           <div class="prog-text-block">
             <p>
@@ -911,7 +493,7 @@
           </div>
 
           <div class="prog-text-block">
-            <h3 class="prog-subtitle" style="font-size: 1.4rem; color: #FFFFFF !important; margin-bottom: 0.75rem;">World Environment Day &amp; AIESEC Collaboration</h3>
+            <h3 class="prog-subtitle">World Environment Day &amp; AIESEC Collaboration</h3>
             <p>
               In collaboration with UNICEF Nepal, USAID Clean Air, and AIESEC, Navigo Nepal led
               environmental awareness events, bottle gardening projects, and SDG 13 Climate Action
@@ -935,14 +517,14 @@
   </section>
 
   <!-- ==================== CONNECT TECH TO VEDA ==================== -->
-  <section class="section" id="tech-veda" style="padding: 5.5rem 0; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+  <section class="prog-section section" id="tech-veda">
     <div class="container">
       <div class="prog-content-grid">
         <div class="prog-content-main">
           <div class="ref-pill-badge ref-pill-badge-yellow">
             <span>Innovation</span>
           </div>
-          <h2 class="prog-section-title" style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1.5rem;">Connect Tech to Veda</h2>
+          <h2 class="prog-section-title">Connect Tech to Veda</h2>
 
           <div class="prog-text-block">
             <p>
@@ -969,14 +551,14 @@
   </section>
 
   <!-- ==================== PAST PROJECTS LOG ==================== -->
-  <section class="section" id="past-projects" style="padding: 5.5rem 0; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+  <section class="prog-section-alt section" id="past-projects">
     <div class="container">
       <div class="prog-section-header" style="text-align: center; margin-bottom: 3.5rem;">
         <div class="ref-pill-badge ref-pill-badge-teal">
           <span>Project Archive</span>
         </div>
-        <h2 class="prog-section-title" style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem;">Past Projects Log</h2>
-        <p class="prog-section-desc" style="max-width: 650px; margin: 0 auto; line-height: 1.7; color: #FFFFFF !important;">
+        <h2 class="prog-section-title">Past Projects Log</h2>
+        <p class="prog-section-desc">
           A chronological record of key initiatives Navigo Nepal has undertaken nationwide.
         </p>
       </div>
@@ -1032,7 +614,7 @@
   </section>
 
   <!-- ==================== GET INVOLVED CTA ==================== -->
-  <section class="section" style="padding: 5.5rem 0; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+  <section class="prog-section section">
     <div class="container">
       <div class="prog-cta-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
         <a href="volunteer.html" class="prog-cta-card">
@@ -1087,7 +669,7 @@
           <a href="index.html" class="logo">
             <img src="assets/navigo logo.png" alt="Navigo Nepal" class="logo-img" style="height: 48px;">
           </a>
-          <p style="color: #FFFFFF !important; opacity: 0.8; font-size: 0.88rem; line-height: 1.7;">
+          <p style="opacity: 0.8; font-size: 0.88rem; line-height: 1.7;">
             A youth-led, non-profit educational catalyst bridging academic and technological frontiers for public
             students across all 7 provinces of Nepal.
           </p>
@@ -1145,7 +727,7 @@
 
         <div class="footer-col footer-newsletter">
           <h3>Executive Newsletter</h3>
-          <p style="color: #FFFFFF !important; opacity: 0.8;">Subscribe to our monthly digest of student innovations, program expansions, and resource updates.</p>
+          <p style="opacity: 0.8;">Subscribe to our monthly digest of student innovations, program expansions, and resource updates.</p>
           <form class="newsletter-form" id="newsletterForm" novalidate>
             <input type="email" id="newsletterEmail" class="form-control" placeholder="corporate@address.com" required
               aria-label="Newsletter Email">
@@ -1164,8 +746,8 @@
 
       <div class="footer-bottom">
         <div class="footer-bottom-text">
-          <p style="color: #FFFFFF !important; opacity: 0.8;">&copy; 2026 Navigo Nepal. Youth-Led Educational Empowerment.</p>
-          <p style="color: #FFFFFF !important; opacity: 0.8;">Building world-class educational excellence for Nepal.</p>
+          <p style="opacity: 0.8;">&copy; 2026 Navigo Nepal. Youth-Led Educational Empowerment.</p>
+          <p style="opacity: 0.8;">Building world-class educational excellence for Nepal.</p>
         </div>
         <div class="footer-bottom-links">
           <a href="#">Privacy Policy</a>
