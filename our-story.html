@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 
 <head>
   <script src="js/maintenance.js"></script>
@@ -17,6 +17,114 @@
     rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/programs.css">
+
+  <style>
+    /* ==================== OUR STORY PREMIUM DARK AESTHETIC ==================== */
+    body {
+      background-color: #06172F !important;
+      color: #F0F6FF !important;
+    }
+
+    .our-story-dark-section {
+      background: #06172F !important;
+      position: relative;
+    }
+
+    .our-story-alt-section {
+      background: #0A2342 !important;
+      position: relative;
+    }
+
+    /* Square Chip Label (Eyebrow Tag) */
+    .square-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.45rem 1.1rem;
+      background: rgba(37, 99, 235, 0.14);
+      border: 1px solid rgba(79, 156, 249, 0.35);
+      border-radius: 0px; /* Sharp Square Corner Chip */
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #4F9CF9;
+      margin-bottom: 1.25rem;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    .square-chip-dot {
+      width: 7px;
+      height: 7px;
+      background: #2563EB;
+      border-radius: 0px; /* Square Dot */
+      display: inline-block;
+    }
+
+    /* Premium Unique Card Layouts */
+    .premium-card {
+      position: relative;
+      background: rgba(13, 42, 74, 0.75) !important;
+      border: 1px solid rgba(79, 156, 249, 0.18) !important;
+      border-radius: 12px;
+      padding: 2.25rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+      backdrop-filter: blur(16px);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      overflow: hidden;
+    }
+
+    .premium-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #2563EB 0%, #4F9CF9 50%, #10B981 100%);
+      opacity: 0.85;
+    }
+
+    .premium-card:hover {
+      transform: translateY(-6px) !important;
+      border-color: rgba(79, 156, 249, 0.45) !important;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45), 0 0 30px rgba(79, 156, 249, 0.2) !important;
+    }
+
+    .sidebar-premium-card {
+      background: rgba(13, 42, 74, 0.82) !important;
+      border: 1px solid rgba(79, 156, 249, 0.2) !important;
+      border-left: 4px solid #2563EB !important;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+      backdrop-filter: blur(16px);
+    }
+
+    .sidebar-premium-card h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      color: #FFFFFF !important;
+      font-size: 1.25rem;
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.01em;
+    }
+
+    .sidebar-premium-card ul li {
+      color: #A0B7D5 !important;
+      font-size: 0.93rem;
+    }
+
+    .prog-section-title {
+      color: #FFFFFF !important;
+    }
+
+    .prog-text-block p {
+      color: #A0B7D5 !important;
+    }
+  </style>
 </head>
 
 <body class="loading">
@@ -104,7 +212,7 @@
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark/Light Mode" title="Toggle Mode">
           <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
             fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-            style="display: none;">
+            style="display: block;">
             <circle cx="12" cy="12" r="4" />
             <path d="M12 2v2" />
             <path d="M12 20v2" />
@@ -116,7 +224,8 @@
             <path d="m19.07 4.93-1.41 1.41" />
           </svg>
           <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-            fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+            style="display: none;">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
           </svg>
         </button>
@@ -203,7 +312,7 @@
   <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
 
   <!-- HERO SECTION - Full Width Dark Editorial Cover Aesthetic -->
-  <section class="section hero-map-section" id="top" style="background: linear-gradient(180deg, rgba(6, 23, 47, 0.78) 0%, rgba(6, 23, 47, 0.90) 100%), url('assets/ourstory.jpg') center/cover no-repeat; padding: 9rem 0 6rem; position: relative; overflow: hidden;">
+  <section class="section hero-map-section" id="top" style="background: linear-gradient(180deg, rgba(6, 23, 47, 0.78) 0%, rgba(6, 23, 47, 0.92) 100%), url('assets/ourstory.jpg') center/cover no-repeat; padding: 9.5rem 0 6.5rem; position: relative; overflow: hidden;">
     <div class="wwe-grid-lines" aria-hidden="true" style="opacity: 0.12;"></div>
     <div class="wwe-ambient-orb wwe-orb-1" style="opacity: 0.25;"></div>
     <div class="wwe-ambient-orb wwe-orb-2" style="opacity: 0.15;"></div>
@@ -217,18 +326,19 @@
         <span class="hero-accent-segment hero-accent-blue"></span>
       </div>
 
-      <!-- Uppercase Hero Eyebrow Label -->
-      <span class="hero-map-label" style="text-align: center; color: var(--accent-light); margin-bottom: 1rem; letter-spacing: 0.18em;">
-        The Movement &amp; Journey of Navigo Nepal
-      </span>
+      <!-- Square Chip Hero Eyebrow -->
+      <div class="square-chip">
+        <span class="square-chip-dot"></span>
+        <span>MOVEMENT &amp; JOURNEY</span>
+      </div>
 
       <!-- Headline Display Font: Bebas Neue -->
-      <h1 class="hero-map-title" style="text-align: center; font-size: clamp(3.2rem, 7.5vw, 5.5rem); margin-bottom: 1.5rem; letter-spacing: 0.03em;">
+      <h1 class="hero-map-title" style="text-align: center; font-size: clamp(3.5rem, 8vw, 6rem); margin-bottom: 1.5rem; letter-spacing: 0.03em;">
         Our Story
       </h1>
 
       <!-- Capped Paragraph Subtitle -->
-      <p class="hero-map-subtitle" style="text-align: center; max-width: 650px; margin: 0 auto 2.5rem; color: rgba(255, 255, 255, 0.78); font-size: clamp(1rem, 2vw, 1.2rem); line-height: 1.8;">
+      <p class="hero-map-subtitle" style="text-align: center; max-width: 650px; margin: 0 auto 2.5rem; color: rgba(240, 246, 255, 0.85); font-size: clamp(1rem, 2vw, 1.25rem); line-height: 1.85;">
         Bridging academic learning and real-world skills to empower the next generation of youth leaders across Nepal.
       </p>
 
@@ -241,14 +351,20 @@
   </section>
 
   <!-- ABOUT NAVIGO -->
-  <section class="prog-section reveal" id="about" style="background: var(--bg-secondary); padding: 5rem 0;">
+  <section class="prog-section reveal our-story-dark-section" id="about" style="padding: 5.5rem 0;">
     <div class="container">
       <div class="prog-content-grid">
         <div class="prog-content-main">
-          <span class="prog-section-tag" style="font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent-color); display: block; margin-bottom: 0.5rem;">Who We Are</span>
-          <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--text-main); line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 1.5rem;">About Navigo Nepal</h2>
+          
+          <!-- Square Chip Tag -->
+          <div class="square-chip">
+            <span class="square-chip-dot"></span>
+            <span>WHO WE ARE</span>
+          </div>
 
-          <div class="prog-text-block" style="color: var(--text-muted); font-family: 'Inter', sans-serif; line-height: 1.75; margin-bottom: 1.5rem;">
+          <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #FFFFFF; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 1.5rem;">About Navigo Nepal</h2>
+
+          <div class="prog-text-block" style="color: #A0B7D5; font-family: 'Inter', sans-serif; line-height: 1.75; margin-bottom: 1.5rem;">
             <p>
               Navigo Nepal is a youth-led, non-profit organization dedicated to empowering junior high school students
               to confidently navigate their futures by bridging the gap between academic learning and real-world skills.
@@ -257,7 +373,7 @@
             </p>
           </div>
 
-          <div class="prog-text-block" style="color: var(--text-muted); font-family: 'Inter', sans-serif; line-height: 1.75; margin-bottom: 1.5rem;">
+          <div class="prog-text-block" style="color: #A0B7D5; font-family: 'Inter', sans-serif; line-height: 1.75; margin-bottom: 1.5rem;">
             <p>
               Through interactive sessions, hands-on experiences, and nationwide outreach, we provide exposure to
               scholarships, career paths, and community leadership, encouraging students to explore their potential
@@ -267,39 +383,39 @@
           </div>
 
           <div style="margin: 2.5rem 0; display: flex; justify-content: center;">
-            <div class="glass-panel uq-landscape-frame" style="max-width: 520px; width: 100%; border-radius: var(--radius-lg); overflow: hidden; padding: 0.5rem; background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: var(--shadow-md);">
+            <div class="premium-card uq-landscape-frame" style="max-width: 520px; width: 100%; border-radius: 12px; overflow: hidden; padding: 0.6rem;">
               <img src="assets/mentor/494768055_122180105678283666_3769411379411479579_n.jpg"
-                alt="Navigo Nepal Students in Session" class="uq-landscape-img" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-md); transition: transform 0.5s ease;">
+                alt="Navigo Nepal Students in Session" class="uq-landscape-img" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; transition: transform 0.5s ease;">
             </div>
           </div>
 
-          <div class="prog-text-block" style="color: var(--text-muted); font-family: 'Inter', sans-serif; line-height: 1.75;">
+          <div class="prog-text-block" style="color: #A0B7D5; font-family: 'Inter', sans-serif; line-height: 1.75;">
             <p>
               At Navigo Nepal, we are committed to transforming the educational landscape by fostering an environment
               where students can discover their passions, set meaningful goals, and contribute positively to their
-              communities, guided by our mantra: <strong style="color: var(--accent-color);">Learn, Lead, and Lift</strong>.
+              communities, guided by our mantra: <strong style="color: #4F9CF9;">Learn, Lead, and Lift</strong>.
             </p>
           </div>
         </div>
 
         <div class="prog-content-sidebar" style="display: flex; flex-direction: column; gap: 1.5rem;">
-          <div class="glass-panel prog-sidebar-card" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md);">
-            <h4 style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: var(--text-main); font-size: 1.2rem; margin-bottom: 1rem;">At a Glance</h4>
-            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; color: var(--text-muted); font-size: 0.92rem;">
-              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: var(--accent-color); font-weight: bold;">✓</span> Youth-led non-profit organization</li>
-              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: var(--accent-color); font-weight: bold;">✓</span> Operating across all 7 provinces</li>
-              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: var(--accent-color); font-weight: bold;">✓</span> 10,000+ students reached annually</li>
-              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: var(--accent-color); font-weight: bold;">✓</span> Partnerships with UNICEF, USAID, AIESEC</li>
-              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: var(--accent-color); font-weight: bold;">✓</span> 13 active team members</li>
-              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: var(--accent-color); font-weight: bold;">✓</span> 3 Board of Advisors</li>
+          <div class="sidebar-premium-card">
+            <h4>At a Glance</h4>
+            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; color: #A0B7D5; font-size: 0.93rem;">
+              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #4F9CF9; font-weight: bold;">✓</span> Youth-led non-profit organization</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #4F9CF9; font-weight: bold;">✓</span> Operating across all 7 provinces</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #4F9CF9; font-weight: bold;">✓</span> 10,000+ students reached annually</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #4F9CF9; font-weight: bold;">✓</span> Partnerships with UNICEF, USAID, AIESEC</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #4F9CF9; font-weight: bold;">✓</span> 13 active team members</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #4F9CF9; font-weight: bold;">✓</span> 3 Board of Advisors</li>
             </ul>
           </div>
-          <div class="glass-panel prog-sidebar-card" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md);">
-            <h4 style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: var(--text-main); font-size: 1.2rem; margin-bottom: 1rem;">Our Mantra</h4>
-            <p class="prog-sidebar-text" style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.7;">
-              <strong style="color: var(--accent-color);">Learn</strong> &mdash; Gain knowledge and skills through interactive sessions.<br>
-              <strong style="color: var(--accent-color);">Lead</strong> &mdash; Develop leadership and personality traits.<br>
-              <strong style="color: var(--accent-color);">Lift</strong> &mdash; Empower others in your community.
+          <div class="sidebar-premium-card">
+            <h4>Our Mantra</h4>
+            <p class="prog-sidebar-text" style="color: #A0B7D5; font-size: 0.93rem; line-height: 1.75;">
+              <strong style="color: #4F9CF9;">Learn</strong> &mdash; Gain knowledge and skills through interactive sessions.<br>
+              <strong style="color: #4F9CF9;">Lead</strong> &mdash; Develop leadership and personality traits.<br>
+              <strong style="color: #4F9CF9;">Lift</strong> &mdash; Empower others in your community.
             </p>
           </div>
         </div>
@@ -308,19 +424,25 @@
   </section>
 
   <!-- PROBLEM STATEMENT -->
-  <section class="prog-section reveal" id="problem" style="background: var(--bg-primary); padding: 5rem 0;">
+  <section class="prog-section reveal our-story-alt-section" id="problem" style="padding: 5.5rem 0;">
     <div class="container">
       <div class="prog-section-header" style="text-align: center; margin-bottom: 3.5rem;">
-        <span class="prog-section-tag" style="font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent-color); display: block; margin-bottom: 0.5rem;">The Challenge</span>
-        <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--text-main); line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 1rem;">The Problem We Solve</h2>
-        <p class="prog-section-desc" style="font-family: 'Inter', sans-serif; color: var(--text-muted); font-size: 1.05rem; line-height: 1.7; max-width: 650px; margin: 0 auto;">
+        
+        <!-- Square Chip Tag -->
+        <div class="square-chip">
+          <span class="square-chip-dot"></span>
+          <span>THE CHALLENGE</span>
+        </div>
+
+        <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #FFFFFF; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 1rem;">The Problem We Solve</h2>
+        <p class="prog-section-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 1.05rem; line-height: 1.7; max-width: 650px; margin: 0 auto;">
           In Nepal, many students are confined to a narrow educational experience focused solely on academic achievements.
         </p>
       </div>
 
       <div class="prog-cta-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-        <div class="glass-panel glass-panel-hover prog-cta-card" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-md); transition: all 0.4s ease;">
-          <div class="prog-cta-icon" style="width: 56px; height: 56px; border-radius: var(--radius-md); background: rgba(230, 57, 70, 0.1); color: #E63946; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+        <div class="premium-card">
+          <div class="prog-cta-icon" style="width: 56px; height: 56px; border-radius: 8px; background: rgba(230, 57, 70, 0.15); color: #E63946; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10" />
@@ -328,30 +450,30 @@
               <line x1="12" y1="16" x2="12.01" y2="16" />
             </svg>
           </div>
-          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: var(--text-main); margin-bottom: 1rem;">Lack of Exposure</h3>
-          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
+          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: #FFFFFF; margin-bottom: 1rem;">Lack of Exposure</h3>
+          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 0.95rem; line-height: 1.7;">
             Students lack exposure to different opportunities and have insufficient guidance on post-secondary
             options, creating a significant gap between what they learn and what they need to succeed.
           </p>
         </div>
 
-        <div class="glass-panel glass-panel-hover prog-cta-card" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-md); transition: all 0.4s ease;">
-          <div class="prog-cta-icon prog-cta-icon--green" style="width: 56px; height: 56px; border-radius: var(--radius-md); background: rgba(16, 185, 129, 0.1); color: #10B981; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+        <div class="premium-card">
+          <div class="prog-cta-icon" style="width: 56px; height: 56px; border-radius: 8px; background: rgba(16, 185, 129, 0.15); color: #10B981; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
               <path d="M6 12v5c3 3 9 3 12 0v-5" />
             </svg>
           </div>
-          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: var(--text-main); margin-bottom: 1rem;">Academic-Only Focus</h3>
-          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
+          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: #FFFFFF; margin-bottom: 1rem;">Academic-Only Focus</h3>
+          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 0.95rem; line-height: 1.7;">
             The narrow focus on exams leaves students unprepared for practical challenges they will face in their
             careers and personal lives.
           </p>
         </div>
 
-        <div class="glass-panel glass-panel-hover prog-cta-card" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-md); transition: all 0.4s ease;">
-          <div class="prog-cta-icon prog-cta-icon--purple" style="width: 56px; height: 56px; border-radius: var(--radius-md); background: rgba(37, 99, 235, 0.1); color: #2563EB; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+        <div class="premium-card">
+          <div class="prog-cta-icon" style="width: 56px; height: 56px; border-radius: 8px; background: rgba(79, 156, 249, 0.15); color: #4F9CF9; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -360,8 +482,8 @@
               <path d="M16 3.13a4 4 0 0 1 0 7.75" />
             </svg>
           </div>
-          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: var(--text-main); margin-bottom: 1rem;">No Career Guidance</h3>
-          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
+          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: #FFFFFF; margin-bottom: 1rem;">No Career Guidance</h3>
+          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 0.95rem; line-height: 1.7;">
             Students complete secondary education without understanding their next steps, leading to poor
             decision-making regarding further education and career choices.
           </p>
@@ -371,15 +493,21 @@
   </section>
 
   <!-- MISSION & VISION -->
-  <section class="prog-section reveal" id="mission" style="background: var(--bg-secondary); padding: 5rem 0;">
+  <section class="prog-section reveal our-story-dark-section" id="mission" style="padding: 5.5rem 0;">
     <div class="container">
       <div class="prog-content-grid">
         <div class="prog-content-main">
-          <span class="prog-section-tag" style="font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent-color); display: block; margin-bottom: 0.5rem;">Our Purpose</span>
-          <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--text-main); line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 2rem;">Mission &amp; Vision</h2>
+          
+          <!-- Square Chip Tag -->
+          <div class="square-chip">
+            <span class="square-chip-dot"></span>
+            <span>OUR PURPOSE</span>
+          </div>
 
-          <div class="prog-text-block" style="color: var(--text-muted); font-family: 'Inter', sans-serif; line-height: 1.75; margin-bottom: 2rem;">
-            <h3 class="prog-subtitle" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: var(--text-main); font-size: 1.4rem; margin-bottom: 0.75rem;">Our Mission</h3>
+          <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #FFFFFF; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 2rem;">Mission &amp; Vision</h2>
+
+          <div class="prog-text-block" style="color: #A0B7D5; font-family: 'Inter', sans-serif; line-height: 1.75; margin-bottom: 2rem;">
+            <h3 class="prog-subtitle" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: #FFFFFF; font-size: 1.4rem; margin-bottom: 0.75rem;">Our Mission</h3>
             <p>
               To empower students across Nepal by transforming their educational experience from a narrow focus on
               academics to a more holistic approach that includes personal development, leadership, and problem-solving
@@ -388,8 +516,8 @@
             </p>
           </div>
 
-          <div class="prog-text-block" style="color: var(--text-muted); font-family: 'Inter', sans-serif; line-height: 1.75; margin-bottom: 2rem;">
-            <h3 class="prog-subtitle" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: var(--text-main); font-size: 1.4rem; margin-bottom: 0.75rem;">Our Vision</h3>
+          <div class="prog-text-block" style="color: #A0B7D5; font-family: 'Inter', sans-serif; line-height: 1.75; margin-bottom: 2rem;">
+            <h3 class="prog-subtitle" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: #FFFFFF; font-size: 1.4rem; margin-bottom: 0.75rem;">Our Vision</h3>
             <p>
               A future where every student in Nepal has the knowledge and tools to make informed decisions about their
               education and career. We envision a generation of confident, capable leaders who can contribute positively
@@ -397,8 +525,8 @@
             </p>
           </div>
 
-          <div class="prog-text-block" style="color: var(--text-muted); font-family: 'Inter', sans-serif; line-height: 1.75;">
-            <h3 class="prog-subtitle" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: var(--text-main); font-size: 1.4rem; margin-bottom: 0.75rem;">What Makes Us Unique?</h3>
+          <div class="prog-text-block" style="color: #A0B7D5; font-family: 'Inter', sans-serif; line-height: 1.75;">
+            <h3 class="prog-subtitle" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: #FFFFFF; font-size: 1.4rem; margin-bottom: 0.75rem;">What Makes Us Unique?</h3>
             <p>
               Navigo Nepal stands out because we don't just advocate for change &mdash; we actively create it. Our
               sessions are interactive and engaging, using games, discussions, and real-world scenarios to make learning
@@ -410,23 +538,23 @@
         </div>
 
         <div class="prog-content-sidebar" style="display: flex; flex-direction: column; gap: 1.5rem;">
-          <div class="glass-panel prog-sidebar-card" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md);">
-            <h4 style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: var(--text-main); font-size: 1.2rem; margin-bottom: 1rem;">Our Approach</h4>
-            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; color: var(--text-muted); font-size: 0.92rem;">
-              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: var(--accent-color); font-weight: bold;">•</span> Interactive learning through games and debates</li>
-              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: var(--accent-color); font-weight: bold;">•</span> Hands-on practical experiences</li>
-              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: var(--accent-color); font-weight: bold;">•</span> Tailored content for each school</li>
-              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: var(--accent-color); font-weight: bold;">•</span> Pre and post-assessments</li>
-              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: var(--accent-color); font-weight: bold;">•</span> Nationwide outreach programs</li>
+          <div class="sidebar-premium-card">
+            <h4>Our Approach</h4>
+            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; color: #A0B7D5; font-size: 0.93rem;">
+              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #4F9CF9; font-weight: bold;">•</span> Interactive learning through games and debates</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #4F9CF9; font-weight: bold;">•</span> Hands-on practical experiences</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #4F9CF9; font-weight: bold;">•</span> Tailored content for each school</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #4F9CF9; font-weight: bold;">•</span> Pre and post-assessments</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #4F9CF9; font-weight: bold;">•</span> Nationwide outreach programs</li>
             </ul>
           </div>
-          <div class="glass-panel prog-sidebar-card" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md);">
-            <h4 style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: var(--text-main); font-size: 1.2rem; margin-bottom: 1rem;">Key Partners</h4>
-            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; color: var(--text-muted); font-size: 0.92rem;">
-              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: var(--accent-color); font-weight: bold;">★</span> UNICEF Nepal</li>
-              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: var(--accent-color); font-weight: bold;">★</span> USAID Clean Air</li>
-              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: var(--accent-color); font-weight: bold;">★</span> AIESEC Nepal</li>
-              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: var(--accent-color); font-weight: bold;">★</span> Gurubaa Educational Content</li>
+          <div class="sidebar-premium-card">
+            <h4>Key Partners</h4>
+            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; color: #A0B7D5; font-size: 0.93rem;">
+              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #4F9CF9; font-weight: bold;">★</span> UNICEF Nepal</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #4F9CF9; font-weight: bold;">★</span> USAID Clean Air</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #4F9CF9; font-weight: bold;">★</span> AIESEC Nepal</li>
+              <li style="display: flex; align-items: center; gap: 0.6rem;"><span style="color: #4F9CF9; font-weight: bold;">★</span> Gurubaa Educational Content</li>
             </ul>
           </div>
         </div>
@@ -435,73 +563,85 @@
   </section>
 
   <!-- IMAGE GALLERY -->
-  <section class="prog-section reveal" id="gallery" style="background: var(--bg-primary); padding: 5rem 0;">
+  <section class="prog-section reveal our-story-alt-section" id="gallery" style="padding: 5.5rem 0;">
     <div class="container">
       <div class="prog-section-header" style="text-align: center; margin-bottom: 3.5rem;">
-        <span class="prog-section-tag" style="font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent-color); display: block; margin-bottom: 0.5rem;">Our Work</span>
-        <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--text-main); line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 1rem;">Making an Impact</h2>
-        <p class="prog-section-desc" style="font-family: 'Inter', sans-serif; color: var(--text-muted); font-size: 1.05rem; line-height: 1.7; max-width: 650px; margin: 0 auto;">
+        
+        <!-- Square Chip Tag -->
+        <div class="square-chip">
+          <span class="square-chip-dot"></span>
+          <span>OUR WORK</span>
+        </div>
+
+        <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #FFFFFF; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 1rem;">Making an Impact</h2>
+        <p class="prog-section-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 1.05rem; line-height: 1.7; max-width: 650px; margin: 0 auto;">
           From interactive classroom sessions to nationwide campaigns, see our journey in action.
         </p>
       </div>
 
       <div class="uq-block-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;">
-        <div class="glass-panel uq-landscape-frame" style="aspect-ratio: 1; border-radius: var(--radius-lg); overflow: hidden; padding: 0.5rem; background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: var(--shadow-md);">
+        <div class="premium-card uq-landscape-frame" style="aspect-ratio: 1; border-radius: 12px; overflow: hidden; padding: 0.5rem;">
           <img src="assets/mentor/469682525_122157350624283666_3962270940172125555_n.jpg"
-            alt="Navigo Nepal Session" class="uq-landscape-img" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-md); transition: transform 0.5s ease;">
+            alt="Navigo Nepal Session" class="uq-landscape-img" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; transition: transform 0.5s ease;">
         </div>
-        <div class="glass-panel uq-landscape-frame" style="aspect-ratio: 1; border-radius: var(--radius-lg); overflow: hidden; padding: 0.5rem; background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: var(--shadow-md);">
+        <div class="premium-card uq-landscape-frame" style="aspect-ratio: 1; border-radius: 12px; overflow: hidden; padding: 0.5rem;">
           <img src="assets/mentor/469612680_122157346844283666_4819403624411688210_n.jpg"
-            alt="Students Engaged" class="uq-landscape-img" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-md); transition: transform 0.5s ease;">
+            alt="Students Engaged" class="uq-landscape-img" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; transition: transform 0.5s ease;">
         </div>
-        <div class="glass-panel uq-landscape-frame" style="aspect-ratio: 1; border-radius: var(--radius-lg); overflow: hidden; padding: 0.5rem; background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: var(--shadow-md);">
+        <div class="premium-card uq-landscape-frame" style="aspect-ratio: 1; border-radius: 12px; overflow: hidden; padding: 0.5rem;">
           <img src="assets/mentor/469609937_122157357716283666_668614257620270082_n.jpg"
-            alt="Leadership Training" class="uq-landscape-img" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-md); transition: transform 0.5s ease;">
+            alt="Leadership Training" class="uq-landscape-img" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; transition: transform 0.5s ease;">
         </div>
-        <div class="glass-panel uq-landscape-frame" style="aspect-ratio: 1; border-radius: var(--radius-lg); overflow: hidden; padding: 0.5rem; background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: var(--shadow-md);">
+        <div class="premium-card uq-landscape-frame" style="aspect-ratio: 1; border-radius: 12px; overflow: hidden; padding: 0.5rem;">
           <img src="assets/mentor/469837851_122157357158283666_2194395108200675076_n.jpg"
-            alt="Community Outreach" class="uq-landscape-img" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-md); transition: transform 0.5s ease;">
+            alt="Community Outreach" class="uq-landscape-img" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; transition: transform 0.5s ease;">
         </div>
-        <div class="glass-panel uq-landscape-frame" style="aspect-ratio: 1; border-radius: var(--radius-lg); overflow: hidden; padding: 0.5rem; background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: var(--shadow-md);">
+        <div class="premium-card uq-landscape-frame" style="aspect-ratio: 1; border-radius: 12px; overflow: hidden; padding: 0.5rem;">
           <img src="assets/mentor/469706649_122157348716283666_4270463278045511651_n.jpg"
-            alt="Workshop Session" class="uq-landscape-img" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-md); transition: transform 0.5s ease;">
+            alt="Workshop Session" class="uq-landscape-img" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; transition: transform 0.5s ease;">
         </div>
-        <div class="glass-panel uq-landscape-frame" style="aspect-ratio: 1; border-radius: var(--radius-lg); overflow: hidden; padding: 0.5rem; background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: var(--shadow-md);">
+        <div class="premium-card uq-landscape-frame" style="aspect-ratio: 1; border-radius: 12px; overflow: hidden; padding: 0.5rem;">
           <img src="assets/mentor/470212567_122158118966283666_6621238576151152273_n.jpg"
-            alt="Student Engagement" class="uq-landscape-img" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-md); transition: transform 0.5s ease;">
+            alt="Student Engagement" class="uq-landscape-img" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; transition: transform 0.5s ease;">
         </div>
       </div>
     </div>
   </section>
 
   <!-- THE COHORT -->
-  <section class="prog-section reveal" id="cohort" style="background: var(--bg-secondary); padding: 5rem 0;">
+  <section class="prog-section reveal our-story-dark-section" id="cohort" style="padding: 5.5rem 0;">
     <div class="container">
       <div class="prog-content-grid">
         <div class="prog-content-main">
-          <span class="prog-section-tag" style="font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent-color); display: block; margin-bottom: 0.5rem;">Our Team</span>
-          <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--text-main); line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 2rem;">The Cohort Behind Navigo</h2>
+          
+          <!-- Square Chip Tag -->
+          <div class="square-chip">
+            <span class="square-chip-dot"></span>
+            <span>OUR TEAM</span>
+          </div>
 
-          <div class="prog-text-block" style="color: var(--text-muted); font-family: 'Inter', sans-serif; line-height: 1.75; margin-bottom: 1.5rem;">
+          <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #FFFFFF; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 2rem;">The Cohort Behind Navigo</h2>
+
+          <div class="prog-text-block" style="color: #A0B7D5; font-family: 'Inter', sans-serif; line-height: 1.75; margin-bottom: 1.5rem;">
             <p>
-              Navigo Nepal was co-founded by <strong style="color: var(--text-main);">Anupam Neupane</strong>, <strong style="color: var(--text-main);">Biyog Dangol</strong>, and
-              <strong style="color: var(--text-main);">Prajwal Dhungana</strong>. Our first project included two additional members who have now become
-              Alumni: <strong style="color: var(--text-main);">Swapnil Sapkota</strong>, currently studying at New York University at Abu Dhabi, and
-              <strong style="color: var(--text-main);">Atal Raj Paudel</strong>, an incoming freshman at University of Texas at Arlington.
+              Navigo Nepal was co-founded by <strong style="color: #FFFFFF;">Anupam Neupane</strong>, <strong style="color: #FFFFFF;">Biyog Dangol</strong>, and
+              <strong style="color: #FFFFFF;">Prajwal Dhungana</strong>. Our first project included two additional members who have now become
+              Alumni: <strong style="color: #FFFFFF;">Swapnil Sapkota</strong>, currently studying at New York University at Abu Dhabi, and
+              <strong style="color: #FFFFFF;">Atal Raj Paudel</strong>, an incoming freshman at University of Texas at Arlington.
             </p>
           </div>
 
-          <div class="prog-text-block" style="color: var(--text-muted); font-family: 'Inter', sans-serif; line-height: 1.75; margin-bottom: 1.5rem;">
+          <div class="prog-text-block" style="color: #A0B7D5; font-family: 'Inter', sans-serif; line-height: 1.75; margin-bottom: 1.5rem;">
             <p>
-              The Navigo Nepal team slowly grew along with its projects. Today, Navigo Nepal has <strong style="color: var(--accent-color);">13 active
+              The Navigo Nepal team slowly grew along with its projects. Today, Navigo Nepal has <strong style="color: #4F9CF9;">13 active
               members</strong> along with three Board of Advisors who work together to run Navigo Nepal as an
               organization. Our collaborative spirit and shared vision have been the driving force behind our growth
               and impact.
             </p>
           </div>
 
-          <div class="prog-text-block" style="color: var(--text-muted); font-family: 'Inter', sans-serif; line-height: 1.75;">
-            <h3 class="prog-subtitle" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: var(--text-main); font-size: 1.4rem; margin-bottom: 0.75rem;">Collaboration with Gurubaa</h3>
+          <div class="prog-text-block" style="color: #A0B7D5; font-family: 'Inter', sans-serif; line-height: 1.75;">
+            <h3 class="prog-subtitle" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: #FFFFFF; font-size: 1.4rem; margin-bottom: 0.75rem;">Collaboration with Gurubaa</h3>
             <p>
               Gurubaa is Nepal's largest Educational Content Creator with over 780k followers across YouTube and over
               128 million views. Navigo Nepal has partnered with Gurubaa with a goal of providing exposure to students
@@ -512,9 +652,9 @@
         </div>
 
         <div class="prog-content-sidebar" style="display: flex; flex-direction: column; gap: 1.5rem;">
-          <div class="glass-panel prog-sidebar-card" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md);">
-            <h4 style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: var(--text-main); font-size: 1.2rem; margin-bottom: 1rem;">Founding Members</h4>
-            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; color: var(--text-muted); font-size: 0.92rem;">
+          <div class="sidebar-premium-card">
+            <h4>Founding Members</h4>
+            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; color: #A0B7D5; font-size: 0.93rem;">
               <li>Anupam Neupane &mdash; Co-Founder</li>
               <li>Biyog Dangol &mdash; Co-Founder</li>
               <li>Prajwal Dhungana &mdash; Co-Founder</li>
@@ -522,9 +662,9 @@
               <li>Atal Raj Paudel &mdash; Alumni</li>
             </ul>
           </div>
-          <div class="glass-panel prog-sidebar-card" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md);">
-            <h4 style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: var(--text-main); font-size: 1.2rem; margin-bottom: 1rem;">Gurubaa Partners</h4>
-            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; color: var(--text-muted); font-size: 0.92rem;">
+          <div class="sidebar-premium-card">
+            <h4>Gurubaa Partners</h4>
+            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; color: #A0B7D5; font-size: 0.93rem;">
               <li>Krishna Bhandari</li>
               <li>Bijay Adhikari</li>
               <li>Binay Adhikari</li>
@@ -536,20 +676,26 @@
   </section>
 
   <!-- WHAT'S NEXT CAMPAIGN -->
-  <section class="prog-section reveal" id="whats-next" style="background: var(--bg-primary); padding: 5rem 0;">
+  <section class="prog-section reveal our-story-alt-section" id="whats-next" style="padding: 5.5rem 0;">
     <div class="container">
       <div class="prog-section-header" style="text-align: center; margin-bottom: 3.5rem;">
-        <span class="prog-section-tag" style="font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent-color); display: block; margin-bottom: 0.5rem;">Our Flagship Program</span>
-        <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--text-main); line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 1rem;">The "What's Next?" Campaign</h2>
-        <p class="prog-section-desc" style="font-family: 'Inter', sans-serif; color: var(--text-muted); font-size: 1.05rem; line-height: 1.7; max-width: 650px; margin: 0 auto;">
+        
+        <!-- Square Chip Tag -->
+        <div class="square-chip">
+          <span class="square-chip-dot"></span>
+          <span>FLAGSHIP PROGRAM</span>
+        </div>
+
+        <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #FFFFFF; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 1rem;">The "What's Next?" Campaign</h2>
+        <p class="prog-section-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 1.05rem; line-height: 1.7; max-width: 650px; margin: 0 auto;">
           A comprehensive program including counseling sessions, workshops, and hands-on activities designed to help
           students explore their academic and career options after secondary education.
         </p>
       </div>
 
       <div class="prog-cta-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-        <div class="glass-panel glass-panel-hover prog-cta-card" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-md); transition: all 0.4s ease;">
-          <div class="prog-cta-icon" style="width: 56px; height: 56px; border-radius: var(--radius-md); background: rgba(37, 99, 235, 0.1); color: #2563EB; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+        <div class="premium-card">
+          <div class="prog-cta-icon" style="width: 56px; height: 56px; border-radius: 8px; background: rgba(37, 99, 235, 0.15); color: #2563EB; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -559,30 +705,30 @@
               <polyline points="10 9 9 9 8 9" />
             </svg>
           </div>
-          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: var(--text-main); margin-bottom: 1rem;">Stream Selection Guidance</h3>
-          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
+          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: #FFFFFF; margin-bottom: 1rem;">Stream Selection Guidance</h3>
+          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 0.95rem; line-height: 1.7;">
             Helping students understand their options after secondary school and choose the right academic stream based
             on their interests and strengths.
           </p>
         </div>
 
-        <div class="glass-panel glass-panel-hover prog-cta-card" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-md); transition: all 0.4s ease;">
-          <div class="prog-cta-icon prog-cta-icon--green" style="width: 56px; height: 56px; border-radius: var(--radius-md); background: rgba(16, 185, 129, 0.1); color: #10B981; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+        <div class="premium-card">
+          <div class="prog-cta-icon" style="width: 56px; height: 56px; border-radius: 8px; background: rgba(16, 185, 129, 0.15); color: #10B981; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
               <path d="M6 12v5c3 3 9 3 12 0v-5" />
             </svg>
           </div>
-          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: var(--text-main); margin-bottom: 1rem;">College &amp; Course Selection</h3>
-          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
+          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: #FFFFFF; margin-bottom: 1rem;">College &amp; Course Selection</h3>
+          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 0.95rem; line-height: 1.7;">
             Providing detailed information on choosing the right college and course, including scholarship discovery
             and evidence-based counseling frameworks.
           </p>
         </div>
 
-        <div class="glass-panel glass-panel-hover prog-cta-card" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-md); transition: all 0.4s ease;">
-          <div class="prog-cta-icon prog-cta-icon--purple" style="width: 56px; height: 56px; border-radius: var(--radius-md); background: rgba(244, 162, 97, 0.1); color: #F4A261; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+        <div class="premium-card">
+          <div class="prog-cta-icon" style="width: 56px; height: 56px; border-radius: 8px; background: rgba(244, 162, 97, 0.15); color: #F4A261; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -591,8 +737,8 @@
               <path d="M16 3.13a4 4 0 0 1 0 7.75" />
             </svg>
           </div>
-          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: var(--text-main); margin-bottom: 1rem;">Student Club Development</h3>
-          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
+          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: #FFFFFF; margin-bottom: 1rem;">Student Club Development</h3>
+          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 0.95rem; line-height: 1.7;">
             Equipping students with the skills needed to establish and run successful student clubs, fostering
             leadership, teamwork, and extracurricular engagement.
           </p>
@@ -602,19 +748,25 @@
   </section>
 
   <!-- IMPACT NUMBERS -->
-  <section class="prog-section reveal" id="impact" style="background: var(--bg-secondary); padding: 5rem 0;">
+  <section class="prog-section reveal our-story-dark-section" id="impact" style="padding: 5.5rem 0;">
     <div class="container">
       <div class="prog-section-header" style="text-align: center; margin-bottom: 3.5rem;">
-        <span class="prog-section-tag" style="font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent-color); display: block; margin-bottom: 0.5rem;">Our Reach</span>
-        <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--text-main); line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 1rem;">Nationwide Impact</h2>
-        <p class="prog-section-desc" style="font-family: 'Inter', sans-serif; color: var(--text-muted); font-size: 1.05rem; line-height: 1.7; max-width: 650px; margin: 0 auto;">
+        
+        <!-- Square Chip Tag -->
+        <div class="square-chip">
+          <span class="square-chip-dot"></span>
+          <span>OUR REACH</span>
+        </div>
+
+        <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #FFFFFF; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 1rem;">Nationwide Impact</h2>
+        <p class="prog-section-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 1.05rem; line-height: 1.7; max-width: 650px; margin: 0 auto;">
           From Kathmandu to remote villages, Navigo Nepal has touched lives across the country.
         </p>
       </div>
 
       <div class="prog-cta-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-        <div class="glass-panel glass-panel-hover prog-cta-card" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-md); transition: all 0.4s ease;">
-          <div class="prog-cta-icon" style="width: 56px; height: 56px; border-radius: var(--radius-md); background: rgba(37, 99, 235, 0.1); color: #2563EB; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+        <div class="premium-card">
+          <div class="prog-cta-icon" style="width: 56px; height: 56px; border-radius: 8px; background: rgba(37, 99, 235, 0.15); color: #2563EB; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -623,38 +775,38 @@
               <path d="M16 3.13a4 4 0 0 1 0 7.75" />
             </svg>
           </div>
-          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: var(--text-main); margin-bottom: 1rem;">1,000+ Students</h3>
-          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
+          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: #FFFFFF; margin-bottom: 1rem;">1,000+ Students</h3>
+          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 0.95rem; line-height: 1.7;">
             Students participated in our sessions across Kathmandu, Nuwakot, Dhading, Parbat, Baglung,
             Sindhupalchowk, Rupandehi, Pokhara, Rasuwa, and Banke.
           </p>
         </div>
 
-        <div class="glass-panel glass-panel-hover prog-cta-card" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-md); transition: all 0.4s ease;">
-          <div class="prog-cta-icon prog-cta-icon--green" style="width: 56px; height: 56px; border-radius: var(--radius-md); background: rgba(16, 185, 129, 0.1); color: #10B981; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+        <div class="premium-card">
+          <div class="prog-cta-icon" style="width: 56px; height: 56px; border-radius: 8px; background: rgba(16, 185, 129, 0.15); color: #10B981; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
               <polyline points="9 22 9 12 15 12 15 22" />
             </svg>
           </div>
-          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: var(--text-main); margin-bottom: 1rem;">15+ Schools</h3>
-          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
+          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: #FFFFFF; margin-bottom: 1rem;">15+ Schools</h3>
+          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 0.95rem; line-height: 1.7;">
             Partner schools including Whiz Kids International, Yuva Sahavagita, Jyoti Academy, Columbus International,
             Arunima Educational Foundation, and many more.
           </p>
         </div>
 
-        <div class="glass-panel glass-panel-hover prog-cta-card" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-md); transition: all 0.4s ease;">
-          <div class="prog-cta-icon prog-cta-icon--purple" style="width: 56px; height: 56px; border-radius: var(--radius-md); background: rgba(79, 156, 249, 0.1); color: #4F9CF9; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+        <div class="premium-card">
+          <div class="prog-cta-icon" style="width: 56px; height: 56px; border-radius: 8px; background: rgba(79, 156, 249, 0.15); color: #4F9CF9; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
               <circle cx="12" cy="10" r="3" />
             </svg>
           </div>
-          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: var(--text-main); margin-bottom: 1rem;">24+ Districts</h3>
-          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
+          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: #FFFFFF; margin-bottom: 1rem;">24+ Districts</h3>
+          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 0.95rem; line-height: 1.7;">
             We've reached districts including Nuwakot, Dhading, Butwal, Rasuwa, Rupandehi, Banke, Kathmandu,
             Bhaktapur, and Pokhara, with plans to expand to 35+ districts.
           </p>
@@ -664,14 +816,20 @@
   </section>
 
   <!-- ENVIRONMENTAL STEWARDSHIP -->
-  <section class="prog-section reveal" id="environmental" style="background: var(--bg-primary); padding: 5rem 0;">
+  <section class="prog-section reveal our-story-alt-section" id="environmental" style="padding: 5.5rem 0;">
     <div class="container">
       <div class="prog-content-grid">
         <div class="prog-content-main">
-          <span class="prog-section-tag" style="font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent-color); display: block; margin-bottom: 0.5rem;">Environmental Programs</span>
-          <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--text-main); line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 2rem;">Bridging Education and Environmental Stewardship</h2>
+          
+          <!-- Square Chip Tag -->
+          <div class="square-chip">
+            <span class="square-chip-dot"></span>
+            <span>ENVIRONMENTAL</span>
+          </div>
 
-          <div class="prog-text-block" style="color: var(--text-muted); font-family: 'Inter', sans-serif; line-height: 1.75; margin-bottom: 1.5rem;">
+          <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #FFFFFF; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 2rem;">Bridging Education and Environmental Stewardship</h2>
+
+          <div class="prog-text-block" style="color: #A0B7D5; font-family: 'Inter', sans-serif; line-height: 1.75; margin-bottom: 1.5rem;">
             <p>
               At Navigo Nepal, we are driven by a deep passion for environmental conservation, a necessity we've come
               to understand through firsthand experience with the impacts of climate change and biodiversity loss.
@@ -680,8 +838,8 @@
             </p>
           </div>
 
-          <div class="prog-text-block" style="color: var(--text-muted); font-family: 'Inter', sans-serif; line-height: 1.75; margin-bottom: 1.5rem;">
-            <h3 class="prog-subtitle" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: var(--text-main); font-size: 1.4rem; margin-bottom: 0.75rem;">World Environment Day</h3>
+          <div class="prog-text-block" style="color: #A0B7D5; font-family: 'Inter', sans-serif; line-height: 1.75; margin-bottom: 1.5rem;">
+            <h3 class="prog-subtitle" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: #FFFFFF; font-size: 1.4rem; margin-bottom: 0.75rem;">World Environment Day</h3>
             <p>
               On June 5th, World Environment Day, Navigo Nepal led a series of environmental awareness events in a
               community school in Kathmandu Metropolitan City. Activities included bottle gardening projects,
@@ -691,8 +849,8 @@
             </p>
           </div>
 
-          <div class="prog-text-block" style="color: var(--text-muted); font-family: 'Inter', sans-serif; line-height: 1.75; margin-bottom: 2rem;">
-            <h3 class="prog-subtitle" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: var(--text-main); font-size: 1.4rem; margin-bottom: 0.75rem;">AIESEC Collaboration</h3>
+          <div class="prog-text-block" style="color: #A0B7D5; font-family: 'Inter', sans-serif; line-height: 1.75; margin-bottom: 2rem;">
+            <h3 class="prog-subtitle" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: #FFFFFF; font-size: 1.4rem; margin-bottom: 0.75rem;">AIESEC Collaboration</h3>
             <p>
               Navigo Nepal collaborated with AIESEC on their Sustainable Development Goals (SDG) program. Members were
               distributed across different schools alongside other AIESEC volunteers to raise awareness about SDG 13
@@ -702,17 +860,17 @@
           </div>
 
           <div style="margin: 2.5rem 0; display: flex; justify-content: center;">
-            <div class="glass-panel uq-landscape-frame" style="max-width: 520px; width: 100%; border-radius: var(--radius-lg); overflow: hidden; padding: 0.5rem; background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: var(--shadow-md);">
+            <div class="premium-card uq-landscape-frame" style="max-width: 520px; width: 100%; border-radius: 12px; overflow: hidden; padding: 0.6rem;">
               <img src="assets/mentor/469882731_122157341966283666_7691355827580967113_n.jpg"
-                alt="Navigo Nepal Environmental Program" class="uq-landscape-img" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-md); transition: transform 0.5s ease;">
+                alt="Navigo Nepal Environmental Program" class="uq-landscape-img" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; transition: transform 0.5s ease;">
             </div>
           </div>
         </div>
 
         <div class="prog-content-sidebar" style="display: flex; flex-direction: column; gap: 1.5rem;">
-          <div class="glass-panel prog-sidebar-card" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md);">
-            <h4 style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: var(--text-main); font-size: 1.2rem; margin-bottom: 1rem;">Environmental Activities</h4>
-            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; color: var(--text-muted); font-size: 0.92rem;">
+          <div class="sidebar-premium-card">
+            <h4>Environmental Activities</h4>
+            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; color: #A0B7D5; font-size: 0.93rem;">
               <li>Bottle gardening projects</li>
               <li>Environmental face painting</li>
               <li>Painting exhibitions</li>
@@ -720,9 +878,9 @@
               <li>SDG 13 Climate Action sessions</li>
             </ul>
           </div>
-          <div class="glass-panel prog-sidebar-card" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md);">
-            <h4 style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: var(--text-main); font-size: 1.2rem; margin-bottom: 1rem;">Featured By</h4>
-            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; color: var(--text-muted); font-size: 0.92rem;">
+          <div class="sidebar-premium-card">
+            <h4>Featured By</h4>
+            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; color: #A0B7D5; font-size: 0.93rem;">
               <li>UNICEF Nepal</li>
               <li>USAID Clean Air</li>
               <li>AIESEC Nepal</li>
@@ -734,14 +892,20 @@
   </section>
 
   <!-- SUSTAINABILITY -->
-  <section class="prog-section reveal" id="sustainability" style="background: var(--bg-secondary); padding: 5rem 0;">
+  <section class="prog-section reveal our-story-dark-section" id="sustainability" style="padding: 5.5rem 0;">
     <div class="container">
       <div class="prog-content-grid">
         <div class="prog-content-main">
-          <span class="prog-section-tag" style="font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent-color); display: block; margin-bottom: 0.5rem;">Looking Ahead</span>
-          <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--text-main); line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 2rem;">Sustainability &amp; Future Plans</h2>
+          
+          <!-- Square Chip Tag (LOOKING AHEAD) -->
+          <div class="square-chip">
+            <span class="square-chip-dot"></span>
+            <span>LOOKING AHEAD</span>
+          </div>
 
-          <div class="prog-text-block" style="color: var(--text-muted); font-family: 'Inter', sans-serif; line-height: 1.75; margin-bottom: 1.5rem;">
+          <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #FFFFFF; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 2rem;">Sustainability &amp; Future Plans</h2>
+
+          <div class="prog-text-block" style="color: #A0B7D5; font-family: 'Inter', sans-serif; line-height: 1.75; margin-bottom: 1.5rem;">
             <p>
               One of the most important aspects of success for any organization is sustainability. At this stage,
               Navigo Nepal has been making success after success in every school we visit. To continue this progress
@@ -749,8 +913,8 @@
             </p>
           </div>
 
-          <div class="prog-text-block" style="color: var(--text-muted); font-family: 'Inter', sans-serif; line-height: 1.75; margin-bottom: 1.5rem;">
-            <h3 class="prog-subtitle" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: var(--text-main); font-size: 1.4rem; margin-bottom: 0.75rem;">Volunteer Recruitment</h3>
+          <div class="prog-text-block" style="color: #A0B7D5; font-family: 'Inter', sans-serif; line-height: 1.75; margin-bottom: 1.5rem;">
+            <h3 class="prog-subtitle" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: #FFFFFF; font-size: 1.4rem; margin-bottom: 0.75rem;">Volunteer Recruitment</h3>
             <p>
               As an organization aiming to reach every corner of the country, we need dedicated individuals working
               towards this goal. Our volunteer recruitment involves a thorough application process and interviews,
@@ -759,8 +923,8 @@
             </p>
           </div>
 
-          <div class="prog-text-block" style="color: var(--text-muted); font-family: 'Inter', sans-serif; line-height: 1.75; margin-bottom: 1.5rem;">
-            <h3 class="prog-subtitle" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: var(--text-main); font-size: 1.4rem; margin-bottom: 0.75rem;">District Ambassadors &mdash; Navigers</h3>
+          <div class="prog-text-block" style="color: #A0B7D5; font-family: 'Inter', sans-serif; line-height: 1.75; margin-bottom: 1.5rem;">
+            <h3 class="prog-subtitle" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: #FFFFFF; font-size: 1.4rem; margin-bottom: 0.75rem;">District Ambassadors &mdash; Navigers</h3>
             <p>
               Navigo Nepal identifies exceptional students from each district to represent us as ambassadors or
               "Navigers." They provide information about clubs established by us and the condition of ECAs in their
@@ -768,8 +932,8 @@
             </p>
           </div>
 
-          <div class="prog-text-block" style="color: var(--text-muted); font-family: 'Inter', sans-serif; line-height: 1.75;">
-            <h3 class="prog-subtitle" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: var(--text-main); font-size: 1.4rem; margin-bottom: 0.75rem;">Nationwide Expansion</h3>
+          <div class="prog-text-block" style="color: #A0B7D5; font-family: 'Inter', sans-serif; line-height: 1.75;">
+            <h3 class="prog-subtitle" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: #FFFFFF; font-size: 1.4rem; margin-bottom: 0.75rem;">Nationwide Expansion</h3>
             <p>
               We have successfully organized sessions in numerous districts of Nepal. Currently we've reached 24+
               districts, and we are determined to take this number to more than 35 districts. After receiving proper
@@ -780,9 +944,9 @@
         </div>
 
         <div class="prog-content-sidebar" style="display: flex; flex-direction: column; gap: 1.5rem;">
-          <div class="glass-panel prog-sidebar-card" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md);">
-            <h4 style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: var(--text-main); font-size: 1.2rem; margin-bottom: 1rem;">Growth Strategy</h4>
-            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; color: var(--text-muted); font-size: 0.92rem;">
+          <div class="sidebar-premium-card">
+            <h4>Growth Strategy</h4>
+            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; color: #A0B7D5; font-size: 0.93rem;">
               <li>Volunteer recruitment program</li>
               <li>District ambassador network</li>
               <li>School partnership expansion</li>
@@ -790,9 +954,9 @@
               <li>35+ districts target</li>
             </ul>
           </div>
-          <div class="glass-panel prog-sidebar-card" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md);">
-            <h4 style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: var(--text-main); font-size: 1.2rem; margin-bottom: 1rem;">Districts We've Reached</h4>
-            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; color: var(--text-muted); font-size: 0.92rem;">
+          <div class="sidebar-premium-card">
+            <h4>Districts We've Reached</h4>
+            <ul class="prog-highlight-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; color: #A0B7D5; font-size: 0.93rem;">
               <li>Nuwakot</li>
               <li>Dhading</li>
               <li>Parbat</li>
@@ -811,19 +975,25 @@
   </section>
 
   <!-- TIMELINE -->
-  <section class="prog-section reveal" id="timeline" style="background: var(--bg-primary); padding: 5rem 0;">
+  <section class="prog-section reveal our-story-alt-section" id="timeline" style="padding: 5.5rem 0;">
     <div class="container">
       <div class="prog-section-header" style="text-align: center; margin-bottom: 3.5rem;">
-        <span class="prog-section-tag" style="font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent-color); display: block; margin-bottom: 0.5rem;">Our Journey</span>
-        <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--text-main); line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 1rem;">Timeline of Impact</h2>
-        <p class="prog-section-desc" style="font-family: 'Inter', sans-serif; color: var(--text-muted); font-size: 1.05rem; line-height: 1.7; max-width: 650px; margin: 0 auto;">
+        
+        <!-- Square Chip Tag -->
+        <div class="square-chip">
+          <span class="square-chip-dot"></span>
+          <span>OUR JOURNEY</span>
+        </div>
+
+        <h2 class="prog-section-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #FFFFFF; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 1rem;">Timeline of Impact</h2>
+        <p class="prog-section-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 1.05rem; line-height: 1.7; max-width: 650px; margin: 0 auto;">
           From our first session to nationwide expansion &mdash; key milestones in the Navigo Nepal story.
         </p>
       </div>
 
       <div class="prog-cta-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
-        <div class="glass-panel glass-panel-hover prog-cta-card" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-md); transition: all 0.4s ease;">
-          <div class="prog-cta-icon" style="width: 56px; height: 56px; border-radius: var(--radius-md); background: rgba(37, 99, 235, 0.1); color: #2563EB; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+        <div class="premium-card">
+          <div class="prog-cta-icon" style="width: 56px; height: 56px; border-radius: 8px; background: rgba(37, 99, 235, 0.15); color: #2563EB; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
@@ -832,47 +1002,47 @@
               <line x1="3" y1="10" x2="21" y2="10" />
             </svg>
           </div>
-          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: var(--text-main); margin-bottom: 1rem;">January 2024</h3>
-          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
+          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: #FFFFFF; margin-bottom: 1rem;">January 2024</h3>
+          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 0.95rem; line-height: 1.7;">
             Project planning begins. First preliminary survey conducted on 100+ students across different districts
             and schools to understand their learning challenges.
           </p>
         </div>
 
-        <div class="glass-panel glass-panel-hover prog-cta-card" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-md); transition: all 0.4s ease;">
-          <div class="prog-cta-icon prog-cta-icon--green" style="width: 56px; height: 56px; border-radius: var(--radius-md); background: rgba(16, 185, 129, 0.1); color: #10B981; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+        <div class="premium-card">
+          <div class="prog-cta-icon" style="width: 56px; height: 56px; border-radius: 8px; background: rgba(16, 185, 129, 0.15); color: #10B981; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
               <path d="M6 12v5c3 3 9 3 12 0v-5" />
             </svg>
           </div>
-          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: var(--text-main); margin-bottom: 1rem;">April 2024</h3>
-          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
+          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: #FFFFFF; margin-bottom: 1rem;">April 2024</h3>
+          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 0.95rem; line-height: 1.7;">
             What's Next? campaign launches in Nuwakot and Dhading. First personality development sessions conducted
             with students.
           </p>
         </div>
 
-        <div class="glass-panel glass-panel-hover prog-cta-card" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-md); transition: all 0.4s ease;">
-          <div class="prog-cta-icon prog-cta-icon--purple" style="width: 56px; height: 56px; border-radius: var(--radius-md); background: rgba(79, 156, 249, 0.1); color: #4F9CF9; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+        <div class="premium-card">
+          <div class="prog-cta-icon" style="width: 56px; height: 56px; border-radius: 8px; background: rgba(79, 156, 249, 0.15); color: #4F9CF9; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
               <circle cx="9" cy="7" r="4" />
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M23 21v-2a4 4 0 0 3-3.87" />
               <path d="M16 3.13a4 4 0 0 1 0 7.75" />
             </svg>
           </div>
-          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: var(--text-main); margin-bottom: 1rem;">June 2024</h3>
-          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
+          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: #FFFFFF; margin-bottom: 1rem;">June 2024</h3>
+          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 0.95rem; line-height: 1.7;">
             USAID Clean Air and UNICEF collaboration for World Environment Day. Partnership with Gurubaa officially
             announced. Call for volunteers opens.
           </p>
         </div>
 
-        <div class="glass-panel glass-panel-hover prog-cta-card" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-md); transition: all 0.4s ease;">
-          <div class="prog-cta-icon" style="width: 56px; height: 56px; border-radius: var(--radius-md); background: rgba(244, 162, 97, 0.1); color: #F4A261; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+        <div class="premium-card">
+          <div class="prog-cta-icon" style="width: 56px; height: 56px; border-radius: 8px; background: rgba(244, 162, 97, 0.15); color: #F4A261; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10" />
@@ -880,15 +1050,15 @@
               <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
             </svg>
           </div>
-          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: var(--text-main); margin-bottom: 1rem;">July 2024</h3>
-          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
+          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: #FFFFFF; margin-bottom: 1rem;">July 2024</h3>
+          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 0.95rem; line-height: 1.7;">
             Partnership with AIESEC for World's Largest Lesson. What's Next? expands to Banke and Kathmandu.
             Nationwide expansion begins.
           </p>
         </div>
 
-        <div class="glass-panel glass-panel-hover prog-cta-card" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-md); transition: all 0.4s ease;">
-          <div class="prog-cta-icon prog-cta-icon--green" style="width: 56px; height: 56px; border-radius: var(--radius-md); background: rgba(16, 185, 129, 0.1); color: #10B981; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+        <div class="premium-card">
+          <div class="prog-cta-icon" style="width: 56px; height: 56px; border-radius: 8px; background: rgba(16, 185, 129, 0.15); color: #10B981; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
@@ -896,8 +1066,8 @@
               <line x1="12" y1="22.08" x2="12" y2="12" />
             </svg>
           </div>
-          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: var(--text-main); margin-bottom: 1rem;">2025 &amp; Beyond</h3>
-          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
+          <h3 class="prog-cta-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.3rem; color: #FFFFFF; margin-bottom: 1rem;">2025 &amp; Beyond</h3>
+          <p class="prog-cta-desc" style="font-family: 'Inter', sans-serif; color: #A0B7D5; font-size: 0.95rem; line-height: 1.7;">
             Continuing nationwide expansion, launching new programs including Connect Tech to Veda, and reaching
             35+ districts across Nepal with tailored educational content.
           </p>
