@@ -7307,6 +7307,36 @@ select.form-control {
 
 
 
+/* --- Lead Coordinator Centered Layout --- */
+.nv-coord-lead-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.nv-coord-lead-wrap .nv-coord-card {
+  width: calc((100% - 3rem) / 4);
+}
+
+@media (max-width: 1024px) {
+  .nv-coord-lead-wrap .nv-coord-card {
+    width: calc((100% - 1rem) / 2);
+  }
+}
+
+@media (max-width: 640px) {
+  .nv-coord-lead-wrap .nv-coord-card {
+    width: calc((100% - 0.75rem) / 2);
+  }
+}
+
+@media (max-width: 380px) {
+  .nv-coord-lead-wrap .nv-coord-card {
+    width: 100%;
+  }
+}
+
 /* --- Grid Layout — 4 cards per row --- */
 .nv-coord-grid {
   display: grid;
