@@ -114,7 +114,7 @@ body {
 
 /* Page Load Animation */
 body.loading {
-  opacity: 0;
+  opacity: 1;
 }
 
 body.loaded {

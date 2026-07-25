@@ -1341,30 +1341,74 @@ img {
   border-radius: 0px !important;
 }
 
-/* Top Banner Announcement */
+/* Top Banner Announcement (Pure Black Theme) */
 .top-announcement-bar {
-  background: linear-gradient(90deg, #F4A261 0%, #F59E0B 100%);
-  color: #0A0A0A !important;
+  background: #000000 !important;
+  color: #F4A261 !important;
   font-family: 'Inter', sans-serif;
   font-size: 0.84rem;
   font-weight: 600;
   padding: 0.45rem 1rem;
   text-align: center;
   letter-spacing: 0.02em;
-  box-shadow: 0 2px 10px rgba(245, 158, 11, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .top-announcement-bar span {
-  color: #0A0A0A !important;
+  color: #F4A261 !important;
 }
 
-/* Hero Section with Grid & Background Overlay */
-.hero-ref-section {
-  background: linear-gradient(180deg, rgba(6, 23, 47, 0.90) 0%, rgba(10, 35, 66, 0.95) 100%), 
+/* Pure Black Navbar Overrides */
+.navbar {
+  background: rgba(10, 10, 10, 0.95) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+}
+
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.98) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8) !important;
+}
+
+.navbar .nav-link {
+  color: #FFFFFF !important;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #4F9CF9 !important;
+}
+
+.navbar .chevron-icon {
+  stroke: #FFFFFF !important;
+}
+
+/* Pitch Pure Black Hero Section & Universal Subpage Hero */
+.hero-ref-section,
+.prog-hero {
+  background: linear-gradient(180deg, rgba(10, 10, 10, 0.92) 0%, rgba(10, 10, 10, 0.97) 100%), 
               url('../assets/program.jpg') center/cover no-repeat !important;
   position: relative;
-  padding: 6.5rem 0 5.5rem;
+  padding: 7.5rem 0 5.5rem;
   overflow: hidden;
+}
+
+.prog-hero-title,
+.ref-hero-title {
+  font-family: 'Bebas Neue', sans-serif !important;
+  font-size: clamp(3rem, 6.5vw, 5.2rem) !important;
+  font-weight: 400 !important;
+  color: #FFFFFF !important;
+  line-height: 1.05 !important;
+  letter-spacing: 0.03em !important;
+  text-transform: uppercase !important;
+  margin-bottom: 1.25rem !important;
+}
+
+.prog-hero-accent {
+  color: #F4A261 !important;
+  font-family: inherit !important;
 }
 
 .ref-grid-lines {
@@ -1762,4 +1806,138 @@ img {
   font-weight: 700;
   font-family: 'Inter', sans-serif !important;
   margin-top: 1rem;
+}
+
+/* ==================== DARK / LIGHT ALTERNATING SECTION COMBO ==================== */
+
+/* DARK SECTION STYLES (PURE BLACK) */
+.prog-section-dark {
+  position: relative;
+  overflow: hidden;
+  background: #0A0A0A !important;
+  color: #FFFFFF !important;
+  padding: 6.5rem 0 5.5rem;
+}
+
+.prog-section-dark .prog-section-title,
+.prog-section-dark .prog-subtitle {
+  color: #FFFFFF !important;
+}
+
+.prog-section-dark .prog-text-block p {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.prog-section-dark .prog-sidebar-card {
+  background: #141414 !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-left: 4px solid var(--accent-color) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+.prog-section-dark .prog-sidebar-card h4 {
+  color: #FFFFFF !important;
+}
+
+.prog-section-dark .prog-sidebar-card ul li {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.prog-section-dark .prog-info-box {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-left: 4px solid #F4A261 !important;
+}
+
+.prog-section-dark .prog-info-box p {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.prog-section-dark .prog-cta-card {
+  background: #141414 !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+.prog-section-dark .prog-cta-title {
+  color: #FFFFFF !important;
+}
+
+.prog-section-dark .prog-cta-desc {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* LIGHT SECTION STYLES */
+.white-bg-section {
+  position: relative;
+  overflow: hidden;
+  background: #FFFFFF !important;
+  color: #0A2342 !important;
+  padding: 6.5rem 0 5.5rem;
+}
+
+.white-bg-section .prog-section-title,
+.white-bg-section .prog-subtitle {
+  color: #0A2342 !important;
+}
+
+.white-bg-section .prog-section-desc {
+  color: #64748B !important;
+}
+
+.white-bg-section .prog-text-block p {
+  color: #475569 !important;
+}
+
+.white-bg-section .prog-sidebar-card {
+  background: #F8FBFF !important;
+  border: 1px solid rgba(10, 35, 66, 0.1) !important;
+  border-left: 4px solid var(--accent-color) !important;
+  box-shadow: 0 10px 30px rgba(10, 35, 66, 0.05) !important;
+}
+
+.white-bg-section .prog-sidebar-card h4 {
+  color: #0A2342 !important;
+}
+
+.white-bg-section .prog-sidebar-card ul li {
+  color: #64748B !important;
+}
+
+.white-bg-section .prog-info-box {
+  background: #FFFBF5 !important;
+  border: 1px solid rgba(244, 162, 97, 0.25) !important;
+  border-left: 4px solid #F4A261 !important;
+}
+
+.white-bg-section .prog-info-box p {
+  color: #0A2342 !important;
+}
+
+.white-bg-section .prog-timeline-content {
+  background: #F8FBFF !important;
+  border: 1px solid rgba(10, 35, 66, 0.1) !important;
+  box-shadow: 0 6px 20px rgba(10, 35, 66, 0.05) !important;
+}
+
+.white-bg-section .prog-timeline-title {
+  color: #0A2342 !important;
+}
+
+.white-bg-section .prog-timeline-content p {
+  color: #64748B !important;
+}
+
+.white-bg-section .prog-cta-card {
+  background: #F8FBFF !important;
+  border: 1px solid rgba(10, 35, 66, 0.1) !important;
+  box-shadow: 0 10px 30px rgba(10, 35, 66, 0.05) !important;
+}
+
+.white-bg-section .prog-cta-title {
+  color: #0A2342 !important;
+}
+
+.white-bg-section .prog-cta-desc {
+  color: #64748B !important;
 }
