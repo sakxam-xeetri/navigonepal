@@ -19,6 +19,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const newCardForm = document.getElementById('newCardForm');
   const printAllBtn = document.getElementById('printAllBtn');
 
+  // Check for direct member lookup URL parameters (e.g., ?id=NVG-2026-005)
+  const urlParams = new URLSearchParams(window.location.search);
+  const paramId = urlParams.get('id') || urlParams.get('search') || urlParams.get('member');
+  if (paramId) {
+    searchQuery = paramId.trim().toLowerCase();
+    if (searchInput) searchInput.value = paramId.trim();
+  }
+
   // Fetch Member Data
   fetch('members.json')
     .then(response => {
@@ -80,10 +88,11 @@ document.addEventListener('DOMContentLoaded', () => {
     wrapper.style.width = '100%';
     wrapper.style.maxWidth = '350px';
 
-    // Official Member Profile Verification & Validity QR Code (White QR modules on dark background, borderless)
-    const profileQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(`https://navigonepal.org/verify?id=${member.id}&name=${encodeURIComponent(member.name)}&post=${encodeURIComponent(member.post)}&status=VALID_MEMBER`)}&color=FFFFFF&bgcolor=121418`;
+    // Official Member Profile Verification & Validity QR Code
+    const verifyTargetUrl = `https://navigonepal.org/id-cards/verify.html?id=${encodeURIComponent(member.id)}&name=${encodeURIComponent(member.name)}&post=${encodeURIComponent(member.post)}`;
+    const profileQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(verifyTargetUrl)}&color=FFFFFF&bgcolor=121418`;
     // Member verification QR code for back side
-    const memberQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(`https://navigonepal.org/verify?id=${member.id}&name=${encodeURIComponent(member.name)}`)}&color=0F172A`;
+    const memberQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(verifyTargetUrl)}&color=0F172A`;
 
     wrapper.innerHTML = `
       <div class="card-wrapper" id="card-${member.id}">
@@ -242,7 +251,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Print Single Card
   function printSingleCard(member) {
     const printWindow = window.open('', '_blank');
-    const profileQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(`https://navigonepal.org/verify?id=${member.id}&name=${encodeURIComponent(member.name)}&post=${encodeURIComponent(member.post)}&status=VALID_MEMBER`)}&color=0F172A`;
+    const verifyTargetUrl = `https://navigonepal.org/id-cards/verify.html?id=${encodeURIComponent(member.id)}&name=${encodeURIComponent(member.name)}&post=${encodeURIComponent(member.post)}`;
+    const profileQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(verifyTargetUrl)}&color=0F172A`;
 
     printWindow.document.write(`
       <!DOCTYPE html>

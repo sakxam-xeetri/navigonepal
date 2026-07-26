@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Official Member Profile Verification — Navigo Nepal</title>
+  <meta name="description"
+    content="Official member identity document and digital profile verification page for Navigo Nepal team members.">
+  <link rel="icon" type="image/jpeg" href="assets/navigo logo.jpg">
+  <link rel="stylesheet" href="id-cards/id-card-styles.css">
+
+  <style>
+    .verify-container {
+      max-width: 540px;
+      margin: 3rem auto;
+      padding: 0 1.25rem;
+    }
+
+    .verify-card {
+      background: #121418;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+      text-align: center;
+      position: relative;
+    }
+
+    .verify-header-banner {
+      background: #FFFFFF;
+      padding: 1.5rem 1.5rem 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    .verify-header-banner img {
+      height: 48px;
+      width: auto;
+    }
+
+    .verify-header-brand {
+      text-align: left;
+    }
+
+    .verify-header-brand h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: #0F172A;
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+    }
+
+    .verify-header-brand p {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #D97706;
+      letter-spacing: 0.08em;
+    }
+
+    .verify-status-bar {
+      background: #064E3B;
+      color: #34D399;
+      padding: 0.65rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(52, 211, 153, 0.2);
+    }
+
+    .verify-status-bar svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .verify-body {
+      padding: 2rem 1.75rem;
+    }
+
+    .verify-avatar-wrap {
+      width: 110px;
+      height: 110px;
+      margin: 0 auto 1.25rem auto;
+      border-radius: 50%;
+      padding: 4px;
+      background: linear-gradient(135deg, #F59E0B, #D97706);
+      box-shadow: 0 10px 25px rgba(217, 119, 6, 0.4);
+    }
+
+    .verify-avatar-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #1E293B;
+      border: 3px solid #121418;
+    }
+
+    .verify-name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 0.4rem;
+    }
+
+    .verify-badge {
+      display: inline-block;
+      background: #D97706;
+      color: #FFFFFF;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 0.35rem 1.2rem;
+      border-radius: 6px;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    .verify-details-list {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 1.25rem;
+      text-align: left;
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .verify-detail-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .verify-detail-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .verify-detail-label {
+      color: #94A3B8;
+      font-weight: 600;
+    }
+
+    .verify-detail-value {
+      color: #F8FAFC;
+      font-weight: 700;
+      word-break: break-all;
+    }
+
+    .verify-actions {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP PORTAL HEADER -->
+  <header class="id-portal-header">
+    <div class="id-header-container">
+      <a href="index.html" class="id-brand">
+        <img src="assets/navigo logo.png" alt="Navigo Nepal Logo">
+        <div class="id-brand-text">
+          <h1>NAVIGO NEPAL</h1>
+          <p>Official Member Profile Verification</p>
+        </div>
+      </a>
+
+      <div class="id-header-actions">
+        <a href="id-cards/index.html" class="btn-nvg btn-nvg-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+          Member ID Portal
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="verify-container">
+    <div class="verify-card" id="profileCard">
+
+      <div class="verify-header-banner">
+        <img src="assets/navigo logo.png" alt="Navigo Nepal">
+        <div class="verify-header-brand">
+          <h2>NAVIGO NEPAL</h2>
+          <p>YOUTH EDUCATIONAL CATALYST</p>
+        </div>
+      </div>
+
+      <div class="verify-status-bar">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path fill-rule="evenodd"
+            d="M8.603 3.799A4.49 4.49 0 0112 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 013.498 1.307 4.491 4.491 0 011.307 3.497A4.49 4.49 0 0121.75 12a4.49 4.49 0 01-1.549 3.397 4.491 4.491 0 01-1.307 3.498 4.491 4.491 0 01-3.497 1.307A4.49 4.49 0 0112 21.75a4.49 4.49 0 01-3.397-1.549 4.49 4.49 0 01-3.498-1.307 4.491 4.491 0 01-1.307-3.497A4.49 4.49 0 012.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 011.307-3.498 4.491 4.491 0 013.497-1.307zm7.007 6.387a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+            clip-rule="evenodd" />
+        </svg>
+        <span>OFFICIAL VERIFIED MEMBER</span>
+      </div>
+
+      <div class="verify-body">
+        <div class="verify-avatar-wrap">
+          <img id="vPhoto" src="assets/members/placeholder.svg" class="verify-avatar-img" alt="Member Photo"
+            onerror="this.src='assets/members/placeholder.svg'">
+        </div>
+
+        <h1 class="verify-name" id="vName">Loading Profile...</h1>
+        <div class="verify-badge" id="vPost">Member</div>
+
+        <div class="verify-details-list">
+          <div class="verify-detail-row">
+            <span class="verify-detail-label">Member ID No</span>
+            <span class="verify-detail-value" id="vId">NVG-2026-000</span>
+          </div>
+          <div class="verify-detail-row">
+            <span class="verify-detail-label">Category</span>
+            <span class="verify-detail-value" id="vCategory">Core Team</span>
+          </div>
+          <div class="verify-detail-row">
+            <span class="verify-detail-label">Official Email</span>
+            <span class="verify-detail-value" id="vEmail">email@navigonepal.org</span>
+          </div>
+          <div class="verify-detail-row">
+            <span class="verify-detail-label">Phone Number</span>
+            <span class="verify-detail-value" id="vPhone">+977 98XXXXXXXX</span>
+          </div>
+          <div class="verify-detail-row">
+            <span class="verify-detail-label">Verification Status</span>
+            <span class="verify-detail-value" style="color: #34D399;">Active &amp; Authenticated</span>
+          </div>
+        </div>
+
+        <div class="verify-actions">
+          <a id="vPortalLink" href="id-cards/index.html" class="btn-nvg btn-nvg-secondary">
+            View Card on ID Portal
+          </a>
+          <a href="team.html" class="btn-nvg btn-nvg-outline">
+            Navigo Team Directory
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Script to dynamic populate member details -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const memberId = urlParams.get('id');
+      const paramName = urlParams.get('name');
+      const paramPost = urlParams.get('post');
+
+      const vName = document.getElementById('vName');
+      const vPost = document.getElementById('vPost');
+      const vId = document.getElementById('vId');
+      const vCategory = document.getElementById('vCategory');
+      const vEmail = document.getElementById('vEmail');
+      const vPhone = document.getElementById('vPhone');
+      const vPhoto = document.getElementById('vPhoto');
+      const vPortalLink = document.getElementById('vPortalLink');
+
+      if (memberId) {
+        vPortalLink.href = `id-cards/index.html?id=${encodeURIComponent(memberId)}`;
+      }
+
+      fetch('id-cards/members.json')
+        .then(res => res.json())
+        .then(members => {
+          const found = members.find(m => m.id === memberId || (paramName && m.name.toLowerCase() === paramName.toLowerCase()));
+          if (found) {
+            vName.textContent = found.name;
+            vPost.textContent = found.post;
+            vId.textContent = found.id;
+            vCategory.textContent = found.category || 'Member';
+            vEmail.textContent = found.email || 'N/A';
+            vPhone.textContent = found.phone || 'N/A';
+            if (found.photo) vPhoto.src = found.photo.replace('../', '');
+            document.title = `${found.name} — Verified Member Profile | Navigo Nepal`;
+          } else {
+            useUrlFallbacks();
+          }
+        })
+        .catch(() => useUrlFallbacks());
+
+      function useUrlFallbacks() {
+        if (paramName) vName.textContent = decodeURIComponent(paramName);
+        if (paramPost) vPost.textContent = decodeURIComponent(paramPost);
+        if (memberId) vId.textContent = memberId;
+      }
+    });
+  </script>
+
+</body>
+
+</html>
