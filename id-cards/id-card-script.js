@@ -1,5 +1,5 @@
 /* ============================================================
-   Navigo Nepal — Official Member ID Card Generator Logic
+   Navigo Nepal — Executive Member ID Card Generator Script
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -58,12 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (filtered.length === 0) {
       cardsContainer.innerHTML = `
         <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 1rem; color: #94A3B8;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin-bottom: 1rem; opacity: 0.5;">
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-          </svg>
           <p style="font-size: 1.1rem; font-weight: 600;">No member cards found matching "${searchQuery}"</p>
-          <p style="font-size: 0.85rem; opacity: 0.8; margin-top: 0.25rem;">Try adjusting your search terms or filter criteria.</p>
         </div>
       `;
       return;
@@ -83,9 +78,10 @@ document.addEventListener('DOMContentLoaded', () => {
     wrapper.style.flexDirection = 'column';
     wrapper.style.alignItems = 'center';
 
-    // QR Code URL (using Google Charts API QR generator for high clarity)
-    const qrText = encodeURIComponent(`https://navigonepal.org/verify?id=${member.id}&name=${encodeURIComponent(member.name)}`);
-    const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${qrText}&color=0A2342`;
+    // Official Navigo Nepal Website QR Code
+    const websiteQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fnavigonepal.org&color=0F172A`;
+    // Member verification QR code for back side
+    const memberQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(`https://navigonepal.org/verify?id=${member.id}&name=${encodeURIComponent(member.name)}`)}&color=0F172A`;
 
     wrapper.innerHTML = `
       <div class="card-wrapper" id="card-${member.id}">
@@ -93,85 +89,103 @@ document.addEventListener('DOMContentLoaded', () => {
           
           <!-- FRONT FACE -->
           <div class="card-face card-front">
-            <div class="card-header-bg">
-              <div class="card-top-row">
-                <img src="../assets/navigo logo.png" alt="Navigo Nepal" class="card-org-logo" onerror="this.src='../assets/png_new_logo.png'">
-                <span class="card-badge-type">${member.category || 'MEMBER'}</span>
+            
+            <!-- Top White Header (No Text Overlap) -->
+            <div class="ref-header-top">
+              <img src="../assets/navigo logo.png" alt="Navigo Nepal" class="ref-header-logo" onerror="this.src='../assets/png_new_logo.png'">
+              <div class="ref-header-brand">
+                NAVIGO NEPAL
+                <span>YOUTH EDUCATIONAL CATALYST</span>
               </div>
             </div>
 
-            <div class="card-photo-container">
-              <div class="card-photo-frame">
-                <img src="${member.photo || '../assets/members/placeholder.svg'}" alt="${member.name}" onerror="this.src='../assets/members/placeholder.svg'">
-              </div>
+            <!-- Geometric Wing Side Accents -->
+            <div class="ref-wings-container">
+              <div class="ref-wing-left"></div>
+              <div class="ref-wing-right"></div>
             </div>
 
-            <div class="card-body-content">
-              <h2 class="card-member-name">${member.name}</h2>
-              <span class="card-member-post">${member.post}</span>
-
-              <div class="card-info-grid">
-                <div class="card-info-item">
-                  <span class="card-info-label">MEMBER ID</span>
-                  <span class="card-info-val">${member.id}</span>
-                </div>
-                <div class="card-info-item">
-                  <span class="card-info-label">BLOOD GROUP</span>
-                  <span class="card-info-val">${member.bloodGroup || 'N/A'}</span>
-                </div>
-                <div class="card-info-item">
-                  <span class="card-info-label">PHONE</span>
-                  <span class="card-info-val" title="${member.phone || ''}">${member.phone || 'N/A'}</span>
-                </div>
-                <div class="card-info-item">
-                  <span class="card-info-label">VALID TILL</span>
-                  <span class="card-info-val">${member.validTill || '2028-01-15'}</span>
-                </div>
-                <div class="card-info-item" style="grid-column: span 2;">
-                  <span class="card-info-label">EMAIL</span>
-                  <span class="card-info-val" title="${member.email || ''}">${member.email || 'info@navigonepal.org'}</span>
+            <!-- Center Circular Avatar Frame -->
+            <div class="ref-avatar-container">
+              <div class="ref-avatar-ring">
+                <div class="ref-avatar-img-wrap">
+                  <img src="${member.photo || '../assets/members/placeholder.svg'}" alt="${member.name}" onerror="this.src='../assets/members/placeholder.svg'">
                 </div>
               </div>
             </div>
 
-            <div class="card-footer-strip">
-              <span>NAVIGO NEPAL</span>
-              <div class="hologram-seal" title="Official Verified Badge">NVG</div>
-              <span>OFFICIAL ID</span>
+            <!-- Dark Body Main Content -->
+            <div class="ref-body-content">
+              <h2 class="ref-member-name">${member.name}</h2>
+              <div class="ref-designation-badge">${member.post}</div>
+
+              <!-- Left-Aligned Key-Value Info List (Full Email, No Truncation) -->
+              <div class="ref-info-table">
+                <div class="ref-info-row">
+                  <span class="ref-info-key">ID No</span>
+                  <span class="ref-info-colon">:</span>
+                  <span class="ref-info-val">${member.id}</span>
+                </div>
+                <div class="ref-info-row">
+                  <span class="ref-info-key">Email</span>
+                  <span class="ref-info-colon">:</span>
+                  <span class="ref-info-val">${member.email || 'N/A'}</span>
+                </div>
+                <div class="ref-info-row">
+                  <span class="ref-info-key">Social</span>
+                  <span class="ref-info-colon">:</span>
+                  <span class="ref-info-val">${member.social || '@navigonepal'}</span>
+                </div>
+                <div class="ref-info-row">
+                  <span class="ref-info-key">Phone</span>
+                  <span class="ref-info-colon">:</span>
+                  <span class="ref-info-val">${member.phone || 'N/A'}</span>
+                </div>
+              </div>
+
+              <!-- Footer Website QR Code Box -->
+              <div class="ref-qr-container">
+                <div class="ref-qr-box">
+                  <img src="${websiteQrUrl}" alt="Navigo Nepal Website QR">
+                </div>
+                <div class="ref-qr-text-wrap">
+                  <span class="ref-qr-title">SCAN TO VISIT WEBSITE</span>
+                  <span class="ref-qr-url">navigonepal.org</span>
+                </div>
+              </div>
             </div>
+
           </div>
 
           <!-- BACK FACE -->
           <div class="card-face card-back">
-            <div class="card-back-header"></div>
-            
-            <div class="card-back-body">
-              <div class="card-terms">
-                <strong>PROPERTY OF NAVIGO NEPAL</strong><br>
-                This card is non-transferable and remains the official property of Navigo Nepal. If found, please return to: Navigo Nepal HQ, Kathmandu, Nepal.
+            <div class="ref-back-header">
+              <img src="../assets/navigo logo.png" style="height: 32px;" onerror="this.src='../assets/png_new_logo.png'">
+              <span style="font-weight: 800; font-size: 0.85rem; color: #0F172A;">NAVIGO NEPAL</span>
+            </div>
+
+            <div class="ref-back-body">
+              <div class="ref-back-terms">
+                <strong>TERMS & CONDITIONS</strong><br>
+                This card is non-transferable and remains official property of Navigo Nepal. If lost and found, please return to: Navigo Nepal HQ, Kathmandu, Nepal.
               </div>
 
-              <div class="card-qr-section">
-                <div class="card-qr-code">
-                  <img src="${qrUrl}" alt="Verification QR Code">
+              <div class="ref-back-qr-row">
+                <div class="ref-back-qr">
+                  <img src="${memberQrUrl}" alt="Member QR Code">
                 </div>
-                <div class="card-sign-box">
-                  <span class="card-signature">Navigo Nepal</span>
-                  <div class="card-sign-line"></div>
-                  <span class="card-sign-title">AUTHORIZED SIGNATURE</span>
+                <div class="ref-back-sign">
+                  <span class="ref-sign-text">Navigo Nepal</span>
+                  <div class="ref-sign-line"></div>
+                  <span class="ref-sign-title">AUTHORIZED SIGNATURE</span>
                 </div>
               </div>
 
               <div>
-                <div style="font-size: 0.65rem; color: #64748B; font-weight: 600;">EMERGENCY CONTACT</div>
-                <div style="font-size: 0.75rem; font-weight: 700; color: #0A2342;">${member.emergencyContact || member.phone || '+977 980-0000000'}</div>
-                <div class="card-barcode">*${member.id}*</div>
+                <div style="font-size: 0.7rem; color: #94A3B8; font-weight: 600;">EMERGENCY CONTACT</div>
+                <div style="font-size: 0.85rem; font-weight: 700; color: #F8FAFC;">${member.phone || '+977 980-0000000'}</div>
+                <div style="font-size: 0.75rem; color: #D97706; font-weight: 700; margin-top: 0.25rem;">www.navigonepal.org</div>
               </div>
-            </div>
-
-            <div class="card-footer-strip">
-              <span>WWW.NAVIGONEPAL.ORG</span>
-              <span>EST. 2026</span>
             </div>
           </div>
 
@@ -221,8 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Print Single Card
   function printSingleCard(member) {
     const printWindow = window.open('', '_blank');
-    const qrText = encodeURIComponent(`https://navigonepal.org/verify?id=${member.id}&name=${encodeURIComponent(member.name)}`);
-    const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${qrText}&color=0A2342`;
+    const websiteQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fnavigonepal.org&color=0F172A`;
 
     printWindow.document.write(`
       <!DOCTYPE html>
@@ -239,63 +252,39 @@ document.addEventListener('DOMContentLoaded', () => {
       <body>
         <div class="card-wrapper">
           <div class="card-face card-front" style="position:relative;">
-            <div class="card-header-bg">
-              <div class="card-top-row">
-                <img src="../assets/navigo logo.png" class="card-org-logo">
-                <span class="card-badge-type">${member.category || 'MEMBER'}</span>
+            <div class="ref-header-top">
+              <img src="../assets/navigo logo.png" class="ref-header-logo">
+              <div class="ref-header-brand">NAVIGO NEPAL<span>YOUTH EDUCATIONAL CATALYST</span></div>
+            </div>
+            <div class="ref-wings-container">
+              <div class="ref-wing-left"></div>
+              <div class="ref-wing-right"></div>
+            </div>
+            <div class="ref-avatar-container">
+              <div class="ref-avatar-ring">
+                <div class="ref-avatar-img-wrap"><img src="${member.photo || '../assets/members/placeholder.svg'}"></div>
               </div>
             </div>
-            <div class="card-photo-container">
-              <div class="card-photo-frame">
-                <img src="${member.photo || '../assets/members/placeholder.svg'}">
+            <div class="ref-body-content">
+              <h2 class="ref-member-name">${member.name}</h2>
+              <div class="ref-designation-badge">${member.post}</div>
+              <div class="ref-info-table">
+                <div class="ref-info-row"><span class="ref-info-key">ID No</span><span class="ref-info-colon">:</span><span class="ref-info-val">${member.id}</span></div>
+                <div class="ref-info-row"><span class="ref-info-key">Email</span><span class="ref-info-colon">:</span><span class="ref-info-val">${member.email || 'N/A'}</span></div>
+                <div class="ref-info-row"><span class="ref-info-key">Social</span><span class="ref-info-colon">:</span><span class="ref-info-val">${member.social || '@navigonepal'}</span></div>
+                <div class="ref-info-row"><span class="ref-info-key">Phone</span><span class="ref-info-colon">:</span><span class="ref-info-val">${member.phone || 'N/A'}</span></div>
+              </div>
+              <div class="ref-qr-container">
+                <div class="ref-qr-box"><img src="${websiteQrUrl}"></div>
+                <div class="ref-qr-text-wrap"><span class="ref-qr-title">SCAN TO VISIT WEBSITE</span><span class="ref-qr-url">navigonepal.org</span></div>
               </div>
             </div>
-            <div class="card-body-content">
-              <h2 class="card-member-name">${member.name}</h2>
-              <span class="card-member-post">${member.post}</span>
-              <div class="card-info-grid">
-                <div class="card-info-item"><span class="card-info-label">MEMBER ID</span><span class="card-info-val">${member.id}</span></div>
-                <div class="card-info-item"><span class="card-info-label">BLOOD GROUP</span><span class="card-info-val">${member.bloodGroup || 'N/A'}</span></div>
-                <div class="card-info-item"><span class="card-info-label">PHONE</span><span class="card-info-val">${member.phone || 'N/A'}</span></div>
-                <div class="card-info-item"><span class="card-info-label">VALID TILL</span><span class="card-info-val">${member.validTill || '2028-01-15'}</span></div>
-                <div class="card-info-item" style="grid-column: span 2;"><span class="card-info-label">EMAIL</span><span class="card-info-val">${member.email || ''}</span></div>
-              </div>
-            </div>
-            <div class="card-footer-strip"><span>NAVIGO NEPAL</span><div class="hologram-seal">NVG</div><span>OFFICIAL ID</span></div>
-          </div>
-        </div>
-
-        <div class="card-wrapper">
-          <div class="card-face card-back" style="position:relative; transform:none;">
-            <div class="card-back-header"></div>
-            <div class="card-back-body">
-              <div class="card-terms">
-                <strong>PROPERTY OF NAVIGO NEPAL</strong><br>
-                This card is non-transferable and remains the official property of Navigo Nepal. Return to: Navigo Nepal HQ, Kathmandu, Nepal.
-              </div>
-              <div class="card-qr-section">
-                <div class="card-qr-code"><img src="${qrUrl}"></div>
-                <div class="card-sign-box">
-                  <span class="card-signature">Navigo Nepal</span>
-                  <div class="card-sign-line"></div>
-                  <span class="card-sign-title">AUTHORIZED SIGNATURE</span>
-                </div>
-              </div>
-              <div>
-                <div style="font-size: 0.65rem; color: #64748B; font-weight: 600;">EMERGENCY CONTACT</div>
-                <div style="font-size: 0.75rem; font-weight: 700; color: #0A2342;">${member.emergencyContact || member.phone || ''}</div>
-                <div class="card-barcode">*${member.id}*</div>
-              </div>
-            </div>
-            <div class="card-footer-strip"><span>WWW.NAVIGONEPAL.ORG</span><span>EST. 2026</span></div>
           </div>
         </div>
 
         <script>
           window.onload = function() {
-            setTimeout(function() {
-              window.print();
-            }, 500);
+            setTimeout(function() { window.print(); }, 500);
           }
         </script>
       </body>
@@ -323,12 +312,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Modal Control
-  if (addCardBtn) {
-    addCardBtn.addEventListener('click', () => addCardModal.classList.add('active'));
-  }
-  if (closeModalBtn) {
-    closeModalBtn.addEventListener('click', () => addCardModal.classList.remove('active'));
-  }
+  if (addCardBtn) addCardBtn.addEventListener('click', () => addCardModal.classList.add('active'));
+  if (closeModalBtn) closeModalBtn.addEventListener('click', () => addCardModal.classList.remove('active'));
   if (addCardModal) {
     addCardModal.addEventListener('click', (e) => {
       if (e.target === addCardModal) addCardModal.classList.remove('active');
@@ -348,18 +333,15 @@ document.addEventListener('DOMContentLoaded', () => {
         category: document.getElementById('memberCategory').value,
         phone: document.getElementById('memberPhone').value,
         email: document.getElementById('memberEmail').value,
-        bloodGroup: document.getElementById('memberBlood').value || 'O+',
-        photo: document.getElementById('memberPhoto').value || '../assets/members/placeholder.svg',
-        issueDate: new Date().toISOString().split('T')[0],
-        validTill: '2028-01-15',
-        emergencyContact: document.getElementById('memberPhone').value
+        social: '@navigonepal',
+        photo: document.getElementById('memberPhoto').value || '../assets/members/placeholder.svg'
       };
 
       membersData.unshift(newMember);
       renderCards();
       newCardForm.reset();
       addCardModal.classList.remove('active');
-      alert(`Member ID Card generated successfully for ${newMember.name} (ID: ${newMember.id})!`);
+      alert(`Member ID Card generated successfully for ${newMember.name}!`);
     });
   }
 
@@ -370,118 +352,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Fallback Embedded Data if JSON fetch fails in local file system without http server
+  // Fallback Embedded Data
   function getFallbackMembersData() {
     return [
-      {
-        "id": "NVG-2026-001",
-        "name": "Anupam Neupane",
-        "post": "Co-Founder & Executive Director",
-        "category": "Co-Founders",
-        "phone": "+977 980-1234567",
-        "email": "anupam.neupane@navigonepal.org",
-        "bloodGroup": "O+",
-        "photo": "../assets/169567052.jpg",
-        "validTill": "2028-01-15"
-      },
-      {
-        "id": "NVG-2026-004",
-        "name": "Prasoon Bhatta",
-        "post": "Operations/HR Head",
-        "category": "Core Team",
-        "phone": "+977 976-8422422",
-        "email": "prasoon.bhatta@navigonepal.org",
-        "bloodGroup": "O+",
-        "photo": "../assets/members/prasoon bhataa.jpeg",
-        "validTill": "2027-01-15"
-      },
       {
         "id": "NVG-2026-005",
         "name": "Sakshyam Bastakoti",
         "post": "IT/Media Head",
         "category": "Core Team",
-        "phone": "+977 976-3374079",
-        "email": "sakshyamxeetri@gmail.com",
-        "bloodGroup": "AB+",
-        "photo": "../assets/members/sakshyambastakoti.PNG",
-        "validTill": "2027-01-15"
-      },
-      {
-        "id": "NVG-2026-006",
-        "name": "Usnish Bajracharya",
-        "post": "Design & Editing Head",
-        "category": "Core Team",
-        "phone": "+977 981-3123920",
-        "email": "ushnish2022@gmail.com",
-        "bloodGroup": "O+",
-        "photo": "../assets/members/usinshish.jpeg",
-        "validTill": "2027-01-15"
-      },
-      {
-        "id": "NVG-2026-007",
-        "name": "Shalin Dahal (Sahil)",
-        "post": "Communication Head",
-        "category": "Core Team",
-        "phone": "+977 981-8277423",
-        "email": "samriddhidahal713@gmail.com",
-        "bloodGroup": "A+",
-        "photo": "../assets/members/shalin dahal.png",
-        "validTill": "2027-01-15"
-      },
-      {
-        "id": "NVG-2026-008",
-        "name": "Ansu Adhikari",
-        "post": "Executive Member",
-        "category": "Core Team",
-        "phone": "+977 976-2565335",
-        "email": "adhikariansu05@gmail.com",
-        "bloodGroup": "B+",
-        "photo": "../assets/members/anshu Adhkari.jpeg",
-        "validTill": "2027-01-15"
-      },
-      {
-        "id": "NVG-2026-009",
-        "name": "Abhi KC",
-        "post": "Documentation Head",
-        "category": "Core Team",
         "phone": "+977 976-4320750",
-        "email": "acedabhi.17@gmail.com",
-        "bloodGroup": "O+",
-        "photo": "../assets/members/avidaya kc.jpeg",
-        "validTill": "2027-01-15"
-      },
-      {
-        "id": "NVG-2026-010",
-        "name": "Prithivi Raj Poudel",
-        "post": "Research & Presentation Head",
-        "category": "Core Team",
-        "phone": "+977 981-8354090",
-        "email": "prithivi.poudel@navigonepal.org",
-        "bloodGroup": "A+",
-        "photo": "../assets/members/prithivi.png",
-        "validTill": "2027-01-15"
-      },
-      {
-        "id": "NVG-2026-011",
-        "name": "Sakshyam Bista",
-        "post": "Outreach Head",
-        "category": "Core Team",
-        "phone": "+977 976-3374079",
-        "email": "sakshyam.bista12@gmail.com",
-        "bloodGroup": "B+",
-        "photo": "../assets/members/sakshyam bisra.jpeg",
-        "validTill": "2027-01-15"
-      },
-      {
-        "id": "NVG-2026-012",
-        "name": "Gaurav Acharya",
-        "post": "Logistics Head",
-        "category": "Core Team",
-        "phone": "+977 976-8422422",
-        "email": "thegauravacharya1@gmail.com",
-        "bloodGroup": "O+",
-        "photo": "../assets/members/Gaurav_Acharya.png",
-        "validTill": "2027-01-15"
+        "email": "sakshyamxeetri@gmail.com",
+        "social": "@sakshyam.bastakoti",
+        "photo": "../assets/members/sakshyambastakoti.PNG"
       }
     ];
   }

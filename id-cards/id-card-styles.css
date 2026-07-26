@@ -1,24 +1,20 @@
 /* ============================================================
-   Navigo Nepal — Official Member ID Card System Styles
+   Navigo Nepal — Executive Member ID Card CSS (Refined & Perfected)
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Outfit:wght@500;600;700;800;900&family=Bebas+Neue&family=Libre+Barcode+128&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800;900&family=Outfit:wght@600;700;800;900&display=swap');
 
 :root {
-  --navy-dark: #06172F;
-  --navy-main: #0A2342;
-  --navy-light: #16365C;
-  --blue-accent: #2563EB;
-  --blue-sky: #4F9CF9;
-  --gold-accent: #F4A261;
-  --green-accent: #10B981;
-  --bg-page: #0B132B;
-  --bg-card-wrap: #1C2541;
-  --text-dark: #0A2342;
-  --text-muted: #64748B;
-  --border-light: rgba(10, 35, 66, 0.12);
-  --card-width: 320px;
-  --card-height: 510px;
+  --bg-page: #0F172A;
+  --card-width: 325px;
+  --card-height: 560px;
+  --card-dark: #121418;
+  --card-header-bg: #FFFFFF;
+  --accent-orange: #D97706;
+  --accent-orange-light: #F59E0B;
+  --accent-gray: #94A3B8;
+  --text-white: #FFFFFF;
+  --text-gray: #CBD5E1;
 }
 
 * {
@@ -30,22 +26,20 @@
 body {
   font-family: 'Inter', sans-serif;
   background-color: var(--bg-page);
-  color: #F0F6FF;
-  line-height: 1.5;
+  color: #F8FAFC;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* --- HEADER & NAVIGATION --- */
+/* --- PORTAL HEADER --- */
 .id-portal-header {
-  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-main) 100%);
-  border-bottom: 1px solid rgba(79, 156, 249, 0.2);
+  background: #090D16;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding: 1.25rem 2rem;
   position: sticky;
   top: 0;
   z-index: 100;
-  backdrop-filter: blur(12px);
 }
 
 .id-header-container {
@@ -66,27 +60,24 @@ body {
 }
 
 .id-brand img {
-  height: 44px;
+  height: 42px;
   width: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
 }
 
 .id-brand-text h1 {
   font-family: 'Outfit', sans-serif;
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-weight: 800;
   color: #FFFFFF;
   letter-spacing: -0.01em;
-  margin: 0;
 }
 
 .id-brand-text p {
-  font-size: 0.75rem;
-  color: var(--blue-sky);
+  font-size: 0.725rem;
+  color: var(--accent-orange-light);
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  margin: 0;
 }
 
 .id-header-actions {
@@ -107,19 +98,19 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
   text-decoration: none;
 }
 
 .btn-nvg-primary {
-  background: linear-gradient(135deg, var(--blue-accent) 0%, var(--blue-sky) 100%);
+  background: var(--accent-orange);
   color: #FFFFFF;
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.35);
+  box-shadow: 0 4px 15px rgba(217, 119, 6, 0.35);
 }
 
 .btn-nvg-primary:hover {
+  background: #B45309;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
 }
 
 .btn-nvg-secondary {
@@ -135,15 +126,15 @@ body {
 
 .btn-nvg-outline {
   background: transparent;
-  border-color: var(--blue-sky);
-  color: var(--blue-sky);
+  border-color: var(--accent-orange-light);
+  color: var(--accent-orange-light);
 }
 
 .btn-nvg-outline:hover {
-  background: rgba(79, 156, 249, 0.1);
+  background: rgba(245, 158, 11, 0.1);
 }
 
-/* --- MAIN CONTAINER & CONTROLS --- */
+/* --- MAIN & CONTROLS --- */
 .id-portal-main {
   max-width: 1400px;
   margin: 2rem auto;
@@ -153,7 +144,7 @@ body {
 }
 
 .id-controls-bar {
-  background: rgba(15, 23, 42, 0.6);
+  background: rgba(15, 23, 42, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: 1.25rem 1.5rem;
@@ -163,7 +154,6 @@ body {
   gap: 1.25rem;
   align-items: center;
   justify-content: space-between;
-  backdrop-filter: blur(8px);
 }
 
 .id-search-box {
@@ -181,12 +171,10 @@ body {
   color: #FFFFFF;
   font-size: 0.9rem;
   outline: none;
-  transition: border-color 0.2s ease;
 }
 
 .id-search-box input:focus {
-  border-color: var(--blue-sky);
-  box-shadow: 0 0 0 3px rgba(79, 156, 249, 0.2);
+  border-color: var(--accent-orange);
 }
 
 .id-search-box svg {
@@ -194,15 +182,13 @@ body {
   left: 0.85rem;
   top: 50%;
   transform: translateY(-50%);
-  color: var(--text-muted);
-  pointer-events: none;
+  color: #94A3B8;
 }
 
 .id-filter-tabs {
   display: flex;
   gap: 0.5rem;
   overflow-x: auto;
-  padding-bottom: 0.25rem;
 }
 
 .filter-tab {
@@ -215,29 +201,23 @@ body {
   border: 1px solid transparent;
   cursor: pointer;
   white-space: nowrap;
-  transition: all 0.2s ease;
-}
-
-.filter-tab:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #FFFFFF;
 }
 
 .filter-tab.active {
-  background: var(--blue-accent);
+  background: var(--accent-orange);
   color: #FFFFFF;
-  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
 }
 
-/* --- GRID OF ID CARDS --- */
 .id-cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-  gap: 2rem;
+  gap: 2.5rem 2rem;
   justify-items: center;
 }
 
-/* --- CARD FLIP WRAPPER --- */
+/* ============================================================
+   CARD 3D FLIP CONTAINER & EXACT REFERENCE STYLING
+   ============================================================ */
 .card-wrapper {
   perspective: 1000px;
   width: var(--card-width);
@@ -252,7 +232,7 @@ body {
   transform-style: preserve-3d;
   transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 16px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
 .card-wrapper.flipped .card-inner {
@@ -268,221 +248,262 @@ body {
   backface-visibility: hidden;
   border-radius: 16px;
   overflow: hidden;
-  background: #FFFFFF;
-  color: var(--text-dark);
+  background: var(--card-dark);
+  color: var(--text-white);
   display: flex;
   flex-direction: column;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .card-back {
   transform: rotateY(180deg);
-  background: #F8FAFC;
+  background: #11141A;
 }
 
-/* --- CARD FRONT CONTENT --- */
-.card-header-bg {
-  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-main) 60%, #0D3366 100%);
-  height: 140px;
-  padding: 1rem 1.25rem;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+/* --- CARD FRONT LAYOUT --- */
 
-.card-header-bg::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 24px;
+/* Top White Header Area */
+.ref-header-top {
   background: #FFFFFF;
-  clip-path: ellipse(55% 100% at 50% 100%);
-}
-
-.card-top-row {
+  height: 110px;
+  padding: 0.85rem 1rem 0 1rem;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.65rem;
+  position: relative;
   z-index: 2;
 }
 
-.card-org-logo {
-  height: 34px;
+.ref-header-logo {
+  height: 42px;
   width: auto;
-  border-radius: 6px;
-  background: #FFFFFF;
-  padding: 2px;
+  object-fit: contain;
+  margin-top: 2px;
 }
 
-.card-org-name {
+.ref-header-brand {
   font-family: 'Outfit', sans-serif;
-  font-size: 0.95rem;
   font-weight: 800;
-  color: #FFFFFF;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  color: #0F172A;
+  font-size: 1.15rem;
+  line-height: 1.15;
+  text-align: left;
+  letter-spacing: -0.01em;
 }
 
-.card-badge-type {
-  font-size: 0.65rem;
+.ref-header-brand span {
+  display: block;
+  font-size: 0.68rem;
+  color: #64748B;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  padding: 0.25rem 0.6rem;
-  border-radius: 20px;
-  background: rgba(79, 156, 249, 0.25);
-  color: #FFFFFF;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.04em;
+  margin-top: 2px;
 }
 
-/* AVATAR WRAPPER */
-.card-photo-container {
+/* Geometric Wing Accents Section */
+.ref-wings-container {
   position: absolute;
-  top: 65px;
+  top: 100px;
+  left: 0;
+  right: 0;
+  height: 70px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.ref-wing-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 95px;
+  height: 60px;
+  background: linear-gradient(135deg, #D97706 0%, #EA580C 100%);
+  clip-path: polygon(0 0, 100% 35%, 0 100%);
+}
+
+.ref-wing-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 95px;
+  height: 60px;
+  background: linear-gradient(135deg, #CBD5E1 0%, #94A3B8 100%);
+  clip-path: polygon(100% 0, 100% 100%, 0 35%);
+}
+
+/* Center Circular Avatar Frame - No Text Overlap */
+.ref-avatar-container {
+  position: absolute;
+  top: 55px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 5;
+  z-index: 10;
 }
 
-.card-photo-frame {
-  width: 110px;
-  height: 110px;
+.ref-avatar-ring {
+  width: 135px;
+  height: 135px;
   border-radius: 50%;
-  border: 4px solid #FFFFFF;
-  box-shadow: 0 8px 20px rgba(10, 35, 66, 0.25);
-  overflow: hidden;
-  background: #E2E8F0;
-  position: relative;
+  background: #FFFFFF;
+  padding: 5px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.card-photo-frame img {
+.ref-avatar-img-wrap {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #1E293B;
+  border: 3px solid #121418;
+}
+
+.ref-avatar-img-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center top;
 }
 
-/* CARD MAIN DETAILS */
-.card-body-content {
-  padding: 50px 1.25rem 1rem 1.25rem;
-  text-align: center;
+/* Card Dark Body Content */
+.ref-body-content {
+  margin-top: 90px;
+  padding: 0 1.25rem 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
 }
 
-.card-member-name {
+.ref-member-name {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 1.15rem;
+  font-size: 1.35rem;
   font-weight: 800;
-  color: var(--text-dark);
-  margin-bottom: 0.25rem;
-  line-height: 1.2;
+  color: #FFFFFF;
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
 }
 
-.card-member-post {
-  font-size: 0.78rem;
+.ref-designation-badge {
+  background: var(--accent-orange);
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
   font-weight: 700;
-  color: var(--blue-accent);
-  background: rgba(37, 99, 235, 0.08);
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
+  padding: 0.3rem 1.1rem;
+  border-radius: 4px;
   display: inline-block;
-  margin-bottom: 0.85rem;
-  border: 1px solid rgba(37, 99, 235, 0.15);
+  margin-bottom: 1.1rem;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
 }
 
-.card-info-grid {
+/* Key-Value Details List with Full Un-truncated Emails */
+.ref-info-table {
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.6rem;
-  background: #F8FAFC;
-  padding: 0.75rem;
-  border-radius: 10px;
-  border: 1px solid rgba(10, 35, 66, 0.06);
-  text-align: left;
-  font-size: 0.725rem;
-  margin-bottom: 0.75rem;
-}
-
-.card-info-item {
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  text-align: left;
 }
 
-.card-info-label {
-  font-size: 0.625rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-}
-
-.card-info-val {
-  font-weight: 700;
-  color: var(--text-dark);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.card-footer-strip {
-  background: linear-gradient(90deg, var(--navy-dark) 0%, var(--navy-main) 100%);
-  padding: 0.6rem 1rem;
-  color: #FFFFFF;
+.ref-info-row {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 0.7rem;
-  font-weight: 600;
-  border-top: 2px solid var(--gold-accent);
+  align-items: flex-start;
+  font-size: 0.825rem;
+  font-family: 'Inter', sans-serif;
 }
 
-.hologram-seal {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #F4A261 0%, #E76F51 100%);
+.ref-info-key {
+  width: 60px;
+  font-weight: 700;
+  color: #FFFFFF;
+  flex-shrink: 0;
+}
+
+.ref-info-colon {
+  width: 16px;
+  color: #94A3B8;
+  font-weight: 700;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.ref-info-val {
+  font-weight: 500;
+  color: #F1F5F9;
+  flex: 1;
+  word-break: break-word;
+  white-space: normal;
+  font-size: 0.8rem;
+  line-height: 1.3;
+}
+
+/* Footer Navigo Nepal Website QR Code Box */
+.ref-qr-container {
+  margin-top: auto;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #FFF;
-  font-size: 0.6rem;
-  font-weight: 900;
-  box-shadow: 0 0 8px rgba(244, 162, 97, 0.6);
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* --- CARD BACK CONTENT --- */
-.card-back-header {
-  background: var(--navy-dark);
-  height: 42px;
-  margin-top: 15px;
-  position: relative;
+.ref-qr-box {
+  width: 48px;
+  height: 48px;
+  background: #FFFFFF;
+  padding: 3px;
+  border-radius: 6px;
+  flex-shrink: 0;
 }
 
-.card-back-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
+.ref-qr-box img {
   width: 100%;
   height: 100%;
-  background: repeating-linear-gradient(
-    45deg,
-    #111,
-    #111 10px,
-    #222 10px,
-    #222 20px
-  );
-  opacity: 0.85;
 }
 
-.card-back-body {
+.ref-qr-text-wrap {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.ref-qr-title {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: 0.03em;
+}
+
+.ref-qr-url {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-orange-light);
+}
+
+/* --- CARD BACK LAYOUT --- */
+.ref-back-header {
+  background: #FFFFFF;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.25rem;
+}
+
+.ref-back-body {
   padding: 1.25rem;
   display: flex;
   flex-direction: column;
@@ -491,80 +512,67 @@ body {
   text-align: center;
 }
 
-.card-terms {
-  font-size: 0.625rem;
-  color: var(--text-muted);
-  line-height: 1.4;
+.ref-back-terms {
+  font-size: 0.675rem;
+  color: #94A3B8;
+  line-height: 1.45;
   text-align: justify;
-  background: #FFFFFF;
-  padding: 0.6rem;
-  border-radius: 6px;
-  border: 1px dashed rgba(10, 35, 66, 0.15);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.card-qr-section {
+.ref-back-qr-row {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin: 0.75rem 0;
-  gap: 1rem;
+  margin: 1rem 0;
 }
 
-.card-qr-code {
-  width: 80px;
-  height: 80px;
+.ref-back-qr {
+  width: 90px;
+  height: 90px;
   background: #FFFFFF;
-  padding: 4px;
+  padding: 5px;
   border-radius: 8px;
-  border: 1px solid var(--border-light);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
-.card-qr-code img, .card-qr-code canvas {
+.ref-back-qr img {
   width: 100%;
   height: 100%;
 }
 
-.card-sign-box {
+.ref-back-sign {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.card-signature {
-  font-family: 'Bebas Neue', cursive;
-  font-size: 1.4rem;
-  color: var(--navy-main);
-  letter-spacing: 0.1em;
-  line-height: 1;
-  transform: rotate(-4deg);
+.ref-sign-text {
+  font-family: cursive;
+  font-size: 1.2rem;
+  color: var(--accent-orange-light);
+  transform: rotate(-5deg);
 }
 
-.card-sign-line {
-  width: 90px;
+.ref-sign-line {
+  width: 100px;
   height: 1px;
-  background: var(--navy-main);
-  margin: 2px 0;
+  background: #94A3B8;
+  margin: 4px 0;
 }
 
-.card-sign-title {
+.ref-sign-title {
   font-size: 0.6rem;
+  color: #94A3B8;
   font-weight: 700;
-  color: var(--text-muted);
-  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.card-barcode {
-  font-family: 'Libre Barcode 128', cursive;
-  font-size: 2.2rem;
-  color: var(--navy-dark);
-  line-height: 1;
-  margin-top: 0.25rem;
-}
-
-/* CARD CONTROLS / ACTION BAR BELOW CARD */
+/* CARD ACTION BUTTONS BELOW CARD */
 .card-action-bar {
-  margin-top: 0.75rem;
+  margin-top: 0.85rem;
   display: flex;
   gap: 0.5rem;
   justify-content: center;
@@ -575,7 +583,7 @@ body {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: #E2E8F0;
-  padding: 0.4rem 0.8rem;
+  padding: 0.45rem 0.85rem;
   border-radius: 6px;
   font-size: 0.75rem;
   font-weight: 600;
@@ -587,19 +595,19 @@ body {
 }
 
 .btn-card-action:hover {
-  background: var(--blue-accent);
+  background: var(--accent-orange);
   color: #FFFFFF;
-  border-color: var(--blue-accent);
+  border-color: var(--accent-orange);
 }
 
-/* --- MODAL FOR NEW CARD GENERATOR --- */
+/* MODAL FOR NEW CARD GENERATOR */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
@@ -617,7 +625,7 @@ body {
 }
 
 .modal-box {
-  background: #0F172A;
+  background: #11141A;
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 16px;
   width: 100%;
@@ -625,9 +633,7 @@ body {
   max-height: 90vh;
   overflow-y: auto;
   padding: 2rem;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
   color: #F8FAFC;
-  position: relative;
 }
 
 .modal-header {
@@ -651,11 +657,6 @@ body {
   color: #94A3B8;
   font-size: 1.5rem;
   cursor: pointer;
-  line-height: 1;
-}
-
-.modal-close:hover {
-  color: #FFFFFF;
 }
 
 .form-grid {
@@ -690,13 +691,9 @@ body {
   outline: none;
 }
 
-.form-group input:focus, .form-group select:focus {
-  border-color: var(--blue-sky);
-}
-
-/* --- FOOTER --- */
+/* FOOTER */
 .id-portal-footer {
-  background: var(--navy-dark);
+  background: #090D16;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding: 1.5rem;
   text-align: center;
@@ -705,7 +702,7 @@ body {
   margin-top: 3rem;
 }
 
-/* --- PRINT MEDIA STYLES (A4 SHEET PRINTING) --- */
+/* PRINT MEDIA RULES */
 @media print {
   body {
     background: #FFFFFF !important;
@@ -731,21 +728,11 @@ body {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 15mm !important;
     justify-items: center !important;
-    page-break-inside: avoid;
   }
 
   .card-wrapper {
     box-shadow: none !important;
     margin-bottom: 10mm;
     page-break-inside: avoid;
-  }
-
-  .card-wrapper.flipped .card-inner {
-    transform: none !important;
-  }
-
-  .card-face {
-    box-shadow: none !important;
-    border: 1px solid #000000 !important;
   }
 }
