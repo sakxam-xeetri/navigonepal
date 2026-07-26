@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('searchInput');
   const filterTabs = document.querySelectorAll('.filter-tab');
   const totalCountEl = document.getElementById('totalMembersCount');
-  
+
   // Modal Elements
   const addCardBtn = document.getElementById('addCardBtn');
   const addCardModal = document.getElementById('addCardModal');
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const filtered = membersData.filter(member => {
       const matchesCategory = (currentCategory === 'All') || (member.category === currentCategory);
-      const matchesSearch = searchQuery === '' || 
+      const matchesSearch = searchQuery === '' ||
         member.name.toLowerCase().includes(searchQuery) ||
         member.post.toLowerCase().includes(searchQuery) ||
         member.id.toLowerCase().includes(searchQuery) ||
@@ -78,8 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
     wrapper.style.flexDirection = 'column';
     wrapper.style.alignItems = 'center';
 
-    // Official Navigo Nepal Website QR Code
-    const websiteQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fnavigonepal.org&color=0F172A`;
+    // Official Member Profile Verification & Validity QR Code
+    const profileQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(`https://navigonepal.org/verify?id=${member.id}&name=${encodeURIComponent(member.name)}&post=${encodeURIComponent(member.post)}&status=VALID_MEMBER`)}&color=0F172A`;
     // Member verification QR code for back side
     const memberQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(`https://navigonepal.org/verify?id=${member.id}&name=${encodeURIComponent(member.name)}`)}&color=0F172A`;
 
@@ -143,14 +143,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
               </div>
 
-              <!-- Footer Website QR Code Box -->
-              <div class="ref-qr-container">
-                <div class="ref-qr-box">
-                  <img src="${websiteQrUrl}" alt="Navigo Nepal Website QR">
+              <!-- Middle Member Profile & Validity QR Code (No label as requested) -->
+              <div class="ref-middle-qr-container">
+                <div class="ref-middle-qr-box">
+                  <img src="${profileQrUrl}" alt="${member.name} Profile Verification QR">
                 </div>
-                <div class="ref-qr-text-wrap">
-                  <span class="ref-qr-title">SCAN TO VISIT WEBSITE</span>
-                  <span class="ref-qr-url">navigonepal.org</span>
+              </div>
+
+              <!-- Card Footer: Mail and Website Link Only -->
+              <div class="ref-card-footer-box">
+                <div class="ref-footer-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                  <span>navigonepal@gmail.com</span>
+                </div>
+                <div class="ref-footer-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                  <a href="https://navigonepal.org" target="_blank" class="ref-footer-url">www.navigonepal.org</a>
                 </div>
               </div>
             </div>
@@ -182,9 +190,10 @@ document.addEventListener('DOMContentLoaded', () => {
               </div>
 
               <div>
-                <div style="font-size: 0.7rem; color: #94A3B8; font-weight: 600;">EMERGENCY CONTACT</div>
+                <div style="font-size: 0.7rem; color: #94A3B8; font-weight: 600;">EMERGENCY CONTACT & OFFICIAL CONTACTS</div>
                 <div style="font-size: 0.85rem; font-weight: 700; color: #F8FAFC;">${member.phone || '+977 980-0000000'}</div>
-                <div style="font-size: 0.75rem; color: #D97706; font-weight: 700; margin-top: 0.25rem;">www.navigonepal.org</div>
+                <div style="font-size: 0.75rem; color: #4F9CF9; font-weight: 600; margin-top: 0.2rem;">navigonepal@gmail.com</div>
+                <div style="font-size: 0.75rem; color: #F59E0B; font-weight: 700; margin-top: 0.15rem;">www.navigonepal.org</div>
               </div>
             </div>
           </div>
@@ -212,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Event Listener for Flip
     const cardEl = wrapper.querySelector('.card-wrapper');
     const flipBtn = wrapper.querySelector('.flip-btn');
-    
+
     flipBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       cardEl.classList.toggle('flipped');
@@ -235,7 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Print Single Card
   function printSingleCard(member) {
     const printWindow = window.open('', '_blank');
-    const websiteQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fnavigonepal.org&color=0F172A`;
+    const profileQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(`https://navigonepal.org/verify?id=${member.id}&name=${encodeURIComponent(member.name)}&post=${encodeURIComponent(member.post)}&status=VALID_MEMBER`)}&color=0F172A`;
 
     printWindow.document.write(`
       <!DOCTYPE html>
@@ -274,9 +283,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="ref-info-row"><span class="ref-info-key">Social</span><span class="ref-info-colon">:</span><span class="ref-info-val">${member.social || '@navigonepal'}</span></div>
                 <div class="ref-info-row"><span class="ref-info-key">Phone</span><span class="ref-info-colon">:</span><span class="ref-info-val">${member.phone || 'N/A'}</span></div>
               </div>
-              <div class="ref-qr-container">
-                <div class="ref-qr-box"><img src="${websiteQrUrl}"></div>
-                <div class="ref-qr-text-wrap"><span class="ref-qr-title">SCAN TO VISIT WEBSITE</span><span class="ref-qr-url">navigonepal.org</span></div>
+              <div class="ref-middle-qr-container">
+                <div class="ref-middle-qr-box"><img src="${profileQrUrl}"></div>
+              </div>
+              <div class="ref-card-footer-box">
+                <div class="ref-footer-item"><span>navigonepal@gmail.com</span></div>
+                <div class="ref-footer-item"><span class="ref-footer-url">www.navigonepal.org</span></div>
               </div>
             </div>
           </div>
@@ -324,7 +336,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (newCardForm) {
     newCardForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      
+
       const newIdNumber = (membersData.length + 1).toString().padStart(3, '0');
       const newMember = {
         id: `NVG-2026-${newIdNumber}`,

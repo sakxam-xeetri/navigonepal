@@ -8,7 +8,7 @@
   <meta name="description"
     content="Digital & Printable Member ID Cards portal for Navigo Nepal co-founders, advisory board, coordinators, and team members.">
   <link rel="icon" type="image/jpeg" href="../assets/navigo logo.jpg">
-  
+
   <!-- CSS Styles -->
   <link rel="stylesheet" href="id-card-styles.css">
 </head>
@@ -28,14 +28,16 @@
 
       <div class="id-header-actions">
         <a href="../team.html" class="btn-nvg btn-nvg-secondary">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7" />
           </svg>
           Back to Team Page
         </a>
-        
+
         <button id="addCardBtn" class="btn-nvg btn-nvg-outline">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
             <line x1="12" y1="5" x2="12" y2="19"></line>
             <line x1="5" y1="12" x2="19" y2="12"></line>
           </svg>
@@ -43,7 +45,8 @@
         </button>
 
         <button id="printAllBtn" class="btn-nvg btn-nvg-primary">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
             <polyline points="6 9 6 2 18 2 18 9"></polyline>
             <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
             <rect x="6" y="14" width="12" height="8"></rect>
@@ -60,11 +63,13 @@
     <!-- CONTROLS BAR: SEARCH & FILTERS -->
     <div class="id-controls-bar">
       <div class="id-search-box">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2">
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
-        <input type="text" id="searchInput" placeholder="Search by name, post, phone, email or ID..." aria-label="Search ID cards">
+        <input type="text" id="searchInput" placeholder="Search by name, post, phone, email or ID..."
+          aria-label="Search ID cards">
       </div>
 
       <div class="id-filter-tabs">
@@ -75,7 +80,8 @@
         <button class="filter-tab" data-category="Alumni">Alumni</button>
       </div>
 
-      <div id="totalMembersCount" style="font-size: 0.85rem; font-weight: 700; color: #4F9CF9; background: rgba(79,156,249,0.1); padding: 0.4rem 0.8rem; border-radius: 20px;">
+      <div id="totalMembersCount"
+        style="font-size: 0.85rem; font-weight: 700; color: #4F9CF9; background: rgba(79,156,249,0.1); padding: 0.4rem 0.8rem; border-radius: 20px;">
         17 Member Cards
       </div>
     </div>
@@ -97,7 +103,7 @@
 
       <form id="newCardForm">
         <div class="form-grid">
-          
+
           <div class="form-group full-width">
             <label for="memberName">Full Name *</label>
             <input type="text" id="memberName" placeholder="e.g. Sahil Dhakal" required>
@@ -150,7 +156,8 @@
         </div>
 
         <div style="margin-top: 1.5rem; display: flex; justify-content: flex-end; gap: 0.75rem;">
-          <button type="button" class="btn-nvg btn-nvg-secondary" onclick="document.getElementById('addCardModal').classList.remove('active')">Cancel</button>
+          <button type="button" class="btn-nvg btn-nvg-secondary"
+            onclick="document.getElementById('addCardModal').classList.remove('active')">Cancel</button>
           <button type="submit" class="btn-nvg btn-nvg-primary">Create & Render Card</button>
         </div>
       </form>
@@ -159,8 +166,29 @@
 
   <!-- FOOTER -->
   <footer class="id-portal-footer">
+    <div class="id-footer-contacts">
+      <a href="mailto:navigonepal@gmail.com" class="id-footer-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+        navigonepal@gmail.com
+      </a>
+      <span class="id-footer-divider">•</span>
+      <a href="https://navigonepal.org" target="_blank" rel="noopener" class="id-footer-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+        www.navigonepal.org
+      </a>
+    </div>
     <p>&copy; 2026 Navigo Nepal. Youth-Led Educational Empowerment. All Rights Reserved.</p>
-    <p style="margin-top: 0.35rem; font-size: 0.75rem; opacity: 0.7;">Official Identity Documents & Digital Badge System for Navigo Nepal Team Members.</p>
+    <p style="margin-top: 0.35rem; font-size: 0.75rem; opacity: 0.7;">Official Identity Documents & Digital Badge System
+      for Navigo Nepal Team Members.</p>
   </footer>
 
   <!-- Javascript -->
