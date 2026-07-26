@@ -77,9 +77,11 @@ document.addEventListener('DOMContentLoaded', () => {
     wrapper.style.display = 'flex';
     wrapper.style.flexDirection = 'column';
     wrapper.style.alignItems = 'center';
+    wrapper.style.width = '100%';
+    wrapper.style.maxWidth = '350px';
 
-    // Official Member Profile Verification & Validity QR Code
-    const profileQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(`https://navigonepal.org/verify?id=${member.id}&name=${encodeURIComponent(member.name)}&post=${encodeURIComponent(member.post)}&status=VALID_MEMBER`)}&color=0F172A`;
+    // Official Member Profile Verification & Validity QR Code (White QR modules on dark background, borderless)
+    const profileQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(`https://navigonepal.org/verify?id=${member.id}&name=${encodeURIComponent(member.name)}&post=${encodeURIComponent(member.post)}&status=VALID_MEMBER`)}&color=FFFFFF&bgcolor=121418`;
     // Member verification QR code for back side
     const memberQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(`https://navigonepal.org/verify?id=${member.id}&name=${encodeURIComponent(member.name)}`)}&color=0F172A`;
 
@@ -143,23 +145,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
               </div>
 
-              <!-- Middle Member Profile & Validity QR Code (No label as requested) -->
+              <!-- Middle Member Profile & Validity QR Code (Borderless QR + Subtext) -->
               <div class="ref-middle-qr-container">
                 <div class="ref-middle-qr-box">
                   <img src="${profileQrUrl}" alt="${member.name} Profile Verification QR">
                 </div>
+                <span class="ref-qr-subtext">Scan to view member profile</span>
               </div>
 
-              <!-- Card Footer: Mail and Website Link Only -->
+              <!-- Card Footer: Single-line Web & Mail -->
               <div class="ref-card-footer-box">
-                <div class="ref-footer-item">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                  <span>navigonepal@gmail.com</span>
-                </div>
-                <div class="ref-footer-item">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-                  <a href="https://navigonepal.org" target="_blank" class="ref-footer-url">www.navigonepal.org</a>
-                </div>
+                <span class="ref-footer-inline">
+                  <span class="ref-footer-label">web:</span> <a href="https://navigonepal.org" target="_blank" class="ref-footer-link-text">navigonepal.org</a> &nbsp;&bull;&nbsp; <span class="ref-footer-label">mail:</span> <a href="mailto:navigonepal@gmail.com" class="ref-footer-link-text">navigonepal@gmail.com</a>
+                </span>
               </div>
             </div>
 
@@ -285,10 +283,12 @@ document.addEventListener('DOMContentLoaded', () => {
               </div>
               <div class="ref-middle-qr-container">
                 <div class="ref-middle-qr-box"><img src="${profileQrUrl}"></div>
+                <span class="ref-qr-subtext">Scan to view member profile</span>
               </div>
               <div class="ref-card-footer-box">
-                <div class="ref-footer-item"><span>navigonepal@gmail.com</span></div>
-                <div class="ref-footer-item"><span class="ref-footer-url">www.navigonepal.org</span></div>
+                <span class="ref-footer-inline">
+                  <span class="ref-footer-label">web:</span> <a href="https://navigonepal.org" target="_blank" class="ref-footer-link-text">navigonepal.org</a> &nbsp;&bull;&nbsp; <span class="ref-footer-label">mail:</span> <a href="mailto:navigonepal@gmail.com" class="ref-footer-link-text">navigonepal@gmail.com</a>
+                </span>
               </div>
             </div>
           </div>

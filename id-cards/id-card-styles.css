@@ -6,7 +6,7 @@
 
 :root {
   --bg-page: #0F172A;
-  --card-width: 325px;
+  --card-width: 350px;
   --card-height: 560px;
   --card-dark: #121418;
   --card-header-bg: #FFFFFF;
@@ -210,7 +210,7 @@ body {
 
 .id-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 2.5rem 2rem;
   justify-items: center;
 }
@@ -220,7 +220,8 @@ body {
    ============================================================ */
 .card-wrapper {
   perspective: 1000px;
-  width: var(--card-width);
+  width: 100%;
+  max-width: var(--card-width);
   height: var(--card-height);
   position: relative;
 }
@@ -446,70 +447,81 @@ body {
   line-height: 1.3;
 }
 
-/* Middle Website QR Code Container (Below Phone) */
+/* Middle Member Profile QR Code Container (Borderless, White modules on dark background) */
 .ref-middle-qr-container {
-  margin: 0.25rem 0 0.5rem 0;
+  margin: 0.35rem 0 0.5rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.35rem;
 }
 
 .ref-middle-qr-box {
-  width: 72px;
-  height: 72px;
-  background: #FFFFFF;
-  padding: 4px;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 75px;
+  height: 75px;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
 }
 
 .ref-middle-qr-box img {
   width: 100%;
   height: 100%;
   display: block;
+  object-fit: contain;
 }
 
-/* Card Footer Box (Mail & Website Link Only - Stacked vertically to prevent truncation) */
+.ref-qr-subtext {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #94A3B8;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+/* Card Footer Box (Single-line Web & Mail) */
 .ref-card-footer-box {
   margin-top: auto;
   width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.25rem;
   background: rgba(255, 255, 255, 0.06);
-  padding: 0.45rem 0.75rem;
+  padding: 0.45rem 0.4rem;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  white-space: nowrap;
 }
 
-.ref-footer-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.35rem;
-  font-size: 0.75rem;
-  font-weight: 600;
+.ref-footer-inline {
+  font-size: 0.675rem;
+  font-weight: 500;
   color: #E2E8F0;
-  line-height: 1.3;
+  letter-spacing: 0.01em;
 }
 
-.ref-footer-item svg {
-  color: var(--accent-orange-light);
-  flex-shrink: 0;
-}
-
-.ref-footer-url {
-  color: var(--accent-orange-light);
-  text-decoration: none;
+.ref-footer-label {
   font-weight: 700;
+  color: var(--accent-orange-light);
+  text-transform: lowercase;
 }
 
-.ref-footer-url:hover {
+.ref-footer-link-text {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.ref-footer-link-text:hover {
   text-decoration: underline;
+}
+
+.ref-footer-val-text {
+  color: #CBD5E1;
+  font-weight: 500;
 }
 
 /* --- CARD BACK LAYOUT --- */
