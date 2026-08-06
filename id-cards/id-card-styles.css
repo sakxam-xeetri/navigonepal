@@ -764,18 +764,207 @@ body {
   font-size: 0.85rem;
 }
 
-/* PRINT MEDIA RULES */
+/* ============================================================
+   A4 LANDSCAPE PRINTING RULES & SCREEN PREVIEW (10 CARDS PER A4 SHEET)
+   ============================================================ */
+
+/* A4 Landscape Page Configuration */
+@page {
+  size: A4 landscape;
+  margin: 4mm 5mm;
+}
+
+/* Screen Preview Styles for A4 Landscape Sheet */
+.print-options-banner {
+  background: rgba(217, 119, 6, 0.12);
+  border: 1px solid rgba(217, 119, 6, 0.3);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.print-options-info h3 {
+  font-size: 1rem;
+  color: #F59E0B;
+  font-family: 'Outfit', sans-serif;
+  margin-bottom: 0.2rem;
+}
+
+.print-options-info p {
+  font-size: 0.8rem;
+  color: #CBD5E1;
+}
+
+.print-options-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.select-nvg {
+  padding: 0.55rem 0.9rem;
+  border-radius: 8px;
+  background: #1E293B;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  font-size: 0.85rem;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+}
+
+.a4-preview-wrapper {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  margin: 1.5rem 0 3rem 0;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+
+.a4-preview-wrapper.active {
+  display: flex;
+}
+
+.a4-sheet-page {
+  width: 297mm;
+  min-width: 297mm;
+  height: 210mm;
+  background: #0B0E14;
+  border: 2px dashed rgba(217, 119, 6, 0.4);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 5mm 6mm;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.a4-sheet-header-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #94A3B8;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.a4-sheet-header-label span {
+  color: #F59E0B;
+}
+
+.a4-landscape-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 54mm);
+  grid-template-rows: repeat(2, 86.4mm);
+  gap: 8mm 3.8mm;
+  justify-content: center;
+  align-content: center;
+  margin: auto 0;
+}
+
+/* Scaled Print Cell Container */
+.print-card-cell {
+  width: 54mm;
+  height: 86.4mm;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-sizing: border-box;
+  background: #121418;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.print-card-cell .card-wrapper {
+  width: 350px !important;
+  height: 560px !important;
+  transform: scale(0.58315) !important;
+  transform-origin: top left !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+}
+
+.print-card-cell .card-inner {
+  transform: none !important;
+  box-shadow: none !important;
+  border-radius: 16px !important;
+}
+
+.print-card-cell .card-face {
+  -webkit-backface-visibility: hidden !important;
+  backface-visibility: hidden !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  transform: none !important;
+}
+
+.print-card-cell .card-face.card-front {
+  display: flex !important;
+  transform: none !important;
+}
+
+.print-card-cell .card-face.card-back {
+  display: flex !important;
+  transform: none !important;
+}
+
+.print-card-cell.show-back .card-face.card-front {
+  display: none !important;
+}
+
+/* PRINT ENGINE STYLES */
 @media print {
-  body {
-    background: #FFFFFF !important;
-    color: #000000 !important;
+  *,
+  *::before,
+  *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
   }
 
+  html, body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hide interactive portal header, controls, footers, buttons */
   .id-portal-header,
   .id-controls-bar,
+  .print-options-banner,
   .card-action-bar,
   .id-portal-footer,
-  .modal-overlay {
+  .modal-overlay,
+  .a4-sheet-header-label,
+  #printAllBtn,
+  #addCardBtn {
     display: none !important;
   }
 
@@ -783,18 +972,105 @@ body {
     margin: 0 !important;
     padding: 0 !important;
     max-width: 100% !important;
+    width: 100% !important;
   }
 
-  .id-cards-grid {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 15mm !important;
-    justify-items: center !important;
+  /* When printing batch A4 sheets, hide standard single grid */
+  body.print-sheets-mode .id-cards-grid {
+    display: none !important;
   }
 
-  .card-wrapper {
+  body.print-sheets-mode .a4-preview-wrapper {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .a4-sheet-page {
+    width: 287mm !important;
+    height: 200mm !important;
+    min-width: 287mm !important;
+    background: #FFFFFF !important;
+    border: none !important;
     box-shadow: none !important;
-    margin-bottom: 10mm;
-    page-break-inside: avoid;
+    border-radius: 0 !important;
+    padding: 2mm 0 !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .a4-sheet-page:last-child {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+
+  .a4-landscape-grid {
+    display: grid !important;
+    grid-template-columns: repeat(5, 54mm) !important;
+    grid-template-rows: repeat(2, 86.4mm) !important;
+    gap: 10mm 4.2mm !important;
+    justify-content: center !important;
+    align-content: center !important;
+    margin: 0 auto !important;
+  }
+
+  .print-card-cell {
+    width: 54mm !important;
+    height: 86.4mm !important;
+    box-shadow: none !important;
+    border: 1px solid rgba(0, 0, 0, 0.15) !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .print-card-cell .card-wrapper {
+    width: 350px !important;
+    height: 560px !important;
+    transform: scale(0.58315) !important;
+    transform-origin: top left !important;
+  }
+
+  .print-card-cell .ref-header-top {
+    background: #FFFFFF !important;
+  }
+
+  .print-card-cell .card-face.card-front {
+    background: #121418 !important;
+    color: #FFFFFF !important;
+  }
+
+  .print-card-cell .card-face.card-back {
+    background: #11141A !important;
+    color: #FFFFFF !important;
+  }
+
+  .print-card-cell .ref-wing-left {
+    background: linear-gradient(135deg, #D97706 0%, #EA580C 100%) !important;
+  }
+
+  .print-card-cell .ref-wing-right {
+    background: linear-gradient(135deg, #CBD5E1 0%, #94A3B8 100%) !important;
+  }
+
+  .print-card-cell .ref-designation-badge {
+    background: #D97706 !important;
+    color: #FFFFFF !important;
+  }
+
+  .print-card-cell .ref-avatar-ring {
+    background: #FFFFFF !important;
+  }
+
+  .print-card-cell .ref-card-footer-box {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  }
+
+  .print-card-cell .ref-footer-label {
+    color: #F59E0B !important;
   }
 }

@@ -31,10 +31,10 @@ const NAVIGO_CMS = {
       { title: "Inclusivity", desc: "Extending program infrastructure and trained coordinator networks to the most underserved rural schools, ensuring no student is left behind due to geography or circumstance." },
       { title: "Environmental Stewardship", desc: "Inspiring the next generation to champion climate action through hands-on conservation campaigns, SDG-driven awareness, and partnerships with global organizations like UNICEF and USAID." }
     ],
-    foundingStory: "<p><strong>Navigo Nepal</strong> was founded in early 2024 by <strong>Anupam Neupane</strong>, <strong>Biyog Man Dangol</strong>, and <strong>Prajwal Dhungana</strong> with a simple but meaningful goal: to help students confidently navigate life after SEE (Grade 10). Having experienced the uncertainty that many students face when choosing streams and planning their futures, they saw the need for guidance that schools often couldn't provide. This inspired them to create <strong>Navigo</strong> derived from the Latin word meaning \"to navigate\" to bridge the gap between school education and real-world opportunities.</p>",
+    foundingStory: "<p><strong>Navigo Nepal</strong> was founded in early 2024 by <strong>Anupam Nyaupane</strong>, <strong>Biyog Man Dangol</strong>, and <strong>Prajwal Dhungana</strong> with a simple but meaningful goal: to help students confidently navigate life after SEE (Grade 10). Having experienced the uncertainty that many students face when choosing streams and planning their futures, they saw the need for guidance that schools often couldn't provide. This inspired them to create <strong>Navigo</strong> derived from the Latin word meaning \"to navigate\" to bridge the gap between school education and real-world opportunities.</p>",
     leadershipMessage: {
       quote: "We started Navigo Nepal because we lived through the same gap every SEE graduate faces — the silence after the results, the confusion before choosing a stream, the absence of anyone who could show us what comes next. Our mission is to end the conventionality of our education system and replace passive textbook recitation with active, hands-on problem-solving. We want every student to walk out of our sessions not just informed, but equipped — with the clarity, confidence, and tools to figure out exactly what they want to become and how to get there.",
-      author: "Anupam Neupane, Biyog Man Dangol, & Prajwal Dhungana",
+      author: "Anupam Nyaupane, Biyog Man Dangol, & Prajwal Dhungana",
       role: "Co-Founders, Navigo Nepal",
       avatar: "assets/169567052.jpg"
     },
@@ -204,11 +204,11 @@ const NAVIGO_CMS = {
 
   team: [
     {
-      name: "Anupam Neupane",
+      name: "Anupam Nyaupane",
       role: "Co-Founder & Content Director",
       bio: "Designs interactive, game-based learning modules, Scout leadership sessions, and counsels students on SEE streams.",
       image: "assets/169567052.jpg",
-      linkedin: "https://linkedin.com/in/anupam-neupane"
+      linkedin: "https://linkedin.com/in/anupam-nyaupane"
     },
     {
       name: "Prajwal Dhungana",
@@ -268,7 +268,7 @@ const NAVIGO_CMS = {
     {
       title: "Bridging the Post-SEE Transition: The Story Behind What's Next",
       date: "May 28, 2024",
-      author: "Anupam Neupane",
+      author: "Anupam Nyaupane",
       excerpt: "We reflected on the academic pressure and lack of exposure we faced after SEE. Here is why stream counseling is critical for every student...",
       image: "assets/blog_stem.jpg"
     },

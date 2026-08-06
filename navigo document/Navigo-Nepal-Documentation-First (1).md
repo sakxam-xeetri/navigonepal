@@ -16,7 +16,7 @@ All rights reserved.
 
 Published on August 8, 2024 
 
-Involved Personnel: Anupam Neupane, Prajwal Dhungana, Biyog Man Dangol 
+Involved Personnel: Anupam Nyaupane, Prajwal Dhungana, Biyog Man Dangol 
 
 Photo credits: Navigo Nepal 
 
@@ -102,7 +102,7 @@ Navigo Nepal stands out because we don’t just advocate for change; we actively
 
 ## **1.4 Our Cohort** 
 
-Navigo Nepal was co-founded by Anupam Neupane, Biyog Dangol and Prajwal Dhungana. Navigo Nepal's first project included other two members along with the cofounders, who have now become Alumni: Swapnil Sapkota, who is current studying at New York University at Abu Dhabi, and Atal Raj Paudel, who is an incoming freshman at University of Texas at Arlington. The Navigo Nepal's team slowly grew along with its projects. Today, Navigo Nepal have 13 active members along with two Board of Advisors who work together to run Navigo Nepal as an organization. 
+Navigo Nepal was co-founded by Anupam Nyaupane, Biyog Dangol and Prajwal Dhungana. Navigo Nepal's first project included other two members along with the cofounders, who have now become Alumni: Swapnil Sapkota, who is current studying at New York University at Abu Dhabi, and Atal Raj Paudel, who is an incoming freshman at University of Texas at Arlington. The Navigo Nepal's team slowly grew along with its projects. Today, Navigo Nepal have 13 active members along with two Board of Advisors who work together to run Navigo Nepal as an organization. 
 
 4 
 
@@ -378,7 +378,7 @@ The following table shows information on schools and members from Navigo Nepal w
 **----- End of picture text -----**<br>
 
 
-Anupam Neupane 
+Anupam Nyaupane 
 
 ## **What students Say about us?** 
 

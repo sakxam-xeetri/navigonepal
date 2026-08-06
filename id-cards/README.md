@@ -20,7 +20,7 @@ Below is the complete roster of ID cards generated from the website roles and up
 
 | Member ID | Full Name | Official Website Post / Designation | Phone Number | Email Address / Info |
 | :--- | :--- | :--- | :--- | :--- |
-| **NVG-2026-001** | Anupam Neupane | Co-Founder & Executive Director | +977 980-1234567 | anupam.neupane@navigonepal.org |
+| **NVG-2026-001** | Anupam Nyaupane | Co-Founder & Executive Director | +977 980-1234567 | anupam.nyaupane@navigonepal.org |
 | **NVG-2026-002** | Biyog Man Dangol | Co-Founder & Strategy Lead | +977 980-1234568 | biyog.dangol@navigonepal.org |
 | **NVG-2026-003** | Prajwal Dhungana | Co-Founder & Programs Director | +977 980-1234569 | prajwal.dhungana@navigonepal.org |
 | **NVG-2026-004** | Prasoon Bhatta | Operations/HR Head | **+977 976-8422422** | prasoon.bhatta@navigonepal.org |
@@ -40,12 +40,20 @@ Below is the complete roster of ID cards generated from the website roles and up
 
 ---
 
-## 🖨️ How to Print & Export ID Cards
+## 🖨️ How to Print & Export ID Cards (A4 Landscape 10-Cards Grid)
 
-1. Open `id-cards/index.html` in any web browser.
-2. Click **"Print Card"** on any individual member card to open a print-ready window with Front and Back sides side-by-side.
-3. Click **"Print All ID Cards"** in the top navigation bar to render all member cards into an A4 print layout ready for printing onto card stock or PVC plastic cards.
-4. Use **"Flip Card"** or click on any card to view the reverse side containing emergency contacts, terms of membership, QR verification code, and signature block.
+1. Open `id-cards/index.html` in any modern web browser.
+2. **Batch Printing (10 Cards / A4 Landscape Sheet)**:
+   - Click **"Print A4 Landscape (10/Sheet)"** or **"Print All ID Cards"** in the top action bar.
+   - Choose your desired print side from the **Batch Print Control Bar**:
+     - **Front Sides Only**: Fits 10 front card faces per A4 Landscape sheet in a 5×2 grid.
+     - **Back Sides Only**: Fits 10 back card faces per A4 Landscape sheet in a 5×2 grid.
+     - **Both Front & Back (Duplex)**: Page 1 prints 10 Fronts; Page 2 prints 10 Backs.
+     - **Side-by-Side Pairs**: Prints 5 Front & Back pairs (10 card faces) per sheet.
+   - Click **"Preview A4 Sheets"** to visually inspect how cards will fit on A4 Landscape paper before sending to the printer.
+3. **Exact Matching Colors**: All card backgrounds (`#121418`), orange wing accents, circular avatar frames, designation badges, email rows, and QR codes are preserved 100% using `-webkit-print-color-adjust: exact`.
+4. **Single Card Printing**: Click **"Print Card"** on any card to open a high-resolution print window displaying Front & Back sides side-by-side in landscape format.
+5. Use **"Flip Card"** or click on any card to view the reverse side containing emergency contacts, terms of membership, QR verification code, and signature block.
 
 ---
 

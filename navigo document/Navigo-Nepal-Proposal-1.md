@@ -56,7 +56,7 @@ Advocacy Problem-Solving Transmisson • Through our • Through the • Through
 
 Before discussing about what our future projects are, we would like to give a brief introduction to the team members of our organization who will be carrying out different projects in the future. 
 
-- 1) Anupam Neupane (co- founder) 
+- 1) Anupam Nyaupane (co- founder) 
 
 - 2) Prajwal Dhungana ( co- founder) 
 

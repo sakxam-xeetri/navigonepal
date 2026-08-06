@@ -248,57 +248,97 @@ document.addEventListener('DOMContentLoaded', () => {
     return wrapper;
   }
 
-  // Print Single Card
+  // Print Single Card (High Fidelity Landscape Mode with Matching Colors)
   function printSingleCard(member) {
     const printWindow = window.open('', '_blank');
     const verifyTargetUrl = `https://navigonepal.org/id-cards/verify.html?id=${encodeURIComponent(member.id)}&name=${encodeURIComponent(member.name)}&post=${encodeURIComponent(member.post)}`;
-    const profileQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(verifyTargetUrl)}&color=0F172A`;
+    const profileQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(verifyTargetUrl)}&color=FFFFFF&bgcolor=121418`;
+    const memberQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(verifyTargetUrl)}&color=0F172A`;
 
     printWindow.document.write(`
       <!DOCTYPE html>
       <html>
       <head>
-        <title>Print ID Card - ${member.name}</title>
+        <title>Print ID Card — ${member.name}</title>
         <link rel="stylesheet" href="id-card-styles.css">
         <style>
-          body { background: #fff !important; color: #000 !important; display: flex; justify-content: center; align-items: center; min-height: 100vh; gap: 20px; }
-          .card-wrapper { box-shadow: none !important; margin: 0 auto; border: 1px solid #ccc; }
+          @page { size: A4 landscape; margin: 8mm; }
+          *, *::before, *::after { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+          body { background: #0B0E14 !important; color: #FFFFFF !important; display: flex; justify-content: center; align-items: center; min-height: 100vh; gap: 30px; margin: 0; padding: 20px; font-family: 'Inter', sans-serif; }
+          .single-print-wrapper { display: flex; gap: 35px; align-items: center; justify-content: center; }
+          .card-wrapper { box-shadow: 0 15px 35px rgba(0,0,0,0.6) !important; margin: 0; width: 350px !important; height: 560px !important; }
           .card-inner { transform-style: flat !important; }
+          .card-face { position: relative !important; backface-visibility: visible !important; }
         </style>
       </head>
       <body>
-        <div class="card-wrapper">
-          <div class="card-face card-front" style="position:relative;">
-            <div class="ref-header-top">
-              <img src="../assets/navigo logo.png" class="ref-header-logo">
-              <div class="ref-header-brand">NAVIGO NEPAL<span>YOUTH EDUCATIONAL CATALYST</span></div>
-            </div>
-            <div class="ref-wings-container">
-              <div class="ref-wing-left"></div>
-              <div class="ref-wing-right"></div>
-            </div>
-            <div class="ref-avatar-container">
-              <div class="ref-avatar-ring">
-                <div class="ref-avatar-img-wrap"><img src="${member.photo || '../assets/members/placeholder.svg'}"></div>
+        <div class="single-print-wrapper">
+          <!-- FRONT FACE -->
+          <div class="card-wrapper">
+            <div class="card-face card-front">
+              <div class="ref-header-top">
+                <img src="../assets/navigo logo.png" class="ref-header-logo" onerror="this.src='../assets/png_new_logo.png'">
+                <div class="ref-header-brand">NAVIGO NEPAL<span>YOUTH EDUCATIONAL CATALYST</span></div>
+              </div>
+              <div class="ref-wings-container">
+                <div class="ref-wing-left"></div>
+                <div class="ref-wing-right"></div>
+              </div>
+              <div class="ref-avatar-container">
+                <div class="ref-avatar-ring">
+                  <div class="ref-avatar-img-wrap"><img src="${member.photo || '../assets/members/placeholder.svg'}" onerror="this.src='../assets/members/placeholder.svg'"></div>
+                </div>
+              </div>
+              <div class="ref-body-content">
+                <h2 class="ref-member-name">${member.name}</h2>
+                <div class="ref-designation-badge">${member.post}</div>
+                <div class="ref-info-table">
+                  <div class="ref-info-row"><span class="ref-info-key">ID No</span><span class="ref-info-colon">:</span><span class="ref-info-val">${member.id}</span></div>
+                  <div class="ref-info-row"><span class="ref-info-key">Email</span><span class="ref-info-colon">:</span><span class="ref-info-val">${member.email || 'N/A'}</span></div>
+                  <div class="ref-info-row"><span class="ref-info-key">Social</span><span class="ref-info-colon">:</span><span class="ref-info-val">${member.social || '@navigonepal'}</span></div>
+                  <div class="ref-info-row"><span class="ref-info-key">Phone</span><span class="ref-info-colon">:</span><span class="ref-info-val">${member.phone || 'N/A'}</span></div>
+                </div>
+                <div class="ref-middle-qr-container">
+                  <div class="ref-middle-qr-box"><img src="${profileQrUrl}"></div>
+                  <span class="ref-qr-subtext">Scan to view member profile</span>
+                </div>
+                <div class="ref-card-footer-box">
+                  <span class="ref-footer-inline">
+                    <span class="ref-footer-label">web:</span> <a href="https://navigonepal.org" target="_blank" class="ref-footer-link-text">navigonepal.org</a> &nbsp;&bull;&nbsp; <span class="ref-footer-label">mail:</span> <a href="mailto:navigonepal@gmail.com" class="ref-footer-link-text">navigonepal@gmail.com</a>
+                  </span>
+                </div>
               </div>
             </div>
-            <div class="ref-body-content">
-              <h2 class="ref-member-name">${member.name}</h2>
-              <div class="ref-designation-badge">${member.post}</div>
-              <div class="ref-info-table">
-                <div class="ref-info-row"><span class="ref-info-key">ID No</span><span class="ref-info-colon">:</span><span class="ref-info-val">${member.id}</span></div>
-                <div class="ref-info-row"><span class="ref-info-key">Email</span><span class="ref-info-colon">:</span><span class="ref-info-val">${member.email || 'N/A'}</span></div>
-                <div class="ref-info-row"><span class="ref-info-key">Social</span><span class="ref-info-colon">:</span><span class="ref-info-val">${member.social || '@navigonepal'}</span></div>
-                <div class="ref-info-row"><span class="ref-info-key">Phone</span><span class="ref-info-colon">:</span><span class="ref-info-val">${member.phone || 'N/A'}</span></div>
+          </div>
+
+          <!-- BACK FACE -->
+          <div class="card-wrapper">
+            <div class="card-face card-back" style="transform: none;">
+              <div class="ref-back-header">
+                <img src="../assets/navigo logo.png" style="height: 32px;" onerror="this.src='../assets/png_new_logo.png'">
+                <span style="font-weight: 800; font-size: 0.85rem; color: #0F172A;">NAVIGO NEPAL</span>
               </div>
-              <div class="ref-middle-qr-container">
-                <div class="ref-middle-qr-box"><img src="${profileQrUrl}"></div>
-                <span class="ref-qr-subtext">Scan to view member profile</span>
-              </div>
-              <div class="ref-card-footer-box">
-                <span class="ref-footer-inline">
-                  <span class="ref-footer-label">web:</span> <a href="https://navigonepal.org" target="_blank" class="ref-footer-link-text">navigonepal.org</a> &nbsp;&bull;&nbsp; <span class="ref-footer-label">mail:</span> <a href="mailto:navigonepal@gmail.com" class="ref-footer-link-text">navigonepal@gmail.com</a>
-                </span>
+              <div class="ref-back-body">
+                <div class="ref-back-terms">
+                  <strong>TERMS & CONDITIONS</strong><br>
+                  This card is non-transferable and remains official property of Navigo Nepal. If lost and found, please return to: Navigo Nepal HQ, Kathmandu, Nepal.
+                </div>
+                <div class="ref-back-qr-row">
+                  <div class="ref-back-qr">
+                    <img src="${memberQrUrl}" alt="Member QR Code">
+                  </div>
+                  <div class="ref-back-sign">
+                    <span class="ref-sign-text">Navigo Nepal</span>
+                    <div class="ref-sign-line"></div>
+                    <span class="ref-sign-title">AUTHORIZED SIGNATURE</span>
+                  </div>
+                </div>
+                <div>
+                  <div style="font-size: 0.7rem; color: #94A3B8; font-weight: 600;">EMERGENCY CONTACT & OFFICIAL CONTACTS</div>
+                  <div style="font-size: 0.85rem; font-weight: 700; color: #F8FAFC;">${member.phone || '+977 980-0000000'}</div>
+                  <div style="font-size: 0.75rem; color: #4F9CF9; font-weight: 600; margin-top: 0.2rem;">navigonepal@gmail.com</div>
+                  <div style="font-size: 0.75rem; color: #F59E0B; font-weight: 700; margin-top: 0.15rem;">www.navigonepal.org</div>
+                </div>
               </div>
             </div>
           </div>
@@ -315,11 +355,167 @@ document.addEventListener('DOMContentLoaded', () => {
     printWindow.document.close();
   }
 
+  // Helper to get members matching current active tab & search query
+  function getFilteredMembers() {
+    return membersData.filter(member => {
+      const matchesCategory = (currentCategory === 'All') || (member.category === currentCategory);
+      const matchesSearch = searchQuery === '' ||
+        member.name.toLowerCase().includes(searchQuery) ||
+        member.post.toLowerCase().includes(searchQuery) ||
+        member.id.toLowerCase().includes(searchQuery) ||
+        (member.phone && member.phone.toLowerCase().includes(searchQuery)) ||
+        (member.email && member.email.toLowerCase().includes(searchQuery));
+
+      return matchesCategory && matchesSearch;
+    });
+  }
+
+  // Batch A4 Landscape Sheet Engine (10 Cards per A4 Page Grid)
+  const a4PreviewWrapper = document.getElementById('a4PreviewWrapper');
+  const togglePreviewBtn = document.getElementById('togglePreviewBtn');
+  const triggerPrintSheetBtn = document.getElementById('triggerPrintSheetBtn');
+  const printSideSelect = document.getElementById('printSideSelect');
+
+  function renderA4LandscapeSheets(mode = 'front') {
+    if (!a4PreviewWrapper) return;
+    a4PreviewWrapper.innerHTML = '';
+
+    const members = getFilteredMembers();
+    if (members.length === 0) return;
+
+    if (mode === 'pairs') {
+      // 5 pairs (5 Fronts + 5 Backs) per A4 Landscape sheet = 10 card faces per sheet
+      const chunkSize = 5;
+      for (let i = 0; i < members.length; i += chunkSize) {
+        const chunk = members.slice(i, i + chunkSize);
+        const pageNum = Math.floor(i / chunkSize) + 1;
+        const totalPages = Math.ceil(members.length / chunkSize);
+
+        const pageEl = document.createElement('div');
+        pageEl.className = 'a4-sheet-page';
+
+        const headerLabel = document.createElement('div');
+        headerLabel.className = 'a4-sheet-header-label';
+        headerLabel.innerHTML = `
+          <span>NAVIGO NEPAL — A4 LANDSCAPE PRINT SHEET (${pageNum} OF ${totalPages})</span>
+          <span>MODE: 5 FRONT & BACK PAIRS (10 CARDS / SHEET)</span>
+        `;
+        pageEl.appendChild(headerLabel);
+
+        const gridEl = document.createElement('div');
+        gridEl.className = 'a4-landscape-grid';
+
+        chunk.forEach(member => {
+          gridEl.appendChild(createPrintCardCell(member, 'front'));
+          gridEl.appendChild(createPrintCardCell(member, 'back'));
+        });
+
+        pageEl.appendChild(gridEl);
+        a4PreviewWrapper.appendChild(pageEl);
+      }
+    } else if (mode === 'duplex') {
+      // Page 1: 10 Fronts, Page 2: 10 Backs
+      const chunkSize = 10;
+      for (let i = 0; i < members.length; i += chunkSize) {
+        const chunk = members.slice(i, i + chunkSize);
+        const sheetNum = Math.floor(i / chunkSize) + 1;
+
+        const frontPage = createSingleSideSheet(chunk, 'front', `SHEET ${sheetNum} — FRONT SIDES (10 CARDS)`);
+        a4PreviewWrapper.appendChild(frontPage);
+
+        const backPage = createSingleSideSheet(chunk, 'back', `SHEET ${sheetNum} — BACK SIDES (10 CARDS)`);
+        a4PreviewWrapper.appendChild(backPage);
+      }
+    } else {
+      // mode === 'front' or 'back'
+      const chunkSize = 10;
+      const targetSide = mode;
+      for (let i = 0; i < members.length; i += chunkSize) {
+        const chunk = members.slice(i, i + chunkSize);
+        const pageNum = Math.floor(i / chunkSize) + 1;
+        const totalPages = Math.ceil(members.length / chunkSize);
+        const title = `A4 LANDSCAPE SHEET (${pageNum} OF ${totalPages}) — ${targetSide.toUpperCase()} SIDES (10 CARDS)`;
+
+        const pageEl = createSingleSideSheet(chunk, targetSide, title);
+        a4PreviewWrapper.appendChild(pageEl);
+      }
+    }
+  }
+
+  function createSingleSideSheet(chunkMembers, side, title) {
+    const pageEl = document.createElement('div');
+    pageEl.className = 'a4-sheet-page';
+
+    const headerLabel = document.createElement('div');
+    headerLabel.className = 'a4-sheet-header-label';
+    headerLabel.innerHTML = `
+      <span>NAVIGO NEPAL — OFFICIAL ID PRINT SHEET</span>
+      <span>${title}</span>
+    `;
+    pageEl.appendChild(headerLabel);
+
+    const gridEl = document.createElement('div');
+    gridEl.className = 'a4-landscape-grid';
+
+    chunkMembers.forEach(member => {
+      gridEl.appendChild(createPrintCardCell(member, side));
+    });
+
+    pageEl.appendChild(gridEl);
+    return pageEl;
+  }
+
+  function createPrintCardCell(member, side = 'front') {
+    const cell = document.createElement('div');
+    cell.className = `print-card-cell ${side === 'back' ? 'show-back' : ''}`;
+
+    const wrapperNode = createCardElement(member);
+    const cardWrapper = wrapperNode.querySelector('.card-wrapper');
+    const clonedWrapper = cardWrapper.cloneNode(true);
+
+    const cardFront = clonedWrapper.querySelector('.card-front');
+    const cardBack = clonedWrapper.querySelector('.card-back');
+
+    if (side === 'front') {
+      if (cardBack) cardBack.remove();
+      if (cardFront) {
+        cardFront.style.transform = 'none';
+        cardFront.style.display = 'flex';
+      }
+    } else {
+      if (cardFront) cardFront.remove();
+      if (cardBack) {
+        cardBack.style.transform = 'none';
+        cardBack.style.display = 'flex';
+      }
+    }
+
+    cell.appendChild(clonedWrapper);
+    return cell;
+  }
+
+  function triggerA4BatchPrint() {
+    const selectedMode = printSideSelect ? printSideSelect.value : 'front';
+    renderA4LandscapeSheets(selectedMode);
+
+    document.body.classList.add('print-sheets-mode');
+    if (a4PreviewWrapper) a4PreviewWrapper.classList.add('active');
+
+    window.print();
+
+    setTimeout(() => {
+      document.body.classList.remove('print-sheets-mode');
+    }, 1000);
+  }
+
   // Search Input Event
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
       searchQuery = e.target.value.trim().toLowerCase();
       renderCards();
+      if (a4PreviewWrapper && a4PreviewWrapper.classList.contains('active')) {
+        renderA4LandscapeSheets(printSideSelect ? printSideSelect.value : 'front');
+      }
     });
   }
 
@@ -330,8 +526,50 @@ document.addEventListener('DOMContentLoaded', () => {
       tab.classList.add('active');
       currentCategory = tab.dataset.category;
       renderCards();
+      if (a4PreviewWrapper && a4PreviewWrapper.classList.contains('active')) {
+        renderA4LandscapeSheets(printSideSelect ? printSideSelect.value : 'front');
+      }
     });
   });
+
+  // Print Action Triggers
+  if (triggerPrintSheetBtn) triggerPrintSheetBtn.addEventListener('click', triggerA4BatchPrint);
+  if (printAllBtn) printAllBtn.addEventListener('click', triggerA4BatchPrint);
+
+  // Toggle Live A4 Landscape Screen Preview
+  if (togglePreviewBtn) {
+    togglePreviewBtn.addEventListener('click', () => {
+      const selectedMode = printSideSelect ? printSideSelect.value : 'front';
+      renderA4LandscapeSheets(selectedMode);
+      if (a4PreviewWrapper) {
+        a4PreviewWrapper.classList.toggle('active');
+        togglePreviewBtn.classList.toggle('btn-nvg-primary');
+        if (a4PreviewWrapper.classList.contains('active')) {
+          togglePreviewBtn.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg> Hide A4 Preview
+          `;
+        } else {
+          togglePreviewBtn.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg> Preview A4 Sheets
+          `;
+        }
+      }
+    });
+  }
+
+  if (printSideSelect) {
+    printSideSelect.addEventListener('change', () => {
+      if (a4PreviewWrapper && a4PreviewWrapper.classList.contains('active')) {
+        renderA4LandscapeSheets(printSideSelect.value);
+      }
+    });
+  }
 
   // Modal Control
   if (addCardBtn) addCardBtn.addEventListener('click', () => addCardModal.classList.add('active'));
@@ -361,16 +599,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
       membersData.unshift(newMember);
       renderCards();
+      if (a4PreviewWrapper && a4PreviewWrapper.classList.contains('active')) {
+        renderA4LandscapeSheets(printSideSelect ? printSideSelect.value : 'front');
+      }
       newCardForm.reset();
       addCardModal.classList.remove('active');
       alert(`Member ID Card generated successfully for ${newMember.name}!`);
-    });
-  }
-
-  // Print All Cards
-  if (printAllBtn) {
-    printAllBtn.addEventListener('click', () => {
-      window.print();
     });
   }
 
@@ -390,3 +624,4 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
   }
 });
+

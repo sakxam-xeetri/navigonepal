@@ -17,7 +17,7 @@ This document contains the exact extracted phone numbers, email addresses, socia
 | 7 | **Sakshyam Bista** | Outreach Head | `+977 976-3374079` | `sakshyam.bista12@gmail.com` | `@sakshyam.bista` | Core Team |
 | 8 | **Sakshyam Bastakoti** | IT/Media Head | `+977 976-4320750` | `sakshyamxeetri@gmail.com` | `@sakshyam.bastakoti` | Core Team |
 | 9 | **Usnish Bajra (Usnish Bajracharya)** | Design & Editing Head | `+977 981-3123920` | `ushnish2022@gmail.com` | `@usnish.bajra` | Core Team |
-| 10 | **Anupam Neupane** | Co-Founder & Executive Director | `+977 980-1234567` | `anupam.neupane@navigonepal.org` | `@anupam.neupane` | Co-Founders |
+| 10 | **Anupam Nyaupane** | Co-Founder & Executive Director | `+977 980-1234567` | `anupam.nyaupane@navigonepal.org` | `@anupam.nyaupane` | Co-Founders |
 | 11 | **Biyog Man Dangol** | Co-Founder & Strategy Lead | `+977 980-1234568` | `biyog.dangol@navigonepal.org` | `@biyog.dangol` | Co-Founders |
 | 12 | **Prajwal Dhungana** | Co-Founder & Programs Director | `+977 980-1234569` | `prajwal.dhungana@navigonepal.org` | `@prajwal.dhungana` | Co-Founders |
 | 13 | **Ujjwal Dhungana** | Consultant / Entrepreneur | `+977 980-9990001` | `ujjwal.dhungana@navigonepal.org` | `@ujjwal.dhungana` | Advisory Board |
