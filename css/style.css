@@ -6142,40 +6142,85 @@ select.form-control {
 .cr-cards-container {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 1.1rem;
 }
 
-/* Numbered Challenge/Response Cards */
+/* Numbered Challenge/Response Cards with Chevron Badge */
 .cr-card {
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
-  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-lg, 12px);
+  padding: 1.25rem 1.5rem;
   display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1.35rem;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
   box-shadow: var(--shadow-sm);
+  position: relative;
 }
 
 .cr-card:hover {
-  background: var(--bg-secondary);
+  background: var(--bg-card);
   border-color: var(--accent-light);
   box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.cr-badge-wrap {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0.15rem;
+  transition: transform 0.3s ease;
+}
+
+.cr-card:hover .cr-badge-wrap {
+  transform: scale(1.04);
+}
+
+.cr-badge-svg {
+  display: block;
+  width: 72px;
+  height: 52px;
+  overflow: visible;
+}
+
+.cr-badge-outer {
+  stroke: #E87A24;
+  transition: stroke 0.3s ease, filter 0.3s ease;
+}
+
+.cr-badge-inner {
+  fill: #E87A24;
+  transition: fill 0.3s ease;
+}
+
+.cr-card:hover .cr-badge-outer {
+  stroke: #F4A261;
+  filter: drop-shadow(0 2px 6px rgba(232, 122, 36, 0.35));
+}
+
+.cr-badge-text {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  fill: #FFFFFF;
+}
+
+.cr-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
 }
 
 .cr-card-header {
   display: flex;
   align-items: center;
-  gap: 1rem;
-}
-
-.cr-card-num {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 2.2rem;
-  color: var(--accent-light);
-  opacity: 0.4;
-  line-height: 1;
-  letter-spacing: 0.05em;
+  gap: 0.8rem;
 }
 
 .cr-card-labels {
@@ -6187,44 +6232,72 @@ select.form-control {
   font-family: 'Inter', sans-serif;
   font-size: 0.62rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 0.2rem 0.6rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sm, 4px);
+  display: inline-flex;
+  align-items: center;
 }
 
 .cr-tag--challenge {
-  background: rgba(230, 57, 70, 0.1);
+  background: rgba(230, 57, 70, 0.09);
   color: #E63946;
-  border: 1px solid rgba(230, 57, 70, 0.25);
+  border: 1px solid rgba(230, 57, 70, 0.22);
 }
 
 .cr-tag--response {
-  background: rgba(42, 157, 143, 0.1);
+  background: rgba(42, 157, 143, 0.09);
   color: #2A9D8F;
-  border: 1px solid rgba(42, 157, 143, 0.25);
+  border: 1px solid rgba(42, 157, 143, 0.22);
 }
 
 .cr-card-title {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
   font-size: 1.08rem;
   font-weight: 700;
   color: var(--text-main);
   margin: 0;
-  line-height: 1.35;
+  line-height: 1.38;
+}
+
+.cr-title-arrow {
+  color: var(--accent-light);
+  font-weight: 600;
+  margin: 0 0.25rem;
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.cr-card:hover .cr-title-arrow {
+  transform: translateX(4px);
+  color: #E87A24;
 }
 
 .cr-card-body {
   font-family: 'Inter', sans-serif;
-  font-size: 0.95rem;
+  font-size: 0.94rem;
   color: var(--text-muted);
-  line-height: 1.45;
+  line-height: 1.55;
   margin: 0;
 }
 
 .cr-card-body em {
-  color: #F4A261;
+  color: #E87A24;
   font-style: normal;
   font-weight: 600;
+  background: rgba(232, 122, 36, 0.08);
+  padding: 0.08rem 0.3rem;
+  border-radius: 4px;
+}
+
+@media (max-width: 640px) {
+  .cr-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+    padding: 1rem 1.15rem;
+  }
 }
 
 /* ---- BOTTOM: Horizontal Stats Row ---- */
