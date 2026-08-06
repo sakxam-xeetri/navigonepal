@@ -6009,92 +6009,123 @@ select.form-control {
 .cr-section {
   background: var(--bg-primary);
   color: var(--text-main);
-  min-height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding: 0.5rem 0 1.5rem;
+  padding: 3.5rem 0 2.5rem;
   position: relative;
   overflow: hidden;
+  scroll-margin-top: 90px;
 }
 
 .cr-inner {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  gap: 2.5rem;
+  align-items: stretch;
   width: 100%;
-  max-width: 100%;
-  margin: 0;
-  padding: 0 2.5% 0 0.5%;
+  margin-bottom: 2.5rem;
 }
 
-/* ---- LEFT: Triple Diagonal Capsule Photo Collage ---- */
+/* ---- LEFT: Sleek Feature Image Frame ---- */
 .cr-left-collage {
-  flex: 0 0 auto;
-  width: 30%;
+  width: 100%;
   position: relative;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  min-height: 420px;
+  flex-direction: column;
+  height: 100%;
+  min-height: 460px;
 }
 
-/* Decorative circle outline behind collage */
-.cr-collage-outline-bg {
-  position: absolute;
-  width: 380px;
-  height: 380px;
-  border: 2px dashed rgba(37, 99, 235, 0.2);
-  border-radius: 50%;
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* Masked Image Container with drop shadow shape */
-.cr-masked-container {
-  width: 380px;
-  height: 380px;
+.cr-image-frame {
   position: relative;
-  z-index: 1;
-  -webkit-mask: url(#capsule-mask);
-  mask: url(#capsule-mask);
-  filter: drop-shadow(0 20px 40px rgba(10, 35, 66, 0.12));
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
 }
 
 .cr-collage-img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
-  filter: grayscale(1) contrast(1.05);
-  transition: filter 0.5s ease;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
 }
 
 .cr-left-collage:hover .cr-collage-img {
-  filter: grayscale(0) contrast(1);
+  transform: scale(1.03);
+}
+
+.cr-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0) 50%, rgba(15, 23, 42, 0.5) 100%);
+  pointer-events: none;
+}
+
+.cr-image-badge {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  right: 1.25rem;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 0.75rem 1.15rem;
+  border-radius: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1E293B;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  z-index: 2;
+}
+
+.cr-badge-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #E87A24;
+  display: inline-block;
+  box-shadow: 0 0 0 3px rgba(232, 122, 36, 0.2);
 }
 
 /* ---- RIGHT: Content & Cards ---- */
 .cr-right-content {
-  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
-  padding-right: 1.5rem;
+  justify-content: center;
+  gap: 1.1rem;
+  width: 100%;
+}
+
+.cr-header-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
 }
 
 .cr-accent-bar {
   display: flex;
   gap: 0;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.2rem;
 }
 
 .cr-accent-seg {
   display: block;
-  width: 40px;
-  height: 5px;
+  width: 36px;
+  height: 4px;
+  border-radius: 2px;
 }
 
 .cr-seg-red {
@@ -6111,50 +6142,49 @@ select.form-control {
 
 .cr-eyebrow {
   font-family: 'Inter', sans-serif;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--text-muted);
   margin: 0;
 }
 
 .cr-big-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(2.8rem, 5vw, 4.4rem);
-  font-weight: 400;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(1.85rem, 2.8vw, 2.5rem);
+  font-weight: 800;
   color: var(--text-main);
-  line-height: 1.0;
-  letter-spacing: 0.03em;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
   margin: 0;
-  text-transform: uppercase;
 }
 
 .cr-intro-text {
   font-family: 'Inter', sans-serif;
-  font-size: 1.05rem;
+  font-size: 0.96rem;
   color: var(--text-muted);
-  line-height: 1.7;
-  margin: 0 0 0.2rem;
+  line-height: 1.6;
+  margin: 0;
   max-width: 100%;
 }
 
 .cr-cards-container {
   display: flex;
   flex-direction: column;
-  gap: 1.1rem;
+  gap: 0.85rem;
 }
 
 /* Numbered Challenge/Response Cards with Chevron Badge */
 .cr-card {
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg, 12px);
-  padding: 1.25rem 1.5rem;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: 1.35rem;
+  gap: 1.1rem;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
   box-shadow: var(--shadow-sm);
   position: relative;
@@ -6163,8 +6193,8 @@ select.form-control {
 .cr-card:hover {
   background: var(--bg-card);
   border-color: var(--accent-light);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
 }
 
 .cr-badge-wrap {
@@ -6172,18 +6202,18 @@ select.form-control {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 0.15rem;
+  padding-top: 0.1rem;
   transition: transform 0.3s ease;
 }
 
 .cr-card:hover .cr-badge-wrap {
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 
 .cr-badge-svg {
   display: block;
-  width: 72px;
-  height: 52px;
+  width: 64px;
+  height: 48px;
   overflow: visible;
 }
 
@@ -6205,7 +6235,7 @@ select.form-control {
 .cr-badge-text {
   font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
   font-weight: 800;
-  font-size: 20px;
+  font-size: 18px;
   fill: #FFFFFF;
 }
 
@@ -6213,29 +6243,29 @@ select.form-control {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 0.25rem;
   min-width: 0;
 }
 
 .cr-card-header {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 0.6rem;
 }
 
 .cr-card-labels {
   display: flex;
-  gap: 0.4rem;
+  gap: 0.35rem;
 }
 
 .cr-tag {
   font-family: 'Inter', sans-serif;
-  font-size: 0.62rem;
+  font-size: 0.6rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 0.2rem 0.55rem;
-  border-radius: var(--radius-sm, 4px);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
   display: inline-flex;
   align-items: center;
 }
@@ -6254,17 +6284,17 @@ select.form-control {
 
 .cr-card-title {
   font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
-  font-size: 1.08rem;
+  font-size: 0.98rem;
   font-weight: 700;
   color: var(--text-main);
   margin: 0;
-  line-height: 1.38;
+  line-height: 1.35;
 }
 
 .cr-title-arrow {
   color: var(--accent-light);
   font-weight: 600;
-  margin: 0 0.25rem;
+  margin: 0 0.2rem;
   display: inline-block;
   transition: transform 0.3s ease, color 0.3s ease;
 }
@@ -6276,9 +6306,9 @@ select.form-control {
 
 .cr-card-body {
   font-family: 'Inter', sans-serif;
-  font-size: 0.94rem;
+  font-size: 0.88rem;
   color: var(--text-muted);
-  line-height: 1.55;
+  line-height: 1.5;
   margin: 0;
 }
 
@@ -6287,17 +6317,8 @@ select.form-control {
   font-style: normal;
   font-weight: 600;
   background: rgba(232, 122, 36, 0.08);
-  padding: 0.08rem 0.3rem;
-  border-radius: 4px;
-}
-
-@media (max-width: 640px) {
-  .cr-card {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.8rem;
-    padding: 1rem 1.15rem;
-  }
+  padding: 0.05rem 0.25rem;
+  border-radius: 3px;
 }
 
 /* ---- BOTTOM: Horizontal Stats Row ---- */
@@ -6307,24 +6328,22 @@ select.form-control {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 100%;
-  margin: 1.5rem auto 0;
-  padding: 1.5rem 2.5% 0;
+  padding-top: 1.8rem;
   border-top: 1px solid var(--border-color);
 }
 
 .cr-stat-item {
   flex: 1;
   text-align: center;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 0.25rem;
 }
 
 .cr-stat-number {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(2rem, 3vw, 2.6rem);
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
   font-weight: 800;
   color: var(--text-main);
   line-height: 1.1;
@@ -6332,14 +6351,14 @@ select.form-control {
 
 .cr-stat-label {
   font-family: 'Inter', sans-serif;
-  font-size: 0.88rem;
+  font-size: 0.84rem;
   color: var(--text-muted);
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 .cr-stat-divider {
   width: 1px;
-  height: 50px;
+  height: 42px;
   background: var(--border-color);
   opacity: 0.8;
 }
@@ -6347,28 +6366,19 @@ select.form-control {
 /* ---- Responsive ---- */
 @media (max-width: 992px) {
   .cr-section {
-    min-height: auto;
-    padding: 5rem 0 3rem;
+    padding: 3rem 0 2.5rem;
   }
 
   .cr-inner {
-    flex-direction: column;
-    gap: 3.5rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
   }
 
   .cr-left-collage {
     width: 100%;
-    min-height: auto;
-  }
-
-  .cr-collage-outline-bg {
-    width: 320px;
-    height: 320px;
-  }
-
-  .cr-masked-container {
-    width: 320px;
-    height: 320px;
+    min-height: 360px;
+    height: 360px;
   }
 
   .cr-right-content {
@@ -6376,13 +6386,13 @@ select.form-control {
   }
 
   .cr-big-title {
-    font-size: 2.4rem;
+    font-size: 2rem;
   }
 
   .cr-stats-row {
     flex-direction: column;
-    gap: 2.5rem;
-    padding-top: 2.5rem;
+    gap: 1.8rem;
+    padding-top: 1.8rem;
   }
 
   .cr-stat-divider {
@@ -6394,23 +6404,12 @@ select.form-control {
   }
 }
 
-@media (max-width: 576px) {
-  .cr-section {
-    padding: 4rem 0 2rem;
-  }
-
-  .cr-collage-outline-bg {
-    width: 280px;
-    height: 280px;
-  }
-
-  .cr-masked-container {
-    width: 280px;
-    height: 280px;
-  }
-
-  .cr-big-title {
-    font-size: 2rem;
+@media (max-width: 640px) {
+  .cr-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.9rem 1rem;
   }
 }
 
