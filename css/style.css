@@ -6009,122 +6009,75 @@ select.form-control {
 .cr-section {
   background: var(--bg-primary);
   color: var(--text-main);
-  padding: 1.8rem 0 1.5rem;
+  padding: 3.5rem 0 3rem;
   position: relative;
   overflow: hidden;
-  scroll-margin-top: 80px;
+  scroll-margin-top: 85px;
 }
 
 .cr-inner {
   display: grid;
-  grid-template-columns: 38% 62%;
-  gap: 2rem;
-  align-items: stretch;
+  grid-template-columns: 44% 56%;
+  gap: 3rem;
+  align-items: center;
   width: 100%;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
 }
 
-/* ---- LEFT: Triple Diagonal Capsule Photo Collage (Reference Image) ---- */
+/* ---- LEFT: Triple Diagonal Capsule Photo Collage (Masked Single Photo) ---- */
 .cr-left-collage {
   width: 100%;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 380px;
+  min-height: 480px;
   height: 100%;
 }
 
-.cr-capsule-collage {
-  position: relative;
-  width: 360px;
-  height: 380px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  transform: rotate(-30deg);
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+.cr-svg-collage {
+  width: 100%;
+  max-width: 480px;
+  height: 480px;
+  display: block;
+  filter: drop-shadow(0 16px 40px rgba(0, 0, 0, 0.14));
 }
 
-.cr-left-collage:hover .cr-capsule-collage {
-  transform: rotate(-30deg) scale(1.04);
-}
-
-.cr-capsule-strip {
-  position: relative;
-  overflow: hidden;
-  border-radius: 999px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-  background: var(--bg-secondary);
-}
-
-.cr-strip-1 {
-  width: 92px;
-  height: 280px;
-}
-
-.cr-strip-2 {
-  width: 92px;
-  height: 360px;
-}
-
-.cr-strip-3 {
-  width: 92px;
-  height: 280px;
-}
-
-.cr-strip-img {
-  position: absolute;
-  width: 460px;
-  height: 460px;
-  object-fit: cover;
-  object-position: center;
-  top: 50%;
+.cr-collage-photo {
+  filter: grayscale(1) contrast(1.05);
+  transition: filter 0.5s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   transform-origin: center;
-  filter: contrast(1.03);
-  transition: filter 0.4s ease;
 }
 
-.cr-img-1 {
-  left: calc(50% + 108px);
-  transform: translate(-50%, -50%) rotate(30deg) scale(1.45);
+.cr-left-collage:hover .cr-collage-photo {
+  filter: grayscale(0) contrast(1);
+  transform: scale(1.04);
 }
 
-.cr-img-2 {
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(30deg) scale(1.45);
-}
-
-.cr-img-3 {
-  left: calc(50% - 108px);
-  transform: translate(-50%, -50%) rotate(30deg) scale(1.45);
-}
-
-/* ---- RIGHT: Content & Cards (Sharp Edges & Compact Spacing) ---- */
+/* ---- RIGHT: Content & Cards (Expanded Frame Fit) ---- */
 .cr-right-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 0.8rem;
+  gap: 1.2rem;
   width: 100%;
 }
 
 .cr-header-block {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.35rem;
 }
 
 .cr-accent-bar {
   display: flex;
   gap: 0;
-  margin-bottom: 0.15rem;
+  margin-bottom: 0.25rem;
 }
 
 .cr-accent-seg {
   display: block;
-  width: 32px;
+  width: 40px;
   height: 4px;
   border-radius: 0;
 }
@@ -6143,9 +6096,9 @@ select.form-control {
 
 .cr-eyebrow {
   font-family: 'Inter', sans-serif;
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--text-muted);
   margin: 0;
@@ -6153,7 +6106,7 @@ select.form-control {
 
 .cr-big-title {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(1.6rem, 2.2vw, 2.1rem);
+  font-size: clamp(2.2rem, 3.2vw, 2.85rem);
   font-weight: 800;
   color: var(--text-main);
   line-height: 1.15;
@@ -6163,9 +6116,9 @@ select.form-control {
 
 .cr-intro-text {
   font-family: 'Inter', sans-serif;
-  font-size: 0.88rem;
+  font-size: 1.02rem;
   color: var(--text-muted);
-  line-height: 1.5;
+  line-height: 1.6;
   margin: 0;
   max-width: 100%;
 }
@@ -6173,19 +6126,19 @@ select.form-control {
 .cr-cards-container {
   display: flex;
   flex-direction: column;
-  gap: 0.65rem;
+  gap: 1rem;
 }
 
-/* Numbered Challenge/Response Cards with Sharp Edges */
+/* Numbered Challenge/Response Cards (Sharp Edges & Generous Padding) */
 .cr-card {
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
   border-radius: 0;
-  padding: 0.8rem 1.1rem;
+  padding: 1.2rem 1.45rem;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: 1rem;
+  gap: 1.25rem;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
   box-shadow: var(--shadow-sm);
   position: relative;
@@ -6194,7 +6147,7 @@ select.form-control {
 .cr-card:hover {
   background: var(--bg-card);
   border-color: var(--accent-light);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
   transform: translateY(-2px);
 }
 
@@ -6203,7 +6156,7 @@ select.form-control {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 0.05rem;
+  padding-top: 0.1rem;
   transition: transform 0.3s ease;
 }
 
@@ -6213,8 +6166,8 @@ select.form-control {
 
 .cr-badge-svg {
   display: block;
-  width: 58px;
-  height: 44px;
+  width: 72px;
+  height: 52px;
   overflow: visible;
 }
 
@@ -6236,7 +6189,7 @@ select.form-control {
 .cr-badge-text {
   font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
   font-weight: 800;
-  font-size: 17px;
+  font-size: 20px;
   fill: #FFFFFF;
 }
 
@@ -6244,28 +6197,28 @@ select.form-control {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.3rem;
   min-width: 0;
 }
 
 .cr-card-header {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.65rem;
 }
 
 .cr-card-labels {
   display: flex;
-  gap: 0.3rem;
+  gap: 0.4rem;
 }
 
 .cr-tag {
   font-family: 'Inter', sans-serif;
-  font-size: 0.58rem;
+  font-size: 0.64rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 0.12rem 0.45rem;
+  padding: 0.18rem 0.6rem;
   border-radius: 0;
   display: inline-flex;
   align-items: center;
@@ -6285,17 +6238,17 @@ select.form-control {
 
 .cr-card-title {
   font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
-  font-size: 0.92rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: var(--text-main);
   margin: 0;
-  line-height: 1.3;
+  line-height: 1.38;
 }
 
 .cr-title-arrow {
   color: var(--accent-light);
   font-weight: 600;
-  margin: 0 0.15rem;
+  margin: 0 0.2rem;
   display: inline-block;
   transition: transform 0.3s ease, color 0.3s ease;
 }
@@ -6307,9 +6260,9 @@ select.form-control {
 
 .cr-card-body {
   font-family: 'Inter', sans-serif;
-  font-size: 0.83rem;
+  font-size: 0.92rem;
   color: var(--text-muted);
-  line-height: 1.45;
+  line-height: 1.55;
   margin: 0;
 }
 
@@ -6318,33 +6271,33 @@ select.form-control {
   font-style: normal;
   font-weight: 600;
   background: rgba(232, 122, 36, 0.08);
-  padding: 0.04rem 0.2rem;
+  padding: 0.05rem 0.25rem;
   border-radius: 0;
 }
 
-/* ---- BOTTOM: Horizontal Stats Row (Sharp Edges) ---- */
+/* ---- BOTTOM: Horizontal Stats Row ---- */
 .cr-stats-row {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding-top: 1.2rem;
+  padding-top: 2rem;
   border-top: 1px solid var(--border-color);
 }
 
 .cr-stat-item {
   flex: 1;
   text-align: center;
-  padding: 0 0.8rem;
+  padding: 0 1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.3rem;
 }
 
 .cr-stat-number {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(1.5rem, 2vw, 2.1rem);
+  font-size: clamp(2rem, 3vw, 2.75rem);
   font-weight: 800;
   color: var(--text-main);
   line-height: 1.1;
@@ -6352,9 +6305,9 @@ select.form-control {
 
 .cr-stat-label {
   font-family: 'Inter', sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .cr-stat-divider {

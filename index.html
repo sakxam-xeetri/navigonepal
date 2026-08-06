@@ -32,7 +32,7 @@
     rel="stylesheet">
 
   <!-- CSS Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=20260806_8">
+  <link rel="stylesheet" href="css/style.css?v=20260806_12">
 
   <style>
     /* Tab System */
@@ -572,19 +572,23 @@
   <section class="cr-section reveal" id="challenge-response">
     <div class="container">
       <div class="cr-inner">
-        <!-- LEFT: Triple Diagonal Capsule Photo Collage (matching reference image) -->
+        <!-- LEFT: Triple Diagonal Capsule Photo Collage (Grayscale by default, color on hover) -->
         <div class="cr-left-collage">
-          <div class="cr-capsule-collage">
-            <div class="cr-capsule-strip cr-strip-1">
-              <img src="assets/_NP_9264_0.jpg.webp" alt="Village students in Nepal" class="cr-strip-img cr-img-1">
-            </div>
-            <div class="cr-capsule-strip cr-strip-2">
-              <img src="assets/_NP_9264_0.jpg.webp" alt="Village students in Nepal" class="cr-strip-img cr-img-2">
-            </div>
-            <div class="cr-capsule-strip cr-strip-3">
-              <img src="assets/_NP_9264_0.jpg.webp" alt="Village students in Nepal" class="cr-strip-img cr-img-3">
-            </div>
-          </div>
+          <svg class="cr-svg-collage" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+              <mask id="cr-capsule-mask">
+                <rect width="480" height="480" fill="black" />
+                <g transform="rotate(-30 240 240)">
+                  <rect x="52" y="60" width="110" height="360" rx="55" ry="55" fill="white" />
+                  <rect x="185" y="0" width="110" height="480" rx="55" ry="55" fill="white" />
+                  <rect x="318" y="60" width="110" height="360" rx="55" ry="55" fill="white" />
+                </g>
+              </mask>
+            </defs>
+            <image href="assets/_NP_9264_0.jpg.webp" xlink:href="assets/_NP_9264_0.jpg.webp" width="480" height="480"
+              preserveAspectRatio="xMidYMid slice" mask="url(#cr-capsule-mask)" class="cr-collage-photo" />
+          </svg>
         </div>
 
         <!-- RIGHT: Content and Challenge/Response Cards -->
@@ -620,12 +624,6 @@
                 </svg>
               </div>
               <div class="cr-card-content">
-                <div class="cr-card-header">
-                  <div class="cr-card-labels">
-                    <span class="cr-tag cr-tag--challenge">Challenge</span>
-                    <span class="cr-tag cr-tag--response">Response</span>
-                  </div>
-                </div>
                 <h3 class="cr-card-title">Rote Learning Dominates the Classroom <span class="cr-title-arrow">→</span>
                   Interactive, Inquiry-Led Workshops</h3>
                 <p class="cr-card-body">Nepal's public education system relies heavily on memorisation. Navigo Nepal
@@ -652,12 +650,6 @@
                 </svg>
               </div>
               <div class="cr-card-content">
-                <div class="cr-card-header">
-                  <div class="cr-card-labels">
-                    <span class="cr-tag cr-tag--challenge">Challenge</span>
-                    <span class="cr-tag cr-tag--response">Response</span>
-                  </div>
-                </div>
                 <h3 class="cr-card-title">The Grade 10 Stream Selection Crisis <span class="cr-title-arrow">→</span>
                   Structured SEE Counseling &amp; Guidance</h3>
                 <p class="cr-card-body">The choice of academic stream after the 10th grade (SEE) defines a student's
@@ -684,12 +676,6 @@
                 </svg>
               </div>
               <div class="cr-card-content">
-                <div class="cr-card-header">
-                  <div class="cr-card-labels">
-                    <span class="cr-tag cr-tag--challenge">Challenge</span>
-                    <span class="cr-tag cr-tag--response">Response</span>
-                  </div>
-                </div>
                 <h3 class="cr-card-title">Extracurricular Passions Silenced by Pressures <span
                     class="cr-title-arrow">→</span> Student-Led Clubs &amp; Movements</h3>
                 <p class="cr-card-body">Strict focus on exam scores pushes technology, art, and leadership to the
