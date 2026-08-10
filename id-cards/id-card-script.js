@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             <!-- Top White Header (No Text Overlap) -->
             <div class="ref-header-top">
-              <img src="../assets/navigo logo.png" alt="Navigo Nepal" class="ref-header-logo" onerror="this.src='../assets/png_new_logo.png'">
+              <img src="../assets/navigo-logo.png" alt="Navigo Nepal" class="ref-header-logo" onerror="this.src='../assets/png_new_logo.png'">
               <div class="ref-header-brand">
                 NAVIGO NEPAL
                 <span>YOUTH EDUCATIONAL CATALYST</span>
@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <!-- BACK FACE -->
           <div class="card-face card-back">
             <div class="ref-back-header">
-              <img src="../assets/navigo logo.png" style="height: 32px;" onerror="this.src='../assets/png_new_logo.png'">
+              <img src="../assets/navigo-logo.png" style="height: 32px;" onerror="this.src='../assets/png_new_logo.png'">
               <span style="font-weight: 800; font-size: 0.85rem; color: #0F172A;">NAVIGO NEPAL</span>
             </div>
 
@@ -277,7 +277,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="card-wrapper">
             <div class="card-face card-front">
               <div class="ref-header-top">
-                <img src="../assets/navigo logo.png" class="ref-header-logo" onerror="this.src='../assets/png_new_logo.png'">
+                <img src="../assets/navigo-logo.png" class="ref-header-logo" onerror="this.src='../assets/png_new_logo.png'">
                 <div class="ref-header-brand">NAVIGO NEPAL<span>YOUTH EDUCATIONAL CATALYST</span></div>
               </div>
               <div class="ref-wings-container">
@@ -315,7 +315,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="card-wrapper">
             <div class="card-face card-back" style="transform: none;">
               <div class="ref-back-header">
-                <img src="../assets/navigo logo.png" style="height: 32px;" onerror="this.src='../assets/png_new_logo.png'">
+                <img src="../assets/navigo-logo.png" style="height: 32px;" onerror="this.src='../assets/png_new_logo.png'">
                 <span style="font-weight: 800; font-size: 0.85rem; color: #0F172A;">NAVIGO NEPAL</span>
               </div>
               <div class="ref-back-body">
@@ -619,7 +619,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "phone": "+977 976-4320750",
         "email": "sakshyamxeetri@gmail.com",
         "social": "@sakshyam.bastakoti",
-        "photo": "../assets/members/sakshyambastakoti.PNG"
+        "photo": "../assets/members/sakshyam-bastakoti.png"
       }
     ];
   }

@@ -941,7 +941,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Pages
     { title: "Our Story", desc: "The complete story of Navigo Nepal's journey", url: "our-story.html", category: "About", keywords: "about story mission vision founding" },
     { title: "Our Team", desc: "Meet the team behind Navigo Nepal", url: "team.html", category: "About", keywords: "team members founders cofounders" },
-    { title: "Coordinators", desc: "District coordinators and ambassadors across Nepal", url: "coordinators.html", category: "About", keywords: "coordinator ambassador district naviger" },
+    { title: "Coordinators", desc: "District coordinators and ambassadors across Nepal", url: "team.html", category: "About", keywords: "coordinator ambassador district naviger" },
     { title: "Past Events", desc: "Timeline of past projects and collaborations", url: "past-events.html", category: "About", keywords: "past events timeline projects history" },
     // Get Involved
     { title: "Join Navigo", desc: "Join us as a volunteer, intern, or partner", url: "join.html", category: "Get Involved", keywords: "join volunteer intern partner contact" },
@@ -1046,7 +1046,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "donation": "donate.html",
         "sponsor": "donate.html",
         "team": "team.html",
-        "coordinator": "coordinators.html",
+        "coordinator": "team.html",
         "partner": "join.html#partner",
         "join": "join.html",
         "propose": "propose-project.html",

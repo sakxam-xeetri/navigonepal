@@ -28,20 +28,45 @@ This web dashboard displays nationwide community impact, dynamic portfolios, int
 
 ```tree
 d:/navigonepal
-├── assets/                    # Graphic assets and images
+├── assets/                    # Graphic assets, logos, member photos, and images
+│   ├── advisory/              # Advisory board member photos
+│   ├── how-we-are-unique/     # Visual gallery images
+│   ├── members/               # Team member photos & default avatars
+│   ├── mentor/                # Mentor photo gallery
+│   ├── our-vision/            # Vision section background graphics
+│   └── partner/               # Partner & ecosystem logos
 ├── css/
-│   ├── style.css              # Custom styling sheet
-│   └── style_old.css          # Deprecated stylesheet archive
+│   ├── style.css              # Main design system & responsive styling
+│   ├── programs.css           # Program cards & grid styling
+│   └── team.css               # Team page & coordinator layout styling
 ├── js/
-│   ├── app.js                 # Primary dashboard and application logic
-│   └── cms.js                 # Unified client-side content management
-├── index.html                 # Main landing dashboard
-├── our-vision.html            # Vision and core values subpage
-├── founding-story.html        # Historical timeline and startup narrative
-├── leadership-message.html    # Co-founder message & leadership values
-├── future-goals.html          # Dynamic goals and progress meters
-├── extract_pages.py           # Subpage automation compiler
-├── safeguard_js.py            # Selector protection for multi-page routing
+│   ├── app.js                 # Primary interactive logic & UI controllers
+│   ├── cms.js                 # Unified client-side content management
+│   ├── form-handler.js        # Dynamic modal & Formspree form submission handler
+│   ├── maintenance.js         # Site maintenance mode guard
+│   └── theme.js               # Dark/Light theme state manager
+├── docs/                      # Technical documentation & project proposals
+│   ├── FORMSPREE_SETUP.md     # Formspree backend integration setup guide
+│   ├── design.md              # UI/UX design specifications & color palette
+│   └── Navigo-Nepal-*.md      # Technical proposal & requirement documents
+├── id-cards/                  # Digital & Printable Member ID Card Generator tool
+│   ├── index.html             # ID card generation portal
+│   ├── verify.html            # Digital ID card verification portal
+│   ├── id-card-script.js      # Card rendering & QR code generation logic
+│   └── members.json           # Member identity dataset
+├── index.html                 # Main landing dashboard portal
+├── our-story.html             # Organization founding narrative & timeline
+├── programs.html              # Core initiatives & project portfolio
+├── team.html                  # Leadership, team members & advisory board
+├── volunteer.html             # Volunteer registration portal
+├── join.html                  # Membership & community registration portal
+├── intern.html                # Internship opportunities portal
+├── propose-project.html       # Project proposal submission portal
+├── past-events.html           # Historical event gallery & highlights
+├── donate.html                # Donation & supporter contribution portal
+├── verify.html                # Main QR-code member profile verification portal
+├── admin.html                 # Local CMS management dashboard
+├── maintenance.html           # Maintenance landing page
 └── README.md                  # Project documentation (this file)
 ```
 
@@ -57,61 +82,9 @@ graph TD
     APP -->|Dynamic DOM Injection| INDEX[index.html Main Portal]
     APP -->|Binds Event Listeners & Theme| INDEX
     APP -->|Renders Map Tooltips| SVG[Interactive Nepal SVG Map]
-    
-    PYTHON[Python Tooling] -->|Compiles Layout Blocks| SUB[Subpages: Vision, Story, Goals, etc.]
-    PYTHON -->|Safeguards Selector Queries| APP
+    ID[id-cards/index.html Portal] -->|Reads Dataset| JSON[id-cards/members.json]
+    JSON -->|Generates Verified Cards & QR| VERIFY[verify.html Portal]
 ```
-
-### Core Architecture Components
-
-1.  **Unified Content Registry ([js/cms.js](file:///d:/navigonepal/js/cms.js))**
-    All textual content, portfolio grids, image paths, stats, and metadata are maintained here. To update the website, content administrators modify this file directly without writing HTML.
-2.  **Dashboard Controller ([js/app.js](file:///d:/navigonepal/js/app.js))**
-    Orchestrates the entire UI cycle:
-    *   Loads JSON-like data structure from CMS.
-    *   Fades in components with dynamic layouts.
-    *   Sets up the `IntersectionObserver` to highlight navigation links active status.
-    *   Initiates bento counter tickers when sections scroll into view.
-    *   Manages the custom search input system and displays matches dynamically.
-3.  **Visual System Framework ([css/style.css](file:///d:/navigonepal/css/style.css))**
-    Includes root variables for light and dark modes, typography curves, customized flexbox layouts, grid layouts, scroll progress widgets, and keyframe definitions for ambient glowing orbits.
-
----
-
-##  Installation & Local Development
-
-This project is a high-fidelity frontend static dashboard. It has no build step or node package requirements. You can run it locally with any simple HTTP server.
-
-### Option 1: Live Server (Recommended)
-If you are using Visual Studio Code, install the **Live Server** extension, open [index.html](file:///d:/navigonepal/index.html), and click **"Go Live"** on the status bar.
-
-### Option 2: Python HTTP Server
-Run the built-in HTTP server module with Python in the workspace root directory:
-
-```bash
-python -m http.server 8000
-```
-Then navigate to `http://localhost:8000` in your web browser.
-
----
-
-##  Development & Automation Tools
-
-To simplify updating subpages and keeping selectors safe, the project includes several Python developer scripts:
-
-*   **Subpage Generator ([extract_pages.py](file:///d:/navigonepal/extract_pages.py))**
-    Automates generating subpages ([our-vision.html](file:///d:/navigonepal/our-vision.html), [founding-story.html](file:///d:/navigonepal/founding-story.html), [leadership-message.html](file:///d:/navigonepal/leadership-message.html), [future-goals.html](file:///d:/navigonepal/future-goals.html)) using section blocks from the main index. This guarantees layout templates (like headers, scripts, and styling references) remain consistent.
-    
-    ```bash
-    python extract_pages.py
-    ```
-
-*   **JS Robustness Utility ([safeguard_js.py](file:///d:/navigonepal/safeguard_js.py))**
-    Updates [js/app.js](file:///d:/navigonepal/js/app.js) to check that query selectors are not null before updating elements. This ensures scripts run without errors on subpages that do not contain all the main home page's HTML elements.
-    
-    ```bash
-    python safeguard_js.py
-    ```
 
 ---
 

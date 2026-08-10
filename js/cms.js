@@ -221,7 +221,7 @@ const NAVIGO_CMS = {
       name: "Biyog Man Dangol",
       role: "Co-Founder & Technology Lead",
       bio: "Manages technical support, computer literacy programs, and leads research on the Connect Tech to Veda project.",
-      image: "assets/advisory/boyanm dangol.png",
+      image: "assets/advisory/biyog-man-dangol.png",
       linkedin: "https://linkedin.com/in/biyog-dangol"
     },
     {
