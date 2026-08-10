@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div style="font-size: 0.7rem; color: #94A3B8; font-weight: 600;">EMERGENCY CONTACT & OFFICIAL CONTACTS</div>
                 <div style="font-size: 0.85rem; font-weight: 700; color: #F8FAFC;">${member.phone || '+977 980-0000000'}</div>
                 <div style="font-size: 0.75rem; color: #4F9CF9; font-weight: 600; margin-top: 0.2rem;">navigonepal@gmail.com</div>
-                <div style="font-size: 0.75rem; color: #F59E0B; font-weight: 700; margin-top: 0.15rem;">www.navigonepal.org</div>
+                <div style="font-size: 0.75rem; color: #60A5FA; font-weight: 700; margin-top: 0.15rem;">www.navigonepal.org</div>
               </div>
             </div>
           </div>
@@ -337,7 +337,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   <div style="font-size: 0.7rem; color: #94A3B8; font-weight: 600;">EMERGENCY CONTACT & OFFICIAL CONTACTS</div>
                   <div style="font-size: 0.85rem; font-weight: 700; color: #F8FAFC;">${member.phone || '+977 980-0000000'}</div>
                   <div style="font-size: 0.75rem; color: #4F9CF9; font-weight: 600; margin-top: 0.2rem;">navigonepal@gmail.com</div>
-                  <div style="font-size: 0.75rem; color: #F59E0B; font-weight: 700; margin-top: 0.15rem;">www.navigonepal.org</div>
+                  <div style="font-size: 0.75rem; color: #60A5FA; font-weight: 700; margin-top: 0.15rem;">www.navigonepal.org</div>
                 </div>
               </div>
             </div>

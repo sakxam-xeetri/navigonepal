@@ -51,7 +51,7 @@ Below is the complete roster of ID cards generated from the website roles and up
      - **Both Front & Back (Duplex)**: Page 1 prints 10 Fronts; Page 2 prints 10 Backs.
      - **Side-by-Side Pairs**: Prints 5 Front & Back pairs (10 card faces) per sheet.
    - Click **"Preview A4 Sheets"** to visually inspect how cards will fit on A4 Landscape paper before sending to the printer.
-3. **Exact Matching Colors**: All card backgrounds (`#121418`), orange wing accents, circular avatar frames, designation badges, email rows, and QR codes are preserved 100% using `-webkit-print-color-adjust: exact`.
+3. **Exact Matching Colors**: All card backgrounds (`#121418`), Executive Blue wing accents (`#2563EB`), circular avatar frames, designation badges, email rows, and QR codes are preserved 100% using `-webkit-print-color-adjust: exact`.
 4. **Single Card Printing**: Click **"Print Card"** on any card to open a high-resolution print window displaying Front & Back sides side-by-side in landscape format.
 5. Use **"Flip Card"** or click on any card to view the reverse side containing emergency contacts, terms of membership, QR verification code, and signature block.
 

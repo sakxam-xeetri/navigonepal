@@ -10,9 +10,12 @@
   --card-height: 560px;
   --card-dark: #121418;
   --card-header-bg: #FFFFFF;
-  --accent-orange: #D97706;
-  --accent-orange-light: #F59E0B;
-  --accent-gray: #94A3B8;
+  --accent-blue: #2563EB;
+  --accent-blue-hover: #1D4ED8;
+  --accent-blue-light: #3B82F6;
+  --accent-sky: #60A5FA;
+  --accent-navy: #0A2342;
+  --accent-emerald: #10B981;
   --text-white: #FFFFFF;
   --text-gray: #CBD5E1;
 }
@@ -75,7 +78,7 @@ body {
 
 .id-brand-text p {
   font-size: 0.725rem;
-  color: var(--accent-orange-light);
+  color: var(--accent-blue-light);
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -103,14 +106,15 @@ body {
 }
 
 .btn-nvg-primary {
-  background: var(--accent-orange);
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
   color: #FFFFFF;
-  box-shadow: 0 4px 15px rgba(217, 119, 6, 0.35);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.35);
 }
 
 .btn-nvg-primary:hover {
-  background: #B45309;
+  background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45);
 }
 
 .btn-nvg-secondary {
@@ -126,12 +130,13 @@ body {
 
 .btn-nvg-outline {
   background: transparent;
-  border-color: var(--accent-orange-light);
-  color: var(--accent-orange-light);
+  border-color: var(--accent-blue-light);
+  color: var(--accent-blue-light);
 }
 
 .btn-nvg-outline:hover {
-  background: rgba(245, 158, 11, 0.1);
+  background: rgba(59, 130, 246, 0.12);
+  color: #FFFFFF;
 }
 
 /* --- MAIN & CONTROLS --- */
@@ -171,10 +176,12 @@ body {
   color: #FFFFFF;
   font-size: 0.9rem;
   outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .id-search-box input:focus {
-  border-color: var(--accent-orange);
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
 }
 
 .id-search-box svg {
@@ -201,11 +208,13 @@ body {
   border: 1px solid transparent;
   cursor: pointer;
   white-space: nowrap;
+  transition: all 0.2s ease;
 }
 
 .filter-tab.active {
-  background: var(--accent-orange);
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
   color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 }
 
 .id-cards-grid {
@@ -319,7 +328,7 @@ body {
   top: 0;
   width: 95px;
   height: 60px;
-  background: linear-gradient(135deg, #D97706 0%, #EA580C 100%);
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
   clip-path: polygon(0 0, 100% 35%, 0 100%);
 }
 
@@ -329,7 +338,7 @@ body {
   top: 0;
   width: 95px;
   height: 60px;
-  background: linear-gradient(135deg, #CBD5E1 0%, #94A3B8 100%);
+  background: linear-gradient(135deg, #0A2342 0%, #1E293B 100%);
   clip-path: polygon(100% 0, 100% 100%, 0 35%);
 }
 
@@ -348,7 +357,7 @@ body {
   border-radius: 50%;
   background: #FFFFFF;
   padding: 5px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(37, 99, 235, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -392,7 +401,7 @@ body {
 }
 
 .ref-designation-badge {
-  background: var(--accent-orange);
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
   color: #FFFFFF;
   font-family: 'Inter', sans-serif;
   font-size: 0.8rem;
@@ -402,7 +411,7 @@ body {
   display: inline-block;
   margin-bottom: 1.1rem;
   letter-spacing: 0.02em;
-  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
 }
 
 /* Key-Value Details List with Full Un-truncated Emails */
@@ -505,7 +514,7 @@ body {
 
 .ref-footer-label {
   font-weight: 700;
-  color: var(--accent-orange-light);
+  color: var(--accent-sky);
   text-transform: lowercase;
 }
 
@@ -583,7 +592,7 @@ body {
 .ref-sign-text {
   font-family: cursive;
   font-size: 1.2rem;
-  color: var(--accent-orange-light);
+  color: var(--accent-blue-light);
   transform: rotate(-5deg);
 }
 
@@ -626,9 +635,10 @@ body {
 }
 
 .btn-card-action:hover {
-  background: var(--accent-orange);
+  background: var(--accent-blue);
   color: #FFFFFF;
-  border-color: var(--accent-orange);
+  border-color: var(--accent-blue);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 }
 
 /* MODAL FOR NEW CARD GENERATOR */
@@ -744,7 +754,7 @@ body {
 }
 
 .id-footer-link {
-  color: var(--accent-orange-light);
+  color: var(--accent-blue-light);
   text-decoration: none;
   font-weight: 600;
   font-size: 0.85rem;
@@ -776,8 +786,8 @@ body {
 
 /* Screen Preview Styles for A4 Landscape Sheet */
 .print-options-banner {
-  background: rgba(217, 119, 6, 0.12);
-  border: 1px solid rgba(217, 119, 6, 0.3);
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.25);
   border-radius: 12px;
   padding: 1rem 1.5rem;
   margin-bottom: 1.5rem;
@@ -790,7 +800,7 @@ body {
 
 .print-options-info h3 {
   font-size: 1rem;
-  color: #F59E0B;
+  color: #60A5FA;
   font-family: 'Outfit', sans-serif;
   margin-bottom: 0.2rem;
 }
@@ -839,7 +849,7 @@ body {
   min-width: 297mm;
   height: 210mm;
   background: #0B0E14;
-  border: 2px dashed rgba(217, 119, 6, 0.4);
+  border: 2px dashed rgba(37, 99, 235, 0.4);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: 5mm 6mm;
@@ -864,7 +874,7 @@ body {
 }
 
 .a4-sheet-header-label span {
-  color: #F59E0B;
+  color: #60A5FA;
 }
 
 .a4-landscape-grid {
@@ -1049,15 +1059,15 @@ body {
   }
 
   .print-card-cell .ref-wing-left {
-    background: linear-gradient(135deg, #D97706 0%, #EA580C 100%) !important;
+    background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%) !important;
   }
 
   .print-card-cell .ref-wing-right {
-    background: linear-gradient(135deg, #CBD5E1 0%, #94A3B8 100%) !important;
+    background: linear-gradient(135deg, #0A2342 0%, #1E293B 100%) !important;
   }
 
   .print-card-cell .ref-designation-badge {
-    background: #D97706 !important;
+    background: #2563EB !important;
     color: #FFFFFF !important;
   }
 
@@ -1071,6 +1081,6 @@ body {
   }
 
   .print-card-cell .ref-footer-label {
-    color: #F59E0B !important;
+    color: #3B82F6 !important;
   }
 }
