@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certificate of Accomplishment</title>
+<style>
+  body { margin: 0; padding: 0; background-color: #F8FBFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+  .email-container { max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(10,35,66,0.08); }
+  .brand-bar { height: 6px; background: linear-gradient(90deg, #2563EB 0%, #10B981 33%, #F4A261 66%, #E63946 100%); }
+  .header { background: #0A2342; padding: 32px 24px; text-align: center; color: #ffffff; }
+  .logo-title { font-size: 24px; font-weight: 800; margin: 0; color: #ffffff; text-decoration: none; display: inline-block; }
+  .logo-title span { color: #4F9CF9; }
+  .content { padding: 36px 32px; color: #0A2342; line-height: 1.6; text-align: center; }
+  .cert-badge { display: inline-block; background: rgba(16,185,129,0.1); border: 2px solid #10B981; color: #10B981; padding: 8px 18px; border-radius: 20px; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
+  .recipient-name { font-size: 24px; font-weight: 800; color: #0A2342; margin: 12px 0; border-bottom: 2px solid #2563EB; display: inline-block; padding-bottom: 4px; }
+  .cert-box { background: #F8FBFF; border: 1px dashed #2563EB; border-radius: 10px; padding: 20px; margin: 24px 0; text-align: left; }
+  .btn-cta { display: inline-block; background: #2563EB; color: #ffffff !important; text-decoration: none; padding: 14px 28px; border-radius: 8px; font-weight: 700; font-size: 15px; margin-top: 16px; box-shadow: 0 4px 12px rgba(37,99,235,0.3); }
+  .footer { background: #06172F; padding: 28px 24px; text-align: center; color: #8BA3C4; font-size: 13px; }
+
+  @media screen and (max-width: 600px) {
+    .content { padding: 24px 20px !important; }
+    .recipient-name { font-size: 20px !important; }
+    .btn-cta { display: block !important; width: 100% !important; box-sizing: border-box !important; }
+  }
+</style>
+</head>
+<body>
+<div style="background-color: #F8FBFF; padding: 20px 10px;">
+  <div class="email-container">
+    <div class="brand-bar"></div>
+    <div class="header">
+      <a href="https://navigonepal.org" style="text-decoration: none; display: inline-block;">
+        <img src="https://navigonepal.org/assets/png_new_logo.png" alt="Navigo Nepal Logo" style="height: 48px; width: auto; margin-bottom: 8px; border-radius: 6px;" onerror="this.src='../../assets/png_new_logo.png'">
+        <div class="logo-title" style="display: block;">NAVIGO <span>NEPAL</span></div>
+      </a>
+      <div style="font-size: 13px; color: #8BA3C4; margin-top: 6px; text-transform: uppercase;">Official Recognition & Verification</div>
+    </div>
+    
+    <div class="content">
+      <div class="cert-badge">Certificate of Completion</div>
+      <p style="font-size: 15px; color: #64748B;">This is officially awarded to</p>
+      <div class="recipient-name">{{Recipient_Name}}</div>
+      <p style="font-size: 15px; color: #475569; margin-top: 12px;">for successfully completing the rigorous practical module in</p>
+      <p style="font-size: 18px; font-weight: 700; color: #2563EB; margin: 6px 0;">"{{Program_Name}}"</p>
+
+      <div class="cert-box">
+        <div style="font-size: 12px; color: #64748B; text-transform: uppercase; font-weight: 700;">Certificate Credential Details</div>
+        <div style="font-size: 14px; margin-top: 6px;"><strong>Issued On:</strong> {{Issue_Date}}</div>
+        <div style="font-size: 14px; margin-top: 4px;"><strong>Verification ID:</strong> <code style="background:#e2e8f0; padding:2px 6px; border-radius:4px; font-family:monospace;">{{Verification_Code}}</code></div>
+        <div style="font-size: 14px; margin-top: 4px;"><strong>Issuer:</strong> Navigo Nepal Executive Board</div>
+      </div>
+
+      <a href="{{Verify_Link}}" class="btn-cta">Verify & Download Digital Certificate &rarr;</a>
+
+      <p style="margin-top: 28px; font-size: 13px; color: #64748B;">You can share your verified achievement directly on LinkedIn or add your Digital ID to your academic resume!</p>
+    </div>
+
+    <div class="footer">
+      <p>&copy; 2026 Navigo Nepal Verification Engine &bull; <a href="https://navigonepal.org/verify.html" style="color:#4F9CF9;">Verify Credentials</a></p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

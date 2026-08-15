@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Navigo Nepal Monthly Dispatch</title>
+<style>
+  body { margin: 0; padding: 0; background-color: #F8FBFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+  .email-container { max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(10,35,66,0.08); }
+  .brand-bar { height: 6px; background: linear-gradient(90deg, #2563EB 0%, #10B981 33%, #F4A261 66%, #E63946 100%); }
+  .header { background: #0A2342; padding: 32px 24px; text-align: center; color: #ffffff; }
+  .logo-title { font-size: 24px; font-weight: 800; margin: 0; color: #ffffff; text-decoration: none; display: inline-block; }
+  .logo-title span { color: #4F9CF9; }
+  .content { padding: 36px 32px; color: #0A2342; line-height: 1.6; }
+  .stat-grid { display: table; width: 100%; margin: 20px 0; text-align: center; background: #0A2342; border-radius: 10px; padding: 16px 0; color: #ffffff; }
+  .stat-cell { display: table-cell; width: 33.33%; border-right: 1px solid rgba(255,255,255,0.1); }
+  .stat-cell:last-child { border-right: none; }
+  .stat-num { font-size: 22px; font-weight: 800; color: #4F9CF9; }
+  .stat-label { font-size: 11px; text-transform: uppercase; color: #8BA3C4; letter-spacing: 0.5px; }
+  .story-card { background: #F8FBFF; border-left: 4px solid #2563EB; padding: 16px 20px; border-radius: 0 8px 8px 0; margin-top: 20px; }
+  .btn-cta { display: inline-block; background: #2563EB; color: #ffffff !important; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: 700; font-size: 14px; margin-top: 20px; }
+  .footer { background: #06172F; padding: 28px 24px; text-align: center; color: #8BA3C4; font-size: 13px; }
+
+  @media screen and (max-width: 600px) {
+    .content { padding: 24px 20px !important; }
+    .stat-num { font-size: 18px !important; }
+    .btn-cta { display: block !important; width: 100% !important; box-sizing: border-box !important; }
+  }
+</style>
+</head>
+<body>
+<div style="background-color: #F8FBFF; padding: 20px 10px;">
+  <div class="email-container">
+    <div class="brand-bar"></div>
+    <div class="header">
+      <a href="https://navigonepal.org" style="text-decoration: none; display: inline-block;">
+        <img src="https://navigonepal.org/assets/png_new_logo.png" alt="Navigo Nepal Logo" style="height: 48px; width: auto; margin-bottom: 8px; border-radius: 6px;" onerror="this.src='../../assets/png_new_logo.png'">
+        <div class="logo-title" style="display: block;">NAVIGO <span>NEPAL</span></div>
+      </a>
+      <div style="font-size: 13px; color: #8BA3C4; margin-top: 6px; text-transform: uppercase;">Impact Dispatch &bull; {{Edition_Month}}</div>
+    </div>
+    
+    <div class="content">
+      <p>Namaste <strong>{{Subscriber_Name}}</strong>,</p>
+      <p>Here is your monthly snapshot of how Navigo Nepal is transforming educational opportunities for high school learners across Nepal.</p>
+
+      <div class="stat-grid">
+        <div class="stat-cell">
+          <div class="stat-num">{{Students_Impacted}}</div>
+          <div class="stat-label">Students</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num">{{Schools_Reached}}</div>
+          <div class="stat-label">Schools</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num">{{Districts_Covered}}</div>
+          <div class="stat-label">Districts</div>
+        </div>
+      </div>
+
+      <div class="story-card">
+        <h3 style="margin:0 0 6px 0; font-size:16px; color:#0A2342;">Spotlight: {{Featured_Story_Title}}</h3>
+        <p style="margin:0; font-size:14px; color:#475569;">Our collegiate Navigers successfully conducted plastic waste recycling and eco-club orientation sessions with over 450 active student members.</p>
+      </div>
+
+      <div style="text-align: center;">
+        <a href="https://navigonepal.org/our-story.html" class="btn-cta">Read Full Impact Report &rarr;</a>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>&copy; 2026 Navigo Nepal &bull; <a href="https://navigonepal.org" style="color:#4F9CF9;">navigonepal.org</a></p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigo Nepal — Official Email Templates Studio</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <!-- Google Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --navy-dark: #06172F;
+      --navy-primary: #0A2342;
+      --navy-light: #0d2a4a;
+      --blue-accent: #2563EB;
+      --blue-light: #4F9CF9;
+      --emerald: #10B981;
+      --amber: #F4A261;
+      --red: #E63946;
+      --bg-page: #F8FBFF;
+      --card-bg: #FFFFFF;
+      --text-main: #0A2342;
+      --text-muted: #64748B;
+      --border-color: rgba(10, 35, 66, 0.1);
+      --radius: 12px;
+      --shadow: 0 10px 30px rgba(10, 35, 66, 0.08);
+    }
+
+    [data-theme="dark"] {
+      --bg-page: #06172F;
+      --card-bg: #0A2342;
+      --text-main: #F0F6FF;
+      --text-muted: #8BA3C4;
+      --border-color: rgba(255, 255, 255, 0.1);
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Top Navigation Header */
+    header.studio-header {
+      background: var(--navy-primary);
+      color: #FFFFFF;
+      padding: 16px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #FFFFFF;
+    }
+
+    .brand-logo img {
+      height: 40px;
+      width: auto;
+      border-radius: 6px;
+      background: #ffffff;
+      padding: 4px;
+    }
+
+    .brand-logo-text {
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: -0.5px;
+    }
+
+    .brand-logo-text span {
+      color: var(--blue-light);
+    }
+
+    .brand-badge {
+      background: rgba(37, 99, 235, 0.2);
+      border: 1px solid rgba(79, 156, 249, 0.4);
+      color: var(--blue-light);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .btn-theme-toggle {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #FFFFFF;
+      padding: 8px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.875rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn-theme-toggle:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Main Content Layout */
+    .studio-container {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      flex: 1;
+      height: calc(100vh - 72px);
+      overflow: hidden;
+    }
+
+    /* Sidebar Selector & Variables */
+    .sidebar {
+      background: var(--card-bg);
+      border-right: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      padding: 24px;
+      gap: 24px;
+    }
+
+    .section-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .template-selector {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .template-item {
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+      background: transparent;
+      color: var(--text-main);
+      cursor: pointer;
+      text-align: left;
+      font-family: inherit;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .template-item i {
+      font-size: 1.1rem;
+      color: var(--blue-accent);
+      width: 20px;
+      text-align: center;
+    }
+
+    .template-item:hover {
+      border-color: var(--blue-accent);
+      background: rgba(37, 99, 235, 0.04);
+    }
+
+    .template-item.active {
+      background: var(--blue-accent);
+      color: #FFFFFF;
+      border-color: var(--blue-accent);
+      font-weight: 600;
+    }
+
+    .template-item.active i {
+      color: #FFFFFF;
+    }
+
+    .template-item-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .template-item-name {
+      font-size: 0.9rem;
+    }
+
+    .template-item-desc {
+      font-size: 0.75rem;
+      opacity: 0.8;
+      margin-top: 2px;
+    }
+
+    /* Variable Customizer */
+    .variable-fields {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .form-group input, .form-group textarea, .form-group select {
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-page);
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.875rem;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: var(--blue-accent);
+    }
+
+    /* Workspace & Live Preview */
+    .workspace {
+      display: flex;
+      flex-direction: column;
+      background: var(--bg-page);
+      overflow: hidden;
+    }
+
+    .toolbar {
+      padding: 16px 24px;
+      background: var(--card-bg);
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .view-mode-tabs {
+      display: flex;
+      background: var(--bg-page);
+      padding: 4px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+    }
+
+    .tab-btn {
+      padding: 6px 16px;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tab-btn.active {
+      background: var(--card-bg);
+      color: var(--text-main);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .device-toggles {
+      display: flex;
+      gap: 6px;
+    }
+
+    .device-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .device-btn.active {
+      background: var(--blue-accent);
+      color: #FFFFFF;
+      border-color: var(--blue-accent);
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-action {
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--blue-accent);
+      color: #FFFFFF;
+    }
+
+    .btn-primary:hover {
+      background: #1d4ed8;
+    }
+
+    .btn-secondary {
+      background: rgba(16, 185, 129, 0.1);
+      color: var(--emerald);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(16, 185, 129, 0.2);
+    }
+
+    /* Preview Canvas */
+    .preview-container {
+      flex: 1;
+      padding: 32px;
+      overflow-y: auto;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .email-frame {
+      width: 100%;
+      max-width: 650px;
+      background: #FFFFFF;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      transition: max-width 0.3s ease;
+    }
+
+    .email-frame.mobile {
+      max-width: 375px;
+    }
+
+    iframe#previewIframe {
+      width: 100%;
+      height: 750px;
+      border: none;
+      display: block;
+      background: #FFFFFF;
+    }
+
+    /* Code View Panel */
+    .code-container {
+      flex: 1;
+      padding: 24px;
+      display: none;
+      overflow-y: auto;
+    }
+
+    .code-editor {
+      width: 100%;
+      height: 100%;
+      background: #06172F;
+      color: #7dd3fc;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      white-space: pre-wrap;
+      overflow-y: auto;
+      resize: none;
+    }
+
+    /* Toast Notifications */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #0A2342;
+      color: #FFFFFF;
+      padding: 12px 20px;
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      border-left: 4px solid var(--emerald);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      z-index: 1000;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header class="studio-header">
+    <a href="index.html" class="brand-logo">
+      <img src="assets/navigo-logo.png" alt="Navigo Nepal Logo" onerror="this.src='favicon.ico'">
+      <div class="brand-logo-text">NAVIGO <span>NEPAL</span></div>
+      <span class="brand-badge">Email Studio</span>
+    </a>
+    <div class="header-actions">
+      <button class="btn-theme-toggle" id="themeToggleBtn">
+        <i class="fa-solid fa-moon"></i> <span>Dark Mode</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Studio Main Content -->
+  <div class="studio-container">
+
+    <!-- Left Sidebar: Templates & Variables -->
+    <aside class="sidebar">
+      <div>
+        <div class="section-title">Select Email Template</div>
+        <div class="template-selector">
+          <button class="template-item active" data-template="welcome">
+            <i class="fa-solid fa-user-plus"></i>
+            <div class="template-item-info">
+              <span class="template-item-name">Welcome & Onboarding</span>
+              <span class="template-item-desc">For new volunteers, student members & Navigers</span>
+            </div>
+          </button>
+          <button class="template-item" data-template="event">
+            <i class="fa-solid fa-calendar-check"></i>
+            <div class="template-item-info">
+              <span class="template-item-name">Workshop / Event Invitation</span>
+              <span class="template-item-desc">For STEM sessions, SEE guidance & summits</span>
+            </div>
+          </button>
+          <button class="template-item" data-template="certificate">
+            <i class="fa-solid fa-award"></i>
+            <div class="template-item-info">
+              <span class="template-item-name">Completion & Recognition</span>
+              <span class="template-item-desc">Official certificate delivery & badge release</span>
+            </div>
+          </button>
+          <button class="template-item" data-template="donation">
+            <i class="fa-solid fa-heart"></i>
+            <div class="template-item-info">
+              <span class="template-item-name">Donation & Partner Receipt</span>
+              <span class="template-item-desc">Tax/Official acknowledgment for supporters</span>
+            </div>
+          </button>
+          <button class="template-item" data-template="newsletter">
+            <i class="fa-solid fa-newspaper"></i>
+            <div class="template-item-info">
+              <span class="template-item-name">Impact Newsletter</span>
+              <span class="template-item-desc">Monthly digest, stats, and school stories</span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <div class="section-title">Customize Variables</div>
+        <div class="variable-fields" id="variableFields">
+          <!-- Dynamic inputs generated via JavaScript -->
+        </div>
+      </div>
+    </aside>
+
+    <!-- Workspace & Live Canvas -->
+    <main class="workspace">
+      <!-- Toolbar -->
+      <div class="toolbar">
+        <div class="view-mode-tabs">
+          <button class="tab-btn active" id="tabVisual">
+            <i class="fa-solid fa-eye"></i> Visual Preview
+          </button>
+          <button class="tab-btn" id="tabHTML">
+            <i class="fa-solid fa-code"></i> HTML Source
+          </button>
+          <button class="tab-btn" id="tabText">
+            <i class="fa-solid fa-align-left"></i> Plain Text
+          </button>
+        </div>
+
+        <div class="device-toggles" id="deviceToggles">
+          <button class="device-btn active" id="devDesktop" title="Desktop View (650px)">
+            <i class="fa-solid fa-desktop"></i>
+          </button>
+          <button class="device-btn" id="devMobile" title="Mobile View (375px)">
+            <i class="fa-solid fa-mobile-screen"></i>
+          </button>
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn-action btn-secondary" id="btnCopyText">
+            <i class="fa-solid fa-copy"></i> Copy Text
+          </button>
+          <button class="btn-action btn-primary" id="btnCopyHTML">
+            <i class="fa-solid fa-code"></i> Copy HTML Code
+          </button>
+        </div>
+      </div>
+
+      <!-- Preview Canvas Area -->
+      <div class="preview-container" id="previewContainer">
+        <div class="email-frame" id="emailFrame">
+          <iframe id="previewIframe" title="Email Live Preview"></iframe>
+        </div>
+      </div>
+
+      <!-- Code Source Container -->
+      <div class="code-container" id="codeContainer">
+        <textarea class="code-editor" id="codeTextarea" readonly></textarea>
+      </div>
+    </main>
+
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toastMsg">Template HTML copied to clipboard!</span>
+  </div>
+
+  <!-- Template Processing Engine -->
+  <script>
+    // Templates Dataset
+    const TEMPLATES = {
+      welcome: {
+        name: "Welcome & Onboarding",
+        subject: "Welcome to Navigo Nepal! 🇳🇵 Empowering your future journey",
+        variables: {
+          Recipient_Name: "Aarav Sharma",
+          Role_Title: "Youth Ambassador & Naviger",
+          District_Name: "Kathmandu",
+          Portal_Link: "https://navigonepal.org/join.html"
+        },
+        html: (v) => `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome to Navigo Nepal</title>
+<style>
+  body { margin: 0; padding: 0; background-color: #F8FBFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+  .email-container { max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(10,35,66,0.08); }
+  .header { background: #0A2342; padding: 32px 24px; text-align: center; color: #ffffff; }
+  .brand-bar { height: 6px; background: linear-gradient(90deg, #2563EB 0%, #10B981 33%, #F4A261 66%, #E63946 100%); }
+  .logo-title { font-size: 24px; font-weight: 800; letter-spacing: -0.5px; margin: 0; color: #ffffff; text-decoration: none; }
+  .logo-title span { color: #4F9CF9; }
+  .tagline { font-size: 13px; color: #8BA3C4; margin-top: 6px; text-transform: uppercase; letter-spacing: 1px; }
+  .content { padding: 36px 32px; color: #0A2342; line-height: 1.6; }
+  .greeting { font-size: 20px; font-weight: 700; color: #0A2342; margin-bottom: 16px; }
+  .badge-box { background: rgba(37,99,235,0.06); border-left: 4px solid #2563EB; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 20px 0; }
+  .badge-box strong { color: #2563EB; display: block; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .badge-box span { font-size: 16px; font-weight: 700; color: #0A2342; }
+  .btn-cta { display: inline-block; background: #2563EB; color: #ffffff !important; text-decoration: none; padding: 14px 28px; border-radius: 8px; font-weight: 700; font-size: 15px; margin-top: 24px; text-align: center; box-shadow: 0 4px 12px rgba(37,99,235,0.3); }
+  .footer { background: #06172F; padding: 28px 24px; text-align: center; color: #8BA3C4; font-size: 13px; line-height: 1.5; }
+  .footer a { color: #4F9CF9; text-decoration: none; }
+  .social-links { margin-bottom: 16px; }
+  .social-links a { display: inline-block; margin: 0 8px; color: #ffffff; text-decoration: none; font-weight: 600; font-size: 12px; }
+</style>
+</head>
+<body>
+<div style="background-color: #F8FBFF; padding: 20px 10px;">
+  <div class="email-container">
+    <div class="brand-bar"></div>
+    <div class="header">
+      <a href="https://navigonepal.org" style="text-decoration: none; display: inline-block;">
+        <img src="https://navigonepal.org/assets/png_new_logo.png" alt="Navigo Nepal Logo" style="height: 48px; width: auto; margin-bottom: 8px; border-radius: 6px;" onerror="this.src='assets/png_new_logo.png'">
+        <div class="logo-title" style="display: block;">NAVIGO <span>NEPAL</span></div>
+      </a>
+      <div class="tagline">Where Conventionality Ends & Practicality Starts</div>
+    </div>
+    
+    <div class="content">
+      <div class="greeting">Namaste ${v.Recipient_Name}! 🙏</div>
+      <p>Welcome to <strong>Navigo Nepal</strong> — we are thrilled to have you join our growing youth movement dedicated to transforming education across Nepal!</p>
+      
+      <div class="badge-box">
+        <strong>Assigned Role & Location</strong>
+        <span>${v.Role_Title} (${v.District_Name} District)</span>
+      </div>
+
+      <p>At Navigo Nepal, we believe that education extends far beyond textbooks. Together, we bridge the gap between academic learning and real-world skills through interactive career stream guidance, leadership incubators, and student-led environmental clubs.</p>
+
+      <p style="margin-top: 16px;"><strong>Here is how you can get started right away:</strong></p>
+      <ul style="padding-left: 20px; color: #475569; margin-top: 8px;">
+        <li style="margin-bottom: 8px;"><strong>Access the Portal:</strong> Complete your volunteer profile and claim your official Digital ID card.</li>
+        <li style="margin-bottom: 8px;"><strong>Join District Circles:</strong> Connect with fellow coordinators in ${v.District_Name}.</li>
+        <li style="margin-bottom: 8px;"><strong>Explore Resources:</strong> Access our STEM & stream counseling workshop toolkits.</li>
+      </ul>
+
+      <div style="text-align: center;">
+        <a href="${v.Portal_Link}" class="btn-cta">Activate My Member Profile &rarr;</a>
+      </div>
+
+      <p style="margin-top: 32px; font-size: 14px; color: #64748B;">If you have any questions, feel free to reply directly to this email or reach us at <a href="mailto:contact@navigonepal.org" style="color: #2563EB;">contact@navigonepal.org</a>.</p>
+
+      <p style="margin-top: 24px; font-weight: 600;">Warm regards,<br><span style="color: #2563EB;">The Navigo Nepal Executive Team</span></p>
+    </div>
+
+    <div class="footer">
+      <div class="social-links">
+        <a href="https://navigonepal.org">Website</a> &bull;
+        <a href="https://facebook.com">Facebook</a> &bull;
+        <a href="https://linkedin.com">LinkedIn</a> &bull;
+        <a href="https://instagram.com">Instagram</a>
+      </div>
+      <p>&copy; ${new Date().getFullYear()} Navigo Nepal. All rights reserved.<br>Kathmandu, Nepal &bull; Dedicated to Youth & Educational Advancement</p>
+      <p style="margin-top: 10px; font-size: 11px;"><a href="https://navigonepal.org/unsubscribe">Unsubscribe</a> &bull; <a href="https://navigonepal.org">Privacy Policy</a></p>
+    </div>
+  </div>
+</div>
+</body>
+</html>`,
+        text: (v) => `Namaste ${v.Recipient_Name}!
+
+Welcome to Navigo Nepal — Where Conventionality Ends & Practicality Starts!
+
+We are thrilled to welcome you as a ${v.Role_Title} representing ${v.District_Name} district.
+
+At Navigo Nepal, we bridge the gap between academic learning and real-world skills through interactive stream guidance, leadership incubators, and student-led environmental clubs.
+
+Getting Started:
+- Activate your member profile & digital ID: ${v.Portal_Link}
+- Connect with your regional coordinator in ${v.District_Name}
+- Access workshop toolkits and resources
+
+If you need any assistance, reach us at contact@navigonepal.org.
+
+Warm regards,
+The Navigo Nepal Executive Team
+https://navigonepal.org`
+      },
+
+      event: {
+        name: "Workshop / Event Invitation",
+        subject: "Invitation: Join the Navigo Nepal {{Event_Title}} 🚀",
+        variables: {
+          Recipient_Name: "Sujata Adhikari",
+          Event_Title: "What's Next? Grade 10 & 12 Career Guidance Summit",
+          Event_Date: "Saturday, August 25, 2026",
+          Event_Time: "11:00 AM – 2:00 PM NPT",
+          Venue_Location: "Kathmandu Model College Auditorium / Zoom Live Stream",
+          RSVP_Link: "https://navigonepal.org/programs.html"
+        },
+        html: (v) => `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event Invitation - Navigo Nepal</title>
+<style>
+  body { margin: 0; padding: 0; background-color: #F8FBFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+  .email-container { max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(10,35,66,0.08); }
+  .header { background: #0A2342; padding: 32px 24px; text-align: center; color: #ffffff; }
+  .brand-bar { height: 6px; background: linear-gradient(90deg, #2563EB 0%, #10B981 33%, #F4A261 66%, #E63946 100%); }
+  .logo-title { font-size: 24px; font-weight: 800; letter-spacing: -0.5px; margin: 0; color: #ffffff; text-decoration: none; }
+  .logo-title span { color: #4F9CF9; }
+  .content { padding: 36px 32px; color: #0A2342; line-height: 1.6; }
+  .event-banner { background: linear-gradient(135deg, #0A2342 0%, #2563EB 100%); color: #ffffff; padding: 24px; border-radius: 10px; margin-bottom: 24px; text-align: center; }
+  .event-banner h2 { font-size: 20px; margin: 0 0 8px 0; }
+  .event-banner p { font-size: 14px; opacity: 0.9; margin: 0; }
+  .details-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: #F8FBFF; border-radius: 8px; overflow: hidden; }
+  .details-table td { padding: 12px 16px; border-bottom: 1px solid rgba(10,35,66,0.06); font-size: 14px; }
+  .details-table td strong { color: #0A2342; }
+  .btn-cta { display: inline-block; background: #10B981; color: #ffffff !important; text-decoration: none; padding: 14px 28px; border-radius: 8px; font-weight: 700; font-size: 15px; margin-top: 20px; text-align: center; box-shadow: 0 4px 12px rgba(16,185,129,0.3); }
+  .footer { background: #06172F; padding: 28px 24px; text-align: center; color: #8BA3C4; font-size: 13px; }
+</style>
+</head>
+<body>
+<div style="background-color: #F8FBFF; padding: 20px 10px;">
+  <div class="email-container">
+    <div class="brand-bar"></div>
+    <div class="header">
+      <a href="https://navigonepal.org" style="text-decoration: none; display: inline-block;">
+        <img src="https://navigonepal.org/assets/png_new_logo.png" alt="Navigo Nepal Logo" style="height: 48px; width: auto; margin-bottom: 8px; border-radius: 6px;" onerror="this.src='assets/png_new_logo.png'">
+        <div class="logo-title" style="display: block;">NAVIGO <span>NEPAL</span></div>
+      </a>
+      <div style="font-size: 13px; color: #8BA3C4; margin-top: 6px; text-transform: uppercase;">Official Workshop & Session Invitation</div>
+    </div>
+    
+    <div class="content">
+      <p style="font-size: 16px;">Dear <strong>${v.Recipient_Name}</strong>,</p>
+      <p>You are cordially invited to participate in Navigo Nepal's upcoming national flagship session designed to guide high school graduates and student leaders toward practical career pathways!</p>
+
+      <div class="event-banner">
+        <h2>${v.Event_Title}</h2>
+        <p>Interactive Mentorship & High-Impact Stream Diagnostic Workshop</p>
+      </div>
+
+      <table class="details-table">
+        <tr>
+          <td><strong>📅 Date:</strong></td>
+          <td>${v.Event_Date}</td>
+        </tr>
+        <tr>
+          <td><strong>⏰ Time:</strong></td>
+          <td>${v.Event_Time}</td>
+        </tr>
+        <tr>
+          <td><strong>📍 Venue:</strong></td>
+          <td>${v.Venue_Location}</td>
+        </tr>
+        <tr>
+          <td><strong>🎯 Highlights:</strong></td>
+          <td>+2 vs A-Levels comparison, CTEVT options, Scholarship matrix & live Q&A.</td>
+        </tr>
+      </table>
+
+      <div style="text-align: center;">
+        <a href="${v.RSVP_Link}" class="btn-cta">Reserve Your Spot (Free Registration) &rarr;</a>
+      </div>
+
+      <p style="margin-top: 28px; font-size: 14px; color: #64748B;">Seats are limited for physical attendance. Online streaming links will be emailed to all registered attendees 24 hours prior to the event.</p>
+    </div>
+
+    <div class="footer">
+      <p>&copy; ${new Date().getFullYear()} Navigo Nepal &bull; <a href="https://navigonepal.org" style="color:#4F9CF9;">navigonepal.org</a> &bull; contact@navigonepal.org</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>`,
+        text: (v) => `Dear ${v.Recipient_Name},
+
+You are invited to Navigo Nepal's upcoming flagship event:
+${v.Event_Title}
+
+Event Details:
+- Date: ${v.Event_Date}
+- Time: ${v.Event_Time}
+- Venue: ${v.Venue_Location}
+
+RSVP & Register now: ${v.RSVP_Link}
+
+Navigo Nepal — Empowering Youth Education Across Nepal
+contact@navigonepal.org`
+      },
+
+      certificate: {
+        name: "Completion & Recognition",
+        subject: "Congratulations! Your Official Certificate from Navigo Nepal 🏆",
+        variables: {
+          Recipient_Name: "Rohan Shrestha",
+          Program_Name: "Youth Leadership & Personality Development Program",
+          Issue_Date: "August 10, 2026",
+          Verification_Code: "NAV-2026-8942",
+          Verify_Link: "https://navigonepal.org/verify.html?id=NAV-2026-8942"
+        },
+        html: (v) => `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certificate of Accomplishment</title>
+<style>
+  body { margin: 0; padding: 0; background-color: #F8FBFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+  .email-container { max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(10,35,66,0.08); }
+  .header { background: #0A2342; padding: 32px 24px; text-align: center; color: #ffffff; }
+  .brand-bar { height: 6px; background: linear-gradient(90deg, #2563EB 0%, #10B981 33%, #F4A261 66%, #E63946 100%); }
+  .logo-title { font-size: 24px; font-weight: 800; margin: 0; color: #ffffff; text-decoration: none; }
+  .logo-title span { color: #4F9CF9; }
+  .content { padding: 36px 32px; color: #0A2342; line-height: 1.6; text-align: center; }
+  .cert-badge { display: inline-block; background: rgba(16,185,129,0.1); border: 2px solid #10B981; color: #10B981; padding: 8px 18px; border-radius: 20px; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
+  .recipient-name { font-size: 24px; font-weight: 800; color: #0A2342; margin: 12px 0; border-bottom: 2px solid #2563EB; display: inline-block; padding-bottom: 4px; }
+  .cert-box { background: #F8FBFF; border: 1px dashed #2563EB; border-radius: 10px; padding: 20px; margin: 24px 0; text-align: left; }
+  .btn-cta { display: inline-block; background: #2563EB; color: #ffffff !important; text-decoration: none; padding: 14px 28px; border-radius: 8px; font-weight: 700; font-size: 15px; margin-top: 16px; box-shadow: 0 4px 12px rgba(37,99,235,0.3); }
+  .footer { background: #06172F; padding: 28px 24px; text-align: center; color: #8BA3C4; font-size: 13px; }
+</style>
+</head>
+<body>
+<div style="background-color: #F8FBFF; padding: 20px 10px;">
+  <div class="email-container">
+    <div class="brand-bar"></div>
+    <div class="header">
+      <a href="https://navigonepal.org" style="text-decoration: none; display: inline-block;">
+        <img src="https://navigonepal.org/assets/png_new_logo.png" alt="Navigo Nepal Logo" style="height: 48px; width: auto; margin-bottom: 8px; border-radius: 6px;" onerror="this.src='assets/png_new_logo.png'">
+        <div class="logo-title" style="display: block;">NAVIGO <span>NEPAL</span></div>
+      </a>
+      <div style="font-size: 13px; color: #8BA3C4; margin-top: 6px; text-transform: uppercase;">Official Recognition & Verification</div>
+    </div>
+    
+    <div class="content">
+      <div class="cert-badge">Certificate of Completion</div>
+      <p style="font-size: 15px; color: #64748B;">This is officially awarded to</p>
+      <div class="recipient-name">${v.Recipient_Name}</div>
+      <p style="font-size: 15px; color: #475569; margin-top: 12px;">for successfully completing the rigorous practical module in</p>
+      <p style="font-size: 18px; font-weight: 700; color: #2563EB; margin: 6px 0;">"${v.Program_Name}"</p>
+
+      <div class="cert-box">
+        <div style="font-size: 12px; color: #64748B; text-transform: uppercase; font-weight: 700;">Certificate Credential Details</div>
+        <div style="font-size: 14px; margin-top: 6px;"><strong>Issued On:</strong> ${v.Issue_Date}</div>
+        <div style="font-size: 14px; margin-top: 4px;"><strong>Verification ID:</strong> <code style="background:#e2e8f0; padding:2px 6px; border-radius:4px; font-family:monospace;">${v.Verification_Code}</code></div>
+        <div style="font-size: 14px; margin-top: 4px;"><strong>Issuer:</strong> Navigo Nepal Executive Board</div>
+      </div>
+
+      <a href="${v.Verify_Link}" class="btn-cta">Verify & Download Digital Certificate &rarr;</a>
+
+      <p style="margin-top: 28px; font-size: 13px; color: #64748B;">You can share your verified achievement directly on LinkedIn or add your Digital ID to your academic resume!</p>
+    </div>
+
+    <div class="footer">
+      <p>&copy; ${new Date().getFullYear()} Navigo Nepal Verification Engine &bull; <a href="https://navigonepal.org/verify.html" style="color:#4F9CF9;">Verify Credentials</a></p>
+    </div>
+  </div>
+</div>
+</body>
+</html>`,
+        text: (v) => `Congratulations ${v.Recipient_Name}!
+
+You have been awarded an official Certificate of Completion for "${v.Program_Name}" by Navigo Nepal.
+
+Credential Information:
+- Issue Date: ${v.Issue_Date}
+- Verification ID: ${v.Verification_Code}
+- Verify online: ${v.Verify_Link}
+
+Navigo Nepal — Empowering Youth Education Across Nepal`
+      },
+
+      donation: {
+        name: "Donation & Partner Receipt",
+        subject: "Thank You for Supporting Navigo Nepal! Official Contribution Receipt 💚",
+        variables: {
+          Donor_Name: "Sunil Karki",
+          Contribution_Amount: "NPR 15,000",
+          Receipt_ID: "REC-2026-7721",
+          Supported_Cause: "Eco Club & High School STEM Toolkit Deployment",
+          Transaction_Date: "August 10, 2026"
+        },
+        html: (v) => `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You for Your Contribution</title>
+<style>
+  body { margin: 0; padding: 0; background-color: #F8FBFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+  .email-container { max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(10,35,66,0.08); }
+  .header { background: #0A2342; padding: 32px 24px; text-align: center; color: #ffffff; }
+  .brand-bar { height: 6px; background: linear-gradient(90deg, #2563EB 0%, #10B981 33%, #F4A261 66%, #E63946 100%); }
+  .logo-title { font-size: 24px; font-weight: 800; margin: 0; color: #ffffff; text-decoration: none; }
+  .logo-title span { color: #4F9CF9; }
+  .content { padding: 36px 32px; color: #0A2342; line-height: 1.6; }
+  .amount-card { background: linear-gradient(135deg, #10B981 0%, #059669 100%); color: #ffffff; text-align: center; padding: 24px; border-radius: 10px; margin: 20px 0; }
+  .amount-card h3 { margin: 0; font-size: 14px; opacity: 0.9; text-transform: uppercase; letter-spacing: 1px; }
+  .amount-card .amount { font-size: 32px; font-weight: 800; margin: 8px 0 0 0; }
+  .receipt-table { width: 100%; border-collapse: collapse; margin-top: 16px; background: #F8FBFF; border-radius: 8px; overflow: hidden; }
+  .receipt-table td { padding: 12px 16px; border-bottom: 1px solid rgba(10,35,66,0.06); font-size: 14px; }
+  .footer { background: #06172F; padding: 28px 24px; text-align: center; color: #8BA3C4; font-size: 13px; }
+</style>
+</head>
+<body>
+<div style="background-color: #F8FBFF; padding: 20px 10px;">
+  <div class="email-container">
+    <div class="brand-bar"></div>
+    <div class="header">
+      <a href="https://navigonepal.org" style="text-decoration: none; display: inline-block;">
+        <img src="https://navigonepal.org/assets/png_new_logo.png" alt="Navigo Nepal Logo" style="height: 48px; width: auto; margin-bottom: 8px; border-radius: 6px;" onerror="this.src='assets/png_new_logo.png'">
+        <div class="logo-title" style="display: block;">NAVIGO <span>NEPAL</span></div>
+      </a>
+      <div style="font-size: 13px; color: #8BA3C4; margin-top: 6px; text-transform: uppercase;">Official Contribution Receipt</div>
+    </div>
+    
+    <div class="content">
+      <p style="font-size: 16px;">Dear <strong>${v.Donor_Name}</strong>,</p>
+      <p>On behalf of the students, volunteers, and founders of Navigo Nepal, thank you so much for your generous support! Your contribution enables us to reach underserved community schools with hands-on educational tools and leadership guidance.</p>
+
+      <div class="amount-card">
+        <h3>Contribution Amount</h3>
+        <div class="amount">${v.Contribution_Amount}</div>
+      </div>
+
+      <table class="receipt-table">
+        <tr>
+          <td><strong>Receipt Reference ID:</strong></td>
+          <td><code style="font-family:monospace; color:#2563EB;">${v.Receipt_ID}</code></td>
+        </tr>
+        <tr>
+          <td><strong>Transaction Date:</strong></td>
+          <td>${v.Transaction_Date}</td>
+        </tr>
+        <tr>
+          <td><strong>Allocated Initiative:</strong></td>
+          <td>${v.Supported_Cause}</td>
+        </tr>
+        <tr>
+          <td><strong>Organization Tax Reg:</strong></td>
+          <td>Navigo Nepal Youth Non-Profit Council</td>
+        </tr>
+      </table>
+
+      <p style="margin-top: 24px; font-size: 14px; color: #475569;">100% of your contribution directly funds student workshop materials, school club seed packs, and regional coordinator travel to rural districts.</p>
+
+      <p style="margin-top: 24px; font-weight: 600;">With heartfelt gratitude,<br><span style="color: #10B981;">The Navigo Nepal Finance & Advisory Team</span></p>
+    </div>
+
+    <div class="footer">
+      <p>&copy; ${new Date().getFullYear()} Navigo Nepal &bull; <a href="https://navigonepal.org/donate.html" style="color:#4F9CF9;">Donate Portal</a> &bull; contact@navigonepal.org</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>`,
+        text: (v) => `Dear ${v.Donor_Name},
+
+Thank you for supporting Navigo Nepal! Your generous contribution empowers high school students across Nepal.
+
+Official Receipt Summary:
+- Amount: ${v.Contribution_Amount}
+- Receipt ID: ${v.Receipt_ID}
+- Date: ${v.Transaction_Date}
+- Supported Cause: ${v.Supported_Cause}
+
+Navigo Nepal Non-Profit Council
+https://navigonepal.org/donate.html`
+      },
+
+      newsletter: {
+        name: "Impact Newsletter",
+        subject: "Navigo Dispatch: Reaching 1,600+ Students Across 24 Districts 🇳🇵",
+        variables: {
+          Subscriber_Name: "Valued Supporter",
+          Edition_Month: "August 2026",
+          Featured_Story_Title: "Launching Eco Clubs in 10 Rural Schools in Sindhupalchok",
+          Students_Impacted: "1,600+",
+          Schools_Reached: "20+",
+          Districts_Covered: "24+"
+        },
+        html: (v) => `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Navigo Nepal Monthly Dispatch</title>
+<style>
+  body { margin: 0; padding: 0; background-color: #F8FBFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+  .email-container { max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(10,35,66,0.08); }
+  .header { background: #0A2342; padding: 32px 24px; text-align: center; color: #ffffff; }
+  .brand-bar { height: 6px; background: linear-gradient(90deg, #2563EB 0%, #10B981 33%, #F4A261 66%, #E63946 100%); }
+  .logo-title { font-size: 24px; font-weight: 800; margin: 0; color: #ffffff; text-decoration: none; }
+  .logo-title span { color: #4F9CF9; }
+  .content { padding: 36px 32px; color: #0A2342; line-height: 1.6; }
+  .stat-grid { display: table; width: 100%; margin: 20px 0; text-align: center; background: #0A2342; border-radius: 10px; padding: 16px 0; color: #ffffff; }
+  .stat-cell { display: table-cell; width: 33.33%; border-right: 1px solid rgba(255,255,255,0.1); }
+  .stat-cell:last-child { border-right: none; }
+  .stat-num { font-size: 22px; font-weight: 800; color: #4F9CF9; }
+  .stat-label { font-size: 11px; text-transform: uppercase; color: #8BA3C4; letter-spacing: 0.5px; }
+  .story-card { background: #F8FBFF; border-left: 4px solid #2563EB; padding: 16px 20px; border-radius: 0 8px 8px 0; margin-top: 20px; }
+  .btn-cta { display: inline-block; background: #2563EB; color: #ffffff !important; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: 700; font-size: 14px; margin-top: 20px; }
+  .footer { background: #06172F; padding: 28px 24px; text-align: center; color: #8BA3C4; font-size: 13px; }
+</style>
+</head>
+<body>
+<div style="background-color: #F8FBFF; padding: 20px 10px;">
+  <div class="email-container">
+    <div class="brand-bar"></div>
+    <div class="header">
+      <a href="https://navigonepal.org" style="text-decoration: none; display: inline-block;">
+        <img src="https://navigonepal.org/assets/png_new_logo.png" alt="Navigo Nepal Logo" style="height: 48px; width: auto; margin-bottom: 8px; border-radius: 6px;" onerror="this.src='assets/png_new_logo.png'">
+        <div class="logo-title" style="display: block;">NAVIGO <span>NEPAL</span></div>
+      </a>
+      <div style="font-size: 13px; color: #8BA3C4; margin-top: 6px; text-transform: uppercase;">Impact Dispatch &bull; ${v.Edition_Month}</div>
+    </div>
+    
+    <div class="content">
+      <p>Namaste <strong>${v.Subscriber_Name}</strong>,</p>
+      <p>Here is your monthly snapshot of how Navigo Nepal is transforming educational opportunities for high school learners across Nepal.</p>
+
+      <div class="stat-grid">
+        <div class="stat-cell">
+          <div class="stat-num">${v.Students_Impacted}</div>
+          <div class="stat-label">Students</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num">${v.Schools_Reached}</div>
+          <div class="stat-label">Schools</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num">${v.Districts_Covered}</div>
+          <div class="stat-label">Districts</div>
+        </div>
+      </div>
+
+      <div class="story-card">
+        <h3 style="margin:0 0 6px 0; font-size:16px; color:#0A2342;">Spotlight: ${v.Featured_Story_Title}</h3>
+        <p style="margin:0; font-size:14px; color:#475569;">Our collegiate Navigers successfully conducted plastic waste recycling and eco-club orientation sessions with over 450 active student members.</p>
+      </div>
+
+      <div style="text-align: center;">
+        <a href="https://navigonepal.org/our-story.html" class="btn-cta">Read Full Impact Report &rarr;</a>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>&copy; ${new Date().getFullYear()} Navigo Nepal &bull; <a href="https://navigonepal.org" style="color:#4F9CF9;">navigonepal.org</a></p>
+    </div>
+  </div>
+</div>
+</body>
+</html>`,
+        text: (v) => `Navigo Nepal Monthly Dispatch - ${v.Edition_Month}
+
+Namaste ${v.Subscriber_Name},
+
+Impact Stats This Month:
+- Students Mentored: ${v.Students_Impacted}
+- Schools Partnered: ${v.Schools_Reached}
+- Districts Covered: ${v.Districts_Covered}
+
+Featured Story: ${v.Featured_Story_Title}
+
+Read full updates: https://navigonepal.org/our-story.html`
+      }
+    };
+
+    // State Management
+    let currentTemplateKey = "welcome";
+    let activeTab = "visual"; // visual, html, text
+    let activeDevice = "desktop"; // desktop, mobile
+
+    // DOM Elements
+    const templateButtons = document.querySelectorAll(".template-item");
+    const variableFieldsContainer = document.getElementById("variableFields");
+    const previewIframe = document.getElementById("previewIframe");
+    const emailFrame = document.getElementById("emailFrame");
+    const codeTextarea = document.getElementById("codeTextarea");
+    const previewContainer = document.getElementById("previewContainer");
+    const codeContainer = document.getElementById("codeContainer");
+    
+    const tabVisual = document.getElementById("tabVisual");
+    const tabHTML = document.getElementById("tabHTML");
+    const tabText = document.getElementById("tabText");
+    
+    const devDesktop = document.getElementById("devDesktop");
+    const devMobile = document.getElementById("devMobile");
+    const deviceToggles = document.getElementById("deviceToggles");
+
+    const btnCopyHTML = document.getElementById("btnCopyHTML");
+    const btnCopyText = document.getElementById("btnCopyText");
+    const themeToggleBtn = document.getElementById("themeToggleBtn");
+    const toast = document.getElementById("toast");
+    const toastMsg = document.getElementById("toastMsg");
+
+    // Render Variable Fields
+    function renderVariableInputs() {
+      const template = TEMPLATES[currentTemplateKey];
+      variableFieldsContainer.innerHTML = "";
+
+      Object.keys(template.variables).forEach(key => {
+        const div = document.createElement("div");
+        div.className = "form-group";
+
+        const label = document.createElement("label");
+        label.textContent = key.replace(/_/g, " ");
+
+        const input = document.createElement("input");
+        input.type = "text";
+        input.value = template.variables[key];
+        input.dataset.varKey = key;
+
+        input.addEventListener("input", (e) => {
+          template.variables[key] = e.target.value;
+          updateRender();
+        });
+
+        div.appendChild(label);
+        div.appendChild(input);
+        variableFieldsContainer.appendChild(div);
+      });
+    }
+
+    // Update Output Canvas
+    function updateRender() {
+      const template = TEMPLATES[currentTemplateKey];
+      const htmlCode = template.html(template.variables);
+      const textCode = template.text(template.variables);
+
+      // Render iFrame
+      const iframeDoc = previewIframe.contentDocument || previewIframe.contentWindow.document;
+      iframeDoc.open();
+      iframeDoc.write(htmlCode);
+      iframeDoc.close();
+
+      // Render Code Panel
+      if (activeTab === "html") {
+        codeTextarea.value = htmlCode;
+      } else if (activeTab === "text") {
+        codeTextarea.value = textCode;
+      }
+    }
+
+    // Switch Active Template
+    templateButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        templateButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        currentTemplateKey = btn.dataset.template;
+        renderVariableInputs();
+        updateRender();
+      });
+    });
+
+    // Tab Switchers
+    tabVisual.addEventListener("click", () => {
+      activeTab = "visual";
+      tabVisual.classList.add("active");
+      tabHTML.classList.remove("active");
+      tabText.classList.remove("active");
+      
+      previewContainer.style.display = "flex";
+      codeContainer.style.display = "none";
+      deviceToggles.style.display = "flex";
+    });
+
+    tabHTML.addEventListener("click", () => {
+      activeTab = "html";
+      tabHTML.classList.add("active");
+      tabVisual.classList.remove("active");
+      tabText.classList.remove("active");
+
+      previewContainer.style.display = "none";
+      codeContainer.style.display = "block";
+      deviceToggles.style.display = "none";
+      updateRender();
+    });
+
+    tabText.addEventListener("click", () => {
+      activeTab = "text";
+      tabText.classList.add("active");
+      tabVisual.classList.remove("active");
+      tabHTML.classList.remove("active");
+
+      previewContainer.style.display = "none";
+      codeContainer.style.display = "block";
+      deviceToggles.style.display = "none";
+      updateRender();
+    });
+
+    // Device Toggles
+    devDesktop.addEventListener("click", () => {
+      devDesktop.classList.add("active");
+      devMobile.classList.remove("active");
+      emailFrame.classList.remove("mobile");
+    });
+
+    devMobile.addEventListener("click", () => {
+      devMobile.classList.add("active");
+      devDesktop.classList.remove("active");
+      emailFrame.classList.add("mobile");
+    });
+
+    // Copy to Clipboard
+    function showToast(msg) {
+      toastMsg.textContent = msg;
+      toast.classList.add("show");
+      setTimeout(() => toast.classList.remove("show"), 3000);
+    }
+
+    btnCopyHTML.addEventListener("click", () => {
+      const template = TEMPLATES[currentTemplateKey];
+      const htmlCode = template.html(template.variables);
+      navigator.clipboard.writeText(htmlCode).then(() => {
+        showToast("HTML code copied to clipboard!");
+      });
+    });
+
+    btnCopyText.addEventListener("click", () => {
+      const template = TEMPLATES[currentTemplateKey];
+      const textCode = template.text(template.variables);
+      navigator.clipboard.writeText(textCode).then(() => {
+        showToast("Plain text copied to clipboard!");
+      });
+    });
+
+    // Theme Switcher
+    themeToggleBtn.addEventListener("click", () => {
+      const isDark = document.body.getAttribute("data-theme") === "dark";
+      if (isDark) {
+        document.body.removeAttribute("data-theme");
+        themeToggleBtn.innerHTML = '<i class="fa-solid fa-moon"></i> <span>Dark Mode</span>';
+      } else {
+        document.body.setAttribute("data-theme", "dark");
+        themeToggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i> <span>Light Mode</span>';
+      }
+    });
+
+    // Initial Execution
+    renderVariableInputs();
+    setTimeout(updateRender, 100);
+  </script>
+</body>
+</html>
