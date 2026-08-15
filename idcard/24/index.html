@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=../index.html?id=24">
   <title>Redirecting to Member Verification — Navigo Nepal</title>
-  <script>window.location.replace("../index.html?id=24");</script>
+  <script>
+    const search = window.location.search || '?id=24';
+    const target = '../index.html' + search + (search.includes('id=') ? '' : '&id=24');
+    window.location.replace(target);
+  </script>
 </head>
 <body>
   <p>Redirecting to official member verification profile...</p>

@@ -89,6 +89,19 @@ document.addEventListener('DOMContentLoaded', () => {
     return member.id;
   }
 
+  // Helper to build full profile URL with embedded parameters for instant QR scanner loading
+  function getMemberProfileUrl(member) {
+    const shortId = getMemberShortId(member);
+    const params = new URLSearchParams();
+    params.set('id', member.id || `NVG-2026-${shortId.padStart(3, '0')}`);
+    if (member.name) params.set('name', member.name);
+    if (member.post) params.set('post', member.post);
+    if (member.email) params.set('email', member.email);
+    if (member.phone) params.set('phone', member.phone);
+    if (member.category) params.set('category', member.category);
+    return `https://navigonepal.org/idcard/${shortId}?${params.toString()}`;
+  }
+
   // Create Individual Card DOM Node
   function createCardElement(member) {
     const wrapper = document.createElement('div');
@@ -99,9 +112,9 @@ document.addEventListener('DOMContentLoaded', () => {
     wrapper.style.width = '100%';
     wrapper.style.maxWidth = '350px';
 
-    // Official Member Profile Verification & Validity QR Code (Short URL: navigonepal.org/idcard/1)
+    // Official Member Profile Verification & Validity QR Code (Embedded Profile Data URL)
     const shortId = getMemberShortId(member);
-    const verifyTargetUrl = `https://navigonepal.org/idcard/${shortId}`;
+    const verifyTargetUrl = getMemberProfileUrl(member);
     const profileQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(verifyTargetUrl)}&color=FFFFFF&bgcolor=121418`;
     // Member verification QR code for back side
     const memberQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(verifyTargetUrl)}&color=0F172A`;
@@ -264,7 +277,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function printSingleCard(member) {
     const printWindow = window.open('', '_blank');
     const shortId = getMemberShortId(member);
-    const verifyTargetUrl = `https://navigonepal.org/idcard/${shortId}`;
+    const verifyTargetUrl = getMemberProfileUrl(member);
     const profileQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(verifyTargetUrl)}&color=FFFFFF&bgcolor=121418`;
     const memberQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(verifyTargetUrl)}&color=0F172A`;
 

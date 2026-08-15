@@ -296,6 +296,11 @@
       const urlParams = new URLSearchParams(window.location.search);
       let queryId = urlParams.get('id') || urlParams.get('member');
       const paramName = urlParams.get('name');
+      const paramPost = urlParams.get('post');
+      const paramEmail = urlParams.get('email');
+      const paramPhone = urlParams.get('phone');
+      const paramCategory = urlParams.get('category');
+      const paramPhoto = urlParams.get('photo');
 
       // Extract ID from pathname if accessed via /idcard/1 or /idcard/2 or /idcard/1/
       if (!queryId) {
@@ -322,21 +327,23 @@
         vPortalLink.href = `../id-cards/index.html?id=${encodeURIComponent(queryId)}`;
       }
 
+      // Initial populate from URL query parameters (Guarantees instant render!)
+      useUrlFallbacks();
+
       fetch('../id-cards/members.json')
         .then(res => res.json())
         .then(members => {
-          if (!queryId) {
+          if (!queryId && !paramName) {
             showLookupPrompt();
             return;
           }
 
-          const targetStr = queryId.toString().trim().toLowerCase();
+          const targetStr = (queryId || '').toString().trim().toLowerCase();
           const targetNum = parseInt(targetStr.replace(/\D/g, ''), 10);
 
           const found = members.find(m => {
             if (m.id && m.id.toLowerCase() === targetStr) return true;
             if (paramName && m.name.toLowerCase() === paramName.toLowerCase()) return true;
-            // Match numeric ID (e.g., 1 -> NVG-2026-001)
             const digits = m.id ? m.id.match(/\d+/g) : null;
             if (digits && digits.length > 0) {
               const lastDigits = digits[digits.length - 1];
@@ -351,9 +358,8 @@
             vPost.textContent = found.post;
             vId.textContent = found.id;
             
-            // Extract short ID for URL display
             const digits = found.id ? found.id.match(/\d+/g) : null;
-            const shortNum = (digits && digits.length > 0) ? parseInt(digits[digits.length - 1], 10) : queryId;
+            const shortNum = (digits && digits.length > 0) ? parseInt(digits[digits.length - 1], 10) : (queryId || '1');
             vShortUrl.textContent = `navigonepal.org/idcard/${shortNum}`;
 
             vCategory.textContent = found.category || 'Member';
@@ -363,18 +369,29 @@
               vPhoto.src = found.photo.startsWith('../') ? found.photo : `../${found.photo}`;
             }
             document.title = `${found.name} — Verified Member Profile | Navigo Nepal`;
-          } else {
-            vName.textContent = `Member #${queryId} Profile`;
-            vId.textContent = `NVG-2026-${queryId.toString().padStart(3, '0')}`;
-            vShortUrl.textContent = `navigonepal.org/idcard/${queryId}`;
-            if (paramName) vName.textContent = decodeURIComponent(paramName);
-            showLookupPrompt();
           }
         })
         .catch(err => {
-          console.warn('Failed to load members.json', err);
-          showLookupPrompt();
+          console.warn('Failed to fetch members.json', err);
+          if (!paramName && !queryId) showLookupPrompt();
         });
+
+      function useUrlFallbacks() {
+        if (paramName) vName.textContent = decodeURIComponent(paramName);
+        if (paramPost) vPost.textContent = decodeURIComponent(paramPost);
+        if (queryId) {
+          const numOnly = queryId.toString().replace(/\D/g, '');
+          vId.textContent = queryId.startsWith('NVG') ? queryId : `NVG-2026-${(numOnly || queryId).toString().padStart(3, '0')}`;
+          vShortUrl.textContent = `navigonepal.org/idcard/${numOnly || queryId}`;
+        }
+        if (paramEmail) vEmail.textContent = decodeURIComponent(paramEmail);
+        if (paramPhone) vPhone.textContent = decodeURIComponent(paramPhone);
+        if (paramCategory) vCategory.textContent = decodeURIComponent(paramCategory);
+        if (paramPhoto) vPhoto.src = decodeURIComponent(paramPhoto);
+        if (paramName) {
+          document.title = `${decodeURIComponent(paramName)} — Verified Member Profile | Navigo Nepal`;
+        }
+      }
 
       function showLookupPrompt() {
         if (lookupForm) lookupForm.style.display = 'flex';
