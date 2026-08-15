@@ -9,7 +9,7 @@
     content="Official member identity document and digital profile verification page for Navigo Nepal team members.">
   <link rel="icon" type="image/png" href="../assets/png_new_logo.png">
   <link rel="apple-touch-icon" href="../assets/png_new_logo.png">
-  <link rel="stylesheet" href="id-card-styles.css">
+  <link rel="stylesheet" href="../id-cards/id-card-styles.css">
 
   <style>
     .verify-container {
@@ -167,6 +167,24 @@
       display: flex;
       gap: 0.75rem;
       justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .search-lookup-box {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+
+    .search-lookup-input {
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: #1E293B;
+      color: #FFF;
+      font-size: 0.9rem;
+      width: 220px;
     }
   </style>
 </head>
@@ -177,7 +195,7 @@
   <header class="id-portal-header">
     <div class="id-header-container">
       <a href="../index.html" class="id-brand">
-        <img src="../assets/navigo-logo.png" alt="Navigo Nepal Logo">
+        <img src="../assets/navigo-logo.png" alt="Navigo Nepal Logo" onerror="this.src='../assets/png_new_logo.png'">
         <div class="id-brand-text">
           <h1>NAVIGO NEPAL</h1>
           <p>Official Member Profile Verification</p>
@@ -185,7 +203,7 @@
       </a>
 
       <div class="id-header-actions">
-        <a href="index.html" class="btn-nvg btn-nvg-primary">
+        <a href="../id-cards/index.html" class="btn-nvg btn-nvg-primary">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2">
             <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
@@ -202,20 +220,20 @@
     <div class="verify-card" id="profileCard">
 
       <div class="verify-header-banner">
-        <img src="../assets/navigo-logo.png" alt="Navigo Nepal">
+        <img src="../assets/navigo-logo.png" alt="Navigo Nepal" onerror="this.src='../assets/png_new_logo.png'">
         <div class="verify-header-brand">
           <h2>NAVIGO NEPAL</h2>
           <p>YOUTH EDUCATIONAL CATALYST</p>
         </div>
       </div>
 
-      <div class="verify-status-bar">
+      <div class="verify-status-bar" id="vStatusBar">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
           <path fill-rule="evenodd"
             d="M8.603 3.799A4.49 4.49 0 0112 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 013.498 1.307 4.491 4.491 0 011.307 3.497A4.49 4.49 0 0121.75 12a4.49 4.49 0 01-1.549 3.397 4.491 4.491 0 01-1.307 3.498 4.491 4.491 0 01-3.497 1.307A4.49 4.49 0 0112 21.75a4.49 4.49 0 01-3.397-1.549 4.49 4.49 0 01-3.498-1.307 4.491 4.491 0 01-1.307-3.497A4.49 4.49 0 012.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 011.307-3.498 4.491 4.491 0 013.497-1.307zm7.007 6.387a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
             clip-rule="evenodd" />
         </svg>
-        <span>OFFICIAL VERIFIED MEMBER</span>
+        <span id="vStatusText">OFFICIAL VERIFIED MEMBER</span>
       </div>
 
       <div class="verify-body">
@@ -231,6 +249,10 @@
           <div class="verify-detail-row">
             <span class="verify-detail-label">Member ID No</span>
             <span class="verify-detail-value" id="vId">NVG-2026-000</span>
+          </div>
+          <div class="verify-detail-row">
+            <span class="verify-detail-label">Card QR Short URL</span>
+            <span class="verify-detail-value" id="vShortUrl" style="color: #60A5FA;">navigonepal.org/idcard/1</span>
           </div>
           <div class="verify-detail-row">
             <span class="verify-detail-label">Category</span>
@@ -251,48 +273,70 @@
         </div>
 
         <div class="verify-actions">
-          <a id="vPortalLink" href="index.html" class="btn-nvg btn-nvg-secondary">
+          <a id="vPortalLink" href="../id-cards/index.html" class="btn-nvg btn-nvg-secondary">
             View Card on ID Portal
           </a>
           <a href="../team.html" class="btn-nvg btn-nvg-outline">
             Navigo Team Directory
           </a>
         </div>
+
+        <form id="lookupForm" class="search-lookup-box" style="display: none;">
+          <input type="text" id="lookupId" class="search-lookup-input" placeholder="Enter Member No (e.g. 1, 2)">
+          <button type="submit" class="btn-nvg btn-nvg-primary">Verify</button>
+        </form>
+
       </div>
 
     </div>
   </main>
 
-  <!-- Script to dynamic populate member details -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const urlParams = new URLSearchParams(window.location.search);
-      const memberId = urlParams.get('id');
+      let queryId = urlParams.get('id') || urlParams.get('member');
       const paramName = urlParams.get('name');
-      const paramPost = urlParams.get('post');
+
+      // Extract ID from pathname if accessed via /idcard/1 or /idcard/2 or /idcard/1/
+      if (!queryId) {
+        const pathSegments = window.location.pathname.split('/').filter(Boolean);
+        const lastSegment = pathSegments[pathSegments.length - 1];
+        if (lastSegment && lastSegment !== 'idcard' && lastSegment !== 'index.html') {
+          queryId = lastSegment;
+        }
+      }
 
       const vName = document.getElementById('vName');
       const vPost = document.getElementById('vPost');
       const vId = document.getElementById('vId');
+      const vShortUrl = document.getElementById('vShortUrl');
       const vCategory = document.getElementById('vCategory');
       const vEmail = document.getElementById('vEmail');
       const vPhone = document.getElementById('vPhone');
       const vPhoto = document.getElementById('vPhoto');
       const vPortalLink = document.getElementById('vPortalLink');
+      const lookupForm = document.getElementById('lookupForm');
+      const lookupIdInput = document.getElementById('lookupId');
 
-      if (memberId) {
-        vPortalLink.href = `index.html?id=${encodeURIComponent(memberId)}`;
+      if (queryId && vPortalLink) {
+        vPortalLink.href = `../id-cards/index.html?id=${encodeURIComponent(queryId)}`;
       }
 
-      fetch('members.json')
+      fetch('../id-cards/members.json')
         .then(res => res.json())
         .then(members => {
-          const targetStr = (memberId || '').toString().trim().toLowerCase();
+          if (!queryId) {
+            showLookupPrompt();
+            return;
+          }
+
+          const targetStr = queryId.toString().trim().toLowerCase();
           const targetNum = parseInt(targetStr.replace(/\D/g, ''), 10);
 
           const found = members.find(m => {
             if (m.id && m.id.toLowerCase() === targetStr) return true;
             if (paramName && m.name.toLowerCase() === paramName.toLowerCase()) return true;
+            // Match numeric ID (e.g., 1 -> NVG-2026-001)
             const digits = m.id ? m.id.match(/\d+/g) : null;
             if (digits && digits.length > 0) {
               const lastDigits = digits[digits.length - 1];
@@ -306,21 +350,44 @@
             vName.textContent = found.name;
             vPost.textContent = found.post;
             vId.textContent = found.id;
+            
+            // Extract short ID for URL display
+            const digits = found.id ? found.id.match(/\d+/g) : null;
+            const shortNum = (digits && digits.length > 0) ? parseInt(digits[digits.length - 1], 10) : queryId;
+            vShortUrl.textContent = `navigonepal.org/idcard/${shortNum}`;
+
             vCategory.textContent = found.category || 'Member';
             vEmail.textContent = found.email || 'N/A';
             vPhone.textContent = found.phone || 'N/A';
-            if (found.photo) vPhoto.src = found.photo;
+            if (found.photo) {
+              vPhoto.src = found.photo.startsWith('../') ? found.photo : `../${found.photo}`;
+            }
             document.title = `${found.name} — Verified Member Profile | Navigo Nepal`;
           } else {
-            useUrlFallbacks();
+            vName.textContent = `Member #${queryId} Profile`;
+            vId.textContent = `NVG-2026-${queryId.toString().padStart(3, '0')}`;
+            vShortUrl.textContent = `navigonepal.org/idcard/${queryId}`;
+            if (paramName) vName.textContent = decodeURIComponent(paramName);
+            showLookupPrompt();
           }
         })
-        .catch(() => useUrlFallbacks());
+        .catch(err => {
+          console.warn('Failed to load members.json', err);
+          showLookupPrompt();
+        });
 
-      function useUrlFallbacks() {
-        if (paramName) vName.textContent = decodeURIComponent(paramName);
-        if (paramPost) vPost.textContent = decodeURIComponent(paramPost);
-        if (memberId) vId.textContent = memberId;
+      function showLookupPrompt() {
+        if (lookupForm) lookupForm.style.display = 'flex';
+      }
+
+      if (lookupForm) {
+        lookupForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const val = lookupIdInput.value.trim();
+          if (val) {
+            window.location.href = `index.html?id=${encodeURIComponent(val)}`;
+          }
+        });
       }
     });
   </script>

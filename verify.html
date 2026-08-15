@@ -287,7 +287,21 @@
       fetch('id-cards/members.json')
         .then(res => res.json())
         .then(members => {
-          const found = members.find(m => m.id === memberId || (paramName && m.name.toLowerCase() === paramName.toLowerCase()));
+          const targetStr = (memberId || '').toString().trim().toLowerCase();
+          const targetNum = parseInt(targetStr.replace(/\D/g, ''), 10);
+
+          const found = members.find(m => {
+            if (m.id && m.id.toLowerCase() === targetStr) return true;
+            if (paramName && m.name.toLowerCase() === paramName.toLowerCase()) return true;
+            const digits = m.id ? m.id.match(/\d+/g) : null;
+            if (digits && digits.length > 0) {
+              const lastDigits = digits[digits.length - 1];
+              const mNum = parseInt(lastDigits, 10);
+              if (!isNaN(targetNum) && mNum === targetNum) return true;
+            }
+            return false;
+          });
+
           if (found) {
             vName.textContent = found.name;
             vPost.textContent = found.post;

@@ -57,8 +57,11 @@ Below is the complete roster of ID cards generated from the website roles and up
 
 ---
 
-## ➕ Adding New Members
+## ➕ Adding New Members & Printing Cards
 
-To add new members:
+To add new members and print their cards easily:
 - Use the **"New Member Card"** button inside the portal to create a card directly on screen.
 - Or append a new JSON object into `id-cards/members.json`.
+- **Automatic QR Short URLs**: Every ID card's QR code automatically encodes a clean short verification link (`https://navigonepal.org/idcard/1`, `https://navigonepal.org/idcard/2`, `https://navigonepal.org/idcard/18`, etc.).
+- When scanned, the QR code resolves directly to the member's official verified profile page.
+

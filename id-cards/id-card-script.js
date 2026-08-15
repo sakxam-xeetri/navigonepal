@@ -78,6 +78,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Helper to extract short numeric ID for QR URL (e.g., NVG-2026-001 -> 1)
+  function getMemberShortId(member) {
+    if (!member || !member.id) return '1';
+    const digits = member.id.match(/\d+/g);
+    if (digits && digits.length > 0) {
+      const lastDigits = digits[digits.length - 1];
+      return parseInt(lastDigits, 10).toString();
+    }
+    return member.id;
+  }
+
   // Create Individual Card DOM Node
   function createCardElement(member) {
     const wrapper = document.createElement('div');
@@ -88,8 +99,9 @@ document.addEventListener('DOMContentLoaded', () => {
     wrapper.style.width = '100%';
     wrapper.style.maxWidth = '350px';
 
-    // Official Member Profile Verification & Validity QR Code
-    const verifyTargetUrl = `https://navigonepal.org/id-cards/verify.html?id=${encodeURIComponent(member.id)}&name=${encodeURIComponent(member.name)}&post=${encodeURIComponent(member.post)}`;
+    // Official Member Profile Verification & Validity QR Code (Short URL: navigonepal.org/idcard/1)
+    const shortId = getMemberShortId(member);
+    const verifyTargetUrl = `https://navigonepal.org/idcard/${shortId}`;
     const profileQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(verifyTargetUrl)}&color=FFFFFF&bgcolor=121418`;
     // Member verification QR code for back side
     const memberQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(verifyTargetUrl)}&color=0F172A`;
@@ -159,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="ref-middle-qr-box">
                   <img src="${profileQrUrl}" alt="${member.name} Profile Verification QR">
                 </div>
-                <span class="ref-qr-subtext">Scan to view member profile</span>
+                <span class="ref-qr-subtext">navigonepal.org/idcard/${shortId}</span>
               </div>
 
               <!-- Card Footer: Single-line Web & Mail -->
@@ -251,7 +263,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Print Single Card (High Fidelity Landscape Mode with Matching Colors)
   function printSingleCard(member) {
     const printWindow = window.open('', '_blank');
-    const verifyTargetUrl = `https://navigonepal.org/id-cards/verify.html?id=${encodeURIComponent(member.id)}&name=${encodeURIComponent(member.name)}&post=${encodeURIComponent(member.post)}`;
+    const shortId = getMemberShortId(member);
+    const verifyTargetUrl = `https://navigonepal.org/idcard/${shortId}`;
     const profileQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(verifyTargetUrl)}&color=FFFFFF&bgcolor=121418`;
     const memberQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(verifyTargetUrl)}&color=0F172A`;
 
@@ -300,7 +313,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <div class="ref-middle-qr-container">
                   <div class="ref-middle-qr-box"><img src="${profileQrUrl}"></div>
-                  <span class="ref-qr-subtext">Scan to view member profile</span>
+                  <span class="ref-qr-subtext">navigonepal.org/idcard/${shortId}</span>
                 </div>
                 <div class="ref-card-footer-box">
                   <span class="ref-footer-inline">
