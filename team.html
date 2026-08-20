@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/programs.css">
   <link rel="stylesheet" href="css/team.css">
+  <script src="js/qr-scanner.js"></script>
 </head>
 
 <body>
@@ -74,6 +75,8 @@
         </li>
 
         <li><a href="team.html" class="nav-link active">Team</a></li>
+
+        <li><a href="blog.html" class="nav-link">Blog</a></li>
 
         <li class="has-dropdown">
           <a href="index.html#donate" class="nav-link">
@@ -138,7 +141,8 @@
       <li><a href="index.html" class="mobile-nav-link">Home</a></li>
       <li><a href="our-story.html" class="mobile-nav-link">Our Story</a></li>
       <li><a href="programs.html" class="mobile-nav-link">Programs</a></li>
-      <li><a href="team.html" class="mobile-nav-link">Team</a></li>
+      <li><a href="team.html" class="mobile-nav-link active">Team</a></li>
+      <li><a href="blog.html" class="mobile-nav-link">Blog &amp; Insights</a></li>
       <li><a href="join.html" class="mobile-nav-link">Get Involved</a></li>
     </ul>
   </aside>
@@ -172,6 +176,9 @@
           <a href="id-cards/index.html" class="btn-ref-pill btn-ref-teal" style="background: #2563EB; color: #fff;">
             Member ID Cards
           </a>
+          <button onclick="NvgQrScanner.open()" class="btn-ref-pill btn-ref-teal" style="background: linear-gradient(135deg, #10B981, #059669); color: #fff; border: none; cursor: pointer;">
+            📷 Scan Member QR
+          </button>
           <a href="volunteer.html" class="btn-ref-pill btn-ref-yellow">
             Join Our Team
           </a>
@@ -671,6 +678,7 @@
             <li><a href="our-story.html">Our Story &amp; Vision</a></li>
             <li><a href="programs.html">Educational Programs</a></li>
             <li><a href="past-events.html">Past Events</a></li>
+            <li><a href="blog.html">Blog &amp; Insights</a></li>
           </ul>
         </div>
 

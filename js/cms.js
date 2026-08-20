@@ -228,7 +228,7 @@ const NAVIGO_CMS = {
       name: "Krishav Jung Shahi",
       role: "Event & Volunteer Coordinator",
       bio: "Runs volunteer selection interviews, coordinates local school events, and acts as a contact for regional ambassadors.",
-      image: "assets/team_rajesh.jpg",
+      image: "assets/members/placeholder.svg",
       linkedin: "https://linkedin.com/in/krishav-shahi"
     }
   ],
@@ -266,18 +266,70 @@ const NAVIGO_CMS = {
 
   blog: [
     {
-      title: "Bridging the Post-SEE Transition: The Story Behind What's Next",
-      date: "May 28, 2024",
-      author: "Anupam Nyaupane",
-      excerpt: "We reflected on the academic pressure and lack of exposure we faced after SEE. Here is why stream counseling is critical for every student...",
-      image: "assets/blog_stem.jpg"
+      id: "passing-in-physics-exam",
+      title: "Passing in Physics Exam: Turning Miracles into Strategy",
+      category: "Academic Strategy",
+      date: "August 18, 2024",
+      author: "Prithivi Raj Poudel",
+      authorRole: "Research & Presentation Head",
+      authorAvatar: "assets/members/prithivi.png",
+      readTime: "5 min read",
+      excerpt: "Passing in physics sounds like a miracle for a huge number of students. But to obtain passing marks, you don't need magic—you just need to focus on the right things and study strategically.",
+      image: "assets/blog_physics.jpg",
+      pdfFile: "blogs/phy.docx.pdf",
+      featured: true
     },
     {
+      id: "bridging-post-see-transition",
+      title: "Bridging the Post-SEE Transition: The Story Behind 'What's Next?'",
+      category: "Career Guidance",
+      date: "May 28, 2024",
+      author: "Anupam Nyaupane",
+      authorRole: "Co-Founder",
+      authorAvatar: "assets/advisory/neupane.png",
+      readTime: "6 min read",
+      excerpt: "We reflected on the academic pressure and lack of exposure we faced after SEE. Here is why stream counseling and personalized guidance are critical for every student in Nepal.",
+      image: "assets/vblog_stream.jpg",
+      featured: false
+    },
+    {
+      id: "veda-and-tech",
       title: "Veda and Tech: Computing at Brahmeshwor Gurukul",
+      category: "Tech & Innovation",
       date: "June 10, 2024",
       author: "Biyog Man Dangol",
-      excerpt: "Bridging centuries-old spiritual heritage with Artificial Intelligence and computer literacy. An insight into our pilot research connecting Vedic studies with technology...",
-      image: "assets/blog_olympiad.jpg"
+      authorRole: "Co-Founder & Tech Head",
+      authorAvatar: "assets/advisory/biyog-man-dangol.png",
+      readTime: "7 min read",
+      excerpt: "Bridging centuries-old spiritual heritage with Artificial Intelligence and computer literacy. An insight into our pilot research connecting Vedic studies with technology.",
+      image: "assets/program.jpg",
+      featured: false
+    },
+    {
+      id: "empowering-student-leaders",
+      title: "Empowering Student Leaders: How School Clubs Drive Real Change",
+      category: "Youth Leadership",
+      date: "July 15, 2024",
+      author: "Prajwal Dhungana",
+      authorRole: "Co-Founder",
+      authorAvatar: "assets/advisory/prajal.png",
+      readTime: "5 min read",
+      excerpt: "Extracurricular clubs are the true incubators of youth agency. Here is how Navigo's student club incubation toolkit empowers students to lead in their schools.",
+      image: "assets/how-we-are-unique/group-photo-shree-kalika.jpg",
+      featured: false
+    },
+    {
+      id: "climate-action-classroom",
+      title: "Climate Action in the Classroom: How Nepali Youth Are Tackling SDG 13",
+      category: "Climate & Environment",
+      date: "July 28, 2024",
+      author: "Ayushi Bhandari",
+      authorRole: "Gyanodaya Scout Lead",
+      authorAvatar: "assets/11.png",
+      readTime: "4 min read",
+      excerpt: "Moving beyond textbook definitions of pollution into tangible, school-based climate solutions: bottle gardening, waste audits, and youth eco-rallies.",
+      image: "assets/33.png",
+      featured: false
     }
   ],
 

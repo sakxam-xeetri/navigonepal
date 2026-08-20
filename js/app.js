@@ -293,7 +293,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Render Blog Grid with images
   const blogGrid = document.getElementById("blogGrid");
   if (blogGrid) blogGrid.innerHTML = CMS.blog.map(post => `
-    <div class="blog-post-card reveal">
+    <a href="blog.html?post=${post.id || ''}" class="blog-post-card reveal" style="text-decoration: none; color: inherit; display: grid;">
       <div class="blog-post-img">
         <img src="${post.image}" alt="${post.title}" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\\'width:100%;height:100%;background:linear-gradient(135deg,rgba(37,99,235,0.08),rgba(16,185,129,0.05));display:flex;align-items:center;justify-content:center;\\'><svg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'30\\' height=\\'30\\' viewBox=\\'0 0 24 24\\' fill=\\'none\\' stroke=\\'currentColor\\' stroke-width=\\'1\\' style=\\'color:var(--accent-color);opacity:0.5\\'><path d=\\'M4 22V4c0-.5.2-1 .6-1.4C5 2.2 5.5 2 6 2h12c.5 0 1 .2 1.4.6.4.4.6.9.6 1.4v18l-8-4-8 4z\\'/></svg></div>'">
       </div>
@@ -303,7 +303,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <p>${post.excerpt}</p>
         <span class="blog-read-more">Read More &rarr;</span>
       </div>
-    </div>
+    </a>
   `).join("");
 
   // Render Resources

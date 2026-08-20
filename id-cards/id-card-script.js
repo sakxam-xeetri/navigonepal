@@ -99,6 +99,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (member.email) params.set('email', member.email);
     if (member.phone) params.set('phone', member.phone);
     if (member.category) params.set('category', member.category);
+    if (member.bloodGroup) params.set('bloodGroup', member.bloodGroup);
+    if (member.emergencyContact) params.set('emergencyContact', member.emergencyContact);
     return `https://navigonepal.org/idcard/${shortId}?${params.toString()}`;
   }
 
