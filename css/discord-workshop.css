@@ -450,39 +450,35 @@
 .dw-role-tags-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.6rem;
   margin-top: 0.5rem;
 }
 
 .dw-role-tag {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  font-size: 0.82rem;
+  gap: 0.5rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  padding: 0.3rem 0.75rem;
-  border-radius: var(--radius-sm);
-  background: rgba(88, 101, 242, 0.08);
-  border: 1px solid rgba(88, 101, 242, 0.2);
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-md);
+  background: var(--dw-blurple-soft);
+  border: 1px solid var(--dw-blurple-border);
   color: var(--discord-blurple);
+  transition: all 0.2s ease;
 }
 
-.dw-role-tag.green {
-  background: rgba(87, 242, 135, 0.1);
-  border-color: rgba(87, 242, 135, 0.3);
-  color: #10B981;
+.dw-role-tag:hover {
+  background: rgba(88, 101, 242, 0.15);
+  border-color: var(--discord-blurple);
+  transform: translateY(-1px);
 }
 
-.dw-role-tag.yellow {
-  background: rgba(254, 231, 92, 0.15);
-  border-color: rgba(254, 231, 92, 0.35);
-  color: #D97706;
-}
-
-.dw-role-tag.fuchsia {
-  background: rgba(235, 69, 158, 0.1);
-  border-color: rgba(235, 69, 158, 0.3);
-  color: var(--discord-fuchsia);
+.dw-role-tag svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  flex-shrink: 0;
 }
 
 /* ==================== DISCORD APP INTERACTIVE PREVIEW ==================== */
