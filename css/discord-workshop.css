@@ -1,0 +1,1361 @@
+/* ============================================================
+   Navigo Nepal — Discord Workshop Stylesheet
+   Harmonizes Discord Blurple (#5865F2) with Navigo Navy & White
+   Supports dual-theme (Light/Dark) mode seamlessly
+   ============================================================ */
+
+:root {
+  --discord-blurple: #5865F2;
+  --discord-blurple-hover: #4752C4;
+  --discord-blurple-light: #7983F5;
+  --discord-green: #57F287;
+  --discord-yellow: #FEE75C;
+  --discord-fuchsia: #EB459E;
+  --discord-red: #ED4245;
+
+  --dw-blurple-soft: rgba(88, 101, 242, 0.08);
+  --dw-blurple-border: rgba(88, 101, 242, 0.22);
+  --dw-blurple-glow: rgba(88, 101, 242, 0.25);
+
+  --dw-discord-dark: #2B2D31;
+  --dw-discord-darker: #1E1F22;
+  --dw-discord-light-dark: #313338;
+  --dw-discord-channel: #949BA4;
+  --dw-discord-text: #DBDEE1;
+}
+
+[data-theme="dark"] {
+  --dw-blurple-soft: rgba(88, 101, 242, 0.16);
+  --dw-blurple-border: rgba(88, 101, 242, 0.35);
+  --dw-blurple-glow: rgba(88, 101, 242, 0.45);
+}
+
+/* ==================== HERO SECTION ==================== */
+.dw-hero {
+  position: relative;
+  padding: 8rem 0 5rem;
+  background: radial-gradient(circle at 50% 20%, rgba(88, 101, 242, 0.12) 0%, transparent 60%),
+              radial-gradient(circle at 90% 70%, rgba(37, 99, 235, 0.08) 0%, transparent 50%),
+              var(--bg-primary);
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.dw-hero-badge-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.dw-live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.4rem 1rem;
+  background: var(--dw-blurple-soft);
+  border: 1px solid var(--dw-blurple-border);
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--discord-blurple);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.dw-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--discord-green);
+  box-shadow: 0 0 0 0 rgba(87, 242, 135, 0.7);
+  animation: dwPulse 1.8s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+@keyframes dwPulse {
+  to {
+    box-shadow: 0 0 0 10px rgba(87, 242, 135, 0);
+  }
+}
+
+.dw-hero-header {
+  max-width: 860px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.dw-hero-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+}
+
+.dw-hero-title .gradient-text {
+  background: linear-gradient(135deg, var(--discord-blurple) 0%, #2563EB 50%, #4F9CF9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dw-hero-lead {
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 760px;
+  margin: 0 auto 2.25rem;
+}
+
+.dw-hero-cta-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.btn-discord-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.95rem 2.2rem;
+  background: var(--discord-blurple);
+  color: #ffffff !important;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 24px var(--dw-blurple-glow);
+}
+
+.btn-discord-primary:hover {
+  background: var(--discord-blurple-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px var(--dw-blurple-glow);
+  color: #ffffff;
+}
+
+.btn-discord-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.95rem 1.8rem;
+  background: var(--bg-card);
+  color: var(--text-main);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  border: 1px solid var(--border-color);
+  transition: all 0.25s ease;
+}
+
+.btn-discord-secondary:hover {
+  border-color: var(--discord-blurple);
+  color: var(--discord-blurple);
+  transform: translateY(-2px);
+}
+
+.dw-copy-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.95rem 1.4rem;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  border: 1px dashed var(--border-color);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dw-copy-link-btn:hover {
+  background: var(--dw-blurple-soft);
+  color: var(--discord-blurple);
+  border-color: var(--discord-blurple);
+}
+
+.dw-hero-media-wrapper {
+  position: relative;
+  max-width: 1040px;
+  margin: 0 auto;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(10, 35, 66, 0.16);
+  border: 1px solid var(--border-glass);
+}
+
+[data-theme="dark"] .dw-hero-media-wrapper {
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.55), 0 0 40px var(--dw-blurple-glow);
+}
+
+.dw-hero-banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.dw-hero-media-wrapper:hover .dw-hero-banner-img {
+  transform: scale(1.015);
+}
+
+.dw-banner-overlay-stats {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  background: rgba(10, 35, 66, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  color: #ffffff;
+}
+
+.dw-banner-stat-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.dw-banner-stat-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(88, 101, 242, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--discord-blurple-light);
+}
+
+.dw-banner-stat-val {
+  font-size: 1.25rem;
+  font-weight: 800;
+  font-family: 'Outfit', sans-serif;
+  color: #ffffff;
+}
+
+.dw-banner-stat-lbl {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.75);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ==================== STATS ROW ==================== */
+.dw-metrics-strip {
+  background: var(--bg-card);
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.dw-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+
+.dw-metric-box {
+  padding: 1rem;
+}
+
+.dw-metric-number {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--discord-blurple);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.dw-metric-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 0.25rem;
+}
+
+.dw-metric-sub {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ==================== STEP-BY-STEP JOIN SECTION ==================== */
+.dw-section {
+  padding: 5.5rem 0;
+  position: relative;
+}
+
+.dw-section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3.5rem;
+}
+
+.dw-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--discord-blurple);
+  background: var(--dw-blurple-soft);
+  border: 1px solid var(--dw-blurple-border);
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.85rem;
+}
+
+.dw-section-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.dw-section-desc {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+/* Steps Timeline */
+.dw-steps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.dw-step-card {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.dw-step-card:hover {
+  border-color: var(--dw-blurple-border);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.dw-step-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dw-step-badge {
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  background: var(--dw-blurple-soft);
+  color: var(--discord-blurple);
+  border: 1px solid var(--dw-blurple-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  font-weight: 800;
+  font-family: 'Outfit', sans-serif;
+}
+
+.dw-step-content h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.dw-step-time {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: rgba(10, 35, 66, 0.05);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+}
+
+[data-theme="dark"] .dw-step-time {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.dw-step-content p {
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+
+.dw-step-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.dw-step-btn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 1.15rem;
+  border-radius: var(--radius-md);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  background: var(--bg-primary);
+  transition: all 0.2s ease;
+}
+
+.dw-step-btn-pill:hover {
+  background: var(--dw-blurple-soft);
+  color: var(--discord-blurple);
+  border-color: var(--discord-blurple);
+}
+
+.dw-role-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.dw-role-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-sm);
+  background: rgba(88, 101, 242, 0.08);
+  border: 1px solid rgba(88, 101, 242, 0.2);
+  color: var(--discord-blurple);
+}
+
+.dw-role-tag.green {
+  background: rgba(87, 242, 135, 0.1);
+  border-color: rgba(87, 242, 135, 0.3);
+  color: #10B981;
+}
+
+.dw-role-tag.yellow {
+  background: rgba(254, 231, 92, 0.15);
+  border-color: rgba(254, 231, 92, 0.35);
+  color: #D97706;
+}
+
+.dw-role-tag.fuchsia {
+  background: rgba(235, 69, 158, 0.1);
+  border-color: rgba(235, 69, 158, 0.3);
+  color: var(--discord-fuchsia);
+}
+
+/* ==================== DISCORD APP INTERACTIVE PREVIEW ==================== */
+.dw-app-preview-container {
+  max-width: 1040px;
+  margin: 0 auto;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: var(--dw-discord-darker);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35), 0 0 35px var(--dw-blurple-glow);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--dw-discord-text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.dw-discord-header-bar {
+  background: #111214;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #232428;
+}
+
+.dw-window-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.dw-window-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.dw-dot-red { background: #ED4245; }
+.dw-dot-yellow { background: #FEE75C; }
+.dw-dot-green { background: #57F287; }
+
+.dw-window-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #949BA4;
+  letter-spacing: 0.02em;
+}
+
+.dw-discord-main-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 520px;
+}
+
+/* Sidebar Channels */
+.dw-discord-sidebar {
+  background: var(--dw-discord-dark);
+  border-right: 1px solid #232428;
+  display: flex;
+  flex-direction: column;
+}
+
+.dw-server-header {
+  padding: 1.1rem 1rem;
+  border-bottom: 1px solid #1F2023;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dw-server-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dw-verified-badge {
+  background: var(--discord-blurple);
+  color: #fff;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+}
+
+.dw-channel-tree {
+  padding: 0.85rem 0.5rem;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.dw-channel-cat {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #949BA4;
+  letter-spacing: 0.05em;
+  padding: 0.75rem 0.5rem 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.dw-channel-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.65rem;
+  border-radius: var(--radius-sm);
+  color: var(--dw-discord-channel);
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.dw-channel-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #DBDEE1;
+}
+
+.dw-channel-item.active {
+  background: rgba(88, 101, 242, 0.18);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.dw-channel-item.stage-active {
+  color: var(--discord-green);
+}
+
+.dw-channel-icon {
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+.dw-badge-pill {
+  margin-left: auto;
+  font-size: 0.68rem;
+  background: var(--discord-red);
+  color: #fff;
+  font-weight: 700;
+  padding: 0.1rem 0.4rem;
+  border-radius: 10px;
+}
+
+/* Channel Content Area */
+.dw-discord-content {
+  background: var(--dw-discord-light-dark);
+  display: flex;
+  flex-direction: column;
+}
+
+.dw-channel-top-bar {
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid #2B2D31;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dw-channel-current {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 0.98rem;
+}
+
+.dw-stage-indicator-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--discord-green);
+  background: rgba(87, 242, 135, 0.12);
+  border: 1px solid rgba(87, 242, 135, 0.25);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+}
+
+.dw-channel-feed {
+  padding: 1.25rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  overflow-y: auto;
+}
+
+/* Stage Spotlight Card */
+.dw-stage-spotlight {
+  background: #232428;
+  border: 1px solid #383A40;
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.dw-stage-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.dw-stage-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.dw-speaker-tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.dw-speaker-tile {
+  background: #18191C;
+  border: 2px solid var(--discord-green);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+}
+
+.dw-speaker-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  margin: 0 auto 0.5rem;
+  display: block;
+  object-fit: cover;
+}
+
+.dw-speaker-name {
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: #ffffff;
+}
+
+.dw-speaker-role {
+  font-size: 0.74rem;
+  color: #949BA4;
+}
+
+.dw-speaking-soundwave {
+  display: inline-flex;
+  gap: 3px;
+  align-items: flex-end;
+  height: 12px;
+  margin-top: 0.35rem;
+}
+
+.dw-soundbar {
+  width: 3px;
+  background: var(--discord-green);
+  border-radius: 2px;
+  animation: dwSoundWave 0.8s infinite ease-in-out alternate;
+}
+.dw-soundbar:nth-child(1) { height: 6px; animation-delay: 0.1s; }
+.dw-soundbar:nth-child(2) { height: 12px; animation-delay: 0.3s; }
+.dw-soundbar:nth-child(3) { height: 8px; animation-delay: 0.2s; }
+.dw-soundbar:nth-child(4) { height: 10px; animation-delay: 0.4s; }
+
+@keyframes dwSoundWave {
+  0% { height: 4px; }
+  100% { height: 14px; }
+}
+
+/* Chat Messages */
+.dw-chat-message {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+}
+
+.dw-chat-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.dw-chat-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.dw-chat-author {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.dw-author-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  background: var(--discord-blurple);
+  color: #ffffff;
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+}
+
+.dw-chat-time {
+  font-size: 0.72rem;
+  color: #949BA4;
+}
+
+.dw-chat-text {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #DBDEE1;
+}
+
+/* Discord Mock Input */
+.dw-discord-input-bar {
+  padding: 0.85rem 1.25rem;
+  background: var(--dw-discord-light-dark);
+  border-top: 1px solid #2B2D31;
+}
+
+.dw-mock-input {
+  background: #383A40;
+  border-radius: var(--radius-md);
+  padding: 0.65rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: #949BA4;
+  font-size: 0.88rem;
+}
+
+/* ==================== WORKSHOP TRACKS GRID ==================== */
+.dw-tracks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.75rem;
+}
+
+.dw-track-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.dw-track-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--track-color, var(--discord-blurple));
+  opacity: 0.85;
+}
+
+.dw-track-card:hover {
+  border-color: var(--dw-blurple-border);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.dw-track-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: var(--dw-blurple-soft);
+  color: var(--track-color, var(--discord-blurple));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border-color);
+}
+
+.dw-track-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.75rem;
+  line-height: 1.25;
+}
+
+.dw-track-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.dw-track-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dw-track-features li {
+  font-size: 0.88rem;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dw-track-features li svg {
+  color: var(--discord-green);
+  flex-shrink: 0;
+}
+
+.dw-track-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.dw-track-target {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.dw-track-rsvp-btn {
+  background: transparent;
+  color: var(--discord-blurple);
+  border: 1px solid var(--dw-blurple-border);
+  border-radius: var(--radius-md);
+  padding: 0.45rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dw-track-rsvp-btn:hover {
+  background: var(--discord-blurple);
+  color: #fff;
+}
+
+/* ==================== WORKSHOP SCHEDULE TABLE / CARDS ==================== */
+.dw-schedule-wrapper {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.dw-session-row {
+  display: grid;
+  grid-template-columns: 160px 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.2s ease;
+}
+
+.dw-session-row:last-child {
+  border-bottom: none;
+}
+
+.dw-session-row:hover {
+  background-color: var(--dw-blurple-soft);
+}
+
+.dw-session-datetime {
+  display: flex;
+  flex-direction: column;
+}
+
+.dw-session-day {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--discord-blurple);
+}
+
+.dw-session-time {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.dw-session-details h4 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.35rem;
+}
+
+.dw-session-details p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.dw-session-meta-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.dw-session-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  background: rgba(10, 35, 66, 0.05);
+  color: var(--text-muted);
+}
+
+[data-theme="dark"] .dw-session-tag {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-muted);
+}
+
+/* ==================== COMMUNITY RULES & CODE OF CONDUCT ==================== */
+.dw-rules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.dw-rule-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  transition: all 0.25s ease;
+}
+
+.dw-rule-card:hover {
+  border-color: var(--dw-blurple-border);
+  transform: translateY(-2px);
+}
+
+.dw-rule-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--dw-blurple-soft);
+  color: var(--discord-blurple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.dw-rule-card h4 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.dw-rule-card p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* ==================== FAQ ACCORDION ==================== */
+.dw-faq-list {
+  max-width: 820px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.dw-faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+.dw-faq-item.open {
+  border-color: var(--dw-blurple-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.dw-faq-question {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+  cursor: pointer;
+  gap: 1rem;
+}
+
+.dw-faq-chevron {
+  color: var(--discord-blurple);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.dw-faq-item.open .dw-faq-chevron {
+  transform: rotate(180deg);
+}
+
+.dw-faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0 1.5rem;
+  color: var(--text-muted);
+  font-size: 0.96rem;
+  line-height: 1.65;
+}
+
+.dw-faq-item.open .dw-faq-answer {
+  padding: 0 1.5rem 1.25rem;
+}
+
+/* ==================== CALL TO ACTION BANNER ==================== */
+.dw-cta-banner {
+  background: linear-gradient(135deg, #0A2342 0%, #1e3a66 45%, var(--discord-blurple) 100%);
+  border-radius: var(--radius-xl);
+  padding: 4.5rem 3rem;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(10, 35, 66, 0.25);
+}
+
+.dw-cta-banner h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.dw-cta-banner p {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 660px;
+  margin: 0 auto 2.25rem;
+  line-height: 1.6;
+}
+
+/* ==================== MODAL STYLES ==================== */
+.dw-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(6, 23, 47, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  padding: 1.5rem;
+}
+
+.dw-modal-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dw-modal-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  max-width: 540px;
+  width: 100%;
+  padding: 2.25rem;
+  position: relative;
+  box-shadow: var(--shadow-xl);
+  transform: translateY(20px) scale(0.96);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.dw-modal-overlay.open .dw-modal-card {
+  transform: translateY(0) scale(1);
+}
+
+.dw-modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.dw-modal-close:hover {
+  background: rgba(10, 35, 66, 0.08);
+  color: var(--text-main);
+}
+
+.dw-modal-header {
+  margin-bottom: 1.5rem;
+}
+
+.dw-modal-header h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 0.4rem;
+}
+
+.dw-modal-header p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.dw-form-group {
+  margin-bottom: 1.25rem;
+}
+
+.dw-form-group label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 0.4rem;
+}
+
+.dw-form-control {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-size: 0.95rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--bg-primary);
+  color: var(--text-main);
+  outline: none;
+  transition: border-color 0.2s ease;
+  font-family: inherit;
+}
+
+.dw-form-control:focus {
+  border-color: var(--discord-blurple);
+  box-shadow: 0 0 0 3px var(--dw-blurple-soft);
+}
+
+/* Toast Notification */
+.dw-toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #111214;
+  color: #ffffff;
+  padding: 0.85rem 1.4rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--dw-blurple-border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  z-index: 10000;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dw-toast.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dw-toast-icon {
+  color: var(--discord-green);
+}
+
+/* ==================== RESPONSIVE BREAKPOINTS ==================== */
+@media (max-width: 991px) {
+  .dw-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .dw-discord-main-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .dw-discord-sidebar {
+    display: none; /* Hide simulated sidebar on mobile */
+  }
+
+  .dw-session-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .dw-step-card {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .dw-step-indicator {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .dw-metrics-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .dw-cta-banner {
+    padding: 3rem 1.5rem;
+  }
+
+  .dw-banner-overlay-stats {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    border-radius: 0;
+    margin-top: -1px;
+  }
+}

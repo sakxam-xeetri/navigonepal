@@ -933,6 +933,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Searchable content database
   const searchableContent = [
     // Programs
+    { title: "Discord Workshops", desc: "Interactive online workshops, stream counseling, and coding stages on Discord", url: "discord-workshop.html", category: "Programs", keywords: "discord workshop online stream guidance coding how to join stage events community nepal" },
     { title: "What's Next? Campaign", desc: "Career guidance for SEE graduates after 10th grade", url: "programs.html#whats-next", category: "Programs", keywords: "career counseling see 10th grade college stream selection" },
     { title: "Leadership & Personality Development", desc: "Workshops for student leadership and personality growth", url: "programs.html#leadership", category: "Programs", keywords: "leadership scout personality workshop training" },
     { title: "School Clubs & ECAs", desc: "Establishing and managing student clubs in schools", url: "programs.html#clubs", category: "Programs", keywords: "club eca extracurricular activities school" },
